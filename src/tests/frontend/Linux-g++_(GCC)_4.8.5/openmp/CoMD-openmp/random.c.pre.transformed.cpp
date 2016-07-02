@@ -21,11 +21,11 @@ static int ____must_manage_mkSeed = 2;
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
 static unsigned ____alias_loc_id_2;
-# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -34,7 +34,7 @@ static unsigned ____alias_loc_id_2;
 typedef long int ptrdiff_t;
 # 211 "/usr/lib/gcc/x86_64-redhat-linux/4.4.4/include/stddef.h"
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -90,7 +90,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 69 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 69 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -104,24 +104,24 @@ inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 2 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 3 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 4 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 5 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 6 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 2 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 3 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 4 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 5 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 6 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 
-# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.h" 1
-
-
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.h" 1
 
 
 
 
 
-# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mytype.h" 1
-# 13 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mytype.h"
+
+
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mytype.h" 1
+# 13 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mytype.h"
 typedef double real_t;
 
 
@@ -135,7 +135,7 @@ static void zeroReal3(real3 a)
    a[1] = 0.0;
    a[2] = 0.0;
 }
-# 9 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.h" 2
+# 9 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.h" 2
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stdint.h" 1 3 4
 # 9 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stdint.h" 3 4
 # 1 "/usr/include/stdint.h" 1 3 4
@@ -225,7 +225,7 @@ typedef unsigned long int uintptr_t;
 typedef long int intmax_t;
 typedef unsigned long int uintmax_t;
 # 10 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stdint.h" 2 3 4
-# 10 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.h" 2
+# 10 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.h" 2
 
 
 real_t gasdev(uint64_t* seed);
@@ -235,8 +235,8 @@ double lcg61(uint64_t* seed);
 
 
 uint64_t mkSeed(uint32_t id, uint32_t callSite);
-# 8 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c" 2
-# 8 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 8 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c" 2
+# 8 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 
 # 1 "/usr/include/math.h" 1 3 4
 # 30 "/usr/include/math.h" 3 4
@@ -1242,194 +1242,194 @@ __signbitl (long double __x) throw ()
 # 417 "/usr/include/math.h" 2 3 4
 # 472 "/usr/include/math.h" 3 4
 }
-# 10 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c" 2
-# 21 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 21 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 10 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c" 2
+# 21 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 21 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 real_t gasdev_npm(uint64_t* seed);double lcg61_npm(uint64_t* seed);
 real_t gasdev_quick(uint64_t* seed); real_t gasdev(uint64_t* seed);double lcg61_quick(uint64_t* seed); double lcg61(uint64_t* seed);
 real_t gasdev_resumable(uint64_t* seed)
-# 22 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&gasdev), "gasdev", &____must_manage_gasdev, 1, 0, (size_t)(13245176871248214028UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 23 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 22 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&gasdev), "gasdev", &____must_manage_gasdev, 1, 0, (size_t)(6672599516298014492UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 23 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    real_t rsq; real_t v1; real_t v2; ;
-# 24 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 24 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    do
-# 25 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 25 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    {
-# 26 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 26 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
        call_lbl_0: v1 = 2.0*({ calling_npm("lcg61", 0); lcg61_npm(seed); })-1.0;
-# 27 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 27 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
        call_lbl_1: v2 = 2.0*({ calling_npm("lcg61", 0); lcg61_npm(seed); })-1.0;
-# 28 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 28 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
       rsq = v1*v1+v2*v2;
-# 29 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 29 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    } while (rsq >= 1.0 || rsq == 0.0);
-# 30 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 31 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 30 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 31 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
     double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (v2 * sqrt(-2.0*log(rsq)/rsq)); rm_stack(false, 0UL, "gasdev", &____must_manage_gasdev, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 32 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 32 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 rm_stack(false, 0UL, "gasdev", &____must_manage_gasdev, ____alias_loc_id_0, ____chimes_did_disable0, false); }
-# 41 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 41 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 41 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 41 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 double lcg61_resumable(uint64_t* seed)
-# 42 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&lcg61), "lcg61", &____must_manage_lcg61, 1, 0, (size_t)(13245176871248214091UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 43 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 42 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+{const int ____chimes_did_disable1 = new_stack((void *)(&lcg61), "lcg61", &____must_manage_lcg61, 1, 0, (size_t)(6672599516298014555UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 43 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
     static double convertToDouble; convertToDouble = (1.0/(2305843009213693951ULL)) ;
-# 44 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 45 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 44 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 45 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    *seed *= (437799614237992725ULL);
-# 46 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 46 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    *seed %= (2305843009213693951ULL);
-# 47 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 48 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 47 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 48 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
     double ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (*seed*convertToDouble); rm_stack(false, 0UL, "lcg61", &____must_manage_lcg61, ____alias_loc_id_1, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 49 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 49 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 rm_stack(false, 0UL, "lcg61", &____must_manage_lcg61, ____alias_loc_id_1, ____chimes_did_disable1, false); }
-# 65 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 65 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 65 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 65 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 uint64_t mkSeed_npm(uint32_t id, uint32_t callSite);
 uint64_t mkSeed_quick(uint32_t id, uint32_t callSite); uint64_t mkSeed(uint32_t id, uint32_t callSite);
 uint64_t mkSeed_resumable(uint32_t id, uint32_t callSite)
-# 66 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 66 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&mkSeed), "mkSeed", &____must_manage_mkSeed, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; uint64_t iSeed;
-# 66 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 66 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
  if (____must_checkpoint_mkSeed_iSeed_0) { register_stack_vars(1, "mkSeed|iSeed|0", &____must_checkpoint_mkSeed_iSeed_0, "i64", (void *)(&iSeed), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 67 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 67 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
     uint32_t s1; s1 = (id * (2654435761UL)) ;
-# 68 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 68 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
     uint32_t s2; s2 = ((id+callSite) * (2654435761UL)) ;
-# 69 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 70 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 69 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 70 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
       iSeed = (((0x100000000ULL) * s1) + s2) ;
-# 71 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 71 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    { unsigned int jj; for ( jj = (0) ;jj<10; ++jj) { call_lbl_0: ({ calling_npm("lcg61", 0); lcg61_npm(&iSeed); }); } };
-# 73 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 74 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 73 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 74 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
     uint64_t ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (iSeed); rm_stack(false, 0UL, "mkSeed", &____must_manage_mkSeed, ____alias_loc_id_2, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ;
-# 75 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 75 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 rm_stack(false, 0UL, "mkSeed", &____must_manage_mkSeed, ____alias_loc_id_2, ____chimes_did_disable2, false); }
-# 21 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 21 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 real_t gasdev_quick(uint64_t* seed)
-# 22 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&gasdev), "gasdev", &____must_manage_gasdev, 1, 0, (size_t)(13245176871248214028UL)) ; ; ;
-# 23 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 22 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&gasdev), "gasdev", &____must_manage_gasdev, 1, 0, (size_t)(6672599516298014492UL)) ; ; ;
+# 23 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    real_t rsq; real_t v1; real_t v2; ;
-# 24 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 24 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    do
-# 25 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 25 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    {
-# 26 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 26 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
        call_lbl_0: v1 = 2.0*({ calling_npm("lcg61", 0); lcg61_npm(seed); })-1.0;
-# 27 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 27 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
        call_lbl_1: v2 = 2.0*({ calling_npm("lcg61", 0); lcg61_npm(seed); })-1.0;
-# 28 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 28 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
       rsq = v1*v1+v2*v2;
-# 29 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 29 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    } while (rsq >= 1.0 || rsq == 0.0);
-# 30 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 31 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 30 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 31 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
     double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (v2 * sqrt(-2.0*log(rsq)/rsq)); rm_stack(false, 0UL, "gasdev", &____must_manage_gasdev, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 32 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 32 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 rm_stack(false, 0UL, "gasdev", &____must_manage_gasdev, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 
 real_t gasdev(uint64_t* seed) { return (____chimes_replaying ? gasdev_resumable(seed) : gasdev_quick(seed)); }
-# 41 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 41 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 double lcg61_quick(uint64_t* seed)
-# 42 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&lcg61), "lcg61", &____must_manage_lcg61, 1, 0, (size_t)(13245176871248214091UL)) ; ; ;
-# 43 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 42 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+{const int ____chimes_did_disable1 = new_stack((void *)(&lcg61), "lcg61", &____must_manage_lcg61, 1, 0, (size_t)(6672599516298014555UL)) ; ; ;
+# 43 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
     static double convertToDouble; convertToDouble = (1.0/(2305843009213693951ULL)) ;
-# 44 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 45 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 44 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 45 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    *seed *= (437799614237992725ULL);
-# 46 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 46 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    *seed %= (2305843009213693951ULL);
-# 47 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 48 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 47 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 48 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
     double ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (*seed*convertToDouble); rm_stack(false, 0UL, "lcg61", &____must_manage_lcg61, ____alias_loc_id_1, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 49 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 49 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 rm_stack(false, 0UL, "lcg61", &____must_manage_lcg61, ____alias_loc_id_1, ____chimes_did_disable1, false); }
 
 double lcg61(uint64_t* seed) { return (____chimes_replaying ? lcg61_resumable(seed) : lcg61_quick(seed)); }
-# 65 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 65 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 uint64_t mkSeed_quick(uint32_t id, uint32_t callSite)
-# 66 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 66 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&mkSeed), "mkSeed", &____must_manage_mkSeed, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; uint64_t iSeed;
-# 66 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 66 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
  if (____must_checkpoint_mkSeed_iSeed_0) { register_stack_vars(1, "mkSeed|iSeed|0", &____must_checkpoint_mkSeed_iSeed_0, "i64", (void *)(&iSeed), (size_t)8, 0, 0, 0); } ; ;
-# 67 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 67 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
     uint32_t s1; s1 = (id * (2654435761UL)) ;
-# 68 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 68 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
     uint32_t s2; s2 = ((id+callSite) * (2654435761UL)) ;
-# 69 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 70 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 69 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 70 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
       iSeed = (((0x100000000ULL) * s1) + s2) ;
-# 71 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 71 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    { unsigned int jj; for ( jj = (0) ;jj<10; ++jj) { call_lbl_0: ({ calling_npm("lcg61", 0); lcg61_npm(&iSeed); }); } };
-# 73 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 74 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 73 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 74 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
     uint64_t ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (iSeed); rm_stack(false, 0UL, "mkSeed", &____must_manage_mkSeed, ____alias_loc_id_2, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ;
-# 75 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 75 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 rm_stack(false, 0UL, "mkSeed", &____must_manage_mkSeed, ____alias_loc_id_2, ____chimes_did_disable2, false); }
 
 uint64_t mkSeed(uint32_t id, uint32_t callSite) { return (____chimes_replaying ? mkSeed_resumable(id, callSite) : mkSeed_quick(id, callSite)); }
-# 21 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 21 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 real_t gasdev_npm(uint64_t* seed)
-# 22 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 22 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 {
-# 23 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 23 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    real_t rsq,v1,v2;
-# 24 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 24 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    do
-# 25 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 25 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    {
-# 26 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 26 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
       v1 = 2.0*lcg61_npm(seed)-1.0;
-# 27 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 27 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
       v2 = 2.0*lcg61_npm(seed)-1.0;
-# 28 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 28 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
       rsq = v1*v1+v2*v2;
-# 29 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 29 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    } while (rsq >= 1.0 || rsq == 0.0);
-# 30 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 31 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 30 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 31 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
     double ____chimes_ret_var_0; ____chimes_ret_var_0 = (v2 * sqrt(-2.0*log(rsq)/rsq)); return ____chimes_ret_var_0; ;
-# 32 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 32 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 }
-# 41 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 41 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 double lcg61_npm(uint64_t* seed)
-# 42 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 42 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 {
-# 43 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 43 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    static double convertToDouble = 1.0/(2305843009213693951ULL);
-# 44 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 45 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 44 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 45 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    *seed *= (437799614237992725ULL);
-# 46 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 46 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    *seed %= (2305843009213693951ULL);
-# 47 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 48 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 47 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 48 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
     double ____chimes_ret_var_1; ____chimes_ret_var_1 = (*seed*convertToDouble); return ____chimes_ret_var_1; ;
-# 49 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 49 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 }
-# 65 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 65 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 uint64_t mkSeed_npm(uint32_t id, uint32_t callSite)
-# 66 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 66 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 {
-# 67 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 67 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    uint32_t s1 = id * (2654435761UL);
-# 68 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 68 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    uint32_t s2 = (id+callSite) * (2654435761UL);
-# 69 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 70 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 69 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 70 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    uint64_t iSeed = ((0x100000000ULL) * s1) + s2;
-# 71 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 71 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
    for (unsigned jj=0;jj<10; ++jj) { lcg61_npm(&iSeed); };
-# 73 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
-# 74 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 73 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 74 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
     uint64_t ____chimes_ret_var_2; ____chimes_ret_var_2 = (iSeed); return ____chimes_ret_var_2; ;
-# 75 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
+# 75 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/random.c"
 }
 
 
@@ -1437,25 +1437,25 @@ uint64_t mkSeed_npm(uint32_t id, uint32_t callSite)
 
 
 static int module_init() {
-    init_module(13245176871248214016UL, 2, 3, 1, 3, 3, 0, 3, 3, 0, 0,
-                           &____alias_loc_id_0, (unsigned)5, (unsigned)0, (unsigned)0, (13245176871248214016UL + 1UL), (13245176871248214016UL + 2UL), (13245176871248214016UL + 3UL), (13245176871248214016UL + 4UL), (13245176871248214016UL + 5UL),
-                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (13245176871248214016UL + 54UL), (13245176871248214016UL + 55UL), (13245176871248214016UL + 75UL),
-                           &____alias_loc_id_2, (unsigned)7, (unsigned)0, (unsigned)0, (13245176871248214016UL + 78UL), (13245176871248214016UL + 79UL), (13245176871248214016UL + 80UL), (13245176871248214016UL + 81UL), (13245176871248214016UL + 82UL), (13245176871248214016UL + 83UL), (13245176871248214016UL + 84UL),
-                            "gasdev", 0, "_Z6gasdevPm", "_Z10gasdev_npmPm", 0, 1, (13245176871248214016UL + 12UL), 0UL, 4, "lcg61", 1, (13245176871248214016UL + 12UL), 0UL, "lcg61", 1, (13245176871248214016UL + 12UL), 0UL, "log", 1, 0UL, 0UL, "sqrt", 1, 0UL, 0UL,
-                            "lcg61", 0, "_Z5lcg61Pm", "_Z9lcg61_npmPm", 0, 1, (13245176871248214016UL + 75UL), 0UL, 0,
-                            "mkSeed", 0, "_Z6mkSeedjj", "_Z10mkSeed_npmjj", 0, 2, 0UL, 0UL, 0UL, 1, "lcg61", 1, (13245176871248214016UL + 82UL), 0UL,
+    init_module(6672599516298014480UL, 2, 3, 1, 3, 3, 0, 3, 3, 0, 0,
+                           &____alias_loc_id_0, (unsigned)5, (unsigned)0, (unsigned)0, (6672599516298014480UL + 1UL), (6672599516298014480UL + 2UL), (6672599516298014480UL + 3UL), (6672599516298014480UL + 4UL), (6672599516298014480UL + 5UL),
+                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (6672599516298014480UL + 54UL), (6672599516298014480UL + 55UL), (6672599516298014480UL + 75UL),
+                           &____alias_loc_id_2, (unsigned)7, (unsigned)0, (unsigned)0, (6672599516298014480UL + 78UL), (6672599516298014480UL + 79UL), (6672599516298014480UL + 80UL), (6672599516298014480UL + 81UL), (6672599516298014480UL + 82UL), (6672599516298014480UL + 83UL), (6672599516298014480UL + 84UL),
+                            "gasdev", 0, "_Z6gasdevPm", "_Z10gasdev_npmPm", 0, 1, (6672599516298014480UL + 12UL), 0UL, 4, "lcg61", 1, (6672599516298014480UL + 12UL), 0UL, "lcg61", 1, (6672599516298014480UL + 12UL), 0UL, "log", 1, 0UL, 0UL, "sqrt", 1, 0UL, 0UL,
+                            "lcg61", 0, "_Z5lcg61Pm", "_Z9lcg61_npmPm", 0, 1, (6672599516298014480UL + 75UL), 0UL, 0,
+                            "mkSeed", 0, "_Z6mkSeedjj", "_Z10mkSeed_npmjj", 0, 2, 0UL, 0UL, 0UL, 1, "lcg61", 1, (6672599516298014480UL + 82UL), 0UL,
                            "gasdev", &(____chimes_does_checkpoint_gasdev_npm),
                            "lcg61", &(____chimes_does_checkpoint_lcg61_npm),
                            "mkSeed", &(____chimes_does_checkpoint_mkSeed_npm),
-                             (13245176871248214016UL + 1UL), (13245176871248214016UL + 12UL),
-                             (13245176871248214016UL + 54UL), (13245176871248214016UL + 75UL),
+                             (6672599516298014480UL + 1UL), (6672599516298014480UL + 12UL),
+                             (6672599516298014480UL + 54UL), (6672599516298014480UL + 75UL),
                              "gasdev", "_Z6gasdevPm", 0, 2, "lcg61", "lcg61",
                              "lcg61", "_Z5lcg61Pm", 0, 0,
                              "mkSeed", "_Z6mkSeedjj", 0, 1, "lcg61",
                         "mkSeed|iSeed|0", 1, "mkSeed",
-        "lcg61", 0UL, (int)1, 13245176871248214028UL,
-        "lcg61", 0UL, (int)1, 13245176871248214028UL,
-        "lcg61", 0UL, (int)1, 13245176871248214098UL);
+        "lcg61", 0UL, (int)1, 6672599516298014492UL,
+        "lcg61", 0UL, (int)1, 6672599516298014492UL,
+        "lcg61", 0UL, (int)1, 6672599516298014562UL);
     return 0;
 }
 

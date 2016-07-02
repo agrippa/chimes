@@ -31,11 +31,11 @@ static int ____must_manage_solver = 2;
 
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -44,7 +44,7 @@ static unsigned ____alias_loc_id_1;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -100,15 +100,15 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/define.h" 1
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/define.h" 1
 
 
 
@@ -1437,7 +1437,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/define.h" 2
+# 7 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/define.h" 2
 # 1 "/usr/include/math.h" 1 3 4
 # 30 "/usr/include/math.h" 3 4
 extern "C" {
@@ -2442,7 +2442,7 @@ __signbitl (long double __x) throw ()
 # 417 "/usr/include/math.h" 2 3 4
 # 472 "/usr/include/math.h" 3 4
 }
-# 8 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/define.h" 2
+# 8 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/define.h" 2
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 1 3 4
 # 34 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 3 4
 typedef struct
@@ -2516,8 +2516,8 @@ int omp_in_final (void) throw ();
 
 
 }
-# 9 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/define.h" 2
-# 18 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/define.h"
+# 9 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/define.h" 2
+# 18 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/define.h"
 extern float embedded_fehlberg_7_8( float timeinst,
                float h,
                float* initvalu,
@@ -2575,920 +2575,920 @@ extern void myocyte_write( char* filename,
      int data_range);
 
 extern long long get_time();
-# 2 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c" 2
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 2 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c" 2
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 int solver_npm( float** y, float* x, int xmax, float* params);static float (*____chimes_extern_func_embedded_fehlberg_7_8)(float, float, float *, float *, float *, float *) = embedded_fehlberg_7_8;
 int solver_quick( float** y, float* x, int xmax, float* params); int solver( float** y, float* x, int xmax, float* params);
 int solver_resumable( float** y,
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      float* x,
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 77 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      int xmax,
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-     float* params) {const int ____chimes_did_disable0 = new_stack((void *)(&solver), "solver", &____must_manage_solver, 4, 4, (size_t)(6850351079512197538UL), (size_t)(6850351079512197539UL), (size_t)(0UL), (size_t)(6850351079512197541UL), "solver|y|0", &____must_checkpoint_solver_y_0, "float**", (void *)(&y), (size_t)8, 1, 0, 0, "solver|x|0", &____must_checkpoint_solver_x_0, "float*", (void *)(&x), (size_t)8, 1, 0, 0, "solver|xmax|0", &____must_checkpoint_solver_xmax_0, "i32", (void *)(&xmax), (size_t)4, 0, 0, 0, "solver|params|0", &____must_checkpoint_solver_params_0, "float*", (void *)(&params), (size_t)8, 1, 0, 0) ; int k;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+     float* params) {const int ____chimes_did_disable0 = new_stack((void *)(&solver), "solver", &____must_manage_solver, 4, 4, (size_t)(6828651081527425114UL), (size_t)(6828651081527425115UL), (size_t)(0UL), (size_t)(6828651081527425117UL), "solver|y|0", &____must_checkpoint_solver_y_0, "float**", (void *)(&y), (size_t)8, 1, 0, 0, "solver|x|0", &____must_checkpoint_solver_x_0, "float*", (void *)(&x), (size_t)8, 1, 0, 0, "solver|xmax|0", &____must_checkpoint_solver_xmax_0, "i32", (void *)(&xmax), (size_t)4, 0, 0, 0, "solver|params|0", &____must_checkpoint_solver_params_0, "float*", (void *)(&params), (size_t)8, 1, 0, 0) ; int k;
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 int j;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 float yy[91];
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 float scale[91];
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 float err[91];
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 float scale_min;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 float tolerance;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 float h_init;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 float h;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 int outside;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 int error;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 float err_exponent;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  if (____must_checkpoint_solver_k_0 || ____must_checkpoint_solver_j_0 || ____must_checkpoint_solver_yy_0 || ____must_checkpoint_solver_err_0 || ____must_checkpoint_solver_scale_min_0 || ____must_checkpoint_solver_tolerance_0 || ____must_checkpoint_solver_h_init_0 || ____must_checkpoint_solver_h_0 || ____must_checkpoint_solver_outside_0 || ____must_checkpoint_solver_error_0 || ____must_checkpoint_solver_err_exponent_0) { register_stack_vars(11, "solver|k|0", &____must_checkpoint_solver_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "solver|j|0", &____must_checkpoint_solver_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "solver|yy|0", &____must_checkpoint_solver_yy_0, "[91 x float]", (void *)(yy), (size_t)364, 0, 0, 0, "solver|err|0", &____must_checkpoint_solver_err_0, "[91 x float]", (void *)(err), (size_t)364, 0, 0, 0, "solver|scale_min|0", &____must_checkpoint_solver_scale_min_0, "float", (void *)(&scale_min), (size_t)4, 0, 0, 0, "solver|tolerance|0", &____must_checkpoint_solver_tolerance_0, "float", (void *)(&tolerance), (size_t)4, 0, 0, 0, "solver|h_init|0", &____must_checkpoint_solver_h_init_0, "float", (void *)(&h_init), (size_t)4, 0, 0, 0, "solver|h|0", &____must_checkpoint_solver_h_0, "float", (void *)(&h), (size_t)4, 0, 0, 0, "solver|outside|0", &____must_checkpoint_solver_outside_0, "i32", (void *)(&outside), (size_t)4, 0, 0, 0, "solver|error|0", &____must_checkpoint_solver_error_0, "i32", (void *)(&error), (size_t)4, 0, 0, 0, "solver|err_exponent|0", &____must_checkpoint_solver_err_exponent_0, "float", (void *)(&err_exponent), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   ;
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  float last_interval; ;
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   ;
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   ;
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   ;
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   ;
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   ;
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  int xmin; ;
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   ;
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  float scale_fina; ;
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      ;
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      ;
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      ;
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  int i; ;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  err_exponent = 1.0 / 7.0;
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  last_interval = 0;
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  h_init = 1;
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  h = h_init;
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  xmin = 0;
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  tolerance = 10 / (float)(xmax-xmin);
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  x[0] = 0;
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  if (xmax < xmin || h <= 0.0){
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (-2); rm_stack(false, 0UL, "solver", &____must_manage_solver, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  }
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  if (xmax == xmin){
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "solver", &____must_manage_solver, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_1; ;
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  }
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 135 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  if (h > (xmax - xmin) ) {
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   h = (float)xmax - (float)xmin;
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 139 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   last_interval = 1;
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 140 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  }
-# 141 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 146 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 141 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 142 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 143 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 146 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  for(k=1; k<=xmax; k++) {
-# 147 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 148 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 147 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 148 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   x[k] = k-1;
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 149 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   h = h_init;
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 151 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 152 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 153 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 154 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 155 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   scale_fina = 1.0;
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 157 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 158 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 160 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 162 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 156 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 157 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 158 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 159 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 160 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 161 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 162 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   for (j = 0; j < 12; j++) {
-# 163 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 164 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 165 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 166 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 163 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 164 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 165 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 166 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 167 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 168 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    error = 0;
-# 169 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 169 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    outside = 0;
-# 170 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 170 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    scale_min = 4.0;
-# 171 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 173 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 175 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 176 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-    call_lbl_0: ({ float ____chimes_arg0; float * ____chimes_arg2; float * ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg0 = (x[k]); ____chimes_arg2 = (y[k - 1]); ____chimes_arg3 = (y[k]); } calling((void*)embedded_fehlberg_7_8, 0, ____alias_loc_id_0, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(6850351079512197280UL), (size_t)(6850351079512197280UL), (size_t)(6850351079512197158UL), (size_t)(6850351079512197541UL)); (embedded_fehlberg_7_8)(____chimes_arg0, h, ____chimes_arg2, ____chimes_arg3, err, params); }) ;
-# 182 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 183 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 184 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 185 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 186 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 187 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 171 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 172 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 173 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 174 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 175 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 176 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+    call_lbl_0: ({ float ____chimes_arg0; float * ____chimes_arg2; float * ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg0 = (x[k]); ____chimes_arg2 = (y[k - 1]); ____chimes_arg3 = (y[k]); } calling((void*)embedded_fehlberg_7_8, 0, ____alias_loc_id_0, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(6828651081527424856UL), (size_t)(6828651081527424856UL), (size_t)(6828651081527424734UL), (size_t)(6828651081527425117UL)); (embedded_fehlberg_7_8)(____chimes_arg0, h, ____chimes_arg2, ____chimes_arg3, err, params); }) ;
+# 182 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 183 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 184 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 185 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 186 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 187 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    for(i=0; i<91; i++){
-# 188 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 188 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     if(err[i] > 0){
-# 189 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 189 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      error = 1;
-# 190 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 190 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     }
-# 191 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 191 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }
-# 192 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 192 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    if (error != 1) {
-# 193 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 193 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     scale_fina = 4.0;
-# 194 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 194 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     break;
-# 195 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 195 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }
-# 196 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 197 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 198 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 199 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 200 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 201 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 196 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 197 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 198 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 199 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 200 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 201 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    for(i=0; i<91; i++){
-# 202 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 202 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     if(y[k-1][i] == 0.0){
-# 203 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 203 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      yy[i] = tolerance;
-# 204 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 204 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     }
-# 205 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 205 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     else{
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 206 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      yy[i] = fabs(y[k-1][i]);
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 207 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     }
-# 208 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 208 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     scale[i] = 0.8 * pow( tolerance * yy[i] / err[i] , err_exponent );
-# 209 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 209 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     if(scale[i]<scale_min){
-# 210 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 210 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      scale_min = scale[i];
-# 211 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 211 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     }
-# 212 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 212 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }
-# 213 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 213 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    scale_fina = ( (( (scale_min) < (0.125) ? (0.125) : (scale_min) )) < (4.0) ? (( (scale_min) < (0.125) ? (0.125) : (scale_min) )) : (4.0) );
-# 214 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 215 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 216 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 218 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 219 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 214 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 215 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 216 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 217 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 218 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 219 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    for(i=0; i<91; i++){
-# 220 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 220 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     if ( err[i] > ( tolerance * yy[i] ) ){
-# 221 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 221 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      outside = 1;
-# 222 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 222 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     }
-# 223 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 223 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }
-# 224 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 224 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    if (outside == 0){
-# 225 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 225 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     break;
-# 226 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 226 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }
-# 227 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 228 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 229 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 230 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 231 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 232 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 233 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 227 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 228 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 229 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 230 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 231 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 232 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 233 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    h = h * scale_fina;
-# 234 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 235 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 236 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 234 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 235 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 236 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    if (h >= 0.9) {
-# 237 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 237 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     h = 0.9;
-# 238 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 238 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }
-# 239 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 240 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 241 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 239 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 240 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 241 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    if (x[k] + h > (float)xmax) {{
-# 242 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 242 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     h = (float)xmax - x[k];
-# 243 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 243 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }; } else if ( x[k] + h + 0.5 * h > (float)xmax ){
-# 247 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 247 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     h = 0.5 * h;
-# 248 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 248 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }
-# 249 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 250 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 249 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 250 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   }
-# 251 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 252 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 253 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 254 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 255 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 256 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 251 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 252 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 253 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 254 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 255 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 256 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   x[k] = x[k] + h;
-# 257 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 258 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 259 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 260 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 261 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 262 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 257 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 258 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 259 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 260 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 261 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 262 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   if ( j >= 12 ) {
-# 263 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 263 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (-1); rm_stack(false, 0UL, "solver", &____must_manage_solver, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_2; ;
-# 264 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 264 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   }
-# 265 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 266 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 265 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 266 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  }
-# 280 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 280 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 280 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 280 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (0); rm_stack(false, 0UL, "solver", &____must_manage_solver, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_3; ;
-# 281 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 282 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 283 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 284 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 285 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 286 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 287 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 288 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 281 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 282 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 283 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 284 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 285 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 286 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 287 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 288 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 rm_stack(false, 0UL, "solver", &____must_manage_solver, ____alias_loc_id_1, ____chimes_did_disable0, false); }
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 int solver_quick( float** y,
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      float* x,
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 77 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      int xmax,
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-     float* params) {const int ____chimes_did_disable0 = new_stack((void *)(&solver), "solver", &____must_manage_solver, 4, 4, (size_t)(6850351079512197538UL), (size_t)(6850351079512197539UL), (size_t)(0UL), (size_t)(6850351079512197541UL), "solver|y|0", &____must_checkpoint_solver_y_0, "float**", (void *)(&y), (size_t)8, 1, 0, 0, "solver|x|0", &____must_checkpoint_solver_x_0, "float*", (void *)(&x), (size_t)8, 1, 0, 0, "solver|xmax|0", &____must_checkpoint_solver_xmax_0, "i32", (void *)(&xmax), (size_t)4, 0, 0, 0, "solver|params|0", &____must_checkpoint_solver_params_0, "float*", (void *)(&params), (size_t)8, 1, 0, 0) ; int k;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+     float* params) {const int ____chimes_did_disable0 = new_stack((void *)(&solver), "solver", &____must_manage_solver, 4, 4, (size_t)(6828651081527425114UL), (size_t)(6828651081527425115UL), (size_t)(0UL), (size_t)(6828651081527425117UL), "solver|y|0", &____must_checkpoint_solver_y_0, "float**", (void *)(&y), (size_t)8, 1, 0, 0, "solver|x|0", &____must_checkpoint_solver_x_0, "float*", (void *)(&x), (size_t)8, 1, 0, 0, "solver|xmax|0", &____must_checkpoint_solver_xmax_0, "i32", (void *)(&xmax), (size_t)4, 0, 0, 0, "solver|params|0", &____must_checkpoint_solver_params_0, "float*", (void *)(&params), (size_t)8, 1, 0, 0) ; int k;
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 int j;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 float yy[91];
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 float scale[91];
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 float err[91];
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 float scale_min;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 float tolerance;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 float h_init;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 float h;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 int outside;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 int error;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 float err_exponent;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  if (____must_checkpoint_solver_k_0 || ____must_checkpoint_solver_j_0 || ____must_checkpoint_solver_yy_0 || ____must_checkpoint_solver_err_0 || ____must_checkpoint_solver_scale_min_0 || ____must_checkpoint_solver_tolerance_0 || ____must_checkpoint_solver_h_init_0 || ____must_checkpoint_solver_h_0 || ____must_checkpoint_solver_outside_0 || ____must_checkpoint_solver_error_0 || ____must_checkpoint_solver_err_exponent_0) { register_stack_vars(11, "solver|k|0", &____must_checkpoint_solver_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "solver|j|0", &____must_checkpoint_solver_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "solver|yy|0", &____must_checkpoint_solver_yy_0, "[91 x float]", (void *)(yy), (size_t)364, 0, 0, 0, "solver|err|0", &____must_checkpoint_solver_err_0, "[91 x float]", (void *)(err), (size_t)364, 0, 0, 0, "solver|scale_min|0", &____must_checkpoint_solver_scale_min_0, "float", (void *)(&scale_min), (size_t)4, 0, 0, 0, "solver|tolerance|0", &____must_checkpoint_solver_tolerance_0, "float", (void *)(&tolerance), (size_t)4, 0, 0, 0, "solver|h_init|0", &____must_checkpoint_solver_h_init_0, "float", (void *)(&h_init), (size_t)4, 0, 0, 0, "solver|h|0", &____must_checkpoint_solver_h_0, "float", (void *)(&h), (size_t)4, 0, 0, 0, "solver|outside|0", &____must_checkpoint_solver_outside_0, "i32", (void *)(&outside), (size_t)4, 0, 0, 0, "solver|error|0", &____must_checkpoint_solver_error_0, "i32", (void *)(&error), (size_t)4, 0, 0, 0, "solver|err_exponent|0", &____must_checkpoint_solver_err_exponent_0, "float", (void *)(&err_exponent), (size_t)4, 0, 0, 0); } ; ;
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   ;
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  float last_interval; ;
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   ;
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   ;
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   ;
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   ;
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   ;
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  int xmin; ;
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   ;
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  float scale_fina; ;
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      ;
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      ;
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      ;
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  int i; ;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  err_exponent = 1.0 / 7.0;
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  last_interval = 0;
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  h_init = 1;
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  h = h_init;
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  xmin = 0;
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  tolerance = 10 / (float)(xmax-xmin);
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  x[0] = 0;
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  if (xmax < xmin || h <= 0.0){
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (-2); rm_stack(false, 0UL, "solver", &____must_manage_solver, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  }
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  if (xmax == xmin){
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "solver", &____must_manage_solver, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_1; ;
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  }
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 135 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  if (h > (xmax - xmin) ) {
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   h = (float)xmax - (float)xmin;
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 139 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   last_interval = 1;
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 140 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  }
-# 141 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 146 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 141 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 142 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 143 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 146 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  for(k=1; k<=xmax; k++) {
-# 147 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 148 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 147 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 148 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   x[k] = k-1;
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 149 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   h = h_init;
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 151 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 152 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 153 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 154 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 155 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   scale_fina = 1.0;
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 157 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 158 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 160 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 162 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 156 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 157 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 158 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 159 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 160 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 161 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 162 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   for (j = 0; j < 12; j++) {
-# 163 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 164 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 165 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 166 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 163 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 164 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 165 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 166 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 167 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 168 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    error = 0;
-# 169 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 169 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    outside = 0;
-# 170 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 170 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    scale_min = 4.0;
-# 171 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 173 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 175 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 176 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-    call_lbl_0: ({ calling((void*)embedded_fehlberg_7_8, 0, ____alias_loc_id_0, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(6850351079512197280UL), (size_t)(6850351079512197280UL), (size_t)(6850351079512197158UL), (size_t)(6850351079512197541UL)); (embedded_fehlberg_7_8)(x[k], h, y[k - 1], y[k], err, params); }) ;
-# 182 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 183 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 184 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 185 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 186 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 187 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 171 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 172 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 173 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 174 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 175 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 176 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+    call_lbl_0: ({ calling((void*)embedded_fehlberg_7_8, 0, ____alias_loc_id_0, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(6828651081527424856UL), (size_t)(6828651081527424856UL), (size_t)(6828651081527424734UL), (size_t)(6828651081527425117UL)); (embedded_fehlberg_7_8)(x[k], h, y[k - 1], y[k], err, params); }) ;
+# 182 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 183 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 184 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 185 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 186 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 187 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    for(i=0; i<91; i++){
-# 188 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 188 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     if(err[i] > 0){
-# 189 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 189 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      error = 1;
-# 190 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 190 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     }
-# 191 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 191 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }
-# 192 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 192 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    if (error != 1) {
-# 193 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 193 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     scale_fina = 4.0;
-# 194 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 194 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     break;
-# 195 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 195 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }
-# 196 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 197 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 198 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 199 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 200 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 201 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 196 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 197 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 198 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 199 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 200 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 201 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    for(i=0; i<91; i++){
-# 202 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 202 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     if(y[k-1][i] == 0.0){
-# 203 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 203 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      yy[i] = tolerance;
-# 204 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 204 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     }
-# 205 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 205 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     else{
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 206 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      yy[i] = fabs(y[k-1][i]);
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 207 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     }
-# 208 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 208 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     scale[i] = 0.8 * pow( tolerance * yy[i] / err[i] , err_exponent );
-# 209 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 209 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     if(scale[i]<scale_min){
-# 210 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 210 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      scale_min = scale[i];
-# 211 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 211 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     }
-# 212 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 212 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }
-# 213 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 213 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    scale_fina = ( (( (scale_min) < (0.125) ? (0.125) : (scale_min) )) < (4.0) ? (( (scale_min) < (0.125) ? (0.125) : (scale_min) )) : (4.0) );
-# 214 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 215 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 216 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 218 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 219 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 214 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 215 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 216 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 217 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 218 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 219 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    for(i=0; i<91; i++){
-# 220 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 220 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     if ( err[i] > ( tolerance * yy[i] ) ){
-# 221 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 221 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      outside = 1;
-# 222 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 222 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     }
-# 223 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 223 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }
-# 224 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 224 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    if (outside == 0){
-# 225 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 225 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     break;
-# 226 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 226 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }
-# 227 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 228 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 229 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 230 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 231 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 232 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 233 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 227 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 228 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 229 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 230 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 231 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 232 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 233 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    h = h * scale_fina;
-# 234 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 235 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 236 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 234 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 235 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 236 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    if (h >= 0.9) {
-# 237 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 237 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     h = 0.9;
-# 238 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 238 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }
-# 239 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 240 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 241 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 239 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 240 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 241 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    if (x[k] + h > (float)xmax) {{
-# 242 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 242 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     h = (float)xmax - x[k];
-# 243 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 243 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }; } else if ( x[k] + h + 0.5 * h > (float)xmax ){
-# 247 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 247 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     h = 0.5 * h;
-# 248 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 248 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }
-# 249 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 250 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 249 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 250 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   }
-# 251 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 252 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 253 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 254 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 255 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 256 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 251 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 252 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 253 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 254 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 255 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 256 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   x[k] = x[k] + h;
-# 257 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 258 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 259 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 260 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 261 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 262 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 257 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 258 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 259 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 260 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 261 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 262 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   if ( j >= 12 ) {
-# 263 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 263 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (-1); rm_stack(false, 0UL, "solver", &____must_manage_solver, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_2; ;
-# 264 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 264 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   }
-# 265 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 266 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 265 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 266 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  }
-# 280 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 280 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 280 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 280 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (0); rm_stack(false, 0UL, "solver", &____must_manage_solver, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_3; ;
-# 281 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 282 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 283 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 284 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 285 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 286 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 287 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 288 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 281 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 282 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 283 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 284 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 285 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 286 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 287 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 288 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 rm_stack(false, 0UL, "solver", &____must_manage_solver, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
 int solver( float** y,
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      float* x,
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 77 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      int xmax,
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      float* params) { return (____chimes_replaying ? solver_resumable(y, x, xmax, params) : solver_quick(y, x, xmax, params)); }
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 int solver_npm( float** y,
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      float* x,
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 77 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      int xmax,
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      float* params) {
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  float err_exponent;
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  float last_interval;
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  int error;
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  int outside;
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  float h;
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  float h_init;
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  float tolerance;
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  int xmin;
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  float scale_min;
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  float scale_fina;
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     float err[91];
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     float scale[91];
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     float yy[91];
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  int i, j, k;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  err_exponent = 1.0 / 7.0;
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  last_interval = 0;
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  h_init = 1;
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  h = h_init;
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  xmin = 0;
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  tolerance = 10 / (float)(xmax-xmin);
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  x[0] = 0;
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  if (xmax < xmin || h <= 0.0){
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    int ____chimes_ret_var_0; ____chimes_ret_var_0 = (-2); return ____chimes_ret_var_0; ;
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  }
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  if (xmax == xmin){
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    int ____chimes_ret_var_1; ____chimes_ret_var_1 = (0); return ____chimes_ret_var_1; ;
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  }
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 135 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  if (h > (xmax - xmin) ) {
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   h = (float)xmax - (float)xmin;
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 139 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   last_interval = 1;
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 140 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  }
-# 141 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 146 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 141 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 142 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 143 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 146 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  for(k=1; k<=xmax; k++) {
-# 147 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 148 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 147 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 148 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   x[k] = k-1;
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 149 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   h = h_init;
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 151 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 152 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 153 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 154 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 155 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   scale_fina = 1.0;
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 157 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 158 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 160 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 162 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 156 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 157 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 158 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 159 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 160 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 161 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 162 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   for (j = 0; j < 12; j++) {
-# 163 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 164 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 165 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 166 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 163 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 164 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 165 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 166 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 167 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 168 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    error = 0;
-# 169 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 169 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    outside = 0;
-# 170 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 170 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    scale_min = 4.0;
-# 171 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 173 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 175 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 176 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 171 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 172 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 173 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 174 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 175 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 176 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    (*____chimes_extern_func_embedded_fehlberg_7_8)(x[k], h, y[k-1], y[k], err, params);
-# 182 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 183 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 184 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 185 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 186 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 187 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 182 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 183 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 184 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 185 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 186 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 187 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    for(i=0; i<91; i++){
-# 188 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 188 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     if(err[i] > 0){
-# 189 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 189 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      error = 1;
-# 190 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 190 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     }
-# 191 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 191 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }
-# 192 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 192 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    if (error != 1) {
-# 193 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 193 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     scale_fina = 4.0;
-# 194 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 194 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     break;
-# 195 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 195 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }
-# 196 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 197 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 198 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 199 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 200 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 201 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 196 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 197 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 198 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 199 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 200 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 201 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    for(i=0; i<91; i++){
-# 202 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 202 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     if(y[k-1][i] == 0.0){
-# 203 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 203 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      yy[i] = tolerance;
-# 204 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 204 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     }
-# 205 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 205 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     else{
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 206 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      yy[i] = fabs(y[k-1][i]);
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 207 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     }
-# 208 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 208 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     scale[i] = 0.8 * pow( tolerance * yy[i] / err[i] , err_exponent );
-# 209 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 209 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     if(scale[i]<scale_min){
-# 210 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 210 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      scale_min = scale[i];
-# 211 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 211 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     }
-# 212 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 212 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }
-# 213 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 213 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    scale_fina = ( (( (scale_min) < (0.125) ? (0.125) : (scale_min) )) < (4.0) ? (( (scale_min) < (0.125) ? (0.125) : (scale_min) )) : (4.0) );
-# 214 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 215 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 216 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 218 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 219 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 214 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 215 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 216 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 217 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 218 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 219 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    for(i=0; i<91; i++){
-# 220 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 220 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     if ( err[i] > ( tolerance * yy[i] ) ){
-# 221 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 221 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
      outside = 1;
-# 222 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 222 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     }
-# 223 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 223 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }
-# 224 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 224 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    if (outside == 0){
-# 225 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 225 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     break;
-# 226 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 226 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }
-# 227 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 228 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 229 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 230 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 231 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 232 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 233 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 227 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 228 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 229 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 230 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 231 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 232 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 233 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    h = h * scale_fina;
-# 234 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 235 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 236 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 234 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 235 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 236 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    if (h >= 0.9) {
-# 237 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 237 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     h = 0.9;
-# 238 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 238 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }
-# 239 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 240 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 241 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 239 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 240 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 241 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    if (x[k] + h > (float)xmax) {{
-# 242 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 242 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     h = (float)xmax - x[k];
-# 243 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 243 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }; } else if ( x[k] + h + 0.5 * h > (float)xmax ){
-# 247 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 247 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     h = 0.5 * h;
-# 248 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 248 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
    }
-# 249 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 250 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 249 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 250 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   }
-# 251 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 252 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 253 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 254 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 255 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 256 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 251 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 252 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 253 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 254 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 255 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 256 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   x[k] = x[k] + h;
-# 257 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 258 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 259 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 260 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 261 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 262 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 257 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 258 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 259 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 260 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 261 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 262 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   if ( j >= 12 ) {
-# 263 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 263 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
     int ____chimes_ret_var_2; ____chimes_ret_var_2 = (-1); return ____chimes_ret_var_2; ;
-# 264 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 264 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   }
-# 265 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 266 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 265 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 266 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
  }
-# 280 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 280 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 280 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 280 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
   int ____chimes_ret_var_3; ____chimes_ret_var_3 = (0); return ____chimes_ret_var_3; ;
-# 281 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 282 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 283 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 284 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 285 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 286 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 287 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
-# 288 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c"
+# 281 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 282 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 283 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 284 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 285 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 286 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 287 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
+# 288 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/solver.c"
 }
 
 
@@ -3496,17 +3496,17 @@ int solver_npm( float** y,
 
 
 static int module_init() {
-    init_module(6850351079512197142UL, 4, 1, 15, 2, 1, 1, 2, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)10, (unsigned)0, (unsigned)1, (6850351079512197142UL + 8UL), (6850351079512197142UL + 9UL), (6850351079512197142UL + 10UL), (6850351079512197142UL + 14UL), (6850351079512197142UL + 15UL), (6850351079512197142UL + 17UL), (6850351079512197142UL + 18UL), (6850351079512197142UL + 19UL), (6850351079512197142UL + 20UL), (6850351079512197142UL + 397UL), "embedded_fehlberg_7_8", (unsigned)3, (6850351079512197142UL + 16UL), (6850351079512197142UL + 138UL), (6850351079512197142UL + 399UL),
-                           &____alias_loc_id_1, (unsigned)25, (unsigned)0, (unsigned)0, (6850351079512197142UL + 1UL), (6850351079512197142UL + 2UL), (6850351079512197142UL + 3UL), (6850351079512197142UL + 4UL), (6850351079512197142UL + 5UL), (6850351079512197142UL + 6UL), (6850351079512197142UL + 7UL), (6850351079512197142UL + 8UL), (6850351079512197142UL + 9UL), (6850351079512197142UL + 10UL), (6850351079512197142UL + 11UL), (6850351079512197142UL + 12UL), (6850351079512197142UL + 13UL), (6850351079512197142UL + 14UL), (6850351079512197142UL + 15UL), (6850351079512197142UL + 17UL), (6850351079512197142UL + 18UL), (6850351079512197142UL + 19UL), (6850351079512197142UL + 20UL), (6850351079512197142UL + 21UL), (6850351079512197142UL + 22UL), (6850351079512197142UL + 23UL), (6850351079512197142UL + 24UL), (6850351079512197142UL + 25UL), (6850351079512197142UL + 397UL),
-                            "solver", 0, "_Z6solverPPfS_iS_", "_Z10solver_npmPPfS_iS_", 1, &____alias_loc_id_0, 4, (6850351079512197142UL + 396UL), (6850351079512197142UL + 397UL), 0UL, (6850351079512197142UL + 399UL), 0UL, 3, "embedded_fehlberg_7_8", 6, 0UL, 0UL, (6850351079512197142UL + 138UL), (6850351079512197142UL + 138UL), (6850351079512197142UL + 16UL), (6850351079512197142UL + 399UL), 0UL, "fabs", 1, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL,
+    init_module(6828651081527424718UL, 4, 1, 15, 2, 1, 1, 2, 0, 0, 0,
+                           &____alias_loc_id_0, (unsigned)10, (unsigned)0, (unsigned)1, (6828651081527424718UL + 8UL), (6828651081527424718UL + 9UL), (6828651081527424718UL + 10UL), (6828651081527424718UL + 14UL), (6828651081527424718UL + 15UL), (6828651081527424718UL + 17UL), (6828651081527424718UL + 18UL), (6828651081527424718UL + 19UL), (6828651081527424718UL + 20UL), (6828651081527424718UL + 397UL), "embedded_fehlberg_7_8", (unsigned)3, (6828651081527424718UL + 16UL), (6828651081527424718UL + 138UL), (6828651081527424718UL + 399UL),
+                           &____alias_loc_id_1, (unsigned)25, (unsigned)0, (unsigned)0, (6828651081527424718UL + 1UL), (6828651081527424718UL + 2UL), (6828651081527424718UL + 3UL), (6828651081527424718UL + 4UL), (6828651081527424718UL + 5UL), (6828651081527424718UL + 6UL), (6828651081527424718UL + 7UL), (6828651081527424718UL + 8UL), (6828651081527424718UL + 9UL), (6828651081527424718UL + 10UL), (6828651081527424718UL + 11UL), (6828651081527424718UL + 12UL), (6828651081527424718UL + 13UL), (6828651081527424718UL + 14UL), (6828651081527424718UL + 15UL), (6828651081527424718UL + 17UL), (6828651081527424718UL + 18UL), (6828651081527424718UL + 19UL), (6828651081527424718UL + 20UL), (6828651081527424718UL + 21UL), (6828651081527424718UL + 22UL), (6828651081527424718UL + 23UL), (6828651081527424718UL + 24UL), (6828651081527424718UL + 25UL), (6828651081527424718UL + 397UL),
+                            "solver", 0, "_Z6solverPPfS_iS_", "_Z10solver_npmPPfS_iS_", 1, &____alias_loc_id_0, 4, (6828651081527424718UL + 396UL), (6828651081527424718UL + 397UL), 0UL, (6828651081527424718UL + 399UL), 0UL, 3, "embedded_fehlberg_7_8", 6, 0UL, 0UL, (6828651081527424718UL + 138UL), (6828651081527424718UL + 138UL), (6828651081527424718UL + 16UL), (6828651081527424718UL + 399UL), 0UL, "fabs", 1, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL,
                                "embedded_fehlberg_7_8", (void **)&(____chimes_extern_func_embedded_fehlberg_7_8),
                            "solver", &(____chimes_does_checkpoint_solver_npm),
                            "embedded_fehlberg_7_8", &(____chimes_does_checkpoint_embedded_fehlberg_7_8_npm),
-                             (6850351079512197142UL + 3UL), (6850351079512197142UL + 397UL),
-                             (6850351079512197142UL + 2UL), (6850351079512197142UL + 396UL),
-                             (6850351079512197142UL + 5UL), (6850351079512197142UL + 399UL),
-                             (6850351079512197142UL + 396UL), (6850351079512197142UL + 138UL),
+                             (6828651081527424718UL + 3UL), (6828651081527424718UL + 397UL),
+                             (6828651081527424718UL + 2UL), (6828651081527424718UL + 396UL),
+                             (6828651081527424718UL + 5UL), (6828651081527424718UL + 399UL),
+                             (6828651081527424718UL + 396UL), (6828651081527424718UL + 138UL),
                              "solver", "_Z6solverPPfS_iS_", 0, 1, "embedded_fehlberg_7_8",
                         "solver|y|0", 1, "embedded_fehlberg_7_8",
                         "solver|x|0", 1, "embedded_fehlberg_7_8",

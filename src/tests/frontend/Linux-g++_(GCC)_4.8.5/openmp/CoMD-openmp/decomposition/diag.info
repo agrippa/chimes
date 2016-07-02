@@ -1,68 +1,68 @@
-ReplaceText /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 18 9 len=17 initDecomposition_npm
-ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 26  ({ void *____chimes_tmp_ptr = malloc((sizeof(Domain)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Domain), 9341214929697525391UL, 0, 1, (int)sizeof(struct DomainSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
-ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 47 
-ReplaceText /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 57 5 len=12 processorNum_npm
-ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 26  ({ void *____chimes_tmp_ptr = malloc((sizeof(Domain)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Domain), 9341214929697525391UL, 0, 1, (int)sizeof(struct DomainSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
-ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 47 
-InsertText /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 49 65 rm_stack(true, 9341214929697525391UL, "initDecomposition", &____must_manage_initDecomposition, ____alias_loc_id_2, ____chimes_did_disable0, false); 
-InsertTextAfterToken /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 19 1 const int ____chimes_did_disable0 = new_stack((void *)(&initDecomposition), "initDecomposition", &____must_manage_initDecomposition, 4, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9341214929697525590UL), "initDecomposition|xproc|0", &____must_checkpoint_initDecomposition_xproc_0, "i32", (void *)(&xproc), (size_t)4, 0, 0, 0, "initDecomposition|yproc|0", &____must_checkpoint_initDecomposition_yproc_0, "i32", (void *)(&yproc), (size_t)4, 0, 0, 0, "initDecomposition|zproc|0", &____must_checkpoint_initDecomposition_zproc_0, "i32", (void *)(&zproc), (size_t)4, 0, 0, 0, "initDecomposition|globalExtent|0", &____must_checkpoint_initDecomposition_globalExtent_0, "double*", (void *)(&globalExtent), (size_t)8, 1, 0, 0); 
-InsertText /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 50 1 rm_stack(true, 9341214929697525391UL, "initDecomposition", &____must_manage_initDecomposition, ____alias_loc_id_2, ____chimes_did_disable0, false); 
-InsertText /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 65 97 rm_stack(false, 0UL, "processorNum", &____must_manage_processorNum, ____alias_loc_id_3, ____chimes_did_disable1, false); 
-InsertTextAfterToken /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 58 1 const int ____chimes_did_disable1 = new_stack((void *)(&processorNum), "processorNum", &____must_manage_processorNum, 4, 0, (size_t)(9341214929697525688UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 66 1 rm_stack(false, 0UL, "processorNum", &____must_manage_processorNum, ____alias_loc_id_3, ____chimes_did_disable1, false); 
-ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 19 2 const int ____chimes_did_disable0 = new_stack((void *)(&initDecomposition), "initDecomposition", &____must_manage_initDecomposition, 4, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9341214929697525590UL), "initDecomposition|xproc|0", &____must_checkpoint_initDecomposition_xproc_0, "i32", (void *)(&xproc), (size_t)4, 0, 0, 0, "initDecomposition|yproc|0", &____must_checkpoint_initDecomposition_yproc_0, "i32", (void *)(&yproc), (size_t)4, 0, 0, 0, "initDecomposition|zproc|0", &____must_checkpoint_initDecomposition_zproc_0, "i32", (void *)(&zproc), (size_t)4, 0, 0, 0, "initDecomposition|globalExtent|0", &____must_checkpoint_initDecomposition_globalExtent_0, "double*", (void *)(&globalExtent), (size_t)8, 1, 0, 0); ;
-ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 19 731 
-ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 4  Domain *dd;  dd = ((Domain*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Domain)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Domain), 9341214929697525391UL, 0, 1, (int)sizeof(struct DomainSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 326 
-ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 4  int myRank;  myRank = (getMyRank()) ;
-ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 28 
-InsertText /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 34 4 {  int i; 
-InsertTextAfterToken /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 39 4  }
-ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 34 9  i = (0) ;
-ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 34 18 
-InsertText /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 42 4 {  int i; 
-InsertTextAfterToken /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 47 4  }
-ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 42 9  i = (0) ;
-ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 42 18 
-ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 49 5 Domain *____chimes_ret_var_0; ;
-ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 49 34 
-ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 58 2 const int ____chimes_did_disable1 = new_stack((void *)(&processorNum), "processorNum", &____must_manage_processorNum, 4, 0, (size_t)(9341214929697525688UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
-ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 58 203 
-ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 59 4  const int *procCoord;  procCoord = (domain->procCoord) ;
-ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 59 44 
-ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 60 4  const int *procGrid;  procGrid = (domain->procGrid) ;
-ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 60 42 
-ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 61 4  int ix;  ix = ((procCoord[0] + dix + procGrid[0]) % procGrid[0]) ;
-ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 61 61 
-ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 62 4  int iy;  iy = ((procCoord[1] + diy + procGrid[1]) % procGrid[1]) ;
-ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 62 61 
-ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 63 4  int iz;  iz = ((procCoord[2] + diz + procGrid[2]) % procGrid[2]) ;
-ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 63 61 
-ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 65 5 int ____chimes_ret_var_1; ;
-ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 65 29 
-InsertText /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 20 4  call_lbl_0: 
-InsertText /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 18  call_lbl_1: 
-ReplaceText /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 18 9 len=17 initDecomposition_quick
-ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 20 44  ({  calling((void*)getNRanks, 0, ____alias_loc_id_1, 0UL, 0); (getNRanks)(); }) 
-ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 20 54 
-ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 41  ({  calling((void*)getMyRank, 1, ____alias_loc_id_0, 0UL, 0); (getMyRank)(); }) 
-ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 51 
-RemoveTextBegin /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 5 
-RemoveTextEnd /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 15 
-InsertTextAfterToken /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 19 730  ; Domain *dd;
+ReplaceText /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 18 9 len=17 initDecomposition_npm
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 26  ({ void *____chimes_tmp_ptr = malloc((sizeof(Domain)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Domain), 6518123989393581663UL, 0, 1, (int)sizeof(struct DomainSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 47 
+ReplaceText /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 57 5 len=12 processorNum_npm
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 26  ({ void *____chimes_tmp_ptr = malloc((sizeof(Domain)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Domain), 6518123989393581663UL, 0, 1, (int)sizeof(struct DomainSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) 
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 47 
+InsertText /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 49 65 rm_stack(true, 6518123989393581663UL, "initDecomposition", &____must_manage_initDecomposition, ____alias_loc_id_2, ____chimes_did_disable0, false); 
+InsertTextAfterToken /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 19 1 const int ____chimes_did_disable0 = new_stack((void *)(&initDecomposition), "initDecomposition", &____must_manage_initDecomposition, 4, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6518123989393581862UL), "initDecomposition|xproc|0", &____must_checkpoint_initDecomposition_xproc_0, "i32", (void *)(&xproc), (size_t)4, 0, 0, 0, "initDecomposition|yproc|0", &____must_checkpoint_initDecomposition_yproc_0, "i32", (void *)(&yproc), (size_t)4, 0, 0, 0, "initDecomposition|zproc|0", &____must_checkpoint_initDecomposition_zproc_0, "i32", (void *)(&zproc), (size_t)4, 0, 0, 0, "initDecomposition|globalExtent|0", &____must_checkpoint_initDecomposition_globalExtent_0, "double*", (void *)(&globalExtent), (size_t)8, 1, 0, 0); 
+InsertText /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 50 1 rm_stack(true, 6518123989393581663UL, "initDecomposition", &____must_manage_initDecomposition, ____alias_loc_id_2, ____chimes_did_disable0, false); 
+InsertText /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 65 97 rm_stack(false, 0UL, "processorNum", &____must_manage_processorNum, ____alias_loc_id_3, ____chimes_did_disable1, false); 
+InsertTextAfterToken /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 58 1 const int ____chimes_did_disable1 = new_stack((void *)(&processorNum), "processorNum", &____must_manage_processorNum, 4, 0, (size_t)(6518123989393581960UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 66 1 rm_stack(false, 0UL, "processorNum", &____must_manage_processorNum, ____alias_loc_id_3, ____chimes_did_disable1, false); 
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 19 2 const int ____chimes_did_disable0 = new_stack((void *)(&initDecomposition), "initDecomposition", &____must_manage_initDecomposition, 4, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6518123989393581862UL), "initDecomposition|xproc|0", &____must_checkpoint_initDecomposition_xproc_0, "i32", (void *)(&xproc), (size_t)4, 0, 0, 0, "initDecomposition|yproc|0", &____must_checkpoint_initDecomposition_yproc_0, "i32", (void *)(&yproc), (size_t)4, 0, 0, 0, "initDecomposition|zproc|0", &____must_checkpoint_initDecomposition_zproc_0, "i32", (void *)(&zproc), (size_t)4, 0, 0, 0, "initDecomposition|globalExtent|0", &____must_checkpoint_initDecomposition_globalExtent_0, "double*", (void *)(&globalExtent), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 19 731 
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 4  Domain *dd;  dd = ((Domain*) ({ void *____chimes_tmp_ptr = malloc((sizeof(Domain)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(Domain), 6518123989393581663UL, 0, 1, (int)sizeof(struct DomainSt), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 326 
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 4  int myRank;  myRank = (getMyRank()) ;
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 28 
+InsertText /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 34 4 {  int i; 
+InsertTextAfterToken /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 39 4  }
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 34 9  i = (0) ;
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 34 18 
+InsertText /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 42 4 {  int i; 
+InsertTextAfterToken /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 47 4  }
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 42 9  i = (0) ;
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 42 18 
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 49 5 Domain *____chimes_ret_var_0; ;
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 49 34 
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 58 2 const int ____chimes_did_disable1 = new_stack((void *)(&processorNum), "processorNum", &____must_manage_processorNum, 4, 0, (size_t)(6518123989393581960UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 58 203 
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 59 4  const int *procCoord;  procCoord = (domain->procCoord) ;
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 59 44 
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 60 4  const int *procGrid;  procGrid = (domain->procGrid) ;
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 60 42 
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 61 4  int ix;  ix = ((procCoord[0] + dix + procGrid[0]) % procGrid[0]) ;
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 61 61 
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 62 4  int iy;  iy = ((procCoord[1] + diy + procGrid[1]) % procGrid[1]) ;
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 62 61 
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 63 4  int iz;  iz = ((procCoord[2] + diz + procGrid[2]) % procGrid[2]) ;
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 63 61 
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 65 5 int ____chimes_ret_var_1; ;
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 65 29 
+InsertText /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 20 4  call_lbl_0: 
+InsertText /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 18  call_lbl_1: 
+ReplaceText /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 18 9 len=17 initDecomposition_quick
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 20 44  ({  calling((void*)getNRanks, 0, ____alias_loc_id_1, 0UL, 0); (getNRanks)(); }) 
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 20 54 
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 41  ({  calling((void*)getMyRank, 1, ____alias_loc_id_0, 0UL, 0); (getMyRank)(); }) 
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 51 
+RemoveTextBegin /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 5 
+RemoveTextEnd /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 15 
+InsertTextAfterToken /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 19 730  ; Domain *dd;
 # 19
  if (____must_checkpoint_initDecomposition_dd_0) { register_stack_vars(1, "initDecomposition|dd|0", &____must_checkpoint_initDecomposition_dd_0, "%struct.DomainSt*", (void *)(&dd), (size_t)8, 1, 0, 0);  }  
-ReplaceText /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 57 5 len=12 processorNum_quick
-InsertTextAfterToken /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 58 202  ; 
-ReplaceText /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 18 9 len=17 initDecomposition_resumable
-ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 20 44  ({  calling((void*)getNRanks, 0, ____alias_loc_id_1, 0UL, 0); (getNRanks)(); }) 
-ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 20 54 
-ReplaceTextStart /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 41  ({  calling((void*)getMyRank, 1, ____alias_loc_id_0, 0UL, 0); (getMyRank)(); }) 
-ReplaceTextEnd /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 51 
-RemoveTextBegin /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 5 
-RemoveTextEnd /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 15 
-InsertTextAfterToken /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 19 730  ; Domain *dd;
+ReplaceText /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 57 5 len=12 processorNum_quick
+InsertTextAfterToken /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 58 202  ; 
+ReplaceText /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 18 9 len=17 initDecomposition_resumable
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 20 44  ({  calling((void*)getNRanks, 0, ____alias_loc_id_1, 0UL, 0); (getNRanks)(); }) 
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 20 54 
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 41  ({  calling((void*)getMyRank, 1, ____alias_loc_id_0, 0UL, 0); (getMyRank)(); }) 
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 51 
+RemoveTextBegin /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 5 
+RemoveTextEnd /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 15 
+InsertTextAfterToken /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 19 730  ; Domain *dd;
 # 19
  if (____must_checkpoint_initDecomposition_dd_0) { register_stack_vars(1, "initDecomposition|dd|0", &____must_checkpoint_initDecomposition_dd_0, "%struct.DomainSt*", (void *)(&dd), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
-ReplaceText /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 57 5 len=12 processorNum_resumable
-InsertTextAfterToken /home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 58 202  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 57 5 len=12 processorNum_resumable
+InsertTextAfterToken /scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/decomposition.c 58 202  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

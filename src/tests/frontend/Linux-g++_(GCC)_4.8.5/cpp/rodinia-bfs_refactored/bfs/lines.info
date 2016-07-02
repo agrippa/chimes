@@ -1,2 +1,2 @@
-/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 47 2 : { 42, 43, 44, 496 } {  } call:BFSGraph {  }
-/scratch/jmg3/rodinia_3.0/openmp/bfs_refactored/bfs.cpp 184 9 : { 32, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 76, 79, 80, 81, 276, 277, 278, 279, 280, 281, 498 } {  } call:checkpoint {  }
+/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/bfs_refactored/bfs.cpp 47 2 : { 42, 43, 44, 499 } {  } call:BFSGraph {  }
+/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/bfs_refactored/bfs.cpp 189 9 : { 32, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 76, 79, 80, 81, 276, 277, 278, 279, 280, 281, 501 } {  } call:checkpoint {  }

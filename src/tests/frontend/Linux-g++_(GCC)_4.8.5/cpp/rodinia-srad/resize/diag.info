@@ -1,13 +1,13 @@
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 8 6 len=6 resize_npm
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 14 16 const int ____chimes_did_disable0 = new_stack((void *)(&resize), "resize", &____must_manage_resize, 7, 0, (size_t)(10788734578353476156UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10788734578353476159UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 67 1 rm_stack(false, 0UL, "resize", &____must_manage_resize, ____alias_loc_id_0, ____chimes_did_disable0, false); 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 14 17 const int ____chimes_did_disable0 = new_stack((void *)(&resize), "resize", &____must_manage_resize, 7, 0, (size_t)(10788734578353476156UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10788734578353476159UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 14 265 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 20 2 int i; int j; ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 20 10 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 21 2 int i2; int j2; ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 21 12 
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 8 6 len=6 resize_quick
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 14 264  ; 
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 8 6 len=6 resize_resumable
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c 14 264  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/resize.c 8 6 len=6 resize_npm
+InsertTextAfterToken /scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/resize.c 14 16 const int ____chimes_did_disable0 = new_stack((void *)(&resize), "resize", &____must_manage_resize, 7, 0, (size_t)(12251174327175456596UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12251174327175456599UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/resize.c 67 1 rm_stack(false, 0UL, "resize", &____must_manage_resize, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+ReplaceTextStart /scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/resize.c 14 17 const int ____chimes_did_disable0 = new_stack((void *)(&resize), "resize", &____must_manage_resize, 7, 0, (size_t)(12251174327175456596UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12251174327175456599UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/resize.c 14 265 
+ReplaceTextStart /scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/resize.c 20 2 int i; int j; ;
+ReplaceTextEnd /scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/resize.c 20 10 
+ReplaceTextStart /scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/resize.c 21 2 int i2; int j2; ;
+ReplaceTextEnd /scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/resize.c 21 12 
+ReplaceText /scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/resize.c 8 6 len=6 resize_quick
+InsertTextAfterToken /scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/resize.c 14 264  ; 
+ReplaceText /scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/resize.c 8 6 len=6 resize_resumable
+InsertTextAfterToken /scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/resize.c 14 264  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

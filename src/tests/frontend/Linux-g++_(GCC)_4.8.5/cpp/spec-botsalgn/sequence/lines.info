@@ -1,2 +1,2 @@
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 74 33 : { 79, 80, 81, 132 } {  } call:tolower {  }
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 170 4 : { 479, 480, 484, 499 } {  } call:fill_chartab {  }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 74 33 : { 79, 80, 81, 132 } {  } call:tolower {  }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 170 4 : { 479, 480, 484, 499 } {  } call:fill_chartab {  }

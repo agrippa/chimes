@@ -8,23 +8,23 @@ list_item_get_datum list_insert_item_sorted 275 97 373 1403
 anon list_insert_item_sorted 275 150 0 369 373
 malloc list_insert_head 302 50 1403 0
 fprintf list_insert_head 302 74 0 2772 6831 6832 0
-exit list_insert_head 302 179 0 0
+exit list_insert_head 302 195 0 0
 list_item_init list_insert_head 303 3 0 1403 553
 malloc list_insert_tail 323 50 1403 0
 fprintf list_insert_tail 323 74 0 2772 6831 6832 0
-exit list_insert_tail 323 179 0 0
+exit list_insert_tail 323 195 0 0
 list_item_init list_insert_tail 324 3 0 1403 650
 malloc list_insert_before 344 50 1403 0
 fprintf list_insert_before 344 74 0 2772 6831 6832 0
-exit list_insert_before 344 179 0 0
+exit list_insert_before 344 195 0 0
 list_item_init list_insert_before 345 3 0 1403 732
 malloc list_insert_after 370 50 1403 0
 fprintf list_insert_after 370 74 0 2772 6831 6832 0
-exit list_insert_after 370 179 0 0
+exit list_insert_after 370 195 0 0
 list_item_init list_insert_after 371 3 0 1403 814
 malloc list_insert_sorted 396 50 1403 0
 fprintf list_insert_sorted 396 74 0 2772 6831 6832 0
-exit list_insert_sorted 396 179 0 0
+exit list_insert_sorted 396 195 0 0
 list_item_init list_insert_sorted 397 3 0 1403 949
 list_item_get_datum list_insert_sorted 401 39 853 1403
 list_item_get_datum list_insert_sorted 401 97 857 1403
@@ -46,7 +46,7 @@ log transform_to_cuda 665 46 0 0
 pow transform_to_cuda 665 26 0 0 0
 malloc transform_to_cuda 667 43 6228 0
 fprintf transform_to_cuda 667 67 0 2772 6831 6832 0
-exit transform_to_cuda 667 172 0 0
+exit transform_to_cuda 667 188 0 0
 printf transform_to_cuda 669 3 0 6834
 exit transform_to_cuda 670 3 0 0
 kmalloc transform_to_cuda 674 24 1906 0
@@ -71,7 +71,7 @@ printf transform_to_cuda 757 2 0 6831 0
 find_leaf findRange 771 13 2041 2141 0 0
 malloc findRange 775 59 6936 0
 fprintf findRange 775 86 0 2772 6831 6832 0
-exit findRange 775 191 0 0
+exit findRange 775 207 0 0
 list_init findRange 776 2 0 6936 6934 6935
 printf find_leaf 970 17 0 6866
 printf find_leaf 976 4 0 6868
@@ -88,7 +88,7 @@ printf usage_1 805 2 0 6850
 printf usage_1 806 2 0 6851
 printf usage_1 807 2 0 6833
 printf usage_1 808 2 0 6853
-printf usage_1 809 2 0 6854
+printf usage_1 809 2 0 6832
 printf usage_2 818 2 0 6855
 printf usage_2 819 2 0 6856
 printf usage_2 820 2 0 6835
@@ -120,34 +120,34 @@ printf print_tree 959 2 0 6868
 find_leaf find 1008 13 2668 2728 0 0
 malloc make_record 1039 62 2788 0
 fprintf make_record 1039 89 0 2772 6831 6832 0
-exit make_record 1039 195 0 0
+exit make_record 1039 211 0 0
 perror make_record 1041 3 0 6833
 exit make_record 1042 3 0 0
 malloc make_node 1055 50 2809 0
 fprintf make_node 1055 75 0 2772 6831 6832 0
-exit make_node 1055 181 0 0
+exit make_node 1055 197 0 0
 perror make_node 1057 3 0 6878
 exit make_node 1058 3 0 0
 malloc make_node 1060 55 5911 0
 fprintf make_node 1060 93 0 2772 6831 6832 0
-exit make_node 1060 199 0 0
+exit make_node 1060 215 0 0
 perror make_node 1062 3 0 6879
 exit make_node 1063 3 0 0
 malloc make_node 1065 61 5911 0
 fprintf make_node 1065 96 0 2772 6831 6832 0
-exit make_node 1065 202 0 0
+exit make_node 1065 218 0 0
 perror make_node 1067 3 0 6880
 exit make_node 1068 3 0 0
 make_node make_leaf 1081 15 2903
 make_leaf insert_into_leaf_after_splitting 1132 13 5911
 malloc insert_into_leaf_after_splitting 1134 50 3259 0
 fprintf insert_into_leaf_after_splitting 1134 82 0 2772 6831 6832 0
-exit insert_into_leaf_after_splitting 1134 188 0 0
+exit insert_into_leaf_after_splitting 1134 204 0 0
 perror insert_into_leaf_after_splitting 1136 3 0 6834
 exit insert_into_leaf_after_splitting 1137 3 0 0
 malloc insert_into_leaf_after_splitting 1140 56 3247 0
 fprintf insert_into_leaf_after_splitting 1140 91 0 2772 6831 6832 0
-exit insert_into_leaf_after_splitting 1140 197 0 0
+exit insert_into_leaf_after_splitting 1140 213 0 0
 perror insert_into_leaf_after_splitting 1142 3 0 6861
 exit insert_into_leaf_after_splitting 1143 3 0 0
 cut insert_into_leaf_after_splitting 1161 10 0 0
@@ -160,12 +160,12 @@ insert_into_node insert_into_parent 1328 93 3489 3496 3447 0 0 3499
 insert_into_node_after_splitting insert_into_parent 1335 58 3489 3496 3447 0 0 3499
 malloc insert_into_node_after_splitting 1236 56 3785 0
 fprintf insert_into_node_after_splitting 1236 97 0 2772 6831 6832 0
-exit insert_into_node_after_splitting 1236 203 0 0
+exit insert_into_node_after_splitting 1236 219 0 0
 perror insert_into_node_after_splitting 1238 3 0 6883
 exit insert_into_node_after_splitting 1239 3 0 0
 malloc insert_into_node_after_splitting 1241 50 3798 0
 fprintf insert_into_node_after_splitting 1241 82 0 2772 6831 6832 0
-exit insert_into_node_after_splitting 1241 188 0 0
+exit insert_into_node_after_splitting 1241 204 0 0
 perror insert_into_node_after_splitting 1243 3 0 6835
 exit insert_into_node_after_splitting 1244 3 0 0
 cut insert_into_node_after_splitting 1264 10 0 0
@@ -228,7 +228,7 @@ ftell main 1935 14 0 5777
 rewind main 1936 6 0 5777
 malloc main 1939 58 5926 0
 fprintf main 1939 95 0 2772 6831 6832 0
-exit main 1939 201 0 0
+exit main 1939 217 0 0
 fprintf main 1940 36 0 2772 6899 2772
 exit main 1940 92 0 0
 fread main 1943 15 0 5926 0 0 5777
@@ -287,19 +287,19 @@ printf main 2163 6 0 6919
 exit main 2164 6 0 0
 malloc main 2181 53 6234 0
 fprintf main 2181 84 0 2772 6831 6832 0
-exit main 2181 190 0 0
+exit main 2181 206 0 0
 memset main 2183 5 0 6234 0 0
 malloc main 2187 50 6235 0
 fprintf main 2187 81 0 2772 6831 6832 0
-exit main 2187 187 0 0
+exit main 2187 203 0 0
 memset main 2189 5 0 6235 0 0
 malloc main 2193 47 6184 0
 fprintf main 2193 77 0 2772 6831 6832 0
-exit main 2193 183 0 0
+exit main 2193 199 0 0
 rand main 2197 17 0
 malloc main 2201 57 6218 0
 fprintf main 2201 90 0 2772 6831 6832 0
-exit main 2201 196 0 0
+exit main 2201 212 0 0
 kernel_cpu main 2208 5 0 0 6228 6229 0 0 0 0 6234 6235 6184 6218
 fopen main 2233 13 6259 6837 6841
 fprintf main 2236 9 0 2772 6896 6837
@@ -326,33 +326,33 @@ printf main 2302 6 0 6926 0
 exit main 2303 6 0 0
 malloc main 2314 53 6668 0
 fprintf main 2314 84 0 2772 6831 6832 0
-exit main 2314 190 0 0
+exit main 2314 206 0 0
 memset main 2316 5 0 6668 0 0
 malloc main 2320 50 6669 0
 fprintf main 2320 81 0 2772 6831 6832 0
-exit main 2320 187 0 0
+exit main 2320 203 0 0
 memset main 2322 5 0 6669 0 0
 malloc main 2326 53 6670 0
 fprintf main 2326 84 0 2772 6831 6832 0
-exit main 2326 190 0 0
+exit main 2326 206 0 0
 memset main 2328 5 0 6670 0 0
 malloc main 2332 52 6671 0
 fprintf main 2332 83 0 2772 6831 6832 0
-exit main 2332 189 0 0
+exit main 2332 205 0 0
 memset main 2334 5 0 6671 0 0
 malloc main 2338 48 6546 0
 fprintf main 2338 78 0 2772 6831 6832 0
-exit main 2338 184 0 0
+exit main 2338 200 0 0
 malloc main 2340 46 6558 0
 fprintf main 2340 76 0 2772 6831 6832 0
-exit main 2340 182 0 0
+exit main 2340 198 0 0
 rand main 2344 18 0
 malloc main 2354 51 6649 0
 fprintf main 2354 81 0 2772 6831 6832 0
-exit main 2354 187 0 0
+exit main 2354 203 0 0
 malloc main 2356 52 6654 0
 fprintf main 2356 82 0 2772 6831 6832 0
-exit main 2356 188 0 0
+exit main 2356 204 0 0
 kernel_cpu_2 main 2364 5 0 0 6663 0 0 0 0 6668 6669 6670 6671 6546 6558 6649 6654
 fopen main 2390 13 6259 6837 6841
 fprintf main 2393 9 0 2772 6896 6837

@@ -1,2 +1,2 @@
-/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 166 9 : { 845, 846, 847, 848, 849, 850, 851, 852, 853, 854, 855, 856, 857, 858, 860 } {  } call:checkpoint {  }
-/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp 248 2 : { 1080, 1081, 1082, 1083, 1084, 1085, 1087, 1088, 1089, 1090, 1091, 1092, 1155, 1162, 1169, 1235 } {  } call:compute_tran_temp {  }
+/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp 175 9 : { 850, 851, 852, 853, 854, 855, 856, 857, 858, 859, 860, 861, 862, 863, 865 } {  } call:checkpoint {  }
+/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp 257 2 : { 1085, 1086, 1087, 1088, 1089, 1090, 1092, 1093, 1094, 1095, 1096, 1097, 1160, 1167, 1174, 1240 } {  } call:compute_tran_temp {  }

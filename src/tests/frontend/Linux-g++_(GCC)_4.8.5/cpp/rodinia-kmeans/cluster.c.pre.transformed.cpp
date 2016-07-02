@@ -18,11 +18,11 @@ static int ____must_manage_cluster = 2;
 
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -31,7 +31,7 @@ static unsigned ____alias_loc_id_1;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -87,15 +87,15 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 28 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1040,7 +1040,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c" 2
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 1 3 4
@@ -2216,7 +2216,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c" 2
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 29 "/usr/include/string.h" 3 4
 extern "C" {
@@ -2692,7 +2692,7 @@ extern "C++" __const char *basename (__const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 # 646 "/usr/include/string.h" 3 4
 }
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c" 2
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c" 2
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 1 3 4
 # 34 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/syslimits.h" 1 3 4
@@ -2730,7 +2730,7 @@ extern "C++" __const char *basename (__const char *__filename)
 # 169 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 2 3 4
 # 8 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/syslimits.h" 2 3 4
 # 35 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 2 3 4
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c" 2
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c" 2
 # 1 "/usr/include/math.h" 1 3 4
 # 30 "/usr/include/math.h" 3 4
 extern "C" {
@@ -3735,9 +3735,9 @@ __signbitl (long double __x) throw ()
 # 417 "/usr/include/math.h" 2 3 4
 # 472 "/usr/include/math.h" 3 4
 }
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c" 2
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c" 2
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/float.h" 1 3 4
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c" 2
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c" 2
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 1 3 4
 # 34 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 3 4
 typedef struct
@@ -3811,191 +3811,191 @@ int omp_in_final (void) throw ();
 
 
 }
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c" 2
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c" 2
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
 
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.h" 1
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.h"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans.h" 1
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans.h"
 int cluster(int, int, float**, int, float, float***);
 
 
 float **kmeans_clustering(float**, int, int, int, float, int*);
 float euclid_dist_2 (float*, float*, int);
 int find_nearest_point (float* , int, float**, int);
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c" 2
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c" 2
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 77 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
 int cluster_npm(int numObjects, int numAttributes, float **attributes, int nclusters, float threshold, float ***cluster_centres );static float **(*____chimes_extern_func_kmeans_clustering)(float **, int, int, int, float, int *) = kmeans_clustering;
 int cluster_quick(int numObjects, int numAttributes, float **attributes, int nclusters, float threshold, float ***cluster_centres ); int cluster(int numObjects, int numAttributes, float **attributes, int nclusters, float threshold, float ***cluster_centres );
 int cluster_resumable(int numObjects,
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             int numAttributes,
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             float **attributes,
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             int nclusters,
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             float threshold,
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             float ***cluster_centres
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             )
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&cluster), "cluster", &____must_manage_cluster, 6, 1, (size_t)(0UL), (size_t)(0UL), (size_t)(433509646541986864UL), (size_t)(0UL), (size_t)(0UL), (size_t)(433509646541986867UL), "cluster|cluster_centres|0", &____must_checkpoint_cluster_cluster_centres_0, "float***", (void *)(&cluster_centres), (size_t)8, 1, 0, 0) ; int *membership;
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&cluster), "cluster", &____must_manage_cluster, 6, 1, (size_t)(0UL), (size_t)(0UL), (size_t)(6610944972456212392UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6610944972456212395UL), "cluster|cluster_centres|0", &____must_checkpoint_cluster_cluster_centres_0, "float***", (void *)(&cluster_centres), (size_t)8, 1, 0, 0) ; int *membership;
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
  if (____must_checkpoint_cluster_membership_0) { register_stack_vars(1, "cluster|membership|0", &____must_checkpoint_cluster_membership_0, "i32*", (void *)(&membership), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
      ;
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
     float **tmp_cluster_centres; ;
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-    membership = (int*) ({ void *____chimes_tmp_ptr = malloc((numObjects * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, numObjects * sizeof(int), 433509646541986825UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+    membership = (int*) ({ void *____chimes_tmp_ptr = malloc((numObjects * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, numObjects * sizeof(int), 6610944972456212353UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
     srand(7);
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-     call_lbl_0: tmp_cluster_centres = ({ calling((void*)kmeans_clustering, 0, ____alias_loc_id_0, 433509646541986838UL, 6, (size_t)(433509646541986864UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(433509646541986825UL)); (kmeans_clustering)(attributes, numAttributes, numObjects, nclusters, threshold, membership); }) ;
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+     call_lbl_0: tmp_cluster_centres = ({ calling((void*)kmeans_clustering, 0, ____alias_loc_id_0, 6610944972456212366UL, 6, (size_t)(6610944972456212392UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6610944972456212353UL)); (kmeans_clustering)(attributes, numAttributes, numObjects, nclusters, threshold, membership); }) ;
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
     if (*cluster_centres) {
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-   ({ free_helper((((unsigned char *)(*cluster_centres)[0]) - sizeof(void *)), 433509646541986844UL);free((((unsigned char *)(*cluster_centres)[0]) - sizeof(void *))); }) ;
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-         ({ free_helper((((unsigned char *)*cluster_centres) - sizeof(void *)), 433509646541986838UL);free((((unsigned char *)*cluster_centres) - sizeof(void *))); }) ;
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+   ({ free_helper((((unsigned char *)(*cluster_centres)[0]) - sizeof(void *)), 6610944972456212372UL);free((((unsigned char *)(*cluster_centres)[0]) - sizeof(void *))); }) ;
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+         ({ free_helper((((unsigned char *)*cluster_centres) - sizeof(void *)), 6610944972456212366UL);free((((unsigned char *)*cluster_centres) - sizeof(void *))); }) ;
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
     }
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
     *cluster_centres = tmp_cluster_centres;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-  ({ free_helper((((unsigned char *)membership) - sizeof(void *)), 433509646541986825UL);free((((unsigned char *)membership) - sizeof(void *))); }) ;
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+  ({ free_helper((((unsigned char *)membership) - sizeof(void *)), 6610944972456212353UL);free((((unsigned char *)membership) - sizeof(void *))); }) ;
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "cluster", &____must_manage_cluster, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
 rm_stack(false, 0UL, "cluster", &____must_manage_cluster, ____alias_loc_id_1, ____chimes_did_disable0, false); }
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
 int cluster_quick(int numObjects,
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             int numAttributes,
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             float **attributes,
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             int nclusters,
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             float threshold,
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             float ***cluster_centres
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             )
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&cluster), "cluster", &____must_manage_cluster, 6, 1, (size_t)(0UL), (size_t)(0UL), (size_t)(433509646541986864UL), (size_t)(0UL), (size_t)(0UL), (size_t)(433509646541986867UL), "cluster|cluster_centres|0", &____must_checkpoint_cluster_cluster_centres_0, "float***", (void *)(&cluster_centres), (size_t)8, 1, 0, 0) ; int *membership;
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&cluster), "cluster", &____must_manage_cluster, 6, 1, (size_t)(0UL), (size_t)(0UL), (size_t)(6610944972456212392UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6610944972456212395UL), "cluster|cluster_centres|0", &____must_checkpoint_cluster_cluster_centres_0, "float***", (void *)(&cluster_centres), (size_t)8, 1, 0, 0) ; int *membership;
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
  if (____must_checkpoint_cluster_membership_0) { register_stack_vars(1, "cluster|membership|0", &____must_checkpoint_cluster_membership_0, "i32*", (void *)(&membership), (size_t)8, 1, 0, 0); } ; ;
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
      ;
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
     float **tmp_cluster_centres; ;
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-    membership = (int*) ({ void *____chimes_tmp_ptr = malloc((numObjects * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, numObjects * sizeof(int), 433509646541986825UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+    membership = (int*) ({ void *____chimes_tmp_ptr = malloc((numObjects * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, numObjects * sizeof(int), 6610944972456212353UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
     srand(7);
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-     call_lbl_0: tmp_cluster_centres = ({ calling((void*)kmeans_clustering, 0, ____alias_loc_id_0, 433509646541986838UL, 6, (size_t)(433509646541986864UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(433509646541986825UL)); (kmeans_clustering)(attributes, numAttributes, numObjects, nclusters, threshold, membership); }) ;
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+     call_lbl_0: tmp_cluster_centres = ({ calling((void*)kmeans_clustering, 0, ____alias_loc_id_0, 6610944972456212366UL, 6, (size_t)(6610944972456212392UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6610944972456212353UL)); (kmeans_clustering)(attributes, numAttributes, numObjects, nclusters, threshold, membership); }) ;
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
     if (*cluster_centres) {
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-   ({ free_helper((((unsigned char *)(*cluster_centres)[0]) - sizeof(void *)), 433509646541986844UL);free((((unsigned char *)(*cluster_centres)[0]) - sizeof(void *))); }) ;
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-         ({ free_helper((((unsigned char *)*cluster_centres) - sizeof(void *)), 433509646541986838UL);free((((unsigned char *)*cluster_centres) - sizeof(void *))); }) ;
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+   ({ free_helper((((unsigned char *)(*cluster_centres)[0]) - sizeof(void *)), 6610944972456212372UL);free((((unsigned char *)(*cluster_centres)[0]) - sizeof(void *))); }) ;
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+         ({ free_helper((((unsigned char *)*cluster_centres) - sizeof(void *)), 6610944972456212366UL);free((((unsigned char *)*cluster_centres) - sizeof(void *))); }) ;
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
     }
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
     *cluster_centres = tmp_cluster_centres;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-  ({ free_helper((((unsigned char *)membership) - sizeof(void *)), 433509646541986825UL);free((((unsigned char *)membership) - sizeof(void *))); }) ;
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+  ({ free_helper((((unsigned char *)membership) - sizeof(void *)), 6610944972456212353UL);free((((unsigned char *)membership) - sizeof(void *))); }) ;
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "cluster", &____must_manage_cluster, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
 rm_stack(false, 0UL, "cluster", &____must_manage_cluster, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
 int cluster(int numObjects,
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             int numAttributes,
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             float **attributes,
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             int nclusters,
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             float threshold,
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             float ***cluster_centres
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             ) { return (____chimes_replaying ? cluster_resumable(numObjects, numAttributes, attributes, nclusters, threshold, cluster_centres) : cluster_quick(numObjects, numAttributes, attributes, nclusters, threshold, cluster_centres)); }
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
 int cluster_npm(int numObjects,
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             int numAttributes,
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             float **attributes,
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             int nclusters,
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             float threshold,
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             float ***cluster_centres
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             )
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
 {
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
     int *membership;
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
     float **tmp_cluster_centres;
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-    membership = (int*) ({ void *____chimes_tmp_ptr = malloc((numObjects * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, numObjects * sizeof(int), 433509646541986825UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+    membership = (int*) ({ void *____chimes_tmp_ptr = malloc((numObjects * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, numObjects * sizeof(int), 6610944972456212353UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
     srand(7);
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
     tmp_cluster_centres = (*____chimes_extern_func_kmeans_clustering)(attributes, numAttributes, numObjects, nclusters, threshold, membership);
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
     if (*cluster_centres) {
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-   ({ free_helper((((unsigned char *)(*cluster_centres)[0]) - sizeof(void *)), 433509646541986844UL);free((((unsigned char *)(*cluster_centres)[0]) - sizeof(void *))); }) ;
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-         ({ free_helper((((unsigned char *)*cluster_centres) - sizeof(void *)), 433509646541986838UL);free((((unsigned char *)*cluster_centres) - sizeof(void *))); }) ;
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+   ({ free_helper((((unsigned char *)(*cluster_centres)[0]) - sizeof(void *)), 6610944972456212372UL);free((((unsigned char *)(*cluster_centres)[0]) - sizeof(void *))); }) ;
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+         ({ free_helper((((unsigned char *)*cluster_centres) - sizeof(void *)), 6610944972456212366UL);free((((unsigned char *)*cluster_centres) - sizeof(void *))); }) ;
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
     }
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
     *cluster_centres = tmp_cluster_centres;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-  ({ free_helper((((unsigned char *)membership) - sizeof(void *)), 433509646541986825UL);free((((unsigned char *)membership) - sizeof(void *))); }) ;
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+  ({ free_helper((((unsigned char *)membership) - sizeof(void *)), 6610944972456212353UL);free((((unsigned char *)membership) - sizeof(void *))); }) ;
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
      int ____chimes_ret_var_0; ____chimes_ret_var_0 = (0); return ____chimes_ret_var_0; ;
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
 }
 
 
@@ -4003,19 +4003,19 @@ int cluster_npm(int numObjects,
 
 
 static int module_init() {
-    init_module(433509646541986798UL, 6, 1, 2, 2, 1, 1, 2, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)7, (unsigned)0, (unsigned)1, (433509646541986798UL + 1UL), (433509646541986798UL + 2UL), (433509646541986798UL + 3UL), (433509646541986798UL + 4UL), (433509646541986798UL + 5UL), (433509646541986798UL + 6UL), (433509646541986798UL + 7UL), "kmeans_clustering", (unsigned)3, (433509646541986798UL + 27UL), (433509646541986798UL + 40UL), (433509646541986798UL + 66UL),
-                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (433509646541986798UL + 8UL), (433509646541986798UL + 9UL), (433509646541986798UL + 69UL),
-                            "cluster", 0, "_Z7clusteriiPPfifPS0_", "_Z11cluster_npmiiPPfifPS0_", 1, &____alias_loc_id_0, 6, 0UL, 0UL, (433509646541986798UL + 66UL), 0UL, 0UL, (433509646541986798UL + 69UL), 0UL, 6, "malloc", 1, 0UL, (433509646541986798UL + 27UL), "srand", 1, 0UL, 0UL, "kmeans_clustering", 6, (433509646541986798UL + 66UL), 0UL, 0UL, 0UL, 0UL, (433509646541986798UL + 27UL), (433509646541986798UL + 40UL), "free", 1, (433509646541986798UL + 46UL), 0UL, "free", 1, (433509646541986798UL + 40UL), 0UL, "free", 1, (433509646541986798UL + 27UL), 0UL,
+    init_module(6610944972456212326UL, 6, 1, 2, 2, 1, 1, 2, 0, 0, 0,
+                           &____alias_loc_id_0, (unsigned)7, (unsigned)0, (unsigned)1, (6610944972456212326UL + 1UL), (6610944972456212326UL + 2UL), (6610944972456212326UL + 3UL), (6610944972456212326UL + 4UL), (6610944972456212326UL + 5UL), (6610944972456212326UL + 6UL), (6610944972456212326UL + 7UL), "kmeans_clustering", (unsigned)3, (6610944972456212326UL + 27UL), (6610944972456212326UL + 40UL), (6610944972456212326UL + 66UL),
+                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (6610944972456212326UL + 8UL), (6610944972456212326UL + 9UL), (6610944972456212326UL + 69UL),
+                            "cluster", 0, "_Z7clusteriiPPfifPS0_", "_Z11cluster_npmiiPPfifPS0_", 1, &____alias_loc_id_0, 6, 0UL, 0UL, (6610944972456212326UL + 66UL), 0UL, 0UL, (6610944972456212326UL + 69UL), 0UL, 6, "malloc", 1, 0UL, (6610944972456212326UL + 27UL), "srand", 1, 0UL, 0UL, "kmeans_clustering", 6, (6610944972456212326UL + 66UL), 0UL, 0UL, 0UL, 0UL, (6610944972456212326UL + 27UL), (6610944972456212326UL + 40UL), "free", 1, (6610944972456212326UL + 46UL), 0UL, "free", 1, (6610944972456212326UL + 40UL), 0UL, "free", 1, (6610944972456212326UL + 27UL), 0UL,
                                "kmeans_clustering", (void **)&(____chimes_extern_func_kmeans_clustering),
                            "cluster", &(____chimes_does_checkpoint_cluster_npm),
                            "kmeans_clustering", &(____chimes_does_checkpoint_kmeans_clustering_npm),
-                             (433509646541986798UL + 6UL), (433509646541986798UL + 69UL),
-                             (433509646541986798UL + 40UL), (433509646541986798UL + 46UL),
-                             (433509646541986798UL + 3UL), (433509646541986798UL + 66UL),
-                             (433509646541986798UL + 7UL), (433509646541986798UL + 27UL),
-                             (433509646541986798UL + 69UL), (433509646541986798UL + 40UL),
-                             (433509646541986798UL + 8UL), (433509646541986798UL + 40UL),
+                             (6610944972456212326UL + 6UL), (6610944972456212326UL + 69UL),
+                             (6610944972456212326UL + 40UL), (6610944972456212326UL + 46UL),
+                             (6610944972456212326UL + 3UL), (6610944972456212326UL + 66UL),
+                             (6610944972456212326UL + 7UL), (6610944972456212326UL + 27UL),
+                             (6610944972456212326UL + 69UL), (6610944972456212326UL + 40UL),
+                             (6610944972456212326UL + 8UL), (6610944972456212326UL + 40UL),
                              "cluster", "_Z7clusteriiPPfifPS0_", 0, 1, "kmeans_clustering",
                         "cluster|cluster_centres|0", 1, "kmeans_clustering",
                         "cluster|membership|0", 1, "kmeans_clustering");

@@ -31,11 +31,11 @@ static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
 static unsigned ____alias_loc_id_2;
 static unsigned ____alias_loc_id_3;
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -44,7 +44,7 @@ static unsigned ____alias_loc_id_3;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -100,15 +100,15 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 13 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 13 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 1 3 4
 # 34 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 3 4
 typedef struct
@@ -182,7 +182,7 @@ int omp_in_final (void) throw ();
 
 
 }
-# 14 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c" 2
+# 14 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 25 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1506,7 +1506,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 15 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c" 2
+# 15 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 30 "/usr/include/stdio.h" 3 4
 extern "C" {
@@ -2314,15 +2314,15 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 16 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c" 2
-# 16 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 18 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 19 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 16 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c" 2
+# 16 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 17 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 18 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 19 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 20 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/../common.h" 1
-# 16 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/../common.h"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/../common.h" 1
+# 16 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/../common.h"
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stdint.h" 1 3 4
 # 9 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stdint.h" 3 4
 # 1 "/usr/include/stdint.h" 1 3 4
@@ -2378,10 +2378,10 @@ typedef unsigned long int uintptr_t;
 typedef long int intmax_t;
 typedef unsigned long int uintmax_t;
 # 10 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stdint.h" 2 3 4
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/../common.h" 2
+# 17 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/../common.h" 2
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stdbool.h" 1 3 4
-# 18 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/../common.h" 2
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/../common.h"
+# 18 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/../common.h" 2
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/../common.h"
 typedef struct list_item list_item_t;
 
 typedef struct list_t {
@@ -2393,11 +2393,11 @@ typedef struct list_t {
 
 typedef list_item_t *list_iterator_t;
 typedef list_item_t *list_reverse_iterator_t;
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/../common.h"
+# 74 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/../common.h"
 typedef struct record {
  int value;
 } record;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/../common.h"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/../common.h"
 typedef struct node {
  void ** pointers;
  int * keys;
@@ -2420,7 +2420,7 @@ struct list_item {
   struct list_item *pred, *next;
   void *datum;
 };
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/../common.h"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/../common.h"
 void
 list_item_init( list_item_t *li,
     void *datum);
@@ -2716,17 +2716,17 @@ delete_entry( node * root,
 node *
 deleteVal( node * root,
    int key );
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c" 2
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c" 2
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/../util/timer/timer.h" 1
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/../util/timer/timer.h" 1
 
 extern "C" {
-# 13 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/../util/timer/timer.h"
+# 13 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/../util/timer/timer.h"
 long long
 get_time();
 
@@ -2736,541 +2736,562 @@ get_time();
 
 
 }
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c" 2
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c" 2
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 void kernel_cpu_npm( int cores_arg, record *records, knode *knodes, long knodes_elem, int order, long maxheight, int count, long *currKnode, long *offset, int *keys, record *ans);static long long (*____chimes_extern_func_get_time)(void) = get_time;
 void kernel_cpu_quick( int cores_arg, record *records, knode *knodes, long knodes_elem, int order, long maxheight, int count, long *currKnode, long *offset, int *keys, record *ans); void kernel_cpu( int cores_arg, record *records, knode *knodes, long knodes_elem, int order, long maxheight, int count, long *currKnode, long *offset, int *keys, record *ans);
 void
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 kernel_cpu_resumable( int cores_arg,
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    record *records,
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    knode *knodes,
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    long knodes_elem,
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    int order,
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    long maxheight,
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    int count,
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    long *currKnode,
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    long *offset,
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    int *keys,
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    record *ans)
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&kernel_cpu), "kernel_cpu", &____must_manage_kernel_cpu, 11, 10, (size_t)(0UL), (size_t)(7567338248737025363UL), (size_t)(7567338248737025364UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7567338248737025369UL), (size_t)(7567338248737025370UL), (size_t)(7567338248737025371UL), (size_t)(7567338248737025372UL), "kernel_cpu|records|0", &____must_checkpoint_kernel_cpu_records_0, "%struct.record*", (void *)(&records), (size_t)8, 1, 0, 0, "kernel_cpu|knodes|0", &____must_checkpoint_kernel_cpu_knodes_0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0, "kernel_cpu|knodes_elem|0", &____must_checkpoint_kernel_cpu_knodes_elem_0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0, "kernel_cpu|order|0", &____must_checkpoint_kernel_cpu_order_0, "i32", (void *)(&order), (size_t)4, 0, 0, 0, "kernel_cpu|maxheight|0", &____must_checkpoint_kernel_cpu_maxheight_0, "i64", (void *)(&maxheight), (size_t)8, 0, 0, 0, "kernel_cpu|count|0", &____must_checkpoint_kernel_cpu_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0, "kernel_cpu|currKnode|0", &____must_checkpoint_kernel_cpu_currKnode_0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0, "kernel_cpu|offset|0", &____must_checkpoint_kernel_cpu_offset_0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0, "kernel_cpu|keys|0", &____must_checkpoint_kernel_cpu_keys_0, "i32*", (void *)(&keys), (size_t)8, 1, 0, 0, "kernel_cpu|ans|0", &____must_checkpoint_kernel_cpu_ans_0, "%struct.record*", (void *)(&ans), (size_t)8, 1, 0, 0) ; int threadsPerBlock;
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&kernel_cpu), "kernel_cpu", &____must_manage_kernel_cpu, 11, 10, (size_t)(0UL), (size_t)(7898914684662179915UL), (size_t)(7898914684662179916UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7898914684662179921UL), (size_t)(7898914684662179922UL), (size_t)(7898914684662179923UL), (size_t)(7898914684662179924UL), "kernel_cpu|records|0", &____must_checkpoint_kernel_cpu_records_0, "%struct.record*", (void *)(&records), (size_t)8, 1, 0, 0, "kernel_cpu|knodes|0", &____must_checkpoint_kernel_cpu_knodes_0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0, "kernel_cpu|knodes_elem|0", &____must_checkpoint_kernel_cpu_knodes_elem_0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0, "kernel_cpu|order|0", &____must_checkpoint_kernel_cpu_order_0, "i32", (void *)(&order), (size_t)4, 0, 0, 0, "kernel_cpu|maxheight|0", &____must_checkpoint_kernel_cpu_maxheight_0, "i64", (void *)(&maxheight), (size_t)8, 0, 0, 0, "kernel_cpu|count|0", &____must_checkpoint_kernel_cpu_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0, "kernel_cpu|currKnode|0", &____must_checkpoint_kernel_cpu_currKnode_0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0, "kernel_cpu|offset|0", &____must_checkpoint_kernel_cpu_offset_0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0, "kernel_cpu|keys|0", &____must_checkpoint_kernel_cpu_keys_0, "i32*", (void *)(&keys), (size_t)8, 1, 0, 0, "kernel_cpu|ans|0", &____must_checkpoint_kernel_cpu_ans_0, "%struct.record*", (void *)(&ans), (size_t)8, 1, 0, 0) ; int threadsPerBlock;
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 long long time1;
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 long long time0;
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  if (____must_checkpoint_kernel_cpu_threadsPerBlock_0 || ____must_checkpoint_kernel_cpu_time1_0 || ____must_checkpoint_kernel_cpu_time0_0) { register_stack_vars(3, "kernel_cpu|threadsPerBlock|0", &____must_checkpoint_kernel_cpu_threadsPerBlock_0, "i32", (void *)(&threadsPerBlock), (size_t)4, 0, 0, 0, "kernel_cpu|time1|0", &____must_checkpoint_kernel_cpu_time1_0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "kernel_cpu|time0|0", &____must_checkpoint_kernel_cpu_time0_0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   ;
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   ;
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  long long time2; ;
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   call_lbl_0: time0 = ({ calling((void*)get_time, 0, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) ;
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 65 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  int max_nthreads; ;
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
     max_nthreads = 1;
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 74 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 77 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   ;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  threadsPerBlock = order < 1024 ? order : 1024;
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   call_lbl_1: time1 = ({ calling((void*)get_time, 1, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ;
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  int thid; ;
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  int bid; ;
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  int i; ;
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 #pragma omp parallel for private (i, thid)
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  for(bid = 0; bid < count; bid++){
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   for(i = 0; i < maxheight; i++){
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    for(thid = 0; thid < threadsPerBlock; thid++){
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
     if((knodes[currKnode[bid]].keys[thid]) <= keys[bid] && (knodes[currKnode[bid]].keys[thid+1] > keys[bid])){
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
      if(knodes[offset[bid]].indices[thid] < knodes_elem){
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
       offset[bid] = knodes[offset[bid]].indices[thid];
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
      }
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
     }
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    }
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    currKnode[bid] = offset[bid];
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   }
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   for(thid = 0; thid < threadsPerBlock; thid++){
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    if(knodes[currKnode[bid]].keys[thid] == keys[bid]){
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
     ans[bid].value = records[knodes[currKnode[bid]].indices[thid]].value;
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    }
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   }
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  }
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 135 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   call_lbl_2: time2 = ({ calling((void*)get_time, 2, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ;
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 139 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 140 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 141 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 142 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 143 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  printf("Time spent in different stages of CPU/MCPU KERNEL:\n");
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 146 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  printf("%15.12f s, %15.12f %% : MCPU: SET DEVICE\n", (float) (time1-time0) / 1000000, (float) (time1-time0) / (float) (time2-time0) * 100);
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 147 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  printf("%15.12f s, %15.12f %% : CPU/MCPU: KERNEL\n", (float) (time2-time1) / 1000000, (float) (time2-time1) / (float) (time2-time0) * 100);
-# 141 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 148 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 149 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  printf("Total time:\n");
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  printf("%.12f s\n", (float) (time2-time0) / 1000000);
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 151 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 152 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 rm_stack(false, 0UL, "kernel_cpu", &____must_manage_kernel_cpu, ____alias_loc_id_3, ____chimes_did_disable0, false); }
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 void
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 kernel_cpu_quick( int cores_arg,
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    record *records,
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    knode *knodes,
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    long knodes_elem,
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    int order,
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    long maxheight,
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    int count,
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    long *currKnode,
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    long *offset,
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    int *keys,
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    record *ans)
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&kernel_cpu), "kernel_cpu", &____must_manage_kernel_cpu, 11, 10, (size_t)(0UL), (size_t)(7567338248737025363UL), (size_t)(7567338248737025364UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7567338248737025369UL), (size_t)(7567338248737025370UL), (size_t)(7567338248737025371UL), (size_t)(7567338248737025372UL), "kernel_cpu|records|0", &____must_checkpoint_kernel_cpu_records_0, "%struct.record*", (void *)(&records), (size_t)8, 1, 0, 0, "kernel_cpu|knodes|0", &____must_checkpoint_kernel_cpu_knodes_0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0, "kernel_cpu|knodes_elem|0", &____must_checkpoint_kernel_cpu_knodes_elem_0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0, "kernel_cpu|order|0", &____must_checkpoint_kernel_cpu_order_0, "i32", (void *)(&order), (size_t)4, 0, 0, 0, "kernel_cpu|maxheight|0", &____must_checkpoint_kernel_cpu_maxheight_0, "i64", (void *)(&maxheight), (size_t)8, 0, 0, 0, "kernel_cpu|count|0", &____must_checkpoint_kernel_cpu_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0, "kernel_cpu|currKnode|0", &____must_checkpoint_kernel_cpu_currKnode_0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0, "kernel_cpu|offset|0", &____must_checkpoint_kernel_cpu_offset_0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0, "kernel_cpu|keys|0", &____must_checkpoint_kernel_cpu_keys_0, "i32*", (void *)(&keys), (size_t)8, 1, 0, 0, "kernel_cpu|ans|0", &____must_checkpoint_kernel_cpu_ans_0, "%struct.record*", (void *)(&ans), (size_t)8, 1, 0, 0) ; int threadsPerBlock;
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&kernel_cpu), "kernel_cpu", &____must_manage_kernel_cpu, 11, 10, (size_t)(0UL), (size_t)(7898914684662179915UL), (size_t)(7898914684662179916UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7898914684662179921UL), (size_t)(7898914684662179922UL), (size_t)(7898914684662179923UL), (size_t)(7898914684662179924UL), "kernel_cpu|records|0", &____must_checkpoint_kernel_cpu_records_0, "%struct.record*", (void *)(&records), (size_t)8, 1, 0, 0, "kernel_cpu|knodes|0", &____must_checkpoint_kernel_cpu_knodes_0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0, "kernel_cpu|knodes_elem|0", &____must_checkpoint_kernel_cpu_knodes_elem_0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0, "kernel_cpu|order|0", &____must_checkpoint_kernel_cpu_order_0, "i32", (void *)(&order), (size_t)4, 0, 0, 0, "kernel_cpu|maxheight|0", &____must_checkpoint_kernel_cpu_maxheight_0, "i64", (void *)(&maxheight), (size_t)8, 0, 0, 0, "kernel_cpu|count|0", &____must_checkpoint_kernel_cpu_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0, "kernel_cpu|currKnode|0", &____must_checkpoint_kernel_cpu_currKnode_0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0, "kernel_cpu|offset|0", &____must_checkpoint_kernel_cpu_offset_0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0, "kernel_cpu|keys|0", &____must_checkpoint_kernel_cpu_keys_0, "i32*", (void *)(&keys), (size_t)8, 1, 0, 0, "kernel_cpu|ans|0", &____must_checkpoint_kernel_cpu_ans_0, "%struct.record*", (void *)(&ans), (size_t)8, 1, 0, 0) ; int threadsPerBlock;
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 long long time1;
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 long long time0;
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  if (____must_checkpoint_kernel_cpu_threadsPerBlock_0 || ____must_checkpoint_kernel_cpu_time1_0 || ____must_checkpoint_kernel_cpu_time0_0) { register_stack_vars(3, "kernel_cpu|threadsPerBlock|0", &____must_checkpoint_kernel_cpu_threadsPerBlock_0, "i32", (void *)(&threadsPerBlock), (size_t)4, 0, 0, 0, "kernel_cpu|time1|0", &____must_checkpoint_kernel_cpu_time1_0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "kernel_cpu|time0|0", &____must_checkpoint_kernel_cpu_time0_0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); } ; ;
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   ;
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   ;
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  long long time2; ;
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   call_lbl_0: time0 = ({ calling((void*)get_time, 0, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) ;
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 65 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  int max_nthreads; ;
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
     max_nthreads = 1;
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 74 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 77 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   ;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  threadsPerBlock = order < 1024 ? order : 1024;
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   call_lbl_1: time1 = ({ calling((void*)get_time, 1, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ;
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  int thid; ;
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  int bid; ;
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  int i; ;
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 #pragma omp parallel for private (i, thid)
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  for(bid = 0; bid < count; bid++){
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   for(i = 0; i < maxheight; i++){
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    for(thid = 0; thid < threadsPerBlock; thid++){
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
     if((knodes[currKnode[bid]].keys[thid]) <= keys[bid] && (knodes[currKnode[bid]].keys[thid+1] > keys[bid])){
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
      if(knodes[offset[bid]].indices[thid] < knodes_elem){
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
       offset[bid] = knodes[offset[bid]].indices[thid];
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
      }
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
     }
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    }
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    currKnode[bid] = offset[bid];
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   }
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   for(thid = 0; thid < threadsPerBlock; thid++){
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    if(knodes[currKnode[bid]].keys[thid] == keys[bid]){
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
     ans[bid].value = records[knodes[currKnode[bid]].indices[thid]].value;
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    }
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   }
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  }
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 135 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   call_lbl_2: time2 = ({ calling((void*)get_time, 2, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ;
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 139 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 140 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 141 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 142 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 143 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  printf("Time spent in different stages of CPU/MCPU KERNEL:\n");
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 146 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  printf("%15.12f s, %15.12f %% : MCPU: SET DEVICE\n", (float) (time1-time0) / 1000000, (float) (time1-time0) / (float) (time2-time0) * 100);
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 147 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  printf("%15.12f s, %15.12f %% : CPU/MCPU: KERNEL\n", (float) (time2-time1) / 1000000, (float) (time2-time1) / (float) (time2-time0) * 100);
-# 141 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 148 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 149 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  printf("Total time:\n");
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  printf("%.12f s\n", (float) (time2-time0) / 1000000);
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 151 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 152 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 rm_stack(false, 0UL, "kernel_cpu", &____must_manage_kernel_cpu, ____alias_loc_id_3, ____chimes_did_disable0, false); }
 
 void
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 kernel_cpu( int cores_arg,
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    record *records,
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    knode *knodes,
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    long knodes_elem,
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    int order,
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    long maxheight,
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    int count,
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    long *currKnode,
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    long *offset,
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    int *keys,
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    record *ans) { (____chimes_replaying ? kernel_cpu_resumable(cores_arg, records, knodes, knodes_elem, order, maxheight, count, currKnode, offset, keys, ans) : kernel_cpu_quick(cores_arg, records, knodes, knodes_elem, order, maxheight, count, currKnode, offset, keys, ans)); }
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 void
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 kernel_cpu_npm( int cores_arg,
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    record *records,
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    knode *knodes,
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    long knodes_elem,
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    int order,
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    long maxheight,
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    int count,
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    long *currKnode,
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    long *offset,
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    int *keys,
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    record *ans)
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 {
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  long long time0;
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  long long time1;
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  long long time2;
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  time0 = (*____chimes_extern_func_get_time)();
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 65 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  int max_nthreads;
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
     max_nthreads = 1;
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 74 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 77 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  int threadsPerBlock;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  threadsPerBlock = order < 1024 ? order : 1024;
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  time1 = (*____chimes_extern_func_get_time)();
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  int thid;
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  int bid;
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  int i;
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 #pragma omp parallel for private (i, thid)
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  for(bid = 0; bid < count; bid++){
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   for(i = 0; i < maxheight; i++){
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    for(thid = 0; thid < threadsPerBlock; thid++){
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
     if((knodes[currKnode[bid]].keys[thid]) <= keys[bid] && (knodes[currKnode[bid]].keys[thid+1] > keys[bid])){
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
      if(knodes[offset[bid]].indices[thid] < knodes_elem){
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
       offset[bid] = knodes[offset[bid]].indices[thid];
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
      }
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
     }
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    }
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    currKnode[bid] = offset[bid];
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   }
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   for(thid = 0; thid < threadsPerBlock; thid++){
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    if(knodes[currKnode[bid]].keys[thid] == keys[bid]){
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
     ans[bid].value = records[knodes[currKnode[bid]].indices[thid]].value;
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
    }
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
   }
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  }
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 135 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  time2 = (*____chimes_extern_func_get_time)();
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 139 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 140 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 141 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 142 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 143 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  printf("Time spent in different stages of CPU/MCPU KERNEL:\n");
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 146 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  printf("%15.12f s, %15.12f %% : MCPU: SET DEVICE\n", (float) (time1-time0) / 1000000, (float) (time1-time0) / (float) (time2-time0) * 100);
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 147 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  printf("%15.12f s, %15.12f %% : CPU/MCPU: KERNEL\n", (float) (time2-time1) / 1000000, (float) (time2-time1) / (float) (time2-time0) * 100);
-# 141 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 148 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 149 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  printf("Total time:\n");
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
  printf("%.12f s\n", (float) (time2-time0) / 1000000);
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 151 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
+# 152 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/b+tree/kernel/kernel_cpu.c"
 }
 
 
@@ -3278,21 +3299,21 @@ kernel_cpu_npm( int cores_arg,
 
 
 static int module_init() {
-    init_module(7567338248737025078UL, 6, 1, 13, 4, 1, 1, 2, 0, 0, 2,
-                           &____alias_loc_id_0, (unsigned)7, (unsigned)0, (unsigned)0, (7567338248737025078UL + 13UL), (7567338248737025078UL + 17UL), (7567338248737025078UL + 18UL), (7567338248737025078UL + 19UL), (7567338248737025078UL + 291UL), (7567338248737025078UL + 292UL), (7567338248737025078UL + 294UL),
-                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (7567338248737025078UL + 12UL), (7567338248737025078UL + 15UL), (7567338248737025078UL + 16UL),
-                           &____alias_loc_id_2, (unsigned)11, (unsigned)0, (unsigned)0, (7567338248737025078UL + 1UL), (7567338248737025078UL + 2UL), (7567338248737025078UL + 3UL), (7567338248737025078UL + 4UL), (7567338248737025078UL + 5UL), (7567338248737025078UL + 6UL), (7567338248737025078UL + 7UL), (7567338248737025078UL + 8UL), (7567338248737025078UL + 9UL), (7567338248737025078UL + 10UL), (7567338248737025078UL + 11UL),
-                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (7567338248737025078UL + 14UL),
-                            "kernel_cpu", 0, "_Z10kernel_cpuiP6recordP5knodeliliPlS3_PiS0_", "_Z14kernel_cpu_npmiP6recordP5knodeliliPlS3_PiS0_", 3, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, 11, 0UL, (7567338248737025078UL + 285UL), (7567338248737025078UL + 286UL), 0UL, 0UL, 0UL, 0UL, (7567338248737025078UL + 291UL), (7567338248737025078UL + 292UL), (7567338248737025078UL + 293UL), (7567338248737025078UL + 294UL), 0UL, 8, "get_time", 0, 0UL, "get_time", 0, 0UL, "get_time", 0, 0UL, "printf", 1, (7567338248737025078UL + 298UL), 0UL, "printf", 3, (7567338248737025078UL + 299UL), 0UL, 0UL, 0UL, "printf", 3, (7567338248737025078UL + 299UL), 0UL, 0UL, 0UL, "printf", 1, (7567338248737025078UL + 301UL), 0UL, "printf", 2, (7567338248737025078UL + 302UL), 0UL, 0UL,
+    init_module(7898914684662179630UL, 6, 1, 13, 4, 1, 1, 2, 0, 0, 2,
+                           &____alias_loc_id_0, (unsigned)7, (unsigned)0, (unsigned)0, (7898914684662179630UL + 13UL), (7898914684662179630UL + 17UL), (7898914684662179630UL + 18UL), (7898914684662179630UL + 19UL), (7898914684662179630UL + 291UL), (7898914684662179630UL + 292UL), (7898914684662179630UL + 294UL),
+                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (7898914684662179630UL + 12UL), (7898914684662179630UL + 15UL), (7898914684662179630UL + 16UL),
+                           &____alias_loc_id_2, (unsigned)11, (unsigned)0, (unsigned)0, (7898914684662179630UL + 1UL), (7898914684662179630UL + 2UL), (7898914684662179630UL + 3UL), (7898914684662179630UL + 4UL), (7898914684662179630UL + 5UL), (7898914684662179630UL + 6UL), (7898914684662179630UL + 7UL), (7898914684662179630UL + 8UL), (7898914684662179630UL + 9UL), (7898914684662179630UL + 10UL), (7898914684662179630UL + 11UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (7898914684662179630UL + 14UL),
+                            "kernel_cpu", 0, "_Z10kernel_cpuiP6recordP5knodeliliPlS3_PiS0_", "_Z14kernel_cpu_npmiP6recordP5knodeliliPlS3_PiS0_", 3, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, 11, 0UL, (7898914684662179630UL + 285UL), (7898914684662179630UL + 286UL), 0UL, 0UL, 0UL, 0UL, (7898914684662179630UL + 291UL), (7898914684662179630UL + 292UL), (7898914684662179630UL + 293UL), (7898914684662179630UL + 294UL), 0UL, 8, "get_time", 0, 0UL, "get_time", 0, 0UL, "get_time", 0, 0UL, "printf", 1, (7898914684662179630UL + 298UL), 0UL, "printf", 3, (7898914684662179630UL + 299UL), 0UL, 0UL, 0UL, "printf", 3, (7898914684662179630UL + 299UL), 0UL, 0UL, 0UL, "printf", 1, (7898914684662179630UL + 301UL), 0UL, "printf", 2, (7898914684662179630UL + 302UL), 0UL, 0UL,
                                "get_time", (void **)&(____chimes_extern_func_get_time),
                            "kernel_cpu", &(____chimes_does_checkpoint_kernel_cpu_npm),
                            "get_time", &(____chimes_does_checkpoint_get_time_npm),
-                             (7567338248737025078UL + 11UL), (7567338248737025078UL + 294UL),
-                             (7567338248737025078UL + 10UL), (7567338248737025078UL + 293UL),
-                             (7567338248737025078UL + 3UL), (7567338248737025078UL + 286UL),
-                             (7567338248737025078UL + 2UL), (7567338248737025078UL + 285UL),
-                             (7567338248737025078UL + 9UL), (7567338248737025078UL + 292UL),
-                             (7567338248737025078UL + 8UL), (7567338248737025078UL + 291UL),
+                             (7898914684662179630UL + 11UL), (7898914684662179630UL + 294UL),
+                             (7898914684662179630UL + 10UL), (7898914684662179630UL + 293UL),
+                             (7898914684662179630UL + 3UL), (7898914684662179630UL + 286UL),
+                             (7898914684662179630UL + 2UL), (7898914684662179630UL + 285UL),
+                             (7898914684662179630UL + 9UL), (7898914684662179630UL + 292UL),
+                             (7898914684662179630UL + 8UL), (7898914684662179630UL + 291UL),
                      "knode", 32672UL, 5, "int", (int)__builtin_offsetof (struct knode, location), "[ 509 x int ]", (int)__builtin_offsetof (struct knode, indices), "[ 509 x int ]", (int)__builtin_offsetof (struct knode, keys), "bool", (int)__builtin_offsetof (struct knode, is_leaf), "int", (int)__builtin_offsetof (struct knode, num_keys),
                      "record", 32UL, 1, "int", (int)__builtin_offsetof (struct record, value),
                              "kernel_cpu", "_Z10kernel_cpuiP6recordP5knodeliliPlS3_PiS0_", 0, 3, "get_time", "get_time", "get_time",

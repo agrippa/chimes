@@ -14,11 +14,11 @@ static int ____chimes_does_checkpoint_foo_npm = 1;
 
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
-# 1 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -27,7 +27,7 @@ static unsigned ____alias_loc_id_1;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -83,16 +83,16 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-# 1 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 1
-# 9 "/home/jmg3/chimes/src/libchimes/checkpoint.h"
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 1 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 9 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h"
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 25 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1416,14 +1416,14 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 10 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 2
+# 10 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h" 2
 
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*____chimes_fp)(void *));
-# 2 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp" 2
+# 2 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp" 2
 # 1 "/usr/include/assert.h" 1 3 4
 # 66 "/usr/include/assert.h" 3 4
 extern "C" {
@@ -1447,94 +1447,94 @@ extern void __assert (const char *__assertion, const char *__file, int __line)
 
 
 }
-# 3 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp" 2
-# 3 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-# 4 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 3 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp" 2
+# 3 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 4 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
 extern int foo(int *a) __attribute__((nocheckpoint));
-# 5 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-# 6 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 5 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 6 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
 static int (*____chimes_extern_func_foo)(int *) = foo;
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
-int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(513441829984432521UL)) ; int *b;
-# 6 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11006122440783251865UL)) ; int *b;
+# 6 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
 int *a;
-# 6 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 6 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
  register_stack_vars(2, "main|b|0", (int *)0x0, "i32*", (void *)(&b), (size_t)8, 1, 0, 0, "main|a|0", (int *)0x0, "i32*", (void *)(&a), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
-# 7 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-       a = ((int *) ({ void *____chimes_tmp_ptr = malloc((10 * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 10 * sizeof(int), 513441829984432510UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 8 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-       b = ((int *) ({ void *____chimes_tmp_ptr = malloc((10 * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 10 * sizeof(int), 513441829984432501UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 9 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-# 10 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 7 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+       a = ((int *) ({ void *____chimes_tmp_ptr = malloc((10 * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 10 * sizeof(int), 11006122440783251854UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 8 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+       b = ((int *) ({ void *____chimes_tmp_ptr = malloc((10 * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 10 * sizeof(int), 11006122440783251845UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 9 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 10 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
     a[0] = 3;
-# 11 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 11 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
     b[0] = 3;
-# 12 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-# 13 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-     int c; call_lbl_0: c = ((____chimes_does_checkpoint_foo_npm ? ( ({ calling((void*)foo, 0, 0, 0UL, 1, (size_t)(513441829984432501UL)); (foo)(b); }) ) : (({ calling_npm("foo", 0); (*____chimes_extern_func_foo)(b); })))) ;
-# 14 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-# 15 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 12 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 13 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+     int c; call_lbl_0: c = ((____chimes_does_checkpoint_foo_npm ? ( ({ calling((void*)foo, 0, 0, 0UL, 1, (size_t)(11006122440783251845UL)); (foo)(b); }) ) : (({ calling_npm("foo", 0); (*____chimes_extern_func_foo)(b); })))) ;
+# 14 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 15 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
     a[0] = 3;
-# 16 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 16 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
     b[0] = 3;
-# 17 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-# 18 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 17 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 18 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
      call_lbl_1: checkpoint_transformed(1, ____alias_loc_id_0);
-# 19 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-# 20 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-    ((a[0] == 3) ? static_cast<void> (0) : __assert_fail ("a[0] == 3", "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp", 20, __PRETTY_FUNCTION__));
-# 21 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-    ((b[0] == 3) ? static_cast<void> (0) : __assert_fail ("b[0] == 3", "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp", 21, __PRETTY_FUNCTION__));
-# 22 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-# 23 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-     ({ free_helper((((unsigned char *)a) - sizeof(void *)), 513441829984432510UL);free((((unsigned char *)a) - sizeof(void *))); }) ;
-# 24 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-     ({ free_helper((((unsigned char *)b) - sizeof(void *)), 513441829984432501UL);free((((unsigned char *)b) - sizeof(void *))); }) ;
-# 25 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-# 26 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 19 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 20 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+    ((a[0] == 3) ? static_cast<void> (0) : __assert_fail ("a[0] == 3", "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp", 20, __PRETTY_FUNCTION__));
+# 21 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+    ((b[0] == 3) ? static_cast<void> (0) : __assert_fail ("b[0] == 3", "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp", 21, __PRETTY_FUNCTION__));
+# 22 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 23 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+     ({ free_helper((((unsigned char *)a) - sizeof(void *)), 11006122440783251854UL);free((((unsigned char *)a) - sizeof(void *))); }) ;
+# 24 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+     ({ free_helper((((unsigned char *)b) - sizeof(void *)), 11006122440783251845UL);free((((unsigned char *)b) - sizeof(void *))); }) ;
+# 25 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 26 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 27 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 27 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); }
-# 6 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(513441829984432521UL)) ; int *b;
-# 6 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 6 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11006122440783251865UL)) ; int *b;
+# 6 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
 int *a;
-# 6 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 6 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
  register_stack_vars(2, "main|b|0", (int *)0x0, "i32*", (void *)(&b), (size_t)8, 1, 0, 0, "main|a|0", (int *)0x0, "i32*", (void *)(&a), (size_t)8, 1, 0, 0); ; ;
-# 7 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-       a = ((int *) ({ void *____chimes_tmp_ptr = malloc((10 * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 10 * sizeof(int), 513441829984432510UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 8 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-       b = ((int *) ({ void *____chimes_tmp_ptr = malloc((10 * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 10 * sizeof(int), 513441829984432501UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 9 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-# 10 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 7 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+       a = ((int *) ({ void *____chimes_tmp_ptr = malloc((10 * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 10 * sizeof(int), 11006122440783251854UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 8 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+       b = ((int *) ({ void *____chimes_tmp_ptr = malloc((10 * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 10 * sizeof(int), 11006122440783251845UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 9 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 10 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
     a[0] = 3;
-# 11 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 11 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
     b[0] = 3;
-# 12 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-# 13 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-     int c; call_lbl_0: c = ((____chimes_does_checkpoint_foo_npm ? ( ({ calling((void*)foo, 0, 0, 0UL, 1, (size_t)(513441829984432501UL)); (foo)(b); }) ) : (({ calling_npm("foo", 0); (*____chimes_extern_func_foo)(b); })))) ;
-# 14 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-# 15 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 12 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 13 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+     int c; call_lbl_0: c = ((____chimes_does_checkpoint_foo_npm ? ( ({ calling((void*)foo, 0, 0, 0UL, 1, (size_t)(11006122440783251845UL)); (foo)(b); }) ) : (({ calling_npm("foo", 0); (*____chimes_extern_func_foo)(b); })))) ;
+# 14 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 15 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
     a[0] = 3;
-# 16 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 16 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
     b[0] = 3;
-# 17 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-# 18 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 17 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 18 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
      call_lbl_1: checkpoint_transformed(1, ____alias_loc_id_0);
-# 19 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-# 20 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-    ((a[0] == 3) ? static_cast<void> (0) : __assert_fail ("a[0] == 3", "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp", 20, __PRETTY_FUNCTION__));
-# 21 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-    ((b[0] == 3) ? static_cast<void> (0) : __assert_fail ("b[0] == 3", "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp", 21, __PRETTY_FUNCTION__));
-# 22 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-# 23 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-     ({ free_helper((((unsigned char *)a) - sizeof(void *)), 513441829984432510UL);free((((unsigned char *)a) - sizeof(void *))); }) ;
-# 24 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-     ({ free_helper((((unsigned char *)b) - sizeof(void *)), 513441829984432501UL);free((((unsigned char *)b) - sizeof(void *))); }) ;
-# 25 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
-# 26 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 19 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 20 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+    ((a[0] == 3) ? static_cast<void> (0) : __assert_fail ("a[0] == 3", "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp", 20, __PRETTY_FUNCTION__));
+# 21 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+    ((b[0] == 3) ? static_cast<void> (0) : __assert_fail ("b[0] == 3", "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp", 21, __PRETTY_FUNCTION__));
+# 22 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 23 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+     ({ free_helper((((unsigned char *)a) - sizeof(void *)), 11006122440783251854UL);free((((unsigned char *)a) - sizeof(void *))); }) ;
+# 24 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+     ({ free_helper((((unsigned char *)b) - sizeof(void *)), 11006122440783251845UL);free((((unsigned char *)b) - sizeof(void *))); }) ;
+# 25 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 26 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 27 "/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
+# 27 "/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
 int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
@@ -1546,16 +1546,16 @@ int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_re
 
 
 static int module_init() {
-    init_module(513441829984432454UL, 3, 1, 0, 2, 0, 1, 1, 0, 1, 0,
-                           &____alias_loc_id_0, (unsigned)8, (unsigned)0, (unsigned)1, (513441829984432454UL + 1UL), (513441829984432454UL + 2UL), (513441829984432454UL + 3UL), (513441829984432454UL + 4UL), (513441829984432454UL + 5UL), (513441829984432454UL + 6UL), (513441829984432454UL + 47UL), (513441829984432454UL + 56UL), "foo", (unsigned)1, (513441829984432454UL + 47UL),
-                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (513441829984432454UL + 7UL),
+    init_module(11006122440783251798UL, 3, 1, 0, 2, 0, 1, 1, 0, 1, 0,
+                           &____alias_loc_id_0, (unsigned)8, (unsigned)0, (unsigned)1, (11006122440783251798UL + 1UL), (11006122440783251798UL + 2UL), (11006122440783251798UL + 3UL), (11006122440783251798UL + 4UL), (11006122440783251798UL + 5UL), (11006122440783251798UL + 6UL), (11006122440783251798UL + 47UL), (11006122440783251798UL + 56UL), "foo", (unsigned)1, (11006122440783251798UL + 47UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (11006122440783251798UL + 7UL),
                                "foo", (void **)&(____chimes_extern_func_foo),
                            "foo", &(____chimes_does_checkpoint_foo_npm),
-                             (513441829984432454UL + 3UL), (513441829984432454UL + 67UL),
-                             (513441829984432454UL + 5UL), (513441829984432454UL + 47UL),
-                             (513441829984432454UL + 4UL), (513441829984432454UL + 56UL),
+                             (11006122440783251798UL + 3UL), (11006122440783251798UL + 67UL),
+                             (11006122440783251798UL + 5UL), (11006122440783251798UL + 47UL),
+                             (11006122440783251798UL + 4UL), (11006122440783251798UL + 56UL),
                              "main", "main", 0, 2, "foo", "checkpoint",
-        "foo", 0UL, (int)1, 513441829984432501UL);
+        "foo", 0UL, (int)1, 11006122440783251845UL);
     return 0;
 }
 

@@ -34,11 +34,11 @@ static unsigned ____alias_loc_id_3;
 static unsigned ____alias_loc_id_4;
 static unsigned ____alias_loc_id_5;
 static unsigned ____alias_loc_id_6;
-# 1 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -47,7 +47,7 @@ static unsigned ____alias_loc_id_6;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -103,7 +103,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 69 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 69 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -117,8 +117,8 @@ inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 33 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 33 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 # 1 "/usr/include/sys/time.h" 1 3 4
 # 23 "/usr/include/sys/time.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -447,9 +447,9 @@ extern int futimesat (int __fd, __const char *__file,
         __const struct timeval __tvp[2]) throw ();
 # 191 "/usr/include/sys/time.h" 3 4
 }
-# 34 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp" 2
-# 1 "/home/jmg3/chimes/src/examples/cpp/include/common.h" 1
-# 26 "/home/jmg3/chimes/src/examples/cpp/include/common.h"
+# 34 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp" 2
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/include/common.h" 1
+# 26 "/scratch/jmg3/chimes/src/examples/cpp/include/common.h"
 # 1 "/usr/include/string.h" 1 3 4
 # 29 "/usr/include/string.h" 3 4
 extern "C" {
@@ -951,7 +951,7 @@ extern "C++" __const char *basename (__const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 # 646 "/usr/include/string.h" 3 4
 }
-# 27 "/home/jmg3/chimes/src/examples/cpp/include/common.h" 2
+# 27 "/scratch/jmg3/chimes/src/examples/cpp/include/common.h" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 30 "/usr/include/stdio.h" 3 4
 extern "C" {
@@ -1777,7 +1777,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 28 "/home/jmg3/chimes/src/examples/cpp/include/common.h" 2
+# 28 "/scratch/jmg3/chimes/src/examples/cpp/include/common.h" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 1 3 4
@@ -2831,8 +2831,8 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 29 "/home/jmg3/chimes/src/examples/cpp/include/common.h" 2
-# 1 "/home/jmg3/chimes/src/examples/cpp/include/common_cuda.h" 1
+# 29 "/scratch/jmg3/chimes/src/examples/cpp/include/common.h" 2
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/include/common_cuda.h" 1
 
 
 
@@ -2844,7 +2844,7 @@ extern int getNumCUDADevices();
 
 
 }
-# 30 "/home/jmg3/chimes/src/examples/cpp/include/common.h" 2
+# 30 "/scratch/jmg3/chimes/src/examples/cpp/include/common.h" 2
 
 typedef struct _source {
     int x, y;
@@ -2862,7 +2862,7 @@ extern float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt);
 extern void init_progress(int length, int goal, int disabled);
 extern void update_progress(int progress);
 extern void finish_progress();
-# 35 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp" 2
+# 35 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp" 2
 # 1 "/usr/include/math.h" 1 3 4
 # 30 "/usr/include/math.h" 3 4
 extern "C" {
@@ -3867,7 +3867,7 @@ __signbitl (long double __x) throw ()
 # 417 "/usr/include/math.h" 2 3 4
 # 472 "/usr/include/math.h" 3 4
 }
-# 36 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp" 2
+# 36 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp" 2
 # 1 "/usr/include/assert.h" 1 3 4
 # 66 "/usr/include/assert.h" 3 4
 extern "C" {
@@ -3891,1047 +3891,1047 @@ extern void __assert (const char *__assertion, const char *__file, int __line)
 
 
 }
-# 37 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp" 2
-# 37 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 38 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 37 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp" 2
+# 37 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 38 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 static char *progress_buffer = __null;
-# 39 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 39 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 static int progress_length = -1;
-# 40 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 40 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 static int progress_goal = -1;
-# 41 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 41 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 static int progress_num_ticks = -1;
-# 42 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 42 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 static int progress_disabled = 0;
-# 43 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 44 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 43 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 44 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 double seconds_npm();
 double seconds_quick(); double seconds();
 double seconds_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 45 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 45 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      struct timeval tp; ;
-# 46 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 46 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      struct timezone tzp; ;
-# 47 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 47 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      int i; i = (gettimeofday(&tp, &tzp)) ;
-# 48 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 48 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 49 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 49 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_0, ____chimes_did_disable0, false); }
-# 50 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 51 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 50 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 51 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 void ricker_wavelet_npm(float *source, int nsteps, float dt, float freq);
 void ricker_wavelet_quick(float *source, int nsteps, float dt, float freq); void ricker_wavelet(float *source, int nsteps, float dt, float freq);
-void ricker_wavelet_resumable(float *source, int nsteps, float dt, float freq) {const int ____chimes_did_disable1 = new_stack((void *)(&ricker_wavelet), "ricker_wavelet", &____must_manage_ricker_wavelet, 4, 0, (size_t)(7032591211095680205UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 52 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+void ricker_wavelet_resumable(float *source, int nsteps, float dt, float freq) {const int ____chimes_did_disable1 = new_stack((void *)(&ricker_wavelet), "ricker_wavelet", &____must_manage_ricker_wavelet, 4, 0, (size_t)(3785853840841797085UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 52 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      float shift; shift = (-1.5594f / freq) ;
-# 53 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 54 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 53 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 54 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     { int i; for ( i = (0) ; i < nsteps; i++) {
-# 55 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 55 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
          float time; time = (i*dt + shift) ;
-# 56 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 56 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
          float pi_freq_t; pi_freq_t = (3.141517f * freq * time) ;
-# 57 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 57 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
          float sqr_pi_freq_t; sqr_pi_freq_t = (pi_freq_t * pi_freq_t) ;
-# 58 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 58 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         source[i] = 1e5f * (1.f - 2 * sqr_pi_freq_t) * exp(-sqr_pi_freq_t);
-# 59 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 59 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     } }
-# 60 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 60 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "ricker_wavelet", &____must_manage_ricker_wavelet, ____alias_loc_id_1, ____chimes_did_disable1, false); }
-# 61 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 62 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 61 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 62 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 void parse_source_npm(char *optarg, source *out);
 void parse_source_quick(char *optarg, source *out); void parse_source(char *optarg, source *out);
-void parse_source_resumable(char *optarg, source *out) {const int ____chimes_did_disable2 = new_stack((void *)(&parse_source), "parse_source", &____must_manage_parse_source, 2, 0, (size_t)(7032591211095680299UL), (size_t)(7032591211095680300UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 63 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+void parse_source_resumable(char *optarg, source *out) {const int ____chimes_did_disable2 = new_stack((void *)(&parse_source), "parse_source", &____must_manage_parse_source, 2, 0, (size_t)(3785853840841797179UL), (size_t)(3785853840841797180UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 63 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *x_str; x_str = (optarg) ;
-# 64 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 64 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *first_comma; first_comma = (strchr(x_str, ',')) ;
-# 65 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 65 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (first_comma == __null) {
-# 66 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 66 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Improperly formatted argument to -p, must "
-# 67 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 67 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "be x,y,f,t\n");
-# 68 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 68 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 69 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 69 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 70 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 70 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *y_str; y_str = (first_comma + 1) ;
-# 71 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 71 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *second_comma; second_comma = (strchr(y_str, ',')) ;
-# 72 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 72 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (second_comma == __null) {
-# 73 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 73 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Improperly formatted argument to -p, must "
-# 74 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 74 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "be x,y,f,t\n");
-# 75 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 75 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 76 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 76 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 77 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 77 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *freq_str; freq_str = (second_comma + 1) ;
-# 78 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 78 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *third_comma; third_comma = (strchr(freq_str, ',')) ;
-# 79 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 79 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (third_comma == __null) {
-# 80 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 80 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Improperly formatted argument to -p, must "
-# 81 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 81 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "be x,y,f,t\n");
-# 82 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 82 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 83 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 83 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 84 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 84 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *time_str; time_str = (third_comma + 1) ;
-# 85 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 85 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     *first_comma = '\0';
-# 86 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 86 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     *second_comma = '\0';
-# 87 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 87 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     *third_comma = '\0';
-# 88 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 89 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 88 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 89 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->x = atoi(x_str);
-# 90 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 90 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->y = atoi(y_str);
-# 91 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 91 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->freq = atof(freq_str);
-# 92 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 92 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->t = atoi(time_str);
-# 93 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 93 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "parse_source", &____must_manage_parse_source, ____alias_loc_id_2, ____chimes_did_disable2, false); }
-# 94 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 95 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 94 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 95 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 void config_sources_npm(source **srcs, int *nsrcs, int nx, int ny, int nsteps);
 void config_sources_quick(source **srcs, int *nsrcs, int nx, int ny, int nsteps); void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps);
-void config_sources_resumable(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {const int ____chimes_did_disable3 = new_stack((void *)(&config_sources), "config_sources", &____must_manage_config_sources, 5, 0, (size_t)(7032591211095680430UL), (size_t)(7032591211095680431UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 96 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+void config_sources_resumable(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {const int ____chimes_did_disable3 = new_stack((void *)(&config_sources), "config_sources", &____must_manage_config_sources, 5, 0, (size_t)(3785853840841797310UL), (size_t)(3785853840841797311UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 96 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (*nsrcs == 0) {
-# 97 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-        *srcs = (source *) ({ void *____chimes_tmp_ptr = malloc((sizeof(source)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(source), 7032591211095680374UL, 0, 1, (int)sizeof(struct _source), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 98 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 97 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+        *srcs = (source *) ({ void *____chimes_tmp_ptr = malloc((sizeof(source)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(source), 3785853840841797254UL, 0, 1, (int)sizeof(struct _source), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 98 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (*srcs == __null) {
-# 99 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 99 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(stderr, "Allocation failed\n");
-# 100 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 100 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 101 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 101 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 102 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 102 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->x = nx / 2;
-# 103 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 103 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->y = ny / 2;
-# 104 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 104 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->freq = 15.0f;
-# 105 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 105 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->t = 0;
-# 106 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 106 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         *nsrcs = 1;
-# 107 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 107 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 108 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 109 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 110 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 108 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 109 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 110 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     { int i; for ( i = (0) ; i < *nsrcs; i++) {
-# 111 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 111 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
          source *curr; curr = ((*srcs) + i) ;
-# 112 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 112 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (curr->x < 0 || curr->x >= nx) {
-# 113 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 113 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(stderr, "Invalid x value for source\n");
-# 114 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 114 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 115 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 115 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 116 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 116 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (curr->y < 0 || curr->y >= ny) {
-# 117 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 117 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(stderr, "Invalid y value for source\n");
-# 118 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 118 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 119 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 119 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 120 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 120 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (curr->t < 0 || curr->t >= nsteps) {
-# 121 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 121 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(stderr, "Invalid t value for source\n");
-# 122 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 122 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 123 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 123 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 124 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 124 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     } }
-# 125 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 125 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "config_sources", &____must_manage_config_sources, ____alias_loc_id_3, ____chimes_did_disable3, false); }
-# 126 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 127 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 126 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 127 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 float **sample_sources_npm(source *srcs, int nsrcs, int nsteps, float dt);
 float **sample_sources_quick(source *srcs, int nsrcs, int nsteps, float dt); float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt);
-float **sample_sources_resumable(source *srcs, int nsrcs, int nsteps, float dt) {const int ____chimes_did_disable4 = new_stack((void *)(&sample_sources), "sample_sources", &____must_manage_sample_sources, 4, 0, (size_t)(7032591211095680517UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 128 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-     float **src_samples; src_samples = ((float **) ({ void *____chimes_tmp_ptr = malloc((nsrcs * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nsrcs * sizeof(float *), 7032591211095680455UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 129 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+float **sample_sources_resumable(source *srcs, int nsrcs, int nsteps, float dt) {const int ____chimes_did_disable4 = new_stack((void *)(&sample_sources), "sample_sources", &____must_manage_sample_sources, 4, 0, (size_t)(3785853840841797397UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 128 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+     float **src_samples; src_samples = ((float **) ({ void *____chimes_tmp_ptr = malloc((nsrcs * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nsrcs * sizeof(float *), 3785853840841797335UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 129 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (src_samples == __null) {
-# 130 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 130 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Allocation failed\n");
-# 131 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 131 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 132 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 132 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 133 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 134 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 133 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 134 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     { int i; for ( i = (0) ; i < nsrcs; i++) {
-# 135 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-        src_samples[i] = (float *) ({ void *____chimes_tmp_ptr = malloc((nsteps * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nsteps * sizeof(float), 7032591211095680475UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 136 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 135 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+        src_samples[i] = (float *) ({ void *____chimes_tmp_ptr = malloc((nsteps * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nsteps * sizeof(float), 3785853840841797355UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 136 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (src_samples[i] == __null) {
-# 137 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 137 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(stderr, "Allocation failed\n");
-# 138 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 138 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 139 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 139 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 140 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 140 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
          call_lbl_0: ({ calling_npm("ricker_wavelet", 0); ricker_wavelet_npm(src_samples[i], nsteps, dt, srcs[i].freq); });
-# 141 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 141 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     } }
-# 142 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-     float **____chimes_ret_var_1; ; ____chimes_ret_var_1 = (src_samples); rm_stack(true, 7032591211095680455UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_did_disable4, false); return ____chimes_ret_var_1; ;
-# 143 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-rm_stack(true, 7032591211095680455UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_did_disable4, false); }
-# 144 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 145 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 142 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+     float **____chimes_ret_var_1; ; ____chimes_ret_var_1 = (src_samples); rm_stack(true, 3785853840841797335UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_did_disable4, false); return ____chimes_ret_var_1; ;
+# 143 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+rm_stack(true, 3785853840841797335UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_did_disable4, false); }
+# 144 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 145 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 void init_progress_npm(int length, int goal, int disabled);
 void init_progress_quick(int length, int goal, int disabled); void init_progress(int length, int goal, int disabled);
 void init_progress_resumable(int length, int goal, int disabled) {const int ____chimes_did_disable5 = new_stack((void *)(&init_progress), "init_progress", &____must_manage_init_progress, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 146 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 146 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     int i; ;
-# 147 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 147 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_buffer != __null) {
-# 148 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 148 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Progress initialized multiple times\n");
-# 149 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 149 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 150 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 150 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 151 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 152 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 151 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 152 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (length > 100) {
-# 153 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 153 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Invalid progress length, must be <= 100\n");
-# 154 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 154 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 155 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 155 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 156 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 157 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 156 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 157 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_disabled = disabled;
-# 158 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 159 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 158 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 159 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (disabled) {rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5, ____chimes_did_disable5, false); return; };
-# 160 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 161 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-    progress_buffer = (char *) ({ void *____chimes_tmp_ptr = malloc((sizeof(char) * (length + 3)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(char) * (length + 3), 7032591211095680570UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 162 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-    ((progress_buffer != __null) ? static_cast<void> (0) : __assert_fail ("progress_buffer != __null", "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp", 162, __PRETTY_FUNCTION__));
-# 163 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 160 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 161 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+    progress_buffer = (char *) ({ void *____chimes_tmp_ptr = malloc((sizeof(char) * (length + 3)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(char) * (length + 3), 3785853840841797450UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 162 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+    ((progress_buffer != __null) ? static_cast<void> (0) : __assert_fail ("progress_buffer != __null", "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp", 162, __PRETTY_FUNCTION__));
+# 163 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_length = length;
-# 164 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 164 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_goal = goal;
-# 165 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 165 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_num_ticks = 0;
-# 166 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 167 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 166 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 167 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_buffer[0] = '|';
-# 168 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 168 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_buffer[length + 1] = '|';
-# 169 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 169 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_buffer[length + 2] = '\0';
-# 170 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 171 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 170 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 171 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     for (i = 1; i <= length; i++) {
-# 172 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 172 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         progress_buffer[i] = '-';
-# 173 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 173 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 174 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 175 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 174 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 175 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     fprintf(stderr, "%s", progress_buffer);
-# 176 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 176 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5, ____chimes_did_disable5, false); }
-# 177 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 178 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 177 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 178 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 void update_progress_npm(int progress);
 void update_progress_quick(int progress); void update_progress(int progress);
 void update_progress_resumable(int progress) {const int ____chimes_did_disable6 = new_stack((void *)(&update_progress), "update_progress", &____must_manage_update_progress, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 179 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 179 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     int i; ;
-# 180 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 181 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 180 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 181 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_disabled) {
-# 182 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 182 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6, ____chimes_did_disable6, false); return;
-# 183 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 183 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 184 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 185 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 184 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 185 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_buffer == __null) {
-# 186 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 186 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Calling update_progress without having called "
-# 187 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 187 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "init_progress\n");
-# 188 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 188 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 189 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 189 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 190 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 191 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 190 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 191 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      double perc_progress; perc_progress = ((double)progress / (double)progress_goal) ;
-# 192 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 192 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      int ticks; ticks = ((int)(perc_progress * progress_length)) ;
-# 193 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 193 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (ticks > progress_length) {
-# 194 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 194 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         ticks = progress_length;
-# 195 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 195 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 196 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 197 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 196 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 197 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (ticks < progress_num_ticks) {
-# 198 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 198 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Ticks went backwards?\n");
-# 199 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 199 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 200 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 200 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 201 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 202 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 201 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 202 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (ticks > progress_num_ticks) {
-# 203 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 203 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         for (i = 1; i < 1 + ticks; i++) {
-# 204 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 204 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             progress_buffer[i] = '=';
-# 205 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 205 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 206 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 207 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 206 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 207 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         for (i = 0; i < progress_length + 2; i++) {
-# 208 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 208 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(stderr, "\b");
-# 209 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 209 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 210 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 211 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 210 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 211 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "%s", progress_buffer);
-# 212 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 212 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 213 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 214 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 213 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 214 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_num_ticks = ticks;
-# 215 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 215 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6, ____chimes_did_disable6, false); }
-# 216 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 217 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 216 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 217 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 void finish_progress_npm();
 void finish_progress_quick(); void finish_progress();
 void finish_progress_resumable() {const int ____chimes_did_disable7 = new_stack((void *)(&finish_progress), "finish_progress", &____must_manage_finish_progress, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 218 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 218 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_disabled) {
-# 219 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 219 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_did_disable7, false); return;
-# 220 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 220 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 221 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 222 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 221 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 222 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      call_lbl_0: ({ calling_npm("update_progress", 0); update_progress_npm(progress_goal); });
-# 223 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 223 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     fprintf(stderr, "\n");
-# 224 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 225 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-     ({ free_helper((((unsigned char *)progress_buffer) - sizeof(void *)), 7032591211095680570UL);free((((unsigned char *)progress_buffer) - sizeof(void *))); }) ;
-# 226 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 224 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 225 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+     ({ free_helper((((unsigned char *)progress_buffer) - sizeof(void *)), 3785853840841797450UL);free((((unsigned char *)progress_buffer) - sizeof(void *))); }) ;
+# 226 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_did_disable7, false); }
-# 44 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 44 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 double seconds_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0) ; ; ;
-# 45 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 45 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      struct timeval tp; ;
-# 46 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 46 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      struct timezone tzp; ;
-# 47 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 47 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      int i; i = (gettimeofday(&tp, &tzp)) ;
-# 48 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 48 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 49 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 49 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 
 double seconds() { return (____chimes_replaying ? seconds_resumable() : seconds_quick()); }
-# 51 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-void ricker_wavelet_quick(float *source, int nsteps, float dt, float freq) {const int ____chimes_did_disable1 = new_stack((void *)(&ricker_wavelet), "ricker_wavelet", &____must_manage_ricker_wavelet, 4, 0, (size_t)(7032591211095680205UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 52 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 51 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+void ricker_wavelet_quick(float *source, int nsteps, float dt, float freq) {const int ____chimes_did_disable1 = new_stack((void *)(&ricker_wavelet), "ricker_wavelet", &____must_manage_ricker_wavelet, 4, 0, (size_t)(3785853840841797085UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+# 52 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      float shift; shift = (-1.5594f / freq) ;
-# 53 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 54 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 53 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 54 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     { int i; for ( i = (0) ; i < nsteps; i++) {
-# 55 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 55 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
          float time; time = (i*dt + shift) ;
-# 56 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 56 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
          float pi_freq_t; pi_freq_t = (3.141517f * freq * time) ;
-# 57 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 57 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
          float sqr_pi_freq_t; sqr_pi_freq_t = (pi_freq_t * pi_freq_t) ;
-# 58 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 58 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         source[i] = 1e5f * (1.f - 2 * sqr_pi_freq_t) * exp(-sqr_pi_freq_t);
-# 59 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 59 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     } }
-# 60 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 60 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "ricker_wavelet", &____must_manage_ricker_wavelet, ____alias_loc_id_1, ____chimes_did_disable1, false); }
 
 void ricker_wavelet(float *source, int nsteps, float dt, float freq) { (____chimes_replaying ? ricker_wavelet_resumable(source, nsteps, dt, freq) : ricker_wavelet_quick(source, nsteps, dt, freq)); }
-# 62 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-void parse_source_quick(char *optarg, source *out) {const int ____chimes_did_disable2 = new_stack((void *)(&parse_source), "parse_source", &____must_manage_parse_source, 2, 0, (size_t)(7032591211095680299UL), (size_t)(7032591211095680300UL)) ; ; ;
-# 63 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 62 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+void parse_source_quick(char *optarg, source *out) {const int ____chimes_did_disable2 = new_stack((void *)(&parse_source), "parse_source", &____must_manage_parse_source, 2, 0, (size_t)(3785853840841797179UL), (size_t)(3785853840841797180UL)) ; ; ;
+# 63 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *x_str; x_str = (optarg) ;
-# 64 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 64 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *first_comma; first_comma = (strchr(x_str, ',')) ;
-# 65 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 65 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (first_comma == __null) {
-# 66 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 66 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Improperly formatted argument to -p, must "
-# 67 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 67 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "be x,y,f,t\n");
-# 68 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 68 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 69 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 69 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 70 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 70 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *y_str; y_str = (first_comma + 1) ;
-# 71 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 71 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *second_comma; second_comma = (strchr(y_str, ',')) ;
-# 72 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 72 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (second_comma == __null) {
-# 73 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 73 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Improperly formatted argument to -p, must "
-# 74 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 74 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "be x,y,f,t\n");
-# 75 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 75 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 76 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 76 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 77 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 77 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *freq_str; freq_str = (second_comma + 1) ;
-# 78 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 78 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *third_comma; third_comma = (strchr(freq_str, ',')) ;
-# 79 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 79 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (third_comma == __null) {
-# 80 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 80 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Improperly formatted argument to -p, must "
-# 81 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 81 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "be x,y,f,t\n");
-# 82 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 82 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 83 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 83 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 84 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 84 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      char *time_str; time_str = (third_comma + 1) ;
-# 85 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 85 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     *first_comma = '\0';
-# 86 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 86 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     *second_comma = '\0';
-# 87 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 87 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     *third_comma = '\0';
-# 88 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 89 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 88 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 89 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->x = atoi(x_str);
-# 90 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 90 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->y = atoi(y_str);
-# 91 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 91 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->freq = atof(freq_str);
-# 92 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 92 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->t = atoi(time_str);
-# 93 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 93 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "parse_source", &____must_manage_parse_source, ____alias_loc_id_2, ____chimes_did_disable2, false); }
 
 void parse_source(char *optarg, source *out) { (____chimes_replaying ? parse_source_resumable(optarg, out) : parse_source_quick(optarg, out)); }
-# 95 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-void config_sources_quick(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {const int ____chimes_did_disable3 = new_stack((void *)(&config_sources), "config_sources", &____must_manage_config_sources, 5, 0, (size_t)(7032591211095680430UL), (size_t)(7032591211095680431UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 96 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 95 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+void config_sources_quick(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {const int ____chimes_did_disable3 = new_stack((void *)(&config_sources), "config_sources", &____must_manage_config_sources, 5, 0, (size_t)(3785853840841797310UL), (size_t)(3785853840841797311UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+# 96 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (*nsrcs == 0) {
-# 97 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-        *srcs = (source *) ({ void *____chimes_tmp_ptr = malloc((sizeof(source)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(source), 7032591211095680374UL, 0, 1, (int)sizeof(struct _source), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 98 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 97 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+        *srcs = (source *) ({ void *____chimes_tmp_ptr = malloc((sizeof(source)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(source), 3785853840841797254UL, 0, 1, (int)sizeof(struct _source), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 98 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (*srcs == __null) {
-# 99 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 99 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(stderr, "Allocation failed\n");
-# 100 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 100 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 101 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 101 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 102 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 102 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->x = nx / 2;
-# 103 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 103 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->y = ny / 2;
-# 104 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 104 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->freq = 15.0f;
-# 105 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 105 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->t = 0;
-# 106 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 106 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         *nsrcs = 1;
-# 107 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 107 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 108 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 109 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 110 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 108 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 109 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 110 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     { int i; for ( i = (0) ; i < *nsrcs; i++) {
-# 111 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 111 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
          source *curr; curr = ((*srcs) + i) ;
-# 112 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 112 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (curr->x < 0 || curr->x >= nx) {
-# 113 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 113 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(stderr, "Invalid x value for source\n");
-# 114 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 114 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 115 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 115 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 116 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 116 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (curr->y < 0 || curr->y >= ny) {
-# 117 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 117 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(stderr, "Invalid y value for source\n");
-# 118 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 118 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 119 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 119 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 120 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 120 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (curr->t < 0 || curr->t >= nsteps) {
-# 121 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 121 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(stderr, "Invalid t value for source\n");
-# 122 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 122 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 123 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 123 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 124 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 124 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     } }
-# 125 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 125 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "config_sources", &____must_manage_config_sources, ____alias_loc_id_3, ____chimes_did_disable3, false); }
 
 void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) { (____chimes_replaying ? config_sources_resumable(srcs, nsrcs, nx, ny, nsteps) : config_sources_quick(srcs, nsrcs, nx, ny, nsteps)); }
-# 127 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-float **sample_sources_quick(source *srcs, int nsrcs, int nsteps, float dt) {const int ____chimes_did_disable4 = new_stack((void *)(&sample_sources), "sample_sources", &____must_manage_sample_sources, 4, 0, (size_t)(7032591211095680517UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 128 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-     float **src_samples; src_samples = ((float **) ({ void *____chimes_tmp_ptr = malloc((nsrcs * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nsrcs * sizeof(float *), 7032591211095680455UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 129 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 127 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+float **sample_sources_quick(source *srcs, int nsrcs, int nsteps, float dt) {const int ____chimes_did_disable4 = new_stack((void *)(&sample_sources), "sample_sources", &____must_manage_sample_sources, 4, 0, (size_t)(3785853840841797397UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+# 128 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+     float **src_samples; src_samples = ((float **) ({ void *____chimes_tmp_ptr = malloc((nsrcs * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nsrcs * sizeof(float *), 3785853840841797335UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 129 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (src_samples == __null) {
-# 130 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 130 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Allocation failed\n");
-# 131 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 131 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 132 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 132 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 133 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 134 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 133 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 134 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     { int i; for ( i = (0) ; i < nsrcs; i++) {
-# 135 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-        src_samples[i] = (float *) ({ void *____chimes_tmp_ptr = malloc((nsteps * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nsteps * sizeof(float), 7032591211095680475UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 136 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 135 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+        src_samples[i] = (float *) ({ void *____chimes_tmp_ptr = malloc((nsteps * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nsteps * sizeof(float), 3785853840841797355UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 136 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (src_samples[i] == __null) {
-# 137 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 137 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(stderr, "Allocation failed\n");
-# 138 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 138 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 139 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 139 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 140 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 140 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
          call_lbl_0: ({ calling_npm("ricker_wavelet", 0); ricker_wavelet_npm(src_samples[i], nsteps, dt, srcs[i].freq); });
-# 141 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 141 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     } }
-# 142 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-     float **____chimes_ret_var_1; ; ____chimes_ret_var_1 = (src_samples); rm_stack(true, 7032591211095680455UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_did_disable4, false); return ____chimes_ret_var_1; ;
-# 143 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-rm_stack(true, 7032591211095680455UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_did_disable4, false); }
+# 142 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+     float **____chimes_ret_var_1; ; ____chimes_ret_var_1 = (src_samples); rm_stack(true, 3785853840841797335UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_did_disable4, false); return ____chimes_ret_var_1; ;
+# 143 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+rm_stack(true, 3785853840841797335UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_did_disable4, false); }
 
 float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) { return (____chimes_replaying ? sample_sources_resumable(srcs, nsrcs, nsteps, dt) : sample_sources_quick(srcs, nsrcs, nsteps, dt)); }
-# 145 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 145 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 void init_progress_quick(int length, int goal, int disabled) {const int ____chimes_did_disable5 = new_stack((void *)(&init_progress), "init_progress", &____must_manage_init_progress, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 146 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 146 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     int i; ;
-# 147 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 147 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_buffer != __null) {
-# 148 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 148 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Progress initialized multiple times\n");
-# 149 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 149 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 150 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 150 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 151 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 152 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 151 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 152 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (length > 100) {
-# 153 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 153 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Invalid progress length, must be <= 100\n");
-# 154 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 154 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 155 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 155 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 156 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 157 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 156 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 157 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_disabled = disabled;
-# 158 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 159 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 158 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 159 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (disabled) {rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5, ____chimes_did_disable5, false); return; };
-# 160 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 161 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-    progress_buffer = (char *) ({ void *____chimes_tmp_ptr = malloc((sizeof(char) * (length + 3)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(char) * (length + 3), 7032591211095680570UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 162 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-    ((progress_buffer != __null) ? static_cast<void> (0) : __assert_fail ("progress_buffer != __null", "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp", 162, __PRETTY_FUNCTION__));
-# 163 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 160 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 161 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+    progress_buffer = (char *) ({ void *____chimes_tmp_ptr = malloc((sizeof(char) * (length + 3)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(char) * (length + 3), 3785853840841797450UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 162 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+    ((progress_buffer != __null) ? static_cast<void> (0) : __assert_fail ("progress_buffer != __null", "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp", 162, __PRETTY_FUNCTION__));
+# 163 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_length = length;
-# 164 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 164 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_goal = goal;
-# 165 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 165 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_num_ticks = 0;
-# 166 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 167 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 166 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 167 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_buffer[0] = '|';
-# 168 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 168 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_buffer[length + 1] = '|';
-# 169 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 169 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_buffer[length + 2] = '\0';
-# 170 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 171 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 170 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 171 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     for (i = 1; i <= length; i++) {
-# 172 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 172 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         progress_buffer[i] = '-';
-# 173 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 173 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 174 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 175 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 174 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 175 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     fprintf(stderr, "%s", progress_buffer);
-# 176 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 176 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5, ____chimes_did_disable5, false); }
 
 void init_progress(int length, int goal, int disabled) { (____chimes_replaying ? init_progress_resumable(length, goal, disabled) : init_progress_quick(length, goal, disabled)); }
-# 178 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 178 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 void update_progress_quick(int progress) {const int ____chimes_did_disable6 = new_stack((void *)(&update_progress), "update_progress", &____must_manage_update_progress, 1, 0, (size_t)(0UL)) ; ; ;
-# 179 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 179 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     int i; ;
-# 180 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 181 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 180 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 181 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_disabled) {
-# 182 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 182 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6, ____chimes_did_disable6, false); return;
-# 183 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 183 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 184 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 185 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 184 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 185 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_buffer == __null) {
-# 186 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 186 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Calling update_progress without having called "
-# 187 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 187 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "init_progress\n");
-# 188 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 188 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 189 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 189 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 190 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 191 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 190 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 191 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      double perc_progress; perc_progress = ((double)progress / (double)progress_goal) ;
-# 192 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 192 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      int ticks; ticks = ((int)(perc_progress * progress_length)) ;
-# 193 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 193 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (ticks > progress_length) {
-# 194 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 194 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         ticks = progress_length;
-# 195 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 195 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 196 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 197 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 196 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 197 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (ticks < progress_num_ticks) {
-# 198 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 198 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Ticks went backwards?\n");
-# 199 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 199 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 200 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 200 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 201 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 202 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 201 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 202 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (ticks > progress_num_ticks) {
-# 203 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 203 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         for (i = 1; i < 1 + ticks; i++) {
-# 204 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 204 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             progress_buffer[i] = '=';
-# 205 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 205 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 206 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 207 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 206 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 207 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         for (i = 0; i < progress_length + 2; i++) {
-# 208 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 208 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(stderr, "\b");
-# 209 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 209 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 210 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 211 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 210 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 211 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "%s", progress_buffer);
-# 212 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 212 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 213 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 214 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 213 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 214 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_num_ticks = ticks;
-# 215 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 215 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6, ____chimes_did_disable6, false); }
 
 void update_progress(int progress) { (____chimes_replaying ? update_progress_resumable(progress) : update_progress_quick(progress)); }
-# 217 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 217 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 void finish_progress_quick() {const int ____chimes_did_disable7 = new_stack((void *)(&finish_progress), "finish_progress", &____must_manage_finish_progress, 0, 0) ; ; ;
-# 218 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 218 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_disabled) {
-# 219 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 219 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_did_disable7, false); return;
-# 220 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 220 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 221 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 222 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 221 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 222 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      call_lbl_0: ({ calling_npm("update_progress", 0); update_progress_npm(progress_goal); });
-# 223 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 223 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     fprintf(stderr, "\n");
-# 224 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 225 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-     ({ free_helper((((unsigned char *)progress_buffer) - sizeof(void *)), 7032591211095680570UL);free((((unsigned char *)progress_buffer) - sizeof(void *))); }) ;
-# 226 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 224 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 225 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+     ({ free_helper((((unsigned char *)progress_buffer) - sizeof(void *)), 3785853840841797450UL);free((((unsigned char *)progress_buffer) - sizeof(void *))); }) ;
+# 226 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_did_disable7, false); }
 
 void finish_progress() { (____chimes_replaying ? finish_progress_resumable() : finish_progress_quick()); }
-# 44 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 44 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 double seconds_npm() {
-# 45 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 45 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     struct timeval tp;
-# 46 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 46 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     struct timezone tzp;
-# 47 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 47 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     int i = gettimeofday(&tp, &tzp);
-# 48 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 48 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      double ____chimes_ret_var_0; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); return ____chimes_ret_var_0; ;
-# 49 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 49 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 }
-# 51 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 51 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 void ricker_wavelet_npm(float *source, int nsteps, float dt, float freq) {
-# 52 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 52 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     float shift = -1.5594f / freq;
-# 53 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 54 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 53 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 54 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     for (int i = 0; i < nsteps; i++) {
-# 55 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 55 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         float time = i*dt + shift;
-# 56 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 56 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         float pi_freq_t = 3.141517f * freq * time;
-# 57 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 57 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         float sqr_pi_freq_t = pi_freq_t * pi_freq_t;
-# 58 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 58 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         source[i] = 1e5f * (1.f - 2 * sqr_pi_freq_t) * exp(-sqr_pi_freq_t);
-# 59 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 59 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 60 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 60 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 }
-# 62 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 62 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 void parse_source_npm(char *optarg, source *out) {
-# 63 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 63 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     char *x_str = optarg;
-# 64 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 64 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     char *first_comma = strchr(x_str, ',');
-# 65 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 65 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (first_comma == __null) {
-# 66 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 66 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Improperly formatted argument to -p, must "
-# 67 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 67 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "be x,y,f,t\n");
-# 68 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 68 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 69 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 69 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 70 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 70 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     char *y_str = first_comma + 1;
-# 71 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 71 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     char *second_comma = strchr(y_str, ',');
-# 72 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 72 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (second_comma == __null) {
-# 73 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 73 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Improperly formatted argument to -p, must "
-# 74 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 74 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "be x,y,f,t\n");
-# 75 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 75 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 76 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 76 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 77 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 77 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     char *freq_str = second_comma + 1;
-# 78 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 78 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     char *third_comma = strchr(freq_str, ',');
-# 79 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 79 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (third_comma == __null) {
-# 80 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 80 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Improperly formatted argument to -p, must "
-# 81 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 81 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "be x,y,f,t\n");
-# 82 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 82 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 83 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 83 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 84 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 84 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     char *time_str = third_comma + 1;
-# 85 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 85 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     *first_comma = '\0';
-# 86 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 86 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     *second_comma = '\0';
-# 87 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 87 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     *third_comma = '\0';
-# 88 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 89 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 88 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 89 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->x = atoi(x_str);
-# 90 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 90 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->y = atoi(y_str);
-# 91 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 91 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->freq = atof(freq_str);
-# 92 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 92 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     out->t = atoi(time_str);
-# 93 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 93 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 }
-# 95 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 95 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 void config_sources_npm(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {
-# 96 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 96 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (*nsrcs == 0) {
-# 97 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-        *srcs = (source *) ({ void *____chimes_tmp_ptr = malloc((sizeof(source)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(source), 7032591211095680374UL, 0, 1, (int)sizeof(struct _source), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 98 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 97 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+        *srcs = (source *) ({ void *____chimes_tmp_ptr = malloc((sizeof(source)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(source), 3785853840841797254UL, 0, 1, (int)sizeof(struct _source), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 98 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (*srcs == __null) {
-# 99 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 99 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(stderr, "Allocation failed\n");
-# 100 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 100 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 101 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 101 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 102 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 102 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->x = nx / 2;
-# 103 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 103 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->y = ny / 2;
-# 104 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 104 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->freq = 15.0f;
-# 105 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 105 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         (*srcs)->t = 0;
-# 106 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 106 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         *nsrcs = 1;
-# 107 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 107 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 108 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 109 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 110 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 108 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 109 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 110 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     for (int i = 0; i < *nsrcs; i++) {
-# 111 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 111 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         source *curr = (*srcs) + i;
-# 112 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 112 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (curr->x < 0 || curr->x >= nx) {
-# 113 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 113 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(stderr, "Invalid x value for source\n");
-# 114 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 114 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 115 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 115 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 116 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 116 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (curr->y < 0 || curr->y >= ny) {
-# 117 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 117 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(stderr, "Invalid y value for source\n");
-# 118 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 118 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 119 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 119 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 120 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 120 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (curr->t < 0 || curr->t >= nsteps) {
-# 121 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 121 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(stderr, "Invalid t value for source\n");
-# 122 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 122 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 123 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 123 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 124 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 124 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 125 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 125 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 }
-# 127 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 127 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 float **sample_sources_npm(source *srcs, int nsrcs, int nsteps, float dt) {
-# 128 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-    float **src_samples = (float **) ({ void *____chimes_tmp_ptr = malloc((nsrcs * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nsrcs * sizeof(float *), 7032591211095680455UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 129 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 128 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+    float **src_samples = (float **) ({ void *____chimes_tmp_ptr = malloc((nsrcs * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nsrcs * sizeof(float *), 3785853840841797335UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 129 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (src_samples == __null) {
-# 130 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 130 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Allocation failed\n");
-# 131 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 131 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 132 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 132 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 133 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 134 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 133 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 134 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     for (int i = 0; i < nsrcs; i++) {
-# 135 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-        src_samples[i] = (float *) ({ void *____chimes_tmp_ptr = malloc((nsteps * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nsteps * sizeof(float), 7032591211095680475UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 136 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 135 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+        src_samples[i] = (float *) ({ void *____chimes_tmp_ptr = malloc((nsteps * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nsteps * sizeof(float), 3785853840841797355UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 136 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         if (src_samples[i] == __null) {
-# 137 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 137 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(stderr, "Allocation failed\n");
-# 138 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 138 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             exit(1);
-# 139 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 139 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 140 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 140 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         ricker_wavelet_npm(src_samples[i], nsteps, dt, srcs[i].freq);
-# 141 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 141 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 142 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 142 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
      float ** ____chimes_ret_var_1; ____chimes_ret_var_1 = (src_samples); return ____chimes_ret_var_1; ;
-# 143 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 143 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 }
-# 145 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 145 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 void init_progress_npm(int length, int goal, int disabled) {
-# 146 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 146 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     int i;
-# 147 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 147 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_buffer != __null) {
-# 148 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 148 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Progress initialized multiple times\n");
-# 149 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 149 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 150 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 150 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 151 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 152 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 151 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 152 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (length > 100) {
-# 153 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 153 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Invalid progress length, must be <= 100\n");
-# 154 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 154 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 155 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 155 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 156 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 157 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 156 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 157 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_disabled = disabled;
-# 158 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 159 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 158 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 159 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (disabled) {return; };
-# 160 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 161 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-    progress_buffer = (char *) ({ void *____chimes_tmp_ptr = malloc((sizeof(char) * (length + 3)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(char) * (length + 3), 7032591211095680570UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 162 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-    ((progress_buffer != __null) ? static_cast<void> (0) : __assert_fail ("progress_buffer != __null", "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp", 162, __PRETTY_FUNCTION__));
-# 163 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 160 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 161 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+    progress_buffer = (char *) ({ void *____chimes_tmp_ptr = malloc((sizeof(char) * (length + 3)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(char) * (length + 3), 3785853840841797450UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 162 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+    ((progress_buffer != __null) ? static_cast<void> (0) : __assert_fail ("progress_buffer != __null", "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp", 162, __PRETTY_FUNCTION__));
+# 163 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_length = length;
-# 164 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 164 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_goal = goal;
-# 165 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 165 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_num_ticks = 0;
-# 166 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 167 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 166 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 167 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_buffer[0] = '|';
-# 168 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 168 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_buffer[length + 1] = '|';
-# 169 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 169 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_buffer[length + 2] = '\0';
-# 170 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 171 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 170 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 171 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     for (i = 1; i <= length; i++) {
-# 172 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 172 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         progress_buffer[i] = '-';
-# 173 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 173 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 174 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 175 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 174 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 175 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     fprintf(stderr, "%s", progress_buffer);
-# 176 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 176 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 }
-# 178 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 178 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 void update_progress_npm(int progress) {
-# 179 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 179 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     int i;
-# 180 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 181 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 180 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 181 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_disabled) {
-# 182 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 182 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         return;
-# 183 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 183 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 184 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 185 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 184 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 185 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_buffer == __null) {
-# 186 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 186 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Calling update_progress without having called "
-# 187 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 187 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
                 "init_progress\n");
-# 188 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 188 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 189 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 189 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 190 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 191 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 190 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 191 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     double perc_progress = (double)progress / (double)progress_goal;
-# 192 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 192 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     int ticks = (int)(perc_progress * progress_length);
-# 193 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 193 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (ticks > progress_length) {
-# 194 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 194 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         ticks = progress_length;
-# 195 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 195 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 196 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 197 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 196 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 197 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (ticks < progress_num_ticks) {
-# 198 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 198 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "Ticks went backwards?\n");
-# 199 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 199 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         exit(1);
-# 200 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 200 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 201 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 202 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 201 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 202 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (ticks > progress_num_ticks) {
-# 203 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 203 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         for (i = 1; i < 1 + ticks; i++) {
-# 204 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 204 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             progress_buffer[i] = '=';
-# 205 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 205 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 206 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 207 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 206 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 207 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         for (i = 0; i < progress_length + 2; i++) {
-# 208 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 208 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
             fprintf(stderr, "\b");
-# 209 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 209 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         }
-# 210 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 211 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 210 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 211 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         fprintf(stderr, "%s", progress_buffer);
-# 212 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 212 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 213 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 214 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 213 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 214 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     progress_num_ticks = ticks;
-# 215 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 215 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 }
-# 217 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 217 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 void finish_progress_npm() {
-# 218 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 218 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     if (progress_disabled) {
-# 219 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 219 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
         return;
-# 220 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 220 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     }
-# 221 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 222 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 221 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 222 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     update_progress_npm(progress_goal);
-# 223 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 223 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
     fprintf(stderr, "\n");
-# 224 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-# 225 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
-     ({ free_helper((((unsigned char *)progress_buffer) - sizeof(void *)), 7032591211095680570UL);free((((unsigned char *)progress_buffer) - sizeof(void *))); }) ;
-# 226 "/home/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 224 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+# 225 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
+     ({ free_helper((((unsigned char *)progress_buffer) - sizeof(void *)), 3785853840841797450UL);free((((unsigned char *)progress_buffer) - sizeof(void *))); }) ;
+# 226 "/scratch/jmg3/chimes/src/examples/openmp/./lib/common.cpp"
 }
 
 
@@ -4939,22 +4939,22 @@ void finish_progress_npm() {
 
 
 static int module_init() {
-    init_module(7032591211095680110UL, 20, 8, 0, 7, 8, 0, 8, 2, 0, 3,
-                           &____alias_loc_id_0, (unsigned)3, (unsigned)0, (unsigned)0, (7032591211095680110UL + 1UL), (7032591211095680110UL + 3UL), (7032591211095680110UL + 4UL),
-                           &____alias_loc_id_1, (unsigned)10, (unsigned)0, (unsigned)0, (7032591211095680110UL + 26UL), (7032591211095680110UL + 27UL), (7032591211095680110UL + 28UL), (7032591211095680110UL + 29UL), (7032591211095680110UL + 30UL), (7032591211095680110UL + 31UL), (7032591211095680110UL + 32UL), (7032591211095680110UL + 33UL), (7032591211095680110UL + 34UL), (7032591211095680110UL + 95UL),
-                           &____alias_loc_id_2, (unsigned)13, (unsigned)0, (unsigned)0, (7032591211095680110UL + 100UL), (7032591211095680110UL + 101UL), (7032591211095680110UL + 102UL), (7032591211095680110UL + 103UL), (7032591211095680110UL + 104UL), (7032591211095680110UL + 105UL), (7032591211095680110UL + 106UL), (7032591211095680110UL + 107UL), (7032591211095680110UL + 108UL), (7032591211095680110UL + 118UL), (7032591211095680110UL + 158UL), (7032591211095680110UL + 177UL), (7032591211095680110UL + 190UL),
-                           &____alias_loc_id_3, (unsigned)10, (unsigned)0, (unsigned)0, (7032591211095680110UL + 198UL), (7032591211095680110UL + 199UL), (7032591211095680110UL + 200UL), (7032591211095680110UL + 201UL), (7032591211095680110UL + 202UL), (7032591211095680110UL + 203UL), (7032591211095680110UL + 204UL), (7032591211095680110UL + 264UL), (7032591211095680110UL + 320UL), (7032591211095680110UL + 321UL),
-                           &____alias_loc_id_4, (unsigned)8, (unsigned)0, (unsigned)0, (7032591211095680110UL + 326UL), (7032591211095680110UL + 327UL), (7032591211095680110UL + 328UL), (7032591211095680110UL + 329UL), (7032591211095680110UL + 330UL), (7032591211095680110UL + 331UL), (7032591211095680110UL + 332UL), (7032591211095680110UL + 345UL),
-                           &____alias_loc_id_5, (unsigned)7, (unsigned)0, (unsigned)0, (7032591211095680110UL + 411UL), (7032591211095680110UL + 412UL), (7032591211095680110UL + 413UL), (7032591211095680110UL + 414UL), (7032591211095680110UL + 460UL), (7032591211095680110UL + 613UL), (7032591211095680110UL + 616UL),
-                           &____alias_loc_id_6, (unsigned)6, (unsigned)0, (unsigned)0, (7032591211095680110UL + 460UL), (7032591211095680110UL + 503UL), (7032591211095680110UL + 504UL), (7032591211095680110UL + 505UL), (7032591211095680110UL + 506UL), (7032591211095680110UL + 616UL),
-                            "config_sources", 0, "_Z14config_sourcesPP7_sourcePiiii", "_Z18config_sources_npmPP7_sourcePiiii", 0, 5, (7032591211095680110UL + 320UL), (7032591211095680110UL + 321UL), 0UL, 0UL, 0UL, 0UL, 9, "malloc", 1, 0UL, (7032591211095680110UL + 264UL), "fprintf", 2, (7032591211095680110UL + 123UL), (7032591211095680110UL + 609UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (7032591211095680110UL + 123UL), (7032591211095680110UL + 610UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (7032591211095680110UL + 123UL), (7032591211095680110UL + 610UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (7032591211095680110UL + 123UL), (7032591211095680110UL + 610UL), 0UL, "exit", 1, 0UL, 0UL,
-                            "init_progress", 0, "_Z13init_progressiii", "_Z17init_progress_npmiii", 0, 3, 0UL, 0UL, 0UL, 0UL, 7, "fprintf", 2, (7032591211095680110UL + 123UL), (7032591211095680110UL + 614UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (7032591211095680110UL + 123UL), (7032591211095680110UL + 615UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7032591211095680110UL + 460UL), "__assert_fail", 4, (7032591211095680110UL + 617UL), (7032591211095680110UL + 618UL), 0UL, (7032591211095680110UL + 619UL), 0UL, "fprintf", 3, (7032591211095680110UL + 123UL), (7032591211095680110UL + 623UL), (7032591211095680110UL + 460UL), 0UL,
-                            "seconds", 0, "_Z7secondsv", "_Z11seconds_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (7032591211095680110UL + 1UL), (7032591211095680110UL + 2UL), 0UL,
-                            "finish_progress", 0, "_Z15finish_progressv", "_Z19finish_progress_npmv", 0, 0, 0UL, 3, "update_progress", 1, 0UL, 0UL, "fprintf", 2, (7032591211095680110UL + 123UL), (7032591211095680110UL + 626UL), 0UL, "free", 1, (7032591211095680110UL + 460UL), 0UL,
-                            "update_progress", 0, "_Z15update_progressi", "_Z19update_progress_npmi", 0, 1, 0UL, 0UL, 6, "fprintf", 2, (7032591211095680110UL + 123UL), (7032591211095680110UL + 624UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (7032591211095680110UL + 123UL), (7032591211095680110UL + 625UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (7032591211095680110UL + 123UL), (7032591211095680110UL + 626UL), 0UL, "fprintf", 3, (7032591211095680110UL + 123UL), (7032591211095680110UL + 623UL), (7032591211095680110UL + 460UL), 0UL,
-                            "ricker_wavelet", 0, "_Z14ricker_waveletPfiff", "_Z18ricker_wavelet_npmPfiff", 0, 4, (7032591211095680110UL + 95UL), 0UL, 0UL, 0UL, 0UL, 1, "exp", 1, 0UL, 0UL,
-                            "parse_source", 0, "_Z12parse_sourcePcP7_source", "_Z16parse_source_npmPcP7_source", 0, 2, (7032591211095680110UL + 189UL), (7032591211095680110UL + 190UL), 0UL, 13, "strchr", 2, (7032591211095680110UL + 189UL), 0UL, (7032591211095680110UL + 118UL), "fprintf", 2, (7032591211095680110UL + 123UL), (7032591211095680110UL + 608UL), 0UL, "exit", 1, 0UL, 0UL, "strchr", 2, (7032591211095680110UL + 118UL), 0UL, (7032591211095680110UL + 177UL), "fprintf", 2, (7032591211095680110UL + 123UL), (7032591211095680110UL + 608UL), 0UL, "exit", 1, 0UL, 0UL, "strchr", 2, (7032591211095680110UL + 177UL), 0UL, (7032591211095680110UL + 158UL), "fprintf", 2, (7032591211095680110UL + 123UL), (7032591211095680110UL + 608UL), 0UL, "exit", 1, 0UL, 0UL, "atoi", 1, (7032591211095680110UL + 189UL), 0UL, "atoi", 1, (7032591211095680110UL + 118UL), 0UL, "atof", 1, (7032591211095680110UL + 177UL), 0UL, "atoi", 1, (7032591211095680110UL + 158UL), 0UL,
-                            "sample_sources", 0, "_Z14sample_sourcesP7_sourceiif", "_Z18sample_sources_npmP7_sourceiif", 0, 4, (7032591211095680110UL + 407UL), 0UL, 0UL, 0UL, (7032591211095680110UL + 345UL), 7, "malloc", 1, 0UL, (7032591211095680110UL + 345UL), "fprintf", 2, (7032591211095680110UL + 123UL), (7032591211095680110UL + 609UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (7032591211095680110UL + 365UL), "fprintf", 2, (7032591211095680110UL + 123UL), (7032591211095680110UL + 609UL), 0UL, "exit", 1, 0UL, 0UL, "ricker_wavelet", 4, (7032591211095680110UL + 365UL), 0UL, 0UL, 0UL, 0UL,
+    init_module(3785853840841796990UL, 20, 8, 0, 7, 8, 0, 8, 2, 0, 3,
+                           &____alias_loc_id_0, (unsigned)3, (unsigned)0, (unsigned)0, (3785853840841796990UL + 1UL), (3785853840841796990UL + 3UL), (3785853840841796990UL + 4UL),
+                           &____alias_loc_id_1, (unsigned)10, (unsigned)0, (unsigned)0, (3785853840841796990UL + 26UL), (3785853840841796990UL + 27UL), (3785853840841796990UL + 28UL), (3785853840841796990UL + 29UL), (3785853840841796990UL + 30UL), (3785853840841796990UL + 31UL), (3785853840841796990UL + 32UL), (3785853840841796990UL + 33UL), (3785853840841796990UL + 34UL), (3785853840841796990UL + 95UL),
+                           &____alias_loc_id_2, (unsigned)13, (unsigned)0, (unsigned)0, (3785853840841796990UL + 100UL), (3785853840841796990UL + 101UL), (3785853840841796990UL + 102UL), (3785853840841796990UL + 103UL), (3785853840841796990UL + 104UL), (3785853840841796990UL + 105UL), (3785853840841796990UL + 106UL), (3785853840841796990UL + 107UL), (3785853840841796990UL + 108UL), (3785853840841796990UL + 118UL), (3785853840841796990UL + 158UL), (3785853840841796990UL + 177UL), (3785853840841796990UL + 190UL),
+                           &____alias_loc_id_3, (unsigned)10, (unsigned)0, (unsigned)0, (3785853840841796990UL + 198UL), (3785853840841796990UL + 199UL), (3785853840841796990UL + 200UL), (3785853840841796990UL + 201UL), (3785853840841796990UL + 202UL), (3785853840841796990UL + 203UL), (3785853840841796990UL + 204UL), (3785853840841796990UL + 264UL), (3785853840841796990UL + 320UL), (3785853840841796990UL + 321UL),
+                           &____alias_loc_id_4, (unsigned)8, (unsigned)0, (unsigned)0, (3785853840841796990UL + 326UL), (3785853840841796990UL + 327UL), (3785853840841796990UL + 328UL), (3785853840841796990UL + 329UL), (3785853840841796990UL + 330UL), (3785853840841796990UL + 331UL), (3785853840841796990UL + 332UL), (3785853840841796990UL + 345UL),
+                           &____alias_loc_id_5, (unsigned)7, (unsigned)0, (unsigned)0, (3785853840841796990UL + 411UL), (3785853840841796990UL + 412UL), (3785853840841796990UL + 413UL), (3785853840841796990UL + 414UL), (3785853840841796990UL + 460UL), (3785853840841796990UL + 613UL), (3785853840841796990UL + 616UL),
+                           &____alias_loc_id_6, (unsigned)6, (unsigned)0, (unsigned)0, (3785853840841796990UL + 460UL), (3785853840841796990UL + 503UL), (3785853840841796990UL + 504UL), (3785853840841796990UL + 505UL), (3785853840841796990UL + 506UL), (3785853840841796990UL + 616UL),
+                            "config_sources", 0, "_Z14config_sourcesPP7_sourcePiiii", "_Z18config_sources_npmPP7_sourcePiiii", 0, 5, (3785853840841796990UL + 320UL), (3785853840841796990UL + 321UL), 0UL, 0UL, 0UL, 0UL, 9, "malloc", 1, 0UL, (3785853840841796990UL + 264UL), "fprintf", 2, (3785853840841796990UL + 123UL), (3785853840841796990UL + 609UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (3785853840841796990UL + 123UL), (3785853840841796990UL + 610UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (3785853840841796990UL + 123UL), (3785853840841796990UL + 610UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (3785853840841796990UL + 123UL), (3785853840841796990UL + 610UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "init_progress", 0, "_Z13init_progressiii", "_Z17init_progress_npmiii", 0, 3, 0UL, 0UL, 0UL, 0UL, 7, "fprintf", 2, (3785853840841796990UL + 123UL), (3785853840841796990UL + 614UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (3785853840841796990UL + 123UL), (3785853840841796990UL + 615UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3785853840841796990UL + 460UL), "__assert_fail", 4, (3785853840841796990UL + 617UL), (3785853840841796990UL + 618UL), 0UL, (3785853840841796990UL + 619UL), 0UL, "fprintf", 3, (3785853840841796990UL + 123UL), (3785853840841796990UL + 623UL), (3785853840841796990UL + 460UL), 0UL,
+                            "seconds", 0, "_Z7secondsv", "_Z11seconds_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (3785853840841796990UL + 1UL), (3785853840841796990UL + 2UL), 0UL,
+                            "finish_progress", 0, "_Z15finish_progressv", "_Z19finish_progress_npmv", 0, 0, 0UL, 3, "update_progress", 1, 0UL, 0UL, "fprintf", 2, (3785853840841796990UL + 123UL), (3785853840841796990UL + 626UL), 0UL, "free", 1, (3785853840841796990UL + 460UL), 0UL,
+                            "update_progress", 0, "_Z15update_progressi", "_Z19update_progress_npmi", 0, 1, 0UL, 0UL, 6, "fprintf", 2, (3785853840841796990UL + 123UL), (3785853840841796990UL + 624UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (3785853840841796990UL + 123UL), (3785853840841796990UL + 625UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (3785853840841796990UL + 123UL), (3785853840841796990UL + 626UL), 0UL, "fprintf", 3, (3785853840841796990UL + 123UL), (3785853840841796990UL + 623UL), (3785853840841796990UL + 460UL), 0UL,
+                            "ricker_wavelet", 0, "_Z14ricker_waveletPfiff", "_Z18ricker_wavelet_npmPfiff", 0, 4, (3785853840841796990UL + 95UL), 0UL, 0UL, 0UL, 0UL, 1, "exp", 1, 0UL, 0UL,
+                            "parse_source", 0, "_Z12parse_sourcePcP7_source", "_Z16parse_source_npmPcP7_source", 0, 2, (3785853840841796990UL + 189UL), (3785853840841796990UL + 190UL), 0UL, 13, "strchr", 2, (3785853840841796990UL + 189UL), 0UL, (3785853840841796990UL + 118UL), "fprintf", 2, (3785853840841796990UL + 123UL), (3785853840841796990UL + 608UL), 0UL, "exit", 1, 0UL, 0UL, "strchr", 2, (3785853840841796990UL + 118UL), 0UL, (3785853840841796990UL + 177UL), "fprintf", 2, (3785853840841796990UL + 123UL), (3785853840841796990UL + 608UL), 0UL, "exit", 1, 0UL, 0UL, "strchr", 2, (3785853840841796990UL + 177UL), 0UL, (3785853840841796990UL + 158UL), "fprintf", 2, (3785853840841796990UL + 123UL), (3785853840841796990UL + 608UL), 0UL, "exit", 1, 0UL, 0UL, "atoi", 1, (3785853840841796990UL + 189UL), 0UL, "atoi", 1, (3785853840841796990UL + 118UL), 0UL, "atof", 1, (3785853840841796990UL + 177UL), 0UL, "atoi", 1, (3785853840841796990UL + 158UL), 0UL,
+                            "sample_sources", 0, "_Z14sample_sourcesP7_sourceiif", "_Z18sample_sources_npmP7_sourceiif", 0, 4, (3785853840841796990UL + 407UL), 0UL, 0UL, 0UL, (3785853840841796990UL + 345UL), 7, "malloc", 1, 0UL, (3785853840841796990UL + 345UL), "fprintf", 2, (3785853840841796990UL + 123UL), (3785853840841796990UL + 609UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3785853840841796990UL + 365UL), "fprintf", 2, (3785853840841796990UL + 123UL), (3785853840841796990UL + 609UL), 0UL, "exit", 1, 0UL, 0UL, "ricker_wavelet", 4, (3785853840841796990UL + 365UL), 0UL, 0UL, 0UL, 0UL,
                            "config_sources", &(____chimes_does_checkpoint_config_sources_npm),
                            "init_progress", &(____chimes_does_checkpoint_init_progress_npm),
                            "seconds", &(____chimes_does_checkpoint_seconds_npm),
@@ -4963,26 +4963,26 @@ static int module_init() {
                            "ricker_wavelet", &(____chimes_does_checkpoint_ricker_wavelet_npm),
                            "parse_source", &(____chimes_does_checkpoint_parse_source_npm),
                            "sample_sources", &(____chimes_does_checkpoint_sample_sources_npm),
-                             (7032591211095680110UL + 26UL), (7032591211095680110UL + 95UL),
-                             (7032591211095680110UL + 199UL), (7032591211095680110UL + 321UL),
-                             (7032591211095680110UL + 198UL), (7032591211095680110UL + 320UL),
-                             (7032591211095680110UL + 607UL), (7032591211095680110UL + 123UL),
-                             (7032591211095680110UL + 613UL), (7032591211095680110UL + 460UL),
-                             (7032591211095680110UL + 320UL), (7032591211095680110UL + 264UL),
-                             (7032591211095680110UL + 330UL), (7032591211095680110UL + 345UL),
-                             (7032591211095680110UL + 332UL), (7032591211095680110UL + 345UL),
-                             (7032591211095680110UL + 345UL), (7032591211095680110UL + 365UL),
-                             (7032591211095680110UL + 108UL), (7032591211095680110UL + 158UL),
-                             (7032591211095680110UL + 326UL), (7032591211095680110UL + 407UL),
-                             (7032591211095680110UL + 204UL), (7032591211095680110UL + 264UL),
-                             (7032591211095680110UL + 102UL), (7032591211095680110UL + 189UL),
-                             (7032591211095680110UL + 103UL), (7032591211095680110UL + 118UL),
-                             (7032591211095680110UL + 100UL), (7032591211095680110UL + 189UL),
-                             (7032591211095680110UL + 101UL), (7032591211095680110UL + 190UL),
-                             (7032591211095680110UL + 106UL), (7032591211095680110UL + 177UL),
-                             (7032591211095680110UL + 107UL), (7032591211095680110UL + 158UL),
-                             (7032591211095680110UL + 104UL), (7032591211095680110UL + 118UL),
-                             (7032591211095680110UL + 105UL), (7032591211095680110UL + 177UL),
+                             (3785853840841796990UL + 26UL), (3785853840841796990UL + 95UL),
+                             (3785853840841796990UL + 199UL), (3785853840841796990UL + 321UL),
+                             (3785853840841796990UL + 198UL), (3785853840841796990UL + 320UL),
+                             (3785853840841796990UL + 607UL), (3785853840841796990UL + 123UL),
+                             (3785853840841796990UL + 613UL), (3785853840841796990UL + 460UL),
+                             (3785853840841796990UL + 320UL), (3785853840841796990UL + 264UL),
+                             (3785853840841796990UL + 330UL), (3785853840841796990UL + 345UL),
+                             (3785853840841796990UL + 332UL), (3785853840841796990UL + 345UL),
+                             (3785853840841796990UL + 345UL), (3785853840841796990UL + 365UL),
+                             (3785853840841796990UL + 108UL), (3785853840841796990UL + 158UL),
+                             (3785853840841796990UL + 326UL), (3785853840841796990UL + 407UL),
+                             (3785853840841796990UL + 204UL), (3785853840841796990UL + 264UL),
+                             (3785853840841796990UL + 102UL), (3785853840841796990UL + 189UL),
+                             (3785853840841796990UL + 103UL), (3785853840841796990UL + 118UL),
+                             (3785853840841796990UL + 100UL), (3785853840841796990UL + 189UL),
+                             (3785853840841796990UL + 101UL), (3785853840841796990UL + 190UL),
+                             (3785853840841796990UL + 106UL), (3785853840841796990UL + 177UL),
+                             (3785853840841796990UL + 107UL), (3785853840841796990UL + 158UL),
+                             (3785853840841796990UL + 104UL), (3785853840841796990UL + 118UL),
+                             (3785853840841796990UL + 105UL), (3785853840841796990UL + 177UL),
                      "_source", 128UL, 4, "int", (int)__builtin_offsetof (struct _source, x), "int", (int)__builtin_offsetof (struct _source, y), "float", (int)__builtin_offsetof (struct _source, freq), "int", (int)__builtin_offsetof (struct _source, t),
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
                      "timezone", 64UL, 2, "int", (int)__builtin_offsetof (struct timezone, tz_minuteswest), "int", (int)__builtin_offsetof (struct timezone, tz_dsttime),
@@ -4994,9 +4994,9 @@ static int module_init() {
                              "ricker_wavelet", "_Z14ricker_waveletPfiff", 0, 0,
                              "parse_source", "_Z12parse_sourcePcP7_source", 0, 0,
                              "sample_sources", "_Z14sample_sourcesP7_sourceiif", 0, 1, "ricker_wavelet",
-        "ricker_wavelet", 0UL, (int)4, 7032591211095680475UL, 0UL, 0UL, 0UL,
+        "ricker_wavelet", 0UL, (int)4, 3785853840841797355UL, 0UL, 0UL, 0UL,
         "update_progress", 0UL, (int)1, 0UL);
-    register_global_var("global|progress_buffer", "i8*", (void *)(&progress_buffer), 8, 1, 0, (7032591211095680110UL + 613UL), 0);
+    register_global_var("global|progress_buffer", "i8*", (void *)(&progress_buffer), 8, 1, 0, (3785853840841796990UL + 613UL), 0);
     register_global_var("global|progress_disabled", "i32", (void *)(&progress_disabled), 4, 0, 0, 0UL, 0);
     register_global_var("global|progress_length", "i32", (void *)(&progress_length), 4, 0, 0, 0UL, 0);
     register_global_var("global|progress_goal", "i32", (void *)(&progress_goal), 4, 0, 0, 0UL, 0);

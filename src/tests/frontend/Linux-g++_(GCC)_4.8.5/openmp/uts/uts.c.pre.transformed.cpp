@@ -85,11 +85,11 @@ static unsigned ____alias_loc_id_24;
 static unsigned ____alias_loc_id_25;
 static unsigned ____alias_loc_id_26;
 static unsigned ____alias_loc_id_27;
-# 1 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -98,7 +98,7 @@ static unsigned ____alias_loc_id_27;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -154,7 +154,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 69 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 69 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -168,8 +168,8 @@ inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 15 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 15 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 25 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1493,7 +1493,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 16 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c" 2
+# 16 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 29 "/usr/include/string.h" 3 4
 extern "C" {
@@ -1969,7 +1969,7 @@ extern "C++" __const char *basename (__const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 # 646 "/usr/include/string.h" 3 4
 }
-# 17 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c" 2
+# 17 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 30 "/usr/include/stdio.h" 3 4
 extern "C" {
@@ -2777,7 +2777,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 18 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c" 2
+# 18 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c" 2
 # 1 "/usr/include/math.h" 1 3 4
 # 30 "/usr/include/math.h" 3 4
 extern "C" {
@@ -3782,7 +3782,7 @@ __signbitl (long double __x) throw ()
 # 417 "/usr/include/math.h" 2 3 4
 # 472 "/usr/include/math.h" 3 4
 }
-# 19 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c" 2
+# 19 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c" 2
 # 1 "/usr/include/sys/time.h" 1 3 4
 # 27 "/usr/include/sys/time.h" 3 4
 # 1 "/usr/include/time.h" 1 3 4
@@ -3888,16 +3888,16 @@ extern int futimesat (int __fd, __const char *__file,
         __const struct timeval __tvp[2]) throw ();
 # 191 "/usr/include/sys/time.h" 3 4
 }
-# 20 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c" 2
-# 32 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 1 "/home/jmg3/chimes/src/examples/openmp/uts/uts.h" 1
-# 18 "/home/jmg3/chimes/src/examples/openmp/uts/uts.h"
-# 1 "/home/jmg3/chimes/src/examples/openmp/uts/rng/rng.h" 1
-# 16 "/home/jmg3/chimes/src/examples/openmp/uts/rng/rng.h"
-# 1 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h" 1
-# 37 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h"
-# 1 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h" 1
-# 48 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
+# 20 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c" 2
+# 32 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.h" 1
+# 18 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.h"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/rng.h" 1
+# 16 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/rng.h"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h" 1
+# 37 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h" 1
+# 48 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
 extern "C" {
 
 
@@ -3938,18 +3938,18 @@ extern "C" {
 # 169 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 2 3 4
 # 8 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/syslimits.h" 2 3 4
 # 35 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 2 3 4
-# 52 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h" 2
-# 70 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
+# 52 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h" 2
+# 70 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
      typedef unsigned char uint_8t;
-# 79 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
+# 79 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
      typedef unsigned short uint_16t;
-# 89 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
+# 89 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
      typedef unsigned int uint_32t;
-# 123 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
+# 123 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
        typedef unsigned long uint_64t;
-# 197 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
+# 197 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
 }
-# 38 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h" 2
+# 38 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h" 2
 
 
 
@@ -3957,7 +3957,7 @@ extern "C" {
 
 extern "C"
 {
-# 54 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h"
+# 54 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h"
 typedef u_int8_t RNG_state;
 typedef u_int8_t uint8;
 typedef u_int32_t uint32;
@@ -3991,7 +3991,7 @@ struct sha1_ctx_s
 };
 
 typedef struct sha1_ctx_s sha1_ctx;
-# 95 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h"
+# 95 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h"
 void sha1_compile(sha1_ctx ctx[1]);
 
 void sha1_begin(sha1_ctx ctx[1]);
@@ -4001,19 +4001,19 @@ void sha1(unsigned char hval[], const unsigned char data[], unsigned long len);
 
 
 }
-# 17 "/home/jmg3/chimes/src/examples/openmp/uts/rng/rng.h" 2
-# 19 "/home/jmg3/chimes/src/examples/openmp/uts/uts.h" 2
-# 28 "/home/jmg3/chimes/src/examples/openmp/uts/uts.h"
+# 17 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/rng.h" 2
+# 19 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.h" 2
+# 28 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.h"
 struct node_t {
   int type;
   int height;
   int numChildren;
-# 44 "/home/jmg3/chimes/src/examples/openmp/uts/uts.h"
+# 44 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.h"
   struct state_t state;
 };
 
 typedef struct node_t Node;
-# 59 "/home/jmg3/chimes/src/examples/openmp/uts/uts.h"
+# 59 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.h"
 enum uts_trees_e { BIN = 0, GEO, HYBRID };
 enum uts_geoshape_e { LINEAR = 0, EXPDEC, CYCLIC, FIXED };
 
@@ -4069,1664 +4069,1664 @@ int impl_paramsToStr(char *strBuf, int ind);
 int impl_parseParam(char *param, char *value);
 void impl_helpMessage();
 void impl_abort(int err);
-# 33 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c" 2
-# 42 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 42 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 33 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c" 2
+# 42 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 42 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 char * uts_trees_str[] = { "Binomial", "Geometric", "Hybrid" };
-# 43 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 43 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 char * uts_geoshapes_str[] = { "Linear decrease", "Exponential decrease", "Cyclic",
-# 44 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 44 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
                               "Fixed branching factor" };
-# 56 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 56 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 56 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 56 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 tree_t type = GEO;
-# 57 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 57 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 double b_0 = 4.0;
-# 58 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 58 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 int rootId = 0;
-# 69 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 69 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 69 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 69 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 int nonLeafBF = 4;
-# 70 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 70 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 double nonLeafProb = 15.0 / 64.0;
-# 86 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 86 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 86 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 86 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 int gen_mx = 6;
-# 87 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 87 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 geoshape_t shape_fn = LINEAR;
-# 88 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 89 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 90 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 91 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 92 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 93 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 88 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 89 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 90 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 91 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 92 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 93 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 double shiftDepth = 0.5;
-# 94 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 95 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 96 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 94 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 95 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 96 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 int computeGranularity = 1;
-# 97 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 98 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 99 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 97 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 98 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 99 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 int debug = 0;
-# 100 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 100 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 int verbose = 1;
-# 110 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 110 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 110 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 110 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 void uts_error_npm(char *str);static void (*____chimes_extern_func_impl_abort)(int) = impl_abort;
 void uts_error_quick(char *str); void uts_error(char *str);
-void uts_error_resumable(char *str) {const int ____chimes_did_disable0 = new_stack((void *)(&uts_error), "uts_error", &____must_manage_uts_error, 1, 0, (size_t)(15584602656006455981UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
-# 111 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+void uts_error_resumable(char *str) {const int ____chimes_did_disable0 = new_stack((void *)(&uts_error), "uts_error", &____must_manage_uts_error, 1, 0, (size_t)(10127551358398492669UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
+# 111 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("*** Error: %s\n", str);
-# 112 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 112 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    call_lbl_0: ({ calling((void*)impl_abort, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (impl_abort)(1); }) ;
-# 113 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 113 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_error", &____must_manage_uts_error, 0, ____chimes_did_disable0, false); }
-# 133 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 133 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 133 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 133 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 double uts_wctime_npm();
 double uts_wctime_quick(); double uts_wctime();
 double uts_wctime_resumable() {const int ____chimes_did_disable1 = new_stack((void *)(&uts_wctime), "uts_wctime", &____must_manage_uts_wctime, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 134 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 134 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    struct timeval tv; ;
-# 135 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 135 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   gettimeofday(&tv, __null);
-# 136 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 136 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((tv.tv_sec + 1E-6 * tv.tv_usec)); rm_stack(false, 0UL, "uts_wctime", &____must_manage_uts_wctime, ____alias_loc_id_18, ____chimes_did_disable1, false); return ____chimes_ret_var_0; ;
-# 137 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 137 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_wctime", &____must_manage_uts_wctime, ____alias_loc_id_18, ____chimes_did_disable1, false); }
-# 138 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 139 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 140 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 141 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 142 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 138 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 139 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 140 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 141 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 142 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 double rng_toProb_npm(int n);
 double rng_toProb_quick(int n); double rng_toProb(int n);
 double rng_toProb_resumable(int n) {const int ____chimes_did_disable2 = new_stack((void *)(&rng_toProb), "rng_toProb", &____must_manage_rng_toProb, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 143 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 143 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (n < 0) {
-# 144 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 144 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     printf("*** toProb: rand n = %d out of range\n",n);
-# 145 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 145 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 146 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 146 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    double ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (((n<0)? 0.0 : ((double) n)/2147483648.0)); rm_stack(false, 0UL, "rng_toProb", &____must_manage_rng_toProb, ____alias_loc_id_19, ____chimes_did_disable2, false); return ____chimes_ret_var_1; ;
-# 147 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 147 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "rng_toProb", &____must_manage_rng_toProb, ____alias_loc_id_19, ____chimes_did_disable2, false); }
-# 148 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 149 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 150 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 148 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 149 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 150 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 void uts_initRoot_npm(Node * root, int type);static void (*____chimes_extern_func_rng_init)(unsigned char *, int) = rng_init;
 void uts_initRoot_quick(Node * root, int type); void uts_initRoot(Node * root, int type);
-void uts_initRoot_resumable(Node * root, int type) {const int ____chimes_did_disable3 = new_stack((void *)(&uts_initRoot), "uts_initRoot", &____must_manage_uts_initRoot, 2, 2, (size_t)(15584602656006456059UL), (size_t)(0UL), "uts_initRoot|root|0", &____must_checkpoint_uts_initRoot_root_0, "%struct.node_t*", (void *)(&root), (size_t)8, 1, 0, 0, "uts_initRoot|type|0", &____must_checkpoint_uts_initRoot_type_0, "i32", (void *)(&type), (size_t)4, 0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
-# 151 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+void uts_initRoot_resumable(Node * root, int type) {const int ____chimes_did_disable3 = new_stack((void *)(&uts_initRoot), "uts_initRoot", &____must_manage_uts_initRoot, 2, 2, (size_t)(10127551358398492747UL), (size_t)(0UL), "uts_initRoot|root|0", &____must_checkpoint_uts_initRoot_root_0, "%struct.node_t*", (void *)(&root), (size_t)8, 1, 0, 0, "uts_initRoot|type|0", &____must_checkpoint_uts_initRoot_type_0, "i32", (void *)(&type), (size_t)4, 0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
+# 151 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   root->type = type;
-# 152 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 152 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   root->height = 0;
-# 153 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 153 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   root->numChildren = -1;
-# 154 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-   call_lbl_0: ({ uint8 * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (root->state.state); } calling((void*)rng_init, 0, ____alias_loc_id_1, 0UL, 2, (size_t)(15584602656006456059UL), (size_t)(0UL)); (rng_init)(____chimes_arg1, rootId); }) ;
-# 155 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 156 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 154 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+   call_lbl_0: ({ uint8 * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (root->state.state); } calling((void*)rng_init, 0, ____alias_loc_id_1, 0UL, 2, (size_t)(10127551358398492747UL), (size_t)(0UL)); (rng_init)(____chimes_arg1, rootId); }) ;
+# 155 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 156 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (debug & 1) {printf("root node of type %d at %p\n",type, root); };
-# 158 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 158 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_initRoot", &____must_manage_uts_initRoot, 0, ____chimes_did_disable3, false); }
-# 159 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 160 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 161 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 159 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 160 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 161 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 int uts_numChildren_bin_npm(Node * parent);static int (*____chimes_extern_func_rng_rand)(unsigned char *) = rng_rand;
 int uts_numChildren_bin_quick(Node * parent); int uts_numChildren_bin(Node * parent);
-int uts_numChildren_bin_resumable(Node * parent) {const int ____chimes_did_disable4 = new_stack((void *)(&uts_numChildren_bin), "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, 1, 0, (size_t)(15584602656006456092UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
-# 162 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 163 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-   int v; call_lbl_0: v = ( ({ uint8 * ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg3 = (parent->state.state); } calling((void*)rng_rand, 0, ____alias_loc_id_2, 0UL, 1, (size_t)(15584602656006456092UL)); (rng_rand)(____chimes_arg3); }) ) ;
-# 164 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+int uts_numChildren_bin_resumable(Node * parent) {const int ____chimes_did_disable4 = new_stack((void *)(&uts_numChildren_bin), "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, 1, 0, (size_t)(10127551358398492780UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
+# 162 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 163 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+   int v; call_lbl_0: v = ( ({ uint8 * ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg3 = (parent->state.state); } calling((void*)rng_rand, 0, ____alias_loc_id_2, 0UL, 1, (size_t)(10127551358398492780UL)); (rng_rand)(____chimes_arg3); }) ) ;
+# 164 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    double d; call_lbl_1: d = (({ calling_npm("rng_toProb", 0); rng_toProb_npm(v); })) ;
-# 165 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 166 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 165 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 166 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((d < nonLeafProb) ? nonLeafBF : 0); rm_stack(false, 0UL, "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, ____alias_loc_id_20, ____chimes_did_disable4, false); return ____chimes_ret_var_2; ;
-# 167 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 167 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, ____alias_loc_id_20, ____chimes_did_disable4, false); }
-# 168 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 169 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 170 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 168 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 169 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 170 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 int uts_numChildren_geo_npm(Node * parent);
 int uts_numChildren_geo_quick(Node * parent); int uts_numChildren_geo(Node * parent);
-int uts_numChildren_geo_resumable(Node * parent) {const int ____chimes_did_disable5 = new_stack((void *)(&uts_numChildren_geo), "uts_numChildren_geo", &____must_manage_uts_numChildren_geo, 1, 0, (size_t)(15584602656006456203UL)) ; double p;
-# 170 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+int uts_numChildren_geo_resumable(Node * parent) {const int ____chimes_did_disable5 = new_stack((void *)(&uts_numChildren_geo), "uts_numChildren_geo", &____must_manage_uts_numChildren_geo, 1, 0, (size_t)(10127551358398492891UL)) ; double p;
+# 170 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
  if (____must_checkpoint_uts_numChildren_geo_p_0) { register_stack_vars(1, "uts_numChildren_geo|p|0", &____must_checkpoint_uts_numChildren_geo_p_0, "double", (void *)(&p), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
-# 171 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 171 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    double b_i; b_i = (b_0) ;
-# 172 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 172 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    int depth; depth = (parent->height) ;
-# 173 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 173 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   int numChildren; int h; ;
-# 174 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 174 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    double u; ;
-# 175 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 176 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 177 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 175 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 176 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 177 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (depth > 0){
-# 178 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 178 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     switch (shape_fn) {
-# 179 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 180 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 181 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 179 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 180 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 181 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case EXPDEC:
-# 182 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 182 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       b_i = b_0 * pow((double) depth, -log(b_0)/log((double) gen_mx));
-# 183 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 183 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       break;
-# 184 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 185 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 186 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 184 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 185 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 186 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case CYCLIC:
-# 187 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 187 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       if (depth > 5 * gen_mx){
-# 188 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 188 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         b_i = 0.0;
-# 189 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 189 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         break;
-# 190 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 190 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       }
-# 191 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 191 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       b_i = pow(b_0,
-# 192 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 192 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
                 sin(2.0*3.141592653589793*(double) depth / (double) gen_mx));
-# 193 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 193 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       break;
-# 194 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 195 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 196 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 194 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 195 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 196 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case FIXED:
-# 197 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 197 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       b_i = (depth < gen_mx)? b_0 : 0;
-# 198 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 198 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       break;
-# 199 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 200 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 201 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 199 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 200 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 201 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case LINEAR:
-# 202 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 202 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     default:
-# 203 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 203 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       b_i = b_0 * (1.0 - (double)depth / (double) gen_mx);
-# 204 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 204 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       break;
-# 205 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 205 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     }
-# 206 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 206 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 207 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 208 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 209 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 210 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 207 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 208 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 209 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 210 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   p = 1.0 / (1.0 + b_i);
-# 211 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 212 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 213 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-   call_lbl_0: h = ({ uint8 * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg4 = (parent->state.state); } calling((void*)rng_rand, 0, ____alias_loc_id_3, 0UL, 1, (size_t)(15584602656006456203UL)); (rng_rand)(____chimes_arg4); }) ;
-# 214 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 211 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 212 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 213 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+   call_lbl_0: h = ({ uint8 * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg4 = (parent->state.state); } calling((void*)rng_rand, 0, ____alias_loc_id_3, 0UL, 1, (size_t)(10127551358398492891UL)); (rng_rand)(____chimes_arg4); }) ;
+# 214 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    call_lbl_1: u = ({ calling_npm("rng_toProb", 0); rng_toProb_npm(h); });
-# 215 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 216 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 217 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 218 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 215 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 216 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 217 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 218 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   numChildren = floor(log(1 - u) / log(1 - p));
-# 219 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 220 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 219 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 220 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (numChildren); rm_stack(false, 0UL, "uts_numChildren_geo", &____must_manage_uts_numChildren_geo, ____alias_loc_id_21, ____chimes_did_disable5, false); return ____chimes_ret_var_3; ;
-# 221 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 221 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_numChildren_geo", &____must_manage_uts_numChildren_geo, ____alias_loc_id_21, ____chimes_did_disable5, false); }
-# 222 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 223 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 224 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 222 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 223 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 224 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 int uts_numChildren_npm(Node *parent);
 int uts_numChildren_quick(Node *parent); int uts_numChildren(Node *parent);
-int uts_numChildren_resumable(Node *parent) {const int ____chimes_did_disable6 = new_stack((void *)(&uts_numChildren), "uts_numChildren", &____must_manage_uts_numChildren, 1, 1, (size_t)(15584602656006456298UL), "uts_numChildren|parent|0", &____must_checkpoint_uts_numChildren_parent_0, "%struct.node_t*", (void *)(&parent), (size_t)8, 1, 0, 0) ; int numChildren;
-# 224 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+int uts_numChildren_resumable(Node *parent) {const int ____chimes_did_disable6 = new_stack((void *)(&uts_numChildren), "uts_numChildren", &____must_manage_uts_numChildren, 1, 1, (size_t)(10127551358398492986UL), "uts_numChildren|parent|0", &____must_checkpoint_uts_numChildren_parent_0, "%struct.node_t*", (void *)(&parent), (size_t)8, 1, 0, 0) ; int numChildren;
+# 224 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
  if (____must_checkpoint_uts_numChildren_numChildren_0) { register_stack_vars(1, "uts_numChildren|numChildren|0", &____must_checkpoint_uts_numChildren_numChildren_0, "i32", (void *)(&numChildren), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
-# 225 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 225 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
      numChildren = (0) ;
-# 226 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 227 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 228 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 226 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 228 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   switch (type) {
-# 229 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 229 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case BIN:
-# 230 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-      if (parent->height == 0) {numChildren = (int) floor(b_0); } else { call_lbl_0: numChildren = ({ calling((void*)uts_numChildren_bin, 0, ____alias_loc_id_4, 0UL, 1, (size_t)(15584602656006456298UL)); (uts_numChildren_bin)(parent); }) ; } ;
-# 234 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 230 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+      if (parent->height == 0) {numChildren = (int) floor(b_0); } else { call_lbl_0: numChildren = ({ calling((void*)uts_numChildren_bin, 0, ____alias_loc_id_4, 0UL, 1, (size_t)(10127551358398492986UL)); (uts_numChildren_bin)(parent); }) ; } ;
+# 234 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       break;
-# 235 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 236 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 235 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 236 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case GEO:
-# 237 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-       call_lbl_1: numChildren = ({ calling((void*)uts_numChildren_geo, 1, ____alias_loc_id_6, 0UL, 1, (size_t)(15584602656006456298UL)); (uts_numChildren_geo)(parent); }) ;
-# 238 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 237 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+       call_lbl_1: numChildren = ({ calling((void*)uts_numChildren_geo, 1, ____alias_loc_id_6, 0UL, 1, (size_t)(10127551358398492986UL)); (uts_numChildren_geo)(parent); }) ;
+# 238 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       break;
-# 239 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 240 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 239 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 240 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case HYBRID:
-# 241 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-      if (parent->height < shiftDepth * gen_mx) { call_lbl_2: numChildren = ({ calling((void*)uts_numChildren_geo, 2, ____alias_loc_id_7, 0UL, 1, (size_t)(15584602656006456298UL)); (uts_numChildren_geo)(parent); }) ; } else { call_lbl_3: numChildren = ({ calling((void*)uts_numChildren_bin, 3, ____alias_loc_id_8, 0UL, 1, (size_t)(15584602656006456298UL)); (uts_numChildren_bin)(parent); }) ; } ;
-# 245 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 241 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+      if (parent->height < shiftDepth * gen_mx) { call_lbl_2: numChildren = ({ calling((void*)uts_numChildren_geo, 2, ____alias_loc_id_7, 0UL, 1, (size_t)(10127551358398492986UL)); (uts_numChildren_geo)(parent); }) ; } else { call_lbl_3: numChildren = ({ calling((void*)uts_numChildren_bin, 3, ____alias_loc_id_8, 0UL, 1, (size_t)(10127551358398492986UL)); (uts_numChildren_bin)(parent); }) ; } ;
+# 245 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       break;
-# 246 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 246 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
      call_lbl_4: default:
-# 247 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-       ({ char * ____chimes_arg9; if (!____chimes_replaying) { ____chimes_arg9 = ("parTreeSearch(): Unknown tree type"); } calling((void*)uts_error, 4, ____alias_loc_id_5, 0UL, 1, (size_t)(15584602656006456933UL)); (uts_error)(____chimes_arg9); }) ;
-# 248 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 247 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+       ({ char * ____chimes_arg9; if (!____chimes_replaying) { ____chimes_arg9 = ("parTreeSearch(): Unknown tree type"); } calling((void*)uts_error, 4, ____alias_loc_id_5, 0UL, 1, (size_t)(10127551358398493621UL)); (uts_error)(____chimes_arg9); }) ;
+# 248 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 249 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 250 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 251 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 252 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 249 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 250 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 251 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 252 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (parent->height == 0 && parent->type == BIN) {
-# 253 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 253 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
      int rootBF; rootBF = ((int) ceil(b_0)) ;
-# 254 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 254 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     if (numChildren > rootBF) {
-# 255 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 255 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       printf("*** Number of children of root truncated from %d to %d\n",
-# 256 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 256 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
              numChildren, rootBF);
-# 257 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 257 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       numChildren = rootBF;
-# 258 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 258 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     }
-# 259 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 259 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 260 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 260 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   else {
-# 261 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 261 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     if (numChildren > 100) {
-# 262 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 262 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       printf("*** Number of children truncated from %d to %d\n",
-# 263 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 263 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
              numChildren, 100);
-# 264 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 264 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       numChildren = 100;
-# 265 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 265 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     }
-# 266 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 266 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 267 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 268 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 267 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 268 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (numChildren); rm_stack(false, 0UL, "uts_numChildren", &____must_manage_uts_numChildren, ____alias_loc_id_22, ____chimes_did_disable6, false); return ____chimes_ret_var_4; ;
-# 269 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 269 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_numChildren", &____must_manage_uts_numChildren, ____alias_loc_id_22, ____chimes_did_disable6, false); }
-# 270 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 271 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 272 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 270 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 271 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 272 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 int uts_childType_npm(Node *parent);
 int uts_childType_quick(Node *parent); int uts_childType(Node *parent);
-int uts_childType_resumable(Node *parent) {const int ____chimes_did_disable7 = new_stack((void *)(&uts_childType), "uts_childType", &____must_manage_uts_childType, 1, 0, (size_t)(15584602656006456349UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
-# 273 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+int uts_childType_resumable(Node *parent) {const int ____chimes_did_disable7 = new_stack((void *)(&uts_childType), "uts_childType", &____must_manage_uts_childType, 1, 0, (size_t)(10127551358398493037UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
+# 273 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   switch (type) {
-# 274 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 274 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case BIN:
-# 275 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 275 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
        int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (BIN); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); return ____chimes_ret_var_5; ;
-# 276 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 276 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case GEO:
-# 277 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 277 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
        int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (GEO); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); return ____chimes_ret_var_6; ;
-# 278 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 278 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case HYBRID:
-# 279 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 279 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       if (parent->height < shiftDepth * gen_mx) { int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (GEO); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); return ____chimes_ret_var_7; ; } else { int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (BIN); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); return ____chimes_ret_var_8; ; } ;
-# 283 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 283 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
      call_lbl_0: default:
-# 284 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-       ({ char * ____chimes_arg10; if (!____chimes_replaying) { ____chimes_arg10 = ("uts_get_childtype(): Unknown tree type"); } calling((void*)uts_error, 0, ____alias_loc_id_9, 0UL, 1, (size_t)(15584602656006456936UL)); (uts_error)(____chimes_arg10); }) ;
-# 285 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 284 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+       ({ char * ____chimes_arg10; if (!____chimes_replaying) { ____chimes_arg10 = ("uts_get_childtype(): Unknown tree type"); } calling((void*)uts_error, 0, ____alias_loc_id_9, 0UL, 1, (size_t)(10127551358398493624UL)); (uts_error)(____chimes_arg10); }) ;
+# 285 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
        int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = (-1); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); return ____chimes_ret_var_9; ;
-# 286 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 286 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 287 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 287 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); }
-# 288 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 289 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 290 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 291 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 288 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 289 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 290 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 291 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 int uts_paramsToStr_npm(char *strBuf, int ind);static char *(*____chimes_extern_func_impl_getName)(void) = impl_getName;static int (*____chimes_extern_func_rng_showtype)(char *, int) = rng_showtype;
 int uts_paramsToStr_quick(char *strBuf, int ind); int uts_paramsToStr(char *strBuf, int ind);
-int uts_paramsToStr_resumable(char *strBuf, int ind) {const int ____chimes_did_disable8 = new_stack((void *)(&uts_paramsToStr), "uts_paramsToStr", &____must_manage_uts_paramsToStr, 2, 2, (size_t)(15584602656006456505UL), (size_t)(0UL), "uts_paramsToStr|strBuf|0", &____must_checkpoint_uts_paramsToStr_strBuf_0, "i8*", (void *)(&strBuf), (size_t)8, 1, 0, 0, "uts_paramsToStr|ind|0", &____must_checkpoint_uts_paramsToStr_ind_0, "i32", (void *)(&ind), (size_t)4, 0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
-# 292 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 293 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-    char *____chimes_unroll_var_0; call_lbl_0: ____chimes_unroll_var_0 = ( ({ calling((void*)impl_getName, 0, ____alias_loc_id_11, 15584602656006456362UL, 0); (impl_getName)(); }) ) ; ind += sprintf(strBuf+ind, "UTS - Unbalanced Tree Search %s (%s)\n", "2.1", ____chimes_unroll_var_0);
-# 294 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 295 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 296 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+int uts_paramsToStr_resumable(char *strBuf, int ind) {const int ____chimes_did_disable8 = new_stack((void *)(&uts_paramsToStr), "uts_paramsToStr", &____must_manage_uts_paramsToStr, 2, 2, (size_t)(10127551358398493193UL), (size_t)(0UL), "uts_paramsToStr|strBuf|0", &____must_checkpoint_uts_paramsToStr_strBuf_0, "i8*", (void *)(&strBuf), (size_t)8, 1, 0, 0, "uts_paramsToStr|ind|0", &____must_checkpoint_uts_paramsToStr_ind_0, "i32", (void *)(&ind), (size_t)4, 0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+# 292 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 293 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+    char *____chimes_unroll_var_0; call_lbl_0: ____chimes_unroll_var_0 = ( ({ calling((void*)impl_getName, 0, ____alias_loc_id_11, 10127551358398493050UL, 0); (impl_getName)(); }) ) ; ind += sprintf(strBuf+ind, "UTS - Unbalanced Tree Search %s (%s)\n", "2.1", ____chimes_unroll_var_0);
+# 294 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 295 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 296 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   ind += sprintf(strBuf+ind, "Tree type:  %d (%s)\n", type, uts_trees_str[type]);
-# 297 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 298 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 299 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 297 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 298 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 299 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   ind += sprintf(strBuf+ind, "Tree shape parameters:\n");
-# 300 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 300 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   ind += sprintf(strBuf+ind, "  root branching factor b_0 = %.1f, root seed = %d\n", b_0, rootId);
-# 301 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 302 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 301 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 302 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (type == GEO || type == HYBRID) {
-# 303 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 303 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     ind += sprintf(strBuf+ind, "  GEO parameters: gen_mx = %d, shape function = %d (%s)\n",
-# 304 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 304 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
             gen_mx, shape_fn, uts_geoshapes_str[shape_fn]);
-# 305 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 305 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 306 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 307 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 306 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 307 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (type == BIN || type == HYBRID) {
-# 308 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 308 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
      double q; q = (nonLeafProb) ;
-# 309 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 309 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
      int m; m = (nonLeafBF) ;
-# 310 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 310 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
      double es; es = ((1.0 / (1.0 - q * m))) ;
-# 311 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 311 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     ind += sprintf(strBuf+ind, "  BIN parameters:  q = %f, m = %d, E(n) = %f, E(s) = %.2f\n",
-# 312 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 312 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
             q, m, q * m, es);
-# 313 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 313 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 314 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 315 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 314 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 315 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (type == HYBRID) {
-# 316 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 316 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     ind += sprintf(strBuf+ind, "  HYBRID:  GEO from root to depth %d, then BIN\n",
-# 317 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 317 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
             (int) ceil(shiftDepth * gen_mx));
-# 318 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 318 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 319 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 320 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 321 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 319 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 320 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 321 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   ind += sprintf(strBuf+ind, "Random number generator: ");
-# 322 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-   call_lbl_1: ind = ({ calling((void*)rng_showtype, 1, ____alias_loc_id_10, 0UL, 2, (size_t)(15584602656006456505UL), (size_t)(0UL)); (rng_showtype)(strBuf, ind); }) ;
-# 323 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 322 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+   call_lbl_1: ind = ({ calling((void*)rng_showtype, 1, ____alias_loc_id_10, 0UL, 2, (size_t)(10127551358398493193UL), (size_t)(0UL)); (rng_showtype)(strBuf, ind); }) ;
+# 323 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   ind += sprintf(strBuf+ind, "\nCompute granularity: %d\n", computeGranularity);
-# 324 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 325 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 324 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 325 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = (ind); rm_stack(false, 0UL, "uts_paramsToStr", &____must_manage_uts_paramsToStr, ____alias_loc_id_24, ____chimes_did_disable8, false); return ____chimes_ret_var_10; ;
-# 326 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 326 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_paramsToStr", &____must_manage_uts_paramsToStr, ____alias_loc_id_24, ____chimes_did_disable8, false); }
-# 327 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 328 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 329 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 327 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 328 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 329 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 void uts_printParams_npm();static int (*____chimes_extern_func_impl_paramsToStr)(char *, int) = impl_paramsToStr;
 void uts_printParams_quick(); void uts_printParams();
 void uts_printParams_resumable() {const int ____chimes_did_disable9 = new_stack((void *)(&uts_printParams), "uts_printParams", &____must_manage_uts_printParams, 0, 0) ; char strBuf[5000];
-# 329 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 329 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
  if (____must_checkpoint_uts_printParams_strBuf_0) { register_stack_vars(1, "uts_printParams|strBuf|0", &____must_checkpoint_uts_printParams_strBuf_0, "[5000 x i8]", (void *)(strBuf), (size_t)5000, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
-# 330 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 330 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    ;
-# 331 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 331 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   strBuf[0] = '\0';
-# 332 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 332 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    int ind; ind = (0) ;
-# 333 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 334 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 333 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 334 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (verbose > 0) {
-# 335 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-     call_lbl_0: ind = ({ calling((void*)uts_paramsToStr, 0, ____alias_loc_id_13, 0UL, 2, (size_t)(15584602656006456511UL), (size_t)(0UL)); (uts_paramsToStr)(strBuf, ind); }) ;
-# 336 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-     call_lbl_1: ind = ({ calling((void*)impl_paramsToStr, 1, ____alias_loc_id_12, 0UL, 2, (size_t)(15584602656006456511UL), (size_t)(0UL)); (impl_paramsToStr)(strBuf, ind); }) ;
-# 337 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 335 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+     call_lbl_0: ind = ({ calling((void*)uts_paramsToStr, 0, ____alias_loc_id_13, 0UL, 2, (size_t)(10127551358398493199UL), (size_t)(0UL)); (uts_paramsToStr)(strBuf, ind); }) ;
+# 336 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+     call_lbl_1: ind = ({ calling((void*)impl_paramsToStr, 1, ____alias_loc_id_12, 0UL, 2, (size_t)(10127551358398493199UL), (size_t)(0UL)); (impl_paramsToStr)(strBuf, ind); }) ;
+# 337 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     printf("%s\n",strBuf);
-# 338 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 338 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 339 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 339 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_printParams", &____must_manage_uts_printParams, ____alias_loc_id_25, ____chimes_did_disable9, false); }
-# 340 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 341 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 340 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 341 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 void uts_parseParams_npm(int argc, char *argv[]);void uts_helpMessage_npm();static int (*____chimes_extern_func_impl_parseParam)(char *, char *) = impl_parseParam;
 void uts_parseParams_quick(int argc, char *argv[]); void uts_parseParams(int argc, char *argv[]);void uts_helpMessage_quick(); void uts_helpMessage();
-void uts_parseParams_resumable(int argc, char *argv[]){const int ____chimes_did_disable10 = new_stack((void *)(&uts_parseParams), "uts_parseParams", &____must_manage_uts_parseParams, 2, 2, (size_t)(0UL), (size_t)(15584602656006456779UL), "uts_parseParams|argc|0", &____must_checkpoint_uts_parseParams_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "uts_parseParams|argv|0", &____must_checkpoint_uts_parseParams_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int err;
-# 341 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+void uts_parseParams_resumable(int argc, char *argv[]){const int ____chimes_did_disable10 = new_stack((void *)(&uts_parseParams), "uts_parseParams", &____must_manage_uts_parseParams, 2, 2, (size_t)(0UL), (size_t)(10127551358398493467UL), "uts_parseParams|argc|0", &____must_checkpoint_uts_parseParams_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "uts_parseParams|argv|0", &____must_checkpoint_uts_parseParams_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int err;
+# 341 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 int i;
-# 341 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 341 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
  if (____must_checkpoint_uts_parseParams_err_0 || ____must_checkpoint_uts_parseParams_i_0) { register_stack_vars(2, "uts_parseParams|err|0", &____must_checkpoint_uts_parseParams_err_0, "i32", (void *)(&err), (size_t)4, 0, 0, 0, "uts_parseParams|i|0", &____must_checkpoint_uts_parseParams_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
-# 342 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 342 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
      i = (1) ;
-# 343 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 343 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
      err = (-1) ;
-# 344 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 344 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   while (i < argc && err == -1) {
-# 345 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 345 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     if (argv[i][0] == '-' && argv[i][1] == 'h') {{
-# 346 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 346 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
          call_lbl_0: ({ calling((void*)uts_helpMessage, 0, 0, 0UL, 0); (uts_helpMessage)(); }) ;
-# 347 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 347 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
          call_lbl_1: ({ calling((void*)impl_abort, 1, 0, 0UL, 1, (size_t)(0UL)); (impl_abort)(0); }) ;
-# 348 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 349 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 348 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 349 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     }; } else if (argv[i][0] != '-' || strlen(argv[i]) != 2 || argc <= i+1) {
-# 350 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 350 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       err = i; break;
-# 351 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 351 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     }
-# 352 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 353 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 354 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 355 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-    alias_group_changed(____alias_loc_id_14); call_lbl_2: if (! ({ char * ____chimes_arg18; char * ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg18 = (argv[i]); ____chimes_arg19 = (argv[i + 1]); } calling((void*)impl_parseParam, 2, ____alias_loc_id_14, 0UL, 2, (size_t)(15584602656006456781UL), (size_t)(15584602656006456781UL)); (impl_parseParam)(____chimes_arg18, ____chimes_arg19); }) ) {
-# 356 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 352 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 353 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 354 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 355 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+    alias_group_changed(____alias_loc_id_14); call_lbl_2: if (! ({ char * ____chimes_arg18; char * ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg18 = (argv[i]); ____chimes_arg19 = (argv[i + 1]); } calling((void*)impl_parseParam, 2, ____alias_loc_id_14, 0UL, 2, (size_t)(10127551358398493469UL), (size_t)(10127551358398493469UL)); (impl_parseParam)(____chimes_arg18, ____chimes_arg19); }) ) {
+# 356 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       i += 2;
-# 357 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 357 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       continue;
-# 358 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 358 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     }
-# 359 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 360 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 359 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 360 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     switch (argv[i][1]) {
-# 361 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 361 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'q':
-# 362 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 362 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         nonLeafProb = atof(argv[i+1]); break;
-# 363 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 363 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'm':
-# 364 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 364 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         nonLeafBF = atoi(argv[i+1]); break;
-# 365 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 365 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'r':
-# 366 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 366 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         rootId = atoi(argv[i+1]); break;
-# 367 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 367 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'x':
-# 368 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 368 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         debug = atoi(argv[i+1]); break;
-# 369 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 369 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'v':
-# 370 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 370 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         verbose = atoi(argv[i+1]); break;
-# 371 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 371 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 't':
-# 372 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 372 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         type = (tree_t) atoi(argv[i+1]);
-# 373 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 373 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         if (type != BIN && type != GEO && type!= HYBRID) {err = i; };
-# 375 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 375 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         break;
-# 376 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 376 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'a':
-# 377 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 377 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         shape_fn = (geoshape_t) atoi(argv[i+1]);
-# 378 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 378 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         if (shape_fn > FIXED) {err = i; };
-# 379 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 379 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         break;
-# 380 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 380 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'b':
-# 381 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 381 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         b_0 = atof(argv[i+1]); break;
-# 382 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 382 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'd':
-# 383 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 383 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         gen_mx = atoi(argv[i+1]); break;
-# 384 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 384 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'f':
-# 385 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 385 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         shiftDepth = atof(argv[i+1]); break;
-# 386 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 386 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'g':
-# 387 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 387 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         computeGranularity = (((1) > (atoi(argv[i+1]))) ? (1) : (atoi(argv[i+1]))); break;
-# 388 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 388 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       default:
-# 389 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 389 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         err = i;
-# 390 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 390 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     }
-# 391 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 392 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 391 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 392 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     if (err != -1) {break; };
-# 393 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 394 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 393 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 394 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     i += 2;
-# 395 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 395 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 396 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 397 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 396 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 397 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (err != -1) {
-# 398 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 398 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     printf("Unrecognized parameter or incorrect/missing value: '%s %s'\n", argv[i], (i+1 < argc) ? argv[i+1] : "[none]");
-# 399 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 399 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     printf("Try -h for help.\n");
-# 400 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 400 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
      call_lbl_3: ({ calling((void*)impl_abort, 3, ____alias_loc_id_15, 0UL, 1, (size_t)(0UL)); (impl_abort)(4); }) ;
-# 401 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 401 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 402 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 402 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_parseParams", &____must_manage_uts_parseParams, ____alias_loc_id_26, ____chimes_did_disable10, false); }
-# 403 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 404 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 403 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 404 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 static void (*____chimes_extern_func_impl_helpMessage)(void) = impl_helpMessage;
 void uts_helpMessage_resumable() {const int ____chimes_did_disable11 = new_stack((void *)(&uts_helpMessage), "uts_helpMessage", &____must_manage_uts_helpMessage, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
-# 405 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-    char *____chimes_unroll_var_1; call_lbl_0: ____chimes_unroll_var_1 = ( ({ calling((void*)impl_getName, 0, ____alias_loc_id_17, 15584602656006456805UL, 0); (impl_getName)(); }) ) ; printf("  UTS - Unbalanced Tree Search %s (%s)\n\n", "2.1", ____chimes_unroll_var_1);
-# 406 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 405 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+    char *____chimes_unroll_var_1; call_lbl_0: ____chimes_unroll_var_1 = ( ({ calling((void*)impl_getName, 0, ____alias_loc_id_17, 10127551358398493493UL, 0); (impl_getName)(); }) ) ; printf("  UTS - Unbalanced Tree Search %s (%s)\n\n", "2.1", ____chimes_unroll_var_1);
+# 406 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("    usage:  uts-bin [parameter value] ...\n\n");
-# 407 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 407 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("  parm type  description\n");
-# 408 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 408 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("  ==== ====  =========================================\n");
-# 409 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 409 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("\n  Benchmark Parameters:\n");
-# 410 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 410 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -t  int   tree type (0: BIN, 1: GEO, 2: HYBRID)\n");
-# 411 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 411 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -b  dble  root branching factor\n");
-# 412 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 412 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -r  int   root seed 0 <= r < 2^31 \n");
-# 413 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 413 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -a  int   GEO: tree shape function \n");
-# 414 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 414 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -d  int   GEO: tree depth\n");
-# 415 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 415 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -q  dble  BIN: probability of non-leaf node\n");
-# 416 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 416 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -m  int   BIN: number of children for non-leaf node\n");
-# 417 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 417 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -f  dble  HYBRID: fraction of depth for GEO -> BIN transition\n");
-# 418 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 418 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -g  int   compute granularity: number of rng_spawns per node\n");
-# 419 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 419 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -v  int   nonzero to set verbose output\n");
-# 420 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 420 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -x  int   debug level\n");
-# 421 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 422 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 423 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 421 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 422 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 423 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("\n  Additional Implementation Parameters:\n");
-# 424 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 424 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    call_lbl_1: ({ calling((void*)impl_helpMessage, 1, ____alias_loc_id_16, 0UL, 0); (impl_helpMessage)(); }) ;
-# 425 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 425 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("\n");
-# 426 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 426 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_helpMessage", &____must_manage_uts_helpMessage, 0, ____chimes_did_disable11, false); }
-# 427 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 428 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 429 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 427 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 428 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 429 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 void uts_showStats_npm(int nPes, int chunkSize, double walltime, int nNodes, int nLeaves, int maxDepth);
 void uts_showStats_quick(int nPes, int chunkSize, double walltime, int nNodes, int nLeaves, int maxDepth); void uts_showStats(int nPes, int chunkSize, double walltime, int nNodes, int nLeaves, int maxDepth);
 void uts_showStats_resumable(int nPes, int chunkSize, double walltime, int nNodes, int nLeaves, int maxDepth) {const int ____chimes_did_disable12 = new_stack((void *)(&uts_showStats), "uts_showStats", &____must_manage_uts_showStats, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 430 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 431 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 430 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 431 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (verbose == 0) {
-# 432 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 432 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     printf("%4d %7.3f %9d %7.0f %7.0f %d %d %.2f %d %d %1d %f %3d\n",
-# 433 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 433 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         nPes, walltime, nNodes, nNodes/walltime, (nNodes/walltime)/nPes, chunkSize,
-# 434 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 434 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         type, b_0, rootId, gen_mx, shape_fn, nonLeafProb, nonLeafBF);
-# 435 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 435 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 436 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 437 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 438 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 436 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 437 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 438 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   else {
-# 439 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 439 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     printf("Tree size = %d, tree depth = %d, num leaves = %d (%.2f%%)\n", nNodes, maxDepth, nLeaves, nLeaves/(float)nNodes*100.0);
-# 440 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 440 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     printf("Wallclock time = %.3f sec, performance = %.0f nodes/sec (%.0f nodes/sec per PE)\n\n",
-# 441 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 441 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         walltime, (nNodes / walltime), (nNodes / walltime / nPes));
-# 442 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 442 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 443 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 443 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_showStats", &____must_manage_uts_showStats, ____alias_loc_id_27, ____chimes_did_disable12, false); }
-# 110 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-void uts_error_quick(char *str) {const int ____chimes_did_disable0 = new_stack((void *)(&uts_error), "uts_error", &____must_manage_uts_error, 1, 0, (size_t)(15584602656006455981UL)) ; ; ;
-# 111 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 110 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+void uts_error_quick(char *str) {const int ____chimes_did_disable0 = new_stack((void *)(&uts_error), "uts_error", &____must_manage_uts_error, 1, 0, (size_t)(10127551358398492669UL)) ; ; ;
+# 111 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("*** Error: %s\n", str);
-# 112 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 112 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    call_lbl_0: ({ calling((void*)impl_abort, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (impl_abort)(1); }) ;
-# 113 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 113 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_error", &____must_manage_uts_error, 0, ____chimes_did_disable0, false); }
 
 void uts_error(char *str) { (____chimes_replaying ? uts_error_resumable(str) : uts_error_quick(str)); }
-# 133 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 133 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 double uts_wctime_quick() {const int ____chimes_did_disable1 = new_stack((void *)(&uts_wctime), "uts_wctime", &____must_manage_uts_wctime, 0, 0) ; ; ;
-# 134 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 134 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    struct timeval tv; ;
-# 135 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 135 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   gettimeofday(&tv, __null);
-# 136 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 136 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((tv.tv_sec + 1E-6 * tv.tv_usec)); rm_stack(false, 0UL, "uts_wctime", &____must_manage_uts_wctime, ____alias_loc_id_18, ____chimes_did_disable1, false); return ____chimes_ret_var_0; ;
-# 137 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 137 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_wctime", &____must_manage_uts_wctime, ____alias_loc_id_18, ____chimes_did_disable1, false); }
 
 double uts_wctime() { return (____chimes_replaying ? uts_wctime_resumable() : uts_wctime_quick()); }
-# 142 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 142 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 double rng_toProb_quick(int n) {const int ____chimes_did_disable2 = new_stack((void *)(&rng_toProb), "rng_toProb", &____must_manage_rng_toProb, 1, 0, (size_t)(0UL)) ; ; ;
-# 143 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 143 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (n < 0) {
-# 144 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 144 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     printf("*** toProb: rand n = %d out of range\n",n);
-# 145 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 145 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 146 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 146 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    double ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (((n<0)? 0.0 : ((double) n)/2147483648.0)); rm_stack(false, 0UL, "rng_toProb", &____must_manage_rng_toProb, ____alias_loc_id_19, ____chimes_did_disable2, false); return ____chimes_ret_var_1; ;
-# 147 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 147 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "rng_toProb", &____must_manage_rng_toProb, ____alias_loc_id_19, ____chimes_did_disable2, false); }
 
 double rng_toProb(int n) { return (____chimes_replaying ? rng_toProb_resumable(n) : rng_toProb_quick(n)); }
-# 150 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-void uts_initRoot_quick(Node * root, int type) {const int ____chimes_did_disable3 = new_stack((void *)(&uts_initRoot), "uts_initRoot", &____must_manage_uts_initRoot, 2, 2, (size_t)(15584602656006456059UL), (size_t)(0UL), "uts_initRoot|root|0", &____must_checkpoint_uts_initRoot_root_0, "%struct.node_t*", (void *)(&root), (size_t)8, 1, 0, 0, "uts_initRoot|type|0", &____must_checkpoint_uts_initRoot_type_0, "i32", (void *)(&type), (size_t)4, 0, 0, 0) ; ; ;
-# 151 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 150 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+void uts_initRoot_quick(Node * root, int type) {const int ____chimes_did_disable3 = new_stack((void *)(&uts_initRoot), "uts_initRoot", &____must_manage_uts_initRoot, 2, 2, (size_t)(10127551358398492747UL), (size_t)(0UL), "uts_initRoot|root|0", &____must_checkpoint_uts_initRoot_root_0, "%struct.node_t*", (void *)(&root), (size_t)8, 1, 0, 0, "uts_initRoot|type|0", &____must_checkpoint_uts_initRoot_type_0, "i32", (void *)(&type), (size_t)4, 0, 0, 0) ; ; ;
+# 151 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   root->type = type;
-# 152 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 152 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   root->height = 0;
-# 153 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 153 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   root->numChildren = -1;
-# 154 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-   call_lbl_0: ({ calling((void*)rng_init, 0, ____alias_loc_id_1, 0UL, 2, (size_t)(15584602656006456059UL), (size_t)(0UL)); (rng_init)(root->state.state, rootId); }) ;
-# 155 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 156 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 154 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+   call_lbl_0: ({ calling((void*)rng_init, 0, ____alias_loc_id_1, 0UL, 2, (size_t)(10127551358398492747UL), (size_t)(0UL)); (rng_init)(root->state.state, rootId); }) ;
+# 155 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 156 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (debug & 1) {printf("root node of type %d at %p\n",type, root); };
-# 158 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 158 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_initRoot", &____must_manage_uts_initRoot, 0, ____chimes_did_disable3, false); }
 
 void uts_initRoot(Node * root, int type) { (____chimes_replaying ? uts_initRoot_resumable(root, type) : uts_initRoot_quick(root, type)); }
-# 161 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-int uts_numChildren_bin_quick(Node * parent) {const int ____chimes_did_disable4 = new_stack((void *)(&uts_numChildren_bin), "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, 1, 0, (size_t)(15584602656006456092UL)) ; ; ;
-# 162 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 163 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-   int v; call_lbl_0: v = ( ({ calling((void*)rng_rand, 0, ____alias_loc_id_2, 0UL, 1, (size_t)(15584602656006456092UL)); (rng_rand)(parent->state.state); }) ) ;
-# 164 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 161 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+int uts_numChildren_bin_quick(Node * parent) {const int ____chimes_did_disable4 = new_stack((void *)(&uts_numChildren_bin), "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, 1, 0, (size_t)(10127551358398492780UL)) ; ; ;
+# 162 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 163 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+   int v; call_lbl_0: v = ( ({ calling((void*)rng_rand, 0, ____alias_loc_id_2, 0UL, 1, (size_t)(10127551358398492780UL)); (rng_rand)(parent->state.state); }) ) ;
+# 164 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    double d; call_lbl_1: d = (({ calling_npm("rng_toProb", 0); rng_toProb_npm(v); })) ;
-# 165 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 166 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 165 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 166 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((d < nonLeafProb) ? nonLeafBF : 0); rm_stack(false, 0UL, "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, ____alias_loc_id_20, ____chimes_did_disable4, false); return ____chimes_ret_var_2; ;
-# 167 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 167 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, ____alias_loc_id_20, ____chimes_did_disable4, false); }
 
 int uts_numChildren_bin(Node * parent) { return (____chimes_replaying ? uts_numChildren_bin_resumable(parent) : uts_numChildren_bin_quick(parent)); }
-# 170 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-int uts_numChildren_geo_quick(Node * parent) {const int ____chimes_did_disable5 = new_stack((void *)(&uts_numChildren_geo), "uts_numChildren_geo", &____must_manage_uts_numChildren_geo, 1, 0, (size_t)(15584602656006456203UL)) ; double p;
-# 170 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 170 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+int uts_numChildren_geo_quick(Node * parent) {const int ____chimes_did_disable5 = new_stack((void *)(&uts_numChildren_geo), "uts_numChildren_geo", &____must_manage_uts_numChildren_geo, 1, 0, (size_t)(10127551358398492891UL)) ; double p;
+# 170 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
  if (____must_checkpoint_uts_numChildren_geo_p_0) { register_stack_vars(1, "uts_numChildren_geo|p|0", &____must_checkpoint_uts_numChildren_geo_p_0, "double", (void *)(&p), (size_t)8, 0, 0, 0); } ; ;
-# 171 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 171 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    double b_i; b_i = (b_0) ;
-# 172 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 172 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    int depth; depth = (parent->height) ;
-# 173 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 173 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   int numChildren; int h; ;
-# 174 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 174 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    double u; ;
-# 175 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 176 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 177 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 175 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 176 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 177 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (depth > 0){
-# 178 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 178 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     switch (shape_fn) {
-# 179 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 180 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 181 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 179 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 180 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 181 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case EXPDEC:
-# 182 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 182 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       b_i = b_0 * pow((double) depth, -log(b_0)/log((double) gen_mx));
-# 183 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 183 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       break;
-# 184 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 185 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 186 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 184 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 185 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 186 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case CYCLIC:
-# 187 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 187 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       if (depth > 5 * gen_mx){
-# 188 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 188 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         b_i = 0.0;
-# 189 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 189 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         break;
-# 190 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 190 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       }
-# 191 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 191 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       b_i = pow(b_0,
-# 192 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 192 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
                 sin(2.0*3.141592653589793*(double) depth / (double) gen_mx));
-# 193 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 193 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       break;
-# 194 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 195 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 196 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 194 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 195 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 196 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case FIXED:
-# 197 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 197 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       b_i = (depth < gen_mx)? b_0 : 0;
-# 198 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 198 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       break;
-# 199 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 200 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 201 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 199 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 200 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 201 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case LINEAR:
-# 202 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 202 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     default:
-# 203 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 203 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       b_i = b_0 * (1.0 - (double)depth / (double) gen_mx);
-# 204 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 204 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       break;
-# 205 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 205 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     }
-# 206 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 206 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 207 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 208 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 209 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 210 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 207 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 208 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 209 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 210 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   p = 1.0 / (1.0 + b_i);
-# 211 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 212 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 213 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-   call_lbl_0: h = ({ calling((void*)rng_rand, 0, ____alias_loc_id_3, 0UL, 1, (size_t)(15584602656006456203UL)); (rng_rand)(parent->state.state); }) ;
-# 214 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 211 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 212 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 213 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+   call_lbl_0: h = ({ calling((void*)rng_rand, 0, ____alias_loc_id_3, 0UL, 1, (size_t)(10127551358398492891UL)); (rng_rand)(parent->state.state); }) ;
+# 214 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    call_lbl_1: u = ({ calling_npm("rng_toProb", 0); rng_toProb_npm(h); });
-# 215 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 216 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 217 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 218 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 215 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 216 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 217 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 218 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   numChildren = floor(log(1 - u) / log(1 - p));
-# 219 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 220 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 219 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 220 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (numChildren); rm_stack(false, 0UL, "uts_numChildren_geo", &____must_manage_uts_numChildren_geo, ____alias_loc_id_21, ____chimes_did_disable5, false); return ____chimes_ret_var_3; ;
-# 221 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 221 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_numChildren_geo", &____must_manage_uts_numChildren_geo, ____alias_loc_id_21, ____chimes_did_disable5, false); }
 
 int uts_numChildren_geo(Node * parent) { return (____chimes_replaying ? uts_numChildren_geo_resumable(parent) : uts_numChildren_geo_quick(parent)); }
-# 224 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-int uts_numChildren_quick(Node *parent) {const int ____chimes_did_disable6 = new_stack((void *)(&uts_numChildren), "uts_numChildren", &____must_manage_uts_numChildren, 1, 1, (size_t)(15584602656006456298UL), "uts_numChildren|parent|0", &____must_checkpoint_uts_numChildren_parent_0, "%struct.node_t*", (void *)(&parent), (size_t)8, 1, 0, 0) ; int numChildren;
-# 224 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 224 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+int uts_numChildren_quick(Node *parent) {const int ____chimes_did_disable6 = new_stack((void *)(&uts_numChildren), "uts_numChildren", &____must_manage_uts_numChildren, 1, 1, (size_t)(10127551358398492986UL), "uts_numChildren|parent|0", &____must_checkpoint_uts_numChildren_parent_0, "%struct.node_t*", (void *)(&parent), (size_t)8, 1, 0, 0) ; int numChildren;
+# 224 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
  if (____must_checkpoint_uts_numChildren_numChildren_0) { register_stack_vars(1, "uts_numChildren|numChildren|0", &____must_checkpoint_uts_numChildren_numChildren_0, "i32", (void *)(&numChildren), (size_t)4, 0, 0, 0); } ; ;
-# 225 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 225 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
      numChildren = (0) ;
-# 226 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 227 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 228 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 226 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 228 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   switch (type) {
-# 229 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 229 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case BIN:
-# 230 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-      if (parent->height == 0) {numChildren = (int) floor(b_0); } else { call_lbl_0: numChildren = ({ calling((void*)uts_numChildren_bin, 0, ____alias_loc_id_4, 0UL, 1, (size_t)(15584602656006456298UL)); uts_numChildren_bin_quick(parent); }) ; } ;
-# 234 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 230 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+      if (parent->height == 0) {numChildren = (int) floor(b_0); } else { call_lbl_0: numChildren = ({ calling((void*)uts_numChildren_bin, 0, ____alias_loc_id_4, 0UL, 1, (size_t)(10127551358398492986UL)); uts_numChildren_bin_quick(parent); }) ; } ;
+# 234 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       break;
-# 235 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 236 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 235 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 236 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case GEO:
-# 237 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-       call_lbl_1: numChildren = ({ calling((void*)uts_numChildren_geo, 1, ____alias_loc_id_6, 0UL, 1, (size_t)(15584602656006456298UL)); uts_numChildren_geo_quick(parent); }) ;
-# 238 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 237 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+       call_lbl_1: numChildren = ({ calling((void*)uts_numChildren_geo, 1, ____alias_loc_id_6, 0UL, 1, (size_t)(10127551358398492986UL)); uts_numChildren_geo_quick(parent); }) ;
+# 238 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       break;
-# 239 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 240 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 239 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 240 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case HYBRID:
-# 241 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-      if (parent->height < shiftDepth * gen_mx) { call_lbl_2: numChildren = ({ calling((void*)uts_numChildren_geo, 2, ____alias_loc_id_7, 0UL, 1, (size_t)(15584602656006456298UL)); uts_numChildren_geo_quick(parent); }) ; } else { call_lbl_3: numChildren = ({ calling((void*)uts_numChildren_bin, 3, ____alias_loc_id_8, 0UL, 1, (size_t)(15584602656006456298UL)); uts_numChildren_bin_quick(parent); }) ; } ;
-# 245 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 241 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+      if (parent->height < shiftDepth * gen_mx) { call_lbl_2: numChildren = ({ calling((void*)uts_numChildren_geo, 2, ____alias_loc_id_7, 0UL, 1, (size_t)(10127551358398492986UL)); uts_numChildren_geo_quick(parent); }) ; } else { call_lbl_3: numChildren = ({ calling((void*)uts_numChildren_bin, 3, ____alias_loc_id_8, 0UL, 1, (size_t)(10127551358398492986UL)); uts_numChildren_bin_quick(parent); }) ; } ;
+# 245 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       break;
-# 246 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 246 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
      call_lbl_4: default:
-# 247 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-       ({ calling((void*)uts_error, 4, ____alias_loc_id_5, 0UL, 1, (size_t)(15584602656006456933UL)); uts_error_quick("parTreeSearch(): Unknown tree type"); }) ;
-# 248 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 247 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+       ({ calling((void*)uts_error, 4, ____alias_loc_id_5, 0UL, 1, (size_t)(10127551358398493621UL)); uts_error_quick("parTreeSearch(): Unknown tree type"); }) ;
+# 248 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 249 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 250 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 251 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 252 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 249 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 250 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 251 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 252 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (parent->height == 0 && parent->type == BIN) {
-# 253 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 253 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
      int rootBF; rootBF = ((int) ceil(b_0)) ;
-# 254 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 254 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     if (numChildren > rootBF) {
-# 255 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 255 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       printf("*** Number of children of root truncated from %d to %d\n",
-# 256 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 256 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
              numChildren, rootBF);
-# 257 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 257 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       numChildren = rootBF;
-# 258 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 258 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     }
-# 259 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 259 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 260 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 260 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   else {
-# 261 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 261 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     if (numChildren > 100) {
-# 262 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 262 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       printf("*** Number of children truncated from %d to %d\n",
-# 263 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 263 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
              numChildren, 100);
-# 264 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 264 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       numChildren = 100;
-# 265 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 265 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     }
-# 266 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 266 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 267 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 268 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 267 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 268 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (numChildren); rm_stack(false, 0UL, "uts_numChildren", &____must_manage_uts_numChildren, ____alias_loc_id_22, ____chimes_did_disable6, false); return ____chimes_ret_var_4; ;
-# 269 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 269 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_numChildren", &____must_manage_uts_numChildren, ____alias_loc_id_22, ____chimes_did_disable6, false); }
 
 int uts_numChildren(Node *parent) { return (____chimes_replaying ? uts_numChildren_resumable(parent) : uts_numChildren_quick(parent)); }
-# 272 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-int uts_childType_quick(Node *parent) {const int ____chimes_did_disable7 = new_stack((void *)(&uts_childType), "uts_childType", &____must_manage_uts_childType, 1, 0, (size_t)(15584602656006456349UL)) ; ; ;
-# 273 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 272 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+int uts_childType_quick(Node *parent) {const int ____chimes_did_disable7 = new_stack((void *)(&uts_childType), "uts_childType", &____must_manage_uts_childType, 1, 0, (size_t)(10127551358398493037UL)) ; ; ;
+# 273 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   switch (type) {
-# 274 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 274 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case BIN:
-# 275 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 275 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
        int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (BIN); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); return ____chimes_ret_var_5; ;
-# 276 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 276 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case GEO:
-# 277 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 277 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
        int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (GEO); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); return ____chimes_ret_var_6; ;
-# 278 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 278 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case HYBRID:
-# 279 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 279 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       if (parent->height < shiftDepth * gen_mx) { int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (GEO); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); return ____chimes_ret_var_7; ; } else { int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (BIN); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); return ____chimes_ret_var_8; ; } ;
-# 283 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 283 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
      call_lbl_0: default:
-# 284 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-       ({ calling((void*)uts_error, 0, ____alias_loc_id_9, 0UL, 1, (size_t)(15584602656006456936UL)); uts_error_quick("uts_get_childtype(): Unknown tree type"); }) ;
-# 285 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 284 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+       ({ calling((void*)uts_error, 0, ____alias_loc_id_9, 0UL, 1, (size_t)(10127551358398493624UL)); uts_error_quick("uts_get_childtype(): Unknown tree type"); }) ;
+# 285 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
        int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = (-1); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); return ____chimes_ret_var_9; ;
-# 286 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 286 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 287 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 287 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); }
 
 int uts_childType(Node *parent) { return (____chimes_replaying ? uts_childType_resumable(parent) : uts_childType_quick(parent)); }
-# 291 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-int uts_paramsToStr_quick(char *strBuf, int ind) {const int ____chimes_did_disable8 = new_stack((void *)(&uts_paramsToStr), "uts_paramsToStr", &____must_manage_uts_paramsToStr, 2, 2, (size_t)(15584602656006456505UL), (size_t)(0UL), "uts_paramsToStr|strBuf|0", &____must_checkpoint_uts_paramsToStr_strBuf_0, "i8*", (void *)(&strBuf), (size_t)8, 1, 0, 0, "uts_paramsToStr|ind|0", &____must_checkpoint_uts_paramsToStr_ind_0, "i32", (void *)(&ind), (size_t)4, 0, 0, 0) ; ; ;
-# 292 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 293 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-    char *____chimes_unroll_var_0; call_lbl_0: ____chimes_unroll_var_0 = ( ({ calling((void*)impl_getName, 0, ____alias_loc_id_11, 15584602656006456362UL, 0); (impl_getName)(); }) ) ; ind += sprintf(strBuf+ind, "UTS - Unbalanced Tree Search %s (%s)\n", "2.1", ____chimes_unroll_var_0);
-# 294 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 295 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 296 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 291 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+int uts_paramsToStr_quick(char *strBuf, int ind) {const int ____chimes_did_disable8 = new_stack((void *)(&uts_paramsToStr), "uts_paramsToStr", &____must_manage_uts_paramsToStr, 2, 2, (size_t)(10127551358398493193UL), (size_t)(0UL), "uts_paramsToStr|strBuf|0", &____must_checkpoint_uts_paramsToStr_strBuf_0, "i8*", (void *)(&strBuf), (size_t)8, 1, 0, 0, "uts_paramsToStr|ind|0", &____must_checkpoint_uts_paramsToStr_ind_0, "i32", (void *)(&ind), (size_t)4, 0, 0, 0) ; ; ;
+# 292 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 293 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+    char *____chimes_unroll_var_0; call_lbl_0: ____chimes_unroll_var_0 = ( ({ calling((void*)impl_getName, 0, ____alias_loc_id_11, 10127551358398493050UL, 0); (impl_getName)(); }) ) ; ind += sprintf(strBuf+ind, "UTS - Unbalanced Tree Search %s (%s)\n", "2.1", ____chimes_unroll_var_0);
+# 294 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 295 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 296 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   ind += sprintf(strBuf+ind, "Tree type:  %d (%s)\n", type, uts_trees_str[type]);
-# 297 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 298 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 299 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 297 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 298 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 299 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   ind += sprintf(strBuf+ind, "Tree shape parameters:\n");
-# 300 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 300 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   ind += sprintf(strBuf+ind, "  root branching factor b_0 = %.1f, root seed = %d\n", b_0, rootId);
-# 301 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 302 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 301 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 302 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (type == GEO || type == HYBRID) {
-# 303 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 303 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     ind += sprintf(strBuf+ind, "  GEO parameters: gen_mx = %d, shape function = %d (%s)\n",
-# 304 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 304 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
             gen_mx, shape_fn, uts_geoshapes_str[shape_fn]);
-# 305 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 305 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 306 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 307 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 306 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 307 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (type == BIN || type == HYBRID) {
-# 308 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 308 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
      double q; q = (nonLeafProb) ;
-# 309 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 309 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
      int m; m = (nonLeafBF) ;
-# 310 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 310 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
      double es; es = ((1.0 / (1.0 - q * m))) ;
-# 311 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 311 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     ind += sprintf(strBuf+ind, "  BIN parameters:  q = %f, m = %d, E(n) = %f, E(s) = %.2f\n",
-# 312 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 312 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
             q, m, q * m, es);
-# 313 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 313 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 314 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 315 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 314 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 315 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (type == HYBRID) {
-# 316 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 316 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     ind += sprintf(strBuf+ind, "  HYBRID:  GEO from root to depth %d, then BIN\n",
-# 317 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 317 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
             (int) ceil(shiftDepth * gen_mx));
-# 318 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 318 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 319 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 320 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 321 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 319 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 320 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 321 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   ind += sprintf(strBuf+ind, "Random number generator: ");
-# 322 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-   call_lbl_1: ind = ({ calling((void*)rng_showtype, 1, ____alias_loc_id_10, 0UL, 2, (size_t)(15584602656006456505UL), (size_t)(0UL)); (rng_showtype)(strBuf, ind); }) ;
-# 323 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 322 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+   call_lbl_1: ind = ({ calling((void*)rng_showtype, 1, ____alias_loc_id_10, 0UL, 2, (size_t)(10127551358398493193UL), (size_t)(0UL)); (rng_showtype)(strBuf, ind); }) ;
+# 323 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   ind += sprintf(strBuf+ind, "\nCompute granularity: %d\n", computeGranularity);
-# 324 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 325 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 324 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 325 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = (ind); rm_stack(false, 0UL, "uts_paramsToStr", &____must_manage_uts_paramsToStr, ____alias_loc_id_24, ____chimes_did_disable8, false); return ____chimes_ret_var_10; ;
-# 326 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 326 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_paramsToStr", &____must_manage_uts_paramsToStr, ____alias_loc_id_24, ____chimes_did_disable8, false); }
 
 int uts_paramsToStr(char *strBuf, int ind) { return (____chimes_replaying ? uts_paramsToStr_resumable(strBuf, ind) : uts_paramsToStr_quick(strBuf, ind)); }
-# 329 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 329 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 void uts_printParams_quick() {const int ____chimes_did_disable9 = new_stack((void *)(&uts_printParams), "uts_printParams", &____must_manage_uts_printParams, 0, 0) ; char strBuf[5000];
-# 329 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 329 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
  if (____must_checkpoint_uts_printParams_strBuf_0) { register_stack_vars(1, "uts_printParams|strBuf|0", &____must_checkpoint_uts_printParams_strBuf_0, "[5000 x i8]", (void *)(strBuf), (size_t)5000, 0, 0, 0); } ; ;
-# 330 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 330 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    ;
-# 331 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 331 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   strBuf[0] = '\0';
-# 332 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 332 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    int ind; ind = (0) ;
-# 333 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 334 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 333 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 334 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (verbose > 0) {
-# 335 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-     call_lbl_0: ind = ({ calling((void*)uts_paramsToStr, 0, ____alias_loc_id_13, 0UL, 2, (size_t)(15584602656006456511UL), (size_t)(0UL)); uts_paramsToStr_quick(strBuf, ind); }) ;
-# 336 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-     call_lbl_1: ind = ({ calling((void*)impl_paramsToStr, 1, ____alias_loc_id_12, 0UL, 2, (size_t)(15584602656006456511UL), (size_t)(0UL)); (impl_paramsToStr)(strBuf, ind); }) ;
-# 337 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 335 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+     call_lbl_0: ind = ({ calling((void*)uts_paramsToStr, 0, ____alias_loc_id_13, 0UL, 2, (size_t)(10127551358398493199UL), (size_t)(0UL)); uts_paramsToStr_quick(strBuf, ind); }) ;
+# 336 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+     call_lbl_1: ind = ({ calling((void*)impl_paramsToStr, 1, ____alias_loc_id_12, 0UL, 2, (size_t)(10127551358398493199UL), (size_t)(0UL)); (impl_paramsToStr)(strBuf, ind); }) ;
+# 337 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     printf("%s\n",strBuf);
-# 338 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 338 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 339 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 339 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_printParams", &____must_manage_uts_printParams, ____alias_loc_id_25, ____chimes_did_disable9, false); }
 
 void uts_printParams() { (____chimes_replaying ? uts_printParams_resumable() : uts_printParams_quick()); }
-# 341 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-void uts_parseParams_quick(int argc, char *argv[]){const int ____chimes_did_disable10 = new_stack((void *)(&uts_parseParams), "uts_parseParams", &____must_manage_uts_parseParams, 2, 2, (size_t)(0UL), (size_t)(15584602656006456779UL), "uts_parseParams|argc|0", &____must_checkpoint_uts_parseParams_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "uts_parseParams|argv|0", &____must_checkpoint_uts_parseParams_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int err;
-# 341 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 341 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+void uts_parseParams_quick(int argc, char *argv[]){const int ____chimes_did_disable10 = new_stack((void *)(&uts_parseParams), "uts_parseParams", &____must_manage_uts_parseParams, 2, 2, (size_t)(0UL), (size_t)(10127551358398493467UL), "uts_parseParams|argc|0", &____must_checkpoint_uts_parseParams_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "uts_parseParams|argv|0", &____must_checkpoint_uts_parseParams_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int err;
+# 341 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 int i;
-# 341 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 341 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
  if (____must_checkpoint_uts_parseParams_err_0 || ____must_checkpoint_uts_parseParams_i_0) { register_stack_vars(2, "uts_parseParams|err|0", &____must_checkpoint_uts_parseParams_err_0, "i32", (void *)(&err), (size_t)4, 0, 0, 0, "uts_parseParams|i|0", &____must_checkpoint_uts_parseParams_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } ; ;
-# 342 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 342 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
      i = (1) ;
-# 343 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 343 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
      err = (-1) ;
-# 344 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 344 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   while (i < argc && err == -1) {
-# 345 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 345 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     if (argv[i][0] == '-' && argv[i][1] == 'h') {{
-# 346 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 346 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
          call_lbl_0: ({ calling((void*)uts_helpMessage, 0, 0, 0UL, 0); uts_helpMessage_quick(); }) ;
-# 347 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 347 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
          call_lbl_1: ({ calling((void*)impl_abort, 1, 0, 0UL, 1, (size_t)(0UL)); (impl_abort)(0); }) ;
-# 348 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 349 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 348 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 349 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     }; } else if (argv[i][0] != '-' || strlen(argv[i]) != 2 || argc <= i+1) {
-# 350 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 350 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       err = i; break;
-# 351 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 351 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     }
-# 352 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 353 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 354 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 355 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-    alias_group_changed(____alias_loc_id_14); call_lbl_2: if (! ({ calling((void*)impl_parseParam, 2, ____alias_loc_id_14, 0UL, 2, (size_t)(15584602656006456781UL), (size_t)(15584602656006456781UL)); (impl_parseParam)(argv[i], argv[i + 1]); }) ) {
-# 356 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 352 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 353 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 354 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 355 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+    alias_group_changed(____alias_loc_id_14); call_lbl_2: if (! ({ calling((void*)impl_parseParam, 2, ____alias_loc_id_14, 0UL, 2, (size_t)(10127551358398493469UL), (size_t)(10127551358398493469UL)); (impl_parseParam)(argv[i], argv[i + 1]); }) ) {
+# 356 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       i += 2;
-# 357 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 357 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       continue;
-# 358 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 358 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     }
-# 359 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 360 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 359 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 360 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     switch (argv[i][1]) {
-# 361 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 361 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'q':
-# 362 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 362 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         nonLeafProb = atof(argv[i+1]); break;
-# 363 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 363 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'm':
-# 364 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 364 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         nonLeafBF = atoi(argv[i+1]); break;
-# 365 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 365 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'r':
-# 366 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 366 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         rootId = atoi(argv[i+1]); break;
-# 367 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 367 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'x':
-# 368 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 368 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         debug = atoi(argv[i+1]); break;
-# 369 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 369 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'v':
-# 370 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 370 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         verbose = atoi(argv[i+1]); break;
-# 371 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 371 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 't':
-# 372 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 372 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         type = (tree_t) atoi(argv[i+1]);
-# 373 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 373 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         if (type != BIN && type != GEO && type!= HYBRID) {err = i; };
-# 375 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 375 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         break;
-# 376 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 376 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'a':
-# 377 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 377 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         shape_fn = (geoshape_t) atoi(argv[i+1]);
-# 378 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 378 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         if (shape_fn > FIXED) {err = i; };
-# 379 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 379 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         break;
-# 380 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 380 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'b':
-# 381 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 381 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         b_0 = atof(argv[i+1]); break;
-# 382 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 382 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'd':
-# 383 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 383 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         gen_mx = atoi(argv[i+1]); break;
-# 384 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 384 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'f':
-# 385 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 385 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         shiftDepth = atof(argv[i+1]); break;
-# 386 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 386 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'g':
-# 387 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 387 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         computeGranularity = (((1) > (atoi(argv[i+1]))) ? (1) : (atoi(argv[i+1]))); break;
-# 388 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 388 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       default:
-# 389 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 389 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         err = i;
-# 390 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 390 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     }
-# 391 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 392 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 391 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 392 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     if (err != -1) {break; };
-# 393 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 394 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 393 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 394 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     i += 2;
-# 395 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 395 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 396 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 397 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 396 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 397 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (err != -1) {
-# 398 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 398 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     printf("Unrecognized parameter or incorrect/missing value: '%s %s'\n", argv[i], (i+1 < argc) ? argv[i+1] : "[none]");
-# 399 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 399 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     printf("Try -h for help.\n");
-# 400 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 400 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
      call_lbl_3: ({ calling((void*)impl_abort, 3, ____alias_loc_id_15, 0UL, 1, (size_t)(0UL)); (impl_abort)(4); }) ;
-# 401 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 401 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 402 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 402 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_parseParams", &____must_manage_uts_parseParams, ____alias_loc_id_26, ____chimes_did_disable10, false); }
 
 void uts_parseParams(int argc, char *argv[]) { (____chimes_replaying ? uts_parseParams_resumable(argc, argv) : uts_parseParams_quick(argc, argv)); }
-# 404 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 404 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 void uts_helpMessage_quick() {const int ____chimes_did_disable11 = new_stack((void *)(&uts_helpMessage), "uts_helpMessage", &____must_manage_uts_helpMessage, 0, 0) ; ; ;
-# 405 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-    char *____chimes_unroll_var_1; call_lbl_0: ____chimes_unroll_var_1 = ( ({ calling((void*)impl_getName, 0, ____alias_loc_id_17, 15584602656006456805UL, 0); (impl_getName)(); }) ) ; printf("  UTS - Unbalanced Tree Search %s (%s)\n\n", "2.1", ____chimes_unroll_var_1);
-# 406 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 405 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+    char *____chimes_unroll_var_1; call_lbl_0: ____chimes_unroll_var_1 = ( ({ calling((void*)impl_getName, 0, ____alias_loc_id_17, 10127551358398493493UL, 0); (impl_getName)(); }) ) ; printf("  UTS - Unbalanced Tree Search %s (%s)\n\n", "2.1", ____chimes_unroll_var_1);
+# 406 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("    usage:  uts-bin [parameter value] ...\n\n");
-# 407 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 407 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("  parm type  description\n");
-# 408 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 408 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("  ==== ====  =========================================\n");
-# 409 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 409 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("\n  Benchmark Parameters:\n");
-# 410 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 410 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -t  int   tree type (0: BIN, 1: GEO, 2: HYBRID)\n");
-# 411 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 411 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -b  dble  root branching factor\n");
-# 412 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 412 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -r  int   root seed 0 <= r < 2^31 \n");
-# 413 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 413 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -a  int   GEO: tree shape function \n");
-# 414 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 414 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -d  int   GEO: tree depth\n");
-# 415 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 415 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -q  dble  BIN: probability of non-leaf node\n");
-# 416 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 416 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -m  int   BIN: number of children for non-leaf node\n");
-# 417 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 417 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -f  dble  HYBRID: fraction of depth for GEO -> BIN transition\n");
-# 418 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 418 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -g  int   compute granularity: number of rng_spawns per node\n");
-# 419 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 419 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -v  int   nonzero to set verbose output\n");
-# 420 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 420 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -x  int   debug level\n");
-# 421 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 422 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 423 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 421 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 422 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 423 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("\n  Additional Implementation Parameters:\n");
-# 424 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 424 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    call_lbl_1: ({ calling((void*)impl_helpMessage, 1, ____alias_loc_id_16, 0UL, 0); (impl_helpMessage)(); }) ;
-# 425 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 425 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("\n");
-# 426 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 426 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_helpMessage", &____must_manage_uts_helpMessage, 0, ____chimes_did_disable11, false); }
 
 void uts_helpMessage() { (____chimes_replaying ? uts_helpMessage_resumable() : uts_helpMessage_quick()); }
-# 429 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 429 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 void uts_showStats_quick(int nPes, int chunkSize, double walltime, int nNodes, int nLeaves, int maxDepth) {const int ____chimes_did_disable12 = new_stack((void *)(&uts_showStats), "uts_showStats", &____must_manage_uts_showStats, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 430 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 431 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 430 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 431 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (verbose == 0) {
-# 432 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 432 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     printf("%4d %7.3f %9d %7.0f %7.0f %d %d %.2f %d %d %1d %f %3d\n",
-# 433 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 433 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         nPes, walltime, nNodes, nNodes/walltime, (nNodes/walltime)/nPes, chunkSize,
-# 434 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 434 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         type, b_0, rootId, gen_mx, shape_fn, nonLeafProb, nonLeafBF);
-# 435 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 435 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 436 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 437 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 438 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 436 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 437 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 438 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   else {
-# 439 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 439 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     printf("Tree size = %d, tree depth = %d, num leaves = %d (%.2f%%)\n", nNodes, maxDepth, nLeaves, nLeaves/(float)nNodes*100.0);
-# 440 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 440 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     printf("Wallclock time = %.3f sec, performance = %.0f nodes/sec (%.0f nodes/sec per PE)\n\n",
-# 441 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 441 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         walltime, (nNodes / walltime), (nNodes / walltime / nPes));
-# 442 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 442 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 443 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 443 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_showStats", &____must_manage_uts_showStats, ____alias_loc_id_27, ____chimes_did_disable12, false); }
 
 void uts_showStats(int nPes, int chunkSize, double walltime, int nNodes, int nLeaves, int maxDepth) { (____chimes_replaying ? uts_showStats_resumable(nPes, chunkSize, walltime, nNodes, nLeaves, maxDepth) : uts_showStats_quick(nPes, chunkSize, walltime, nNodes, nLeaves, maxDepth)); }
-# 110 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 110 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 void uts_error_npm(char *str) {
-# 111 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 111 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("*** Error: %s\n", str);
-# 112 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 112 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   (*____chimes_extern_func_impl_abort)(1);
-# 113 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 113 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 }
-# 133 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 133 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 double uts_wctime_npm() {
-# 134 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 134 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   struct timeval tv;
-# 135 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 135 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   gettimeofday(&tv, __null);
-# 136 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 136 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    double ____chimes_ret_var_0; ____chimes_ret_var_0 = ((tv.tv_sec + 1E-6 * tv.tv_usec)); return ____chimes_ret_var_0; ;
-# 137 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 137 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 }
-# 142 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 142 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 double rng_toProb_npm(int n) {
-# 143 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 143 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (n < 0) {
-# 144 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 144 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     printf("*** toProb: rand n = %d out of range\n",n);
-# 145 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 145 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 146 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 146 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    double ____chimes_ret_var_1; ____chimes_ret_var_1 = (((n<0)? 0.0 : ((double) n)/2147483648.0)); return ____chimes_ret_var_1; ;
-# 147 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 147 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 }
-# 150 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 150 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 void uts_initRoot_npm(Node * root, int type) {
-# 151 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 151 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   root->type = type;
-# 152 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 152 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   root->height = 0;
-# 153 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 153 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   root->numChildren = -1;
-# 154 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 154 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   (*____chimes_extern_func_rng_init)(root->state.state, rootId);
-# 155 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 156 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 155 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 156 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (debug & 1) {printf("root node of type %d at %p\n",type, root); };
-# 158 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 158 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 }
-# 161 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 161 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 int uts_numChildren_bin_npm(Node * parent) {
-# 162 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 163 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 162 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 163 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   int v = (*____chimes_extern_func_rng_rand)(parent->state.state);
-# 164 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 164 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   double d = rng_toProb_npm(v);
-# 165 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 166 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 165 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 166 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    int ____chimes_ret_var_2; ____chimes_ret_var_2 = ((d < nonLeafProb) ? nonLeafBF : 0); return ____chimes_ret_var_2; ;
-# 167 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 167 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 }
-# 170 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 170 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 int uts_numChildren_geo_npm(Node * parent) {
-# 171 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 171 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   double b_i = b_0;
-# 172 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 172 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   int depth = parent->height;
-# 173 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 173 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   int numChildren, h;
-# 174 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 174 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   double p, u;
-# 175 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 176 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 177 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 175 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 176 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 177 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (depth > 0){
-# 178 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 178 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     switch (shape_fn) {
-# 179 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 180 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 181 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 179 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 180 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 181 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case EXPDEC:
-# 182 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 182 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       b_i = b_0 * pow((double) depth, -log(b_0)/log((double) gen_mx));
-# 183 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 183 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       break;
-# 184 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 185 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 186 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 184 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 185 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 186 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case CYCLIC:
-# 187 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 187 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       if (depth > 5 * gen_mx){
-# 188 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 188 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         b_i = 0.0;
-# 189 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 189 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         break;
-# 190 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 190 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       }
-# 191 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 191 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       b_i = pow(b_0,
-# 192 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 192 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
                 sin(2.0*3.141592653589793*(double) depth / (double) gen_mx));
-# 193 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 193 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       break;
-# 194 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 195 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 196 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 194 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 195 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 196 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case FIXED:
-# 197 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 197 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       b_i = (depth < gen_mx)? b_0 : 0;
-# 198 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 198 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       break;
-# 199 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 200 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 201 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 199 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 200 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 201 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case LINEAR:
-# 202 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 202 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     default:
-# 203 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 203 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       b_i = b_0 * (1.0 - (double)depth / (double) gen_mx);
-# 204 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 204 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       break;
-# 205 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 205 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     }
-# 206 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 206 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 207 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 208 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 209 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 210 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 207 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 208 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 209 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 210 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   p = 1.0 / (1.0 + b_i);
-# 211 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 212 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 213 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 211 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 212 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 213 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   h = (*____chimes_extern_func_rng_rand)(parent->state.state);
-# 214 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 214 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   u = rng_toProb_npm(h);
-# 215 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 216 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 217 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 218 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 215 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 216 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 217 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 218 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   numChildren = floor(log(1 - u) / log(1 - p));
-# 219 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 220 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 219 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 220 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    int ____chimes_ret_var_3; ____chimes_ret_var_3 = (numChildren); return ____chimes_ret_var_3; ;
-# 221 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 221 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 }
-# 224 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 224 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 int uts_numChildren_npm(Node *parent) {
-# 225 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 225 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   int numChildren = 0;
-# 226 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 227 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 228 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 226 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 228 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   switch (type) {
-# 229 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 229 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case BIN:
-# 230 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 230 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       if (parent->height == 0) {numChildren = (int) floor(b_0); } else {numChildren = uts_numChildren_bin_npm(parent); } ;
-# 234 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 234 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       break;
-# 235 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 236 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 235 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 236 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case GEO:
-# 237 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 237 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       numChildren = uts_numChildren_geo_npm(parent);
-# 238 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 238 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       break;
-# 239 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 240 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 239 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 240 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case HYBRID:
-# 241 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 241 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       if (parent->height < shiftDepth * gen_mx) {numChildren = uts_numChildren_geo_npm(parent); } else {numChildren = uts_numChildren_bin_npm(parent); } ;
-# 245 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 245 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       break;
-# 246 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 246 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     default:
-# 247 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 247 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       uts_error_npm("parTreeSearch(): Unknown tree type");
-# 248 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 248 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 249 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 250 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 251 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 252 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 249 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 250 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 251 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 252 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (parent->height == 0 && parent->type == BIN) {
-# 253 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 253 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     int rootBF = (int) ceil(b_0);
-# 254 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 254 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     if (numChildren > rootBF) {
-# 255 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 255 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       printf("*** Number of children of root truncated from %d to %d\n",
-# 256 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 256 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
              numChildren, rootBF);
-# 257 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 257 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       numChildren = rootBF;
-# 258 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 258 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     }
-# 259 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 259 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 260 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 260 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   else {
-# 261 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 261 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     if (numChildren > 100) {
-# 262 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 262 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       printf("*** Number of children truncated from %d to %d\n",
-# 263 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 263 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
              numChildren, 100);
-# 264 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 264 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       numChildren = 100;
-# 265 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 265 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     }
-# 266 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 266 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 267 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 268 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 267 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 268 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    int ____chimes_ret_var_4; ____chimes_ret_var_4 = (numChildren); return ____chimes_ret_var_4; ;
-# 269 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 269 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 }
-# 272 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 272 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 int uts_childType_npm(Node *parent) {
-# 273 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 273 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   switch (type) {
-# 274 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 274 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case BIN:
-# 275 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 275 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
        int ____chimes_ret_var_5; ____chimes_ret_var_5 = (BIN); return ____chimes_ret_var_5; ;
-# 276 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 276 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case GEO:
-# 277 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 277 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
        int ____chimes_ret_var_6; ____chimes_ret_var_6 = (GEO); return ____chimes_ret_var_6; ;
-# 278 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 278 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     case HYBRID:
-# 279 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 279 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       if (parent->height < shiftDepth * gen_mx) { int ____chimes_ret_var_7; ____chimes_ret_var_7 = (GEO); return ____chimes_ret_var_7; ; } else { int ____chimes_ret_var_8; ____chimes_ret_var_8 = (BIN); return ____chimes_ret_var_8; ; } ;
-# 283 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 283 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     default:
-# 284 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 284 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       uts_error_npm("uts_get_childtype(): Unknown tree type");
-# 285 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 285 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
        int ____chimes_ret_var_9; ____chimes_ret_var_9 = (-1); return ____chimes_ret_var_9; ;
-# 286 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 286 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 287 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 287 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 }
-# 291 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 291 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 int uts_paramsToStr_npm(char *strBuf, int ind) {
-# 292 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 293 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 292 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 293 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    char * ____chimes_unroll_var_0 = (*____chimes_extern_func_impl_getName)(); ind += sprintf(strBuf+ind, "UTS - Unbalanced Tree Search %s (%s)\n", "2.1", ____chimes_unroll_var_0);
-# 294 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 295 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 296 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 294 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 295 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 296 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   ind += sprintf(strBuf+ind, "Tree type:  %d (%s)\n", type, uts_trees_str[type]);
-# 297 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 298 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 299 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 297 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 298 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 299 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   ind += sprintf(strBuf+ind, "Tree shape parameters:\n");
-# 300 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 300 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   ind += sprintf(strBuf+ind, "  root branching factor b_0 = %.1f, root seed = %d\n", b_0, rootId);
-# 301 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 302 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 301 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 302 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (type == GEO || type == HYBRID) {
-# 303 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 303 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     ind += sprintf(strBuf+ind, "  GEO parameters: gen_mx = %d, shape function = %d (%s)\n",
-# 304 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 304 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
             gen_mx, shape_fn, uts_geoshapes_str[shape_fn]);
-# 305 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 305 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 306 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 307 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 306 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 307 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (type == BIN || type == HYBRID) {
-# 308 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 308 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     double q = nonLeafProb;
-# 309 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 309 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     int m = nonLeafBF;
-# 310 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 310 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     double es = (1.0 / (1.0 - q * m));
-# 311 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 311 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     ind += sprintf(strBuf+ind, "  BIN parameters:  q = %f, m = %d, E(n) = %f, E(s) = %.2f\n",
-# 312 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 312 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
             q, m, q * m, es);
-# 313 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 313 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 314 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 315 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 314 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 315 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (type == HYBRID) {
-# 316 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 316 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     ind += sprintf(strBuf+ind, "  HYBRID:  GEO from root to depth %d, then BIN\n",
-# 317 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 317 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
             (int) ceil(shiftDepth * gen_mx));
-# 318 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 318 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 319 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 320 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 321 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 319 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 320 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 321 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   ind += sprintf(strBuf+ind, "Random number generator: ");
-# 322 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 322 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   ind = (*____chimes_extern_func_rng_showtype)(strBuf, ind);
-# 323 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 323 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   ind += sprintf(strBuf+ind, "\nCompute granularity: %d\n", computeGranularity);
-# 324 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 325 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 324 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 325 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    int ____chimes_ret_var_10; ____chimes_ret_var_10 = (ind); return ____chimes_ret_var_10; ;
-# 326 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 326 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 }
-# 329 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 329 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 void uts_printParams_npm() {
-# 330 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 330 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   char strBuf[5000];
-# 331 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 331 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   strBuf[0] = '\0';
-# 332 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 332 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   int ind = 0;
-# 333 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 334 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 333 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 334 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (verbose > 0) {
-# 335 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 335 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     ind = uts_paramsToStr_npm(strBuf, ind);
-# 336 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 336 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     ind = (*____chimes_extern_func_impl_paramsToStr)(strBuf, ind);
-# 337 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 337 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     printf("%s\n",strBuf);
-# 338 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 338 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 339 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 339 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 }
-# 341 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 341 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 void uts_parseParams_npm(int argc, char *argv[]){
-# 342 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 342 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   int i = 1;
-# 343 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 343 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   int err = -1;
-# 344 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 344 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   while (i < argc && err == -1) {
-# 345 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 345 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     if (argv[i][0] == '-' && argv[i][1] == 'h') {{
-# 346 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 346 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         uts_helpMessage_npm();
-# 347 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 347 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         (*____chimes_extern_func_impl_abort)(0);
-# 348 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 349 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 348 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 349 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     }; } else if (argv[i][0] != '-' || strlen(argv[i]) != 2 || argc <= i+1) {
-# 350 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 350 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       err = i; break;
-# 351 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 351 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     }
-# 352 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 353 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 354 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 355 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 352 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 353 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 354 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 355 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     if (!(*____chimes_extern_func_impl_parseParam)(argv[i], argv[i+1])) {
-# 356 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 356 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       i += 2;
-# 357 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 357 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       continue;
-# 358 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 358 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     }
-# 359 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 360 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 359 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 360 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     switch (argv[i][1]) {
-# 361 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 361 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'q':
-# 362 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 362 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         nonLeafProb = atof(argv[i+1]); break;
-# 363 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 363 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'm':
-# 364 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 364 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         nonLeafBF = atoi(argv[i+1]); break;
-# 365 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 365 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'r':
-# 366 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 366 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         rootId = atoi(argv[i+1]); break;
-# 367 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 367 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'x':
-# 368 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 368 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         debug = atoi(argv[i+1]); break;
-# 369 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 369 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'v':
-# 370 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 370 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         verbose = atoi(argv[i+1]); break;
-# 371 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 371 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 't':
-# 372 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 372 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         type = (tree_t) atoi(argv[i+1]);
-# 373 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 373 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         if (type != BIN && type != GEO && type!= HYBRID) {err = i; };
-# 375 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 375 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         break;
-# 376 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 376 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'a':
-# 377 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 377 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         shape_fn = (geoshape_t) atoi(argv[i+1]);
-# 378 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 378 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         if (shape_fn > FIXED) {err = i; };
-# 379 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 379 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         break;
-# 380 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 380 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'b':
-# 381 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 381 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         b_0 = atof(argv[i+1]); break;
-# 382 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 382 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'd':
-# 383 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 383 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         gen_mx = atoi(argv[i+1]); break;
-# 384 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 384 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'f':
-# 385 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 385 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         shiftDepth = atof(argv[i+1]); break;
-# 386 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 386 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       case 'g':
-# 387 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 387 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         computeGranularity = (((1) > (atoi(argv[i+1]))) ? (1) : (atoi(argv[i+1]))); break;
-# 388 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 388 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
       default:
-# 389 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 389 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         err = i;
-# 390 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 390 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     }
-# 391 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 392 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 391 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 392 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     if (err != -1) {break; };
-# 393 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 394 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 393 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 394 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     i += 2;
-# 395 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 395 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 396 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 397 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 396 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 397 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (err != -1) {
-# 398 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 398 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     printf("Unrecognized parameter or incorrect/missing value: '%s %s'\n", argv[i], (i+1 < argc) ? argv[i+1] : "[none]");
-# 399 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 399 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     printf("Try -h for help.\n");
-# 400 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 400 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     (*____chimes_extern_func_impl_abort)(4);
-# 401 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 401 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 402 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 402 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 }
-# 404 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 404 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 void uts_helpMessage_npm() {
-# 405 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 405 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
    char * ____chimes_unroll_var_1 = (*____chimes_extern_func_impl_getName)(); printf("  UTS - Unbalanced Tree Search %s (%s)\n\n", "2.1", ____chimes_unroll_var_1);
-# 406 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 406 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("    usage:  uts-bin [parameter value] ...\n\n");
-# 407 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 407 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("  parm type  description\n");
-# 408 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 408 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("  ==== ====  =========================================\n");
-# 409 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 409 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("\n  Benchmark Parameters:\n");
-# 410 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 410 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -t  int   tree type (0: BIN, 1: GEO, 2: HYBRID)\n");
-# 411 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 411 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -b  dble  root branching factor\n");
-# 412 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 412 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -r  int   root seed 0 <= r < 2^31 \n");
-# 413 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 413 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -a  int   GEO: tree shape function \n");
-# 414 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 414 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -d  int   GEO: tree depth\n");
-# 415 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 415 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -q  dble  BIN: probability of non-leaf node\n");
-# 416 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 416 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -m  int   BIN: number of children for non-leaf node\n");
-# 417 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 417 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -f  dble  HYBRID: fraction of depth for GEO -> BIN transition\n");
-# 418 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 418 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -g  int   compute granularity: number of rng_spawns per node\n");
-# 419 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 419 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -v  int   nonzero to set verbose output\n");
-# 420 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 420 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("   -x  int   debug level\n");
-# 421 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 422 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 423 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 421 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 422 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 423 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("\n  Additional Implementation Parameters:\n");
-# 424 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 424 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   (*____chimes_extern_func_impl_helpMessage)();
-# 425 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 425 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   printf("\n");
-# 426 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 426 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 }
-# 429 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 429 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 void uts_showStats_npm(int nPes, int chunkSize, double walltime, int nNodes, int nLeaves, int maxDepth) {
-# 430 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 431 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 430 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 431 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   if (verbose == 0) {
-# 432 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 432 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     printf("%4d %7.3f %9d %7.0f %7.0f %d %d %.2f %d %d %1d %f %3d\n",
-# 433 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 433 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         nPes, walltime, nNodes, nNodes/walltime, (nNodes/walltime)/nPes, chunkSize,
-# 434 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 434 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         type, b_0, rootId, gen_mx, shape_fn, nonLeafProb, nonLeafBF);
-# 435 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 435 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 436 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 437 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
-# 438 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 436 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 437 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 438 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   else {
-# 439 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 439 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     printf("Tree size = %d, tree depth = %d, num leaves = %d (%.2f%%)\n", nNodes, maxDepth, nLeaves, nLeaves/(float)nNodes*100.0);
-# 440 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 440 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
     printf("Wallclock time = %.3f sec, performance = %.0f nodes/sec (%.0f nodes/sec per PE)\n\n",
-# 441 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 441 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
         walltime, (nNodes / walltime), (nNodes / walltime / nPes));
-# 442 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 442 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
   }
-# 443 "/home/jmg3/chimes/src/examples/openmp/uts/uts.c"
+# 443 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.c"
 }
 
 
@@ -5734,48 +5734,48 @@ void uts_showStats_npm(int nPes, int chunkSize, double walltime, int nNodes, int
 
 
 static int module_init() {
-    init_module(15584602656006455973UL, 13, 13, 12, 28, 13, 8, 21, 2, 0, 5,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (15584602656006455973UL + 1UL),
-                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)1, (15584602656006455973UL + 55UL), (15584602656006455973UL + 56UL), (15584602656006455973UL + 86UL), "rng_init", (unsigned)1, (15584602656006455973UL + 86UL),
-                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (15584602656006455973UL + 90UL), "rng_rand", (unsigned)1, (15584602656006455973UL + 119UL),
-                           &____alias_loc_id_3, (unsigned)4, (unsigned)0, (unsigned)1, (15584602656006455973UL + 121UL), (15584602656006455973UL + 122UL), (15584602656006455973UL + 123UL), (15584602656006455973UL + 126UL), "rng_rand", (unsigned)1, (15584602656006455973UL + 230UL),
-                           &____alias_loc_id_4, (unsigned)2, (unsigned)0, (unsigned)0, (15584602656006455973UL + 236UL), (15584602656006455973UL + 237UL),
-                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (unsigned)0, (15584602656006455973UL + 236UL), (15584602656006455973UL + 237UL),
-                           &____alias_loc_id_6, (unsigned)2, (unsigned)0, (unsigned)0, (15584602656006455973UL + 236UL), (15584602656006455973UL + 237UL),
-                           &____alias_loc_id_7, (unsigned)2, (unsigned)0, (unsigned)0, (15584602656006455973UL + 236UL), (15584602656006455973UL + 237UL),
-                           &____alias_loc_id_8, (unsigned)2, (unsigned)0, (unsigned)0, (15584602656006455973UL + 236UL), (15584602656006455973UL + 237UL),
-                           &____alias_loc_id_9, (unsigned)1, (unsigned)0, (unsigned)0, (15584602656006455973UL + 328UL),
-                            &____alias_loc_id_10, (unsigned)5, (unsigned)0, (unsigned)1, (15584602656006455973UL + 378UL), (15584602656006455973UL + 379UL), (15584602656006455973UL + 380UL), (15584602656006455973UL + 381UL), (15584602656006455973UL + 382UL), "rng_showtype", (unsigned)1, (15584602656006455973UL + 532UL),
-                            &____alias_loc_id_11, (unsigned)2, (unsigned)0, (unsigned)1, (15584602656006455973UL + 377UL), (15584602656006455973UL + 378UL), "impl_getName", (unsigned)1, (15584602656006455973UL + 389UL),
-                            &____alias_loc_id_12, (unsigned)1, (unsigned)0, (unsigned)1, (15584602656006455973UL + 539UL), "impl_paramsToStr", (unsigned)1, (15584602656006455973UL + 538UL),
-                            &____alias_loc_id_13, (unsigned)2, (unsigned)0, (unsigned)0, (15584602656006455973UL + 538UL), (15584602656006455973UL + 539UL),
-                            &____alias_loc_id_14, (unsigned)0, (unsigned)0, (unsigned)1, "impl_parseParam", (unsigned)1, (15584602656006455973UL + 808UL),
-                            &____alias_loc_id_15, (unsigned)6, (unsigned)0, (unsigned)0, (15584602656006455973UL + 562UL), (15584602656006455973UL + 563UL), (15584602656006455973UL + 564UL), (15584602656006455973UL + 565UL), (15584602656006455973UL + 946UL), (15584602656006455973UL + 947UL),
-                            &____alias_loc_id_16, (unsigned)1, (unsigned)0, (unsigned)0, (15584602656006455973UL + 830UL),
-                            &____alias_loc_id_17, (unsigned)0, (unsigned)0, (unsigned)1, "impl_getName", (unsigned)1, (15584602656006455973UL + 832UL),
-                            &____alias_loc_id_18, (unsigned)2, (unsigned)0, (unsigned)0, (15584602656006455973UL + 13UL), (15584602656006455973UL + 14UL),
-                            &____alias_loc_id_19, (unsigned)2, (unsigned)0, (unsigned)0, (15584602656006455973UL + 31UL), (15584602656006455973UL + 32UL),
-                            &____alias_loc_id_20, (unsigned)3, (unsigned)0, (unsigned)0, (15584602656006455973UL + 91UL), (15584602656006455973UL + 92UL), (15584602656006455973UL + 93UL),
-                            &____alias_loc_id_21, (unsigned)4, (unsigned)0, (unsigned)0, (15584602656006455973UL + 124UL), (15584602656006455973UL + 125UL), (15584602656006455973UL + 127UL), (15584602656006455973UL + 128UL),
-                            &____alias_loc_id_22, (unsigned)4, (unsigned)0, (unsigned)0, (15584602656006455973UL + 236UL), (15584602656006455973UL + 237UL), (15584602656006455973UL + 238UL), (15584602656006455973UL + 239UL),
-                            &____alias_loc_id_23, (unsigned)7, (unsigned)0, (unsigned)0, (15584602656006455973UL + 327UL), (15584602656006455973UL + 328UL), (15584602656006455973UL + 329UL), (15584602656006455973UL + 330UL), (15584602656006455973UL + 331UL), (15584602656006455973UL + 332UL), (15584602656006455973UL + 333UL),
-                            &____alias_loc_id_24, (unsigned)2, (unsigned)0, (unsigned)0, (15584602656006455973UL + 378UL), (15584602656006455973UL + 383UL),
-                            &____alias_loc_id_25, (unsigned)2, (unsigned)0, (unsigned)0, (15584602656006455973UL + 538UL), (15584602656006455973UL + 539UL),
-                            &____alias_loc_id_26, (unsigned)6, (unsigned)0, (unsigned)0, (15584602656006455973UL + 562UL), (15584602656006455973UL + 563UL), (15584602656006455973UL + 564UL), (15584602656006455973UL + 565UL), (15584602656006455973UL + 946UL), (15584602656006455973UL + 947UL),
-                            &____alias_loc_id_27, (unsigned)6, (unsigned)0, (unsigned)0, (15584602656006455973UL + 860UL), (15584602656006455973UL + 861UL), (15584602656006455973UL + 862UL), (15584602656006455973UL + 863UL), (15584602656006455973UL + 864UL), (15584602656006455973UL + 865UL),
-                            "uts_numChildren_bin", 0, "_Z19uts_numChildren_binP6node_t", "_Z23uts_numChildren_bin_npmP6node_t", 1, &____alias_loc_id_2, 1, (15584602656006455973UL + 119UL), 0UL, 2, "rng_rand", 1, (15584602656006455973UL + 119UL), 0UL, "rng_toProb", 1, 0UL, 0UL,
-                            "uts_childType", 0, "_Z13uts_childTypeP6node_t", "_Z17uts_childType_npmP6node_t", 1, &____alias_loc_id_9, 1, (15584602656006455973UL + 376UL), 0UL, 1, "uts_error", 1, (15584602656006455973UL + 963UL), 0UL,
-                            "uts_error", 0, "_Z9uts_errorPc", "_Z13uts_error_npmPc", 1, &____alias_loc_id_0, 1, (15584602656006455973UL + 8UL), 0UL, 2, "printf", 2, (15584602656006455973UL + 957UL), (15584602656006455973UL + 8UL), 0UL, "impl_abort", 1, 0UL, 0UL,
-                            "uts_showStats", 0, "_Z13uts_showStatsiidiii", "_Z17uts_showStats_npmiidiii", 0, 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 3, "printf", 14, (15584602656006455973UL + 996UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "printf", 5, (15584602656006455973UL + 970UL), 0UL, 0UL, 0UL, 0UL, 0UL, "printf", 4, (15584602656006455973UL + 998UL), 0UL, 0UL, 0UL, 0UL,
-                            "rng_toProb", 0, "_Z10rng_toProbi", "_Z14rng_toProb_npmi", 0, 1, 0UL, 0UL, 1, "printf", 2, (15584602656006455973UL + 958UL), 0UL, 0UL,
-                            "uts_initRoot", 0, "_Z12uts_initRootP6node_ti", "_Z16uts_initRoot_npmP6node_ti", 1, &____alias_loc_id_1, 2, (15584602656006455973UL + 86UL), 0UL, 0UL, 2, "rng_init", 2, (15584602656006455973UL + 86UL), 0UL, 0UL, "printf", 3, (15584602656006455973UL + 959UL), 0UL, (15584602656006455973UL + 86UL), 0UL,
-                            "uts_numChildren", 0, "_Z15uts_numChildrenP6node_t", "_Z19uts_numChildren_npmP6node_t", 5, &____alias_loc_id_4, &____alias_loc_id_5, &____alias_loc_id_6, &____alias_loc_id_7, &____alias_loc_id_8, 1, (15584602656006455973UL + 325UL), 0UL, 9, "floor", 1, 0UL, 0UL, "uts_numChildren_bin", 1, (15584602656006455973UL + 325UL), 0UL, "uts_numChildren_geo", 1, (15584602656006455973UL + 325UL), 0UL, "uts_numChildren_geo", 1, (15584602656006455973UL + 325UL), 0UL, "uts_numChildren_bin", 1, (15584602656006455973UL + 325UL), 0UL, "uts_error", 1, (15584602656006455973UL + 960UL), 0UL, "ceil", 1, 0UL, 0UL, "printf", 3, (15584602656006455973UL + 961UL), 0UL, 0UL, 0UL, "printf", 3, (15584602656006455973UL + 962UL), 0UL, 0UL, 0UL,
-                            "uts_parseParams", 0, "_Z15uts_parseParamsiPPc", "_Z19uts_parseParams_npmiPPc", 2, &____alias_loc_id_14, &____alias_loc_id_15, 2, 0UL, (15584602656006455973UL + 806UL), 0UL, 19, "uts_helpMessage", 0, 0UL, "impl_abort", 1, 0UL, 0UL, "strlen", 1, (15584602656006455973UL + 808UL), 0UL, "impl_parseParam", 2, (15584602656006455973UL + 808UL), (15584602656006455973UL + 808UL), 0UL, "atof", 1, (15584602656006455973UL + 808UL), 0UL, "atoi", 1, (15584602656006455973UL + 808UL), 0UL, "atoi", 1, (15584602656006455973UL + 808UL), 0UL, "atoi", 1, (15584602656006455973UL + 808UL), 0UL, "atoi", 1, (15584602656006455973UL + 808UL), 0UL, "atoi", 1, (15584602656006455973UL + 808UL), 0UL, "atoi", 1, (15584602656006455973UL + 808UL), 0UL, "atof", 1, (15584602656006455973UL + 808UL), 0UL, "atoi", 1, (15584602656006455973UL + 808UL), 0UL, "atof", 1, (15584602656006455973UL + 808UL), 0UL, "atoi", 1, (15584602656006455973UL + 808UL), 0UL, "atoi", 1, (15584602656006455973UL + 808UL), 0UL, "printf", 3, (15584602656006455973UL + 975UL), (15584602656006455973UL + 808UL), (15584602656006455973UL + 808UL), 0UL, "printf", 1, (15584602656006455973UL + 977UL), 0UL, "impl_abort", 1, 0UL, 0UL,
-                            "uts_wctime", 0, "_Z10uts_wctimev", "_Z14uts_wctime_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (15584602656006455973UL + 13UL), (15584602656006455973UL + 999UL), 0UL,
-                            "uts_printParams", 0, "_Z15uts_printParamsv", "_Z19uts_printParams_npmv", 2, &____alias_loc_id_12, &____alias_loc_id_13, 0, 0UL, 3, "uts_paramsToStr", 2, (15584602656006455973UL + 538UL), 0UL, 0UL, "impl_paramsToStr", 2, (15584602656006455973UL + 538UL), 0UL, 0UL, "printf", 2, (15584602656006455973UL + 965UL), (15584602656006455973UL + 538UL), 0UL,
-                            "uts_helpMessage", 0, "_Z15uts_helpMessagev", "_Z19uts_helpMessage_npmv", 2, &____alias_loc_id_16, &____alias_loc_id_17, 0, 0UL, 20, "impl_getName", 0, (15584602656006455973UL + 832UL), "printf", 3, (15584602656006455973UL + 978UL), (15584602656006455973UL + 965UL), (15584602656006455973UL + 832UL), 0UL, "printf", 1, (15584602656006455973UL + 979UL), 0UL, "printf", 1, (15584602656006455973UL + 972UL), 0UL, "printf", 1, (15584602656006455973UL + 961UL), 0UL, "printf", 1, (15584602656006455973UL + 972UL), 0UL, "printf", 1, (15584602656006455973UL + 968UL), 0UL, "printf", 1, (15584602656006455973UL + 984UL), 0UL, "printf", 1, (15584602656006455973UL + 963UL), 0UL, "printf", 1, (15584602656006455973UL + 986UL), 0UL, "printf", 1, (15584602656006455973UL + 987UL), 0UL, "printf", 1, (15584602656006455973UL + 962UL), 0UL, "printf", 1, (15584602656006455973UL + 961UL), 0UL, "printf", 1, (15584602656006455973UL + 990UL), 0UL, "printf", 1, (15584602656006455973UL + 991UL), 0UL, "printf", 1, (15584602656006455973UL + 979UL), 0UL, "printf", 1, (15584602656006455973UL + 972UL), 0UL, "printf", 1, (15584602656006455973UL + 994UL), 0UL, "impl_helpMessage", 0, 0UL, "printf", 1, (15584602656006455973UL + 995UL), 0UL,
-                            "uts_paramsToStr", 0, "_Z15uts_paramsToStrPci", "_Z19uts_paramsToStr_npmPci", 2, &____alias_loc_id_10, &____alias_loc_id_11, 2, (15584602656006455973UL + 532UL), 0UL, 0UL, 12, "impl_getName", 0, (15584602656006455973UL + 389UL), "sprintf", 4, (15584602656006455973UL + 532UL), (15584602656006455973UL + 958UL), (15584602656006455973UL + 965UL), (15584602656006455973UL + 389UL), 0UL, "sprintf", 4, (15584602656006455973UL + 532UL), (15584602656006455973UL + 942UL), 0UL, (15584602656006455973UL + 408UL), 0UL, "sprintf", 2, (15584602656006455973UL + 532UL), (15584602656006455973UL + 967UL), 0UL, "sprintf", 4, (15584602656006455973UL + 532UL), (15584602656006455973UL + 968UL), 0UL, 0UL, 0UL, "sprintf", 5, (15584602656006455973UL + 532UL), (15584602656006455973UL + 969UL), 0UL, 0UL, (15584602656006455973UL + 446UL), 0UL, "sprintf", 6, (15584602656006455973UL + 532UL), (15584602656006455973UL + 970UL), 0UL, 0UL, 0UL, 0UL, 0UL, "ceil", 1, 0UL, 0UL, "sprintf", 3, (15584602656006455973UL + 532UL), (15584602656006455973UL + 962UL), 0UL, 0UL, "sprintf", 2, (15584602656006455973UL + 532UL), (15584602656006455973UL + 972UL), 0UL, "rng_showtype", 2, (15584602656006455973UL + 532UL), 0UL, 0UL, "sprintf", 3, (15584602656006455973UL + 532UL), (15584602656006455973UL + 972UL), 0UL, 0UL,
-                            "uts_numChildren_geo", 0, "_Z19uts_numChildren_geoP6node_t", "_Z23uts_numChildren_geo_npmP6node_t", 1, &____alias_loc_id_3, 1, (15584602656006455973UL + 230UL), 0UL, 10, "log", 1, 0UL, 0UL, "log", 1, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "sin", 1, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "rng_rand", 1, (15584602656006455973UL + 230UL), 0UL, "rng_toProb", 1, 0UL, 0UL, "log", 1, 0UL, 0UL, "log", 1, 0UL, 0UL, "floor", 1, 0UL, 0UL,
+    init_module(10127551358398492661UL, 13, 13, 12, 28, 13, 8, 21, 2, 0, 5,
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (10127551358398492661UL + 1UL),
+                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)1, (10127551358398492661UL + 55UL), (10127551358398492661UL + 56UL), (10127551358398492661UL + 86UL), "rng_init", (unsigned)1, (10127551358398492661UL + 86UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (10127551358398492661UL + 90UL), "rng_rand", (unsigned)1, (10127551358398492661UL + 119UL),
+                           &____alias_loc_id_3, (unsigned)4, (unsigned)0, (unsigned)1, (10127551358398492661UL + 121UL), (10127551358398492661UL + 122UL), (10127551358398492661UL + 123UL), (10127551358398492661UL + 126UL), "rng_rand", (unsigned)1, (10127551358398492661UL + 230UL),
+                           &____alias_loc_id_4, (unsigned)2, (unsigned)0, (unsigned)0, (10127551358398492661UL + 236UL), (10127551358398492661UL + 237UL),
+                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (unsigned)0, (10127551358398492661UL + 236UL), (10127551358398492661UL + 237UL),
+                           &____alias_loc_id_6, (unsigned)2, (unsigned)0, (unsigned)0, (10127551358398492661UL + 236UL), (10127551358398492661UL + 237UL),
+                           &____alias_loc_id_7, (unsigned)2, (unsigned)0, (unsigned)0, (10127551358398492661UL + 236UL), (10127551358398492661UL + 237UL),
+                           &____alias_loc_id_8, (unsigned)2, (unsigned)0, (unsigned)0, (10127551358398492661UL + 236UL), (10127551358398492661UL + 237UL),
+                           &____alias_loc_id_9, (unsigned)1, (unsigned)0, (unsigned)0, (10127551358398492661UL + 328UL),
+                            &____alias_loc_id_10, (unsigned)5, (unsigned)0, (unsigned)1, (10127551358398492661UL + 378UL), (10127551358398492661UL + 379UL), (10127551358398492661UL + 380UL), (10127551358398492661UL + 381UL), (10127551358398492661UL + 382UL), "rng_showtype", (unsigned)1, (10127551358398492661UL + 532UL),
+                            &____alias_loc_id_11, (unsigned)2, (unsigned)0, (unsigned)1, (10127551358398492661UL + 377UL), (10127551358398492661UL + 378UL), "impl_getName", (unsigned)1, (10127551358398492661UL + 389UL),
+                            &____alias_loc_id_12, (unsigned)1, (unsigned)0, (unsigned)1, (10127551358398492661UL + 539UL), "impl_paramsToStr", (unsigned)1, (10127551358398492661UL + 538UL),
+                            &____alias_loc_id_13, (unsigned)2, (unsigned)0, (unsigned)0, (10127551358398492661UL + 538UL), (10127551358398492661UL + 539UL),
+                            &____alias_loc_id_14, (unsigned)0, (unsigned)0, (unsigned)1, "impl_parseParam", (unsigned)1, (10127551358398492661UL + 808UL),
+                            &____alias_loc_id_15, (unsigned)6, (unsigned)0, (unsigned)0, (10127551358398492661UL + 562UL), (10127551358398492661UL + 563UL), (10127551358398492661UL + 564UL), (10127551358398492661UL + 565UL), (10127551358398492661UL + 946UL), (10127551358398492661UL + 947UL),
+                            &____alias_loc_id_16, (unsigned)1, (unsigned)0, (unsigned)0, (10127551358398492661UL + 830UL),
+                            &____alias_loc_id_17, (unsigned)0, (unsigned)0, (unsigned)1, "impl_getName", (unsigned)1, (10127551358398492661UL + 832UL),
+                            &____alias_loc_id_18, (unsigned)2, (unsigned)0, (unsigned)0, (10127551358398492661UL + 13UL), (10127551358398492661UL + 14UL),
+                            &____alias_loc_id_19, (unsigned)2, (unsigned)0, (unsigned)0, (10127551358398492661UL + 31UL), (10127551358398492661UL + 32UL),
+                            &____alias_loc_id_20, (unsigned)3, (unsigned)0, (unsigned)0, (10127551358398492661UL + 91UL), (10127551358398492661UL + 92UL), (10127551358398492661UL + 93UL),
+                            &____alias_loc_id_21, (unsigned)4, (unsigned)0, (unsigned)0, (10127551358398492661UL + 124UL), (10127551358398492661UL + 125UL), (10127551358398492661UL + 127UL), (10127551358398492661UL + 128UL),
+                            &____alias_loc_id_22, (unsigned)4, (unsigned)0, (unsigned)0, (10127551358398492661UL + 236UL), (10127551358398492661UL + 237UL), (10127551358398492661UL + 238UL), (10127551358398492661UL + 239UL),
+                            &____alias_loc_id_23, (unsigned)7, (unsigned)0, (unsigned)0, (10127551358398492661UL + 327UL), (10127551358398492661UL + 328UL), (10127551358398492661UL + 329UL), (10127551358398492661UL + 330UL), (10127551358398492661UL + 331UL), (10127551358398492661UL + 332UL), (10127551358398492661UL + 333UL),
+                            &____alias_loc_id_24, (unsigned)2, (unsigned)0, (unsigned)0, (10127551358398492661UL + 378UL), (10127551358398492661UL + 383UL),
+                            &____alias_loc_id_25, (unsigned)2, (unsigned)0, (unsigned)0, (10127551358398492661UL + 538UL), (10127551358398492661UL + 539UL),
+                            &____alias_loc_id_26, (unsigned)6, (unsigned)0, (unsigned)0, (10127551358398492661UL + 562UL), (10127551358398492661UL + 563UL), (10127551358398492661UL + 564UL), (10127551358398492661UL + 565UL), (10127551358398492661UL + 946UL), (10127551358398492661UL + 947UL),
+                            &____alias_loc_id_27, (unsigned)6, (unsigned)0, (unsigned)0, (10127551358398492661UL + 860UL), (10127551358398492661UL + 861UL), (10127551358398492661UL + 862UL), (10127551358398492661UL + 863UL), (10127551358398492661UL + 864UL), (10127551358398492661UL + 865UL),
+                            "uts_numChildren_bin", 0, "_Z19uts_numChildren_binP6node_t", "_Z23uts_numChildren_bin_npmP6node_t", 1, &____alias_loc_id_2, 1, (10127551358398492661UL + 119UL), 0UL, 2, "rng_rand", 1, (10127551358398492661UL + 119UL), 0UL, "rng_toProb", 1, 0UL, 0UL,
+                            "uts_childType", 0, "_Z13uts_childTypeP6node_t", "_Z17uts_childType_npmP6node_t", 1, &____alias_loc_id_9, 1, (10127551358398492661UL + 376UL), 0UL, 1, "uts_error", 1, (10127551358398492661UL + 963UL), 0UL,
+                            "uts_error", 0, "_Z9uts_errorPc", "_Z13uts_error_npmPc", 1, &____alias_loc_id_0, 1, (10127551358398492661UL + 8UL), 0UL, 2, "printf", 2, (10127551358398492661UL + 957UL), (10127551358398492661UL + 8UL), 0UL, "impl_abort", 1, 0UL, 0UL,
+                            "uts_showStats", 0, "_Z13uts_showStatsiidiii", "_Z17uts_showStats_npmiidiii", 0, 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 3, "printf", 14, (10127551358398492661UL + 996UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "printf", 5, (10127551358398492661UL + 970UL), 0UL, 0UL, 0UL, 0UL, 0UL, "printf", 4, (10127551358398492661UL + 998UL), 0UL, 0UL, 0UL, 0UL,
+                            "rng_toProb", 0, "_Z10rng_toProbi", "_Z14rng_toProb_npmi", 0, 1, 0UL, 0UL, 1, "printf", 2, (10127551358398492661UL + 958UL), 0UL, 0UL,
+                            "uts_initRoot", 0, "_Z12uts_initRootP6node_ti", "_Z16uts_initRoot_npmP6node_ti", 1, &____alias_loc_id_1, 2, (10127551358398492661UL + 86UL), 0UL, 0UL, 2, "rng_init", 2, (10127551358398492661UL + 86UL), 0UL, 0UL, "printf", 3, (10127551358398492661UL + 959UL), 0UL, (10127551358398492661UL + 86UL), 0UL,
+                            "uts_numChildren", 0, "_Z15uts_numChildrenP6node_t", "_Z19uts_numChildren_npmP6node_t", 5, &____alias_loc_id_4, &____alias_loc_id_5, &____alias_loc_id_6, &____alias_loc_id_7, &____alias_loc_id_8, 1, (10127551358398492661UL + 325UL), 0UL, 9, "floor", 1, 0UL, 0UL, "uts_numChildren_bin", 1, (10127551358398492661UL + 325UL), 0UL, "uts_numChildren_geo", 1, (10127551358398492661UL + 325UL), 0UL, "uts_numChildren_geo", 1, (10127551358398492661UL + 325UL), 0UL, "uts_numChildren_bin", 1, (10127551358398492661UL + 325UL), 0UL, "uts_error", 1, (10127551358398492661UL + 960UL), 0UL, "ceil", 1, 0UL, 0UL, "printf", 3, (10127551358398492661UL + 961UL), 0UL, 0UL, 0UL, "printf", 3, (10127551358398492661UL + 962UL), 0UL, 0UL, 0UL,
+                            "uts_parseParams", 0, "_Z15uts_parseParamsiPPc", "_Z19uts_parseParams_npmiPPc", 2, &____alias_loc_id_14, &____alias_loc_id_15, 2, 0UL, (10127551358398492661UL + 806UL), 0UL, 19, "uts_helpMessage", 0, 0UL, "impl_abort", 1, 0UL, 0UL, "strlen", 1, (10127551358398492661UL + 808UL), 0UL, "impl_parseParam", 2, (10127551358398492661UL + 808UL), (10127551358398492661UL + 808UL), 0UL, "atof", 1, (10127551358398492661UL + 808UL), 0UL, "atoi", 1, (10127551358398492661UL + 808UL), 0UL, "atoi", 1, (10127551358398492661UL + 808UL), 0UL, "atoi", 1, (10127551358398492661UL + 808UL), 0UL, "atoi", 1, (10127551358398492661UL + 808UL), 0UL, "atoi", 1, (10127551358398492661UL + 808UL), 0UL, "atoi", 1, (10127551358398492661UL + 808UL), 0UL, "atof", 1, (10127551358398492661UL + 808UL), 0UL, "atoi", 1, (10127551358398492661UL + 808UL), 0UL, "atof", 1, (10127551358398492661UL + 808UL), 0UL, "atoi", 1, (10127551358398492661UL + 808UL), 0UL, "atoi", 1, (10127551358398492661UL + 808UL), 0UL, "printf", 3, (10127551358398492661UL + 975UL), (10127551358398492661UL + 808UL), (10127551358398492661UL + 808UL), 0UL, "printf", 1, (10127551358398492661UL + 977UL), 0UL, "impl_abort", 1, 0UL, 0UL,
+                            "uts_wctime", 0, "_Z10uts_wctimev", "_Z14uts_wctime_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (10127551358398492661UL + 13UL), (10127551358398492661UL + 999UL), 0UL,
+                            "uts_printParams", 0, "_Z15uts_printParamsv", "_Z19uts_printParams_npmv", 2, &____alias_loc_id_12, &____alias_loc_id_13, 0, 0UL, 3, "uts_paramsToStr", 2, (10127551358398492661UL + 538UL), 0UL, 0UL, "impl_paramsToStr", 2, (10127551358398492661UL + 538UL), 0UL, 0UL, "printf", 2, (10127551358398492661UL + 965UL), (10127551358398492661UL + 538UL), 0UL,
+                            "uts_helpMessage", 0, "_Z15uts_helpMessagev", "_Z19uts_helpMessage_npmv", 2, &____alias_loc_id_16, &____alias_loc_id_17, 0, 0UL, 20, "impl_getName", 0, (10127551358398492661UL + 832UL), "printf", 3, (10127551358398492661UL + 978UL), (10127551358398492661UL + 965UL), (10127551358398492661UL + 832UL), 0UL, "printf", 1, (10127551358398492661UL + 979UL), 0UL, "printf", 1, (10127551358398492661UL + 972UL), 0UL, "printf", 1, (10127551358398492661UL + 961UL), 0UL, "printf", 1, (10127551358398492661UL + 972UL), 0UL, "printf", 1, (10127551358398492661UL + 968UL), 0UL, "printf", 1, (10127551358398492661UL + 984UL), 0UL, "printf", 1, (10127551358398492661UL + 963UL), 0UL, "printf", 1, (10127551358398492661UL + 986UL), 0UL, "printf", 1, (10127551358398492661UL + 987UL), 0UL, "printf", 1, (10127551358398492661UL + 962UL), 0UL, "printf", 1, (10127551358398492661UL + 961UL), 0UL, "printf", 1, (10127551358398492661UL + 990UL), 0UL, "printf", 1, (10127551358398492661UL + 991UL), 0UL, "printf", 1, (10127551358398492661UL + 979UL), 0UL, "printf", 1, (10127551358398492661UL + 972UL), 0UL, "printf", 1, (10127551358398492661UL + 994UL), 0UL, "impl_helpMessage", 0, 0UL, "printf", 1, (10127551358398492661UL + 995UL), 0UL,
+                            "uts_paramsToStr", 0, "_Z15uts_paramsToStrPci", "_Z19uts_paramsToStr_npmPci", 2, &____alias_loc_id_10, &____alias_loc_id_11, 2, (10127551358398492661UL + 532UL), 0UL, 0UL, 12, "impl_getName", 0, (10127551358398492661UL + 389UL), "sprintf", 4, (10127551358398492661UL + 532UL), (10127551358398492661UL + 958UL), (10127551358398492661UL + 965UL), (10127551358398492661UL + 389UL), 0UL, "sprintf", 4, (10127551358398492661UL + 532UL), (10127551358398492661UL + 942UL), 0UL, (10127551358398492661UL + 408UL), 0UL, "sprintf", 2, (10127551358398492661UL + 532UL), (10127551358398492661UL + 967UL), 0UL, "sprintf", 4, (10127551358398492661UL + 532UL), (10127551358398492661UL + 968UL), 0UL, 0UL, 0UL, "sprintf", 5, (10127551358398492661UL + 532UL), (10127551358398492661UL + 969UL), 0UL, 0UL, (10127551358398492661UL + 446UL), 0UL, "sprintf", 6, (10127551358398492661UL + 532UL), (10127551358398492661UL + 970UL), 0UL, 0UL, 0UL, 0UL, 0UL, "ceil", 1, 0UL, 0UL, "sprintf", 3, (10127551358398492661UL + 532UL), (10127551358398492661UL + 962UL), 0UL, 0UL, "sprintf", 2, (10127551358398492661UL + 532UL), (10127551358398492661UL + 972UL), 0UL, "rng_showtype", 2, (10127551358398492661UL + 532UL), 0UL, 0UL, "sprintf", 3, (10127551358398492661UL + 532UL), (10127551358398492661UL + 972UL), 0UL, 0UL,
+                            "uts_numChildren_geo", 0, "_Z19uts_numChildren_geoP6node_t", "_Z23uts_numChildren_geo_npmP6node_t", 1, &____alias_loc_id_3, 1, (10127551358398492661UL + 230UL), 0UL, 10, "log", 1, 0UL, 0UL, "log", 1, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "sin", 1, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "rng_rand", 1, (10127551358398492661UL + 230UL), 0UL, "rng_toProb", 1, 0UL, 0UL, "log", 1, 0UL, 0UL, "log", 1, 0UL, 0UL, "floor", 1, 0UL, 0UL,
                                "impl_abort", (void **)&(____chimes_extern_func_impl_abort),
                                "impl_getName", (void **)&(____chimes_extern_func_impl_getName),
                                "impl_helpMessage", (void **)&(____chimes_extern_func_impl_helpMessage),
@@ -5805,19 +5805,19 @@ static int module_init() {
                            "rng_init", &(____chimes_does_checkpoint_rng_init_npm),
                            "rng_rand", &(____chimes_does_checkpoint_rng_rand_npm),
                            "rng_showtype", &(____chimes_does_checkpoint_rng_showtype_npm),
-                             (15584602656006455973UL + 379UL), (15584602656006455973UL + 389UL),
-                             (15584602656006455973UL + 830UL), (15584602656006455973UL + 832UL),
-                             (15584602656006455973UL + 945UL), (15584602656006455973UL + 446UL),
-                             (15584602656006455973UL + 55UL), (15584602656006455973UL + 86UL),
-                             (15584602656006455973UL + 563UL), (15584602656006455973UL + 806UL),
-                             (15584602656006455973UL + 940UL), (15584602656006455973UL + 408UL),
-                             (15584602656006455973UL + 806UL), (15584602656006455973UL + 808UL),
-                             (15584602656006455973UL + 1UL), (15584602656006455973UL + 8UL),
-                             (15584602656006455973UL + 121UL), (15584602656006455973UL + 230UL),
-                             (15584602656006455973UL + 90UL), (15584602656006455973UL + 119UL),
-                             (15584602656006455973UL + 236UL), (15584602656006455973UL + 325UL),
-                             (15584602656006455973UL + 328UL), (15584602656006455973UL + 376UL),
-                             (15584602656006455973UL + 377UL), (15584602656006455973UL + 532UL),
+                             (10127551358398492661UL + 379UL), (10127551358398492661UL + 389UL),
+                             (10127551358398492661UL + 830UL), (10127551358398492661UL + 832UL),
+                             (10127551358398492661UL + 945UL), (10127551358398492661UL + 446UL),
+                             (10127551358398492661UL + 55UL), (10127551358398492661UL + 86UL),
+                             (10127551358398492661UL + 563UL), (10127551358398492661UL + 806UL),
+                             (10127551358398492661UL + 940UL), (10127551358398492661UL + 408UL),
+                             (10127551358398492661UL + 806UL), (10127551358398492661UL + 808UL),
+                             (10127551358398492661UL + 1UL), (10127551358398492661UL + 8UL),
+                             (10127551358398492661UL + 121UL), (10127551358398492661UL + 230UL),
+                             (10127551358398492661UL + 90UL), (10127551358398492661UL + 119UL),
+                             (10127551358398492661UL + 236UL), (10127551358398492661UL + 325UL),
+                             (10127551358398492661UL + 328UL), (10127551358398492661UL + 376UL),
+                             (10127551358398492661UL + 377UL), (10127551358398492661UL + 532UL),
                      "node_t", 256UL, 4, "int", (int)__builtin_offsetof (struct node_t, type), "int", (int)__builtin_offsetof (struct node_t, height), "int", (int)__builtin_offsetof (struct node_t, numChildren), "%struct.state_t", (int)__builtin_offsetof (struct node_t, state),
                      "state_t", 160UL, 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state),
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
@@ -5863,13 +5863,13 @@ static int module_init() {
     register_global_var("global|computeGranularity", "i32", (void *)(&computeGranularity), 4, 0, 0, 0UL, 0);
     register_global_var("global|debug", "i32", (void *)(&debug), 4, 0, 0, 0UL, 0);
     register_global_var("global|verbose", "i32", (void *)(&verbose), 4, 0, 0, 0UL, 0);
-    register_constant(15584602656006455973UL + 0UL, (void *)((uts_trees_str)[0]), 9);
-    register_constant(15584602656006455973UL + 1UL, (void *)((uts_trees_str)[1]), 10);
-    register_constant(15584602656006455973UL + 2UL, (void *)((uts_trees_str)[2]), 7);
-    register_constant(15584602656006455973UL + 3UL, (void *)((uts_geoshapes_str)[0]), 16);
-    register_constant(15584602656006455973UL + 4UL, (void *)((uts_geoshapes_str)[1]), 21);
-    register_constant(15584602656006455973UL + 5UL, (void *)((uts_geoshapes_str)[2]), 7);
-    register_constant(15584602656006455973UL + 6UL, (void *)((uts_geoshapes_str)[3]), 23);
+    register_constant(10127551358398492661UL + 0UL, (void *)((uts_trees_str)[0]), 9);
+    register_constant(10127551358398492661UL + 1UL, (void *)((uts_trees_str)[1]), 10);
+    register_constant(10127551358398492661UL + 2UL, (void *)((uts_trees_str)[2]), 7);
+    register_constant(10127551358398492661UL + 3UL, (void *)((uts_geoshapes_str)[0]), 16);
+    register_constant(10127551358398492661UL + 4UL, (void *)((uts_geoshapes_str)[1]), 21);
+    register_constant(10127551358398492661UL + 5UL, (void *)((uts_geoshapes_str)[2]), 7);
+    register_constant(10127551358398492661UL + 6UL, (void *)((uts_geoshapes_str)[3]), 23);
     return 0;
 }
 

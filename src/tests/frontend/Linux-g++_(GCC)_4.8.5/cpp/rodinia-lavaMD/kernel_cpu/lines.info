@@ -1,5 +1,5 @@
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c 199 10 : { 9, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 461 } {  } call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c 107 10 : { 8, 11, 12 } {  } call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c 98 10 : { 7 } {  } call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c 89 10 : { 6 } {  } call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c 55 10 : { 1, 2, 3, 4, 5 } {  } call:get_time {  }
+/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/kernel/kernel_cpu.c 206 10 : { 9, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 461 } {  } call:get_time {  }
+/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/kernel/kernel_cpu.c 107 10 : { 8, 11, 12 } {  } call:get_time {  }
+/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/kernel/kernel_cpu.c 98 10 : { 7 } {  } call:get_time {  }
+/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/kernel/kernel_cpu.c 89 10 : { 6 } {  } call:get_time {  }
+/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/kernel/kernel_cpu.c 55 10 : { 1, 2, 3, 4, 5 } {  } call:get_time {  }

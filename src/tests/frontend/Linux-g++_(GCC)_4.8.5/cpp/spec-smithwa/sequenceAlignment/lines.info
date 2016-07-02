@@ -1,20 +1,20 @@
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 260 3 : {  } {  } call:freeSeqData { freeSeqData { 139, 228 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 259 3 : { 42 } {  } call:freeSimMatrix { freeSimMatrix { 127, 226 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 258 7 : { 41 } {  } call:freeC { freeC { 200 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 257 7 : { 40 } {  } call:freeB { freeB { 179 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 256 7 : { 44 } {  } call:freeA { freeA { 161 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 248 3 : {  } {  } call:verifyMergeAlignment { verifyMergeAlignment { 127, 200 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 239 3 : { 42 } {  } call:dispElapsedTime {  }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 233 7 : { 37 } {  } call:mergeAlignment { mergeAlignment { 179, 200 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 218 3 : {  } {  } call:verifyAlignment { verifyAlignment { 127, 179 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 209 3 : { 41 } {  } call:dispElapsedTime {  }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 203 7 : { 37 } {  } call:scanBackward { scanBackward { 161, 179 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 185 3 : { 40 } {  } call:dispElapsedTime {  }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 178 7 : { 37 } {  } call:pairwiseAlign { pairwiseAlign { 127, 139, 161 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 163 3 : {  } {  } call:verifyData { verifyData { 127, 139 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 154 3 : { 39 } {  } call:dispElapsedTime {  }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 148 13 : {  } {  } call:genScalData { genScalData { 127, 139 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 145 3 : { 38 } {  } call:checkpoint {  }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 137 15 : { 37 } {  } call:genSimMatrix { genSimMatrix { 127 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 130 3 : { 31 } {  } call:checkpoint {  }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 99 3 : { 26, 27, 28, 29, 32, 33, 34, 43 } {  } call:getUserParameters {  }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 260 3 : {  } {  } call:freeSeqData { freeSeqData { 139, 228 } }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 259 3 : { 42 } {  } call:freeSimMatrix { freeSimMatrix { 127, 226 } }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 258 7 : { 41 } {  } call:freeC { freeC { 200 } }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 257 7 : { 40 } {  } call:freeB { freeB { 179 } }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 256 7 : { 44 } {  } call:freeA { freeA { 161 } }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 248 3 : {  } {  } call:verifyMergeAlignment { verifyMergeAlignment { 127, 200 } }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 239 3 : { 42 } {  } call:dispElapsedTime {  }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 233 7 : { 37 } {  } call:mergeAlignment { mergeAlignment { 179, 200 } }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 218 3 : {  } {  } call:verifyAlignment { verifyAlignment { 127, 179 } }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 209 3 : { 41 } {  } call:dispElapsedTime {  }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 203 7 : { 37 } {  } call:scanBackward { scanBackward { 161, 179 } }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 185 3 : { 40 } {  } call:dispElapsedTime {  }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 178 7 : { 37 } {  } call:pairwiseAlign { pairwiseAlign { 127, 139, 161 } }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 163 3 : {  } {  } call:verifyData { verifyData { 127, 139 } }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 154 3 : { 39 } {  } call:dispElapsedTime {  }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 148 13 : {  } {  } call:genScalData { genScalData { 127, 139 } }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 145 3 : { 38 } {  } call:checkpoint {  }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 137 15 : { 37 } {  } call:genSimMatrix { genSimMatrix { 127 } }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 130 3 : { 31 } {  } call:checkpoint {  }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 99 3 : { 26, 27, 28, 29, 32, 33, 34, 43 } {  } call:getUserParameters {  }

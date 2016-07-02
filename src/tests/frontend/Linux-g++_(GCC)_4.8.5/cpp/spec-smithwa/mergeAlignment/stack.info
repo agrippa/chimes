@@ -1,39 +1,39 @@
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|B|0 " %struct.bstr* " 64 1 0 1 getSeconds gridInfo
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|maxReports|0 " i32 " 32 0 0 1 getSeconds gridInfo qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|minSeparation|0 " i32 " 32 0 0 1 getSeconds gridInfo qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|tempScores|0 " i64* " 64 1 0 1 getSeconds qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|scores|0 " i64* " 64 1 0 1 getSeconds gridInfo qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|numReports|0 " i32 " 32 0 0 1 getSeconds
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|threadNum|0 " i32 " 32 0 0 1 getSeconds qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|maxThreads|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|tempStartsI|0 " i32* " 64 1 0 1 getSeconds qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|tempStartsJ|0 " i32* " 64 1 0 1 getSeconds qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|tempEndsI|0 " i32* " 64 1 0 1 getSeconds qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|tempEndsJ|0 " i32* " 64 1 0 1 getSeconds qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|tempSeqsI|0 " i8** " 64 1 0 1 getSeconds qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|tempSeqsJ|0 " i8** " 64 1 0 1 getSeconds qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|sequences|0 " i8** " 64 1 0 1 getSeconds gridInfo qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|C|0 " %struct.cstr* " 64 1 0 1 getSeconds gridInfo qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|i|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|j|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|iter|0 " i32 " 32 0 0 1 qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|mask|0 " i32 " 32 0 0 1 qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|consumer|0 " i32 " 32 0 0 1 qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|producer|0 " i32 " 32 0 0 1 qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|totalReports|0 " i32 " 32 0 0 1 qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|flag|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|length|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|count|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|index|0 " i32* " 64 1 0 1 getSeconds gridInfo qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|indexB|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|myRow|0 " i32 " 32 0 0 1 mergeAlignment
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|myCol|0 " i32 " 32 0 0 1 getSeconds gridInfo qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|npRow|0 " i32 " 32 0 0 1 getSeconds gridInfo qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|npCol|0 " i32 " 32 0 0 1 getSeconds gridInfo qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|beginTime|0 " double " 64 0 0 1 getSeconds qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|endTime|0 " double " 64 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|P|0 " %struct.bstr* " 64 1 0 1 getSeconds gridInfo qSort_both
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|____chimes_ret_var_0|0 " %struct.cstr* " 64 1 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c freeC|C|0 " %struct.cstr* " 64 1 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c freeC|i|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c freeC|____chimes_ret_var_1|0 " %struct.cstr* " 64 1 0 0
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|B|0 " %struct.bstr* " 64 1 0 1 getSeconds gridInfo
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|maxReports|0 " i32 " 32 0 0 1 getSeconds gridInfo qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|minSeparation|0 " i32 " 32 0 0 1 getSeconds gridInfo qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|tempScores|0 " i64* " 64 1 0 1 getSeconds qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|scores|0 " i64* " 64 1 0 1 getSeconds gridInfo qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|numReports|0 " i32 " 32 0 0 1 getSeconds
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|threadNum|0 " i32 " 32 0 0 1 getSeconds qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|maxThreads|0 " i32 " 32 0 0 0
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|tempStartsI|0 " i32* " 64 1 0 1 getSeconds qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|tempStartsJ|0 " i32* " 64 1 0 1 getSeconds qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|tempEndsI|0 " i32* " 64 1 0 1 getSeconds qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|tempEndsJ|0 " i32* " 64 1 0 1 getSeconds qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|tempSeqsI|0 " i8** " 64 1 0 1 getSeconds qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|tempSeqsJ|0 " i8** " 64 1 0 1 getSeconds qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|sequences|0 " i8** " 64 1 0 1 getSeconds gridInfo qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|C|0 " %struct.cstr* " 64 1 0 1 getSeconds gridInfo qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|iter|0 " i32 " 32 0 0 1 qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|mask|0 " i32 " 32 0 0 1 qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|consumer|0 " i32 " 32 0 0 1 qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|producer|0 " i32 " 32 0 0 1 qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|totalReports|0 " i32 " 32 0 0 1 qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|flag|0 " i32 " 32 0 0 0
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|length|0 " i32 " 32 0 0 0
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|count|0 " i32 " 32 0 0 0
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|index|0 " i32* " 64 1 0 1 getSeconds gridInfo qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|indexB|0 " i32 " 32 0 0 0
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|myRow|0 " i32 " 32 0 0 1 mergeAlignment
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|myCol|0 " i32 " 32 0 0 1 getSeconds gridInfo qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|npRow|0 " i32 " 32 0 0 1 getSeconds gridInfo qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|npCol|0 " i32 " 32 0 0 1 getSeconds gridInfo qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|beginTime|0 " double " 64 0 0 1 getSeconds qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|endTime|0 " double " 64 0 0 0
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|P|0 " %struct.bstr* " 64 1 0 1 getSeconds gridInfo qSort_both
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c mergeAlignment|____chimes_ret_var_0|0 " %struct.cstr* " 64 1 0 0
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c freeC|C|0 " %struct.cstr* " 64 1 0 0
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c freeC|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c freeC|____chimes_ret_var_1|0 " %struct.cstr* " 64 1 0 0

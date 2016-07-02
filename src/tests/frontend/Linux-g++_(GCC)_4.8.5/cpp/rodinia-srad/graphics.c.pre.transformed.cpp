@@ -26,11 +26,11 @@ static int ____must_manage_read_graphics = 2;
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
 static unsigned ____alias_loc_id_2;
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -39,7 +39,7 @@ static unsigned ____alias_loc_id_2;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -95,23 +95,23 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 2 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 3 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 4 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 5 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 6 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 2 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 3 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 4 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 5 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 6 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
 
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/define.h" 1
-# 13 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/define.h"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/define.h" 1
+# 13 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/define.h"
 extern long long get_time();
 extern void write_graphics( char* filename,
          float* input,
@@ -132,9 +132,9 @@ extern void resize( float* input,
      int output_rows,
      int output_cols,
      int major);
-# 8 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c" 2
-# 8 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 9 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 8 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c" 2
+# 8 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 9 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
 
 # 1 "/usr/include/stdio.h" 1 3 4
 # 28 "/usr/include/stdio.h" 3 4
@@ -1080,652 +1080,652 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 11 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c" 2
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 11 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c" 2
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
 void write_graphics_npm( char* filename, float* input, int data_rows, int data_cols, int major, int data_range);
 void write_graphics_quick( char* filename, float* input, int data_rows, int data_cols, int major, int data_range); void write_graphics( char* filename, float* input, int data_rows, int data_cols, int major, int data_range);
 void write_graphics_resumable( char* filename,
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          float* input,
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int data_rows,
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int data_cols,
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int major,
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-         int data_range){const int ____chimes_did_disable0 = new_stack((void *)(&write_graphics), "write_graphics", &____must_manage_write_graphics, 6, 0, (size_t)(9161344876833312862UL), (size_t)(9161344876833312863UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+         int data_range){const int ____chimes_did_disable0 = new_stack((void *)(&write_graphics), "write_graphics", &____must_manage_write_graphics, 6, 0, (size_t)(4093266978828523958UL), (size_t)(4093266978828523959UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  FILE *fid; ;
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  int i; int j; ;
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  fid = fopen(filename, "w");
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  if( fid == __null ){
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   printf( "The file was not created/opened for writing\n" );
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   rm_stack(false, 0UL, "write_graphics", &____must_manage_write_graphics, ____alias_loc_id_1, ____chimes_did_disable0, false); return;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  }
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  fprintf(fid, "P2\n");
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  fprintf(fid, "%d %d\n", data_cols, data_rows);
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  fprintf(fid, "%d\n", data_range);
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  if(major==0){
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   for(i=0; i<data_rows; i++){
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    for(j=0; j<data_cols; j++){
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
     fprintf(fid, "%d ", (int)input[i*data_cols+j]);
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    }
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 65 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    fprintf(fid, "\n");
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   }
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  }
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  else{
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   for(i=0; i<data_rows; i++){
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    for(j=0; j<data_cols; j++){
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
     fprintf(fid, "%d ", (int)input[j*data_rows+i]);
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    }
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 74 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    fprintf(fid, "\n");
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   }
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  }
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 77 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  fclose(fid);
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
 rm_stack(false, 0UL, "write_graphics", &____must_manage_write_graphics, ____alias_loc_id_1, ____chimes_did_disable0, false); }
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
 void read_graphics_npm( char* filename, float* input, int data_rows, int data_cols, int major);static int (*____chimes_extern_func_fgetc)(struct _IO_FILE *) = fgetc;
 void read_graphics_quick( char* filename, float* input, int data_rows, int data_cols, int major); void read_graphics( char* filename, float* input, int data_rows, int data_cols, int major);
 void read_graphics_resumable( char* filename,
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          float* input,
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int data_rows,
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int data_cols,
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-         int major){const int ____chimes_did_disable1 = new_stack((void *)(&read_graphics), "read_graphics", &____must_manage_read_graphics, 5, 4, (size_t)(9161344876833313007UL), (size_t)(9161344876833313008UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "read_graphics|input|0", &____must_checkpoint_read_graphics_input_0, "float*", (void *)(&input), (size_t)8, 1, 0, 0, "read_graphics|data_rows|0", &____must_checkpoint_read_graphics_data_rows_0, "i32", (void *)(&data_rows), (size_t)4, 0, 0, 0, "read_graphics|data_cols|0", &____must_checkpoint_read_graphics_data_cols_0, "i32", (void *)(&data_cols), (size_t)4, 0, 0, 0, "read_graphics|major|0", &____must_checkpoint_read_graphics_major_0, "i32", (void *)(&major), (size_t)4, 0, 0, 0) ; int temp;
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+         int major){const int ____chimes_did_disable1 = new_stack((void *)(&read_graphics), "read_graphics", &____must_manage_read_graphics, 5, 4, (size_t)(4093266978828524103UL), (size_t)(4093266978828524104UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "read_graphics|input|0", &____must_checkpoint_read_graphics_input_0, "float*", (void *)(&input), (size_t)8, 1, 0, 0, "read_graphics|data_rows|0", &____must_checkpoint_read_graphics_data_rows_0, "i32", (void *)(&data_rows), (size_t)4, 0, 0, 0, "read_graphics|data_cols|0", &____must_checkpoint_read_graphics_data_cols_0, "i32", (void *)(&data_cols), (size_t)4, 0, 0, 0, "read_graphics|major|0", &____must_checkpoint_read_graphics_major_0, "i32", (void *)(&major), (size_t)4, 0, 0, 0) ; int temp;
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
 int i;
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
 FILE *fid;
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  if (____must_checkpoint_read_graphics_temp_0 || ____must_checkpoint_read_graphics_i_0 || ____must_checkpoint_read_graphics_fid_0) { register_stack_vars(3, "read_graphics|temp|0", &____must_checkpoint_read_graphics_temp_0, "i32", (void *)(&temp), (size_t)4, 0, 0, 0, "read_graphics|i|0", &____must_checkpoint_read_graphics_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "read_graphics|fid|0", &____must_checkpoint_read_graphics_fid_0, "%struct._IO_FILE*", (void *)(&fid), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   ;
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   int j; ;
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  char c; ;
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   ;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  fid = fopen(filename, "r");
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  if( fid == __null ){
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   printf( "The file %s was not opened for reading\n", filename);
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   rm_stack(false, 0UL, "read_graphics", &____must_manage_read_graphics, ____alias_loc_id_2, ____chimes_did_disable1, false); return;
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  }
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  i = 0;
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  while(i<3){
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-  alias_group_changed(____alias_loc_id_0); call_lbl_0: c = ({ calling((void*)fgetc, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(9161344876833312902UL)); (fgetc)(fid); }) ;
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+  alias_group_changed(____alias_loc_id_0); call_lbl_0: c = ({ calling((void*)fgetc, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(4093266978828523998UL)); (fgetc)(fid); }) ;
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   if(c == '\n'){
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    i = i+1;
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   }
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  };
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  if(major==0){
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   for(i=0; i<data_rows; i++){
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 135 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    for(j=0; j<data_cols; j++){
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
     fscanf(fid, "%d", &temp);
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
     input[i*data_cols+j] = (float)temp;
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    }
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 139 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   }
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 140 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  }
-# 141 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 141 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  else{
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 142 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   for(i=0; i<data_rows; i++){
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 143 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    for(j=0; j<data_cols; j++){
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
     fscanf(fid, "%d", &temp);
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
     input[j*data_rows+i] = (float)temp;
-# 146 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 146 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    }
-# 147 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 147 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   }
-# 148 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 148 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  }
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 149 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 151 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 152 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 153 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 154 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  fclose(fid);
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 155 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 156 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
 rm_stack(false, 0UL, "read_graphics", &____must_manage_read_graphics, ____alias_loc_id_2, ____chimes_did_disable1, false); }
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
 void write_graphics_quick( char* filename,
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          float* input,
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int data_rows,
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int data_cols,
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int major,
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-         int data_range){const int ____chimes_did_disable0 = new_stack((void *)(&write_graphics), "write_graphics", &____must_manage_write_graphics, 6, 0, (size_t)(9161344876833312862UL), (size_t)(9161344876833312863UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+         int data_range){const int ____chimes_did_disable0 = new_stack((void *)(&write_graphics), "write_graphics", &____must_manage_write_graphics, 6, 0, (size_t)(4093266978828523958UL), (size_t)(4093266978828523959UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  FILE *fid; ;
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  int i; int j; ;
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  fid = fopen(filename, "w");
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  if( fid == __null ){
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   printf( "The file was not created/opened for writing\n" );
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   rm_stack(false, 0UL, "write_graphics", &____must_manage_write_graphics, ____alias_loc_id_1, ____chimes_did_disable0, false); return;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  }
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  fprintf(fid, "P2\n");
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  fprintf(fid, "%d %d\n", data_cols, data_rows);
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  fprintf(fid, "%d\n", data_range);
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  if(major==0){
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   for(i=0; i<data_rows; i++){
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    for(j=0; j<data_cols; j++){
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
     fprintf(fid, "%d ", (int)input[i*data_cols+j]);
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    }
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 65 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    fprintf(fid, "\n");
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   }
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  }
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  else{
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   for(i=0; i<data_rows; i++){
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    for(j=0; j<data_cols; j++){
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
     fprintf(fid, "%d ", (int)input[j*data_rows+i]);
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    }
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 74 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    fprintf(fid, "\n");
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   }
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  }
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 77 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  fclose(fid);
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
 rm_stack(false, 0UL, "write_graphics", &____must_manage_write_graphics, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
 void write_graphics( char* filename,
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          float* input,
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int data_rows,
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int data_cols,
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int major,
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int data_range) { (____chimes_replaying ? write_graphics_resumable(filename, input, data_rows, data_cols, major, data_range) : write_graphics_quick(filename, input, data_rows, data_cols, major, data_range)); }
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
 void read_graphics_quick( char* filename,
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          float* input,
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int data_rows,
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int data_cols,
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-         int major){const int ____chimes_did_disable1 = new_stack((void *)(&read_graphics), "read_graphics", &____must_manage_read_graphics, 5, 4, (size_t)(9161344876833313007UL), (size_t)(9161344876833313008UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "read_graphics|input|0", &____must_checkpoint_read_graphics_input_0, "float*", (void *)(&input), (size_t)8, 1, 0, 0, "read_graphics|data_rows|0", &____must_checkpoint_read_graphics_data_rows_0, "i32", (void *)(&data_rows), (size_t)4, 0, 0, 0, "read_graphics|data_cols|0", &____must_checkpoint_read_graphics_data_cols_0, "i32", (void *)(&data_cols), (size_t)4, 0, 0, 0, "read_graphics|major|0", &____must_checkpoint_read_graphics_major_0, "i32", (void *)(&major), (size_t)4, 0, 0, 0) ; int temp;
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+         int major){const int ____chimes_did_disable1 = new_stack((void *)(&read_graphics), "read_graphics", &____must_manage_read_graphics, 5, 4, (size_t)(4093266978828524103UL), (size_t)(4093266978828524104UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "read_graphics|input|0", &____must_checkpoint_read_graphics_input_0, "float*", (void *)(&input), (size_t)8, 1, 0, 0, "read_graphics|data_rows|0", &____must_checkpoint_read_graphics_data_rows_0, "i32", (void *)(&data_rows), (size_t)4, 0, 0, 0, "read_graphics|data_cols|0", &____must_checkpoint_read_graphics_data_cols_0, "i32", (void *)(&data_cols), (size_t)4, 0, 0, 0, "read_graphics|major|0", &____must_checkpoint_read_graphics_major_0, "i32", (void *)(&major), (size_t)4, 0, 0, 0) ; int temp;
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
 int i;
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
 FILE *fid;
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  if (____must_checkpoint_read_graphics_temp_0 || ____must_checkpoint_read_graphics_i_0 || ____must_checkpoint_read_graphics_fid_0) { register_stack_vars(3, "read_graphics|temp|0", &____must_checkpoint_read_graphics_temp_0, "i32", (void *)(&temp), (size_t)4, 0, 0, 0, "read_graphics|i|0", &____must_checkpoint_read_graphics_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "read_graphics|fid|0", &____must_checkpoint_read_graphics_fid_0, "%struct._IO_FILE*", (void *)(&fid), (size_t)8, 1, 0, 0); } ; ;
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   ;
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   int j; ;
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  char c; ;
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   ;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  fid = fopen(filename, "r");
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  if( fid == __null ){
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   printf( "The file %s was not opened for reading\n", filename);
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   rm_stack(false, 0UL, "read_graphics", &____must_manage_read_graphics, ____alias_loc_id_2, ____chimes_did_disable1, false); return;
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  }
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  i = 0;
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  while(i<3){
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-  alias_group_changed(____alias_loc_id_0); call_lbl_0: c = ({ calling((void*)fgetc, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(9161344876833312902UL)); (fgetc)(fid); }) ;
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+  alias_group_changed(____alias_loc_id_0); call_lbl_0: c = ({ calling((void*)fgetc, 0, ____alias_loc_id_0, 0UL, 1, (size_t)(4093266978828523998UL)); (fgetc)(fid); }) ;
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   if(c == '\n'){
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    i = i+1;
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   }
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  };
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  if(major==0){
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   for(i=0; i<data_rows; i++){
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 135 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    for(j=0; j<data_cols; j++){
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
     fscanf(fid, "%d", &temp);
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
     input[i*data_cols+j] = (float)temp;
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    }
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 139 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   }
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 140 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  }
-# 141 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 141 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  else{
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 142 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   for(i=0; i<data_rows; i++){
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 143 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    for(j=0; j<data_cols; j++){
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
     fscanf(fid, "%d", &temp);
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
     input[j*data_rows+i] = (float)temp;
-# 146 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 146 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    }
-# 147 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 147 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   }
-# 148 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 148 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  }
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 149 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 151 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 152 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 153 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 154 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  fclose(fid);
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 155 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 156 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
 rm_stack(false, 0UL, "read_graphics", &____must_manage_read_graphics, ____alias_loc_id_2, ____chimes_did_disable1, false); }
 
 void read_graphics( char* filename,
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          float* input,
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int data_rows,
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int data_cols,
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int major) { (____chimes_replaying ? read_graphics_resumable(filename, input, data_rows, data_cols, major) : read_graphics_quick(filename, input, data_rows, data_cols, major)); }
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
 void write_graphics_npm( char* filename,
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          float* input,
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int data_rows,
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int data_cols,
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int major,
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int data_range){
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  FILE* fid;
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  int i, j;
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  fid = fopen(filename, "w");
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  if( fid == __null ){
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   printf( "The file was not created/opened for writing\n" );
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   return;
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  }
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  fprintf(fid, "P2\n");
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  fprintf(fid, "%d %d\n", data_cols, data_rows);
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  fprintf(fid, "%d\n", data_range);
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  if(major==0){
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   for(i=0; i<data_rows; i++){
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    for(j=0; j<data_cols; j++){
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
     fprintf(fid, "%d ", (int)input[i*data_cols+j]);
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    }
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 65 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    fprintf(fid, "\n");
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   }
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  }
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  else{
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   for(i=0; i<data_rows; i++){
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    for(j=0; j<data_cols; j++){
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
     fprintf(fid, "%d ", (int)input[j*data_rows+i]);
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    }
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 74 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    fprintf(fid, "\n");
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   }
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  }
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 77 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  fclose(fid);
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
 }
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
 void read_graphics_npm( char* filename,
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          float* input,
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int data_rows,
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int data_cols,
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
          int major){
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  FILE* fid;
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  int i, j;
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  char c;
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  int temp;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  fid = fopen(filename, "r");
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  if( fid == __null ){
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   printf( "The file %s was not opened for reading\n", filename);
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   return;
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  }
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  i = 0;
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  while(i<3){
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   c = (*____chimes_extern_func_fgetc)(fid);
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   if(c == '\n'){
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    i = i+1;
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   }
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  };
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  if(major==0){
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   for(i=0; i<data_rows; i++){
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 135 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    for(j=0; j<data_cols; j++){
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
     fscanf(fid, "%d", &temp);
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
     input[i*data_cols+j] = (float)temp;
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    }
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 139 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   }
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 140 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  }
-# 141 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 141 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  else{
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 142 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   for(i=0; i<data_rows; i++){
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 143 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    for(j=0; j<data_cols; j++){
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
     fscanf(fid, "%d", &temp);
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
     input[j*data_rows+i] = (float)temp;
-# 146 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 146 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
    }
-# 147 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 147 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
   }
-# 148 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 148 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  }
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 149 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 151 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 152 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 153 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 154 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
  fclose(fid);
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
+# 155 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
+# 156 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c"
 }
 
 
@@ -1733,22 +1733,22 @@ void read_graphics_npm( char* filename,
 
 
 static int module_init() {
-    init_module(9161344876833312739UL, 6, 2, 7, 3, 2, 1, 3, 0, 0, 2,
-                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)1, (9161344876833312739UL + 143UL), (9161344876833312739UL + 145UL), "fgetc", (unsigned)1, (9161344876833312739UL + 163UL),
-                           &____alias_loc_id_1, (unsigned)10, (unsigned)0, (unsigned)0, (9161344876833312739UL + 1UL), (9161344876833312739UL + 2UL), (9161344876833312739UL + 3UL), (9161344876833312739UL + 4UL), (9161344876833312739UL + 5UL), (9161344876833312739UL + 6UL), (9161344876833312739UL + 7UL), (9161344876833312739UL + 8UL), (9161344876833312739UL + 9UL), (9161344876833312739UL + 26UL),
-                           &____alias_loc_id_2, (unsigned)11, (unsigned)0, (unsigned)0, (9161344876833312739UL + 137UL), (9161344876833312739UL + 138UL), (9161344876833312739UL + 139UL), (9161344876833312739UL + 140UL), (9161344876833312739UL + 141UL), (9161344876833312739UL + 142UL), (9161344876833312739UL + 143UL), (9161344876833312739UL + 144UL), (9161344876833312739UL + 145UL), (9161344876833312739UL + 163UL), (9161344876833312739UL + 269UL),
-                            "write_graphics", 0, "_Z14write_graphicsPcPfiiii", "_Z18write_graphics_npmPcPfiiii", 0, 6, (9161344876833312739UL + 123UL), (9161344876833312739UL + 124UL), 0UL, 0UL, 0UL, 0UL, 0UL, 10, "fopen", 2, (9161344876833312739UL + 123UL), (9161344876833312739UL + 276UL), (9161344876833312739UL + 26UL), "printf", 1, (9161344876833312739UL + 277UL), 0UL, "fprintf", 2, (9161344876833312739UL + 26UL), (9161344876833312739UL + 278UL), 0UL, "fprintf", 4, (9161344876833312739UL + 26UL), (9161344876833312739UL + 279UL), 0UL, 0UL, 0UL, "fprintf", 3, (9161344876833312739UL + 26UL), (9161344876833312739UL + 278UL), 0UL, 0UL, "fprintf", 3, (9161344876833312739UL + 26UL), (9161344876833312739UL + 278UL), 0UL, 0UL, "fprintf", 2, (9161344876833312739UL + 26UL), (9161344876833312739UL + 276UL), 0UL, "fprintf", 3, (9161344876833312739UL + 26UL), (9161344876833312739UL + 278UL), 0UL, 0UL, "fprintf", 2, (9161344876833312739UL + 26UL), (9161344876833312739UL + 276UL), 0UL, "fclose", 1, (9161344876833312739UL + 26UL), 0UL,
-                            "read_graphics", 0, "_Z13read_graphicsPcPfiii", "_Z17read_graphics_npmPcPfiii", 1, &____alias_loc_id_0, 5, (9161344876833312739UL + 268UL), (9161344876833312739UL + 269UL), 0UL, 0UL, 0UL, 0UL, 6, "fopen", 2, (9161344876833312739UL + 268UL), (9161344876833312739UL + 276UL), (9161344876833312739UL + 163UL), "printf", 2, (9161344876833312739UL + 284UL), (9161344876833312739UL + 268UL), 0UL, "fgetc", 1, (9161344876833312739UL + 163UL), 0UL, "fscanf", 3, (9161344876833312739UL + 163UL), (9161344876833312739UL + 285UL), (9161344876833312739UL + 146UL), 0UL, "fscanf", 3, (9161344876833312739UL + 163UL), (9161344876833312739UL + 285UL), (9161344876833312739UL + 146UL), 0UL, "fclose", 1, (9161344876833312739UL + 163UL), 0UL,
+    init_module(4093266978828523835UL, 6, 2, 7, 3, 2, 1, 3, 0, 0, 2,
+                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)1, (4093266978828523835UL + 143UL), (4093266978828523835UL + 145UL), "fgetc", (unsigned)1, (4093266978828523835UL + 163UL),
+                           &____alias_loc_id_1, (unsigned)10, (unsigned)0, (unsigned)0, (4093266978828523835UL + 1UL), (4093266978828523835UL + 2UL), (4093266978828523835UL + 3UL), (4093266978828523835UL + 4UL), (4093266978828523835UL + 5UL), (4093266978828523835UL + 6UL), (4093266978828523835UL + 7UL), (4093266978828523835UL + 8UL), (4093266978828523835UL + 9UL), (4093266978828523835UL + 26UL),
+                           &____alias_loc_id_2, (unsigned)11, (unsigned)0, (unsigned)0, (4093266978828523835UL + 137UL), (4093266978828523835UL + 138UL), (4093266978828523835UL + 139UL), (4093266978828523835UL + 140UL), (4093266978828523835UL + 141UL), (4093266978828523835UL + 142UL), (4093266978828523835UL + 143UL), (4093266978828523835UL + 144UL), (4093266978828523835UL + 145UL), (4093266978828523835UL + 163UL), (4093266978828523835UL + 269UL),
+                            "write_graphics", 0, "_Z14write_graphicsPcPfiiii", "_Z18write_graphics_npmPcPfiiii", 0, 6, (4093266978828523835UL + 123UL), (4093266978828523835UL + 124UL), 0UL, 0UL, 0UL, 0UL, 0UL, 10, "fopen", 2, (4093266978828523835UL + 123UL), (4093266978828523835UL + 276UL), (4093266978828523835UL + 26UL), "printf", 1, (4093266978828523835UL + 277UL), 0UL, "fprintf", 2, (4093266978828523835UL + 26UL), (4093266978828523835UL + 278UL), 0UL, "fprintf", 4, (4093266978828523835UL + 26UL), (4093266978828523835UL + 279UL), 0UL, 0UL, 0UL, "fprintf", 3, (4093266978828523835UL + 26UL), (4093266978828523835UL + 278UL), 0UL, 0UL, "fprintf", 3, (4093266978828523835UL + 26UL), (4093266978828523835UL + 278UL), 0UL, 0UL, "fprintf", 2, (4093266978828523835UL + 26UL), (4093266978828523835UL + 276UL), 0UL, "fprintf", 3, (4093266978828523835UL + 26UL), (4093266978828523835UL + 278UL), 0UL, 0UL, "fprintf", 2, (4093266978828523835UL + 26UL), (4093266978828523835UL + 276UL), 0UL, "fclose", 1, (4093266978828523835UL + 26UL), 0UL,
+                            "read_graphics", 0, "_Z13read_graphicsPcPfiii", "_Z17read_graphics_npmPcPfiii", 1, &____alias_loc_id_0, 5, (4093266978828523835UL + 268UL), (4093266978828523835UL + 269UL), 0UL, 0UL, 0UL, 0UL, 6, "fopen", 2, (4093266978828523835UL + 268UL), (4093266978828523835UL + 276UL), (4093266978828523835UL + 163UL), "printf", 2, (4093266978828523835UL + 284UL), (4093266978828523835UL + 268UL), 0UL, "fgetc", 1, (4093266978828523835UL + 163UL), 0UL, "fscanf", 3, (4093266978828523835UL + 163UL), (4093266978828523835UL + 285UL), (4093266978828523835UL + 146UL), 0UL, "fscanf", 3, (4093266978828523835UL + 163UL), (4093266978828523835UL + 285UL), (4093266978828523835UL + 146UL), 0UL, "fclose", 1, (4093266978828523835UL + 163UL), 0UL,
                                "fgetc", (void **)&(____chimes_extern_func_fgetc),
                            "write_graphics", &(____chimes_does_checkpoint_write_graphics_npm),
                            "read_graphics", &(____chimes_does_checkpoint_read_graphics_npm),
                            "fgetc", &(____chimes_does_checkpoint_fgetc_npm),
-                             (9161344876833312739UL + 142UL), (9161344876833312739UL + 163UL),
-                             (9161344876833312739UL + 1UL), (9161344876833312739UL + 123UL),
-                             (9161344876833312739UL + 2UL), (9161344876833312739UL + 124UL),
-                             (9161344876833312739UL + 137UL), (9161344876833312739UL + 268UL),
-                             (9161344876833312739UL + 7UL), (9161344876833312739UL + 26UL),
-                             (9161344876833312739UL + 138UL), (9161344876833312739UL + 269UL),
+                             (4093266978828523835UL + 142UL), (4093266978828523835UL + 163UL),
+                             (4093266978828523835UL + 1UL), (4093266978828523835UL + 123UL),
+                             (4093266978828523835UL + 2UL), (4093266978828523835UL + 124UL),
+                             (4093266978828523835UL + 137UL), (4093266978828523835UL + 268UL),
+                             (4093266978828523835UL + 7UL), (4093266978828523835UL + 26UL),
+                             (4093266978828523835UL + 138UL), (4093266978828523835UL + 269UL),
                      "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
                      "_IO_marker", 0UL, 0,
                              "write_graphics", "_Z14write_graphicsPcPfiiii", 0, 0,

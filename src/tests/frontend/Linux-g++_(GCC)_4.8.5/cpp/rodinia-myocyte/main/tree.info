@@ -1,2 +1,3 @@
 seconds _Z7secondsv 0 DOES_NOT
-main main 0 DOES get_time 142 10 seconds 174 25 get_time 232 10 get_time 284 10 myocyte_read 299 3 myocyte_read 308 3 get_time 315 10 solver 324 13 checkpoint 330 13 get_time 360 10 get_time 390 9 seconds 396 23
+omp_kernel _Z10omp_kernelPPPfS0_lS0_l 0 MAY solver 120 9
+main main 0 DOES get_time 147 10 seconds 179 25 get_time 237 10 get_time 289 10 myocyte_read 304 3 myocyte_read 313 3 get_time 320 10 solver 329 13 checkpoint 335 13 get_time 365 10 get_time 395 9 seconds 401 23

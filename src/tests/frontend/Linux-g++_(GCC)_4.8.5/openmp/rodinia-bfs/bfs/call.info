@@ -22,13 +22,13 @@ fscanf BFSGraph 117 3 0 32 467 76
 fclose BFSGraph 121 11 0 32
 malloc BFSGraph 126 23 441 0
 printf BFSGraph 131 2 0 469
-omp_set_num_threads BFSGraph 145 3 0 0
-checkpoint BFSGraph 176 9 0
-seconds BFSGraph 182 23 0
-printf BFSGraph 189 2 0 470 0 0
-free BFSGraph 193 2 0 429
-free BFSGraph 194 2 0 432
-free BFSGraph 195 2 0 435
-free BFSGraph 196 2 0 437
-free BFSGraph 197 2 0 439
-free BFSGraph 198 2 0 441
+omp_set_num_threads BFSGraph 147 3 0 0
+checkpoint BFSGraph 181 9 0
+seconds BFSGraph 187 23 0
+printf BFSGraph 194 2 0 470 0 0
+free BFSGraph 198 2 0 429
+free BFSGraph 199 2 0 432
+free BFSGraph 200 2 0 435
+free BFSGraph 201 2 0 437
+free BFSGraph 202 2 0 439
+free BFSGraph 203 2 0 441

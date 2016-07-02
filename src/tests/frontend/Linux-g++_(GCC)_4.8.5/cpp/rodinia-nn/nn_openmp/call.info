@@ -23,11 +23,11 @@ fopen main 97 7 186 37 482
 printf main 99 3 0 483
 exit main 100 3 0 0
 malloc main 104 16 289 0
-sscanf main 116 4 0 176 489 41 42
-sqrt main 117 26 0 0
-strcpy main 135 7 375 493 176
-checkpoint main 140 9 0
-seconds main 144 23 0
-printf main 145 5 0 483 0
-fprintf main 147 2 0 409 491 0
-fprintf main 149 39 0 409 492 493 0
+sscanf main 120 4 0 176 489 41 42
+sqrt main 121 26 0 0
+strcpy main 141 7 375 493 176
+checkpoint main 146 9 0
+seconds main 150 23 0
+printf main 151 5 0 483 0
+fprintf main 153 2 0 409 491 0
+fprintf main 155 39 0 409 492 493 0

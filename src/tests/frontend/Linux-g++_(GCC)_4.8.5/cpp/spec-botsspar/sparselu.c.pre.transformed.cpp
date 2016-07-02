@@ -52,11 +52,11 @@ static unsigned ____alias_loc_id_11;
 static unsigned ____alias_loc_id_12;
 static unsigned ____alias_loc_id_13;
 static unsigned ____alias_loc_id_14;
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -65,7 +65,7 @@ static unsigned ____alias_loc_id_14;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -121,15 +121,15 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 21 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 21 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 28 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1074,7 +1074,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 22 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c" 2
+# 22 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c" 2
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stdint.h" 1 3 4
 # 9 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stdint.h" 3 4
 # 1 "/usr/include/stdint.h" 1 3 4
@@ -1142,7 +1142,7 @@ typedef unsigned long int uintptr_t;
 typedef long int intmax_t;
 typedef unsigned long int uintmax_t;
 # 10 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stdint.h" 2 3 4
-# 23 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c" 2
+# 23 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 1 3 4
@@ -2312,7 +2312,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 24 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c" 2
+# 24 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 29 "/usr/include/string.h" 3 4
 extern "C" {
@@ -2788,7 +2788,7 @@ extern "C++" __const char *basename (__const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 # 646 "/usr/include/string.h" 3 4
 }
-# 25 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c" 2
+# 25 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c" 2
 # 1 "/usr/include/math.h" 1 3 4
 # 30 "/usr/include/math.h" 3 4
 extern "C" {
@@ -3793,7 +3793,7 @@ __signbitl (long double __x) throw ()
 # 417 "/usr/include/math.h" 2 3 4
 # 472 "/usr/include/math.h" 3 4
 }
-# 26 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c" 2
+# 26 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c" 2
 # 1 "/usr/include/libgen.h" 1 3 4
 # 24 "/usr/include/libgen.h" 3 4
 extern "C" {
@@ -3811,9 +3811,9 @@ extern char *__xpg_basename (char *__path) throw ();
 
 
 }
-# 27 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c" 2
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots.h" 1
-# 27 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots.h"
+# 27 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c" 2
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/common/bots.h" 1
+# 27 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/common/bots.h"
 extern int bots_sequential_flag;
 extern int bots_benchmark_flag;
 extern int bots_check_flag;
@@ -3866,8 +3866,8 @@ typedef enum { BOTS_VERBOSE_NONE=0,
                BOTS_VERBOSE_DEBUG } bots_verbose_mode_t;
 
 extern bots_verbose_mode_t bots_verbose_mode;
-# 28 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c" 2
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.h" 1
+# 28 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c" 2
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.h" 1
 
 
 
@@ -3881,1581 +3881,1581 @@ void lu0(float *diag);
 void bdiv(float *diag, float *row);
 void bmod(float *row, float *col, float *inner);
 void fwd(float *diag, float *col);
-# 29 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c" 2
-# 29 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 30 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 29 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c" 2
+# 29 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 30 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 
-# 1 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 1
-# 11 "/home/jmg3/chimes/src/libchimes/checkpoint.h"
+# 1 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 11 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h"
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*____chimes_fp)(void *));
-# 32 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c" 2
-# 32 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 33 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 34 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 36 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 37 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 32 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c" 2
+# 32 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 33 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 34 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 35 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 36 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 37 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 int checkmat_npm (float *M, float *N);
 int checkmat_quick (float *M, float *N); int checkmat (float *M, float *N);
 int checkmat_resumable (float *M, float *N)
-# 38 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&checkmat), "checkmat", &____must_manage_checkmat, 2, 0, (size_t)(15559110349592348322UL), (size_t)(15559110349592348323UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 39 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 38 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&checkmat), "checkmat", &____must_manage_checkmat, 2, 0, (size_t)(17997173635924998899UL), (size_t)(17997173635924998900UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 39 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; ;
-# 40 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 40 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    float r_err; ;
-# 41 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 42 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 41 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 42 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (i = 0; i < bots_arg_size_1; i++)
-# 43 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 43 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 44 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 44 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (j = 0; j < bots_arg_size_1; j++)
-# 45 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 45 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 46 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 46 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          r_err = M[i*bots_arg_size_1+j] - N[i*bots_arg_size_1+j];
-# 47 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 47 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (r_err < 0.0) {r_err = -r_err; };
-# 48 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 48 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          r_err = r_err / M[i*bots_arg_size_1+j];
-# 49 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 49 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if(r_err > 1.0E-6)
-# 50 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 50 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          {
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Checking failure: A[%d][%d]=%f  B[%d][%d]=%f; Relative Error=%f\n" , i,j, M[i*bots_arg_size_1+j], i,j, N[i*bots_arg_size_1+j], r_err); } }
-# 52 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 52 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                                                                     ;
-# 53 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 53 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
              int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 54 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 54 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 55 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 55 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 56 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 56 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 57 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 57 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (1); rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_1; ;
-# 58 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 58 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_1, ____chimes_did_disable0, false); }
-# 59 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 60 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 61 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 62 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 59 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 60 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 61 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 62 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void genmat_npm (float *M[]);
 void genmat_quick (float *M[]); void genmat (float *M[]);
 void genmat_resumable (float *M[])
-# 63 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&genmat), "genmat", &____must_manage_genmat, 1, 0, (size_t)(15559110349592348559UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 64 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 63 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable1 = new_stack((void *)(&genmat), "genmat", &____must_manage_genmat, 1, 0, (size_t)(17997173635924999136UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 64 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int null_entry; int init_val; int i; int j; int ii; int jj; ;
-# 65 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 65 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    float *p; ;
-# 66 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 66 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    float *prow; ;
-# 67 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 67 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    float rowsum; ;
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 69 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 68 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 69 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    init_val = 1325;
-# 70 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 71 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 72 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 70 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 71 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 72 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (ii=0; ii < bots_arg_size; ii++)
-# 73 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 73 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 74 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 74 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (jj=0; jj < bots_arg_size; jj++)
-# 75 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 75 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 76 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 77 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 76 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 77 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          null_entry=0;
-# 78 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 78 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if ((ii<jj) && (ii%3 !=0)) {null_entry = 1; };
-# 79 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 79 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if ((ii>jj) && (jj%3 !=0)) {null_entry = 1; };
-# 80 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 80 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   if (ii%2==1) {null_entry = 1; };
-# 81 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 81 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   if (jj%2==1) {null_entry = 1; };
-# 82 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 82 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   if (ii==jj) {null_entry = 0; };
-# 83 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 83 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   if (ii==jj-1) {null_entry = 0; };
-# 84 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 84 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (ii-1 == jj) {null_entry = 0; };
-# 85 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 86 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 85 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 86 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (null_entry == 0){
-# 87 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            M[ii*bots_arg_size+jj] = (float *) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348486UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 88 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 87 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            M[ii*bots_arg_size+jj] = (float *) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 17997173635924999063UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 88 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      if ((M[ii*bots_arg_size+jj] == __null))
-# 89 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 89 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             {
-# 90 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 90 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Error: Out of memory\n"); } };
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                exit(101);
-# 92 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 92 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             }
-# 93 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 94 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 95 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 96 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 97 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 93 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 94 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 95 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 96 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 97 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             prow = p = M[ii*bots_arg_size+jj];
-# 98 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 98 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             for (i = 0; i < bots_arg_size_1; i++)
-# 99 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 99 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             {
-# 100 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 100 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                rowsum = 0.0;
-# 101 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 101 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                for (j = 0; j < bots_arg_size_1; j++)
-# 102 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 102 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                {
-# 103 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 103 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
              init_val = (3125 * init_val) % 65536;
-# 104 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 104 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                    (*p) = (float)((init_val - 32768.0) / 16384.0);
-# 105 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 105 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                     rowsum += abs(*p);
-# 106 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 106 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                     p++;
-# 107 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 107 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                }
-# 108 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 108 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                if (ii == jj) {*(prow+i) = rowsum * (float) bots_arg_size + abs(*(prow+i)); };
-# 110 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 110 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                prow += bots_arg_size_1;
-# 111 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 111 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             }
-# 112 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 112 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 113 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 113 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          else
-# 114 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 114 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          {
-# 115 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 115 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             M[ii*bots_arg_size+jj] = __null;
-# 116 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 116 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 117 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 117 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 118 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 118 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 119 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 119 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "genmat", &____must_manage_genmat, ____alias_loc_id_2, ____chimes_did_disable1, false); }
-# 120 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 121 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 122 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 123 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 120 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 121 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 122 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 123 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void print_structure_npm(char *name, float *M[]);
 void print_structure_quick(char *name, float *M[]); void print_structure(char *name, float *M[]);
 void print_structure_resumable(char *name, float *M[])
-# 124 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&print_structure), "print_structure", &____must_manage_print_structure, 2, 0, (size_t)(15559110349592348641UL), (size_t)(15559110349592348642UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 124 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable2 = new_stack((void *)(&print_structure), "print_structure", &____must_manage_print_structure, 2, 0, (size_t)(17997173635924999218UL), (size_t)(17997173635924999219UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int ii; int jj; ;
-# 126 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 126 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Structure for matrix %s @ 0x%p\n" ,name, M); } };
-# 127 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 127 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (ii = 0; ii < bots_arg_size; ii++) {
-# 128 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 128 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      for (jj = 0; jj < bots_arg_size; jj++) {
-# 129 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 129 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
         if (M[ii*bots_arg_size+jj]!=__null) {{ if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "x"); } };}
-# 130 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 130 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
         else { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " "); } };
-# 131 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 131 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      }
-# 132 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 132 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "\n"); } };
-# 133 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 133 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 134 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 134 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "\n"); } };
-# 135 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 135 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "print_structure", &____must_manage_print_structure, ____alias_loc_id_3, ____chimes_did_disable2, false); }
-# 136 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 137 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 138 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 139 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 136 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 137 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 138 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 139 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 float * allocate_clean_block_npm();
 float * allocate_clean_block_quick(); float * allocate_clean_block();
 float * allocate_clean_block_resumable()
-# 140 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 140 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&allocate_clean_block), "allocate_clean_block", &____must_manage_allocate_clean_block, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 141 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 141 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   int i; int j; ;
-# 142 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 142 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   float *p; float *q; ;
-# 143 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 144 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  p = (float *) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348657UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 145 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 143 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 144 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+  p = (float *) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 17997173635924999234UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 145 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   q=p;
-# 146 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 146 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   if (p!=__null){
-# 147 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 147 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      for (i = 0; i < bots_arg_size_1; i++) { for (j = 0; j < bots_arg_size_1; j++){(*p)=0.0; p++;}; }
-# 149 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 150 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 149 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 150 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   }
-# 151 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 151 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   else
-# 152 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 152 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   {
-# 153 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 153 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Error: Out of memory\n"); } };
-# 154 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 154 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       exit (101);
-# 155 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 155 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   }
-# 156 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   float *____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((q)); rm_stack(true, 15559110349592348657UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_4, ____chimes_did_disable3, false); return ____chimes_ret_var_2; ;
-# 157 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(true, 15559110349592348657UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_4, ____chimes_did_disable3, false); }
-# 158 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 159 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 160 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 161 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 162 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 156 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   float *____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((q)); rm_stack(true, 17997173635924999234UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_4, ____chimes_did_disable3, false); return ____chimes_ret_var_2; ;
+# 157 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(true, 17997173635924999234UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_4, ____chimes_did_disable3, false); }
+# 158 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 159 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 160 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 161 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 162 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void lu0_npm(float *diag);
 void lu0_quick(float *diag); void lu0(float *diag);
 void lu0_resumable(float *diag)
-# 163 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&lu0), "lu0", &____must_manage_lu0, 1, 0, (size_t)(15559110349592348819UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 164 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 163 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable4 = new_stack((void *)(&lu0), "lu0", &____must_manage_lu0, 1, 0, (size_t)(17997173635924999396UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 164 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int k; ;
-# 165 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 166 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 165 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 166 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (k=0; k<bots_arg_size_1; k++) {
-# 167 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 167 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (i=k+1; i<bots_arg_size_1; i++)
-# 168 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 168 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 169 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 169 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          diag[i*bots_arg_size_1+k] = diag[i*bots_arg_size_1+k] / diag[k*bots_arg_size_1+k];
-# 170 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 170 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          for (j=k+1; j<bots_arg_size_1; j++) {
-# 171 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 171 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             diag[i*bots_arg_size_1+j] = diag[i*bots_arg_size_1+j] - diag[i*bots_arg_size_1+k] * diag[k*bots_arg_size_1+j];
-# 172 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 172 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 173 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 173 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 174 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 174 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 175 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 175 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "lu0", &____must_manage_lu0, ____alias_loc_id_5, ____chimes_did_disable4, false); }
-# 176 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 177 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 178 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 179 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 180 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 176 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 177 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 178 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 179 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 180 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void bdiv_npm(float *diag, float *row);
 void bdiv_quick(float *diag, float *row); void bdiv(float *diag, float *row);
 void bdiv_resumable(float *diag, float *row)
-# 181 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&bdiv), "bdiv", &____must_manage_bdiv, 2, 0, (size_t)(15559110349592348934UL), (size_t)(15559110349592348935UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 182 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 183 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 181 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable5 = new_stack((void *)(&bdiv), "bdiv", &____must_manage_bdiv, 2, 0, (size_t)(17997173635924999511UL), (size_t)(17997173635924999512UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 182 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 183 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int k; ;
-# 184 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 184 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (i=0; i<bots_arg_size_1; i++) { for (k=0; k<bots_arg_size_1; k++)
-# 186 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 186 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 187 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 187 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          row[i*bots_arg_size_1+k] = row[i*bots_arg_size_1+k] / diag[k*bots_arg_size_1+k];
-# 188 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 188 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          for (j=k+1; j<bots_arg_size_1; j++) {
-# 189 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 189 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             row[i*bots_arg_size_1+j] = row[i*bots_arg_size_1+j] - row[i*bots_arg_size_1+k]*diag[k*bots_arg_size_1+j];
-# 190 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 190 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 191 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 191 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }; }
-# 192 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 192 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "bdiv", &____must_manage_bdiv, ____alias_loc_id_6, ____chimes_did_disable5, false); }
-# 193 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 194 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 195 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 196 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 193 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 194 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 195 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 196 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void bmod_npm(float *row, float *col, float *inner);
 void bmod_quick(float *row, float *col, float *inner); void bmod(float *row, float *col, float *inner);
 void bmod_resumable(float *row, float *col, float *inner)
-# 197 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable6 = new_stack((void *)(&bmod), "bmod", &____must_manage_bmod, 3, 0, (size_t)(15559110349592349023UL), (size_t)(15559110349592349024UL), (size_t)(15559110349592349025UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 198 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 199 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 197 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable6 = new_stack((void *)(&bmod), "bmod", &____must_manage_bmod, 3, 0, (size_t)(17997173635924999600UL), (size_t)(17997173635924999601UL), (size_t)(17997173635924999602UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 198 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 199 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int k; ;
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 200 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (i=0; i<bots_arg_size_1; i++) {
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 201 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (j=0; j<bots_arg_size_1; j++) {
-# 202 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 202 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          for (k=0; k<bots_arg_size_1; k++) {
-# 203 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 203 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             inner[i*bots_arg_size_1+j] = inner[i*bots_arg_size_1+j] - row[i*bots_arg_size_1+k]*col[k*bots_arg_size_1+j];
-# 204 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 204 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 205 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 205 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 206 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 206 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 207 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 207 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "bmod", &____must_manage_bmod, ____alias_loc_id_7, ____chimes_did_disable6, false); }
-# 208 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 209 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 210 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 211 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 208 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 209 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 210 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 211 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void fwd_npm(float *diag, float *col);
 void fwd_quick(float *diag, float *col); void fwd(float *diag, float *col);
 void fwd_resumable(float *diag, float *col)
-# 212 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 2, 0, (size_t)(15559110349592349112UL), (size_t)(15559110349592349113UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 213 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 214 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 212 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable7 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 2, 0, (size_t)(17997173635924999689UL), (size_t)(17997173635924999690UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 213 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 214 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int k; ;
-# 215 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 215 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (j=0; j<bots_arg_size_1; j++) { for (k=0; k<bots_arg_size_1; k++) { for (i=k+1; i<bots_arg_size_1; i++) { col[i*bots_arg_size_1+j] = col[i*bots_arg_size_1+j] - diag[i*bots_arg_size_1+k]*col[k*bots_arg_size_1+j]; }; }; };
-# 219 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 219 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_8, ____chimes_did_disable7, false); }
-# 220 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 221 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 220 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 221 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 222 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void sparselu_init_npm (float ***pBENCH, char *pass);
 void sparselu_init_quick (float ***pBENCH, char *pass); void sparselu_init (float ***pBENCH, char *pass);
 void sparselu_init_resumable (float ***pBENCH, char *pass)
-# 223 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&sparselu_init), "sparselu_init", &____must_manage_sparselu_init, 2, 0, (size_t)(15559110349592349133UL), (size_t)(15559110349592349134UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   *pBENCH = (float **) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size * bots_arg_size * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349125UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 225 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 223 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable8 = new_stack((void *)(&sparselu_init), "sparselu_init", &____must_manage_sparselu_init, 2, 0, (size_t)(17997173635924999710UL), (size_t)(17997173635924999711UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 224 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   *pBENCH = (float **) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size * bots_arg_size * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size*bots_arg_size*sizeof(float *), 17997173635924999702UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 225 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
     call_lbl_0: ({ calling_npm("genmat", 0); genmat_npm(*pBENCH); });
-# 226 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 227 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 226 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 227 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "sparselu_init", &____must_manage_sparselu_init, ____alias_loc_id_9, ____chimes_did_disable8, false); }
-# 228 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 229 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 228 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 229 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void sparselu_par_call_quick(float **BENCH); void sparselu_par_call(float **BENCH);
 void sparselu_par_call_resumable(float **BENCH)
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&sparselu_par_call), "sparselu_par_call", (int *)0, 1, 1, (size_t)(15559110349592349396UL), "sparselu_par_call|BENCH|0", (int *)0, "float**", (void *)(&BENCH), (size_t)8, 1, 0, 0) ; int kk;
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 230 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable9 = new_stack((void *)(&sparselu_par_call), "sparselu_par_call", (int *)0, 1, 1, (size_t)(17997173635924999973UL), "sparselu_par_call|BENCH|0", (int *)0, "float**", (void *)(&BENCH), (size_t)8, 1, 0, 0) ; int kk;
+# 230 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
  register_stack_vars(1, "sparselu_par_call|kk|0", (int *)0x0, "i32", (void *)(&kk), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ; ;
-# 231 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 231 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int ii; int jj; ;
-# 232 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 233 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 232 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 233 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Computing SparseLU Factorization (%dx%d matrix with %dx%d blocks) " , bots_arg_size,bots_arg_size,bots_arg_size_1,bots_arg_size_1); } }
-# 234 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 234 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                                                        ;
-# 235 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 235 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 236 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 237 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 238 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 239 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 237 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 238 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 239 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (kk=0; kk<bots_arg_size; kk++)
-# 240 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 240 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 241 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
        call_lbl_0: ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); });
-# 242 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 242 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 243 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 #pragma omp parallel for shared(BENCH) firstprivate(kk) private(jj)
-# 244 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 244 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (jj=kk+1; jj<bots_arg_size; jj++) {
-# 245 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 245 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (BENCH[kk*bots_arg_size+jj] != __null) {
-# 246 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 246 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 247 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
            {
-# 248 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 248 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                call_lbl_1: ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); });
-# 249 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 249 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
            }
-# 250 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 250 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 251 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 251 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 252 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 252 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 253 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 #pragma omp parallel for shared(BENCH) firstprivate(kk) private(ii)
-# 254 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 254 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (ii=kk+1; ii<bots_arg_size; ii++) {
-# 255 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 255 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (BENCH[ii*bots_arg_size+kk] != __null) {
-# 256 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 257 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 256 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 257 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
            {
-# 258 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 258 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                call_lbl_2: ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); });
-# 259 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 259 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
            }
-# 260 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 260 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 261 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 261 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 262 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 263 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 264 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 262 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 263 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 264 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 265 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 #pragma omp parallel shared(BENCH)
-# 266 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 266 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 267 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 #pragma omp for collapse(2)
-# 268 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 268 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
           for (ii=kk+1; ii<bots_arg_size; ii++) {
-# 269 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 269 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
               for (jj=kk+1; jj<bots_arg_size; jj++) {
-# 270 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 270 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                   if (BENCH[ii*bots_arg_size+kk] != __null) {
-# 271 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 271 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                       if (BENCH[kk*bots_arg_size+jj] != __null) {
-# 272 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 273 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 272 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 273 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                           {
-# 274 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 274 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                               if (BENCH[ii*bots_arg_size+jj]==__null) {
-# 275 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 275 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                    float *block; call_lbl_3: block = (({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); })) ;
-# 276 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 276 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                    call_lbl_4: ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], block); });
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 278 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                   BENCH[ii*bots_arg_size+jj] = block;
-# 279 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 279 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                               } else {
-# 280 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 280 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                    call_lbl_5: ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); });
-# 283 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 283 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                               }
-# 284 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 284 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                           }
-# 285 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 285 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                       }
-# 286 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 286 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                   }
-# 287 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 287 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
               }
-# 288 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 288 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
           }
-# 289 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 289 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 290 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 291 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 292 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 293 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 290 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 291 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 292 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 293 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
        call_lbl_6: checkpoint_transformed(6, ____alias_loc_id_0);
-# 294 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 295 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 294 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 295 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 296 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 297 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 296 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 297 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 298 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 299 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 298 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 299 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " completed!\n"); } };
-# 300 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 300 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "sparselu_par_call", (int *)0x0, ____alias_loc_id_10, ____chimes_did_disable9, false); }
-# 301 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 302 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 303 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 301 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 302 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 303 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void sparselu_seq_call_npm(float **BENCH);
 void sparselu_seq_call_quick(float **BENCH); void sparselu_seq_call(float **BENCH);
 void sparselu_seq_call_resumable(float **BENCH)
-# 304 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable10 = new_stack((void *)(&sparselu_seq_call), "sparselu_seq_call", &____must_manage_sparselu_seq_call, 1, 0, (size_t)(15559110349592349616UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 305 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 304 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable10 = new_stack((void *)(&sparselu_seq_call), "sparselu_seq_call", &____must_manage_sparselu_seq_call, 1, 0, (size_t)(17997173635925000193UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 305 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int ii; int jj; int kk; ;
-# 306 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 307 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 306 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 307 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (kk=0; kk<bots_arg_size; kk++)
-# 308 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 308 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 309 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 309 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
        call_lbl_0: ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); });
-# 310 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 310 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
-# 312 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 312 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          {
-# 313 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 313 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
              call_lbl_1: ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); });
-# 314 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 314 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }; }
-# 315 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 315 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (ii=kk+1; ii<bots_arg_size; ii++) { if (BENCH[ii*bots_arg_size+kk] != __null)
-# 317 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 317 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          {
-# 318 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 318 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
              call_lbl_2: ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); });
-# 319 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 319 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }; }
-# 320 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 320 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (ii=kk+1; ii<bots_arg_size; ii++) { if (BENCH[ii*bots_arg_size+kk] != __null) {for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
-# 324 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 324 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                {
-# 325 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 325 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                      if (BENCH[ii*bots_arg_size+jj]==__null) { call_lbl_3: BENCH[ii*bots_arg_size+jj] = ({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); }); };
-# 326 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 326 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                       call_lbl_4: ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); });
-# 327 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 327 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                }; }; }; }
-# 328 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 329 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 328 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 329 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 330 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 330 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "sparselu_seq_call", &____must_manage_sparselu_seq_call, ____alias_loc_id_11, ____chimes_did_disable10, false); }
-# 331 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 332 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 331 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 332 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void sparselu_fini_npm (float **BENCH, char *pass);
 void sparselu_fini_quick (float **BENCH, char *pass); void sparselu_fini (float **BENCH, char *pass);
 void sparselu_fini_resumable (float **BENCH, char *pass)
-# 333 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable11 = new_stack((void *)(&sparselu_fini), "sparselu_fini", &____must_manage_sparselu_fini, 2, 0, (size_t)(15559110349592349624UL), (size_t)(15559110349592349625UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 334 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 335 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 333 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable11 = new_stack((void *)(&sparselu_fini), "sparselu_fini", &____must_manage_sparselu_fini, 2, 0, (size_t)(17997173635925000201UL), (size_t)(17997173635925000202UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 334 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 335 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    rm_stack(false, 0UL, "sparselu_fini", &____must_manage_sparselu_fini, ____alias_loc_id_12, ____chimes_did_disable11, false); return;
-# 336 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 336 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
-# 364 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 364 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 364 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 364 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 int checkmat1 (float *N);
-# 365 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 365 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 int sparselu_check_npm(float **SEQ, float **BENCH);int checkmat1_npm (float *N);
 int sparselu_check_quick(float **SEQ, float **BENCH); int sparselu_check(float **SEQ, float **BENCH);int checkmat1_quick (float *N); int checkmat1 (float *N);
 int sparselu_check_resumable(float **SEQ, float **BENCH)
-# 366 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable12 = new_stack((void *)(&sparselu_check), "sparselu_check", &____must_manage_sparselu_check, 2, 0, (size_t)(15559110349592349683UL), (size_t)(15559110349592349684UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 367 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 366 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable12 = new_stack((void *)(&sparselu_check), "sparselu_check", &____must_manage_sparselu_check, 2, 0, (size_t)(17997173635925000260UL), (size_t)(17997173635925000261UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 367 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int ok; ;
-# 368 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 369 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 368 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 369 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Output size: %d\n" ,bots_arg_size); } };
-# 370 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 370 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (i = 0; i < bots_arg_size; i+=50)
-# 371 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 371 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 372 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 372 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (j = 0; j < bots_arg_size; j+=40)
-# 373 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 373 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 374 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 374 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
              call_lbl_0: ok = ({ calling_npm("checkmat1", 0); checkmat1_npm(BENCH[i*bots_arg_size+j]); });
-# 375 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 375 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 376 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 376 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 377 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 377 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
     int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (1); rm_stack(false, 0UL, "sparselu_check", &____must_manage_sparselu_check, ____alias_loc_id_13, ____chimes_did_disable12, false); return ____chimes_ret_var_3; ;
-# 378 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 378 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "sparselu_check", &____must_manage_sparselu_check, ____alias_loc_id_13, ____chimes_did_disable12, false); }
-# 379 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 379 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 int checkmat1_resumable (float *N)
-# 380 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable13 = new_stack((void *)(&checkmat1), "checkmat1", &____must_manage_checkmat1, 1, 0, (size_t)(15559110349592349737UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 381 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 380 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable13 = new_stack((void *)(&checkmat1), "checkmat1", &____must_manage_checkmat1, 1, 0, (size_t)(17997173635925000314UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 381 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; ;
-# 382 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 383 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 382 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 383 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (i = 0; i < bots_arg_size_1; i+=20)
-# 384 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 384 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 385 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 385 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (j = 0; j < bots_arg_size_1; j+=20)
-# 386 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 386 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 387 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 387 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Output Matrix: A[%d][%d]=%8.12f \n" , i,j, N[i*bots_arg_size_1+j]); } }
-# 388 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 388 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                                 ;
-# 389 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 389 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 390 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 390 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 391 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 391 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
     int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (1); rm_stack(false, 0UL, "checkmat1", &____must_manage_checkmat1, ____alias_loc_id_14, ____chimes_did_disable13, false); return ____chimes_ret_var_4; ;
-# 392 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 392 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "checkmat1", &____must_manage_checkmat1, ____alias_loc_id_14, ____chimes_did_disable13, false); }
-# 37 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 37 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 int checkmat_quick (float *M, float *N)
-# 38 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&checkmat), "checkmat", &____must_manage_checkmat, 2, 0, (size_t)(15559110349592348322UL), (size_t)(15559110349592348323UL)) ; ; ;
-# 39 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 38 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&checkmat), "checkmat", &____must_manage_checkmat, 2, 0, (size_t)(17997173635924998899UL), (size_t)(17997173635924998900UL)) ; ; ;
+# 39 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; ;
-# 40 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 40 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    float r_err; ;
-# 41 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 42 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 41 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 42 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (i = 0; i < bots_arg_size_1; i++)
-# 43 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 43 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 44 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 44 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (j = 0; j < bots_arg_size_1; j++)
-# 45 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 45 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 46 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 46 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          r_err = M[i*bots_arg_size_1+j] - N[i*bots_arg_size_1+j];
-# 47 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 47 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (r_err < 0.0) {r_err = -r_err; };
-# 48 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 48 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          r_err = r_err / M[i*bots_arg_size_1+j];
-# 49 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 49 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if(r_err > 1.0E-6)
-# 50 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 50 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          {
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Checking failure: A[%d][%d]=%f  B[%d][%d]=%f; Relative Error=%f\n" , i,j, M[i*bots_arg_size_1+j], i,j, N[i*bots_arg_size_1+j], r_err); } }
-# 52 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 52 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                                                                     ;
-# 53 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 53 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
              int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 54 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 54 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 55 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 55 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 56 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 56 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 57 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 57 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (1); rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_1; ;
-# 58 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 58 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
 int checkmat (float *M, float *N) { return (____chimes_replaying ? checkmat_resumable(M, N) : checkmat_quick(M, N)); }
-# 62 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 62 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void genmat_quick (float *M[])
-# 63 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&genmat), "genmat", &____must_manage_genmat, 1, 0, (size_t)(15559110349592348559UL)) ; ; ;
-# 64 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 63 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable1 = new_stack((void *)(&genmat), "genmat", &____must_manage_genmat, 1, 0, (size_t)(17997173635924999136UL)) ; ; ;
+# 64 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int null_entry; int init_val; int i; int j; int ii; int jj; ;
-# 65 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 65 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    float *p; ;
-# 66 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 66 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    float *prow; ;
-# 67 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 67 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    float rowsum; ;
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 69 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 68 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 69 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    init_val = 1325;
-# 70 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 71 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 72 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 70 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 71 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 72 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (ii=0; ii < bots_arg_size; ii++)
-# 73 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 73 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 74 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 74 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (jj=0; jj < bots_arg_size; jj++)
-# 75 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 75 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 76 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 77 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 76 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 77 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          null_entry=0;
-# 78 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 78 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if ((ii<jj) && (ii%3 !=0)) {null_entry = 1; };
-# 79 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 79 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if ((ii>jj) && (jj%3 !=0)) {null_entry = 1; };
-# 80 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 80 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   if (ii%2==1) {null_entry = 1; };
-# 81 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 81 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   if (jj%2==1) {null_entry = 1; };
-# 82 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 82 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   if (ii==jj) {null_entry = 0; };
-# 83 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 83 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   if (ii==jj-1) {null_entry = 0; };
-# 84 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 84 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (ii-1 == jj) {null_entry = 0; };
-# 85 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 86 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 85 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 86 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (null_entry == 0){
-# 87 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            M[ii*bots_arg_size+jj] = (float *) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348486UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 88 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 87 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            M[ii*bots_arg_size+jj] = (float *) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 17997173635924999063UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 88 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      if ((M[ii*bots_arg_size+jj] == __null))
-# 89 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 89 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             {
-# 90 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 90 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Error: Out of memory\n"); } };
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                exit(101);
-# 92 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 92 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             }
-# 93 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 94 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 95 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 96 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 97 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 93 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 94 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 95 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 96 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 97 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             prow = p = M[ii*bots_arg_size+jj];
-# 98 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 98 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             for (i = 0; i < bots_arg_size_1; i++)
-# 99 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 99 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             {
-# 100 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 100 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                rowsum = 0.0;
-# 101 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 101 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                for (j = 0; j < bots_arg_size_1; j++)
-# 102 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 102 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                {
-# 103 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 103 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
              init_val = (3125 * init_val) % 65536;
-# 104 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 104 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                    (*p) = (float)((init_val - 32768.0) / 16384.0);
-# 105 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 105 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                     rowsum += abs(*p);
-# 106 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 106 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                     p++;
-# 107 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 107 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                }
-# 108 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 108 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                if (ii == jj) {*(prow+i) = rowsum * (float) bots_arg_size + abs(*(prow+i)); };
-# 110 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 110 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                prow += bots_arg_size_1;
-# 111 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 111 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             }
-# 112 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 112 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 113 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 113 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          else
-# 114 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 114 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          {
-# 115 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 115 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             M[ii*bots_arg_size+jj] = __null;
-# 116 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 116 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 117 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 117 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 118 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 118 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 119 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 119 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "genmat", &____must_manage_genmat, ____alias_loc_id_2, ____chimes_did_disable1, false); }
 
 void genmat (float *M[]) { (____chimes_replaying ? genmat_resumable(M) : genmat_quick(M)); }
-# 123 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 123 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void print_structure_quick(char *name, float *M[])
-# 124 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&print_structure), "print_structure", &____must_manage_print_structure, 2, 0, (size_t)(15559110349592348641UL), (size_t)(15559110349592348642UL)) ; ; ;
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 124 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable2 = new_stack((void *)(&print_structure), "print_structure", &____must_manage_print_structure, 2, 0, (size_t)(17997173635924999218UL), (size_t)(17997173635924999219UL)) ; ; ;
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int ii; int jj; ;
-# 126 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 126 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Structure for matrix %s @ 0x%p\n" ,name, M); } };
-# 127 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 127 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (ii = 0; ii < bots_arg_size; ii++) {
-# 128 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 128 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      for (jj = 0; jj < bots_arg_size; jj++) {
-# 129 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 129 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
         if (M[ii*bots_arg_size+jj]!=__null) {{ if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "x"); } };}
-# 130 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 130 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
         else { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " "); } };
-# 131 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 131 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      }
-# 132 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 132 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "\n"); } };
-# 133 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 133 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 134 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 134 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "\n"); } };
-# 135 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 135 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "print_structure", &____must_manage_print_structure, ____alias_loc_id_3, ____chimes_did_disable2, false); }
 
 void print_structure(char *name, float *M[]) { (____chimes_replaying ? print_structure_resumable(name, M) : print_structure_quick(name, M)); }
-# 139 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 139 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 float * allocate_clean_block_quick()
-# 140 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 140 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&allocate_clean_block), "allocate_clean_block", &____must_manage_allocate_clean_block, 0, 0) ; ; ;
-# 141 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 141 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   int i; int j; ;
-# 142 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 142 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   float *p; float *q; ;
-# 143 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 144 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  p = (float *) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348657UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 145 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 143 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 144 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+  p = (float *) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 17997173635924999234UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 145 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   q=p;
-# 146 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 146 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   if (p!=__null){
-# 147 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 147 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      for (i = 0; i < bots_arg_size_1; i++) { for (j = 0; j < bots_arg_size_1; j++){(*p)=0.0; p++;}; }
-# 149 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 150 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 149 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 150 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   }
-# 151 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 151 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   else
-# 152 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 152 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   {
-# 153 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 153 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Error: Out of memory\n"); } };
-# 154 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 154 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       exit (101);
-# 155 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 155 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   }
-# 156 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   float *____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((q)); rm_stack(true, 15559110349592348657UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_4, ____chimes_did_disable3, false); return ____chimes_ret_var_2; ;
-# 157 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(true, 15559110349592348657UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_4, ____chimes_did_disable3, false); }
+# 156 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   float *____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((q)); rm_stack(true, 17997173635924999234UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_4, ____chimes_did_disable3, false); return ____chimes_ret_var_2; ;
+# 157 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(true, 17997173635924999234UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_4, ____chimes_did_disable3, false); }
 
 float * allocate_clean_block() { return (____chimes_replaying ? allocate_clean_block_resumable() : allocate_clean_block_quick()); }
-# 162 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 162 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void lu0_quick(float *diag)
-# 163 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&lu0), "lu0", &____must_manage_lu0, 1, 0, (size_t)(15559110349592348819UL)) ; ; ;
-# 164 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 163 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable4 = new_stack((void *)(&lu0), "lu0", &____must_manage_lu0, 1, 0, (size_t)(17997173635924999396UL)) ; ; ;
+# 164 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int k; ;
-# 165 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 166 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 165 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 166 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (k=0; k<bots_arg_size_1; k++) {
-# 167 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 167 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (i=k+1; i<bots_arg_size_1; i++)
-# 168 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 168 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 169 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 169 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          diag[i*bots_arg_size_1+k] = diag[i*bots_arg_size_1+k] / diag[k*bots_arg_size_1+k];
-# 170 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 170 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          for (j=k+1; j<bots_arg_size_1; j++) {
-# 171 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 171 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             diag[i*bots_arg_size_1+j] = diag[i*bots_arg_size_1+j] - diag[i*bots_arg_size_1+k] * diag[k*bots_arg_size_1+j];
-# 172 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 172 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 173 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 173 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 174 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 174 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 175 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 175 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "lu0", &____must_manage_lu0, ____alias_loc_id_5, ____chimes_did_disable4, false); }
 
 void lu0(float *diag) { (____chimes_replaying ? lu0_resumable(diag) : lu0_quick(diag)); }
-# 180 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 180 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void bdiv_quick(float *diag, float *row)
-# 181 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&bdiv), "bdiv", &____must_manage_bdiv, 2, 0, (size_t)(15559110349592348934UL), (size_t)(15559110349592348935UL)) ; ; ;
-# 182 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 183 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 181 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable5 = new_stack((void *)(&bdiv), "bdiv", &____must_manage_bdiv, 2, 0, (size_t)(17997173635924999511UL), (size_t)(17997173635924999512UL)) ; ; ;
+# 182 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 183 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int k; ;
-# 184 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 184 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (i=0; i<bots_arg_size_1; i++) { for (k=0; k<bots_arg_size_1; k++)
-# 186 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 186 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 187 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 187 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          row[i*bots_arg_size_1+k] = row[i*bots_arg_size_1+k] / diag[k*bots_arg_size_1+k];
-# 188 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 188 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          for (j=k+1; j<bots_arg_size_1; j++) {
-# 189 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 189 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             row[i*bots_arg_size_1+j] = row[i*bots_arg_size_1+j] - row[i*bots_arg_size_1+k]*diag[k*bots_arg_size_1+j];
-# 190 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 190 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 191 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 191 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }; }
-# 192 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 192 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "bdiv", &____must_manage_bdiv, ____alias_loc_id_6, ____chimes_did_disable5, false); }
 
 void bdiv(float *diag, float *row) { (____chimes_replaying ? bdiv_resumable(diag, row) : bdiv_quick(diag, row)); }
-# 196 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 196 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void bmod_quick(float *row, float *col, float *inner)
-# 197 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable6 = new_stack((void *)(&bmod), "bmod", &____must_manage_bmod, 3, 0, (size_t)(15559110349592349023UL), (size_t)(15559110349592349024UL), (size_t)(15559110349592349025UL)) ; ; ;
-# 198 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 199 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 197 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable6 = new_stack((void *)(&bmod), "bmod", &____must_manage_bmod, 3, 0, (size_t)(17997173635924999600UL), (size_t)(17997173635924999601UL), (size_t)(17997173635924999602UL)) ; ; ;
+# 198 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 199 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int k; ;
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 200 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (i=0; i<bots_arg_size_1; i++) {
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 201 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (j=0; j<bots_arg_size_1; j++) {
-# 202 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 202 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          for (k=0; k<bots_arg_size_1; k++) {
-# 203 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 203 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             inner[i*bots_arg_size_1+j] = inner[i*bots_arg_size_1+j] - row[i*bots_arg_size_1+k]*col[k*bots_arg_size_1+j];
-# 204 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 204 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 205 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 205 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 206 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 206 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 207 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 207 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "bmod", &____must_manage_bmod, ____alias_loc_id_7, ____chimes_did_disable6, false); }
 
 void bmod(float *row, float *col, float *inner) { (____chimes_replaying ? bmod_resumable(row, col, inner) : bmod_quick(row, col, inner)); }
-# 211 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 211 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void fwd_quick(float *diag, float *col)
-# 212 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 2, 0, (size_t)(15559110349592349112UL), (size_t)(15559110349592349113UL)) ; ; ;
-# 213 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 214 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 212 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable7 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 2, 0, (size_t)(17997173635924999689UL), (size_t)(17997173635924999690UL)) ; ; ;
+# 213 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 214 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int k; ;
-# 215 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 215 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (j=0; j<bots_arg_size_1; j++) { for (k=0; k<bots_arg_size_1; k++) { for (i=k+1; i<bots_arg_size_1; i++) { col[i*bots_arg_size_1+j] = col[i*bots_arg_size_1+j] - diag[i*bots_arg_size_1+k]*col[k*bots_arg_size_1+j]; }; }; };
-# 219 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 219 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_8, ____chimes_did_disable7, false); }
 
 void fwd(float *diag, float *col) { (____chimes_replaying ? fwd_resumable(diag, col) : fwd_quick(diag, col)); }
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 222 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void sparselu_init_quick (float ***pBENCH, char *pass)
-# 223 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&sparselu_init), "sparselu_init", &____must_manage_sparselu_init, 2, 0, (size_t)(15559110349592349133UL), (size_t)(15559110349592349134UL)) ; ; ;
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   *pBENCH = (float **) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size * bots_arg_size * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349125UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 225 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 223 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable8 = new_stack((void *)(&sparselu_init), "sparselu_init", &____must_manage_sparselu_init, 2, 0, (size_t)(17997173635924999710UL), (size_t)(17997173635924999711UL)) ; ; ;
+# 224 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   *pBENCH = (float **) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size * bots_arg_size * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, bots_arg_size*bots_arg_size*sizeof(float *), 17997173635924999702UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 225 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
     call_lbl_0: ({ calling_npm("genmat", 0); genmat_npm(*pBENCH); });
-# 226 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 227 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 226 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 227 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "sparselu_init", &____must_manage_sparselu_init, ____alias_loc_id_9, ____chimes_did_disable8, false); }
 
 void sparselu_init (float ***pBENCH, char *pass) { (____chimes_replaying ? sparselu_init_resumable(pBENCH, pass) : sparselu_init_quick(pBENCH, pass)); }
-# 229 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 229 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void sparselu_par_call_quick(float **BENCH)
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&sparselu_par_call), "sparselu_par_call", (int *)0, 1, 1, (size_t)(15559110349592349396UL), "sparselu_par_call|BENCH|0", (int *)0, "float**", (void *)(&BENCH), (size_t)8, 1, 0, 0) ; int kk;
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 230 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable9 = new_stack((void *)(&sparselu_par_call), "sparselu_par_call", (int *)0, 1, 1, (size_t)(17997173635924999973UL), "sparselu_par_call|BENCH|0", (int *)0, "float**", (void *)(&BENCH), (size_t)8, 1, 0, 0) ; int kk;
+# 230 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
  register_stack_vars(1, "sparselu_par_call|kk|0", (int *)0x0, "i32", (void *)(&kk), (size_t)4, 0, 0, 0); ; ;
-# 231 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 231 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int ii; int jj; ;
-# 232 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 233 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 232 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 233 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Computing SparseLU Factorization (%dx%d matrix with %dx%d blocks) " , bots_arg_size,bots_arg_size,bots_arg_size_1,bots_arg_size_1); } }
-# 234 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 234 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                                                        ;
-# 235 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 235 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 236 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 237 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 238 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 239 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 237 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 238 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 239 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (kk=0; kk<bots_arg_size; kk++)
-# 240 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 240 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 241 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
        call_lbl_0: ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); });
-# 242 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 242 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 243 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 #pragma omp parallel for shared(BENCH) firstprivate(kk) private(jj)
-# 244 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 244 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (jj=kk+1; jj<bots_arg_size; jj++) {
-# 245 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 245 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (BENCH[kk*bots_arg_size+jj] != __null) {
-# 246 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 246 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 247 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
            {
-# 248 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 248 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                call_lbl_1: ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); });
-# 249 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 249 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
            }
-# 250 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 250 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 251 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 251 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 252 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 252 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 253 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 #pragma omp parallel for shared(BENCH) firstprivate(kk) private(ii)
-# 254 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 254 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (ii=kk+1; ii<bots_arg_size; ii++) {
-# 255 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 255 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (BENCH[ii*bots_arg_size+kk] != __null) {
-# 256 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 257 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 256 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 257 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
            {
-# 258 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 258 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                call_lbl_2: ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); });
-# 259 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 259 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
            }
-# 260 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 260 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 261 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 261 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 262 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 263 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 264 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 262 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 263 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 264 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 265 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 #pragma omp parallel shared(BENCH)
-# 266 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 266 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 267 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 #pragma omp for collapse(2)
-# 268 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 268 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
           for (ii=kk+1; ii<bots_arg_size; ii++) {
-# 269 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 269 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
               for (jj=kk+1; jj<bots_arg_size; jj++) {
-# 270 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 270 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                   if (BENCH[ii*bots_arg_size+kk] != __null) {
-# 271 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 271 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                       if (BENCH[kk*bots_arg_size+jj] != __null) {
-# 272 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 273 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 272 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 273 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                           {
-# 274 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 274 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                               if (BENCH[ii*bots_arg_size+jj]==__null) {
-# 275 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 275 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                    float *block; call_lbl_3: block = (({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); })) ;
-# 276 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 276 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                    call_lbl_4: ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], block); });
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 278 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                   BENCH[ii*bots_arg_size+jj] = block;
-# 279 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 279 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                               } else {
-# 280 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 280 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                    call_lbl_5: ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); });
-# 283 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 283 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                               }
-# 284 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 284 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                           }
-# 285 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 285 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                       }
-# 286 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 286 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                   }
-# 287 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 287 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
               }
-# 288 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 288 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
           }
-# 289 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 289 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 290 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 291 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 292 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 293 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 290 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 291 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 292 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 293 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
        call_lbl_6: checkpoint_transformed(6, ____alias_loc_id_0);
-# 294 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 295 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 294 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 295 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 296 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 297 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 296 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 297 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 298 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 299 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 298 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 299 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " completed!\n"); } };
-# 300 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 300 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "sparselu_par_call", (int *)0x0, ____alias_loc_id_10, ____chimes_did_disable9, false); }
 
 void sparselu_par_call(float **BENCH) { (____chimes_replaying ? sparselu_par_call_resumable(BENCH) : sparselu_par_call_quick(BENCH)); }
-# 303 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 303 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void sparselu_seq_call_quick(float **BENCH)
-# 304 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable10 = new_stack((void *)(&sparselu_seq_call), "sparselu_seq_call", &____must_manage_sparselu_seq_call, 1, 0, (size_t)(15559110349592349616UL)) ; ; ;
-# 305 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 304 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable10 = new_stack((void *)(&sparselu_seq_call), "sparselu_seq_call", &____must_manage_sparselu_seq_call, 1, 0, (size_t)(17997173635925000193UL)) ; ; ;
+# 305 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int ii; int jj; int kk; ;
-# 306 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 307 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 306 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 307 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (kk=0; kk<bots_arg_size; kk++)
-# 308 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 308 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 309 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 309 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
        call_lbl_0: ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); });
-# 310 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 310 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
-# 312 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 312 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          {
-# 313 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 313 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
              call_lbl_1: ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); });
-# 314 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 314 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }; }
-# 315 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 315 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (ii=kk+1; ii<bots_arg_size; ii++) { if (BENCH[ii*bots_arg_size+kk] != __null)
-# 317 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 317 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          {
-# 318 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 318 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
              call_lbl_2: ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); });
-# 319 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 319 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }; }
-# 320 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 320 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (ii=kk+1; ii<bots_arg_size; ii++) { if (BENCH[ii*bots_arg_size+kk] != __null) {for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
-# 324 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 324 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                {
-# 325 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 325 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                      if (BENCH[ii*bots_arg_size+jj]==__null) { call_lbl_3: BENCH[ii*bots_arg_size+jj] = ({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); }); };
-# 326 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 326 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                       call_lbl_4: ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); });
-# 327 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 327 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                }; }; }; }
-# 328 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 329 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 328 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 329 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 330 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 330 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "sparselu_seq_call", &____must_manage_sparselu_seq_call, ____alias_loc_id_11, ____chimes_did_disable10, false); }
 
 void sparselu_seq_call(float **BENCH) { (____chimes_replaying ? sparselu_seq_call_resumable(BENCH) : sparselu_seq_call_quick(BENCH)); }
-# 332 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 332 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void sparselu_fini_quick (float **BENCH, char *pass)
-# 333 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable11 = new_stack((void *)(&sparselu_fini), "sparselu_fini", &____must_manage_sparselu_fini, 2, 0, (size_t)(15559110349592349624UL), (size_t)(15559110349592349625UL)) ; ; ;
-# 334 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 335 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 333 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable11 = new_stack((void *)(&sparselu_fini), "sparselu_fini", &____must_manage_sparselu_fini, 2, 0, (size_t)(17997173635925000201UL), (size_t)(17997173635925000202UL)) ; ; ;
+# 334 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 335 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    rm_stack(false, 0UL, "sparselu_fini", &____must_manage_sparselu_fini, ____alias_loc_id_12, ____chimes_did_disable11, false); return;
-# 336 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 336 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
 
 void sparselu_fini (float **BENCH, char *pass) { (____chimes_replaying ? sparselu_fini_resumable(BENCH, pass) : sparselu_fini_quick(BENCH, pass)); }
-# 365 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 365 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 int sparselu_check_quick(float **SEQ, float **BENCH)
-# 366 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable12 = new_stack((void *)(&sparselu_check), "sparselu_check", &____must_manage_sparselu_check, 2, 0, (size_t)(15559110349592349683UL), (size_t)(15559110349592349684UL)) ; ; ;
-# 367 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 366 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable12 = new_stack((void *)(&sparselu_check), "sparselu_check", &____must_manage_sparselu_check, 2, 0, (size_t)(17997173635925000260UL), (size_t)(17997173635925000261UL)) ; ; ;
+# 367 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int ok; ;
-# 368 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 369 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 368 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 369 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Output size: %d\n" ,bots_arg_size); } };
-# 370 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 370 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (i = 0; i < bots_arg_size; i+=50)
-# 371 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 371 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 372 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 372 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (j = 0; j < bots_arg_size; j+=40)
-# 373 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 373 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 374 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 374 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
              call_lbl_0: ok = ({ calling_npm("checkmat1", 0); checkmat1_npm(BENCH[i*bots_arg_size+j]); });
-# 375 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 375 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 376 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 376 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 377 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 377 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
     int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (1); rm_stack(false, 0UL, "sparselu_check", &____must_manage_sparselu_check, ____alias_loc_id_13, ____chimes_did_disable12, false); return ____chimes_ret_var_3; ;
-# 378 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 378 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "sparselu_check", &____must_manage_sparselu_check, ____alias_loc_id_13, ____chimes_did_disable12, false); }
 
 int sparselu_check(float **SEQ, float **BENCH) { return (____chimes_replaying ? sparselu_check_resumable(SEQ, BENCH) : sparselu_check_quick(SEQ, BENCH)); }
-# 379 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 379 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 int checkmat1_quick (float *N)
-# 380 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable13 = new_stack((void *)(&checkmat1), "checkmat1", &____must_manage_checkmat1, 1, 0, (size_t)(15559110349592349737UL)) ; ; ;
-# 381 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 380 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable13 = new_stack((void *)(&checkmat1), "checkmat1", &____must_manage_checkmat1, 1, 0, (size_t)(17997173635925000314UL)) ; ; ;
+# 381 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; ;
-# 382 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 383 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 382 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 383 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (i = 0; i < bots_arg_size_1; i+=20)
-# 384 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 384 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 385 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 385 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (j = 0; j < bots_arg_size_1; j+=20)
-# 386 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 386 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 387 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 387 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Output Matrix: A[%d][%d]=%8.12f \n" , i,j, N[i*bots_arg_size_1+j]); } }
-# 388 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 388 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                                 ;
-# 389 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 389 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 390 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 390 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 391 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 391 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
     int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (1); rm_stack(false, 0UL, "checkmat1", &____must_manage_checkmat1, ____alias_loc_id_14, ____chimes_did_disable13, false); return ____chimes_ret_var_4; ;
-# 392 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 392 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 rm_stack(false, 0UL, "checkmat1", &____must_manage_checkmat1, ____alias_loc_id_14, ____chimes_did_disable13, false); }
 
 int checkmat1 (float *N) { return (____chimes_replaying ? checkmat1_resumable(N) : checkmat1_quick(N)); }
-# 37 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 37 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 int checkmat_npm (float *M, float *N)
-# 38 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 38 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {
-# 39 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 39 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i, j;
-# 40 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 40 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    float r_err;
-# 41 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 42 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 41 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 42 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (i = 0; i < bots_arg_size_1; i++)
-# 43 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 43 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 44 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 44 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (j = 0; j < bots_arg_size_1; j++)
-# 45 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 45 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 46 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 46 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          r_err = M[i*bots_arg_size_1+j] - N[i*bots_arg_size_1+j];
-# 47 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 47 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (r_err < 0.0) {r_err = -r_err; };
-# 48 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 48 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          r_err = r_err / M[i*bots_arg_size_1+j];
-# 49 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 49 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if(r_err > 1.0E-6)
-# 50 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 50 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          {
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Checking failure: A[%d][%d]=%f  B[%d][%d]=%f; Relative Error=%f\n" , i,j, M[i*bots_arg_size_1+j], i,j, N[i*bots_arg_size_1+j], r_err); } }
-# 52 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 52 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                                                                     ;
-# 53 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 53 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
              int ____chimes_ret_var_0; ____chimes_ret_var_0 = (0); return ____chimes_ret_var_0; ;
-# 54 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 54 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 55 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 55 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 56 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 56 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 57 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 57 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
     int ____chimes_ret_var_1; ____chimes_ret_var_1 = (1); return ____chimes_ret_var_1; ;
-# 58 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 58 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
-# 62 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 62 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void genmat_npm (float *M[])
-# 63 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 63 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {
-# 64 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 64 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int null_entry, init_val, i, j, ii, jj;
-# 65 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 65 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    float *p;
-# 66 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 66 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    float *prow;
-# 67 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 67 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    float rowsum;
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 69 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 68 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 69 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    init_val = 1325;
-# 70 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 71 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 72 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 70 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 71 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 72 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (ii=0; ii < bots_arg_size; ii++)
-# 73 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 73 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 74 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 74 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (jj=0; jj < bots_arg_size; jj++)
-# 75 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 75 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 76 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 77 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 76 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 77 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          null_entry=0;
-# 78 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 78 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if ((ii<jj) && (ii%3 !=0)) {null_entry = 1; };
-# 79 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 79 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if ((ii>jj) && (jj%3 !=0)) {null_entry = 1; };
-# 80 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 80 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   if (ii%2==1) {null_entry = 1; };
-# 81 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 81 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   if (jj%2==1) {null_entry = 1; };
-# 82 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 82 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   if (ii==jj) {null_entry = 0; };
-# 83 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 83 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   if (ii==jj-1) {null_entry = 0; };
-# 84 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 84 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (ii-1 == jj) {null_entry = 0; };
-# 85 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 86 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 85 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 86 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (null_entry == 0){
-# 87 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            M[ii*bots_arg_size+jj] = (float *) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348486UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 88 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 87 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            M[ii*bots_arg_size+jj] = (float *) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 17997173635924999063UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 88 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      if ((M[ii*bots_arg_size+jj] == __null))
-# 89 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 89 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             {
-# 90 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 90 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Error: Out of memory\n"); } };
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                exit(101);
-# 92 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 92 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             }
-# 93 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 94 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 95 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 96 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 97 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 93 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 94 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 95 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 96 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 97 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             prow = p = M[ii*bots_arg_size+jj];
-# 98 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 98 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             for (i = 0; i < bots_arg_size_1; i++)
-# 99 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 99 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             {
-# 100 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 100 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                rowsum = 0.0;
-# 101 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 101 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                for (j = 0; j < bots_arg_size_1; j++)
-# 102 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 102 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                {
-# 103 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 103 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
              init_val = (3125 * init_val) % 65536;
-# 104 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 104 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                    (*p) = (float)((init_val - 32768.0) / 16384.0);
-# 105 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 105 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                     rowsum += abs(*p);
-# 106 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 106 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                     p++;
-# 107 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 107 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                }
-# 108 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 108 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                if (ii == jj) {*(prow+i) = rowsum * (float) bots_arg_size + abs(*(prow+i)); };
-# 110 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 110 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                prow += bots_arg_size_1;
-# 111 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 111 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             }
-# 112 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 112 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 113 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 113 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          else
-# 114 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 114 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          {
-# 115 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 115 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             M[ii*bots_arg_size+jj] = __null;
-# 116 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 116 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 117 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 117 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 118 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 118 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 119 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 119 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
-# 123 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 123 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void print_structure_npm(char *name, float *M[])
-# 124 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 124 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int ii, jj;
-# 126 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 126 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Structure for matrix %s @ 0x%p\n" ,name, M); } };
-# 127 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 127 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (ii = 0; ii < bots_arg_size; ii++) {
-# 128 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 128 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      for (jj = 0; jj < bots_arg_size; jj++) {
-# 129 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 129 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
         if (M[ii*bots_arg_size+jj]!=__null) {{ if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "x"); } };}
-# 130 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 130 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
         else { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " "); } };
-# 131 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 131 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      }
-# 132 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 132 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "\n"); } };
-# 133 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 133 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 134 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 134 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "\n"); } };
-# 135 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 135 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
-# 139 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 139 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 float * allocate_clean_block_npm()
-# 140 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 140 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {
-# 141 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 141 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   int i,j;
-# 142 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 142 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   float *p, *q;
-# 143 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 144 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  p = (float *) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348657UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 145 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 143 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 144 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+  p = (float *) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size_1 * bots_arg_size_1 * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bots_arg_size_1*bots_arg_size_1*sizeof(float), 17997173635924999234UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 145 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   q=p;
-# 146 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 146 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   if (p!=__null){
-# 147 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 147 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      for (i = 0; i < bots_arg_size_1; i++) { for (j = 0; j < bots_arg_size_1; j++){(*p)=0.0; p++;}; }
-# 149 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 150 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 149 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 150 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   }
-# 151 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 151 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   else
-# 152 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 152 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   {
-# 153 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 153 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Error: Out of memory\n"); } };
-# 154 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 154 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       exit (101);
-# 155 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 155 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   }
-# 156 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 156 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    float * ____chimes_ret_var_2; ____chimes_ret_var_2 = ((q)); return ____chimes_ret_var_2; ;
-# 157 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 157 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
-# 162 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 162 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void lu0_npm(float *diag)
-# 163 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 163 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {
-# 164 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 164 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i, j, k;
-# 165 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 166 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 165 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 166 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (k=0; k<bots_arg_size_1; k++) {
-# 167 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 167 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (i=k+1; i<bots_arg_size_1; i++)
-# 168 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 168 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 169 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 169 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          diag[i*bots_arg_size_1+k] = diag[i*bots_arg_size_1+k] / diag[k*bots_arg_size_1+k];
-# 170 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 170 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          for (j=k+1; j<bots_arg_size_1; j++) {
-# 171 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 171 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             diag[i*bots_arg_size_1+j] = diag[i*bots_arg_size_1+j] - diag[i*bots_arg_size_1+k] * diag[k*bots_arg_size_1+j];
-# 172 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 172 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 173 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 173 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 174 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 174 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 175 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 175 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
-# 180 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 180 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void bdiv_npm(float *diag, float *row)
-# 181 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 181 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {
-# 182 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 183 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 182 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 183 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i, j, k;
-# 184 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 184 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (i=0; i<bots_arg_size_1; i++) { for (k=0; k<bots_arg_size_1; k++)
-# 186 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 186 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 187 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 187 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          row[i*bots_arg_size_1+k] = row[i*bots_arg_size_1+k] / diag[k*bots_arg_size_1+k];
-# 188 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 188 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          for (j=k+1; j<bots_arg_size_1; j++) {
-# 189 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 189 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             row[i*bots_arg_size_1+j] = row[i*bots_arg_size_1+j] - row[i*bots_arg_size_1+k]*diag[k*bots_arg_size_1+j];
-# 190 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 190 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 191 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 191 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }; }
-# 192 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 192 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
-# 196 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 196 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void bmod_npm(float *row, float *col, float *inner)
-# 197 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 197 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {
-# 198 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 199 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 198 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 199 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i, j, k;
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 200 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (i=0; i<bots_arg_size_1; i++) {
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 201 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (j=0; j<bots_arg_size_1; j++) {
-# 202 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 202 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          for (k=0; k<bots_arg_size_1; k++) {
-# 203 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 203 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             inner[i*bots_arg_size_1+j] = inner[i*bots_arg_size_1+j] - row[i*bots_arg_size_1+k]*col[k*bots_arg_size_1+j];
-# 204 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 204 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
-# 205 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 205 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 206 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 206 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 207 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 207 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
-# 211 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 211 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void fwd_npm(float *diag, float *col)
-# 212 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 212 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {
-# 213 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 214 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 213 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 214 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i, j, k;
-# 215 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 215 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (j=0; j<bots_arg_size_1; j++) { for (k=0; k<bots_arg_size_1; k++) { for (i=k+1; i<bots_arg_size_1; i++) { col[i*bots_arg_size_1+j] = col[i*bots_arg_size_1+j] - diag[i*bots_arg_size_1+k]*col[k*bots_arg_size_1+j]; }; }; };
-# 219 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 219 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 222 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void sparselu_init_npm (float ***pBENCH, char *pass)
-# 223 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 223 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   *pBENCH = (float **) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size * bots_arg_size * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349125UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 225 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 224 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   *pBENCH = (float **) ({ void *____chimes_tmp_ptr = malloc((bots_arg_size * bots_arg_size * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, bots_arg_size*bots_arg_size*sizeof(float *), 17997173635924999702UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 225 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    genmat_npm(*pBENCH);
-# 226 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 227 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 226 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 227 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
-# 303 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 303 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void sparselu_seq_call_npm(float **BENCH)
-# 304 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 304 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {
-# 305 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 305 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int ii, jj, kk;
-# 306 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 307 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 306 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 307 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (kk=0; kk<bots_arg_size; kk++)
-# 308 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 308 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 309 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 309 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       lu0_npm(BENCH[kk*bots_arg_size+kk]);
-# 310 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 310 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
-# 312 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 312 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          {
-# 313 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 313 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]);
-# 314 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 314 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }; }
-# 315 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 315 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (ii=kk+1; ii<bots_arg_size; ii++) { if (BENCH[ii*bots_arg_size+kk] != __null)
-# 317 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 317 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          {
-# 318 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 318 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]);
-# 319 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 319 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }; }
-# 320 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 320 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (ii=kk+1; ii<bots_arg_size; ii++) { if (BENCH[ii*bots_arg_size+kk] != __null) {for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
-# 324 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 324 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                {
-# 325 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 325 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                      if (BENCH[ii*bots_arg_size+jj]==__null) {BENCH[ii*bots_arg_size+jj] = allocate_clean_block_npm(); };
-# 326 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 326 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                      bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]);
-# 327 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 327 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                }; }; }; }
-# 328 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 329 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 328 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 329 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 330 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 330 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
-# 332 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 332 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void sparselu_fini_npm (float **BENCH, char *pass)
-# 333 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 333 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {
-# 334 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 335 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 334 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 335 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    return;
-# 336 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 336 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
-# 365 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 365 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 int sparselu_check_npm(float **SEQ, float **BENCH)
-# 366 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 366 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {
-# 367 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 367 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i, j, ok;
-# 368 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 369 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 368 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 369 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Output size: %d\n" ,bots_arg_size); } };
-# 370 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 370 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (i = 0; i < bots_arg_size; i+=50)
-# 371 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 371 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 372 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 372 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (j = 0; j < bots_arg_size; j+=40)
-# 373 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 373 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 374 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 374 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             ok = checkmat1_npm(BENCH[i*bots_arg_size+j]);
-# 375 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 375 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 376 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 376 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 377 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 377 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
     int ____chimes_ret_var_3; ____chimes_ret_var_3 = (1); return ____chimes_ret_var_3; ;
-# 378 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 378 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
-# 379 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 379 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 int checkmat1_npm (float *N)
-# 380 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 380 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {
-# 381 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 381 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i, j;
-# 382 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 383 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 382 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 383 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (i = 0; i < bots_arg_size_1; i+=20)
-# 384 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 384 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 385 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 385 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (j = 0; j < bots_arg_size_1; j+=20)
-# 386 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 386 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 387 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 387 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Output Matrix: A[%d][%d]=%8.12f \n" , i,j, N[i*bots_arg_size_1+j]); } }
-# 388 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 388 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                                 ;
-# 389 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 389 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 390 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 390 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 391 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 391 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
     int ____chimes_ret_var_4; ____chimes_ret_var_4 = (1); return ____chimes_ret_var_4; ;
-# 392 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 392 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
 
 
@@ -5463,35 +5463,35 @@ int checkmat1_npm (float *N)
 
 
 static int module_init() {
-    init_module(15559110349592348196UL, 35, 14, 0, 15, 13, 0, 13, 13, 0, 1,
-                           &____alias_loc_id_0, (unsigned)6, (unsigned)0, (unsigned)0, (15559110349592348196UL + 939UL), (15559110349592348196UL + 940UL), (15559110349592348196UL + 941UL), (15559110349592348196UL + 942UL), (15559110349592348196UL + 943UL), (15559110349592348196UL + 1200UL),
-                           &____alias_loc_id_1, (unsigned)8, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1UL), (15559110349592348196UL + 2UL), (15559110349592348196UL + 3UL), (15559110349592348196UL + 4UL), (15559110349592348196UL + 5UL), (15559110349592348196UL + 6UL), (15559110349592348196UL + 7UL), (15559110349592348196UL + 8UL),
-                           &____alias_loc_id_2, (unsigned)12, (unsigned)0, (unsigned)0, (15559110349592348196UL + 132UL), (15559110349592348196UL + 133UL), (15559110349592348196UL + 134UL), (15559110349592348196UL + 135UL), (15559110349592348196UL + 136UL), (15559110349592348196UL + 137UL), (15559110349592348196UL + 138UL), (15559110349592348196UL + 139UL), (15559110349592348196UL + 140UL), (15559110349592348196UL + 141UL), (15559110349592348196UL + 290UL), (15559110349592348196UL + 363UL),
-                           &____alias_loc_id_3, (unsigned)4, (unsigned)0, (unsigned)0, (15559110349592348196UL + 367UL), (15559110349592348196UL + 368UL), (15559110349592348196UL + 369UL), (15559110349592348196UL + 370UL),
-                           &____alias_loc_id_4, (unsigned)6, (unsigned)0, (unsigned)0, (15559110349592348196UL + 447UL), (15559110349592348196UL + 448UL), (15559110349592348196UL + 449UL), (15559110349592348196UL + 450UL), (15559110349592348196UL + 451UL), (15559110349592348196UL + 461UL),
-                           &____alias_loc_id_5, (unsigned)5, (unsigned)0, (unsigned)0, (15559110349592348196UL + 510UL), (15559110349592348196UL + 511UL), (15559110349592348196UL + 512UL), (15559110349592348196UL + 513UL), (15559110349592348196UL + 623UL),
-                           &____alias_loc_id_6, (unsigned)6, (unsigned)0, (unsigned)0, (15559110349592348196UL + 624UL), (15559110349592348196UL + 625UL), (15559110349592348196UL + 626UL), (15559110349592348196UL + 627UL), (15559110349592348196UL + 628UL), (15559110349592348196UL + 739UL),
-                           &____alias_loc_id_7, (unsigned)7, (unsigned)0, (unsigned)0, (15559110349592348196UL + 740UL), (15559110349592348196UL + 741UL), (15559110349592348196UL + 742UL), (15559110349592348196UL + 743UL), (15559110349592348196UL + 744UL), (15559110349592348196UL + 745UL), (15559110349592348196UL + 829UL),
-                           &____alias_loc_id_8, (unsigned)6, (unsigned)0, (unsigned)0, (15559110349592348196UL + 830UL), (15559110349592348196UL + 831UL), (15559110349592348196UL + 832UL), (15559110349592348196UL + 833UL), (15559110349592348196UL + 834UL), (15559110349592348196UL + 917UL),
-                           &____alias_loc_id_9, (unsigned)3, (unsigned)0, (unsigned)0, (15559110349592348196UL + 918UL), (15559110349592348196UL + 919UL), (15559110349592348196UL + 937UL),
-                            &____alias_loc_id_10, (unsigned)2, (unsigned)0, (unsigned)0, (15559110349592348196UL + 939UL), (15559110349592348196UL + 942UL),
-                            &____alias_loc_id_11, (unsigned)5, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1201UL), (15559110349592348196UL + 1202UL), (15559110349592348196UL + 1203UL), (15559110349592348196UL + 1204UL), (15559110349592348196UL + 1420UL),
-                            &____alias_loc_id_12, (unsigned)2, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1421UL), (15559110349592348196UL + 1422UL),
-                            &____alias_loc_id_13, (unsigned)6, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1430UL), (15559110349592348196UL + 1431UL), (15559110349592348196UL + 1432UL), (15559110349592348196UL + 1433UL), (15559110349592348196UL + 1434UL), (15559110349592348196UL + 1435UL),
-                            &____alias_loc_id_14, (unsigned)4, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1489UL), (15559110349592348196UL + 1490UL), (15559110349592348196UL + 1491UL), (15559110349592348196UL + 1492UL),
-                            "print_structure", 0, "_Z15print_structurePcPPf", "_Z19print_structure_npmPcPPf", 0, 2, (15559110349592348196UL + 445UL), (15559110349592348196UL + 446UL), 0UL, 5, "fprintf", 4, (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1548UL), (15559110349592348196UL + 445UL), (15559110349592348196UL + 446UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1549UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1549UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1549UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1549UL), 0UL,
-                            "allocate_clean_block", 0, "_Z20allocate_clean_blockv", "_Z24allocate_clean_block_npmv", 0, 0, (15559110349592348196UL + 461UL), 3, "malloc", 1, 0UL, (15559110349592348196UL + 461UL), "fprintf", 2, (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1547UL), 0UL, "exit", 1, 0UL, 0UL,
-                            "checkmat1", 0, "_Z9checkmat1Pf", "_Z13checkmat1_npmPf", 0, 1, (15559110349592348196UL + 1541UL), 0UL, 1, "fprintf", 5, (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1555UL), 0UL, 0UL, 0UL, 0UL,
-                            "fwd", 0, "_Z3fwdPfS_", "_Z7fwd_npmPfS_", 0, 2, (15559110349592348196UL + 916UL), (15559110349592348196UL + 917UL), 0UL, 0,
-                            "bmod", 0, "_Z4bmodPfS_S_", "_Z8bmod_npmPfS_S_", 0, 3, (15559110349592348196UL + 827UL), (15559110349592348196UL + 828UL), (15559110349592348196UL + 829UL), 0UL, 0,
-                            "lu0", 0, "_Z3lu0Pf", "_Z7lu0_npmPf", 0, 1, (15559110349592348196UL + 623UL), 0UL, 0,
-                            "sparselu_fini", 0, "_Z13sparselu_finiPPfPc", "_Z17sparselu_fini_npmPPfPc", 0, 2, (15559110349592348196UL + 1428UL), (15559110349592348196UL + 1429UL), 0UL, 0,
-                            "checkmat", 0, "_Z8checkmatPfS_", "_Z12checkmat_npmPfS_", 0, 2, (15559110349592348196UL + 126UL), (15559110349592348196UL + 127UL), 0UL, 1, "fprintf", 9, (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1545UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-                            "sparselu_init", 0, "_Z13sparselu_initPPPfPc", "_Z17sparselu_init_npmPPPfPc", 0, 2, (15559110349592348196UL + 937UL), (15559110349592348196UL + 938UL), 0UL, 2, "malloc", 1, 0UL, (15559110349592348196UL + 929UL), "genmat", 1, (15559110349592348196UL + 929UL), 0UL,
-                            "sparselu_check", 0, "_Z14sparselu_checkPPfS0_", "_Z18sparselu_check_npmPPfS0_", 0, 2, (15559110349592348196UL + 1487UL), (15559110349592348196UL + 1488UL), 0UL, 2, "fprintf", 3, (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1554UL), 0UL, 0UL, "checkmat1", 1, (15559110349592348196UL + 1470UL), 0UL,
-                            "sparselu_seq_call", 0, "_Z17sparselu_seq_callPPf", "_Z21sparselu_seq_call_npmPPf", 0, 1, (15559110349592348196UL + 1420UL), 0UL, 5, "lu0", 1, (15559110349592348196UL + 1224UL), 0UL, "fwd", 2, (15559110349592348196UL + 1224UL), (15559110349592348196UL + 1224UL), 0UL, "bdiv", 2, (15559110349592348196UL + 1224UL), (15559110349592348196UL + 1224UL), 0UL, "allocate_clean_block", 0, (15559110349592348196UL + 1224UL), "bmod", 3, (15559110349592348196UL + 1224UL), (15559110349592348196UL + 1224UL), (15559110349592348196UL + 1224UL), 0UL,
-                            "genmat", 0, "_Z6genmatPPf", "_Z10genmat_npmPPf", 0, 1, (15559110349592348196UL + 363UL), 0UL, 5, "malloc", 1, 0UL, (15559110349592348196UL + 290UL), "fprintf", 2, (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1547UL), 0UL, "exit", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL,
-                            "bdiv", 0, "_Z4bdivPfS_", "_Z8bdiv_npmPfS_", 0, 2, (15559110349592348196UL + 738UL), (15559110349592348196UL + 739UL), 0UL, 0,
+    init_module(17997173635924998773UL, 35, 14, 0, 15, 13, 0, 13, 13, 0, 1,
+                           &____alias_loc_id_0, (unsigned)6, (unsigned)0, (unsigned)0, (17997173635924998773UL + 939UL), (17997173635924998773UL + 940UL), (17997173635924998773UL + 941UL), (17997173635924998773UL + 942UL), (17997173635924998773UL + 943UL), (17997173635924998773UL + 1200UL),
+                           &____alias_loc_id_1, (unsigned)8, (unsigned)0, (unsigned)0, (17997173635924998773UL + 1UL), (17997173635924998773UL + 2UL), (17997173635924998773UL + 3UL), (17997173635924998773UL + 4UL), (17997173635924998773UL + 5UL), (17997173635924998773UL + 6UL), (17997173635924998773UL + 7UL), (17997173635924998773UL + 8UL),
+                           &____alias_loc_id_2, (unsigned)12, (unsigned)0, (unsigned)0, (17997173635924998773UL + 132UL), (17997173635924998773UL + 133UL), (17997173635924998773UL + 134UL), (17997173635924998773UL + 135UL), (17997173635924998773UL + 136UL), (17997173635924998773UL + 137UL), (17997173635924998773UL + 138UL), (17997173635924998773UL + 139UL), (17997173635924998773UL + 140UL), (17997173635924998773UL + 141UL), (17997173635924998773UL + 290UL), (17997173635924998773UL + 363UL),
+                           &____alias_loc_id_3, (unsigned)4, (unsigned)0, (unsigned)0, (17997173635924998773UL + 367UL), (17997173635924998773UL + 368UL), (17997173635924998773UL + 369UL), (17997173635924998773UL + 370UL),
+                           &____alias_loc_id_4, (unsigned)6, (unsigned)0, (unsigned)0, (17997173635924998773UL + 447UL), (17997173635924998773UL + 448UL), (17997173635924998773UL + 449UL), (17997173635924998773UL + 450UL), (17997173635924998773UL + 451UL), (17997173635924998773UL + 461UL),
+                           &____alias_loc_id_5, (unsigned)5, (unsigned)0, (unsigned)0, (17997173635924998773UL + 510UL), (17997173635924998773UL + 511UL), (17997173635924998773UL + 512UL), (17997173635924998773UL + 513UL), (17997173635924998773UL + 623UL),
+                           &____alias_loc_id_6, (unsigned)6, (unsigned)0, (unsigned)0, (17997173635924998773UL + 624UL), (17997173635924998773UL + 625UL), (17997173635924998773UL + 626UL), (17997173635924998773UL + 627UL), (17997173635924998773UL + 628UL), (17997173635924998773UL + 739UL),
+                           &____alias_loc_id_7, (unsigned)7, (unsigned)0, (unsigned)0, (17997173635924998773UL + 740UL), (17997173635924998773UL + 741UL), (17997173635924998773UL + 742UL), (17997173635924998773UL + 743UL), (17997173635924998773UL + 744UL), (17997173635924998773UL + 745UL), (17997173635924998773UL + 829UL),
+                           &____alias_loc_id_8, (unsigned)6, (unsigned)0, (unsigned)0, (17997173635924998773UL + 830UL), (17997173635924998773UL + 831UL), (17997173635924998773UL + 832UL), (17997173635924998773UL + 833UL), (17997173635924998773UL + 834UL), (17997173635924998773UL + 917UL),
+                           &____alias_loc_id_9, (unsigned)3, (unsigned)0, (unsigned)0, (17997173635924998773UL + 918UL), (17997173635924998773UL + 919UL), (17997173635924998773UL + 937UL),
+                            &____alias_loc_id_10, (unsigned)2, (unsigned)0, (unsigned)0, (17997173635924998773UL + 939UL), (17997173635924998773UL + 942UL),
+                            &____alias_loc_id_11, (unsigned)5, (unsigned)0, (unsigned)0, (17997173635924998773UL + 1201UL), (17997173635924998773UL + 1202UL), (17997173635924998773UL + 1203UL), (17997173635924998773UL + 1204UL), (17997173635924998773UL + 1420UL),
+                            &____alias_loc_id_12, (unsigned)2, (unsigned)0, (unsigned)0, (17997173635924998773UL + 1421UL), (17997173635924998773UL + 1422UL),
+                            &____alias_loc_id_13, (unsigned)6, (unsigned)0, (unsigned)0, (17997173635924998773UL + 1430UL), (17997173635924998773UL + 1431UL), (17997173635924998773UL + 1432UL), (17997173635924998773UL + 1433UL), (17997173635924998773UL + 1434UL), (17997173635924998773UL + 1435UL),
+                            &____alias_loc_id_14, (unsigned)4, (unsigned)0, (unsigned)0, (17997173635924998773UL + 1489UL), (17997173635924998773UL + 1490UL), (17997173635924998773UL + 1491UL), (17997173635924998773UL + 1492UL),
+                            "print_structure", 0, "_Z15print_structurePcPPf", "_Z19print_structure_npmPcPPf", 0, 2, (17997173635924998773UL + 445UL), (17997173635924998773UL + 446UL), 0UL, 5, "fprintf", 4, (17997173635924998773UL + 1446UL), (17997173635924998773UL + 1548UL), (17997173635924998773UL + 445UL), (17997173635924998773UL + 446UL), 0UL, "fprintf", 2, (17997173635924998773UL + 1446UL), (17997173635924998773UL + 1549UL), 0UL, "fprintf", 2, (17997173635924998773UL + 1446UL), (17997173635924998773UL + 1549UL), 0UL, "fprintf", 2, (17997173635924998773UL + 1446UL), (17997173635924998773UL + 1549UL), 0UL, "fprintf", 2, (17997173635924998773UL + 1446UL), (17997173635924998773UL + 1549UL), 0UL,
+                            "allocate_clean_block", 0, "_Z20allocate_clean_blockv", "_Z24allocate_clean_block_npmv", 0, 0, (17997173635924998773UL + 461UL), 3, "malloc", 1, 0UL, (17997173635924998773UL + 461UL), "fprintf", 2, (17997173635924998773UL + 1446UL), (17997173635924998773UL + 1547UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "checkmat1", 0, "_Z9checkmat1Pf", "_Z13checkmat1_npmPf", 0, 1, (17997173635924998773UL + 1541UL), 0UL, 1, "fprintf", 5, (17997173635924998773UL + 1446UL), (17997173635924998773UL + 1555UL), 0UL, 0UL, 0UL, 0UL,
+                            "fwd", 0, "_Z3fwdPfS_", "_Z7fwd_npmPfS_", 0, 2, (17997173635924998773UL + 916UL), (17997173635924998773UL + 917UL), 0UL, 0,
+                            "bmod", 0, "_Z4bmodPfS_S_", "_Z8bmod_npmPfS_S_", 0, 3, (17997173635924998773UL + 827UL), (17997173635924998773UL + 828UL), (17997173635924998773UL + 829UL), 0UL, 0,
+                            "lu0", 0, "_Z3lu0Pf", "_Z7lu0_npmPf", 0, 1, (17997173635924998773UL + 623UL), 0UL, 0,
+                            "sparselu_fini", 0, "_Z13sparselu_finiPPfPc", "_Z17sparselu_fini_npmPPfPc", 0, 2, (17997173635924998773UL + 1428UL), (17997173635924998773UL + 1429UL), 0UL, 0,
+                            "checkmat", 0, "_Z8checkmatPfS_", "_Z12checkmat_npmPfS_", 0, 2, (17997173635924998773UL + 126UL), (17997173635924998773UL + 127UL), 0UL, 1, "fprintf", 9, (17997173635924998773UL + 1446UL), (17997173635924998773UL + 1545UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+                            "sparselu_init", 0, "_Z13sparselu_initPPPfPc", "_Z17sparselu_init_npmPPPfPc", 0, 2, (17997173635924998773UL + 937UL), (17997173635924998773UL + 938UL), 0UL, 2, "malloc", 1, 0UL, (17997173635924998773UL + 929UL), "genmat", 1, (17997173635924998773UL + 929UL), 0UL,
+                            "sparselu_check", 0, "_Z14sparselu_checkPPfS0_", "_Z18sparselu_check_npmPPfS0_", 0, 2, (17997173635924998773UL + 1487UL), (17997173635924998773UL + 1488UL), 0UL, 2, "fprintf", 3, (17997173635924998773UL + 1446UL), (17997173635924998773UL + 1554UL), 0UL, 0UL, "checkmat1", 1, (17997173635924998773UL + 1470UL), 0UL,
+                            "sparselu_seq_call", 0, "_Z17sparselu_seq_callPPf", "_Z21sparselu_seq_call_npmPPf", 0, 1, (17997173635924998773UL + 1420UL), 0UL, 5, "lu0", 1, (17997173635924998773UL + 1224UL), 0UL, "fwd", 2, (17997173635924998773UL + 1224UL), (17997173635924998773UL + 1224UL), 0UL, "bdiv", 2, (17997173635924998773UL + 1224UL), (17997173635924998773UL + 1224UL), 0UL, "allocate_clean_block", 0, (17997173635924998773UL + 1224UL), "bmod", 3, (17997173635924998773UL + 1224UL), (17997173635924998773UL + 1224UL), (17997173635924998773UL + 1224UL), 0UL,
+                            "genmat", 0, "_Z6genmatPPf", "_Z10genmat_npmPPf", 0, 1, (17997173635924998773UL + 363UL), 0UL, 5, "malloc", 1, 0UL, (17997173635924998773UL + 290UL), "fprintf", 2, (17997173635924998773UL + 1446UL), (17997173635924998773UL + 1547UL), 0UL, "exit", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL,
+                            "bdiv", 0, "_Z4bdivPfS_", "_Z8bdiv_npmPfS_", 0, 2, (17997173635924998773UL + 738UL), (17997173635924998773UL + 739UL), 0UL, 0,
                            "print_structure", &(____chimes_does_checkpoint_print_structure_npm),
                            "allocate_clean_block", &(____chimes_does_checkpoint_allocate_clean_block_npm),
                            "checkmat1", &(____chimes_does_checkpoint_checkmat1_npm),
@@ -5505,41 +5505,41 @@ static int module_init() {
                            "sparselu_seq_call", &(____chimes_does_checkpoint_sparselu_seq_call_npm),
                            "genmat", &(____chimes_does_checkpoint_genmat_npm),
                            "bdiv", &(____chimes_does_checkpoint_bdiv_npm),
-                             (15559110349592348196UL + 740UL), (15559110349592348196UL + 827UL),
-                             (15559110349592348196UL + 741UL), (15559110349592348196UL + 828UL),
-                             (15559110349592348196UL + 742UL), (15559110349592348196UL + 829UL),
-                             (15559110349592348196UL + 625UL), (15559110349592348196UL + 739UL),
-                             (15559110349592348196UL + 624UL), (15559110349592348196UL + 738UL),
-                             (15559110349592348196UL + 450UL), (15559110349592348196UL + 461UL),
-                             (15559110349592348196UL + 451UL), (15559110349592348196UL + 461UL),
-                             (15559110349592348196UL + 1201UL), (15559110349592348196UL + 1420UL),
-                             (15559110349592348196UL + 1200UL), (15559110349592348196UL + 973UL),
-                             (15559110349592348196UL + 132UL), (15559110349592348196UL + 363UL),
-                             (15559110349592348196UL + 139UL), (15559110349592348196UL + 290UL),
-                             (15559110349592348196UL + 1488UL), (15559110349592348196UL + 1470UL),
-                             (15559110349592348196UL + 1489UL), (15559110349592348196UL + 1541UL),
-                             (15559110349592348196UL + 1421UL), (15559110349592348196UL + 1428UL),
-                             (15559110349592348196UL + 1420UL), (15559110349592348196UL + 1224UL),
-                             (15559110349592348196UL + 830UL), (15559110349592348196UL + 916UL),
-                             (15559110349592348196UL + 831UL), (15559110349592348196UL + 917UL),
-                             (15559110349592348196UL + 939UL), (15559110349592348196UL + 1200UL),
-                             (15559110349592348196UL + 3UL), (15559110349592348196UL + 127UL),
-                             (15559110349592348196UL + 2UL), (15559110349592348196UL + 126UL),
-                             (15559110349592348196UL + 919UL), (15559110349592348196UL + 938UL),
-                             (15559110349592348196UL + 918UL), (15559110349592348196UL + 937UL),
-                             (15559110349592348196UL + 368UL), (15559110349592348196UL + 446UL),
-                             (15559110349592348196UL + 367UL), (15559110349592348196UL + 445UL),
-                             (15559110349592348196UL + 937UL), (15559110349592348196UL + 929UL),
-                             (15559110349592348196UL + 363UL), (15559110349592348196UL + 290UL),
-                             (15559110349592348196UL + 449UL), (15559110349592348196UL + 461UL),
-                             (15559110349592348196UL + 140UL), (15559110349592348196UL + 290UL),
-                             (15559110349592348196UL + 446UL), (15559110349592348196UL + 405UL),
-                             (15559110349592348196UL + 1544UL), (15559110349592348196UL + 1446UL),
-                             (15559110349592348196UL + 1422UL), (15559110349592348196UL + 1429UL),
-                             (15559110349592348196UL + 1430UL), (15559110349592348196UL + 1487UL),
-                             (15559110349592348196UL + 1431UL), (15559110349592348196UL + 1488UL),
-                             (15559110349592348196UL + 943UL), (15559110349592348196UL + 973UL),
-                             (15559110349592348196UL + 510UL), (15559110349592348196UL + 623UL),
+                             (17997173635924998773UL + 740UL), (17997173635924998773UL + 827UL),
+                             (17997173635924998773UL + 741UL), (17997173635924998773UL + 828UL),
+                             (17997173635924998773UL + 742UL), (17997173635924998773UL + 829UL),
+                             (17997173635924998773UL + 625UL), (17997173635924998773UL + 739UL),
+                             (17997173635924998773UL + 624UL), (17997173635924998773UL + 738UL),
+                             (17997173635924998773UL + 450UL), (17997173635924998773UL + 461UL),
+                             (17997173635924998773UL + 451UL), (17997173635924998773UL + 461UL),
+                             (17997173635924998773UL + 1201UL), (17997173635924998773UL + 1420UL),
+                             (17997173635924998773UL + 1200UL), (17997173635924998773UL + 973UL),
+                             (17997173635924998773UL + 132UL), (17997173635924998773UL + 363UL),
+                             (17997173635924998773UL + 139UL), (17997173635924998773UL + 290UL),
+                             (17997173635924998773UL + 1488UL), (17997173635924998773UL + 1470UL),
+                             (17997173635924998773UL + 1489UL), (17997173635924998773UL + 1541UL),
+                             (17997173635924998773UL + 1421UL), (17997173635924998773UL + 1428UL),
+                             (17997173635924998773UL + 1420UL), (17997173635924998773UL + 1224UL),
+                             (17997173635924998773UL + 830UL), (17997173635924998773UL + 916UL),
+                             (17997173635924998773UL + 831UL), (17997173635924998773UL + 917UL),
+                             (17997173635924998773UL + 939UL), (17997173635924998773UL + 1200UL),
+                             (17997173635924998773UL + 3UL), (17997173635924998773UL + 127UL),
+                             (17997173635924998773UL + 2UL), (17997173635924998773UL + 126UL),
+                             (17997173635924998773UL + 919UL), (17997173635924998773UL + 938UL),
+                             (17997173635924998773UL + 918UL), (17997173635924998773UL + 937UL),
+                             (17997173635924998773UL + 368UL), (17997173635924998773UL + 446UL),
+                             (17997173635924998773UL + 367UL), (17997173635924998773UL + 445UL),
+                             (17997173635924998773UL + 937UL), (17997173635924998773UL + 929UL),
+                             (17997173635924998773UL + 363UL), (17997173635924998773UL + 290UL),
+                             (17997173635924998773UL + 449UL), (17997173635924998773UL + 461UL),
+                             (17997173635924998773UL + 140UL), (17997173635924998773UL + 290UL),
+                             (17997173635924998773UL + 446UL), (17997173635924998773UL + 405UL),
+                             (17997173635924998773UL + 1544UL), (17997173635924998773UL + 1446UL),
+                             (17997173635924998773UL + 1422UL), (17997173635924998773UL + 1429UL),
+                             (17997173635924998773UL + 1430UL), (17997173635924998773UL + 1487UL),
+                             (17997173635924998773UL + 1431UL), (17997173635924998773UL + 1488UL),
+                             (17997173635924998773UL + 943UL), (17997173635924998773UL + 973UL),
+                             (17997173635924998773UL + 510UL), (17997173635924998773UL + 623UL),
                      "bots_verbose_mode_t", 32UL, 0,
                              "print_structure", "_Z15print_structurePcPPf", 0, 0,
                              "allocate_clean_block", "_Z20allocate_clean_blockv", 0, 0,
@@ -5555,19 +5555,19 @@ static int module_init() {
                              "sparselu_seq_call", "_Z17sparselu_seq_callPPf", 0, 5, "lu0", "fwd", "bdiv", "allocate_clean_block", "bmod",
                              "genmat", "_Z6genmatPPf", 0, 0,
                              "bdiv", "_Z4bdivPfS_", 0, 0,
-        "genmat", 0UL, (int)1, 15559110349592349125UL,
-        "lu0", 0UL, (int)1, 15559110349592349169UL,
-        "fwd", 0UL, (int)2, 15559110349592349169UL, 15559110349592349169UL,
-        "bdiv", 0UL, (int)2, 15559110349592349169UL, 15559110349592349169UL,
-        "allocate_clean_block", 15559110349592349169UL, (int)0,
-        "bmod", 0UL, (int)3, 15559110349592349169UL, 15559110349592349169UL, 15559110349592349169UL,
-        "bmod", 0UL, (int)3, 15559110349592349169UL, 15559110349592349169UL, 15559110349592349169UL,
-        "lu0", 0UL, (int)1, 15559110349592349420UL,
-        "fwd", 0UL, (int)2, 15559110349592349420UL, 15559110349592349420UL,
-        "bdiv", 0UL, (int)2, 15559110349592349420UL, 15559110349592349420UL,
-        "allocate_clean_block", 15559110349592349420UL, (int)0,
-        "bmod", 0UL, (int)3, 15559110349592349420UL, 15559110349592349420UL, 15559110349592349420UL,
-        "checkmat1", 0UL, (int)1, 15559110349592349666UL);
+        "genmat", 0UL, (int)1, 17997173635924999702UL,
+        "lu0", 0UL, (int)1, 17997173635924999746UL,
+        "fwd", 0UL, (int)2, 17997173635924999746UL, 17997173635924999746UL,
+        "bdiv", 0UL, (int)2, 17997173635924999746UL, 17997173635924999746UL,
+        "allocate_clean_block", 17997173635924999746UL, (int)0,
+        "bmod", 0UL, (int)3, 17997173635924999746UL, 17997173635924999746UL, 17997173635924999746UL,
+        "bmod", 0UL, (int)3, 17997173635924999746UL, 17997173635924999746UL, 17997173635924999746UL,
+        "lu0", 0UL, (int)1, 17997173635924999997UL,
+        "fwd", 0UL, (int)2, 17997173635924999997UL, 17997173635924999997UL,
+        "bdiv", 0UL, (int)2, 17997173635924999997UL, 17997173635924999997UL,
+        "allocate_clean_block", 17997173635924999997UL, (int)0,
+        "bmod", 0UL, (int)3, 17997173635924999997UL, 17997173635924999997UL, 17997173635924999997UL,
+        "checkmat1", 0UL, (int)1, 17997173635925000243UL);
     return 0;
 }
 

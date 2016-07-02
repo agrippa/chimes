@@ -48,11 +48,11 @@ static unsigned ____alias_loc_id_7;
 static unsigned ____alias_loc_id_8;
 static unsigned ____alias_loc_id_9;
 static unsigned ____alias_loc_id_10;
-# 1 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -61,7 +61,7 @@ static unsigned ____alias_loc_id_10;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -117,15 +117,15 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 36 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 36 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 # 1 "/usr/include/string.h" 1 3 4
 # 27 "/usr/include/string.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -650,7 +650,7 @@ extern "C++" __const char *basename (__const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 # 646 "/usr/include/string.h" 3 4
 }
-# 37 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c" 2
+# 37 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 30 "/usr/include/stdio.h" 3 4
 extern "C" {
@@ -1572,11 +1572,11 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 38 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c" 2
-# 38 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 38 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c" 2
+# 38 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 
-# 1 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.h" 1
-# 36 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.h"
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.h" 1
+# 36 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.h"
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 1 3 4
@@ -2730,9 +2730,9 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 37 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.h" 2
-# 1 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_types.h" 1
-# 48 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_types.h"
+# 37 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.h" 2
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_types.h" 1
+# 48 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_types.h"
 extern "C" {
 
 
@@ -2773,19 +2773,19 @@ extern "C" {
 # 169 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 2 3 4
 # 8 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/syslimits.h" 2 3 4
 # 35 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 2 3 4
-# 52 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_types.h" 2
-# 70 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_types.h"
+# 52 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_types.h" 2
+# 70 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_types.h"
      typedef unsigned char uint_8t;
-# 79 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_types.h"
+# 79 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_types.h"
      typedef unsigned short uint_16t;
-# 89 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_types.h"
+# 89 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_types.h"
      typedef unsigned int uint_32t;
-# 123 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_types.h"
+# 123 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_types.h"
        typedef unsigned long uint_64t;
-# 197 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_types.h"
+# 197 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_types.h"
 }
-# 38 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.h" 2
-# 54 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.h"
+# 38 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.h" 2
+# 54 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.h"
 typedef u_int8_t RNG_state;
 typedef u_int8_t uint8;
 typedef u_int32_t uint32;
@@ -2819,1056 +2819,1056 @@ struct sha1_ctx_s
 };
 
 typedef struct sha1_ctx_s sha1_ctx;
-# 95 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.h"
+# 95 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.h"
 void sha1_compile(sha1_ctx ctx[1]);
 
 void sha1_begin(sha1_ctx ctx[1]);
 void sha1_hash(const unsigned char data[], unsigned long len, sha1_ctx ctx[1]);
 void sha1_end(unsigned char hval[], sha1_ctx ctx[1]);
 void sha1(unsigned char hval[], const unsigned char data[], unsigned long len);
-# 40 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c" 2
-# 1 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_endian.h" 1
-# 49 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_endian.h"
+# 40 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c" 2
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_endian.h" 1
+# 49 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_endian.h"
 # 1 "/usr/include/byteswap.h" 1 3 4
 # 23 "/usr/include/byteswap.h" 3 4
 # 1 "/usr/include/bits/byteswap.h" 1 3 4
 # 24 "/usr/include/byteswap.h" 2 3 4
-# 50 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_endian.h" 2
-# 41 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c" 2
-# 49 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 49 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 50 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_endian.h" 2
+# 41 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c" 2
+# 49 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 49 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 void rng_init_npm(RNG_state *newstate, int seed);void sha1_begin_npm(sha1_ctx ctx[1]);void sha1_hash_npm(const unsigned char data[], unsigned long len, sha1_ctx ctx[1]);void sha1_end_npm(unsigned char hval[], sha1_ctx ctx[1]);
 void rng_init_quick(RNG_state *newstate, int seed); void rng_init(RNG_state *newstate, int seed);void sha1_begin_quick(sha1_ctx ctx[1]); void sha1_begin(sha1_ctx ctx[1]);void sha1_hash_quick(const unsigned char data[], unsigned long len, sha1_ctx ctx[1]); void sha1_hash(const unsigned char data[], unsigned long len, sha1_ctx ctx[1]);void sha1_end_quick(unsigned char hval[], sha1_ctx ctx[1]); void sha1_end(unsigned char hval[], sha1_ctx ctx[1]);
 void rng_init_resumable(RNG_state *newstate, int seed)
-# 50 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&rng_init), "rng_init", &____must_manage_rng_init, 2, 0, (size_t)(1633707214412207105UL), (size_t)(0UL)) ; struct sha1_ctx_s ctx;
-# 50 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 50 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&rng_init), "rng_init", &____must_manage_rng_init, 2, 0, (size_t)(11829459004090236881UL), (size_t)(0UL)) ; struct sha1_ctx_s ctx;
+# 50 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_rng_init_ctx_0) { register_stack_vars(1, "rng_init|ctx|0", &____must_checkpoint_rng_init_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 51 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 51 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ;
-# 52 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 52 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
    struct state_t gen; ;
-# 53 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 53 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   int i; ;
-# 54 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 55 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 54 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 55 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   for (i=0; i < 16; i++) { gen.state[i] = 0; };
-# 57 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 57 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   gen.state[16] = 0xFF & (seed >> 24);
-# 58 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 58 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   gen.state[17] = 0xFF & (seed >> 16);
-# 59 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 59 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   gen.state[18] = 0xFF & (seed >> 8);
-# 60 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 60 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   gen.state[19] = 0xFF & (seed >> 0);
-# 61 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 62 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 61 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 62 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
    call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
-# 63 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 63 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
    call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(gen.state, 20, &ctx); });
-# 64 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 64 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
    call_lbl_2: ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
-# 65 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 65 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_init", &____must_manage_rng_init, ____alias_loc_id_0, ____chimes_did_disable0, false); }
-# 66 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 67 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 66 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 67 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 void rng_spawn_npm(RNG_state *mystate, RNG_state *newstate, int spawnnumber);
 void rng_spawn_quick(RNG_state *mystate, RNG_state *newstate, int spawnnumber); void rng_spawn(RNG_state *mystate, RNG_state *newstate, int spawnnumber);
 void rng_spawn_resumable(RNG_state *mystate, RNG_state *newstate, int spawnnumber)
-# 68 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&rng_spawn), "rng_spawn", &____must_manage_rng_spawn, 3, 0, (size_t)(1633707214412207521UL), (size_t)(1633707214412207522UL), (size_t)(0UL)) ; uint8 bytes[4];
-# 68 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 68 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable1 = new_stack((void *)(&rng_spawn), "rng_spawn", &____must_manage_rng_spawn, 3, 0, (size_t)(11829459004090237297UL), (size_t)(11829459004090237298UL), (size_t)(0UL)) ; uint8 bytes[4];
+# 68 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 struct sha1_ctx_s ctx;
-# 68 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 68 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_rng_spawn_ctx_0) { register_stack_vars(1, "rng_spawn|ctx|0", &____must_checkpoint_rng_spawn_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 69 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 69 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
    ;
-# 70 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 70 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   ;
-# 71 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 72 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 71 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 72 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  bytes[0] = 0xFF & (spawnnumber >> 24);
-# 73 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 73 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  bytes[1] = 0xFF & (spawnnumber >> 16);
-# 74 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 74 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  bytes[2] = 0xFF & (spawnnumber >> 8);
-# 75 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 75 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  bytes[3] = 0xFF & spawnnumber;
-# 76 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 77 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 76 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 77 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
-# 78 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 78 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
-# 79 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 79 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   call_lbl_2: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(bytes, 4, &ctx); });
-# 80 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 80 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   call_lbl_3: ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
-# 81 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 81 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_spawn", &____must_manage_rng_spawn, ____alias_loc_id_4, ____chimes_did_disable1, false); }
-# 82 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 83 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 82 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 83 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 int rng_rand_npm(RNG_state *mystate);
 int rng_rand_quick(RNG_state *mystate); int rng_rand(RNG_state *mystate);
-int rng_rand_resumable(RNG_state *mystate){const int ____chimes_did_disable2 = new_stack((void *)(&rng_rand), "rng_rand", &____must_manage_rng_rand, 1, 0, (size_t)(1633707214412207566UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 84 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+int rng_rand_resumable(RNG_state *mystate){const int ____chimes_did_disable2 = new_stack((void *)(&rng_rand), "rng_rand", &____must_manage_rng_rand, 1, 0, (size_t)(11829459004090237342UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 84 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         int r; ;
-# 85 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 85 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   uint32 b; b = ((mystate[16] << 24) | (mystate[17] << 16)
-# 86 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 86 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   | (mystate[18] << 8) | (mystate[19] << 0)) ;
-# 87 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 87 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  b = b & 0x7fffffff;
-# 88 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 89 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 88 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 89 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  r = (int) b;
-# 90 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 91 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 90 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 91 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (r); rm_stack(false, 0UL, "rng_rand", &____must_manage_rng_rand, ____alias_loc_id_5, ____chimes_did_disable2, false); return ____chimes_ret_var_0; ;
-# 92 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 92 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_rand", &____must_manage_rng_rand, ____alias_loc_id_5, ____chimes_did_disable2, false); }
-# 93 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 94 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 93 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 94 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 int rng_nextrand_npm(RNG_state *mystate);
 int rng_nextrand_quick(RNG_state *mystate); int rng_nextrand(RNG_state *mystate);
-int rng_nextrand_resumable(RNG_state *mystate){const int ____chimes_did_disable3 = new_stack((void *)(&rng_nextrand), "rng_nextrand", &____must_manage_rng_nextrand, 1, 0, (size_t)(1633707214412207616UL)) ; struct sha1_ctx_s ctx;
-# 94 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+int rng_nextrand_resumable(RNG_state *mystate){const int ____chimes_did_disable3 = new_stack((void *)(&rng_nextrand), "rng_nextrand", &____must_manage_rng_nextrand, 1, 0, (size_t)(11829459004090237392UL)) ; struct sha1_ctx_s ctx;
+# 94 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_rng_nextrand_ctx_0) { register_stack_vars(1, "rng_nextrand|ctx|0", &____must_checkpoint_rng_nextrand_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 95 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 95 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
    ;
-# 96 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 96 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  int r; ;
-# 97 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 97 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  uint32 b; ;
-# 98 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 99 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 98 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 99 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
-# 100 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 100 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
-# 101 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 101 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   call_lbl_2: ({ calling_npm("sha1_end", 0); sha1_end_npm(mystate, &ctx); });
-# 102 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 102 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  b = (mystate[16] << 24) | (mystate[17] << 16)
-# 103 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 103 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   | (mystate[18] << 8) | (mystate[19] << 0);
-# 104 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 104 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  b = b & 0x7fffffff;
-# 105 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 106 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 105 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 106 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  r = (int) b;
-# 107 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 107 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (r); rm_stack(false, 0UL, "rng_nextrand", &____must_manage_rng_nextrand, ____alias_loc_id_6, ____chimes_did_disable3, false); return ____chimes_ret_var_1; ;
-# 108 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 108 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_nextrand", &____must_manage_rng_nextrand, ____alias_loc_id_6, ____chimes_did_disable3, false); }
-# 109 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 110 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 111 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 109 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 110 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 111 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 char * rng_showstate_npm(RNG_state *state, char *s);
 char * rng_showstate_quick(RNG_state *state, char *s); char * rng_showstate(RNG_state *state, char *s);
-char * rng_showstate_resumable(RNG_state *state, char *s){const int ____chimes_did_disable4 = new_stack((void *)(&rng_showstate), "rng_showstate", &____must_manage_rng_showstate, 2, 0, (size_t)(1633707214412207639UL), (size_t)(1633707214412207640UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 112 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+char * rng_showstate_resumable(RNG_state *state, char *s){const int ____chimes_did_disable4 = new_stack((void *)(&rng_showstate), "rng_showstate", &____must_manage_rng_showstate, 2, 0, (size_t)(11829459004090237415UL), (size_t)(11829459004090237416UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 112 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   sprintf(s,"%.2X%.2X...", state[0],state[1]);
-# 113 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-   char *____chimes_ret_var_2; ; ____chimes_ret_var_2 = (s); rm_stack(true, 1633707214412207640UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4, false); return ____chimes_ret_var_2; ;
-# 114 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(true, 1633707214412207640UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4, false); }
-# 115 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 116 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 117 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 113 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+   char *____chimes_ret_var_2; ; ____chimes_ret_var_2 = (s); rm_stack(true, 11829459004090237416UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4, false); return ____chimes_ret_var_2; ;
+# 114 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+rm_stack(true, 11829459004090237416UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4, false); }
+# 115 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 116 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 117 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 int rng_showtype_npm(char *strBuf, int ind);
 int rng_showtype_quick(char *strBuf, int ind); int rng_showtype(char *strBuf, int ind);
-int rng_showtype_resumable(char *strBuf, int ind) {const int ____chimes_did_disable5 = new_stack((void *)(&rng_showtype), "rng_showtype", &____must_manage_rng_showtype, 2, 0, (size_t)(1633707214412207663UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 118 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+int rng_showtype_resumable(char *strBuf, int ind) {const int ____chimes_did_disable5 = new_stack((void *)(&rng_showtype), "rng_showtype", &____must_manage_rng_showtype, 2, 0, (size_t)(11829459004090237439UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 118 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   ind += sprintf(strBuf+ind, "SHA-1 (state size = %luB)",
-# 119 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 119 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
                  sizeof(struct state_t));
-# 120 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 120 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
    int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (ind); rm_stack(false, 0UL, "rng_showtype", &____must_manage_rng_showtype, ____alias_loc_id_8, ____chimes_did_disable5, false); return ____chimes_ret_var_3; ;
-# 121 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 121 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_showtype", &____must_manage_rng_showtype, ____alias_loc_id_8, ____chimes_did_disable5, false); }
-# 195 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 195 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 195 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 195 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_compile_npm(sha1_ctx ctx[1]);
 void sha1_compile_quick(sha1_ctx ctx[1]); void sha1_compile(sha1_ctx ctx[1]);
 void sha1_compile_resumable(sha1_ctx ctx[1])
-# 196 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-{const int ____chimes_did_disable6 = new_stack((void *)(&sha1_compile), "sha1_compile", &____must_manage_sha1_compile, 1, 0, (size_t)(1633707214412211977UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; uint_32t *w; w = (ctx->wbuf) ;
-# 197 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 198 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 199 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 200 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 201 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 202 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 196 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable6 = new_stack((void *)(&sha1_compile), "sha1_compile", &____must_manage_sha1_compile, 1, 0, (size_t)(11829459004090241753UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; uint_32t *w; w = (ctx->wbuf) ;
+# 197 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 198 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 199 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 200 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 201 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 202 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     uint_32t v0; uint_32t v1; uint_32t v2; uint_32t v3; uint_32t v4; ;
-# 203 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 203 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v0 = ctx->hash[0]; v1 = ctx->hash[1];
-# 204 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 204 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v2 = ctx->hash[2]; v3 = ctx->hash[3];
-# 205 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 205 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 = ctx->hash[4];
-# 206 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 207 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 208 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 209 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 210 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 206 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 207 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 208 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 209 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 210 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[0]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[0 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[0 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[0 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[0 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 211 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 211 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[5]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[5 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[5 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[5 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[5 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 212 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 212 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[10]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[10 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[10 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[10 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[10 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 213 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 213 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[15]; v1 = (((v1) >> 2) | ((v1) << (32 - 2)));
-# 214 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 215 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 216 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 217 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 218 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 219 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 220 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 214 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 215 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 216 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 217 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 218 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 219 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 220 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + (w[(16) & 15] = (((w[((16) + 13) & 15] ^ w[((16) + 8) & 15] ^ w[((16) + 2) & 15] ^ w[(16) & 15]) << 1) | ((w[((16) + 13) & 15] ^ w[((16) + 8) & 15] ^ w[((16) + 2) & 15] ^ w[(16) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2)));
-# 221 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 221 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + (w[(17) & 15] = (((w[((17) + 13) & 15] ^ w[((17) + 8) & 15] ^ w[((17) + 2) & 15] ^ w[(17) & 15]) << 1) | ((w[((17) + 13) & 15] ^ w[((17) + 8) & 15] ^ w[((17) + 2) & 15] ^ w[(17) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2)));
-# 222 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 222 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + (w[(18) & 15] = (((w[((18) + 13) & 15] ^ w[((18) + 8) & 15] ^ w[((18) + 2) & 15] ^ w[(18) & 15]) << 1) | ((w[((18) + 13) & 15] ^ w[((18) + 8) & 15] ^ w[((18) + 2) & 15] ^ w[(18) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2)));
-# 223 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 223 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + (w[(19) & 15] = (((w[((19) + 13) & 15] ^ w[((19) + 8) & 15] ^ w[((19) + 2) & 15] ^ w[(19) & 15]) << 1) | ((w[((19) + 13) & 15] ^ w[((19) + 8) & 15] ^ w[((19) + 2) & 15] ^ w[(19) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 224 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 225 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 224 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 225 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(20) & 15] = (((w[((20) + 13) & 15] ^ w[((20) + 8) & 15] ^ w[((20) + 2) & 15] ^ w[(20) & 15]) << 1) | ((w[((20) + 13) & 15] ^ w[((20) + 8) & 15] ^ w[((20) + 2) & 15] ^ w[(20) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(20 +1) & 15] = (((w[((20 +1) + 13) & 15] ^ w[((20 +1) + 8) & 15] ^ w[((20 +1) + 2) & 15] ^ w[(20 +1) & 15]) << 1) | ((w[((20 +1) + 13) & 15] ^ w[((20 +1) + 8) & 15] ^ w[((20 +1) + 2) & 15] ^ w[(20 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(20 +2) & 15] = (((w[((20 +2) + 13) & 15] ^ w[((20 +2) + 8) & 15] ^ w[((20 +2) + 2) & 15] ^ w[(20 +2) & 15]) << 1) | ((w[((20 +2) + 13) & 15] ^ w[((20 +2) + 8) & 15] ^ w[((20 +2) + 2) & 15] ^ w[(20 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(20 +3) & 15] = (((w[((20 +3) + 13) & 15] ^ w[((20 +3) + 8) & 15] ^ w[((20 +3) + 2) & 15] ^ w[(20 +3) & 15]) << 1) | ((w[((20 +3) + 13) & 15] ^ w[((20 +3) + 8) & 15] ^ w[((20 +3) + 2) & 15] ^ w[(20 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(20 +4) & 15] = (((w[((20 +4) + 13) & 15] ^ w[((20 +4) + 8) & 15] ^ w[((20 +4) + 2) & 15] ^ w[(20 +4) & 15]) << 1) | ((w[((20 +4) + 13) & 15] ^ w[((20 +4) + 8) & 15] ^ w[((20 +4) + 2) & 15] ^ w[(20 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 226 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 226 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(25) & 15] = (((w[((25) + 13) & 15] ^ w[((25) + 8) & 15] ^ w[((25) + 2) & 15] ^ w[(25) & 15]) << 1) | ((w[((25) + 13) & 15] ^ w[((25) + 8) & 15] ^ w[((25) + 2) & 15] ^ w[(25) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(25 +1) & 15] = (((w[((25 +1) + 13) & 15] ^ w[((25 +1) + 8) & 15] ^ w[((25 +1) + 2) & 15] ^ w[(25 +1) & 15]) << 1) | ((w[((25 +1) + 13) & 15] ^ w[((25 +1) + 8) & 15] ^ w[((25 +1) + 2) & 15] ^ w[(25 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(25 +2) & 15] = (((w[((25 +2) + 13) & 15] ^ w[((25 +2) + 8) & 15] ^ w[((25 +2) + 2) & 15] ^ w[(25 +2) & 15]) << 1) | ((w[((25 +2) + 13) & 15] ^ w[((25 +2) + 8) & 15] ^ w[((25 +2) + 2) & 15] ^ w[(25 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(25 +3) & 15] = (((w[((25 +3) + 13) & 15] ^ w[((25 +3) + 8) & 15] ^ w[((25 +3) + 2) & 15] ^ w[(25 +3) & 15]) << 1) | ((w[((25 +3) + 13) & 15] ^ w[((25 +3) + 8) & 15] ^ w[((25 +3) + 2) & 15] ^ w[(25 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(25 +4) & 15] = (((w[((25 +4) + 13) & 15] ^ w[((25 +4) + 8) & 15] ^ w[((25 +4) + 2) & 15] ^ w[(25 +4) & 15]) << 1) | ((w[((25 +4) + 13) & 15] ^ w[((25 +4) + 8) & 15] ^ w[((25 +4) + 2) & 15] ^ w[(25 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 227 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 227 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(30) & 15] = (((w[((30) + 13) & 15] ^ w[((30) + 8) & 15] ^ w[((30) + 2) & 15] ^ w[(30) & 15]) << 1) | ((w[((30) + 13) & 15] ^ w[((30) + 8) & 15] ^ w[((30) + 2) & 15] ^ w[(30) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(30 +1) & 15] = (((w[((30 +1) + 13) & 15] ^ w[((30 +1) + 8) & 15] ^ w[((30 +1) + 2) & 15] ^ w[(30 +1) & 15]) << 1) | ((w[((30 +1) + 13) & 15] ^ w[((30 +1) + 8) & 15] ^ w[((30 +1) + 2) & 15] ^ w[(30 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(30 +2) & 15] = (((w[((30 +2) + 13) & 15] ^ w[((30 +2) + 8) & 15] ^ w[((30 +2) + 2) & 15] ^ w[(30 +2) & 15]) << 1) | ((w[((30 +2) + 13) & 15] ^ w[((30 +2) + 8) & 15] ^ w[((30 +2) + 2) & 15] ^ w[(30 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(30 +3) & 15] = (((w[((30 +3) + 13) & 15] ^ w[((30 +3) + 8) & 15] ^ w[((30 +3) + 2) & 15] ^ w[(30 +3) & 15]) << 1) | ((w[((30 +3) + 13) & 15] ^ w[((30 +3) + 8) & 15] ^ w[((30 +3) + 2) & 15] ^ w[(30 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(30 +4) & 15] = (((w[((30 +4) + 13) & 15] ^ w[((30 +4) + 8) & 15] ^ w[((30 +4) + 2) & 15] ^ w[(30 +4) & 15]) << 1) | ((w[((30 +4) + 13) & 15] ^ w[((30 +4) + 8) & 15] ^ w[((30 +4) + 2) & 15] ^ w[(30 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 228 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 228 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(35) & 15] = (((w[((35) + 13) & 15] ^ w[((35) + 8) & 15] ^ w[((35) + 2) & 15] ^ w[(35) & 15]) << 1) | ((w[((35) + 13) & 15] ^ w[((35) + 8) & 15] ^ w[((35) + 2) & 15] ^ w[(35) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(35 +1) & 15] = (((w[((35 +1) + 13) & 15] ^ w[((35 +1) + 8) & 15] ^ w[((35 +1) + 2) & 15] ^ w[(35 +1) & 15]) << 1) | ((w[((35 +1) + 13) & 15] ^ w[((35 +1) + 8) & 15] ^ w[((35 +1) + 2) & 15] ^ w[(35 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(35 +2) & 15] = (((w[((35 +2) + 13) & 15] ^ w[((35 +2) + 8) & 15] ^ w[((35 +2) + 2) & 15] ^ w[(35 +2) & 15]) << 1) | ((w[((35 +2) + 13) & 15] ^ w[((35 +2) + 8) & 15] ^ w[((35 +2) + 2) & 15] ^ w[(35 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(35 +3) & 15] = (((w[((35 +3) + 13) & 15] ^ w[((35 +3) + 8) & 15] ^ w[((35 +3) + 2) & 15] ^ w[(35 +3) & 15]) << 1) | ((w[((35 +3) + 13) & 15] ^ w[((35 +3) + 8) & 15] ^ w[((35 +3) + 2) & 15] ^ w[(35 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(35 +4) & 15] = (((w[((35 +4) + 13) & 15] ^ w[((35 +4) + 8) & 15] ^ w[((35 +4) + 2) & 15] ^ w[(35 +4) & 15]) << 1) | ((w[((35 +4) + 13) & 15] ^ w[((35 +4) + 8) & 15] ^ w[((35 +4) + 2) & 15] ^ w[(35 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 229 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 230 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 229 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 230 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(40) & 15] = (((w[((40) + 13) & 15] ^ w[((40) + 8) & 15] ^ w[((40) + 2) & 15] ^ w[(40) & 15]) << 1) | ((w[((40) + 13) & 15] ^ w[((40) + 8) & 15] ^ w[((40) + 2) & 15] ^ w[(40) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(40 +1) & 15] = (((w[((40 +1) + 13) & 15] ^ w[((40 +1) + 8) & 15] ^ w[((40 +1) + 2) & 15] ^ w[(40 +1) & 15]) << 1) | ((w[((40 +1) + 13) & 15] ^ w[((40 +1) + 8) & 15] ^ w[((40 +1) + 2) & 15] ^ w[(40 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(40 +2) & 15] = (((w[((40 +2) + 13) & 15] ^ w[((40 +2) + 8) & 15] ^ w[((40 +2) + 2) & 15] ^ w[(40 +2) & 15]) << 1) | ((w[((40 +2) + 13) & 15] ^ w[((40 +2) + 8) & 15] ^ w[((40 +2) + 2) & 15] ^ w[(40 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(40 +3) & 15] = (((w[((40 +3) + 13) & 15] ^ w[((40 +3) + 8) & 15] ^ w[((40 +3) + 2) & 15] ^ w[(40 +3) & 15]) << 1) | ((w[((40 +3) + 13) & 15] ^ w[((40 +3) + 8) & 15] ^ w[((40 +3) + 2) & 15] ^ w[(40 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(40 +4) & 15] = (((w[((40 +4) + 13) & 15] ^ w[((40 +4) + 8) & 15] ^ w[((40 +4) + 2) & 15] ^ w[(40 +4) & 15]) << 1) | ((w[((40 +4) + 13) & 15] ^ w[((40 +4) + 8) & 15] ^ w[((40 +4) + 2) & 15] ^ w[(40 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 231 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 231 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(45) & 15] = (((w[((45) + 13) & 15] ^ w[((45) + 8) & 15] ^ w[((45) + 2) & 15] ^ w[(45) & 15]) << 1) | ((w[((45) + 13) & 15] ^ w[((45) + 8) & 15] ^ w[((45) + 2) & 15] ^ w[(45) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(45 +1) & 15] = (((w[((45 +1) + 13) & 15] ^ w[((45 +1) + 8) & 15] ^ w[((45 +1) + 2) & 15] ^ w[(45 +1) & 15]) << 1) | ((w[((45 +1) + 13) & 15] ^ w[((45 +1) + 8) & 15] ^ w[((45 +1) + 2) & 15] ^ w[(45 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(45 +2) & 15] = (((w[((45 +2) + 13) & 15] ^ w[((45 +2) + 8) & 15] ^ w[((45 +2) + 2) & 15] ^ w[(45 +2) & 15]) << 1) | ((w[((45 +2) + 13) & 15] ^ w[((45 +2) + 8) & 15] ^ w[((45 +2) + 2) & 15] ^ w[(45 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(45 +3) & 15] = (((w[((45 +3) + 13) & 15] ^ w[((45 +3) + 8) & 15] ^ w[((45 +3) + 2) & 15] ^ w[(45 +3) & 15]) << 1) | ((w[((45 +3) + 13) & 15] ^ w[((45 +3) + 8) & 15] ^ w[((45 +3) + 2) & 15] ^ w[(45 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(45 +4) & 15] = (((w[((45 +4) + 13) & 15] ^ w[((45 +4) + 8) & 15] ^ w[((45 +4) + 2) & 15] ^ w[(45 +4) & 15]) << 1) | ((w[((45 +4) + 13) & 15] ^ w[((45 +4) + 8) & 15] ^ w[((45 +4) + 2) & 15] ^ w[(45 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 232 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 232 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(50) & 15] = (((w[((50) + 13) & 15] ^ w[((50) + 8) & 15] ^ w[((50) + 2) & 15] ^ w[(50) & 15]) << 1) | ((w[((50) + 13) & 15] ^ w[((50) + 8) & 15] ^ w[((50) + 2) & 15] ^ w[(50) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(50 +1) & 15] = (((w[((50 +1) + 13) & 15] ^ w[((50 +1) + 8) & 15] ^ w[((50 +1) + 2) & 15] ^ w[(50 +1) & 15]) << 1) | ((w[((50 +1) + 13) & 15] ^ w[((50 +1) + 8) & 15] ^ w[((50 +1) + 2) & 15] ^ w[(50 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(50 +2) & 15] = (((w[((50 +2) + 13) & 15] ^ w[((50 +2) + 8) & 15] ^ w[((50 +2) + 2) & 15] ^ w[(50 +2) & 15]) << 1) | ((w[((50 +2) + 13) & 15] ^ w[((50 +2) + 8) & 15] ^ w[((50 +2) + 2) & 15] ^ w[(50 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(50 +3) & 15] = (((w[((50 +3) + 13) & 15] ^ w[((50 +3) + 8) & 15] ^ w[((50 +3) + 2) & 15] ^ w[(50 +3) & 15]) << 1) | ((w[((50 +3) + 13) & 15] ^ w[((50 +3) + 8) & 15] ^ w[((50 +3) + 2) & 15] ^ w[(50 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(50 +4) & 15] = (((w[((50 +4) + 13) & 15] ^ w[((50 +4) + 8) & 15] ^ w[((50 +4) + 2) & 15] ^ w[(50 +4) & 15]) << 1) | ((w[((50 +4) + 13) & 15] ^ w[((50 +4) + 8) & 15] ^ w[((50 +4) + 2) & 15] ^ w[(50 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 233 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 233 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(55) & 15] = (((w[((55) + 13) & 15] ^ w[((55) + 8) & 15] ^ w[((55) + 2) & 15] ^ w[(55) & 15]) << 1) | ((w[((55) + 13) & 15] ^ w[((55) + 8) & 15] ^ w[((55) + 2) & 15] ^ w[(55) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(55 +1) & 15] = (((w[((55 +1) + 13) & 15] ^ w[((55 +1) + 8) & 15] ^ w[((55 +1) + 2) & 15] ^ w[(55 +1) & 15]) << 1) | ((w[((55 +1) + 13) & 15] ^ w[((55 +1) + 8) & 15] ^ w[((55 +1) + 2) & 15] ^ w[(55 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(55 +2) & 15] = (((w[((55 +2) + 13) & 15] ^ w[((55 +2) + 8) & 15] ^ w[((55 +2) + 2) & 15] ^ w[(55 +2) & 15]) << 1) | ((w[((55 +2) + 13) & 15] ^ w[((55 +2) + 8) & 15] ^ w[((55 +2) + 2) & 15] ^ w[(55 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(55 +3) & 15] = (((w[((55 +3) + 13) & 15] ^ w[((55 +3) + 8) & 15] ^ w[((55 +3) + 2) & 15] ^ w[(55 +3) & 15]) << 1) | ((w[((55 +3) + 13) & 15] ^ w[((55 +3) + 8) & 15] ^ w[((55 +3) + 2) & 15] ^ w[(55 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(55 +4) & 15] = (((w[((55 +4) + 13) & 15] ^ w[((55 +4) + 8) & 15] ^ w[((55 +4) + 2) & 15] ^ w[(55 +4) & 15]) << 1) | ((w[((55 +4) + 13) & 15] ^ w[((55 +4) + 8) & 15] ^ w[((55 +4) + 2) & 15] ^ w[(55 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 234 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 235 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 234 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 235 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(60) & 15] = (((w[((60) + 13) & 15] ^ w[((60) + 8) & 15] ^ w[((60) + 2) & 15] ^ w[(60) & 15]) << 1) | ((w[((60) + 13) & 15] ^ w[((60) + 8) & 15] ^ w[((60) + 2) & 15] ^ w[(60) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(60 +1) & 15] = (((w[((60 +1) + 13) & 15] ^ w[((60 +1) + 8) & 15] ^ w[((60 +1) + 2) & 15] ^ w[(60 +1) & 15]) << 1) | ((w[((60 +1) + 13) & 15] ^ w[((60 +1) + 8) & 15] ^ w[((60 +1) + 2) & 15] ^ w[(60 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(60 +2) & 15] = (((w[((60 +2) + 13) & 15] ^ w[((60 +2) + 8) & 15] ^ w[((60 +2) + 2) & 15] ^ w[(60 +2) & 15]) << 1) | ((w[((60 +2) + 13) & 15] ^ w[((60 +2) + 8) & 15] ^ w[((60 +2) + 2) & 15] ^ w[(60 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(60 +3) & 15] = (((w[((60 +3) + 13) & 15] ^ w[((60 +3) + 8) & 15] ^ w[((60 +3) + 2) & 15] ^ w[(60 +3) & 15]) << 1) | ((w[((60 +3) + 13) & 15] ^ w[((60 +3) + 8) & 15] ^ w[((60 +3) + 2) & 15] ^ w[(60 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(60 +4) & 15] = (((w[((60 +4) + 13) & 15] ^ w[((60 +4) + 8) & 15] ^ w[((60 +4) + 2) & 15] ^ w[(60 +4) & 15]) << 1) | ((w[((60 +4) + 13) & 15] ^ w[((60 +4) + 8) & 15] ^ w[((60 +4) + 2) & 15] ^ w[(60 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 236 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 236 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(65) & 15] = (((w[((65) + 13) & 15] ^ w[((65) + 8) & 15] ^ w[((65) + 2) & 15] ^ w[(65) & 15]) << 1) | ((w[((65) + 13) & 15] ^ w[((65) + 8) & 15] ^ w[((65) + 2) & 15] ^ w[(65) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(65 +1) & 15] = (((w[((65 +1) + 13) & 15] ^ w[((65 +1) + 8) & 15] ^ w[((65 +1) + 2) & 15] ^ w[(65 +1) & 15]) << 1) | ((w[((65 +1) + 13) & 15] ^ w[((65 +1) + 8) & 15] ^ w[((65 +1) + 2) & 15] ^ w[(65 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(65 +2) & 15] = (((w[((65 +2) + 13) & 15] ^ w[((65 +2) + 8) & 15] ^ w[((65 +2) + 2) & 15] ^ w[(65 +2) & 15]) << 1) | ((w[((65 +2) + 13) & 15] ^ w[((65 +2) + 8) & 15] ^ w[((65 +2) + 2) & 15] ^ w[(65 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(65 +3) & 15] = (((w[((65 +3) + 13) & 15] ^ w[((65 +3) + 8) & 15] ^ w[((65 +3) + 2) & 15] ^ w[(65 +3) & 15]) << 1) | ((w[((65 +3) + 13) & 15] ^ w[((65 +3) + 8) & 15] ^ w[((65 +3) + 2) & 15] ^ w[(65 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(65 +4) & 15] = (((w[((65 +4) + 13) & 15] ^ w[((65 +4) + 8) & 15] ^ w[((65 +4) + 2) & 15] ^ w[(65 +4) & 15]) << 1) | ((w[((65 +4) + 13) & 15] ^ w[((65 +4) + 8) & 15] ^ w[((65 +4) + 2) & 15] ^ w[(65 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 237 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 237 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(70) & 15] = (((w[((70) + 13) & 15] ^ w[((70) + 8) & 15] ^ w[((70) + 2) & 15] ^ w[(70) & 15]) << 1) | ((w[((70) + 13) & 15] ^ w[((70) + 8) & 15] ^ w[((70) + 2) & 15] ^ w[(70) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(70 +1) & 15] = (((w[((70 +1) + 13) & 15] ^ w[((70 +1) + 8) & 15] ^ w[((70 +1) + 2) & 15] ^ w[(70 +1) & 15]) << 1) | ((w[((70 +1) + 13) & 15] ^ w[((70 +1) + 8) & 15] ^ w[((70 +1) + 2) & 15] ^ w[(70 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(70 +2) & 15] = (((w[((70 +2) + 13) & 15] ^ w[((70 +2) + 8) & 15] ^ w[((70 +2) + 2) & 15] ^ w[(70 +2) & 15]) << 1) | ((w[((70 +2) + 13) & 15] ^ w[((70 +2) + 8) & 15] ^ w[((70 +2) + 2) & 15] ^ w[(70 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(70 +3) & 15] = (((w[((70 +3) + 13) & 15] ^ w[((70 +3) + 8) & 15] ^ w[((70 +3) + 2) & 15] ^ w[(70 +3) & 15]) << 1) | ((w[((70 +3) + 13) & 15] ^ w[((70 +3) + 8) & 15] ^ w[((70 +3) + 2) & 15] ^ w[(70 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(70 +4) & 15] = (((w[((70 +4) + 13) & 15] ^ w[((70 +4) + 8) & 15] ^ w[((70 +4) + 2) & 15] ^ w[(70 +4) & 15]) << 1) | ((w[((70 +4) + 13) & 15] ^ w[((70 +4) + 8) & 15] ^ w[((70 +4) + 2) & 15] ^ w[(70 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 238 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 238 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(75) & 15] = (((w[((75) + 13) & 15] ^ w[((75) + 8) & 15] ^ w[((75) + 2) & 15] ^ w[(75) & 15]) << 1) | ((w[((75) + 13) & 15] ^ w[((75) + 8) & 15] ^ w[((75) + 2) & 15] ^ w[(75) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(75 +1) & 15] = (((w[((75 +1) + 13) & 15] ^ w[((75 +1) + 8) & 15] ^ w[((75 +1) + 2) & 15] ^ w[(75 +1) & 15]) << 1) | ((w[((75 +1) + 13) & 15] ^ w[((75 +1) + 8) & 15] ^ w[((75 +1) + 2) & 15] ^ w[(75 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(75 +2) & 15] = (((w[((75 +2) + 13) & 15] ^ w[((75 +2) + 8) & 15] ^ w[((75 +2) + 2) & 15] ^ w[(75 +2) & 15]) << 1) | ((w[((75 +2) + 13) & 15] ^ w[((75 +2) + 8) & 15] ^ w[((75 +2) + 2) & 15] ^ w[(75 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(75 +3) & 15] = (((w[((75 +3) + 13) & 15] ^ w[((75 +3) + 8) & 15] ^ w[((75 +3) + 2) & 15] ^ w[(75 +3) & 15]) << 1) | ((w[((75 +3) + 13) & 15] ^ w[((75 +3) + 8) & 15] ^ w[((75 +3) + 2) & 15] ^ w[(75 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(75 +4) & 15] = (((w[((75 +4) + 13) & 15] ^ w[((75 +4) + 8) & 15] ^ w[((75 +4) + 2) & 15] ^ w[(75 +4) & 15]) << 1) | ((w[((75 +4) + 13) & 15] ^ w[((75 +4) + 8) & 15] ^ w[((75 +4) + 2) & 15] ^ w[(75 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 239 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 240 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 241 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 242 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 243 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 244 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 245 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 239 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 240 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 241 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 242 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 243 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 244 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 245 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[0] += v0; ctx->hash[1] += v1;
-# 246 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 246 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[2] += v2; ctx->hash[3] += v3;
-# 247 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 247 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[4] += v4;
-# 248 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 249 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 248 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 249 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1_compile", &____must_manage_sha1_compile, ____alias_loc_id_9, ____chimes_did_disable6, false); }
-# 250 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 251 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 250 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 251 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_begin_resumable(sha1_ctx ctx[1])
-# 252 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&sha1_begin), "sha1_begin", &____must_manage_sha1_begin, 1, 0, (size_t)(1633707214412207141UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 253 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 252 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable7 = new_stack((void *)(&sha1_begin), "sha1_begin", &____must_manage_sha1_begin, 1, 0, (size_t)(11829459004090236917UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 253 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->count[0] = ctx->count[1] = 0;
-# 254 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 254 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[0] = 0x67452301;
-# 255 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 255 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[1] = 0xefcdab89;
-# 256 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 256 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[2] = 0x98badcfe;
-# 257 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 257 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[3] = 0x10325476;
-# 258 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 258 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[4] = 0xc3d2e1f0;
-# 259 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 259 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1_begin", &____must_manage_sha1_begin, ____alias_loc_id_1, ____chimes_did_disable7, false); }
-# 260 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 261 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 262 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 263 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 264 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 260 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 261 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 262 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 263 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 264 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_hash_resumable(const unsigned char data[], unsigned long len, sha1_ctx ctx[1])
-# 265 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&sha1_hash), "sha1_hash", &____must_manage_sha1_hash, 3, 0, (size_t)(1633707214412207285UL), (size_t)(0UL), (size_t)(1633707214412207287UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; uint_32t pos; uint_32t space; pos = ((uint_32t)(ctx->count[0] & (64 - 1))) ; space = (64 - pos) ;
-# 267 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 265 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable8 = new_stack((void *)(&sha1_hash), "sha1_hash", &____must_manage_sha1_hash, 3, 0, (size_t)(11829459004090237061UL), (size_t)(0UL), (size_t)(11829459004090237063UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; uint_32t pos; uint_32t space; pos = ((uint_32t)(ctx->count[0] & (64 - 1))) ; space = (64 - pos) ;
+# 267 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
      const unsigned char *sp; sp = (data) ;
-# 268 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 269 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 268 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 269 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     if ((ctx->count[0] += len) < len) {++(ctx->count[1]); };
-# 271 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 272 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 271 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 272 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     while(len >= space)
-# 273 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 273 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     {
-# 274 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 274 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         memcpy(((unsigned char*)ctx->wbuf) + pos, sp, space);
-# 275 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 275 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         sp += space; len -= space; space = 64; pos = 0;
-# 276 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 276 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         { int _i; _i = ((64 >> 2)) ; while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
-# 277 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 277 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
          call_lbl_0: ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
-# 278 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 278 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     }
-# 279 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 280 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 279 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 280 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     memcpy(((unsigned char*)ctx->wbuf) + pos, sp, len);
-# 281 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 281 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1_hash", &____must_manage_sha1_hash, ____alias_loc_id_2, ____chimes_did_disable8, false); }
-# 282 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 283 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 284 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 285 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 282 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 283 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 284 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 285 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_end_resumable(unsigned char hval[], sha1_ctx ctx[1])
-# 286 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&sha1_end), "sha1_end", &____must_manage_sha1_end, 2, 0, (size_t)(1633707214412207475UL), (size_t)(1633707214412207476UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; uint_32t i; i = ((uint_32t)(ctx->count[0] & (64 - 1))) ;
-# 287 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 288 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 289 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 290 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 291 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 286 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable9 = new_stack((void *)(&sha1_end), "sha1_end", &____must_manage_sha1_end, 2, 0, (size_t)(11829459004090237251UL), (size_t)(11829459004090237252UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; uint_32t i; i = ((uint_32t)(ctx->count[0] & (64 - 1))) ;
+# 287 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 288 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 289 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 290 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 291 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     { int _i; _i = (((i + 3) >> 2)) ; while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
-# 292 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 293 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 294 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 295 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 296 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 297 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 292 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 293 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 294 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 295 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 296 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 297 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->wbuf[i >> 2] &= 0xffffff80 << 8 * (~i & 3);
-# 298 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 298 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->wbuf[i >> 2] |= 0x00000080 << 8 * (~i & 3);
-# 299 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 300 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 301 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 302 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 303 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 299 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 300 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 301 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 302 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 303 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     if (i > 64 - 9) {{
-# 305 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 305 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         if (i < 60) {ctx->wbuf[15] = 0; };
-# 306 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 306 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
          call_lbl_0: ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
-# 307 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 307 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         i = 0;
-# 308 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 308 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     }; } else {i = (i >> 2) + 1; } ;
-# 311 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 312 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 311 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 312 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     while(i < 14)
-# 313 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 313 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         ctx->wbuf[i++] = 0;
-# 314 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 315 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 316 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 317 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 318 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 319 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 314 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 315 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 316 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 317 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 318 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 319 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->wbuf[14] = (ctx->count[1] << 3) | (ctx->count[0] >> 29);
-# 320 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 320 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->wbuf[15] = ctx->count[0] << 3;
-# 321 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 321 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
      call_lbl_1: ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
-# 322 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 323 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 324 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 325 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 322 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 323 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 324 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 325 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     for (i = 0; i < 20; ++i) { hval[i] = (unsigned char)(ctx->hash[i >> 2] >> (8 * (~i & 3))); };
-# 327 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 327 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1_end", &____must_manage_sha1_end, ____alias_loc_id_3, ____chimes_did_disable9, false); }
-# 328 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 329 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 328 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 329 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_npm(unsigned char hval[], const unsigned char data[], unsigned long len);
 void sha1_quick(unsigned char hval[], const unsigned char data[], unsigned long len); void sha1(unsigned char hval[], const unsigned char data[], unsigned long len);
 void sha1_resumable(unsigned char hval[], const unsigned char data[], unsigned long len)
-# 330 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-{const int ____chimes_did_disable10 = new_stack((void *)(&sha1), "sha1", &____must_manage_sha1, 3, 0, (size_t)(1633707214412212004UL), (size_t)(1633707214412212005UL), (size_t)(0UL)) ; sha1_ctx cx[1];
-# 330 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 330 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable10 = new_stack((void *)(&sha1), "sha1", &____must_manage_sha1, 3, 0, (size_t)(11829459004090241780UL), (size_t)(11829459004090241781UL), (size_t)(0UL)) ; sha1_ctx cx[1];
+# 330 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_sha1_cx_0) { register_stack_vars(1, "sha1|cx|0", &____must_checkpoint_sha1_cx_0, "[1 x %struct.sha1_ctx_s]", (void *)(cx), (size_t)92, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; ;
-# 331 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 332 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 331 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 332 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
      call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(cx); }); call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(data, len, cx); }); call_lbl_2: ({ calling_npm("sha1_end", 0); sha1_end_npm(hval, cx); });
-# 333 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 333 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1", &____must_manage_sha1, ____alias_loc_id_10, ____chimes_did_disable10, false); }
-# 49 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 49 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 void rng_init_quick(RNG_state *newstate, int seed)
-# 50 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&rng_init), "rng_init", &____must_manage_rng_init, 2, 0, (size_t)(1633707214412207105UL), (size_t)(0UL)) ; struct sha1_ctx_s ctx;
-# 50 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 50 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&rng_init), "rng_init", &____must_manage_rng_init, 2, 0, (size_t)(11829459004090236881UL), (size_t)(0UL)) ; struct sha1_ctx_s ctx;
+# 50 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_rng_init_ctx_0) { register_stack_vars(1, "rng_init|ctx|0", &____must_checkpoint_rng_init_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } ; ;
-# 51 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 51 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ;
-# 52 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 52 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
    struct state_t gen; ;
-# 53 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 53 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   int i; ;
-# 54 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 55 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 54 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 55 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   for (i=0; i < 16; i++) { gen.state[i] = 0; };
-# 57 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 57 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   gen.state[16] = 0xFF & (seed >> 24);
-# 58 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 58 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   gen.state[17] = 0xFF & (seed >> 16);
-# 59 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 59 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   gen.state[18] = 0xFF & (seed >> 8);
-# 60 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 60 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   gen.state[19] = 0xFF & (seed >> 0);
-# 61 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 62 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 61 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 62 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
    call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
-# 63 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 63 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
    call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(gen.state, 20, &ctx); });
-# 64 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 64 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
    call_lbl_2: ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
-# 65 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 65 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_init", &____must_manage_rng_init, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 
 void rng_init(RNG_state *newstate, int seed) { (____chimes_replaying ? rng_init_resumable(newstate, seed) : rng_init_quick(newstate, seed)); }
-# 67 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 67 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 void rng_spawn_quick(RNG_state *mystate, RNG_state *newstate, int spawnnumber)
-# 68 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&rng_spawn), "rng_spawn", &____must_manage_rng_spawn, 3, 0, (size_t)(1633707214412207521UL), (size_t)(1633707214412207522UL), (size_t)(0UL)) ; uint8 bytes[4];
-# 68 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 68 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable1 = new_stack((void *)(&rng_spawn), "rng_spawn", &____must_manage_rng_spawn, 3, 0, (size_t)(11829459004090237297UL), (size_t)(11829459004090237298UL), (size_t)(0UL)) ; uint8 bytes[4];
+# 68 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 struct sha1_ctx_s ctx;
-# 68 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 68 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_rng_spawn_ctx_0) { register_stack_vars(1, "rng_spawn|ctx|0", &____must_checkpoint_rng_spawn_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } ; ;
-# 69 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 69 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
    ;
-# 70 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 70 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   ;
-# 71 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 72 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 71 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 72 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  bytes[0] = 0xFF & (spawnnumber >> 24);
-# 73 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 73 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  bytes[1] = 0xFF & (spawnnumber >> 16);
-# 74 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 74 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  bytes[2] = 0xFF & (spawnnumber >> 8);
-# 75 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 75 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  bytes[3] = 0xFF & spawnnumber;
-# 76 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 77 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 76 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 77 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
-# 78 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 78 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
-# 79 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 79 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   call_lbl_2: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(bytes, 4, &ctx); });
-# 80 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 80 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   call_lbl_3: ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
-# 81 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 81 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_spawn", &____must_manage_rng_spawn, ____alias_loc_id_4, ____chimes_did_disable1, false); }
 
 void rng_spawn(RNG_state *mystate, RNG_state *newstate, int spawnnumber) { (____chimes_replaying ? rng_spawn_resumable(mystate, newstate, spawnnumber) : rng_spawn_quick(mystate, newstate, spawnnumber)); }
-# 83 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-int rng_rand_quick(RNG_state *mystate){const int ____chimes_did_disable2 = new_stack((void *)(&rng_rand), "rng_rand", &____must_manage_rng_rand, 1, 0, (size_t)(1633707214412207566UL)) ; ; ;
-# 84 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 83 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+int rng_rand_quick(RNG_state *mystate){const int ____chimes_did_disable2 = new_stack((void *)(&rng_rand), "rng_rand", &____must_manage_rng_rand, 1, 0, (size_t)(11829459004090237342UL)) ; ; ;
+# 84 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         int r; ;
-# 85 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 85 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   uint32 b; b = ((mystate[16] << 24) | (mystate[17] << 16)
-# 86 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 86 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   | (mystate[18] << 8) | (mystate[19] << 0)) ;
-# 87 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 87 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  b = b & 0x7fffffff;
-# 88 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 89 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 88 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 89 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  r = (int) b;
-# 90 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 91 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 90 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 91 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (r); rm_stack(false, 0UL, "rng_rand", &____must_manage_rng_rand, ____alias_loc_id_5, ____chimes_did_disable2, false); return ____chimes_ret_var_0; ;
-# 92 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 92 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_rand", &____must_manage_rng_rand, ____alias_loc_id_5, ____chimes_did_disable2, false); }
 
 int rng_rand(RNG_state *mystate) { return (____chimes_replaying ? rng_rand_resumable(mystate) : rng_rand_quick(mystate)); }
-# 94 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-int rng_nextrand_quick(RNG_state *mystate){const int ____chimes_did_disable3 = new_stack((void *)(&rng_nextrand), "rng_nextrand", &____must_manage_rng_nextrand, 1, 0, (size_t)(1633707214412207616UL)) ; struct sha1_ctx_s ctx;
-# 94 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 94 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+int rng_nextrand_quick(RNG_state *mystate){const int ____chimes_did_disable3 = new_stack((void *)(&rng_nextrand), "rng_nextrand", &____must_manage_rng_nextrand, 1, 0, (size_t)(11829459004090237392UL)) ; struct sha1_ctx_s ctx;
+# 94 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_rng_nextrand_ctx_0) { register_stack_vars(1, "rng_nextrand|ctx|0", &____must_checkpoint_rng_nextrand_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } ; ;
-# 95 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 95 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
    ;
-# 96 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 96 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  int r; ;
-# 97 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 97 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  uint32 b; ;
-# 98 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 99 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 98 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 99 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
-# 100 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 100 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
-# 101 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 101 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   call_lbl_2: ({ calling_npm("sha1_end", 0); sha1_end_npm(mystate, &ctx); });
-# 102 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 102 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  b = (mystate[16] << 24) | (mystate[17] << 16)
-# 103 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 103 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   | (mystate[18] << 8) | (mystate[19] << 0);
-# 104 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 104 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  b = b & 0x7fffffff;
-# 105 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 106 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 105 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 106 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  r = (int) b;
-# 107 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 107 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (r); rm_stack(false, 0UL, "rng_nextrand", &____must_manage_rng_nextrand, ____alias_loc_id_6, ____chimes_did_disable3, false); return ____chimes_ret_var_1; ;
-# 108 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 108 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_nextrand", &____must_manage_rng_nextrand, ____alias_loc_id_6, ____chimes_did_disable3, false); }
 
 int rng_nextrand(RNG_state *mystate) { return (____chimes_replaying ? rng_nextrand_resumable(mystate) : rng_nextrand_quick(mystate)); }
-# 111 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-char * rng_showstate_quick(RNG_state *state, char *s){const int ____chimes_did_disable4 = new_stack((void *)(&rng_showstate), "rng_showstate", &____must_manage_rng_showstate, 2, 0, (size_t)(1633707214412207639UL), (size_t)(1633707214412207640UL)) ; ; ;
-# 112 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 111 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+char * rng_showstate_quick(RNG_state *state, char *s){const int ____chimes_did_disable4 = new_stack((void *)(&rng_showstate), "rng_showstate", &____must_manage_rng_showstate, 2, 0, (size_t)(11829459004090237415UL), (size_t)(11829459004090237416UL)) ; ; ;
+# 112 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   sprintf(s,"%.2X%.2X...", state[0],state[1]);
-# 113 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-   char *____chimes_ret_var_2; ; ____chimes_ret_var_2 = (s); rm_stack(true, 1633707214412207640UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4, false); return ____chimes_ret_var_2; ;
-# 114 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(true, 1633707214412207640UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4, false); }
+# 113 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+   char *____chimes_ret_var_2; ; ____chimes_ret_var_2 = (s); rm_stack(true, 11829459004090237416UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4, false); return ____chimes_ret_var_2; ;
+# 114 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+rm_stack(true, 11829459004090237416UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4, false); }
 
 char * rng_showstate(RNG_state *state, char *s) { return (____chimes_replaying ? rng_showstate_resumable(state, s) : rng_showstate_quick(state, s)); }
-# 117 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-int rng_showtype_quick(char *strBuf, int ind) {const int ____chimes_did_disable5 = new_stack((void *)(&rng_showtype), "rng_showtype", &____must_manage_rng_showtype, 2, 0, (size_t)(1633707214412207663UL), (size_t)(0UL)) ; ; ;
-# 118 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 117 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+int rng_showtype_quick(char *strBuf, int ind) {const int ____chimes_did_disable5 = new_stack((void *)(&rng_showtype), "rng_showtype", &____must_manage_rng_showtype, 2, 0, (size_t)(11829459004090237439UL), (size_t)(0UL)) ; ; ;
+# 118 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   ind += sprintf(strBuf+ind, "SHA-1 (state size = %luB)",
-# 119 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 119 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
                  sizeof(struct state_t));
-# 120 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 120 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
    int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (ind); rm_stack(false, 0UL, "rng_showtype", &____must_manage_rng_showtype, ____alias_loc_id_8, ____chimes_did_disable5, false); return ____chimes_ret_var_3; ;
-# 121 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 121 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_showtype", &____must_manage_rng_showtype, ____alias_loc_id_8, ____chimes_did_disable5, false); }
 
 int rng_showtype(char *strBuf, int ind) { return (____chimes_replaying ? rng_showtype_resumable(strBuf, ind) : rng_showtype_quick(strBuf, ind)); }
-# 195 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 195 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_compile_quick(sha1_ctx ctx[1])
-# 196 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-{const int ____chimes_did_disable6 = new_stack((void *)(&sha1_compile), "sha1_compile", &____must_manage_sha1_compile, 1, 0, (size_t)(1633707214412211977UL)) ; ; ; uint_32t *w; w = (ctx->wbuf) ;
-# 197 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 198 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 199 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 200 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 201 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 202 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 196 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable6 = new_stack((void *)(&sha1_compile), "sha1_compile", &____must_manage_sha1_compile, 1, 0, (size_t)(11829459004090241753UL)) ; ; ; uint_32t *w; w = (ctx->wbuf) ;
+# 197 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 198 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 199 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 200 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 201 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 202 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     uint_32t v0; uint_32t v1; uint_32t v2; uint_32t v3; uint_32t v4; ;
-# 203 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 203 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v0 = ctx->hash[0]; v1 = ctx->hash[1];
-# 204 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 204 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v2 = ctx->hash[2]; v3 = ctx->hash[3];
-# 205 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 205 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 = ctx->hash[4];
-# 206 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 207 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 208 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 209 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 210 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 206 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 207 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 208 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 209 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 210 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[0]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[0 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[0 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[0 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[0 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 211 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 211 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[5]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[5 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[5 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[5 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[5 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 212 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 212 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[10]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[10 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[10 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[10 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[10 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 213 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 213 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[15]; v1 = (((v1) >> 2) | ((v1) << (32 - 2)));
-# 214 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 215 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 216 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 217 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 218 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 219 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 220 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 214 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 215 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 216 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 217 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 218 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 219 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 220 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + (w[(16) & 15] = (((w[((16) + 13) & 15] ^ w[((16) + 8) & 15] ^ w[((16) + 2) & 15] ^ w[(16) & 15]) << 1) | ((w[((16) + 13) & 15] ^ w[((16) + 8) & 15] ^ w[((16) + 2) & 15] ^ w[(16) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2)));
-# 221 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 221 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + (w[(17) & 15] = (((w[((17) + 13) & 15] ^ w[((17) + 8) & 15] ^ w[((17) + 2) & 15] ^ w[(17) & 15]) << 1) | ((w[((17) + 13) & 15] ^ w[((17) + 8) & 15] ^ w[((17) + 2) & 15] ^ w[(17) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2)));
-# 222 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 222 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + (w[(18) & 15] = (((w[((18) + 13) & 15] ^ w[((18) + 8) & 15] ^ w[((18) + 2) & 15] ^ w[(18) & 15]) << 1) | ((w[((18) + 13) & 15] ^ w[((18) + 8) & 15] ^ w[((18) + 2) & 15] ^ w[(18) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2)));
-# 223 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 223 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + (w[(19) & 15] = (((w[((19) + 13) & 15] ^ w[((19) + 8) & 15] ^ w[((19) + 2) & 15] ^ w[(19) & 15]) << 1) | ((w[((19) + 13) & 15] ^ w[((19) + 8) & 15] ^ w[((19) + 2) & 15] ^ w[(19) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 224 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 225 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 224 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 225 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(20) & 15] = (((w[((20) + 13) & 15] ^ w[((20) + 8) & 15] ^ w[((20) + 2) & 15] ^ w[(20) & 15]) << 1) | ((w[((20) + 13) & 15] ^ w[((20) + 8) & 15] ^ w[((20) + 2) & 15] ^ w[(20) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(20 +1) & 15] = (((w[((20 +1) + 13) & 15] ^ w[((20 +1) + 8) & 15] ^ w[((20 +1) + 2) & 15] ^ w[(20 +1) & 15]) << 1) | ((w[((20 +1) + 13) & 15] ^ w[((20 +1) + 8) & 15] ^ w[((20 +1) + 2) & 15] ^ w[(20 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(20 +2) & 15] = (((w[((20 +2) + 13) & 15] ^ w[((20 +2) + 8) & 15] ^ w[((20 +2) + 2) & 15] ^ w[(20 +2) & 15]) << 1) | ((w[((20 +2) + 13) & 15] ^ w[((20 +2) + 8) & 15] ^ w[((20 +2) + 2) & 15] ^ w[(20 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(20 +3) & 15] = (((w[((20 +3) + 13) & 15] ^ w[((20 +3) + 8) & 15] ^ w[((20 +3) + 2) & 15] ^ w[(20 +3) & 15]) << 1) | ((w[((20 +3) + 13) & 15] ^ w[((20 +3) + 8) & 15] ^ w[((20 +3) + 2) & 15] ^ w[(20 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(20 +4) & 15] = (((w[((20 +4) + 13) & 15] ^ w[((20 +4) + 8) & 15] ^ w[((20 +4) + 2) & 15] ^ w[(20 +4) & 15]) << 1) | ((w[((20 +4) + 13) & 15] ^ w[((20 +4) + 8) & 15] ^ w[((20 +4) + 2) & 15] ^ w[(20 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 226 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 226 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(25) & 15] = (((w[((25) + 13) & 15] ^ w[((25) + 8) & 15] ^ w[((25) + 2) & 15] ^ w[(25) & 15]) << 1) | ((w[((25) + 13) & 15] ^ w[((25) + 8) & 15] ^ w[((25) + 2) & 15] ^ w[(25) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(25 +1) & 15] = (((w[((25 +1) + 13) & 15] ^ w[((25 +1) + 8) & 15] ^ w[((25 +1) + 2) & 15] ^ w[(25 +1) & 15]) << 1) | ((w[((25 +1) + 13) & 15] ^ w[((25 +1) + 8) & 15] ^ w[((25 +1) + 2) & 15] ^ w[(25 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(25 +2) & 15] = (((w[((25 +2) + 13) & 15] ^ w[((25 +2) + 8) & 15] ^ w[((25 +2) + 2) & 15] ^ w[(25 +2) & 15]) << 1) | ((w[((25 +2) + 13) & 15] ^ w[((25 +2) + 8) & 15] ^ w[((25 +2) + 2) & 15] ^ w[(25 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(25 +3) & 15] = (((w[((25 +3) + 13) & 15] ^ w[((25 +3) + 8) & 15] ^ w[((25 +3) + 2) & 15] ^ w[(25 +3) & 15]) << 1) | ((w[((25 +3) + 13) & 15] ^ w[((25 +3) + 8) & 15] ^ w[((25 +3) + 2) & 15] ^ w[(25 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(25 +4) & 15] = (((w[((25 +4) + 13) & 15] ^ w[((25 +4) + 8) & 15] ^ w[((25 +4) + 2) & 15] ^ w[(25 +4) & 15]) << 1) | ((w[((25 +4) + 13) & 15] ^ w[((25 +4) + 8) & 15] ^ w[((25 +4) + 2) & 15] ^ w[(25 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 227 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 227 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(30) & 15] = (((w[((30) + 13) & 15] ^ w[((30) + 8) & 15] ^ w[((30) + 2) & 15] ^ w[(30) & 15]) << 1) | ((w[((30) + 13) & 15] ^ w[((30) + 8) & 15] ^ w[((30) + 2) & 15] ^ w[(30) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(30 +1) & 15] = (((w[((30 +1) + 13) & 15] ^ w[((30 +1) + 8) & 15] ^ w[((30 +1) + 2) & 15] ^ w[(30 +1) & 15]) << 1) | ((w[((30 +1) + 13) & 15] ^ w[((30 +1) + 8) & 15] ^ w[((30 +1) + 2) & 15] ^ w[(30 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(30 +2) & 15] = (((w[((30 +2) + 13) & 15] ^ w[((30 +2) + 8) & 15] ^ w[((30 +2) + 2) & 15] ^ w[(30 +2) & 15]) << 1) | ((w[((30 +2) + 13) & 15] ^ w[((30 +2) + 8) & 15] ^ w[((30 +2) + 2) & 15] ^ w[(30 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(30 +3) & 15] = (((w[((30 +3) + 13) & 15] ^ w[((30 +3) + 8) & 15] ^ w[((30 +3) + 2) & 15] ^ w[(30 +3) & 15]) << 1) | ((w[((30 +3) + 13) & 15] ^ w[((30 +3) + 8) & 15] ^ w[((30 +3) + 2) & 15] ^ w[(30 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(30 +4) & 15] = (((w[((30 +4) + 13) & 15] ^ w[((30 +4) + 8) & 15] ^ w[((30 +4) + 2) & 15] ^ w[(30 +4) & 15]) << 1) | ((w[((30 +4) + 13) & 15] ^ w[((30 +4) + 8) & 15] ^ w[((30 +4) + 2) & 15] ^ w[(30 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 228 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 228 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(35) & 15] = (((w[((35) + 13) & 15] ^ w[((35) + 8) & 15] ^ w[((35) + 2) & 15] ^ w[(35) & 15]) << 1) | ((w[((35) + 13) & 15] ^ w[((35) + 8) & 15] ^ w[((35) + 2) & 15] ^ w[(35) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(35 +1) & 15] = (((w[((35 +1) + 13) & 15] ^ w[((35 +1) + 8) & 15] ^ w[((35 +1) + 2) & 15] ^ w[(35 +1) & 15]) << 1) | ((w[((35 +1) + 13) & 15] ^ w[((35 +1) + 8) & 15] ^ w[((35 +1) + 2) & 15] ^ w[(35 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(35 +2) & 15] = (((w[((35 +2) + 13) & 15] ^ w[((35 +2) + 8) & 15] ^ w[((35 +2) + 2) & 15] ^ w[(35 +2) & 15]) << 1) | ((w[((35 +2) + 13) & 15] ^ w[((35 +2) + 8) & 15] ^ w[((35 +2) + 2) & 15] ^ w[(35 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(35 +3) & 15] = (((w[((35 +3) + 13) & 15] ^ w[((35 +3) + 8) & 15] ^ w[((35 +3) + 2) & 15] ^ w[(35 +3) & 15]) << 1) | ((w[((35 +3) + 13) & 15] ^ w[((35 +3) + 8) & 15] ^ w[((35 +3) + 2) & 15] ^ w[(35 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(35 +4) & 15] = (((w[((35 +4) + 13) & 15] ^ w[((35 +4) + 8) & 15] ^ w[((35 +4) + 2) & 15] ^ w[(35 +4) & 15]) << 1) | ((w[((35 +4) + 13) & 15] ^ w[((35 +4) + 8) & 15] ^ w[((35 +4) + 2) & 15] ^ w[(35 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 229 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 230 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 229 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 230 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(40) & 15] = (((w[((40) + 13) & 15] ^ w[((40) + 8) & 15] ^ w[((40) + 2) & 15] ^ w[(40) & 15]) << 1) | ((w[((40) + 13) & 15] ^ w[((40) + 8) & 15] ^ w[((40) + 2) & 15] ^ w[(40) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(40 +1) & 15] = (((w[((40 +1) + 13) & 15] ^ w[((40 +1) + 8) & 15] ^ w[((40 +1) + 2) & 15] ^ w[(40 +1) & 15]) << 1) | ((w[((40 +1) + 13) & 15] ^ w[((40 +1) + 8) & 15] ^ w[((40 +1) + 2) & 15] ^ w[(40 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(40 +2) & 15] = (((w[((40 +2) + 13) & 15] ^ w[((40 +2) + 8) & 15] ^ w[((40 +2) + 2) & 15] ^ w[(40 +2) & 15]) << 1) | ((w[((40 +2) + 13) & 15] ^ w[((40 +2) + 8) & 15] ^ w[((40 +2) + 2) & 15] ^ w[(40 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(40 +3) & 15] = (((w[((40 +3) + 13) & 15] ^ w[((40 +3) + 8) & 15] ^ w[((40 +3) + 2) & 15] ^ w[(40 +3) & 15]) << 1) | ((w[((40 +3) + 13) & 15] ^ w[((40 +3) + 8) & 15] ^ w[((40 +3) + 2) & 15] ^ w[(40 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(40 +4) & 15] = (((w[((40 +4) + 13) & 15] ^ w[((40 +4) + 8) & 15] ^ w[((40 +4) + 2) & 15] ^ w[(40 +4) & 15]) << 1) | ((w[((40 +4) + 13) & 15] ^ w[((40 +4) + 8) & 15] ^ w[((40 +4) + 2) & 15] ^ w[(40 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 231 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 231 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(45) & 15] = (((w[((45) + 13) & 15] ^ w[((45) + 8) & 15] ^ w[((45) + 2) & 15] ^ w[(45) & 15]) << 1) | ((w[((45) + 13) & 15] ^ w[((45) + 8) & 15] ^ w[((45) + 2) & 15] ^ w[(45) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(45 +1) & 15] = (((w[((45 +1) + 13) & 15] ^ w[((45 +1) + 8) & 15] ^ w[((45 +1) + 2) & 15] ^ w[(45 +1) & 15]) << 1) | ((w[((45 +1) + 13) & 15] ^ w[((45 +1) + 8) & 15] ^ w[((45 +1) + 2) & 15] ^ w[(45 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(45 +2) & 15] = (((w[((45 +2) + 13) & 15] ^ w[((45 +2) + 8) & 15] ^ w[((45 +2) + 2) & 15] ^ w[(45 +2) & 15]) << 1) | ((w[((45 +2) + 13) & 15] ^ w[((45 +2) + 8) & 15] ^ w[((45 +2) + 2) & 15] ^ w[(45 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(45 +3) & 15] = (((w[((45 +3) + 13) & 15] ^ w[((45 +3) + 8) & 15] ^ w[((45 +3) + 2) & 15] ^ w[(45 +3) & 15]) << 1) | ((w[((45 +3) + 13) & 15] ^ w[((45 +3) + 8) & 15] ^ w[((45 +3) + 2) & 15] ^ w[(45 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(45 +4) & 15] = (((w[((45 +4) + 13) & 15] ^ w[((45 +4) + 8) & 15] ^ w[((45 +4) + 2) & 15] ^ w[(45 +4) & 15]) << 1) | ((w[((45 +4) + 13) & 15] ^ w[((45 +4) + 8) & 15] ^ w[((45 +4) + 2) & 15] ^ w[(45 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 232 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 232 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(50) & 15] = (((w[((50) + 13) & 15] ^ w[((50) + 8) & 15] ^ w[((50) + 2) & 15] ^ w[(50) & 15]) << 1) | ((w[((50) + 13) & 15] ^ w[((50) + 8) & 15] ^ w[((50) + 2) & 15] ^ w[(50) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(50 +1) & 15] = (((w[((50 +1) + 13) & 15] ^ w[((50 +1) + 8) & 15] ^ w[((50 +1) + 2) & 15] ^ w[(50 +1) & 15]) << 1) | ((w[((50 +1) + 13) & 15] ^ w[((50 +1) + 8) & 15] ^ w[((50 +1) + 2) & 15] ^ w[(50 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(50 +2) & 15] = (((w[((50 +2) + 13) & 15] ^ w[((50 +2) + 8) & 15] ^ w[((50 +2) + 2) & 15] ^ w[(50 +2) & 15]) << 1) | ((w[((50 +2) + 13) & 15] ^ w[((50 +2) + 8) & 15] ^ w[((50 +2) + 2) & 15] ^ w[(50 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(50 +3) & 15] = (((w[((50 +3) + 13) & 15] ^ w[((50 +3) + 8) & 15] ^ w[((50 +3) + 2) & 15] ^ w[(50 +3) & 15]) << 1) | ((w[((50 +3) + 13) & 15] ^ w[((50 +3) + 8) & 15] ^ w[((50 +3) + 2) & 15] ^ w[(50 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(50 +4) & 15] = (((w[((50 +4) + 13) & 15] ^ w[((50 +4) + 8) & 15] ^ w[((50 +4) + 2) & 15] ^ w[(50 +4) & 15]) << 1) | ((w[((50 +4) + 13) & 15] ^ w[((50 +4) + 8) & 15] ^ w[((50 +4) + 2) & 15] ^ w[(50 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 233 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 233 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(55) & 15] = (((w[((55) + 13) & 15] ^ w[((55) + 8) & 15] ^ w[((55) + 2) & 15] ^ w[(55) & 15]) << 1) | ((w[((55) + 13) & 15] ^ w[((55) + 8) & 15] ^ w[((55) + 2) & 15] ^ w[(55) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(55 +1) & 15] = (((w[((55 +1) + 13) & 15] ^ w[((55 +1) + 8) & 15] ^ w[((55 +1) + 2) & 15] ^ w[(55 +1) & 15]) << 1) | ((w[((55 +1) + 13) & 15] ^ w[((55 +1) + 8) & 15] ^ w[((55 +1) + 2) & 15] ^ w[(55 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(55 +2) & 15] = (((w[((55 +2) + 13) & 15] ^ w[((55 +2) + 8) & 15] ^ w[((55 +2) + 2) & 15] ^ w[(55 +2) & 15]) << 1) | ((w[((55 +2) + 13) & 15] ^ w[((55 +2) + 8) & 15] ^ w[((55 +2) + 2) & 15] ^ w[(55 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(55 +3) & 15] = (((w[((55 +3) + 13) & 15] ^ w[((55 +3) + 8) & 15] ^ w[((55 +3) + 2) & 15] ^ w[(55 +3) & 15]) << 1) | ((w[((55 +3) + 13) & 15] ^ w[((55 +3) + 8) & 15] ^ w[((55 +3) + 2) & 15] ^ w[(55 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(55 +4) & 15] = (((w[((55 +4) + 13) & 15] ^ w[((55 +4) + 8) & 15] ^ w[((55 +4) + 2) & 15] ^ w[(55 +4) & 15]) << 1) | ((w[((55 +4) + 13) & 15] ^ w[((55 +4) + 8) & 15] ^ w[((55 +4) + 2) & 15] ^ w[(55 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 234 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 235 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 234 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 235 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(60) & 15] = (((w[((60) + 13) & 15] ^ w[((60) + 8) & 15] ^ w[((60) + 2) & 15] ^ w[(60) & 15]) << 1) | ((w[((60) + 13) & 15] ^ w[((60) + 8) & 15] ^ w[((60) + 2) & 15] ^ w[(60) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(60 +1) & 15] = (((w[((60 +1) + 13) & 15] ^ w[((60 +1) + 8) & 15] ^ w[((60 +1) + 2) & 15] ^ w[(60 +1) & 15]) << 1) | ((w[((60 +1) + 13) & 15] ^ w[((60 +1) + 8) & 15] ^ w[((60 +1) + 2) & 15] ^ w[(60 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(60 +2) & 15] = (((w[((60 +2) + 13) & 15] ^ w[((60 +2) + 8) & 15] ^ w[((60 +2) + 2) & 15] ^ w[(60 +2) & 15]) << 1) | ((w[((60 +2) + 13) & 15] ^ w[((60 +2) + 8) & 15] ^ w[((60 +2) + 2) & 15] ^ w[(60 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(60 +3) & 15] = (((w[((60 +3) + 13) & 15] ^ w[((60 +3) + 8) & 15] ^ w[((60 +3) + 2) & 15] ^ w[(60 +3) & 15]) << 1) | ((w[((60 +3) + 13) & 15] ^ w[((60 +3) + 8) & 15] ^ w[((60 +3) + 2) & 15] ^ w[(60 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(60 +4) & 15] = (((w[((60 +4) + 13) & 15] ^ w[((60 +4) + 8) & 15] ^ w[((60 +4) + 2) & 15] ^ w[(60 +4) & 15]) << 1) | ((w[((60 +4) + 13) & 15] ^ w[((60 +4) + 8) & 15] ^ w[((60 +4) + 2) & 15] ^ w[(60 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 236 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 236 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(65) & 15] = (((w[((65) + 13) & 15] ^ w[((65) + 8) & 15] ^ w[((65) + 2) & 15] ^ w[(65) & 15]) << 1) | ((w[((65) + 13) & 15] ^ w[((65) + 8) & 15] ^ w[((65) + 2) & 15] ^ w[(65) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(65 +1) & 15] = (((w[((65 +1) + 13) & 15] ^ w[((65 +1) + 8) & 15] ^ w[((65 +1) + 2) & 15] ^ w[(65 +1) & 15]) << 1) | ((w[((65 +1) + 13) & 15] ^ w[((65 +1) + 8) & 15] ^ w[((65 +1) + 2) & 15] ^ w[(65 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(65 +2) & 15] = (((w[((65 +2) + 13) & 15] ^ w[((65 +2) + 8) & 15] ^ w[((65 +2) + 2) & 15] ^ w[(65 +2) & 15]) << 1) | ((w[((65 +2) + 13) & 15] ^ w[((65 +2) + 8) & 15] ^ w[((65 +2) + 2) & 15] ^ w[(65 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(65 +3) & 15] = (((w[((65 +3) + 13) & 15] ^ w[((65 +3) + 8) & 15] ^ w[((65 +3) + 2) & 15] ^ w[(65 +3) & 15]) << 1) | ((w[((65 +3) + 13) & 15] ^ w[((65 +3) + 8) & 15] ^ w[((65 +3) + 2) & 15] ^ w[(65 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(65 +4) & 15] = (((w[((65 +4) + 13) & 15] ^ w[((65 +4) + 8) & 15] ^ w[((65 +4) + 2) & 15] ^ w[(65 +4) & 15]) << 1) | ((w[((65 +4) + 13) & 15] ^ w[((65 +4) + 8) & 15] ^ w[((65 +4) + 2) & 15] ^ w[(65 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 237 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 237 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(70) & 15] = (((w[((70) + 13) & 15] ^ w[((70) + 8) & 15] ^ w[((70) + 2) & 15] ^ w[(70) & 15]) << 1) | ((w[((70) + 13) & 15] ^ w[((70) + 8) & 15] ^ w[((70) + 2) & 15] ^ w[(70) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(70 +1) & 15] = (((w[((70 +1) + 13) & 15] ^ w[((70 +1) + 8) & 15] ^ w[((70 +1) + 2) & 15] ^ w[(70 +1) & 15]) << 1) | ((w[((70 +1) + 13) & 15] ^ w[((70 +1) + 8) & 15] ^ w[((70 +1) + 2) & 15] ^ w[(70 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(70 +2) & 15] = (((w[((70 +2) + 13) & 15] ^ w[((70 +2) + 8) & 15] ^ w[((70 +2) + 2) & 15] ^ w[(70 +2) & 15]) << 1) | ((w[((70 +2) + 13) & 15] ^ w[((70 +2) + 8) & 15] ^ w[((70 +2) + 2) & 15] ^ w[(70 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(70 +3) & 15] = (((w[((70 +3) + 13) & 15] ^ w[((70 +3) + 8) & 15] ^ w[((70 +3) + 2) & 15] ^ w[(70 +3) & 15]) << 1) | ((w[((70 +3) + 13) & 15] ^ w[((70 +3) + 8) & 15] ^ w[((70 +3) + 2) & 15] ^ w[(70 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(70 +4) & 15] = (((w[((70 +4) + 13) & 15] ^ w[((70 +4) + 8) & 15] ^ w[((70 +4) + 2) & 15] ^ w[(70 +4) & 15]) << 1) | ((w[((70 +4) + 13) & 15] ^ w[((70 +4) + 8) & 15] ^ w[((70 +4) + 2) & 15] ^ w[(70 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 238 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 238 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(75) & 15] = (((w[((75) + 13) & 15] ^ w[((75) + 8) & 15] ^ w[((75) + 2) & 15] ^ w[(75) & 15]) << 1) | ((w[((75) + 13) & 15] ^ w[((75) + 8) & 15] ^ w[((75) + 2) & 15] ^ w[(75) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(75 +1) & 15] = (((w[((75 +1) + 13) & 15] ^ w[((75 +1) + 8) & 15] ^ w[((75 +1) + 2) & 15] ^ w[(75 +1) & 15]) << 1) | ((w[((75 +1) + 13) & 15] ^ w[((75 +1) + 8) & 15] ^ w[((75 +1) + 2) & 15] ^ w[(75 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(75 +2) & 15] = (((w[((75 +2) + 13) & 15] ^ w[((75 +2) + 8) & 15] ^ w[((75 +2) + 2) & 15] ^ w[(75 +2) & 15]) << 1) | ((w[((75 +2) + 13) & 15] ^ w[((75 +2) + 8) & 15] ^ w[((75 +2) + 2) & 15] ^ w[(75 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(75 +3) & 15] = (((w[((75 +3) + 13) & 15] ^ w[((75 +3) + 8) & 15] ^ w[((75 +3) + 2) & 15] ^ w[(75 +3) & 15]) << 1) | ((w[((75 +3) + 13) & 15] ^ w[((75 +3) + 8) & 15] ^ w[((75 +3) + 2) & 15] ^ w[(75 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(75 +4) & 15] = (((w[((75 +4) + 13) & 15] ^ w[((75 +4) + 8) & 15] ^ w[((75 +4) + 2) & 15] ^ w[(75 +4) & 15]) << 1) | ((w[((75 +4) + 13) & 15] ^ w[((75 +4) + 8) & 15] ^ w[((75 +4) + 2) & 15] ^ w[(75 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 239 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 240 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 241 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 242 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 243 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 244 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 245 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 239 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 240 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 241 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 242 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 243 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 244 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 245 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[0] += v0; ctx->hash[1] += v1;
-# 246 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 246 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[2] += v2; ctx->hash[3] += v3;
-# 247 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 247 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[4] += v4;
-# 248 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 249 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 248 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 249 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1_compile", &____must_manage_sha1_compile, ____alias_loc_id_9, ____chimes_did_disable6, false); }
 
 void sha1_compile(sha1_ctx ctx[1]) { (____chimes_replaying ? sha1_compile_resumable(ctx) : sha1_compile_quick(ctx)); }
-# 251 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 251 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_begin_quick(sha1_ctx ctx[1])
-# 252 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&sha1_begin), "sha1_begin", &____must_manage_sha1_begin, 1, 0, (size_t)(1633707214412207141UL)) ; ; ;
-# 253 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 252 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable7 = new_stack((void *)(&sha1_begin), "sha1_begin", &____must_manage_sha1_begin, 1, 0, (size_t)(11829459004090236917UL)) ; ; ;
+# 253 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->count[0] = ctx->count[1] = 0;
-# 254 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 254 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[0] = 0x67452301;
-# 255 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 255 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[1] = 0xefcdab89;
-# 256 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 256 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[2] = 0x98badcfe;
-# 257 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 257 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[3] = 0x10325476;
-# 258 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 258 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[4] = 0xc3d2e1f0;
-# 259 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 259 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1_begin", &____must_manage_sha1_begin, ____alias_loc_id_1, ____chimes_did_disable7, false); }
 
 void sha1_begin(sha1_ctx ctx[1]) { (____chimes_replaying ? sha1_begin_resumable(ctx) : sha1_begin_quick(ctx)); }
-# 264 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 264 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_hash_quick(const unsigned char data[], unsigned long len, sha1_ctx ctx[1])
-# 265 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&sha1_hash), "sha1_hash", &____must_manage_sha1_hash, 3, 0, (size_t)(1633707214412207285UL), (size_t)(0UL), (size_t)(1633707214412207287UL)) ; ; ; uint_32t pos; uint_32t space; pos = ((uint_32t)(ctx->count[0] & (64 - 1))) ; space = (64 - pos) ;
-# 267 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 265 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable8 = new_stack((void *)(&sha1_hash), "sha1_hash", &____must_manage_sha1_hash, 3, 0, (size_t)(11829459004090237061UL), (size_t)(0UL), (size_t)(11829459004090237063UL)) ; ; ; uint_32t pos; uint_32t space; pos = ((uint_32t)(ctx->count[0] & (64 - 1))) ; space = (64 - pos) ;
+# 267 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
      const unsigned char *sp; sp = (data) ;
-# 268 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 269 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 268 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 269 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     if ((ctx->count[0] += len) < len) {++(ctx->count[1]); };
-# 271 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 272 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 271 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 272 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     while(len >= space)
-# 273 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 273 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     {
-# 274 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 274 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         memcpy(((unsigned char*)ctx->wbuf) + pos, sp, space);
-# 275 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 275 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         sp += space; len -= space; space = 64; pos = 0;
-# 276 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 276 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         { int _i; _i = ((64 >> 2)) ; while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
-# 277 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 277 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
          call_lbl_0: ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
-# 278 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 278 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     }
-# 279 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 280 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 279 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 280 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     memcpy(((unsigned char*)ctx->wbuf) + pos, sp, len);
-# 281 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 281 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1_hash", &____must_manage_sha1_hash, ____alias_loc_id_2, ____chimes_did_disable8, false); }
 
 void sha1_hash(const unsigned char data[], unsigned long len, sha1_ctx ctx[1]) { (____chimes_replaying ? sha1_hash_resumable(data, len, ctx) : sha1_hash_quick(data, len, ctx)); }
-# 285 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 285 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_end_quick(unsigned char hval[], sha1_ctx ctx[1])
-# 286 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&sha1_end), "sha1_end", &____must_manage_sha1_end, 2, 0, (size_t)(1633707214412207475UL), (size_t)(1633707214412207476UL)) ; ; ; uint_32t i; i = ((uint_32t)(ctx->count[0] & (64 - 1))) ;
-# 287 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 288 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 289 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 290 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 291 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 286 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable9 = new_stack((void *)(&sha1_end), "sha1_end", &____must_manage_sha1_end, 2, 0, (size_t)(11829459004090237251UL), (size_t)(11829459004090237252UL)) ; ; ; uint_32t i; i = ((uint_32t)(ctx->count[0] & (64 - 1))) ;
+# 287 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 288 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 289 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 290 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 291 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     { int _i; _i = (((i + 3) >> 2)) ; while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
-# 292 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 293 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 294 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 295 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 296 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 297 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 292 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 293 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 294 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 295 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 296 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 297 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->wbuf[i >> 2] &= 0xffffff80 << 8 * (~i & 3);
-# 298 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 298 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->wbuf[i >> 2] |= 0x00000080 << 8 * (~i & 3);
-# 299 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 300 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 301 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 302 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 303 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 299 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 300 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 301 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 302 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 303 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     if (i > 64 - 9) {{
-# 305 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 305 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         if (i < 60) {ctx->wbuf[15] = 0; };
-# 306 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 306 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
          call_lbl_0: ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
-# 307 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 307 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         i = 0;
-# 308 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 308 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     }; } else {i = (i >> 2) + 1; } ;
-# 311 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 312 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 311 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 312 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     while(i < 14)
-# 313 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 313 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         ctx->wbuf[i++] = 0;
-# 314 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 315 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 316 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 317 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 318 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 319 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 314 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 315 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 316 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 317 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 318 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 319 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->wbuf[14] = (ctx->count[1] << 3) | (ctx->count[0] >> 29);
-# 320 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 320 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->wbuf[15] = ctx->count[0] << 3;
-# 321 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 321 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
      call_lbl_1: ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
-# 322 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 323 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 324 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 325 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 322 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 323 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 324 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 325 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     for (i = 0; i < 20; ++i) { hval[i] = (unsigned char)(ctx->hash[i >> 2] >> (8 * (~i & 3))); };
-# 327 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 327 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1_end", &____must_manage_sha1_end, ____alias_loc_id_3, ____chimes_did_disable9, false); }
 
 void sha1_end(unsigned char hval[], sha1_ctx ctx[1]) { (____chimes_replaying ? sha1_end_resumable(hval, ctx) : sha1_end_quick(hval, ctx)); }
-# 329 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 329 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_quick(unsigned char hval[], const unsigned char data[], unsigned long len)
-# 330 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-{const int ____chimes_did_disable10 = new_stack((void *)(&sha1), "sha1", &____must_manage_sha1, 3, 0, (size_t)(1633707214412212004UL), (size_t)(1633707214412212005UL), (size_t)(0UL)) ; sha1_ctx cx[1];
-# 330 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 330 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable10 = new_stack((void *)(&sha1), "sha1", &____must_manage_sha1, 3, 0, (size_t)(11829459004090241780UL), (size_t)(11829459004090241781UL), (size_t)(0UL)) ; sha1_ctx cx[1];
+# 330 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_sha1_cx_0) { register_stack_vars(1, "sha1|cx|0", &____must_checkpoint_sha1_cx_0, "[1 x %struct.sha1_ctx_s]", (void *)(cx), (size_t)92, 0, 0, 0); } ; ; ;
-# 331 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 332 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 331 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 332 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
      call_lbl_0: ({ calling_npm("sha1_begin", 0); sha1_begin_npm(cx); }); call_lbl_1: ({ calling_npm("sha1_hash", 0); sha1_hash_npm(data, len, cx); }); call_lbl_2: ({ calling_npm("sha1_end", 0); sha1_end_npm(hval, cx); });
-# 333 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 333 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1", &____must_manage_sha1, ____alias_loc_id_10, ____chimes_did_disable10, false); }
 
 void sha1(unsigned char hval[], const unsigned char data[], unsigned long len) { (____chimes_replaying ? sha1_resumable(hval, data, len) : sha1_quick(hval, data, len)); }
-# 49 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 49 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 void rng_init_npm(RNG_state *newstate, int seed)
-# 50 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 50 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 {
-# 51 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 51 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   struct sha1_ctx_s ctx;
-# 52 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 52 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   struct state_t gen;
-# 53 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 53 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   int i;
-# 54 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 55 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 54 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 55 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   for (i=0; i < 16; i++) { gen.state[i] = 0; };
-# 57 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 57 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   gen.state[16] = 0xFF & (seed >> 24);
-# 58 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 58 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   gen.state[17] = 0xFF & (seed >> 16);
-# 59 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 59 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   gen.state[18] = 0xFF & (seed >> 8);
-# 60 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 60 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   gen.state[19] = 0xFF & (seed >> 0);
-# 61 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 62 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 61 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 62 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   sha1_begin_npm(&ctx);
-# 63 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 63 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   sha1_hash_npm(gen.state, 20, &ctx);
-# 64 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 64 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   sha1_end_npm(newstate, &ctx);
-# 65 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 65 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-# 67 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 67 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 void rng_spawn_npm(RNG_state *mystate, RNG_state *newstate, int spawnnumber)
-# 68 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 68 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 {
-# 69 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 69 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  struct sha1_ctx_s ctx;
-# 70 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 70 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  uint8 bytes[4];
-# 71 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 72 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 71 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 72 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  bytes[0] = 0xFF & (spawnnumber >> 24);
-# 73 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 73 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  bytes[1] = 0xFF & (spawnnumber >> 16);
-# 74 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 74 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  bytes[2] = 0xFF & (spawnnumber >> 8);
-# 75 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 75 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  bytes[3] = 0xFF & spawnnumber;
-# 76 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 77 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 76 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 77 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  sha1_begin_npm(&ctx);
-# 78 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 78 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  sha1_hash_npm(mystate, 20, &ctx);
-# 79 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 79 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  sha1_hash_npm(bytes, 4, &ctx);
-# 80 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 80 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  sha1_end_npm(newstate, &ctx);
-# 81 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 81 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-# 83 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 83 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 int rng_rand_npm(RNG_state *mystate){
-# 84 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 84 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         int r;
-# 85 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 85 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  uint32 b = (mystate[16] << 24) | (mystate[17] << 16)
-# 86 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 86 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   | (mystate[18] << 8) | (mystate[19] << 0);
-# 87 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 87 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  b = b & 0x7fffffff;
-# 88 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 89 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 88 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 89 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  r = (int) b;
-# 90 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 91 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 90 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 91 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   int ____chimes_ret_var_0; ____chimes_ret_var_0 = (r); return ____chimes_ret_var_0; ;
-# 92 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 92 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-# 94 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 94 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 int rng_nextrand_npm(RNG_state *mystate){
-# 95 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 95 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  struct sha1_ctx_s ctx;
-# 96 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 96 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  int r;
-# 97 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 97 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  uint32 b;
-# 98 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 99 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 98 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 99 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  sha1_begin_npm(&ctx);
-# 100 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 100 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  sha1_hash_npm(mystate, 20, &ctx);
-# 101 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 101 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  sha1_end_npm(mystate, &ctx);
-# 102 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 102 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  b = (mystate[16] << 24) | (mystate[17] << 16)
-# 103 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 103 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   | (mystate[18] << 8) | (mystate[19] << 0);
-# 104 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 104 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  b = b & 0x7fffffff;
-# 105 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 106 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 105 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 106 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
  r = (int) b;
-# 107 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 107 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   int ____chimes_ret_var_1; ____chimes_ret_var_1 = (r); return ____chimes_ret_var_1; ;
-# 108 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 108 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-# 111 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 111 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 char * rng_showstate_npm(RNG_state *state, char *s){
-# 112 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 112 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   sprintf(s,"%.2X%.2X...", state[0],state[1]);
-# 113 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 113 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
    char * ____chimes_ret_var_2; ____chimes_ret_var_2 = (s); return ____chimes_ret_var_2; ;
-# 114 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 114 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-# 117 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 117 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 int rng_showtype_npm(char *strBuf, int ind) {
-# 118 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 118 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
   ind += sprintf(strBuf+ind, "SHA-1 (state size = %luB)",
-# 119 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 119 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
                  sizeof(struct state_t));
-# 120 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 120 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
    int ____chimes_ret_var_3; ____chimes_ret_var_3 = (ind); return ____chimes_ret_var_3; ;
-# 121 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 121 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-# 195 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 195 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_compile_npm(sha1_ctx ctx[1])
-# 196 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 196 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 { uint_32t *w = ctx->wbuf;
-# 197 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 198 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 199 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 200 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 201 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 202 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 197 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 198 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 199 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 200 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 201 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 202 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     uint_32t v0, v1, v2, v3, v4;
-# 203 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 203 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v0 = ctx->hash[0]; v1 = ctx->hash[1];
-# 204 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 204 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v2 = ctx->hash[2]; v3 = ctx->hash[3];
-# 205 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 205 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 = ctx->hash[4];
-# 206 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 207 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 208 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 209 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 210 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 206 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 207 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 208 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 209 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 210 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[0]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[0 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[0 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[0 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[0 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 211 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 211 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[5]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[5 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[5 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[5 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[5 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 212 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 212 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[10]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[10 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[10 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[10 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[10 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 213 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 213 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[15]; v1 = (((v1) >> 2) | ((v1) << (32 - 2)));
-# 214 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 215 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 216 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 217 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 218 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 219 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 220 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 214 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 215 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 216 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 217 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 218 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 219 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 220 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + (w[(16) & 15] = (((w[((16) + 13) & 15] ^ w[((16) + 8) & 15] ^ w[((16) + 2) & 15] ^ w[(16) & 15]) << 1) | ((w[((16) + 13) & 15] ^ w[((16) + 8) & 15] ^ w[((16) + 2) & 15] ^ w[(16) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2)));
-# 221 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 221 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + (w[(17) & 15] = (((w[((17) + 13) & 15] ^ w[((17) + 8) & 15] ^ w[((17) + 2) & 15] ^ w[(17) & 15]) << 1) | ((w[((17) + 13) & 15] ^ w[((17) + 8) & 15] ^ w[((17) + 2) & 15] ^ w[(17) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2)));
-# 222 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 222 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + (w[(18) & 15] = (((w[((18) + 13) & 15] ^ w[((18) + 8) & 15] ^ w[((18) + 2) & 15] ^ w[(18) & 15]) << 1) | ((w[((18) + 13) & 15] ^ w[((18) + 8) & 15] ^ w[((18) + 2) & 15] ^ w[(18) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2)));
-# 223 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 223 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + (w[(19) & 15] = (((w[((19) + 13) & 15] ^ w[((19) + 8) & 15] ^ w[((19) + 2) & 15] ^ w[(19) & 15]) << 1) | ((w[((19) + 13) & 15] ^ w[((19) + 8) & 15] ^ w[((19) + 2) & 15] ^ w[(19) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 224 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 225 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 224 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 225 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(20) & 15] = (((w[((20) + 13) & 15] ^ w[((20) + 8) & 15] ^ w[((20) + 2) & 15] ^ w[(20) & 15]) << 1) | ((w[((20) + 13) & 15] ^ w[((20) + 8) & 15] ^ w[((20) + 2) & 15] ^ w[(20) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(20 +1) & 15] = (((w[((20 +1) + 13) & 15] ^ w[((20 +1) + 8) & 15] ^ w[((20 +1) + 2) & 15] ^ w[(20 +1) & 15]) << 1) | ((w[((20 +1) + 13) & 15] ^ w[((20 +1) + 8) & 15] ^ w[((20 +1) + 2) & 15] ^ w[(20 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(20 +2) & 15] = (((w[((20 +2) + 13) & 15] ^ w[((20 +2) + 8) & 15] ^ w[((20 +2) + 2) & 15] ^ w[(20 +2) & 15]) << 1) | ((w[((20 +2) + 13) & 15] ^ w[((20 +2) + 8) & 15] ^ w[((20 +2) + 2) & 15] ^ w[(20 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(20 +3) & 15] = (((w[((20 +3) + 13) & 15] ^ w[((20 +3) + 8) & 15] ^ w[((20 +3) + 2) & 15] ^ w[(20 +3) & 15]) << 1) | ((w[((20 +3) + 13) & 15] ^ w[((20 +3) + 8) & 15] ^ w[((20 +3) + 2) & 15] ^ w[(20 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(20 +4) & 15] = (((w[((20 +4) + 13) & 15] ^ w[((20 +4) + 8) & 15] ^ w[((20 +4) + 2) & 15] ^ w[(20 +4) & 15]) << 1) | ((w[((20 +4) + 13) & 15] ^ w[((20 +4) + 8) & 15] ^ w[((20 +4) + 2) & 15] ^ w[(20 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 226 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 226 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(25) & 15] = (((w[((25) + 13) & 15] ^ w[((25) + 8) & 15] ^ w[((25) + 2) & 15] ^ w[(25) & 15]) << 1) | ((w[((25) + 13) & 15] ^ w[((25) + 8) & 15] ^ w[((25) + 2) & 15] ^ w[(25) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(25 +1) & 15] = (((w[((25 +1) + 13) & 15] ^ w[((25 +1) + 8) & 15] ^ w[((25 +1) + 2) & 15] ^ w[(25 +1) & 15]) << 1) | ((w[((25 +1) + 13) & 15] ^ w[((25 +1) + 8) & 15] ^ w[((25 +1) + 2) & 15] ^ w[(25 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(25 +2) & 15] = (((w[((25 +2) + 13) & 15] ^ w[((25 +2) + 8) & 15] ^ w[((25 +2) + 2) & 15] ^ w[(25 +2) & 15]) << 1) | ((w[((25 +2) + 13) & 15] ^ w[((25 +2) + 8) & 15] ^ w[((25 +2) + 2) & 15] ^ w[(25 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(25 +3) & 15] = (((w[((25 +3) + 13) & 15] ^ w[((25 +3) + 8) & 15] ^ w[((25 +3) + 2) & 15] ^ w[(25 +3) & 15]) << 1) | ((w[((25 +3) + 13) & 15] ^ w[((25 +3) + 8) & 15] ^ w[((25 +3) + 2) & 15] ^ w[(25 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(25 +4) & 15] = (((w[((25 +4) + 13) & 15] ^ w[((25 +4) + 8) & 15] ^ w[((25 +4) + 2) & 15] ^ w[(25 +4) & 15]) << 1) | ((w[((25 +4) + 13) & 15] ^ w[((25 +4) + 8) & 15] ^ w[((25 +4) + 2) & 15] ^ w[(25 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 227 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 227 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(30) & 15] = (((w[((30) + 13) & 15] ^ w[((30) + 8) & 15] ^ w[((30) + 2) & 15] ^ w[(30) & 15]) << 1) | ((w[((30) + 13) & 15] ^ w[((30) + 8) & 15] ^ w[((30) + 2) & 15] ^ w[(30) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(30 +1) & 15] = (((w[((30 +1) + 13) & 15] ^ w[((30 +1) + 8) & 15] ^ w[((30 +1) + 2) & 15] ^ w[(30 +1) & 15]) << 1) | ((w[((30 +1) + 13) & 15] ^ w[((30 +1) + 8) & 15] ^ w[((30 +1) + 2) & 15] ^ w[(30 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(30 +2) & 15] = (((w[((30 +2) + 13) & 15] ^ w[((30 +2) + 8) & 15] ^ w[((30 +2) + 2) & 15] ^ w[(30 +2) & 15]) << 1) | ((w[((30 +2) + 13) & 15] ^ w[((30 +2) + 8) & 15] ^ w[((30 +2) + 2) & 15] ^ w[(30 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(30 +3) & 15] = (((w[((30 +3) + 13) & 15] ^ w[((30 +3) + 8) & 15] ^ w[((30 +3) + 2) & 15] ^ w[(30 +3) & 15]) << 1) | ((w[((30 +3) + 13) & 15] ^ w[((30 +3) + 8) & 15] ^ w[((30 +3) + 2) & 15] ^ w[(30 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(30 +4) & 15] = (((w[((30 +4) + 13) & 15] ^ w[((30 +4) + 8) & 15] ^ w[((30 +4) + 2) & 15] ^ w[(30 +4) & 15]) << 1) | ((w[((30 +4) + 13) & 15] ^ w[((30 +4) + 8) & 15] ^ w[((30 +4) + 2) & 15] ^ w[(30 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 228 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 228 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(35) & 15] = (((w[((35) + 13) & 15] ^ w[((35) + 8) & 15] ^ w[((35) + 2) & 15] ^ w[(35) & 15]) << 1) | ((w[((35) + 13) & 15] ^ w[((35) + 8) & 15] ^ w[((35) + 2) & 15] ^ w[(35) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(35 +1) & 15] = (((w[((35 +1) + 13) & 15] ^ w[((35 +1) + 8) & 15] ^ w[((35 +1) + 2) & 15] ^ w[(35 +1) & 15]) << 1) | ((w[((35 +1) + 13) & 15] ^ w[((35 +1) + 8) & 15] ^ w[((35 +1) + 2) & 15] ^ w[(35 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(35 +2) & 15] = (((w[((35 +2) + 13) & 15] ^ w[((35 +2) + 8) & 15] ^ w[((35 +2) + 2) & 15] ^ w[(35 +2) & 15]) << 1) | ((w[((35 +2) + 13) & 15] ^ w[((35 +2) + 8) & 15] ^ w[((35 +2) + 2) & 15] ^ w[(35 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(35 +3) & 15] = (((w[((35 +3) + 13) & 15] ^ w[((35 +3) + 8) & 15] ^ w[((35 +3) + 2) & 15] ^ w[(35 +3) & 15]) << 1) | ((w[((35 +3) + 13) & 15] ^ w[((35 +3) + 8) & 15] ^ w[((35 +3) + 2) & 15] ^ w[(35 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(35 +4) & 15] = (((w[((35 +4) + 13) & 15] ^ w[((35 +4) + 8) & 15] ^ w[((35 +4) + 2) & 15] ^ w[(35 +4) & 15]) << 1) | ((w[((35 +4) + 13) & 15] ^ w[((35 +4) + 8) & 15] ^ w[((35 +4) + 2) & 15] ^ w[(35 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 229 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 230 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 229 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 230 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(40) & 15] = (((w[((40) + 13) & 15] ^ w[((40) + 8) & 15] ^ w[((40) + 2) & 15] ^ w[(40) & 15]) << 1) | ((w[((40) + 13) & 15] ^ w[((40) + 8) & 15] ^ w[((40) + 2) & 15] ^ w[(40) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(40 +1) & 15] = (((w[((40 +1) + 13) & 15] ^ w[((40 +1) + 8) & 15] ^ w[((40 +1) + 2) & 15] ^ w[(40 +1) & 15]) << 1) | ((w[((40 +1) + 13) & 15] ^ w[((40 +1) + 8) & 15] ^ w[((40 +1) + 2) & 15] ^ w[(40 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(40 +2) & 15] = (((w[((40 +2) + 13) & 15] ^ w[((40 +2) + 8) & 15] ^ w[((40 +2) + 2) & 15] ^ w[(40 +2) & 15]) << 1) | ((w[((40 +2) + 13) & 15] ^ w[((40 +2) + 8) & 15] ^ w[((40 +2) + 2) & 15] ^ w[(40 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(40 +3) & 15] = (((w[((40 +3) + 13) & 15] ^ w[((40 +3) + 8) & 15] ^ w[((40 +3) + 2) & 15] ^ w[(40 +3) & 15]) << 1) | ((w[((40 +3) + 13) & 15] ^ w[((40 +3) + 8) & 15] ^ w[((40 +3) + 2) & 15] ^ w[(40 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(40 +4) & 15] = (((w[((40 +4) + 13) & 15] ^ w[((40 +4) + 8) & 15] ^ w[((40 +4) + 2) & 15] ^ w[(40 +4) & 15]) << 1) | ((w[((40 +4) + 13) & 15] ^ w[((40 +4) + 8) & 15] ^ w[((40 +4) + 2) & 15] ^ w[(40 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 231 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 231 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(45) & 15] = (((w[((45) + 13) & 15] ^ w[((45) + 8) & 15] ^ w[((45) + 2) & 15] ^ w[(45) & 15]) << 1) | ((w[((45) + 13) & 15] ^ w[((45) + 8) & 15] ^ w[((45) + 2) & 15] ^ w[(45) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(45 +1) & 15] = (((w[((45 +1) + 13) & 15] ^ w[((45 +1) + 8) & 15] ^ w[((45 +1) + 2) & 15] ^ w[(45 +1) & 15]) << 1) | ((w[((45 +1) + 13) & 15] ^ w[((45 +1) + 8) & 15] ^ w[((45 +1) + 2) & 15] ^ w[(45 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(45 +2) & 15] = (((w[((45 +2) + 13) & 15] ^ w[((45 +2) + 8) & 15] ^ w[((45 +2) + 2) & 15] ^ w[(45 +2) & 15]) << 1) | ((w[((45 +2) + 13) & 15] ^ w[((45 +2) + 8) & 15] ^ w[((45 +2) + 2) & 15] ^ w[(45 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(45 +3) & 15] = (((w[((45 +3) + 13) & 15] ^ w[((45 +3) + 8) & 15] ^ w[((45 +3) + 2) & 15] ^ w[(45 +3) & 15]) << 1) | ((w[((45 +3) + 13) & 15] ^ w[((45 +3) + 8) & 15] ^ w[((45 +3) + 2) & 15] ^ w[(45 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(45 +4) & 15] = (((w[((45 +4) + 13) & 15] ^ w[((45 +4) + 8) & 15] ^ w[((45 +4) + 2) & 15] ^ w[(45 +4) & 15]) << 1) | ((w[((45 +4) + 13) & 15] ^ w[((45 +4) + 8) & 15] ^ w[((45 +4) + 2) & 15] ^ w[(45 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 232 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 232 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(50) & 15] = (((w[((50) + 13) & 15] ^ w[((50) + 8) & 15] ^ w[((50) + 2) & 15] ^ w[(50) & 15]) << 1) | ((w[((50) + 13) & 15] ^ w[((50) + 8) & 15] ^ w[((50) + 2) & 15] ^ w[(50) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(50 +1) & 15] = (((w[((50 +1) + 13) & 15] ^ w[((50 +1) + 8) & 15] ^ w[((50 +1) + 2) & 15] ^ w[(50 +1) & 15]) << 1) | ((w[((50 +1) + 13) & 15] ^ w[((50 +1) + 8) & 15] ^ w[((50 +1) + 2) & 15] ^ w[(50 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(50 +2) & 15] = (((w[((50 +2) + 13) & 15] ^ w[((50 +2) + 8) & 15] ^ w[((50 +2) + 2) & 15] ^ w[(50 +2) & 15]) << 1) | ((w[((50 +2) + 13) & 15] ^ w[((50 +2) + 8) & 15] ^ w[((50 +2) + 2) & 15] ^ w[(50 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(50 +3) & 15] = (((w[((50 +3) + 13) & 15] ^ w[((50 +3) + 8) & 15] ^ w[((50 +3) + 2) & 15] ^ w[(50 +3) & 15]) << 1) | ((w[((50 +3) + 13) & 15] ^ w[((50 +3) + 8) & 15] ^ w[((50 +3) + 2) & 15] ^ w[(50 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(50 +4) & 15] = (((w[((50 +4) + 13) & 15] ^ w[((50 +4) + 8) & 15] ^ w[((50 +4) + 2) & 15] ^ w[(50 +4) & 15]) << 1) | ((w[((50 +4) + 13) & 15] ^ w[((50 +4) + 8) & 15] ^ w[((50 +4) + 2) & 15] ^ w[(50 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 233 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 233 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(55) & 15] = (((w[((55) + 13) & 15] ^ w[((55) + 8) & 15] ^ w[((55) + 2) & 15] ^ w[(55) & 15]) << 1) | ((w[((55) + 13) & 15] ^ w[((55) + 8) & 15] ^ w[((55) + 2) & 15] ^ w[(55) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(55 +1) & 15] = (((w[((55 +1) + 13) & 15] ^ w[((55 +1) + 8) & 15] ^ w[((55 +1) + 2) & 15] ^ w[(55 +1) & 15]) << 1) | ((w[((55 +1) + 13) & 15] ^ w[((55 +1) + 8) & 15] ^ w[((55 +1) + 2) & 15] ^ w[(55 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(55 +2) & 15] = (((w[((55 +2) + 13) & 15] ^ w[((55 +2) + 8) & 15] ^ w[((55 +2) + 2) & 15] ^ w[(55 +2) & 15]) << 1) | ((w[((55 +2) + 13) & 15] ^ w[((55 +2) + 8) & 15] ^ w[((55 +2) + 2) & 15] ^ w[(55 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(55 +3) & 15] = (((w[((55 +3) + 13) & 15] ^ w[((55 +3) + 8) & 15] ^ w[((55 +3) + 2) & 15] ^ w[(55 +3) & 15]) << 1) | ((w[((55 +3) + 13) & 15] ^ w[((55 +3) + 8) & 15] ^ w[((55 +3) + 2) & 15] ^ w[(55 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(55 +4) & 15] = (((w[((55 +4) + 13) & 15] ^ w[((55 +4) + 8) & 15] ^ w[((55 +4) + 2) & 15] ^ w[(55 +4) & 15]) << 1) | ((w[((55 +4) + 13) & 15] ^ w[((55 +4) + 8) & 15] ^ w[((55 +4) + 2) & 15] ^ w[(55 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 234 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 235 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 234 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 235 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(60) & 15] = (((w[((60) + 13) & 15] ^ w[((60) + 8) & 15] ^ w[((60) + 2) & 15] ^ w[(60) & 15]) << 1) | ((w[((60) + 13) & 15] ^ w[((60) + 8) & 15] ^ w[((60) + 2) & 15] ^ w[(60) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(60 +1) & 15] = (((w[((60 +1) + 13) & 15] ^ w[((60 +1) + 8) & 15] ^ w[((60 +1) + 2) & 15] ^ w[(60 +1) & 15]) << 1) | ((w[((60 +1) + 13) & 15] ^ w[((60 +1) + 8) & 15] ^ w[((60 +1) + 2) & 15] ^ w[(60 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(60 +2) & 15] = (((w[((60 +2) + 13) & 15] ^ w[((60 +2) + 8) & 15] ^ w[((60 +2) + 2) & 15] ^ w[(60 +2) & 15]) << 1) | ((w[((60 +2) + 13) & 15] ^ w[((60 +2) + 8) & 15] ^ w[((60 +2) + 2) & 15] ^ w[(60 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(60 +3) & 15] = (((w[((60 +3) + 13) & 15] ^ w[((60 +3) + 8) & 15] ^ w[((60 +3) + 2) & 15] ^ w[(60 +3) & 15]) << 1) | ((w[((60 +3) + 13) & 15] ^ w[((60 +3) + 8) & 15] ^ w[((60 +3) + 2) & 15] ^ w[(60 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(60 +4) & 15] = (((w[((60 +4) + 13) & 15] ^ w[((60 +4) + 8) & 15] ^ w[((60 +4) + 2) & 15] ^ w[(60 +4) & 15]) << 1) | ((w[((60 +4) + 13) & 15] ^ w[((60 +4) + 8) & 15] ^ w[((60 +4) + 2) & 15] ^ w[(60 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 236 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 236 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(65) & 15] = (((w[((65) + 13) & 15] ^ w[((65) + 8) & 15] ^ w[((65) + 2) & 15] ^ w[(65) & 15]) << 1) | ((w[((65) + 13) & 15] ^ w[((65) + 8) & 15] ^ w[((65) + 2) & 15] ^ w[(65) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(65 +1) & 15] = (((w[((65 +1) + 13) & 15] ^ w[((65 +1) + 8) & 15] ^ w[((65 +1) + 2) & 15] ^ w[(65 +1) & 15]) << 1) | ((w[((65 +1) + 13) & 15] ^ w[((65 +1) + 8) & 15] ^ w[((65 +1) + 2) & 15] ^ w[(65 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(65 +2) & 15] = (((w[((65 +2) + 13) & 15] ^ w[((65 +2) + 8) & 15] ^ w[((65 +2) + 2) & 15] ^ w[(65 +2) & 15]) << 1) | ((w[((65 +2) + 13) & 15] ^ w[((65 +2) + 8) & 15] ^ w[((65 +2) + 2) & 15] ^ w[(65 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(65 +3) & 15] = (((w[((65 +3) + 13) & 15] ^ w[((65 +3) + 8) & 15] ^ w[((65 +3) + 2) & 15] ^ w[(65 +3) & 15]) << 1) | ((w[((65 +3) + 13) & 15] ^ w[((65 +3) + 8) & 15] ^ w[((65 +3) + 2) & 15] ^ w[(65 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(65 +4) & 15] = (((w[((65 +4) + 13) & 15] ^ w[((65 +4) + 8) & 15] ^ w[((65 +4) + 2) & 15] ^ w[(65 +4) & 15]) << 1) | ((w[((65 +4) + 13) & 15] ^ w[((65 +4) + 8) & 15] ^ w[((65 +4) + 2) & 15] ^ w[(65 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 237 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 237 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(70) & 15] = (((w[((70) + 13) & 15] ^ w[((70) + 8) & 15] ^ w[((70) + 2) & 15] ^ w[(70) & 15]) << 1) | ((w[((70) + 13) & 15] ^ w[((70) + 8) & 15] ^ w[((70) + 2) & 15] ^ w[(70) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(70 +1) & 15] = (((w[((70 +1) + 13) & 15] ^ w[((70 +1) + 8) & 15] ^ w[((70 +1) + 2) & 15] ^ w[(70 +1) & 15]) << 1) | ((w[((70 +1) + 13) & 15] ^ w[((70 +1) + 8) & 15] ^ w[((70 +1) + 2) & 15] ^ w[(70 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(70 +2) & 15] = (((w[((70 +2) + 13) & 15] ^ w[((70 +2) + 8) & 15] ^ w[((70 +2) + 2) & 15] ^ w[(70 +2) & 15]) << 1) | ((w[((70 +2) + 13) & 15] ^ w[((70 +2) + 8) & 15] ^ w[((70 +2) + 2) & 15] ^ w[(70 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(70 +3) & 15] = (((w[((70 +3) + 13) & 15] ^ w[((70 +3) + 8) & 15] ^ w[((70 +3) + 2) & 15] ^ w[(70 +3) & 15]) << 1) | ((w[((70 +3) + 13) & 15] ^ w[((70 +3) + 8) & 15] ^ w[((70 +3) + 2) & 15] ^ w[(70 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(70 +4) & 15] = (((w[((70 +4) + 13) & 15] ^ w[((70 +4) + 8) & 15] ^ w[((70 +4) + 2) & 15] ^ w[(70 +4) & 15]) << 1) | ((w[((70 +4) + 13) & 15] ^ w[((70 +4) + 8) & 15] ^ w[((70 +4) + 2) & 15] ^ w[(70 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 238 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 238 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(75) & 15] = (((w[((75) + 13) & 15] ^ w[((75) + 8) & 15] ^ w[((75) + 2) & 15] ^ w[(75) & 15]) << 1) | ((w[((75) + 13) & 15] ^ w[((75) + 8) & 15] ^ w[((75) + 2) & 15] ^ w[(75) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(75 +1) & 15] = (((w[((75 +1) + 13) & 15] ^ w[((75 +1) + 8) & 15] ^ w[((75 +1) + 2) & 15] ^ w[(75 +1) & 15]) << 1) | ((w[((75 +1) + 13) & 15] ^ w[((75 +1) + 8) & 15] ^ w[((75 +1) + 2) & 15] ^ w[(75 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(75 +2) & 15] = (((w[((75 +2) + 13) & 15] ^ w[((75 +2) + 8) & 15] ^ w[((75 +2) + 2) & 15] ^ w[(75 +2) & 15]) << 1) | ((w[((75 +2) + 13) & 15] ^ w[((75 +2) + 8) & 15] ^ w[((75 +2) + 2) & 15] ^ w[(75 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(75 +3) & 15] = (((w[((75 +3) + 13) & 15] ^ w[((75 +3) + 8) & 15] ^ w[((75 +3) + 2) & 15] ^ w[(75 +3) & 15]) << 1) | ((w[((75 +3) + 13) & 15] ^ w[((75 +3) + 8) & 15] ^ w[((75 +3) + 2) & 15] ^ w[(75 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(75 +4) & 15] = (((w[((75 +4) + 13) & 15] ^ w[((75 +4) + 8) & 15] ^ w[((75 +4) + 2) & 15] ^ w[(75 +4) & 15]) << 1) | ((w[((75 +4) + 13) & 15] ^ w[((75 +4) + 8) & 15] ^ w[((75 +4) + 2) & 15] ^ w[(75 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
-# 239 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 240 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 241 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 242 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 243 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 244 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 245 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 239 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 240 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 241 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 242 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 243 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 244 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 245 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[0] += v0; ctx->hash[1] += v1;
-# 246 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 246 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[2] += v2; ctx->hash[3] += v3;
-# 247 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 247 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[4] += v4;
-# 248 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 249 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 248 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 249 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-# 251 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 251 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_begin_npm(sha1_ctx ctx[1])
-# 252 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 252 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 {
-# 253 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 253 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->count[0] = ctx->count[1] = 0;
-# 254 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 254 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[0] = 0x67452301;
-# 255 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 255 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[1] = 0xefcdab89;
-# 256 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 256 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[2] = 0x98badcfe;
-# 257 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 257 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[3] = 0x10325476;
-# 258 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 258 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[4] = 0xc3d2e1f0;
-# 259 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 259 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-# 264 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 264 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_hash_npm(const unsigned char data[], unsigned long len, sha1_ctx ctx[1])
-# 265 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 265 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 { uint_32t pos = (uint_32t)(ctx->count[0] & (64 - 1)),
-# 266 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 266 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
             space = 64 - pos;
-# 267 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 267 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     const unsigned char *sp = data;
-# 268 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 269 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 268 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 269 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     if ((ctx->count[0] += len) < len) {++(ctx->count[1]); };
-# 271 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 272 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 271 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 272 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     while(len >= space)
-# 273 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 273 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     {
-# 274 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 274 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         memcpy(((unsigned char*)ctx->wbuf) + pos, sp, space);
-# 275 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 275 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         sp += space; len -= space; space = 64; pos = 0;
-# 276 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 276 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         { int _i = (64 >> 2); while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
-# 277 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 277 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         sha1_compile_npm(ctx);
-# 278 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 278 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     }
-# 279 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 280 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 279 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 280 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     memcpy(((unsigned char*)ctx->wbuf) + pos, sp, len);
-# 281 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 281 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-# 285 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 285 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_end_npm(unsigned char hval[], sha1_ctx ctx[1])
-# 286 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 286 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 { uint_32t i = (uint_32t)(ctx->count[0] & (64 - 1));
-# 287 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 288 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 289 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 290 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 291 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 287 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 288 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 289 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 290 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 291 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     { int _i = ((i + 3) >> 2); while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
-# 292 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 293 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 294 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 295 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 296 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 297 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 292 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 293 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 294 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 295 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 296 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 297 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->wbuf[i >> 2] &= 0xffffff80 << 8 * (~i & 3);
-# 298 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 298 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->wbuf[i >> 2] |= 0x00000080 << 8 * (~i & 3);
-# 299 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 300 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 301 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 302 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 303 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 299 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 300 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 301 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 302 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 303 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     if (i > 64 - 9) {{
-# 305 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 305 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         if (i < 60) {ctx->wbuf[15] = 0; };
-# 306 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 306 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         sha1_compile_npm(ctx);
-# 307 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 307 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         i = 0;
-# 308 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 308 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     }; } else {i = (i >> 2) + 1; } ;
-# 311 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 312 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 311 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 312 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     while(i < 14)
-# 313 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 313 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
         ctx->wbuf[i++] = 0;
-# 314 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 315 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 316 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 317 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 318 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 319 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 314 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 315 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 316 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 317 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 318 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 319 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->wbuf[14] = (ctx->count[1] << 3) | (ctx->count[0] >> 29);
-# 320 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 320 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->wbuf[15] = ctx->count[0] << 3;
-# 321 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 321 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     sha1_compile_npm(ctx);
-# 322 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 323 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 324 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 325 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 322 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 323 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 324 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 325 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     for (i = 0; i < 20; ++i) { hval[i] = (unsigned char)(ctx->hash[i >> 2] >> (8 * (~i & 3))); };
-# 327 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 327 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-# 329 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 329 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_npm(unsigned char hval[], const unsigned char data[], unsigned long len)
-# 330 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 330 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 { sha1_ctx cx[1];
-# 331 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
-# 332 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 331 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 332 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
     sha1_begin_npm(cx); sha1_hash_npm(data, len, cx); sha1_end_npm(hval, cx);
-# 333 "/home/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
+# 333 "/scratch/jmg3/chimes/src/examples/cpp/uts/rng/brg_sha1.c"
 }
 
 
@@ -3876,29 +3876,29 @@ void sha1_npm(unsigned char hval[], const unsigned char data[], unsigned long le
 
 
 static int module_init() {
-    init_module(1633707214412207042UL, 19, 11, 4, 11, 11, 0, 11, 16, 0, 2,
-                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (1633707214412207042UL + 1UL), (1633707214412207042UL + 2UL), (1633707214412207042UL + 4UL), (1633707214412207042UL + 5UL),
-                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (1633707214412207042UL + 67UL), (1633707214412207042UL + 99UL),
-                           &____alias_loc_id_2, (unsigned)8, (unsigned)0, (unsigned)0, (1633707214412207042UL + 100UL), (1633707214412207042UL + 101UL), (1633707214412207042UL + 102UL), (1633707214412207042UL + 103UL), (1633707214412207042UL + 104UL), (1633707214412207042UL + 105UL), (1633707214412207042UL + 106UL), (1633707214412207042UL + 245UL),
-                           &____alias_loc_id_3, (unsigned)6, (unsigned)0, (unsigned)0, (1633707214412207042UL + 246UL), (1633707214412207042UL + 247UL), (1633707214412207042UL + 248UL), (1633707214412207042UL + 249UL), (1633707214412207042UL + 433UL), (1633707214412207042UL + 434UL),
-                           &____alias_loc_id_4, (unsigned)4, (unsigned)0, (unsigned)0, (1633707214412207042UL + 435UL), (1633707214412207042UL + 436UL), (1633707214412207042UL + 437UL), (1633707214412207042UL + 439UL),
-                           &____alias_loc_id_5, (unsigned)4, (unsigned)0, (unsigned)0, (1633707214412207042UL + 482UL), (1633707214412207042UL + 483UL), (1633707214412207042UL + 484UL), (1633707214412207042UL + 485UL),
-                           &____alias_loc_id_6, (unsigned)4, (unsigned)0, (unsigned)0, (1633707214412207042UL + 525UL), (1633707214412207042UL + 527UL), (1633707214412207042UL + 528UL), (1633707214412207042UL + 529UL),
-                           &____alias_loc_id_7, (unsigned)3, (unsigned)0, (unsigned)0, (1633707214412207042UL + 575UL), (1633707214412207042UL + 576UL), (1633707214412207042UL + 577UL),
-                           &____alias_loc_id_8, (unsigned)3, (unsigned)0, (unsigned)0, (1633707214412207042UL + 601UL), (1633707214412207042UL + 602UL), (1633707214412207042UL + 603UL),
-                           &____alias_loc_id_9, (unsigned)8, (unsigned)0, (unsigned)0, (1633707214412207042UL + 623UL), (1633707214412207042UL + 624UL), (1633707214412207042UL + 625UL), (1633707214412207042UL + 626UL), (1633707214412207042UL + 627UL), (1633707214412207042UL + 628UL), (1633707214412207042UL + 629UL), (1633707214412207042UL + 4935UL),
-                            &____alias_loc_id_10, (unsigned)3, (unsigned)0, (unsigned)0, (1633707214412207042UL + 4941UL), (1633707214412207042UL + 4942UL), (1633707214412207042UL + 4943UL),
-                            "sha1", 0, "_Z4sha1PhPKhm", "_Z8sha1_npmPhPKhm", 0, 3, (1633707214412207042UL + 4962UL), (1633707214412207042UL + 4963UL), 0UL, 0UL, 3, "sha1_begin", 1, (1633707214412207042UL + 4944UL), 0UL, "sha1_hash", 3, (1633707214412207042UL + 4963UL), 0UL, (1633707214412207042UL + 4944UL), 0UL, "sha1_end", 2, (1633707214412207042UL + 4962UL), (1633707214412207042UL + 4944UL), 0UL,
-                            "rng_nextrand", 0, "_Z12rng_nextrandPh", "_Z16rng_nextrand_npmPh", 0, 1, (1633707214412207042UL + 574UL), 0UL, 3, "sha1_begin", 1, (1633707214412207042UL + 526UL), 0UL, "sha1_hash", 3, (1633707214412207042UL + 574UL), 0UL, (1633707214412207042UL + 526UL), 0UL, "sha1_end", 2, (1633707214412207042UL + 574UL), (1633707214412207042UL + 526UL), 0UL,
-                            "rng_showstate", 0, "_Z13rng_showstatePhPc", "_Z17rng_showstate_npmPhPc", 0, 2, (1633707214412207042UL + 597UL), (1633707214412207042UL + 598UL), (1633707214412207042UL + 598UL), 1, "sprintf", 4, (1633707214412207042UL + 598UL), (1633707214412207042UL + 4965UL), 0UL, 0UL, 0UL,
-                            "rng_init", 0, "_Z8rng_initPhi", "_Z12rng_init_npmPhi", 0, 2, (1633707214412207042UL + 63UL), 0UL, 0UL, 3, "sha1_begin", 1, (1633707214412207042UL + 3UL), 0UL, "sha1_hash", 3, (1633707214412207042UL + 4UL), 0UL, (1633707214412207042UL + 3UL), 0UL, "sha1_end", 2, (1633707214412207042UL + 63UL), (1633707214412207042UL + 3UL), 0UL,
-                            "rng_spawn", 0, "_Z9rng_spawnPhS_i", "_Z13rng_spawn_npmPhS_i", 0, 3, (1633707214412207042UL + 479UL), (1633707214412207042UL + 480UL), 0UL, 0UL, 4, "sha1_begin", 1, (1633707214412207042UL + 438UL), 0UL, "sha1_hash", 3, (1633707214412207042UL + 479UL), 0UL, (1633707214412207042UL + 438UL), 0UL, "sha1_hash", 3, (1633707214412207042UL + 439UL), 0UL, (1633707214412207042UL + 438UL), 0UL, "sha1_end", 2, (1633707214412207042UL + 480UL), (1633707214412207042UL + 438UL), 0UL,
-                            "sha1_hash", 0, "_Z9sha1_hashPKhmP10sha1_ctx_s", "_Z13sha1_hash_npmPKhmP10sha1_ctx_s", 0, 3, (1633707214412207042UL + 243UL), 0UL, (1633707214412207042UL + 245UL), 0UL, 3, "memcpy", 3, (1633707214412207042UL + 245UL), (1633707214412207042UL + 243UL), 0UL, 0UL, "sha1_compile", 1, (1633707214412207042UL + 245UL), 0UL, "memcpy", 3, (1633707214412207042UL + 245UL), (1633707214412207042UL + 243UL), 0UL, 0UL,
-                            "sha1_end", 0, "_Z8sha1_endPhP10sha1_ctx_s", "_Z12sha1_end_npmPhP10sha1_ctx_s", 0, 2, (1633707214412207042UL + 433UL), (1633707214412207042UL + 434UL), 0UL, 2, "sha1_compile", 1, (1633707214412207042UL + 434UL), 0UL, "sha1_compile", 1, (1633707214412207042UL + 434UL), 0UL,
-                            "rng_rand", 0, "_Z8rng_randPh", "_Z12rng_rand_npmPh", 0, 1, (1633707214412207042UL + 524UL), 0UL, 0,
-                            "sha1_compile", 0, "_Z12sha1_compileP10sha1_ctx_s", "_Z16sha1_compile_npmP10sha1_ctx_s", 0, 1, (1633707214412207042UL + 4935UL), 0UL, 0,
-                            "sha1_begin", 0, "_Z10sha1_beginP10sha1_ctx_s", "_Z14sha1_begin_npmP10sha1_ctx_s", 0, 1, (1633707214412207042UL + 99UL), 0UL, 0,
-                            "rng_showtype", 0, "_Z12rng_showtypePci", "_Z16rng_showtype_npmPci", 0, 2, (1633707214412207042UL + 621UL), 0UL, 0UL, 1, "sprintf", 3, (1633707214412207042UL + 621UL), (1633707214412207042UL + 4966UL), 0UL, 0UL,
+    init_module(11829459004090236818UL, 19, 11, 4, 11, 11, 0, 11, 16, 0, 2,
+                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (11829459004090236818UL + 1UL), (11829459004090236818UL + 2UL), (11829459004090236818UL + 4UL), (11829459004090236818UL + 5UL),
+                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (11829459004090236818UL + 67UL), (11829459004090236818UL + 99UL),
+                           &____alias_loc_id_2, (unsigned)8, (unsigned)0, (unsigned)0, (11829459004090236818UL + 100UL), (11829459004090236818UL + 101UL), (11829459004090236818UL + 102UL), (11829459004090236818UL + 103UL), (11829459004090236818UL + 104UL), (11829459004090236818UL + 105UL), (11829459004090236818UL + 106UL), (11829459004090236818UL + 245UL),
+                           &____alias_loc_id_3, (unsigned)6, (unsigned)0, (unsigned)0, (11829459004090236818UL + 246UL), (11829459004090236818UL + 247UL), (11829459004090236818UL + 248UL), (11829459004090236818UL + 249UL), (11829459004090236818UL + 433UL), (11829459004090236818UL + 434UL),
+                           &____alias_loc_id_4, (unsigned)4, (unsigned)0, (unsigned)0, (11829459004090236818UL + 435UL), (11829459004090236818UL + 436UL), (11829459004090236818UL + 437UL), (11829459004090236818UL + 439UL),
+                           &____alias_loc_id_5, (unsigned)4, (unsigned)0, (unsigned)0, (11829459004090236818UL + 482UL), (11829459004090236818UL + 483UL), (11829459004090236818UL + 484UL), (11829459004090236818UL + 485UL),
+                           &____alias_loc_id_6, (unsigned)4, (unsigned)0, (unsigned)0, (11829459004090236818UL + 525UL), (11829459004090236818UL + 527UL), (11829459004090236818UL + 528UL), (11829459004090236818UL + 529UL),
+                           &____alias_loc_id_7, (unsigned)3, (unsigned)0, (unsigned)0, (11829459004090236818UL + 575UL), (11829459004090236818UL + 576UL), (11829459004090236818UL + 577UL),
+                           &____alias_loc_id_8, (unsigned)3, (unsigned)0, (unsigned)0, (11829459004090236818UL + 601UL), (11829459004090236818UL + 602UL), (11829459004090236818UL + 603UL),
+                           &____alias_loc_id_9, (unsigned)8, (unsigned)0, (unsigned)0, (11829459004090236818UL + 623UL), (11829459004090236818UL + 624UL), (11829459004090236818UL + 625UL), (11829459004090236818UL + 626UL), (11829459004090236818UL + 627UL), (11829459004090236818UL + 628UL), (11829459004090236818UL + 629UL), (11829459004090236818UL + 4935UL),
+                            &____alias_loc_id_10, (unsigned)3, (unsigned)0, (unsigned)0, (11829459004090236818UL + 4941UL), (11829459004090236818UL + 4942UL), (11829459004090236818UL + 4943UL),
+                            "sha1", 0, "_Z4sha1PhPKhm", "_Z8sha1_npmPhPKhm", 0, 3, (11829459004090236818UL + 4962UL), (11829459004090236818UL + 4963UL), 0UL, 0UL, 3, "sha1_begin", 1, (11829459004090236818UL + 4944UL), 0UL, "sha1_hash", 3, (11829459004090236818UL + 4963UL), 0UL, (11829459004090236818UL + 4944UL), 0UL, "sha1_end", 2, (11829459004090236818UL + 4962UL), (11829459004090236818UL + 4944UL), 0UL,
+                            "rng_nextrand", 0, "_Z12rng_nextrandPh", "_Z16rng_nextrand_npmPh", 0, 1, (11829459004090236818UL + 574UL), 0UL, 3, "sha1_begin", 1, (11829459004090236818UL + 526UL), 0UL, "sha1_hash", 3, (11829459004090236818UL + 574UL), 0UL, (11829459004090236818UL + 526UL), 0UL, "sha1_end", 2, (11829459004090236818UL + 574UL), (11829459004090236818UL + 526UL), 0UL,
+                            "rng_showstate", 0, "_Z13rng_showstatePhPc", "_Z17rng_showstate_npmPhPc", 0, 2, (11829459004090236818UL + 597UL), (11829459004090236818UL + 598UL), (11829459004090236818UL + 598UL), 1, "sprintf", 4, (11829459004090236818UL + 598UL), (11829459004090236818UL + 4965UL), 0UL, 0UL, 0UL,
+                            "rng_init", 0, "_Z8rng_initPhi", "_Z12rng_init_npmPhi", 0, 2, (11829459004090236818UL + 63UL), 0UL, 0UL, 3, "sha1_begin", 1, (11829459004090236818UL + 3UL), 0UL, "sha1_hash", 3, (11829459004090236818UL + 4UL), 0UL, (11829459004090236818UL + 3UL), 0UL, "sha1_end", 2, (11829459004090236818UL + 63UL), (11829459004090236818UL + 3UL), 0UL,
+                            "rng_spawn", 0, "_Z9rng_spawnPhS_i", "_Z13rng_spawn_npmPhS_i", 0, 3, (11829459004090236818UL + 479UL), (11829459004090236818UL + 480UL), 0UL, 0UL, 4, "sha1_begin", 1, (11829459004090236818UL + 438UL), 0UL, "sha1_hash", 3, (11829459004090236818UL + 479UL), 0UL, (11829459004090236818UL + 438UL), 0UL, "sha1_hash", 3, (11829459004090236818UL + 439UL), 0UL, (11829459004090236818UL + 438UL), 0UL, "sha1_end", 2, (11829459004090236818UL + 480UL), (11829459004090236818UL + 438UL), 0UL,
+                            "sha1_hash", 0, "_Z9sha1_hashPKhmP10sha1_ctx_s", "_Z13sha1_hash_npmPKhmP10sha1_ctx_s", 0, 3, (11829459004090236818UL + 243UL), 0UL, (11829459004090236818UL + 245UL), 0UL, 3, "memcpy", 3, (11829459004090236818UL + 245UL), (11829459004090236818UL + 243UL), 0UL, 0UL, "sha1_compile", 1, (11829459004090236818UL + 245UL), 0UL, "memcpy", 3, (11829459004090236818UL + 245UL), (11829459004090236818UL + 243UL), 0UL, 0UL,
+                            "sha1_end", 0, "_Z8sha1_endPhP10sha1_ctx_s", "_Z12sha1_end_npmPhP10sha1_ctx_s", 0, 2, (11829459004090236818UL + 433UL), (11829459004090236818UL + 434UL), 0UL, 2, "sha1_compile", 1, (11829459004090236818UL + 434UL), 0UL, "sha1_compile", 1, (11829459004090236818UL + 434UL), 0UL,
+                            "rng_rand", 0, "_Z8rng_randPh", "_Z12rng_rand_npmPh", 0, 1, (11829459004090236818UL + 524UL), 0UL, 0,
+                            "sha1_compile", 0, "_Z12sha1_compileP10sha1_ctx_s", "_Z16sha1_compile_npmP10sha1_ctx_s", 0, 1, (11829459004090236818UL + 4935UL), 0UL, 0,
+                            "sha1_begin", 0, "_Z10sha1_beginP10sha1_ctx_s", "_Z14sha1_begin_npmP10sha1_ctx_s", 0, 1, (11829459004090236818UL + 99UL), 0UL, 0,
+                            "rng_showtype", 0, "_Z12rng_showtypePci", "_Z16rng_showtype_npmPci", 0, 2, (11829459004090236818UL + 621UL), 0UL, 0UL, 1, "sprintf", 3, (11829459004090236818UL + 621UL), (11829459004090236818UL + 4966UL), 0UL, 0UL,
                            "sha1", &(____chimes_does_checkpoint_sha1_npm),
                            "rng_nextrand", &(____chimes_does_checkpoint_rng_nextrand_npm),
                            "rng_showstate", &(____chimes_does_checkpoint_rng_showstate_npm),
@@ -3910,25 +3910,25 @@ static int module_init() {
                            "sha1_compile", &(____chimes_does_checkpoint_sha1_compile_npm),
                            "sha1_begin", &(____chimes_does_checkpoint_sha1_begin_npm),
                            "rng_showtype", &(____chimes_does_checkpoint_rng_showtype_npm),
-                             (1633707214412207042UL + 623UL), (1633707214412207042UL + 4935UL),
-                             (1633707214412207042UL + 4942UL), (1633707214412207042UL + 4963UL),
-                             (1633707214412207042UL + 601UL), (1633707214412207042UL + 621UL),
-                             (1633707214412207042UL + 525UL), (1633707214412207042UL + 574UL),
-                             (1633707214412207042UL + 624UL), (1633707214412207042UL + 4935UL),
-                             (1633707214412207042UL + 577UL), (1633707214412207042UL + 598UL),
-                             (1633707214412207042UL + 576UL), (1633707214412207042UL + 598UL),
-                             (1633707214412207042UL + 575UL), (1633707214412207042UL + 597UL),
-                             (1633707214412207042UL + 1UL), (1633707214412207042UL + 63UL),
-                             (1633707214412207042UL + 436UL), (1633707214412207042UL + 480UL),
-                             (1633707214412207042UL + 247UL), (1633707214412207042UL + 434UL),
-                             (1633707214412207042UL + 246UL), (1633707214412207042UL + 433UL),
-                             (1633707214412207042UL + 67UL), (1633707214412207042UL + 99UL),
-                             (1633707214412207042UL + 102UL), (1633707214412207042UL + 245UL),
-                             (1633707214412207042UL + 4941UL), (1633707214412207042UL + 4962UL),
-                             (1633707214412207042UL + 100UL), (1633707214412207042UL + 243UL),
-                             (1633707214412207042UL + 435UL), (1633707214412207042UL + 479UL),
-                             (1633707214412207042UL + 482UL), (1633707214412207042UL + 524UL),
-                             (1633707214412207042UL + 105UL), (1633707214412207042UL + 243UL),
+                             (11829459004090236818UL + 623UL), (11829459004090236818UL + 4935UL),
+                             (11829459004090236818UL + 4942UL), (11829459004090236818UL + 4963UL),
+                             (11829459004090236818UL + 601UL), (11829459004090236818UL + 621UL),
+                             (11829459004090236818UL + 525UL), (11829459004090236818UL + 574UL),
+                             (11829459004090236818UL + 624UL), (11829459004090236818UL + 4935UL),
+                             (11829459004090236818UL + 577UL), (11829459004090236818UL + 598UL),
+                             (11829459004090236818UL + 576UL), (11829459004090236818UL + 598UL),
+                             (11829459004090236818UL + 575UL), (11829459004090236818UL + 597UL),
+                             (11829459004090236818UL + 1UL), (11829459004090236818UL + 63UL),
+                             (11829459004090236818UL + 436UL), (11829459004090236818UL + 480UL),
+                             (11829459004090236818UL + 247UL), (11829459004090236818UL + 434UL),
+                             (11829459004090236818UL + 246UL), (11829459004090236818UL + 433UL),
+                             (11829459004090236818UL + 67UL), (11829459004090236818UL + 99UL),
+                             (11829459004090236818UL + 102UL), (11829459004090236818UL + 245UL),
+                             (11829459004090236818UL + 4941UL), (11829459004090236818UL + 4962UL),
+                             (11829459004090236818UL + 100UL), (11829459004090236818UL + 243UL),
+                             (11829459004090236818UL + 435UL), (11829459004090236818UL + 479UL),
+                             (11829459004090236818UL + 482UL), (11829459004090236818UL + 524UL),
+                             (11829459004090236818UL + 105UL), (11829459004090236818UL + 243UL),
                      "sha1_ctx_s", 736UL, 3, "[ 2 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, count), "[ 5 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, hash), "[ 16 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, wbuf),
                      "state_t", 160UL, 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state),
                              "sha1", "_Z4sha1PhPKhm", 0, 3, "sha1_begin", "sha1_hash", "sha1_end",
@@ -3946,22 +3946,22 @@ static int module_init() {
                         "rng_spawn|ctx|0", 1, "rng_spawn",
                         "rng_nextrand|ctx|0", 1, "rng_nextrand",
                         "sha1|cx|0", 1, "sha1",
-        "sha1_begin", 0UL, (int)1, 1633707214412207045UL,
-        "sha1_hash", 0UL, (int)3, 1633707214412207046UL, 0UL, 1633707214412207045UL,
-        "sha1_end", 0UL, (int)2, 1633707214412207105UL, 1633707214412207045UL,
-        "sha1_begin", 0UL, (int)1, 1633707214412207480UL,
-        "sha1_hash", 0UL, (int)3, 1633707214412207521UL, 0UL, 1633707214412207480UL,
-        "sha1_hash", 0UL, (int)3, 1633707214412207481UL, 0UL, 1633707214412207480UL,
-        "sha1_end", 0UL, (int)2, 1633707214412207522UL, 1633707214412207480UL,
-        "sha1_begin", 0UL, (int)1, 1633707214412207568UL,
-        "sha1_hash", 0UL, (int)3, 1633707214412207616UL, 0UL, 1633707214412207568UL,
-        "sha1_end", 0UL, (int)2, 1633707214412207616UL, 1633707214412207568UL,
-        "sha1_compile", 0UL, (int)1, 1633707214412207287UL,
-        "sha1_compile", 0UL, (int)1, 1633707214412207476UL,
-        "sha1_compile", 0UL, (int)1, 1633707214412207476UL,
-        "sha1_begin", 0UL, (int)1, 1633707214412211986UL,
-        "sha1_hash", 0UL, (int)3, 1633707214412212005UL, 0UL, 1633707214412211986UL,
-        "sha1_end", 0UL, (int)2, 1633707214412212004UL, 1633707214412211986UL);
+        "sha1_begin", 0UL, (int)1, 11829459004090236821UL,
+        "sha1_hash", 0UL, (int)3, 11829459004090236822UL, 0UL, 11829459004090236821UL,
+        "sha1_end", 0UL, (int)2, 11829459004090236881UL, 11829459004090236821UL,
+        "sha1_begin", 0UL, (int)1, 11829459004090237256UL,
+        "sha1_hash", 0UL, (int)3, 11829459004090237297UL, 0UL, 11829459004090237256UL,
+        "sha1_hash", 0UL, (int)3, 11829459004090237257UL, 0UL, 11829459004090237256UL,
+        "sha1_end", 0UL, (int)2, 11829459004090237298UL, 11829459004090237256UL,
+        "sha1_begin", 0UL, (int)1, 11829459004090237344UL,
+        "sha1_hash", 0UL, (int)3, 11829459004090237392UL, 0UL, 11829459004090237344UL,
+        "sha1_end", 0UL, (int)2, 11829459004090237392UL, 11829459004090237344UL,
+        "sha1_compile", 0UL, (int)1, 11829459004090237063UL,
+        "sha1_compile", 0UL, (int)1, 11829459004090237252UL,
+        "sha1_compile", 0UL, (int)1, 11829459004090237252UL,
+        "sha1_begin", 0UL, (int)1, 11829459004090241762UL,
+        "sha1_hash", 0UL, (int)3, 11829459004090241781UL, 0UL, 11829459004090241762UL,
+        "sha1_end", 0UL, (int)2, 11829459004090241780UL, 11829459004090241762UL);
     return 0;
 }
 

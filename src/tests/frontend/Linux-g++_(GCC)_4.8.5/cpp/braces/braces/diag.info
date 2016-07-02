@@ -1,15 +1,15 @@
-InsertText /home/jmg3/chimes/src/examples/cpp/./braces.cpp 14 60 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0, false); 
-InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/./braces.cpp 4 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(13383618805175514630UL)); 
-InsertText /home/jmg3/chimes/src/examples/cpp/./braces.cpp 15 1 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0, false); 
-ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/./braces.cpp 4 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(13383618805175514630UL)); ;
-ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/./braces.cpp 4 182 
-InsertText /home/jmg3/chimes/src/examples/cpp/./braces.cpp 11 5 {  int i; 
-InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/./braces.cpp 11 53  }
-ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/./braces.cpp 11 10  i = (0) ;
-ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/./braces.cpp 11 19 
-ReplaceTextStart /home/jmg3/chimes/src/examples/cpp/./braces.cpp 14 6 int ____chimes_ret_var_0; ;
-ReplaceTextEnd /home/jmg3/chimes/src/examples/cpp/./braces.cpp 14 30 
-ReplaceText /home/jmg3/chimes/src/examples/cpp/./braces.cpp 4 5 len=4 main_quick
-InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/./braces.cpp 4 181  ; 
-ReplaceText /home/jmg3/chimes/src/examples/cpp/./braces.cpp 4 5 len=4 main_resumable
-InsertTextAfterToken /home/jmg3/chimes/src/examples/cpp/./braces.cpp 4 181  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertText /scratch/jmg3/chimes/src/examples/cpp/./braces.cpp 14 60 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertTextAfterToken /scratch/jmg3/chimes/src/examples/cpp/./braces.cpp 4 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(7926567507567551318UL)); 
+InsertText /scratch/jmg3/chimes/src/examples/cpp/./braces.cpp 15 1 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/cpp/./braces.cpp 4 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(7926567507567551318UL)); ;
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/cpp/./braces.cpp 4 181 
+InsertText /scratch/jmg3/chimes/src/examples/cpp/./braces.cpp 11 5 {  int i; 
+InsertTextAfterToken /scratch/jmg3/chimes/src/examples/cpp/./braces.cpp 11 53  }
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/cpp/./braces.cpp 11 10  i = (0) ;
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/cpp/./braces.cpp 11 19 
+ReplaceTextStart /scratch/jmg3/chimes/src/examples/cpp/./braces.cpp 14 6 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /scratch/jmg3/chimes/src/examples/cpp/./braces.cpp 14 30 
+ReplaceText /scratch/jmg3/chimes/src/examples/cpp/./braces.cpp 4 5 len=4 main_quick
+InsertTextAfterToken /scratch/jmg3/chimes/src/examples/cpp/./braces.cpp 4 180  ; 
+ReplaceText /scratch/jmg3/chimes/src/examples/cpp/./braces.cpp 4 5 len=4 main_resumable
+InsertTextAfterToken /scratch/jmg3/chimes/src/examples/cpp/./braces.cpp 4 180  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

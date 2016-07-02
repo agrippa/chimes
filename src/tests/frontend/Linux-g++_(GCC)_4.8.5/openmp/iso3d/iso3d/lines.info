@@ -1,8 +1,8 @@
-/home/jmg3/chimes/src/examples/openmp/./iso3d.cpp 147 5 : { 22 } {  } call:finish_progress {  }
-/home/jmg3/chimes/src/examples/openmp/./iso3d.cpp 154 9 : { 23 } {  } call:save_layer_text { save_layer_text { 249, 773 } }
-/home/jmg3/chimes/src/examples/openmp/./iso3d.cpp 91 5 : { 1, 2, 3 } {  } call:setup_config { setup_config { 4, 380 } }
-/home/jmg3/chimes/src/examples/openmp/./iso3d.cpp 145 24 : { 17, 18 } {  } call:seconds {  }
-/home/jmg3/chimes/src/examples/openmp/./iso3d.cpp 121 5 : { 16 } {  } call:init_data { init_data { 249, 251, 252 } }
-/home/jmg3/chimes/src/examples/openmp/./iso3d.cpp 140 9 : { 12, 13, 17, 18, 19, 20, 21, 249 } {  } call:checkpoint {  }
-/home/jmg3/chimes/src/examples/openmp/./iso3d.cpp 119 20 : {  } {  } call:sample_sources { sample_sources { 185, 359 } }
-/home/jmg3/chimes/src/examples/openmp/./iso3d.cpp 118 5 : {  } {  } call:config_sources { config_sources { 4 } }
+/scratch/jmg3/chimes/src/examples/openmp/./iso3d.cpp 147 5 : { 22 } {  } call:finish_progress {  }
+/scratch/jmg3/chimes/src/examples/openmp/./iso3d.cpp 154 9 : { 23 } {  } call:save_layer_text { save_layer_text { 249, 773 } }
+/scratch/jmg3/chimes/src/examples/openmp/./iso3d.cpp 91 5 : { 1, 2, 3 } {  } call:setup_config { setup_config { 4, 380 } }
+/scratch/jmg3/chimes/src/examples/openmp/./iso3d.cpp 145 24 : { 17, 18 } {  } call:seconds {  }
+/scratch/jmg3/chimes/src/examples/openmp/./iso3d.cpp 121 5 : { 16 } {  } call:init_data { init_data { 249, 251, 252 } }
+/scratch/jmg3/chimes/src/examples/openmp/./iso3d.cpp 140 9 : { 12, 13, 17, 18, 19, 20, 21, 249 } {  } call:checkpoint {  }
+/scratch/jmg3/chimes/src/examples/openmp/./iso3d.cpp 119 20 : {  } {  } call:sample_sources { sample_sources { 185, 359 } }
+/scratch/jmg3/chimes/src/examples/openmp/./iso3d.cpp 118 5 : {  } {  } call:config_sources { config_sources { 4 } }

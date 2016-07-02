@@ -32,11 +32,11 @@ static unsigned ____alias_loc_id_2;
 static unsigned ____alias_loc_id_3;
 static unsigned ____alias_loc_id_4;
 static unsigned ____alias_loc_id_5;
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -45,7 +45,7 @@ static unsigned ____alias_loc_id_5;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -101,15 +101,15 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/define.h" 1
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/define.h" 1
 
 
 
@@ -1438,7 +1438,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/define.h" 2
+# 7 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/define.h" 2
 # 1 "/usr/include/math.h" 1 3 4
 # 30 "/usr/include/math.h" 3 4
 extern "C" {
@@ -2443,7 +2443,7 @@ __signbitl (long double __x) throw ()
 # 417 "/usr/include/math.h" 2 3 4
 # 472 "/usr/include/math.h" 3 4
 }
-# 8 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/define.h" 2
+# 8 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/define.h" 2
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 1 3 4
 # 34 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 3 4
 typedef struct
@@ -2517,8 +2517,8 @@ int omp_in_final (void) throw ();
 
 
 }
-# 9 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/define.h" 2
-# 18 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/define.h"
+# 9 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/define.h" 2
+# 18 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/define.h"
 extern float embedded_fehlberg_7_8( float timeinst,
                float h,
                float* initvalu,
@@ -2576,390 +2576,390 @@ extern void myocyte_write( char* filename,
      int data_range);
 
 extern long long get_time();
-# 2 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c" 2
-# 2 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 3 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 4 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 5 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 6 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 2 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c" 2
+# 2 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 3 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 4 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 5 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 6 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 7 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
 void master_npm(float timeinst, float* initvalu, float* parameter, float* finavalu);static float (*____chimes_extern_func_cam)(float, float *, int, float *, int, float *, float) = cam;static void (*____chimes_extern_func_ecc)(float, float *, int, float *, int, float *) = ecc;static void (*____chimes_extern_func_fin)(float *, int, int, int, int, float *, float *, float, float, float) = fin;
 void master_quick(float timeinst, float* initvalu, float* parameter, float* finavalu); void master(float timeinst, float* initvalu, float* parameter, float* finavalu);
 void master_resumable(float timeinst,
-# 8 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 8 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
      float* initvalu,
-# 9 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 9 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
      float* parameter,
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-     float* finavalu){const int ____chimes_did_disable0 = new_stack((void *)(&master), "master", &____must_manage_master, 4, 4, (size_t)(0UL), (size_t)(6849693010381407387UL), (size_t)(6849693010381407388UL), (size_t)(6849693010381407389UL), "master|timeinst|0", &____must_checkpoint_master_timeinst_0, "float", (void *)(&timeinst), (size_t)4, 0, 0, 0, "master|initvalu|0", &____must_checkpoint_master_initvalu_0, "float*", (void *)(&initvalu), (size_t)8, 1, 0, 0, "master|parameter|0", &____must_checkpoint_master_parameter_0, "float*", (void *)(&parameter), (size_t)8, 1, 0, 0, "master|finavalu|0", &____must_checkpoint_master_finavalu_0, "float*", (void *)(&finavalu), (size_t)8, 1, 0, 0) ; int initvalu_offset_Cyt;
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+     float* finavalu){const int ____chimes_did_disable0 = new_stack((void *)(&master), "master", &____must_manage_master, 4, 4, (size_t)(0UL), (size_t)(6827993012396634963UL), (size_t)(6827993012396634964UL), (size_t)(6827993012396634965UL), "master|timeinst|0", &____must_checkpoint_master_timeinst_0, "float", (void *)(&timeinst), (size_t)4, 0, 0, 0, "master|initvalu|0", &____must_checkpoint_master_initvalu_0, "float*", (void *)(&initvalu), (size_t)8, 1, 0, 0, "master|parameter|0", &____must_checkpoint_master_parameter_0, "float*", (void *)(&parameter), (size_t)8, 1, 0, 0, "master|finavalu|0", &____must_checkpoint_master_finavalu_0, "float*", (void *)(&finavalu), (size_t)8, 1, 0, 0) ; int initvalu_offset_Cyt;
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
 int initvalu_offset_SL;
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
 int initvalu_offset_Dyad;
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
 int initvalu_offset_ecc;
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
 float JCaSL;
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
 float JCaDyad;
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  if (____must_checkpoint_master_initvalu_offset_Cyt_0 || ____must_checkpoint_master_initvalu_offset_SL_0 || ____must_checkpoint_master_initvalu_offset_Dyad_0 || ____must_checkpoint_master_initvalu_offset_ecc_0 || ____must_checkpoint_master_JCaSL_0 || ____must_checkpoint_master_JCaDyad_0) { register_stack_vars(6, "master|initvalu_offset_Cyt|0", &____must_checkpoint_master_initvalu_offset_Cyt_0, "i32", (void *)(&initvalu_offset_Cyt), (size_t)4, 0, 0, 0, "master|initvalu_offset_SL|0", &____must_checkpoint_master_initvalu_offset_SL_0, "i32", (void *)(&initvalu_offset_SL), (size_t)4, 0, 0, 0, "master|initvalu_offset_Dyad|0", &____must_checkpoint_master_initvalu_offset_Dyad_0, "i32", (void *)(&initvalu_offset_Dyad), (size_t)4, 0, 0, 0, "master|initvalu_offset_ecc|0", &____must_checkpoint_master_initvalu_offset_ecc_0, "i32", (void *)(&initvalu_offset_ecc), (size_t)4, 0, 0, 0, "master|JCaSL|0", &____must_checkpoint_master_JCaSL_0, "float", (void *)(&JCaSL), (size_t)4, 0, 0, 0, "master|JCaDyad|0", &____must_checkpoint_master_JCaDyad_0, "float", (void *)(&JCaDyad), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
-# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 12 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 13 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 14 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 15 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 16 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 11 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 12 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 13 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 14 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 15 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 16 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 17 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int i; ;
-# 18 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 19 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 18 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 19 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 20 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   ;
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 21 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   ;
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  float JCaCyt; ;
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int initvalu_offset_batch; ;
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   ;
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int parameter_offset_ecc; ;
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   ;
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int parameter_offset_Dyad; ;
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   ;
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int parameter_offset_SL; ;
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   ;
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int parameter_offset_Cyt; ;
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  float CaDyad; ;
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  float CaSL; ;
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  float CaCyt; ;
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   initvalu_offset_ecc = 0;
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   parameter_offset_ecc = 0;
-# 146 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_0: ({ calling((void*)ecc, 0, ____alias_loc_id_4, 0UL, 6, (size_t)(0UL), (size_t)(6849693010381407387UL), (size_t)(0UL), (size_t)(6849693010381407388UL), (size_t)(0UL), (size_t)(6849693010381407389UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) ;
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 146 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+   call_lbl_0: ({ calling((void*)ecc, 0, ____alias_loc_id_4, 0UL, 6, (size_t)(0UL), (size_t)(6827993012396634963UL), (size_t)(0UL), (size_t)(6827993012396634964UL), (size_t)(0UL), (size_t)(6827993012396634965UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) ;
+# 152 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 153 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 154 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   initvalu_offset_Dyad = 46;
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 155 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   parameter_offset_Dyad = 1;
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 156 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   CaDyad = initvalu[35]*1e3;
-# 157 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_1: JCaDyad = ({ calling((void*)cam, 1, ____alias_loc_id_3, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407387UL), (size_t)(0UL), (size_t)(6849693010381407388UL), (size_t)(0UL), (size_t)(6849693010381407389UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) ;
-# 164 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 165 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 166 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 157 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+   call_lbl_1: JCaDyad = ({ calling((void*)cam, 1, ____alias_loc_id_3, 0UL, 7, (size_t)(0UL), (size_t)(6827993012396634963UL), (size_t)(0UL), (size_t)(6827993012396634964UL), (size_t)(0UL), (size_t)(6827993012396634965UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) ;
+# 164 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 165 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 166 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   initvalu_offset_SL = 61;
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 167 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   parameter_offset_SL = 6;
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 168 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   CaSL = initvalu[36]*1e3;
-# 169 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_2: JCaSL = ({ calling((void*)cam, 2, ____alias_loc_id_2, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407387UL), (size_t)(0UL), (size_t)(6849693010381407388UL), (size_t)(0UL), (size_t)(6849693010381407389UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_SL, parameter, parameter_offset_SL, finavalu, CaSL); }) ;
-# 176 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 177 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 178 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 169 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+   call_lbl_2: JCaSL = ({ calling((void*)cam, 2, ____alias_loc_id_2, 0UL, 7, (size_t)(0UL), (size_t)(6827993012396634963UL), (size_t)(0UL), (size_t)(6827993012396634964UL), (size_t)(0UL), (size_t)(6827993012396634965UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_SL, parameter, parameter_offset_SL, finavalu, CaSL); }) ;
+# 176 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 177 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 178 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   initvalu_offset_Cyt = 76;
-# 179 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 179 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   parameter_offset_Cyt = 11;
-# 180 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 180 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   CaCyt = initvalu[37]*1e3;
-# 181 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_3: JCaCyt = ({ calling((void*)cam, 3, ____alias_loc_id_1, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407387UL), (size_t)(0UL), (size_t)(6849693010381407388UL), (size_t)(0UL), (size_t)(6849693010381407389UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) ;
-# 197 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 197 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-  call_lbl_4: ({ calling((void*)fin, 4, ____alias_loc_id_0, 0UL, 10, (size_t)(6849693010381407387UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6849693010381407388UL), (size_t)(6849693010381407389UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fin)(initvalu, initvalu_offset_ecc, initvalu_offset_Dyad, initvalu_offset_SL, initvalu_offset_Cyt, parameter, finavalu, JCaDyad, JCaSL, JCaCyt); }) ;
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 208 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 209 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 210 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 211 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 212 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 213 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 181 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+   call_lbl_3: JCaCyt = ({ calling((void*)cam, 3, ____alias_loc_id_1, 0UL, 7, (size_t)(0UL), (size_t)(6827993012396634963UL), (size_t)(0UL), (size_t)(6827993012396634964UL), (size_t)(0UL), (size_t)(6827993012396634965UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) ;
+# 197 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 197 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+  call_lbl_4: ({ calling((void*)fin, 4, ____alias_loc_id_0, 0UL, 10, (size_t)(6827993012396634963UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6827993012396634964UL), (size_t)(6827993012396634965UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fin)(initvalu, initvalu_offset_ecc, initvalu_offset_Dyad, initvalu_offset_SL, initvalu_offset_Cyt, parameter, finavalu, JCaDyad, JCaSL, JCaCyt); }) ;
+# 207 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 208 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 209 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 210 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 211 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 212 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 213 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  for(i=0; i<91; i++){
-# 214 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 214 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   if ((sizeof (finavalu[i]) == sizeof (float) ? __isnanf (finavalu[i]) : sizeof (finavalu[i]) == sizeof (double) ? __isnan (finavalu[i]) : __isnanl (finavalu[i])) == 1) {{
-# 215 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 215 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
    finavalu[i] = 0.0001;
-# 216 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 216 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   }; } else if ((sizeof (finavalu[i]) == sizeof (float) ? __isinff (finavalu[i]) : sizeof (finavalu[i]) == sizeof (double) ? __isinf (finavalu[i]) : __isinfl (finavalu[i])) == 1){
-# 218 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 218 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
    finavalu[i] = 0.0001;
-# 219 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 219 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   }
-# 220 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 220 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  }
-# 221 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 222 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 221 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 222 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
 rm_stack(false, 0UL, "master", &____must_manage_master, ____alias_loc_id_5, ____chimes_did_disable0, false); }
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 7 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
 void master_quick(float timeinst,
-# 8 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 8 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
      float* initvalu,
-# 9 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 9 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
      float* parameter,
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-     float* finavalu){const int ____chimes_did_disable0 = new_stack((void *)(&master), "master", &____must_manage_master, 4, 4, (size_t)(0UL), (size_t)(6849693010381407387UL), (size_t)(6849693010381407388UL), (size_t)(6849693010381407389UL), "master|timeinst|0", &____must_checkpoint_master_timeinst_0, "float", (void *)(&timeinst), (size_t)4, 0, 0, 0, "master|initvalu|0", &____must_checkpoint_master_initvalu_0, "float*", (void *)(&initvalu), (size_t)8, 1, 0, 0, "master|parameter|0", &____must_checkpoint_master_parameter_0, "float*", (void *)(&parameter), (size_t)8, 1, 0, 0, "master|finavalu|0", &____must_checkpoint_master_finavalu_0, "float*", (void *)(&finavalu), (size_t)8, 1, 0, 0) ; int initvalu_offset_Cyt;
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+     float* finavalu){const int ____chimes_did_disable0 = new_stack((void *)(&master), "master", &____must_manage_master, 4, 4, (size_t)(0UL), (size_t)(6827993012396634963UL), (size_t)(6827993012396634964UL), (size_t)(6827993012396634965UL), "master|timeinst|0", &____must_checkpoint_master_timeinst_0, "float", (void *)(&timeinst), (size_t)4, 0, 0, 0, "master|initvalu|0", &____must_checkpoint_master_initvalu_0, "float*", (void *)(&initvalu), (size_t)8, 1, 0, 0, "master|parameter|0", &____must_checkpoint_master_parameter_0, "float*", (void *)(&parameter), (size_t)8, 1, 0, 0, "master|finavalu|0", &____must_checkpoint_master_finavalu_0, "float*", (void *)(&finavalu), (size_t)8, 1, 0, 0) ; int initvalu_offset_Cyt;
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
 int initvalu_offset_SL;
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
 int initvalu_offset_Dyad;
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
 int initvalu_offset_ecc;
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
 float JCaSL;
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
 float JCaDyad;
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  if (____must_checkpoint_master_initvalu_offset_Cyt_0 || ____must_checkpoint_master_initvalu_offset_SL_0 || ____must_checkpoint_master_initvalu_offset_Dyad_0 || ____must_checkpoint_master_initvalu_offset_ecc_0 || ____must_checkpoint_master_JCaSL_0 || ____must_checkpoint_master_JCaDyad_0) { register_stack_vars(6, "master|initvalu_offset_Cyt|0", &____must_checkpoint_master_initvalu_offset_Cyt_0, "i32", (void *)(&initvalu_offset_Cyt), (size_t)4, 0, 0, 0, "master|initvalu_offset_SL|0", &____must_checkpoint_master_initvalu_offset_SL_0, "i32", (void *)(&initvalu_offset_SL), (size_t)4, 0, 0, 0, "master|initvalu_offset_Dyad|0", &____must_checkpoint_master_initvalu_offset_Dyad_0, "i32", (void *)(&initvalu_offset_Dyad), (size_t)4, 0, 0, 0, "master|initvalu_offset_ecc|0", &____must_checkpoint_master_initvalu_offset_ecc_0, "i32", (void *)(&initvalu_offset_ecc), (size_t)4, 0, 0, 0, "master|JCaSL|0", &____must_checkpoint_master_JCaSL_0, "float", (void *)(&JCaSL), (size_t)4, 0, 0, 0, "master|JCaDyad|0", &____must_checkpoint_master_JCaDyad_0, "float", (void *)(&JCaDyad), (size_t)4, 0, 0, 0); } ; ;
-# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 12 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 13 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 14 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 15 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 16 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 11 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 12 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 13 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 14 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 15 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 16 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 17 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int i; ;
-# 18 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 19 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 18 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 19 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 20 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   ;
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 21 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   ;
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  float JCaCyt; ;
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int initvalu_offset_batch; ;
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   ;
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int parameter_offset_ecc; ;
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   ;
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int parameter_offset_Dyad; ;
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   ;
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int parameter_offset_SL; ;
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   ;
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int parameter_offset_Cyt; ;
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  float CaDyad; ;
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  float CaSL; ;
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  float CaCyt; ;
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   initvalu_offset_ecc = 0;
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   parameter_offset_ecc = 0;
-# 146 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_0: ({ calling((void*)ecc, 0, ____alias_loc_id_4, 0UL, 6, (size_t)(0UL), (size_t)(6849693010381407387UL), (size_t)(0UL), (size_t)(6849693010381407388UL), (size_t)(0UL), (size_t)(6849693010381407389UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) ;
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 146 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+   call_lbl_0: ({ calling((void*)ecc, 0, ____alias_loc_id_4, 0UL, 6, (size_t)(0UL), (size_t)(6827993012396634963UL), (size_t)(0UL), (size_t)(6827993012396634964UL), (size_t)(0UL), (size_t)(6827993012396634965UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) ;
+# 152 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 153 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 154 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   initvalu_offset_Dyad = 46;
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 155 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   parameter_offset_Dyad = 1;
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 156 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   CaDyad = initvalu[35]*1e3;
-# 157 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_1: JCaDyad = ({ calling((void*)cam, 1, ____alias_loc_id_3, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407387UL), (size_t)(0UL), (size_t)(6849693010381407388UL), (size_t)(0UL), (size_t)(6849693010381407389UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) ;
-# 164 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 165 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 166 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 157 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+   call_lbl_1: JCaDyad = ({ calling((void*)cam, 1, ____alias_loc_id_3, 0UL, 7, (size_t)(0UL), (size_t)(6827993012396634963UL), (size_t)(0UL), (size_t)(6827993012396634964UL), (size_t)(0UL), (size_t)(6827993012396634965UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) ;
+# 164 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 165 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 166 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   initvalu_offset_SL = 61;
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 167 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   parameter_offset_SL = 6;
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 168 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   CaSL = initvalu[36]*1e3;
-# 169 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_2: JCaSL = ({ calling((void*)cam, 2, ____alias_loc_id_2, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407387UL), (size_t)(0UL), (size_t)(6849693010381407388UL), (size_t)(0UL), (size_t)(6849693010381407389UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_SL, parameter, parameter_offset_SL, finavalu, CaSL); }) ;
-# 176 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 177 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 178 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 169 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+   call_lbl_2: JCaSL = ({ calling((void*)cam, 2, ____alias_loc_id_2, 0UL, 7, (size_t)(0UL), (size_t)(6827993012396634963UL), (size_t)(0UL), (size_t)(6827993012396634964UL), (size_t)(0UL), (size_t)(6827993012396634965UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_SL, parameter, parameter_offset_SL, finavalu, CaSL); }) ;
+# 176 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 177 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 178 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   initvalu_offset_Cyt = 76;
-# 179 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 179 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   parameter_offset_Cyt = 11;
-# 180 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 180 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   CaCyt = initvalu[37]*1e3;
-# 181 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_3: JCaCyt = ({ calling((void*)cam, 3, ____alias_loc_id_1, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407387UL), (size_t)(0UL), (size_t)(6849693010381407388UL), (size_t)(0UL), (size_t)(6849693010381407389UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) ;
-# 197 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 197 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-  call_lbl_4: ({ calling((void*)fin, 4, ____alias_loc_id_0, 0UL, 10, (size_t)(6849693010381407387UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6849693010381407388UL), (size_t)(6849693010381407389UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fin)(initvalu, initvalu_offset_ecc, initvalu_offset_Dyad, initvalu_offset_SL, initvalu_offset_Cyt, parameter, finavalu, JCaDyad, JCaSL, JCaCyt); }) ;
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 208 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 209 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 210 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 211 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 212 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 213 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 181 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+   call_lbl_3: JCaCyt = ({ calling((void*)cam, 3, ____alias_loc_id_1, 0UL, 7, (size_t)(0UL), (size_t)(6827993012396634963UL), (size_t)(0UL), (size_t)(6827993012396634964UL), (size_t)(0UL), (size_t)(6827993012396634965UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) ;
+# 197 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 197 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+  call_lbl_4: ({ calling((void*)fin, 4, ____alias_loc_id_0, 0UL, 10, (size_t)(6827993012396634963UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6827993012396634964UL), (size_t)(6827993012396634965UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fin)(initvalu, initvalu_offset_ecc, initvalu_offset_Dyad, initvalu_offset_SL, initvalu_offset_Cyt, parameter, finavalu, JCaDyad, JCaSL, JCaCyt); }) ;
+# 207 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 208 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 209 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 210 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 211 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 212 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 213 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  for(i=0; i<91; i++){
-# 214 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 214 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   if ((sizeof (finavalu[i]) == sizeof (float) ? __isnanf (finavalu[i]) : sizeof (finavalu[i]) == sizeof (double) ? __isnan (finavalu[i]) : __isnanl (finavalu[i])) == 1) {{
-# 215 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 215 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
    finavalu[i] = 0.0001;
-# 216 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 216 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   }; } else if ((sizeof (finavalu[i]) == sizeof (float) ? __isinff (finavalu[i]) : sizeof (finavalu[i]) == sizeof (double) ? __isinf (finavalu[i]) : __isinfl (finavalu[i])) == 1){
-# 218 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 218 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
    finavalu[i] = 0.0001;
-# 219 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 219 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   }
-# 220 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 220 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  }
-# 221 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 222 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 221 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 222 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
 rm_stack(false, 0UL, "master", &____must_manage_master, ____alias_loc_id_5, ____chimes_did_disable0, false); }
 
 void master(float timeinst,
-# 8 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 8 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
      float* initvalu,
-# 9 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 9 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
      float* parameter,
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
      float* finavalu) { (____chimes_replaying ? master_resumable(timeinst, initvalu, parameter, finavalu) : master_quick(timeinst, initvalu, parameter, finavalu)); }
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 7 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
 void master_npm(float timeinst,
-# 8 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 8 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
      float* initvalu,
-# 9 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 9 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
      float* parameter,
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
      float* finavalu){
-# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 12 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 13 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 14 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 15 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 16 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 11 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 12 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 13 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 14 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 15 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 16 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 17 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int i;
-# 18 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 19 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 18 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 19 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 20 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  float JCaDyad;
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 21 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  float JCaSL;
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  float JCaCyt;
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int initvalu_offset_batch;
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int initvalu_offset_ecc;
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int parameter_offset_ecc;
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int initvalu_offset_Dyad;
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int parameter_offset_Dyad;
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int initvalu_offset_SL;
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int parameter_offset_SL;
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int initvalu_offset_Cyt;
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  int parameter_offset_Cyt;
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  float CaDyad;
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  float CaSL;
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  float CaCyt;
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   initvalu_offset_ecc = 0;
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   parameter_offset_ecc = 0;
-# 146 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 146 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   (*____chimes_extern_func_ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu);
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 152 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 153 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 154 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   initvalu_offset_Dyad = 46;
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 155 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   parameter_offset_Dyad = 1;
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 156 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   CaDyad = initvalu[35]*1e3;
-# 157 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 157 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   JCaDyad = (*____chimes_extern_func_cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad);
-# 164 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 165 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 166 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 164 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 165 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 166 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   initvalu_offset_SL = 61;
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 167 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   parameter_offset_SL = 6;
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 168 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   CaSL = initvalu[36]*1e3;
-# 169 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 169 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   JCaSL = (*____chimes_extern_func_cam)(timeinst, initvalu, initvalu_offset_SL, parameter, parameter_offset_SL, finavalu, CaSL);
-# 176 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 177 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 178 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 176 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 177 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 178 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   initvalu_offset_Cyt = 76;
-# 179 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 179 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   parameter_offset_Cyt = 11;
-# 180 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 180 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   CaCyt = initvalu[37]*1e3;
-# 181 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 181 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   JCaCyt = (*____chimes_extern_func_cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt);
-# 197 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 197 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 197 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 197 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  (*____chimes_extern_func_fin)(initvalu, initvalu_offset_ecc, initvalu_offset_Dyad, initvalu_offset_SL, initvalu_offset_Cyt, parameter, finavalu, JCaDyad, JCaSL, JCaCyt);
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 208 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 209 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 210 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 211 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 212 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 213 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 207 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 208 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 209 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 210 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 211 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 212 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 213 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  for(i=0; i<91; i++){
-# 214 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 214 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   if ((sizeof (finavalu[i]) == sizeof (float) ? __isnanf (finavalu[i]) : sizeof (finavalu[i]) == sizeof (double) ? __isnan (finavalu[i]) : __isnanl (finavalu[i])) == 1) {{
-# 215 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 215 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
    finavalu[i] = 0.0001;
-# 216 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 216 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   }; } else if ((sizeof (finavalu[i]) == sizeof (float) ? __isinff (finavalu[i]) : sizeof (finavalu[i]) == sizeof (double) ? __isinf (finavalu[i]) : __isinfl (finavalu[i])) == 1){
-# 218 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 218 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
    finavalu[i] = 0.0001;
-# 219 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 219 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
   }
-# 220 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 220 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
  }
-# 221 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-# 222 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
+# 221 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
+# 222 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/master.c"
 }
 
 
@@ -2967,14 +2967,14 @@ void master_npm(float timeinst,
 
 
 static int module_init() {
-    init_module(6849693010381407227UL, 3, 1, 10, 6, 1, 3, 4, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (6849693010381407227UL + 8UL), "fin", (unsigned)3, (6849693010381407227UL + 160UL), (6849693010381407227UL + 161UL), (6849693010381407227UL + 162UL),
-                           &____alias_loc_id_1, (unsigned)4, (unsigned)0, (unsigned)1, (6849693010381407227UL + 7UL), (6849693010381407227UL + 16UL), (6849693010381407227UL + 17UL), (6849693010381407227UL + 20UL), "cam", (unsigned)3, (6849693010381407227UL + 160UL), (6849693010381407227UL + 161UL), (6849693010381407227UL + 162UL),
-                           &____alias_loc_id_2, (unsigned)4, (unsigned)0, (unsigned)1, (6849693010381407227UL + 6UL), (6849693010381407227UL + 14UL), (6849693010381407227UL + 15UL), (6849693010381407227UL + 19UL), "cam", (unsigned)3, (6849693010381407227UL + 160UL), (6849693010381407227UL + 161UL), (6849693010381407227UL + 162UL),
-                           &____alias_loc_id_3, (unsigned)3, (unsigned)0, (unsigned)1, (6849693010381407227UL + 12UL), (6849693010381407227UL + 13UL), (6849693010381407227UL + 18UL), "cam", (unsigned)3, (6849693010381407227UL + 160UL), (6849693010381407227UL + 161UL), (6849693010381407227UL + 162UL),
-                           &____alias_loc_id_4, (unsigned)6, (unsigned)0, (unsigned)1, (6849693010381407227UL + 1UL), (6849693010381407227UL + 2UL), (6849693010381407227UL + 3UL), (6849693010381407227UL + 4UL), (6849693010381407227UL + 10UL), (6849693010381407227UL + 11UL), "ecc", (unsigned)3, (6849693010381407227UL + 160UL), (6849693010381407227UL + 161UL), (6849693010381407227UL + 162UL),
-                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (unsigned)0, (6849693010381407227UL + 5UL), (6849693010381407227UL + 162UL),
-                            "master", 0, "_Z6masterfPfS_S_", "_Z10master_npmfPfS_S_", 5, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, &____alias_loc_id_3, &____alias_loc_id_4, 4, 0UL, (6849693010381407227UL + 160UL), (6849693010381407227UL + 161UL), (6849693010381407227UL + 162UL), 0UL, 7, "ecc", 6, 0UL, (6849693010381407227UL + 160UL), 0UL, (6849693010381407227UL + 161UL), 0UL, (6849693010381407227UL + 162UL), 0UL, "cam", 7, 0UL, (6849693010381407227UL + 160UL), 0UL, (6849693010381407227UL + 161UL), 0UL, (6849693010381407227UL + 162UL), 0UL, 0UL, "cam", 7, 0UL, (6849693010381407227UL + 160UL), 0UL, (6849693010381407227UL + 161UL), 0UL, (6849693010381407227UL + 162UL), 0UL, 0UL, "cam", 7, 0UL, (6849693010381407227UL + 160UL), 0UL, (6849693010381407227UL + 161UL), 0UL, (6849693010381407227UL + 162UL), 0UL, 0UL, "fin", 10, (6849693010381407227UL + 160UL), 0UL, 0UL, 0UL, 0UL, (6849693010381407227UL + 161UL), (6849693010381407227UL + 162UL), 0UL, 0UL, 0UL, 0UL, "__isnanf", 1, 0UL, 0UL, "__isinff", 1, 0UL, 0UL,
+    init_module(6827993012396634803UL, 3, 1, 10, 6, 1, 3, 4, 0, 0, 0,
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (6827993012396634803UL + 8UL), "fin", (unsigned)3, (6827993012396634803UL + 160UL), (6827993012396634803UL + 161UL), (6827993012396634803UL + 162UL),
+                           &____alias_loc_id_1, (unsigned)4, (unsigned)0, (unsigned)1, (6827993012396634803UL + 7UL), (6827993012396634803UL + 16UL), (6827993012396634803UL + 17UL), (6827993012396634803UL + 20UL), "cam", (unsigned)3, (6827993012396634803UL + 160UL), (6827993012396634803UL + 161UL), (6827993012396634803UL + 162UL),
+                           &____alias_loc_id_2, (unsigned)4, (unsigned)0, (unsigned)1, (6827993012396634803UL + 6UL), (6827993012396634803UL + 14UL), (6827993012396634803UL + 15UL), (6827993012396634803UL + 19UL), "cam", (unsigned)3, (6827993012396634803UL + 160UL), (6827993012396634803UL + 161UL), (6827993012396634803UL + 162UL),
+                           &____alias_loc_id_3, (unsigned)3, (unsigned)0, (unsigned)1, (6827993012396634803UL + 12UL), (6827993012396634803UL + 13UL), (6827993012396634803UL + 18UL), "cam", (unsigned)3, (6827993012396634803UL + 160UL), (6827993012396634803UL + 161UL), (6827993012396634803UL + 162UL),
+                           &____alias_loc_id_4, (unsigned)6, (unsigned)0, (unsigned)1, (6827993012396634803UL + 1UL), (6827993012396634803UL + 2UL), (6827993012396634803UL + 3UL), (6827993012396634803UL + 4UL), (6827993012396634803UL + 10UL), (6827993012396634803UL + 11UL), "ecc", (unsigned)3, (6827993012396634803UL + 160UL), (6827993012396634803UL + 161UL), (6827993012396634803UL + 162UL),
+                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (unsigned)0, (6827993012396634803UL + 5UL), (6827993012396634803UL + 162UL),
+                            "master", 0, "_Z6masterfPfS_S_", "_Z10master_npmfPfS_S_", 5, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, &____alias_loc_id_3, &____alias_loc_id_4, 4, 0UL, (6827993012396634803UL + 160UL), (6827993012396634803UL + 161UL), (6827993012396634803UL + 162UL), 0UL, 7, "ecc", 6, 0UL, (6827993012396634803UL + 160UL), 0UL, (6827993012396634803UL + 161UL), 0UL, (6827993012396634803UL + 162UL), 0UL, "cam", 7, 0UL, (6827993012396634803UL + 160UL), 0UL, (6827993012396634803UL + 161UL), 0UL, (6827993012396634803UL + 162UL), 0UL, 0UL, "cam", 7, 0UL, (6827993012396634803UL + 160UL), 0UL, (6827993012396634803UL + 161UL), 0UL, (6827993012396634803UL + 162UL), 0UL, 0UL, "cam", 7, 0UL, (6827993012396634803UL + 160UL), 0UL, (6827993012396634803UL + 161UL), 0UL, (6827993012396634803UL + 162UL), 0UL, 0UL, "fin", 10, (6827993012396634803UL + 160UL), 0UL, 0UL, 0UL, 0UL, (6827993012396634803UL + 161UL), (6827993012396634803UL + 162UL), 0UL, 0UL, 0UL, 0UL, "__isnanf", 1, 0UL, 0UL, "__isinff", 1, 0UL, 0UL,
                                "cam", (void **)&(____chimes_extern_func_cam),
                                "ecc", (void **)&(____chimes_extern_func_ecc),
                                "fin", (void **)&(____chimes_extern_func_fin),
@@ -2982,9 +2982,9 @@ static int module_init() {
                            "cam", &(____chimes_does_checkpoint_cam_npm),
                            "ecc", &(____chimes_does_checkpoint_ecc_npm),
                            "fin", &(____chimes_does_checkpoint_fin_npm),
-                             (6849693010381407227UL + 3UL), (6849693010381407227UL + 161UL),
-                             (6849693010381407227UL + 2UL), (6849693010381407227UL + 160UL),
-                             (6849693010381407227UL + 4UL), (6849693010381407227UL + 162UL),
+                             (6827993012396634803UL + 3UL), (6827993012396634803UL + 161UL),
+                             (6827993012396634803UL + 2UL), (6827993012396634803UL + 160UL),
+                             (6827993012396634803UL + 4UL), (6827993012396634803UL + 162UL),
                              "master", "_Z6masterfPfS_S_", 0, 5, "ecc", "cam", "cam", "cam", "fin",
                         "master|timeinst|0", 2, "ecc", "cam",
                         "master|initvalu|0", 2, "ecc", "cam",

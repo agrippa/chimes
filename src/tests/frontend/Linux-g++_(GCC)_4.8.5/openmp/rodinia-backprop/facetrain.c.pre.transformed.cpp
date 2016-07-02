@@ -31,11 +31,11 @@ static unsigned ____alias_loc_id_1;
 static unsigned ____alias_loc_id_2;
 static unsigned ____alias_loc_id_3;
 static unsigned ____alias_loc_id_4;
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -44,7 +44,7 @@ static unsigned ____alias_loc_id_4;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -100,7 +100,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 69 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 69 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -114,7 +114,7 @@ inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 28 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1059,7 +1059,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 2 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c" 2
+# 2 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 1 3 4
@@ -2235,7 +2235,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 3 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c" 2
+# 3 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c" 2
 # 1 "/usr/include/math.h" 1 3 4
 # 30 "/usr/include/math.h" 3 4
 extern "C" {
@@ -3240,9 +3240,9 @@ __signbitl (long double __x) throw ()
 # 417 "/usr/include/math.h" 2 3 4
 # 472 "/usr/include/math.h" 3 4
 }
-# 4 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c" 2
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.h" 1
-# 12 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.h"
+# 4 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c" 2
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/backprop.h" 1
+# 12 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/backprop.h"
 typedef struct {
   int input_n;
   int hidden_n;
@@ -3278,7 +3278,7 @@ void bpnn_feedforward(BPNN *);
 
 void bpnn_save(BPNN *, char *);
 BPNN *bpnn_read(char *);
-# 5 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c" 2
+# 5 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c" 2
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 1 3 4
 # 34 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 3 4
 typedef struct
@@ -3352,7 +3352,7 @@ int omp_in_final (void) throw ();
 
 
 }
-# 6 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c" 2
+# 6 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c" 2
 # 1 "/usr/include/sys/time.h" 1 3 4
 # 27 "/usr/include/sys/time.h" 3 4
 # 1 "/usr/include/time.h" 1 3 4
@@ -3458,282 +3458,282 @@ extern int futimesat (int __fd, __const char *__file,
         __const struct timeval __tvp[2]) throw ();
 # 191 "/usr/include/sys/time.h" 3 4
 }
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c" 2
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 8 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 7 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c" 2
+# 7 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 8 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 extern char *strcpy();
-# 9 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 9 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 extern void exit();
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 11 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 11 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 int layer_size = 0;
-# 12 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 13 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 12 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 13 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 extern void load(BPNN *net);
-# 14 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 14 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 extern void bpnn_train_kernel(BPNN *net, float *eo, float *eh);
-# 15 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 16 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 15 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 16 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 17 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 double seconds_npm();
 double seconds_quick(); double seconds();
 double seconds_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 18 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 18 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
      struct timeval tp; ;
-# 19 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 19 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
      struct timezone tzp; ;
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 20 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
      int i; i = (gettimeofday(&tp, &tzp)) ;
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 21 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
      double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_4, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_4, ____chimes_did_disable0, false); }
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 void backprop_face_npm();static BPNN *(*____chimes_extern_func_bpnn_create)(int, int, int) = bpnn_create;static void (*____chimes_extern_func_bpnn_free)(BPNN *) = bpnn_free;static void (*____chimes_extern_func_bpnn_train_kernel)(BPNN *, float *, float *) = bpnn_train_kernel;static void (*____chimes_extern_func_load)(BPNN *) = load;
 void backprop_face_quick(); void backprop_face();
 void backprop_face_resumable()
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&backprop_face), "backprop_face", &____must_manage_backprop_face, 0, 0) ; double end;
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 double start;
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 float out_err;
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 BPNN *net;
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
  if (____must_checkpoint_backprop_face_end_0 || ____must_checkpoint_backprop_face_start_0 || ____must_checkpoint_backprop_face_out_err_0 || ____must_checkpoint_backprop_face_net_0) { register_stack_vars(4, "backprop_face|end|0", &____must_checkpoint_backprop_face_end_0, "double", (void *)(&end), (size_t)8, 0, 0, 0, "backprop_face|start|0", &____must_checkpoint_backprop_face_start_0, "double", (void *)(&start), (size_t)8, 0, 0, 0, "backprop_face|out_err|0", &____must_checkpoint_backprop_face_out_err_0, "float", (void *)(&out_err), (size_t)4, 0, 0, 0, "backprop_face|net|0", &____must_checkpoint_backprop_face_net_0, "%struct.BPNN*", (void *)(&net), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
    ;
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   int i; ;
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
    float hid_err; ;
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
       call_lbl_0: start = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-   call_lbl_1: net = ({ calling((void*)bpnn_create, 1, ____alias_loc_id_3, 3513164141371984928UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (bpnn_create)(layer_size, 16, 1); }) ;
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+   call_lbl_1: net = ({ calling((void*)bpnn_create, 1, ____alias_loc_id_3, 14303464538378772312UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (bpnn_create)(layer_size, 16, 1); }) ;
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   printf("Input layer size : %d\n", layer_size);
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-   call_lbl_2: ({ calling((void*)load, 2, ____alias_loc_id_2, 0UL, 1, (size_t)(3513164141371984928UL)); (load)(net); }) ;
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+   call_lbl_2: ({ calling((void*)load, 2, ____alias_loc_id_2, 0UL, 1, (size_t)(14303464538378772312UL)); (load)(net); }) ;
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   printf("Starting training kernel\n");
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-   call_lbl_3: ({ calling((void*)bpnn_train_kernel, 3, ____alias_loc_id_1, 0UL, 3, (size_t)(3513164141371984928UL), (size_t)(3513164141371984916UL), (size_t)(3513164141371984917UL)); (bpnn_train_kernel)(net, &out_err, &hid_err); }) ;
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+   call_lbl_3: ({ calling((void*)bpnn_train_kernel, 3, ____alias_loc_id_1, 0UL, 3, (size_t)(14303464538378772312UL), (size_t)(14303464538378772300UL), (size_t)(14303464538378772301UL)); (bpnn_train_kernel)(net, &out_err, &hid_err); }) ;
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
       call_lbl_4: end = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-   call_lbl_5: ({ calling((void*)bpnn_free, 5, ____alias_loc_id_0, 0UL, 1, (size_t)(3513164141371984928UL)); (bpnn_free)(net); }) ;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+   call_lbl_5: ({ calling((void*)bpnn_free, 5, ____alias_loc_id_0, 0UL, 1, (size_t)(14303464538378772312UL)); (bpnn_free)(net); }) ;
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   printf("Training done, execution took %f s\n", end - start);
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 rm_stack(false, 0UL, "backprop_face", &____must_manage_backprop_face, 0, ____chimes_did_disable1, false); }
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 int setup_npm(int argc, char *argv[]);static void (*____chimes_extern_func_bpnn_initialize)(int) = bpnn_initialize;
 int setup_quick(int argc, char *argv[]); int setup(int argc, char *argv[]);
 int setup_resumable(int argc, char *argv[])
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&setup), "setup", &____must_manage_setup, 2, 0, (size_t)(0UL), (size_t)(3513164141371984986UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+{const int ____chimes_did_disable2 = new_stack((void *)(&setup), "setup", &____must_manage_setup, 2, 0, (size_t)(0UL), (size_t)(14303464538378772370UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   if(argc!=2){
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   fprintf(stderr, "usage: backprop <num of input elements>\n");
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   exit(0);
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   }
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   layer_size = atoi(argv[1]);
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   int seed; ;
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   seed = 7;
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
    call_lbl_0: ({ calling((void*)bpnn_initialize, 0, 0, 0UL, 1, (size_t)(0UL)); (bpnn_initialize)(seed); }) ;
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
    call_lbl_1: ({ calling((void*)backprop_face, 1, 0, 0UL, 0); (backprop_face)(); }) ;
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   exit(0);
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 rm_stack(false, 0UL, "setup", &____must_manage_setup, 0, ____chimes_did_disable2, false); }
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 17 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 double seconds_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0) ; ; ;
-# 18 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 18 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
      struct timeval tp; ;
-# 19 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 19 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
      struct timezone tzp; ;
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 20 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
      int i; i = (gettimeofday(&tp, &tzp)) ;
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 21 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
      double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_4, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_4, ____chimes_did_disable0, false); }
 
 double seconds() { return (____chimes_replaying ? seconds_resumable() : seconds_quick()); }
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 void backprop_face_quick()
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&backprop_face), "backprop_face", &____must_manage_backprop_face, 0, 0) ; double end;
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 double start;
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 float out_err;
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 BPNN *net;
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
  if (____must_checkpoint_backprop_face_end_0 || ____must_checkpoint_backprop_face_start_0 || ____must_checkpoint_backprop_face_out_err_0 || ____must_checkpoint_backprop_face_net_0) { register_stack_vars(4, "backprop_face|end|0", &____must_checkpoint_backprop_face_end_0, "double", (void *)(&end), (size_t)8, 0, 0, 0, "backprop_face|start|0", &____must_checkpoint_backprop_face_start_0, "double", (void *)(&start), (size_t)8, 0, 0, 0, "backprop_face|out_err|0", &____must_checkpoint_backprop_face_out_err_0, "float", (void *)(&out_err), (size_t)4, 0, 0, 0, "backprop_face|net|0", &____must_checkpoint_backprop_face_net_0, "%struct.BPNN*", (void *)(&net), (size_t)8, 1, 0, 0); } ; ;
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
    ;
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   int i; ;
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
    float hid_err; ;
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
       call_lbl_0: start = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-   call_lbl_1: net = ({ calling((void*)bpnn_create, 1, ____alias_loc_id_3, 3513164141371984928UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (bpnn_create)(layer_size, 16, 1); }) ;
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+   call_lbl_1: net = ({ calling((void*)bpnn_create, 1, ____alias_loc_id_3, 14303464538378772312UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (bpnn_create)(layer_size, 16, 1); }) ;
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   printf("Input layer size : %d\n", layer_size);
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-   call_lbl_2: ({ calling((void*)load, 2, ____alias_loc_id_2, 0UL, 1, (size_t)(3513164141371984928UL)); (load)(net); }) ;
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+   call_lbl_2: ({ calling((void*)load, 2, ____alias_loc_id_2, 0UL, 1, (size_t)(14303464538378772312UL)); (load)(net); }) ;
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   printf("Starting training kernel\n");
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-   call_lbl_3: ({ calling((void*)bpnn_train_kernel, 3, ____alias_loc_id_1, 0UL, 3, (size_t)(3513164141371984928UL), (size_t)(3513164141371984916UL), (size_t)(3513164141371984917UL)); (bpnn_train_kernel)(net, &out_err, &hid_err); }) ;
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+   call_lbl_3: ({ calling((void*)bpnn_train_kernel, 3, ____alias_loc_id_1, 0UL, 3, (size_t)(14303464538378772312UL), (size_t)(14303464538378772300UL), (size_t)(14303464538378772301UL)); (bpnn_train_kernel)(net, &out_err, &hid_err); }) ;
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
       call_lbl_4: end = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-   call_lbl_5: ({ calling((void*)bpnn_free, 5, ____alias_loc_id_0, 0UL, 1, (size_t)(3513164141371984928UL)); (bpnn_free)(net); }) ;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+   call_lbl_5: ({ calling((void*)bpnn_free, 5, ____alias_loc_id_0, 0UL, 1, (size_t)(14303464538378772312UL)); (bpnn_free)(net); }) ;
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   printf("Training done, execution took %f s\n", end - start);
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 rm_stack(false, 0UL, "backprop_face", &____must_manage_backprop_face, 0, ____chimes_did_disable1, false); }
 
 void backprop_face() { (____chimes_replaying ? backprop_face_resumable() : backprop_face_quick()); }
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 int setup_quick(int argc, char *argv[])
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&setup), "setup", &____must_manage_setup, 2, 0, (size_t)(0UL), (size_t)(3513164141371984986UL)) ; ; ;
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+{const int ____chimes_did_disable2 = new_stack((void *)(&setup), "setup", &____must_manage_setup, 2, 0, (size_t)(0UL), (size_t)(14303464538378772370UL)) ; ; ;
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   if(argc!=2){
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   fprintf(stderr, "usage: backprop <num of input elements>\n");
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   exit(0);
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   }
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   layer_size = atoi(argv[1]);
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   int seed; ;
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   seed = 7;
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
    call_lbl_0: ({ calling((void*)bpnn_initialize, 0, 0, 0UL, 1, (size_t)(0UL)); (bpnn_initialize)(seed); }) ;
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
    call_lbl_1: ({ calling((void*)backprop_face, 1, 0, 0UL, 0); backprop_face_quick(); }) ;
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   exit(0);
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 rm_stack(false, 0UL, "setup", &____must_manage_setup, 0, ____chimes_did_disable2, false); }
 
 int setup(int argc, char *argv[]) { return (____chimes_replaying ? setup_resumable(argc, argv) : setup_quick(argc, argv)); }
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 17 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 double seconds_npm() {
-# 18 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 18 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
     struct timeval tp;
-# 19 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 19 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
     struct timezone tzp;
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 20 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
     int i = gettimeofday(&tp, &tzp);
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 21 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
      double ____chimes_ret_var_0; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); return ____chimes_ret_var_0; ;
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 }
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 void backprop_face_npm()
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 {
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   BPNN *net;
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   int i;
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   float out_err, hid_err;
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   double start = seconds_npm();
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   net = (*____chimes_extern_func_bpnn_create)(layer_size, 16, 1);
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   printf("Input layer size : %d\n", layer_size);
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   (*____chimes_extern_func_load)(net);
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   printf("Starting training kernel\n");
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   (*____chimes_extern_func_bpnn_train_kernel)(net, &out_err, &hid_err);
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   double end = seconds_npm();
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   (*____chimes_extern_func_bpnn_free)(net);
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   printf("Training done, execution took %f s\n", end - start);
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 }
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 int setup_npm(int argc, char *argv[])
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 {
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   if(argc!=2){
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   fprintf(stderr, "usage: backprop <num of input elements>\n");
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   exit(0);
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   }
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   layer_size = atoi(argv[1]);
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   int seed;
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   seed = 7;
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   (*____chimes_extern_func_bpnn_initialize)(seed);
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   backprop_face_npm();
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
   exit(0);
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/facetrain.c"
 }
 
 
@@ -3741,15 +3741,15 @@ int setup_npm(int argc, char *argv[])
 
 
 static int module_init() {
-    init_module(3513164141371984888UL, 4, 3, 4, 5, 3, 5, 8, 2, 0, 3,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (3513164141371984888UL + 31UL), "bpnn_free", (unsigned)1, (3513164141371984888UL + 40UL),
-                           &____alias_loc_id_1, (unsigned)0, (unsigned)0, (unsigned)1, "bpnn_train_kernel", (unsigned)3, (3513164141371984888UL + 28UL), (3513164141371984888UL + 29UL), (3513164141371984888UL + 40UL),
-                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (3513164141371984888UL + 26UL), "load", (unsigned)1, (3513164141371984888UL + 40UL),
-                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)1, (3513164141371984888UL + 30UL), "bpnn_create", (unsigned)1, (3513164141371984888UL + 40UL),
-                           &____alias_loc_id_4, (unsigned)3, (unsigned)0, (unsigned)0, (3513164141371984888UL + 1UL), (3513164141371984888UL + 3UL), (3513164141371984888UL + 4UL),
-                            "seconds", 0, "_Z7secondsv", "_Z11seconds_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (3513164141371984888UL + 1UL), (3513164141371984888UL + 2UL), 0UL,
-                            "setup", 0, "_Z5setupiPPc", "_Z9setup_npmiPPc", 0, 2, 0UL, (3513164141371984888UL + 98UL), 0UL, 6, "fprintf", 2, (3513164141371984888UL + 79UL), (3513164141371984888UL + 109UL), 0UL, "exit", 1, 0UL, 0UL, "atoi", 1, (3513164141371984888UL + 85UL), 0UL, "bpnn_initialize", 1, 0UL, 0UL, "backprop_face", 0, 0UL, "exit", 1, 0UL, 0UL,
-                            "backprop_face", 0, "_Z13backprop_facev", "_Z17backprop_face_npmv", 4, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, &____alias_loc_id_3, 0, 0UL, 9, "seconds", 0, 0UL, "bpnn_create", 3, 0UL, 0UL, 0UL, (3513164141371984888UL + 40UL), "printf", 2, (3513164141371984888UL + 105UL), 0UL, 0UL, "load", 1, (3513164141371984888UL + 40UL), 0UL, "printf", 1, (3513164141371984888UL + 106UL), 0UL, "bpnn_train_kernel", 3, (3513164141371984888UL + 40UL), (3513164141371984888UL + 28UL), (3513164141371984888UL + 29UL), 0UL, "seconds", 0, 0UL, "bpnn_free", 1, (3513164141371984888UL + 40UL), 0UL, "printf", 2, (3513164141371984888UL + 107UL), 0UL, 0UL,
+    init_module(14303464538378772272UL, 4, 3, 4, 5, 3, 5, 8, 2, 0, 3,
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (14303464538378772272UL + 31UL), "bpnn_free", (unsigned)1, (14303464538378772272UL + 40UL),
+                           &____alias_loc_id_1, (unsigned)0, (unsigned)0, (unsigned)1, "bpnn_train_kernel", (unsigned)3, (14303464538378772272UL + 28UL), (14303464538378772272UL + 29UL), (14303464538378772272UL + 40UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (14303464538378772272UL + 26UL), "load", (unsigned)1, (14303464538378772272UL + 40UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)1, (14303464538378772272UL + 30UL), "bpnn_create", (unsigned)1, (14303464538378772272UL + 40UL),
+                           &____alias_loc_id_4, (unsigned)3, (unsigned)0, (unsigned)0, (14303464538378772272UL + 1UL), (14303464538378772272UL + 3UL), (14303464538378772272UL + 4UL),
+                            "seconds", 0, "_Z7secondsv", "_Z11seconds_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (14303464538378772272UL + 1UL), (14303464538378772272UL + 2UL), 0UL,
+                            "setup", 0, "_Z5setupiPPc", "_Z9setup_npmiPPc", 0, 2, 0UL, (14303464538378772272UL + 98UL), 0UL, 6, "fprintf", 2, (14303464538378772272UL + 79UL), (14303464538378772272UL + 109UL), 0UL, "exit", 1, 0UL, 0UL, "atoi", 1, (14303464538378772272UL + 85UL), 0UL, "bpnn_initialize", 1, 0UL, 0UL, "backprop_face", 0, 0UL, "exit", 1, 0UL, 0UL,
+                            "backprop_face", 0, "_Z13backprop_facev", "_Z17backprop_face_npmv", 4, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, &____alias_loc_id_3, 0, 0UL, 9, "seconds", 0, 0UL, "bpnn_create", 3, 0UL, 0UL, 0UL, (14303464538378772272UL + 40UL), "printf", 2, (14303464538378772272UL + 105UL), 0UL, 0UL, "load", 1, (14303464538378772272UL + 40UL), 0UL, "printf", 1, (14303464538378772272UL + 106UL), 0UL, "bpnn_train_kernel", 3, (14303464538378772272UL + 40UL), (14303464538378772272UL + 28UL), (14303464538378772272UL + 29UL), 0UL, "seconds", 0, 0UL, "bpnn_free", 1, (14303464538378772272UL + 40UL), 0UL, "printf", 2, (14303464538378772272UL + 107UL), 0UL, 0UL,
                                "bpnn_create", (void **)&(____chimes_extern_func_bpnn_create),
                                "bpnn_free", (void **)&(____chimes_extern_func_bpnn_free),
                                "bpnn_initialize", (void **)&(____chimes_extern_func_bpnn_initialize),
@@ -3763,10 +3763,10 @@ static int module_init() {
                            "bpnn_initialize", &(____chimes_does_checkpoint_bpnn_initialize_npm),
                            "bpnn_train_kernel", &(____chimes_does_checkpoint_bpnn_train_kernel_npm),
                            "load", &(____chimes_does_checkpoint_load_npm),
-                             (3513164141371984888UL + 98UL), (3513164141371984888UL + 85UL),
-                             (3513164141371984888UL + 26UL), (3513164141371984888UL + 40UL),
-                             (3513164141371984888UL + 108UL), (3513164141371984888UL + 79UL),
-                             (3513164141371984888UL + 70UL), (3513164141371984888UL + 98UL),
+                             (14303464538378772272UL + 98UL), (14303464538378772272UL + 85UL),
+                             (14303464538378772272UL + 26UL), (14303464538378772272UL + 40UL),
+                             (14303464538378772272UL + 108UL), (14303464538378772272UL + 79UL),
+                             (14303464538378772272UL + 70UL), (14303464538378772272UL + 98UL),
                      "BPNN", 768UL, 13, "int", (int)__builtin_offsetof (BPNN, input_n), "int", (int)__builtin_offsetof (BPNN, hidden_n), "int", (int)__builtin_offsetof (BPNN, output_n), "float*", (int)__builtin_offsetof (BPNN, input_units), "float*", (int)__builtin_offsetof (BPNN, hidden_units), "float*", (int)__builtin_offsetof (BPNN, output_units), "float*", (int)__builtin_offsetof (BPNN, hidden_delta), "float*", (int)__builtin_offsetof (BPNN, output_delta), "float*", (int)__builtin_offsetof (BPNN, target), "float**", (int)__builtin_offsetof (BPNN, input_weights), "float**", (int)__builtin_offsetof (BPNN, hidden_weights), "float**", (int)__builtin_offsetof (BPNN, input_prev_weights), "float**", (int)__builtin_offsetof (BPNN, hidden_prev_weights),
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
                      "timezone", 64UL, 2, "int", (int)__builtin_offsetof (struct timezone, tz_minuteswest), "int", (int)__builtin_offsetof (struct timezone, tz_dsttime),
