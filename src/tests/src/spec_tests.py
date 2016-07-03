@@ -19,8 +19,8 @@ ALL_SPEC_RUNTIME_TESTS = []
 
 SPEC_BOTSALGN_ROOT = path.join(SPEC_HOME, 'benchspec', 'OMP2012',
                                   '358.botsalgn', 'src')
-SPEC_BOTSALGN_CUSTOM = '-D SPEC -D NDEBUG -D NOREDUCE -D NOPERFLIB -I ' + \
-                       SPEC_BOTSALGN_ROOT + '/common -I ' + \
+SPEC_BOTSALGN_CUSTOM = '-DSPEC -DNDEBUG -DNOREDUCE -DNOPERFLIB -I' + \
+                       SPEC_BOTSALGN_ROOT + '/common -I' + \
                        SPEC_BOTSALGN_ROOT + '/omp-tasks/alignment/alignment_for'
 SPEC_BOTSALGN_FRONTEND = FrontendTest('SPECBotsAlgn',
                              ['common/bots_common.c','common/bots_main.c',
@@ -43,8 +43,8 @@ ALL_SPEC_RUNTIME_TESTS.append(SPEC_BOTSALGN_RUNTIME)
 
 SPEC_BOTSSPAR_ROOT = path.join(SPEC_HOME, 'benchspec', 'OMP2012',
                                   '359.botsspar', 'src')
-SPEC_BOTSSPAR_CUSTOM = '-D SPEC -D NDEBUG -D NOREDUCE -D NOPERFLIB -I ' + \
-                       SPEC_BOTSSPAR_ROOT + '/common -I ' + \
+SPEC_BOTSSPAR_CUSTOM = '-DSPEC -DNDEBUG -DNOREDUCE -DNOPERFLIB -I' + \
+                       SPEC_BOTSSPAR_ROOT + '/common -I' + \
                        SPEC_BOTSSPAR_ROOT + '/omp-tasks/sparselu/sparselu_single'
 SPEC_BOTSSPAR_FRONTEND = FrontendTest('SPECBotsSpar',
                              ['common/bots_common.c', 'common/bots_main.c',
@@ -62,7 +62,7 @@ ALL_SPEC_RUNTIME_TESTS.append(SPEC_BOTSSPAR_RUNTIME)
 
 SPEC_SMITHWA_ROOT = path.join(SPEC_HOME, 'benchspec', 'OMP2012',
                                   '372.smithwa', 'src')
-SPEC_SMITHWA_CUSTOM = '-D SPEC -D NDEBUG -D NOREDUCE -D NOPERFLIB -I ' + \
+SPEC_SMITHWA_CUSTOM = '-DSPEC -DNDEBUG -DNOREDUCE -DNOPERFLIB -I' + \
                       SPEC_SMITHWA_ROOT
 SPEC_SMITHWA_FRONTEND = FrontendTest('SPECSmithwa',
                             ['dispElapsedTime.c', 'genScalData.c',
@@ -83,8 +83,8 @@ ALL_SPEC_RUNTIME_TESTS.append(SPEC_SMITHWA_RUNTIME)
 
 SPEC_KDTREE_ROOT = path.join(SPEC_HOME, 'benchspec', 'OMP2012',
                                 '376.kdtree', 'src')
-SPEC_KDTREE_CUSTOM = '-D SPEC -D NDEBUG -D NOREDUCE -D NOPERFLIB -I ' + \
-                      SPEC_KDTREE_ROOT + ' -l rt'
+SPEC_KDTREE_CUSTOM = '-DSPEC -DNDEBUG -DNOREDUCE -DNOPERFLIB -I' + \
+                      SPEC_KDTREE_ROOT + ' -lrt'
 SPEC_KDTREE_FRONTEND = FrontendTest('SPECKDTree', ['specrand.c', 'kdtree.cc'],
                            'spec-kdtree', True, src_folder=SPEC_KDTREE_ROOT,
                            extra_cli_args=SPEC_KDTREE_CUSTOM)

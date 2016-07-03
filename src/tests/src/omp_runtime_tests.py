@@ -34,13 +34,13 @@ for t in MISC_OMP_RUNTIME_TESTS:
 if is_rodinia_supported():
     from rodinia_tests import ALL_RODINIA_RUNTIME_TESTS
     for t in ALL_RODINIA_RUNTIME_TESTS:
-        t.extra_compile_args += ' -D OPEN'
+        t.extra_compile_args += ' -DOPEN'
     TESTS.extend(ALL_RODINIA_RUNTIME_TESTS)
 
 if is_spec_supported():
     from spec_tests import ALL_SPEC_RUNTIME_TESTS
     for t in ALL_SPEC_RUNTIME_TESTS:
-        t.extra_compile_args += ' -D SPEC_OMP -D SPEC_OPENMP '
+        t.extra_compile_args += ' -DSPEC_OMP -DSPEC_OPENMP '
     TESTS.extend(ALL_SPEC_RUNTIME_TESTS)
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'

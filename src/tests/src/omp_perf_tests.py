@@ -28,7 +28,7 @@ if is_rodinia_supported():
     for test in ALL_RODINIA_RUNTIME_TESTS:
         new_test = PerfTest(test, perf_cli_args_mod.PERF_CLI_ARGS[test.name],
                             EXEC_TIME_PARSERS[test.name])
-        new_test.extra_compile_args += ' -D OPEN'
+        new_test.extra_compile_args += ' -DOPEN'
         TESTS.append(new_test)
 
 if is_spec_supported():
@@ -36,7 +36,7 @@ if is_spec_supported():
     for test in ALL_SPEC_RUNTIME_TESTS:
         new_test = PerfTest(test, perf_cli_args_mod.PERF_CLI_ARGS[test.name],
                             EXEC_TIME_PARSERS[test.name])
-        new_test.extra_compile_args += ' -D SPEC_OMP -D SPEC_OPENMP '
+        new_test.extra_compile_args += ' -DSPEC_OMP -DSPEC_OPENMP '
         TESTS.append(new_test)
 
 if __name__ == '__main__':

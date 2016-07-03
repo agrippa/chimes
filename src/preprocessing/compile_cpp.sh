@@ -26,6 +26,7 @@ GXX_FLAGS="-O3"
 DEFINES=
 ADDED_INCLUDES=
 CHIMES_PROFILE=0
+PASS_THROUGH_FLAGS=""
 
 if [[ -z "${EXPORT_DYNAMIC_FLAG}" ]]; then
     echo "Missing EXPORT_DYNAMIC_FLAG from the environment. For example, when \
@@ -34,74 +35,73 @@ if [[ -z "${EXPORT_DYNAMIC_FLAG}" ]]; then
     exit 1
 fi
 
-while getopts ":kci:I:L:l:o:w:vpx:y:sD:dnf:bg" opt; do
-    case $opt in 
-        g)
+while [ $# -gt 0 ]; do
+    case $1 in
+        -g)
             CHIMES_PROFILE=1
             ;;
-        d)
+        -d)
             DUMMY=1
             ;;
-        b)
+        -b)
             BLOCK_CHECKPOINTS="true"
             ;;
-        i)
-            INPUTS+=($(get_absolute_path ${OPTARG}))
+        *.cpp|*.cc|*.c|*.cxx)
+            INPUTS+=($(get_absolute_path $1))
             ;;
-        I)
-            INCLUDES="${INCLUDES} -I$(get_absolute_path ${OPTARG})"
+        -I*)
+            INCLUDES="$INCLUDES -I$(get_absolute_path ${1:2})"
             ;;
-        L)
-            LIB_PATHS="${LIB_PATHS} -L$(get_absolute_path ${OPTARG})"
+        -L*)
+            LIB_PATHS="$LIB_PATHS -L$(get_absolute_path ${1:2})"
             ;;
-        l)
-            LIBS="${LIBS} -l${OPTARG}"
+        -l*)
+            LIBS="$LIBS $1"
             ;;
-        k)
+        -k)
             KEEP=1
             ;;
-        c)
+        -c)
             COMPILE=1
             ;;
-        w)
-            WORK_DIR=${OPTARG}
+        -w)
+            WORK_DIR=$2
+            shift
             ;;
-        o)
-            OUTPUT_FILE=${OPTARG}
+        -o)
+            OUTPUT_FILE=$2
+            shift
             ;;
-        v)
+        -v)
             VERBOSE=1
             ;;
-        p)
+        -p)
             PROFILE=1
             ;;
-        x)
-            LINKER_FLAGS="${LINKER_FLAGS} ${OPTARG}"
+        -x)
+            LINKER_FLAGS="$LINKER_FLAGS $2"
+            shift
             ;;
-        y)
-            GXX_FLAGS="${GXX_FLAGS} ${OPTARG}"
+        -y)
+            GXX_FLAGS="$GXX_FLAGS $2"
+            shift
             ;;
-        s)
+        -s)
             ENABLE_OMP=0
             ;;
-        D)
-            DEFINES="$DEFINES -D${OPTARG}"
+        -D*)
+            DEFINES="$DEFINES $1"
             ;;
-        n)
-            GXX=${GCC}
+        -n)
+            GXX=$GCC
             ;;
-        f)
-            ADDED_INCLUDES="$ADDED_INCLUDES -include ${OPTARG}"
-            ;;
-        \?)
-            echo "unrecognized option -$OPTARG" >&2
-            exit 1
-            ;;
-        :)
-            echo "option -$OPTARG requires an argument" >&2
-            exit 1
+        *)
+            # Catch all other flags and just pass them through to $GXX
+            GXX_FLAGS="$GXX_FLAGS $1"
             ;;
     esac
+
+    shift
 done
 
 if [[ "${#INPUTS[@]}" -eq "0" ]]; then

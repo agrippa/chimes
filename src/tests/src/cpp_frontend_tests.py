@@ -75,7 +75,7 @@ COMD = FrontendTest('CoMD',
                      'src-mpi/random.c', 'src-mpi/yamlOutput.c'],
                      'CoMD', False, src_folder='CoMD')
 UTS = FrontendTest('UTS', ['rng/brg_sha1.c', 'uts.c', 'uts_shm.c'], 'uts',
-                   False, src_folder='uts', extra_cli_args='-s -D BRG_RNG')
+                   False, src_folder='uts', extra_cli_args='-s -DBRG_RNG')
 RAY_TRACER = FrontendTest('RayTracer', ['ray_tracer.c'],
                           'ray_tracer', False, extra_cli_args='-s')
 

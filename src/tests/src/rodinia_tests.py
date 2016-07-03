@@ -79,16 +79,13 @@ for rtest in RODINIA_TESTS:
             if is_source and is_included:
                 source_files.append(full_path)
 
-    compilation_args = '-D ANSI_C'
+    compilation_args = '-DANSI_C'
 
     if rtest == 'leukocyte':
-        compilation_args += ' -I ' + path.join(RODINIA_HOME, 'openmp',
+        compilation_args += ' -I' + path.join(RODINIA_HOME, 'openmp',
                                                  'leukocyte', 'meschach_lib')
-        # compilation_args += ' -x ' + path.join(RODINIA_HOME, 'openmp',
-        #                                          'leukocyte', 'meschach_lib',
-        #                                          'libmeschach.a')
     elif rtest == 'lud':
-        compilation_args += ' -I ' + path.join(RODINIA_HOME, 'openmp', 'lud',
+        compilation_args += ' -I' + path.join(RODINIA_HOME, 'openmp', 'lud',
                                                   'common')
 
     frontend_test_obj = FrontendTest(test_name, source_files,

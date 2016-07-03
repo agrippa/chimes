@@ -42,7 +42,7 @@ SMITH_WATERMAN_OMP = FrontendTest('SmithWaterman-OMP',
                                   'smith_waterman', False)
 UTS_OMP = FrontendTest('UTS-OMP', ['rng/brg_sha1.c', 'uts.c', 'uts_shm.c'],
                        'uts', False, src_folder='uts',
-                       extra_cli_args='-D BRG_RNG')
+                       extra_cli_args='-DBRG_RNG')
 RAY_TRACER_OMP = FrontendTest('RayTracer-OMP', ['ray_tracer.c'],
                               'ray_tracer', False)
 
@@ -62,13 +62,13 @@ TESTS.append(RAY_TRACER_OMP)
 if is_rodinia_supported():
     from rodinia_tests import ALL_RODINIA_FRONTEND_TESTS
     for t in ALL_RODINIA_FRONTEND_TESTS:
-        t.extra_cli_args += ' -D OPEN'
+        t.extra_cli_args += ' -DOPEN'
     TESTS.extend(ALL_RODINIA_FRONTEND_TESTS)
 
 if is_spec_supported():
     from spec_tests import ALL_SPEC_FRONTEND_TESTS
     for t in ALL_SPEC_FRONTEND_TESTS:
-        t.extra_cli_args += ' -D SPEC_OMP -D SPEC_OPENMP '
+        t.extra_cli_args += ' -DSPEC_OMP -DSPEC_OPENMP '
     TESTS.extend(ALL_SPEC_FRONTEND_TESTS)
 
 if __name__ == '__main__':

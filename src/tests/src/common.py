@@ -295,7 +295,7 @@ def add_include_paths(compile_cmd, includes):
     """
     # Add include folders to the compilation command
     for include_folder in includes:
-        compile_cmd += ' -I ' + include_folder
+        compile_cmd += ' -I' + include_folder
     return compile_cmd
 
 
@@ -324,7 +324,7 @@ def prepare_dependencies(compile_cmd, dependencies, env):
         assert os.path.isfile(makefile_path), makefile_path
 
         run_cmd('make -C ' + dirname, False)
-        compile_cmd += ' -L ' + dirname + ' -l ' + library[3:len(library) - 3]
+        compile_cmd += ' -L' + dirname + ' -l' + library[3:len(library) - 3]
         new_library_path += dirname + ':'
 
     for var in LD_LIBRARY_VARS:
@@ -730,17 +730,17 @@ def build_compile_cmd(compile_script_path, test, output_file, inputs_dir,
         compile_cmd += ' -y ' + flag
 
     for d in test.defines:
-        compile_cmd += ' -D ' + d
+        compile_cmd += ' -D' + d
 
     if type(test) == RuntimeTest:
-        compile_cmd += ' -k -D __CHIMES_TESTING'
+        compile_cmd += ' -k -D__CHIMES_TESTING'
 
     if config.keep:
         compile_cmd += ' -k'
 
     test_dir_path = test.src_folder if test.src_folder is not None else inputs_dir
     for input_file in test.input_files:
-        compile_cmd += ' -i ' + os.path.join(test_dir_path, input_file)
+        compile_cmd += ' ' + os.path.join(test_dir_path, input_file)
 
     compile_cmd += ' -o ' + output_file
 
@@ -852,7 +852,7 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
         compile_cmd += ' -y ' + flag
 
     for input_file in test.input_files:
-        compile_cmd += ' -i ' + os.path.join(examples_dir_path, test.src_folder, input_file)
+        compile_cmd += ' ' + os.path.join(examples_dir_path, test.src_folder, input_file)
 
     compile_cmd = add_include_paths(compile_cmd, test.includes)
     compile_cmd = prepare_dependencies(compile_cmd, test.dependencies, env)
