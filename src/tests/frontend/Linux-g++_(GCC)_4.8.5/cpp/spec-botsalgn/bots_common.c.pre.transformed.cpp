@@ -36,11 +36,11 @@ static unsigned ____alias_loc_id_2;
 static unsigned ____alias_loc_id_3;
 static unsigned ____alias_loc_id_4;
 static unsigned ____alias_loc_id_5;
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -49,7 +49,7 @@ static unsigned ____alias_loc_id_5;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -105,15 +105,15 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 21 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 21 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 28 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1058,7 +1058,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 22 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
+# 22 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 1 3 4
@@ -2234,7 +2234,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 23 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
+# 23 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
 # 1 "/usr/include/unistd.h" 1 3 4
 # 28 "/usr/include/unistd.h" 3 4
 extern "C" {
@@ -3566,7 +3566,7 @@ extern void swab (__const void *__restrict __from, void *__restrict __to,
 extern char *ctermid (char *__s) throw ();
 # 1160 "/usr/include/unistd.h" 3 4
 }
-# 24 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
+# 24 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 29 "/usr/include/string.h" 3 4
 extern "C" {
@@ -4042,7 +4042,7 @@ extern "C++" __const char *basename (__const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 # 646 "/usr/include/string.h" 3 4
 }
-# 25 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
+# 25 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
 # 1 "/usr/include/time.h" 1 3 4
 # 30 "/usr/include/time.h" 3 4
 extern "C" {
@@ -4278,7 +4278,7 @@ extern int getdate_r (__const char *__restrict __string,
 
 
 }
-# 26 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
+# 26 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
 # 1 "/usr/include/sys/time.h" 1 3 4
 # 29 "/usr/include/sys/time.h" 3 4
 # 1 "/usr/include/bits/time.h" 1 3 4
@@ -4381,7 +4381,7 @@ extern int futimesat (int __fd, __const char *__file,
         __const struct timeval __tvp[2]) throw ();
 # 191 "/usr/include/sys/time.h" 3 4
 }
-# 27 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
+# 27 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
 # 1 "/usr/include/sys/utsname.h" 1 3 4
 # 28 "/usr/include/sys/utsname.h" 3 4
 extern "C" {
@@ -4419,7 +4419,7 @@ extern int uname (struct utsname *__name) throw ();
 
 
 }
-# 28 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
+# 28 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
 # 1 "/usr/include/sys/resource.h" 1 3 4
 # 25 "/usr/include/sys/resource.h" 3 4
 # 1 "/usr/include/bits/resource.h" 1 3 4
@@ -4660,23 +4660,23 @@ extern int setpriority (__priority_which_t __which, id_t __who, int __prio)
      throw ();
 
 }
-# 29 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
-# 29 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 29 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
+# 29 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.h" 1
-# 49 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.h"
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.h" 1
+# 49 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.h"
 void bots_get_date(char *str);
 void bots_get_architecture(char *str);
 void bots_get_load_average(char *str);
 void bots_print_results(void);
-# 31 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.h" 1
-# 34 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.h"
+# 31 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.h" 1
+# 34 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.h"
 void bots_print_usage(void);
 void bots_print_usage_option(char opt, int type, char* description, char *val, int subc, char **subv);
-# 32 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots.h" 1
-# 27 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots.h"
+# 32 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots.h" 1
+# 27 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots.h"
 extern int bots_sequential_flag;
 extern int bots_benchmark_flag;
 extern int bots_check_flag;
@@ -4729,1715 +4729,1715 @@ typedef enum { BOTS_VERBOSE_NONE=0,
                BOTS_VERBOSE_DEBUG } bots_verbose_mode_t;
 
 extern bots_verbose_mode_t bots_verbose_mode;
-# 33 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
-# 33 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 34 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 33 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c" 2
+# 33 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 34 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 void bots_error_npm(int error, char *message);static void (*____chimes_extern_func_bots_print_usage)(void) = bots_print_usage;
 void bots_error_quick(int error, char *message); void bots_error(int error, char *message);
 void
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 35 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 bots_error_resumable(int error, char *message)
-# 36 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&bots_error), "bots_error", &____must_manage_bots_error, 2, 0, (size_t)(0UL), (size_t)(268134479069371226UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
-# 37 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 36 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&bots_error), "bots_error", &____must_manage_bots_error, 2, 0, (size_t)(0UL), (size_t)(1536136952061705911UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
+# 37 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    if (message == __null) {{
-# 39 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 39 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       switch(error)
-# 40 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 40 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       {
-# 41 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 41 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 0:
-# 42 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 42 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             fprintf(stderr, "Error (%d): %s\n",error,"Unspecified error.");
-# 43 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 43 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 44 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 44 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 1:
-# 45 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 45 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             fprintf(stderr, "Error (%d): %s\n",error,"Not enough memory.");
-# 46 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 46 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 47 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 47 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 2:
-# 48 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 48 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             fprintf(stderr, "Error (%d): %s\n",error,"Unrecognized parameter.");
-# 49 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 49 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
              call_lbl_0: ({ calling((void*)bots_print_usage, 0, 0, 0UL, 0); (bots_print_usage)(); }) ;
-# 50 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 50 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          default:
-# 52 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 52 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             fprintf(stderr, "Error (%d): %s\n",error,"Invalid error code.");
-# 53 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 53 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 54 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 54 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       }
-# 55 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 55 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    }; } else {fprintf(stderr, "Error (%d): %s\n",error,message); } ;
-# 57 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 57 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    exit(100+error);
-# 58 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 58 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 rm_stack(false, 0UL, "bots_error", &____must_manage_bots_error, 0, ____chimes_did_disable0, false); }
-# 59 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 60 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 59 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 60 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 void bots_warning_npm(int warning, char *message);
 void bots_warning_quick(int warning, char *message); void bots_warning(int warning, char *message);
 void
-# 61 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 61 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 bots_warning_resumable(int warning, char *message)
-# 62 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&bots_warning), "bots_warning", &____must_manage_bots_warning, 2, 0, (size_t)(0UL), (size_t)(268134479069371259UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 63 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 62 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+{const int ____chimes_did_disable1 = new_stack((void *)(&bots_warning), "bots_warning", &____must_manage_bots_warning, 2, 0, (size_t)(0UL), (size_t)(1536136952061705944UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 63 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    if (message == __null) {{
-# 65 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 65 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       switch(warning)
-# 66 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 66 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       {
-# 67 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 67 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 0:
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 68 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             fprintf(stderr, "Warning (%d): %s\n",warning,"Unspecified warning.");
-# 69 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 69 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 70 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 70 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          default:
-# 71 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 71 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             fprintf(stderr, "Warning (%d): %s\n",warning,"Invalid warning code.");
-# 72 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 72 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 73 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 73 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       }
-# 74 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 74 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    }; } else {fprintf(stderr, "Warning (%d): %s\n",warning,message); } ;
-# 76 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 76 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 rm_stack(false, 0UL, "bots_warning", &____must_manage_bots_warning, ____alias_loc_id_0, ____chimes_did_disable1, false); }
-# 77 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 78 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 77 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 78 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 long bots_usecs_npm (void);
 long bots_usecs_quick (void); long bots_usecs (void);
 long bots_usecs_resumable (void)
-# 79 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 79 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&bots_usecs), "bots_usecs", &____must_manage_bots_usecs, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 80 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 80 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     struct timeval t; ;
-# 81 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 81 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    gettimeofday(&t,__null);
-# 82 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 82 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     long ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (t.tv_sec*1000000+t.tv_usec); rm_stack(false, 0UL, "bots_usecs", &____must_manage_bots_usecs, ____alias_loc_id_1, ____chimes_did_disable2, false); return ____chimes_ret_var_0; ;
-# 83 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 83 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 rm_stack(false, 0UL, "bots_usecs", &____must_manage_bots_usecs, ____alias_loc_id_1, ____chimes_did_disable2, false); }
-# 84 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 85 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 84 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 85 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 void bots_get_date_npm(char *str);
 void bots_get_date_quick(char *str); void bots_get_date(char *str);
 void
-# 86 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 86 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 bots_get_date_resumable(char *str)
-# 87 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&bots_get_date), "bots_get_date", &____must_manage_bots_get_date, 1, 0, (size_t)(268134479069371286UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 88 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 87 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+{const int ____chimes_did_disable3 = new_stack((void *)(&bots_get_date), "bots_get_date", &____must_manage_bots_get_date, 1, 0, (size_t)(1536136952061705971UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 88 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    time_t now; ;
-# 89 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 89 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    time(&now);
-# 90 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 90 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    strftime(str, 32, "%Y/%m/%d;%H:%M", gmtime(&now));
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 rm_stack(false, 0UL, "bots_get_date", &____must_manage_bots_get_date, ____alias_loc_id_2, ____chimes_did_disable3, false); }
-# 120 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 120 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 120 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 120 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 int bots_get_max_cpus_npm(void);
 int bots_get_max_cpus_quick(void); int bots_get_max_cpus(void);
 void bots_get_architecture_npm(char *str);
 int bots_get_max_cpus_resumable(void) {const int ____chimes_did_disable4 = new_stack((void *)(&bots_get_max_cpus), "bots_get_max_cpus", &____must_manage_bots_get_max_cpus, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "bots_get_max_cpus", &____must_manage_bots_get_max_cpus, ____alias_loc_id_3, ____chimes_did_disable4, false); return ____chimes_ret_var_1; ; rm_stack(false, 0UL, "bots_get_max_cpus", &____must_manage_bots_get_max_cpus, ____alias_loc_id_3, ____chimes_did_disable4, false); }
-# 121 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 121 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 void bots_get_architecture_quick(char *str); void bots_get_architecture(char *str);
 void bots_get_load_average_npm(char *str);
-void bots_get_architecture_resumable(char *str) {const int ____chimes_did_disable5 = new_stack((void *)(&bots_get_architecture), "bots_get_architecture", &____must_manage_bots_get_architecture, 1, 0, (size_t)(268134479069371304UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; sprintf(str,";"); rm_stack(false, 0UL, "bots_get_architecture", &____must_manage_bots_get_architecture, ____alias_loc_id_4, ____chimes_did_disable5, false); }
-# 122 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+void bots_get_architecture_resumable(char *str) {const int ____chimes_did_disable5 = new_stack((void *)(&bots_get_architecture), "bots_get_architecture", &____must_manage_bots_get_architecture, 1, 0, (size_t)(1536136952061705989UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; sprintf(str,";"); rm_stack(false, 0UL, "bots_get_architecture", &____must_manage_bots_get_architecture, ____alias_loc_id_4, ____chimes_did_disable5, false); }
+# 122 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 void bots_get_load_average_quick(char *str); void bots_get_load_average(char *str);
-void bots_get_load_average_resumable(char *str) {const int ____chimes_did_disable6 = new_stack((void *)(&bots_get_load_average), "bots_get_load_average", &____must_manage_bots_get_load_average, 1, 0, (size_t)(268134479069371313UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; sprintf(str,";;"); rm_stack(false, 0UL, "bots_get_load_average", &____must_manage_bots_get_load_average, ____alias_loc_id_5, ____chimes_did_disable6, false); }
-# 123 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 124 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+void bots_get_load_average_resumable(char *str) {const int ____chimes_did_disable6 = new_stack((void *)(&bots_get_load_average), "bots_get_load_average", &____must_manage_bots_get_load_average, 1, 0, (size_t)(1536136952061705998UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; sprintf(str,";;"); rm_stack(false, 0UL, "bots_get_load_average", &____must_manage_bots_get_load_average, ____alias_loc_id_5, ____chimes_did_disable6, false); }
+# 123 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 124 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 void bots_print_results_npm();
 void bots_print_results_quick(); void bots_print_results();
 void bots_print_results_resumable()
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 {const int ____chimes_did_disable7 = new_stack((void *)(&bots_print_results), "bots_print_results", &____must_manage_bots_print_results, 0, 0) ; char str_cutoff[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_ldflags[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_ld[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_cflags[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_cc[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_comp_message[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_comp_date[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_load_avg[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_architecture[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_exec_message[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_exec_date[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_number_of_tasks_per_second[15];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_number_of_tasks[15];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_speed_up[15];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_time_sequential[15];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_time_program[15];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_result[15];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_resources[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_model[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_parameters[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_name[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
  if (____must_checkpoint_bots_print_results_str_load_avg_0 || ____must_checkpoint_bots_print_results_str_architecture_0) { register_stack_vars(2, "bots_print_results|str_load_avg|0", &____must_checkpoint_bots_print_results_str_load_avg_0, "[128 x i8]", (void *)(str_load_avg), (size_t)128, 0, 0, 0, "bots_print_results|str_architecture|0", &____must_checkpoint_bots_print_results_str_architecture_0, "[128 x i8]", (void *)(str_architecture), (size_t)128, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
-# 126 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 126 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 127 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 127 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 128 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 128 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 129 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 129 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 130 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 130 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 131 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 131 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 132 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 132 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 133 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 133 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 134 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 134 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 135 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 135 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 136 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 136 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 137 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 137 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 138 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 138 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 139 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 139 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 140 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 140 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 141 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 141 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 142 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 142 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 143 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 143 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 144 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 144 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 145 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 145 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 146 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 146 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 147 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 148 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 149 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 147 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 148 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 149 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_name, "%s", bots_name);
-# 150 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 150 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_parameters, "%s", bots_parameters);
-# 151 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 151 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_model, "%s", bots_model);
-# 152 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 152 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_cutoff, "%s", bots_cutoff);
-# 153 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 153 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_resources, "%s", bots_resources);
-# 154 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 154 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    switch(bots_result)
-# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 155 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    {
-# 156 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 156 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 0:
-# 157 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 157 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          sprintf(str_result, "n/a");
-# 158 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 158 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 159 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 159 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 1:
-# 160 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 160 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          sprintf(str_result, "successful");
-# 161 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 161 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 162 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 162 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 2:
-# 163 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 163 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          sprintf(str_result, "UNSUCCESSFUL");
-# 164 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 164 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 165 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 165 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 3:
-# 166 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 166 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          sprintf(str_result, "Not requested");
-# 167 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 167 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 168 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 168 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       default:
-# 169 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 169 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          sprintf(str_result, "error");
-# 170 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 170 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 171 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 171 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    }
-# 172 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 172 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_time_program, "%f", bots_time_program);
-# 173 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 173 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    if (bots_sequential_flag) {sprintf(str_time_sequential, "%f", bots_time_sequential); } else {sprintf(str_time_sequential, "n/a"); } ;
-# 175 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 175 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    if (bots_sequential_flag) {sprintf(str_speed_up, "%3.2f", bots_time_sequential/bots_time_program); } else {sprintf(str_speed_up, "n/a"); } ;
-# 178 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 179 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 178 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 179 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_number_of_tasks, "%3.2f", (float) bots_number_of_tasks);
-# 180 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 180 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_number_of_tasks_per_second, "%3.2f", (float) bots_number_of_tasks/bots_time_program);
-# 181 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 182 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 181 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 182 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_exec_date, "%s", bots_exec_date);
-# 183 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 183 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_exec_message, "%s", bots_exec_message);
-# 184 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 184 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     call_lbl_0: ({ calling_npm("bots_get_architecture", 0); bots_get_architecture_npm(str_architecture); });
-# 185 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 185 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     call_lbl_1: ({ calling_npm("bots_get_load_average", 0); bots_get_load_average_npm(str_load_avg); });
-# 186 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 186 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_comp_date, "%s", bots_comp_date);
-# 187 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 187 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_comp_message, "%s", bots_comp_message);
-# 188 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 188 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_cc, "%s", bots_cc);
-# 189 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 189 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_cflags, "%s", bots_cflags);
-# 190 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 190 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_ld, "%s", bots_ld);
-# 191 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 191 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_ldflags, "%s", bots_ldflags);
-# 192 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 193 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 192 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 193 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    if(bots_print_header)
-# 194 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 194 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    {
-# 195 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 195 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       switch(bots_output_format)
-# 196 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 196 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       {
-# 197 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 197 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 0:
-# 198 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 198 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 199 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 199 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 1:
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 200 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 201 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 2:
-# 202 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 202 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 fprintf(stdout,
-# 203 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 203 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 "Benchmark;Parameters;Model;Cutoff;Resources;Result;Time;Sequential;Speed-up;Nodes;Nodes/Sec;Exec Date;Exec Time;Exec Message;Architecture;Processors;Load Avg-1;Load Avg-5;Load Avg-15;Comp Date;Comp Time;Comp Message;CC;CFLAGS;LD;LDFLAGS\n");
-# 204 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 205 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 206 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 207 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 208 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 209 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 204 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 205 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 206 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 207 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 208 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 209 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 210 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 210 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 3:
-# 211 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 211 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 212 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 212 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 4:
-# 213 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 213 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 fprintf(stdout,
-# 214 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 214 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 "Benchmark;Parameters;Model;Cutoff;Resources;Result;Time;Sequential;Speed-up;Nodes;Nodes/Sec;\n");
-# 215 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 216 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 217 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 215 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 216 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 217 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 218 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 218 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          default:
-# 219 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 219 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 220 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 220 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       }
-# 221 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 221 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    }
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 223 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 222 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 223 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 224 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    switch(bots_output_format)
-# 225 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 225 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    {
-# 226 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 226 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 0:
-# 227 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 227 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 228 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 228 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 1:
-# 229 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 229 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   fprintf(stdout, "\n");
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 230 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Program             = %s\n", str_name);
-# 231 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 231 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Parameters          = %s\n", str_parameters);
-# 232 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 232 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Model               = %s\n", str_model);
-# 233 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 233 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Embedded cut-off    = %s\n", str_cutoff);
-# 234 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 235 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 237 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 234 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 235 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 236 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 237 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Verification        = %s\n", str_result);
-# 238 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 239 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 240 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 242 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 238 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 239 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 240 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 241 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 242 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   if (bots_sequential_flag) {
-# 243 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 243 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Time Sequential     = %s seconds\n", str_time_sequential);
-# 244 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 244 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Speed-up            = %s\n", str_speed_up);
-# 245 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 245 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   }
-# 246 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 246 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 247 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          if ( bots_number_of_tasks > 0 ) {
-# 248 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 248 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Nodes               = %s\n", str_number_of_tasks);
-# 249 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 249 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Nodes/Sec           = %s\n", str_number_of_tasks_per_second);
-# 250 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 250 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   }
-# 251 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 252 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 253 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 254 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 255 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 251 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 252 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 253 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 254 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 255 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Execution Message   = %s\n", str_exec_message);
-# 256 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 257 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 256 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 257 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Architecture        = %s\n", str_architecture);
-# 258 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 258 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Load Avg [1:5:15]   = %s\n", str_load_avg);
-# 259 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 260 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 259 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 260 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Compilation Date    = %s\n", str_comp_date);
-# 261 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 261 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Compilation Message = %s\n", str_comp_message);
-# 262 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 263 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 262 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 263 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Compiler            = %s\n", str_cc);
-# 264 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 264 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Compiler Flags      = %s\n", str_cflags);
-# 265 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 265 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Linker              = %s\n", str_ld);
-# 266 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 266 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Linker Flags        = %s\n", str_ldflags);
-# 267 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 267 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   fflush(stdout);
-# 268 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 268 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 269 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 269 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 2:
-# 270 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 270 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;%s;%s;%s;%s;",
-# 271 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 271 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_name,
-# 272 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 272 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_parameters,
-# 273 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 273 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_model,
-# 274 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 274 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_cutoff,
-# 275 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 275 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_resources,
-# 276 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 276 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_result
-# 277 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 277 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 278 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;%s;",
-# 279 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 279 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_time_program,
-# 280 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 280 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_time_sequential,
-# 281 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 281 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_speed_up
-# 282 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 282 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 283 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 283 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;",
-# 284 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 284 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_number_of_tasks,
-# 285 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 285 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_number_of_tasks_per_second
-# 286 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 286 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 287 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 287 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;",
-# 288 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 288 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_exec_date,
-# 289 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 289 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_exec_message
-# 290 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 290 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 291 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 291 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;",
-# 292 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 292 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_architecture,
-# 293 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 293 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_load_avg
-# 294 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 294 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 295 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 295 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;",
-# 296 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 296 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_comp_date,
-# 297 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 297 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_comp_message
-# 298 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 298 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 299 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 299 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;%s;%s;",
-# 300 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 300 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_cc,
-# 301 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 301 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_cflags,
-# 302 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 302 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_ld,
-# 303 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 303 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_ldflags
-# 304 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 304 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 305 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 305 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"\n");
-# 306 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 306 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 307 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 307 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 3:
-# 308 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 308 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   fprintf(stdout, "\n");
-# 309 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 309 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Program             = %s\n", str_name);
-# 310 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 310 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Parameters          = %s\n", str_parameters);
-# 311 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 311 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Model               = %s\n", str_model);
-# 312 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 312 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Embedded cut-off    = %s\n", str_cutoff);
-# 313 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 313 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "# of Threads        = %s\n", str_resources);
-# 314 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 314 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Verification        = %s\n", str_result);
-# 315 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 316 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 315 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 316 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Time Program        = %s seconds\n", str_time_program);
-# 317 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 317 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   if (bots_sequential_flag) {
-# 318 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 318 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Time Sequential     = %s seconds\n", str_time_sequential);
-# 319 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 319 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Speed-up            = %s\n", str_speed_up);
-# 320 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 320 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   }
-# 321 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 322 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 321 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 322 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          if ( bots_number_of_tasks > 0 ) {
-# 323 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 323 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Nodes               = %s\n", str_number_of_tasks);
-# 324 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 324 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Nodes/Sec           = %s\n", str_number_of_tasks_per_second);
-# 325 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 325 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   }
-# 326 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 326 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 327 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 327 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 4:
-# 328 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 328 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;%s;%s;%s;%s;",
-# 329 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 329 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_name,
-# 330 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 330 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_parameters,
-# 331 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 331 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_model,
-# 332 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 332 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_cutoff,
-# 333 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 333 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_resources,
-# 334 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 334 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_result
-# 335 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 335 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 336 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 336 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;%s;",
-# 337 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 337 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_time_program,
-# 338 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 338 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_time_sequential,
-# 339 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 339 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_speed_up
-# 340 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 340 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 341 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 341 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;",
-# 342 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 342 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_number_of_tasks,
-# 343 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 343 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_number_of_tasks_per_second
-# 344 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 344 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 345 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 345 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"\n");
-# 346 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 346 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 347 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 347 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
        call_lbl_2: default:
-# 348 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-          ({ char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = ("No valid output format\n"); } calling((void*)bots_error, 2, 0, 0UL, 2, (size_t)(0UL), (size_t)(268134479069371636UL)); (bots_error)(0, ____chimes_arg1); }) ;
-# 349 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 348 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+          ({ char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = ("No valid output format\n"); } calling((void*)bots_error, 2, 0, 0UL, 2, (size_t)(0UL), (size_t)(1536136952061706321UL)); (bots_error)(0, ____chimes_arg1); }) ;
+# 349 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 350 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 350 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    }
-# 351 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 351 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 rm_stack(false, 0UL, "bots_print_results", &____must_manage_bots_print_results, 0, ____chimes_did_disable7, false); }
-# 34 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 34 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 void
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 35 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 bots_error_quick(int error, char *message)
-# 36 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&bots_error), "bots_error", &____must_manage_bots_error, 2, 0, (size_t)(0UL), (size_t)(268134479069371226UL)) ; ; ;
-# 37 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 36 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&bots_error), "bots_error", &____must_manage_bots_error, 2, 0, (size_t)(0UL), (size_t)(1536136952061705911UL)) ; ; ;
+# 37 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    if (message == __null) {{
-# 39 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 39 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       switch(error)
-# 40 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 40 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       {
-# 41 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 41 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 0:
-# 42 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 42 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             fprintf(stderr, "Error (%d): %s\n",error,"Unspecified error.");
-# 43 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 43 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 44 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 44 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 1:
-# 45 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 45 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             fprintf(stderr, "Error (%d): %s\n",error,"Not enough memory.");
-# 46 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 46 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 47 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 47 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 2:
-# 48 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 48 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             fprintf(stderr, "Error (%d): %s\n",error,"Unrecognized parameter.");
-# 49 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 49 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
              call_lbl_0: ({ calling((void*)bots_print_usage, 0, 0, 0UL, 0); (bots_print_usage)(); }) ;
-# 50 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 50 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          default:
-# 52 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 52 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             fprintf(stderr, "Error (%d): %s\n",error,"Invalid error code.");
-# 53 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 53 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 54 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 54 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       }
-# 55 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 55 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    }; } else {fprintf(stderr, "Error (%d): %s\n",error,message); } ;
-# 57 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 57 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    exit(100+error);
-# 58 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 58 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 rm_stack(false, 0UL, "bots_error", &____must_manage_bots_error, 0, ____chimes_did_disable0, false); }
 
 void
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 35 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 bots_error(int error, char *message) { (____chimes_replaying ? bots_error_resumable(error, message) : bots_error_quick(error, message)); }
-# 60 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 60 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 void
-# 61 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 61 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 bots_warning_quick(int warning, char *message)
-# 62 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&bots_warning), "bots_warning", &____must_manage_bots_warning, 2, 0, (size_t)(0UL), (size_t)(268134479069371259UL)) ; ; ;
-# 63 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 62 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+{const int ____chimes_did_disable1 = new_stack((void *)(&bots_warning), "bots_warning", &____must_manage_bots_warning, 2, 0, (size_t)(0UL), (size_t)(1536136952061705944UL)) ; ; ;
+# 63 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    if (message == __null) {{
-# 65 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 65 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       switch(warning)
-# 66 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 66 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       {
-# 67 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 67 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 0:
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 68 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             fprintf(stderr, "Warning (%d): %s\n",warning,"Unspecified warning.");
-# 69 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 69 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 70 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 70 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          default:
-# 71 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 71 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             fprintf(stderr, "Warning (%d): %s\n",warning,"Invalid warning code.");
-# 72 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 72 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 73 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 73 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       }
-# 74 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 74 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    }; } else {fprintf(stderr, "Warning (%d): %s\n",warning,message); } ;
-# 76 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 76 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 rm_stack(false, 0UL, "bots_warning", &____must_manage_bots_warning, ____alias_loc_id_0, ____chimes_did_disable1, false); }
 
 void
-# 61 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 61 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 bots_warning(int warning, char *message) { (____chimes_replaying ? bots_warning_resumable(warning, message) : bots_warning_quick(warning, message)); }
-# 78 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 78 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 long bots_usecs_quick (void)
-# 79 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 79 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&bots_usecs), "bots_usecs", &____must_manage_bots_usecs, 0, 0) ; ; ;
-# 80 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 80 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     struct timeval t; ;
-# 81 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 81 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    gettimeofday(&t,__null);
-# 82 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 82 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     long ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (t.tv_sec*1000000+t.tv_usec); rm_stack(false, 0UL, "bots_usecs", &____must_manage_bots_usecs, ____alias_loc_id_1, ____chimes_did_disable2, false); return ____chimes_ret_var_0; ;
-# 83 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 83 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 rm_stack(false, 0UL, "bots_usecs", &____must_manage_bots_usecs, ____alias_loc_id_1, ____chimes_did_disable2, false); }
 
 long bots_usecs (void) { return (____chimes_replaying ? bots_usecs_resumable() : bots_usecs_quick()); }
-# 85 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 85 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 void
-# 86 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 86 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 bots_get_date_quick(char *str)
-# 87 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&bots_get_date), "bots_get_date", &____must_manage_bots_get_date, 1, 0, (size_t)(268134479069371286UL)) ; ; ;
-# 88 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 87 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+{const int ____chimes_did_disable3 = new_stack((void *)(&bots_get_date), "bots_get_date", &____must_manage_bots_get_date, 1, 0, (size_t)(1536136952061705971UL)) ; ; ;
+# 88 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    time_t now; ;
-# 89 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 89 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    time(&now);
-# 90 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 90 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    strftime(str, 32, "%Y/%m/%d;%H:%M", gmtime(&now));
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 rm_stack(false, 0UL, "bots_get_date", &____must_manage_bots_get_date, ____alias_loc_id_2, ____chimes_did_disable3, false); }
 
 void
-# 86 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 86 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 bots_get_date(char *str) { (____chimes_replaying ? bots_get_date_resumable(str) : bots_get_date_quick(str)); }
-# 120 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 120 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 int bots_get_max_cpus_quick(void) {const int ____chimes_did_disable4 = new_stack((void *)(&bots_get_max_cpus), "bots_get_max_cpus", &____must_manage_bots_get_max_cpus, 0, 0) ; ; ; int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "bots_get_max_cpus", &____must_manage_bots_get_max_cpus, ____alias_loc_id_3, ____chimes_did_disable4, false); return ____chimes_ret_var_1; ; rm_stack(false, 0UL, "bots_get_max_cpus", &____must_manage_bots_get_max_cpus, ____alias_loc_id_3, ____chimes_did_disable4, false); }
 
 int bots_get_max_cpus(void) { return (____chimes_replaying ? bots_get_max_cpus_resumable() : bots_get_max_cpus_quick()); }
-# 121 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-void bots_get_architecture_quick(char *str) {const int ____chimes_did_disable5 = new_stack((void *)(&bots_get_architecture), "bots_get_architecture", &____must_manage_bots_get_architecture, 1, 0, (size_t)(268134479069371304UL)) ; ; ; sprintf(str,";"); rm_stack(false, 0UL, "bots_get_architecture", &____must_manage_bots_get_architecture, ____alias_loc_id_4, ____chimes_did_disable5, false); }
+# 121 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+void bots_get_architecture_quick(char *str) {const int ____chimes_did_disable5 = new_stack((void *)(&bots_get_architecture), "bots_get_architecture", &____must_manage_bots_get_architecture, 1, 0, (size_t)(1536136952061705989UL)) ; ; ; sprintf(str,";"); rm_stack(false, 0UL, "bots_get_architecture", &____must_manage_bots_get_architecture, ____alias_loc_id_4, ____chimes_did_disable5, false); }
 
 void bots_get_architecture(char *str) { (____chimes_replaying ? bots_get_architecture_resumable(str) : bots_get_architecture_quick(str)); }
-# 122 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-void bots_get_load_average_quick(char *str) {const int ____chimes_did_disable6 = new_stack((void *)(&bots_get_load_average), "bots_get_load_average", &____must_manage_bots_get_load_average, 1, 0, (size_t)(268134479069371313UL)) ; ; ; sprintf(str,";;"); rm_stack(false, 0UL, "bots_get_load_average", &____must_manage_bots_get_load_average, ____alias_loc_id_5, ____chimes_did_disable6, false); }
+# 122 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+void bots_get_load_average_quick(char *str) {const int ____chimes_did_disable6 = new_stack((void *)(&bots_get_load_average), "bots_get_load_average", &____must_manage_bots_get_load_average, 1, 0, (size_t)(1536136952061705998UL)) ; ; ; sprintf(str,";;"); rm_stack(false, 0UL, "bots_get_load_average", &____must_manage_bots_get_load_average, ____alias_loc_id_5, ____chimes_did_disable6, false); }
 
 void bots_get_load_average(char *str) { (____chimes_replaying ? bots_get_load_average_resumable(str) : bots_get_load_average_quick(str)); }
-# 124 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 124 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 void bots_print_results_quick()
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 {const int ____chimes_did_disable7 = new_stack((void *)(&bots_print_results), "bots_print_results", &____must_manage_bots_print_results, 0, 0) ; char str_cutoff[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_ldflags[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_ld[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_cflags[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_cc[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_comp_message[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_comp_date[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_load_avg[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_architecture[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_exec_message[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_exec_date[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_number_of_tasks_per_second[15];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_number_of_tasks[15];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_speed_up[15];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_time_sequential[15];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_time_program[15];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_result[15];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_resources[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_model[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_parameters[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 char str_name[128];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
  if (____must_checkpoint_bots_print_results_str_load_avg_0 || ____must_checkpoint_bots_print_results_str_architecture_0) { register_stack_vars(2, "bots_print_results|str_load_avg|0", &____must_checkpoint_bots_print_results_str_load_avg_0, "[128 x i8]", (void *)(str_load_avg), (size_t)128, 0, 0, 0, "bots_print_results|str_architecture|0", &____must_checkpoint_bots_print_results_str_architecture_0, "[128 x i8]", (void *)(str_architecture), (size_t)128, 0, 0, 0); } ; ;
-# 126 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 126 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 127 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 127 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 128 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 128 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 129 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 129 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 130 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 130 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 131 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 131 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 132 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 132 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 133 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 133 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 134 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 134 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 135 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 135 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 136 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 136 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 137 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 137 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 138 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 138 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 139 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 139 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 140 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 140 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 141 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 141 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 142 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 142 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 143 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 143 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 144 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 144 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 145 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 145 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 146 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 146 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
-# 147 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 148 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 149 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 147 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 148 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 149 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_name, "%s", bots_name);
-# 150 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 150 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_parameters, "%s", bots_parameters);
-# 151 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 151 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_model, "%s", bots_model);
-# 152 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 152 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_cutoff, "%s", bots_cutoff);
-# 153 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 153 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_resources, "%s", bots_resources);
-# 154 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 154 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    switch(bots_result)
-# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 155 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    {
-# 156 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 156 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 0:
-# 157 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 157 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          sprintf(str_result, "n/a");
-# 158 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 158 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 159 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 159 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 1:
-# 160 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 160 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          sprintf(str_result, "successful");
-# 161 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 161 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 162 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 162 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 2:
-# 163 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 163 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          sprintf(str_result, "UNSUCCESSFUL");
-# 164 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 164 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 165 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 165 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 3:
-# 166 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 166 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          sprintf(str_result, "Not requested");
-# 167 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 167 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 168 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 168 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       default:
-# 169 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 169 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          sprintf(str_result, "error");
-# 170 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 170 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 171 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 171 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    }
-# 172 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 172 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_time_program, "%f", bots_time_program);
-# 173 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 173 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    if (bots_sequential_flag) {sprintf(str_time_sequential, "%f", bots_time_sequential); } else {sprintf(str_time_sequential, "n/a"); } ;
-# 175 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 175 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    if (bots_sequential_flag) {sprintf(str_speed_up, "%3.2f", bots_time_sequential/bots_time_program); } else {sprintf(str_speed_up, "n/a"); } ;
-# 178 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 179 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 178 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 179 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_number_of_tasks, "%3.2f", (float) bots_number_of_tasks);
-# 180 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 180 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_number_of_tasks_per_second, "%3.2f", (float) bots_number_of_tasks/bots_time_program);
-# 181 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 182 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 181 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 182 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_exec_date, "%s", bots_exec_date);
-# 183 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 183 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_exec_message, "%s", bots_exec_message);
-# 184 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 184 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     call_lbl_0: ({ calling_npm("bots_get_architecture", 0); bots_get_architecture_npm(str_architecture); });
-# 185 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 185 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     call_lbl_1: ({ calling_npm("bots_get_load_average", 0); bots_get_load_average_npm(str_load_avg); });
-# 186 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 186 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_comp_date, "%s", bots_comp_date);
-# 187 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 187 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_comp_message, "%s", bots_comp_message);
-# 188 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 188 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_cc, "%s", bots_cc);
-# 189 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 189 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_cflags, "%s", bots_cflags);
-# 190 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 190 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_ld, "%s", bots_ld);
-# 191 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 191 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_ldflags, "%s", bots_ldflags);
-# 192 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 193 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 192 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 193 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    if(bots_print_header)
-# 194 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 194 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    {
-# 195 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 195 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       switch(bots_output_format)
-# 196 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 196 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       {
-# 197 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 197 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 0:
-# 198 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 198 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 199 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 199 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 1:
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 200 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 201 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 2:
-# 202 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 202 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 fprintf(stdout,
-# 203 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 203 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 "Benchmark;Parameters;Model;Cutoff;Resources;Result;Time;Sequential;Speed-up;Nodes;Nodes/Sec;Exec Date;Exec Time;Exec Message;Architecture;Processors;Load Avg-1;Load Avg-5;Load Avg-15;Comp Date;Comp Time;Comp Message;CC;CFLAGS;LD;LDFLAGS\n");
-# 204 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 205 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 206 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 207 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 208 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 209 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 204 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 205 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 206 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 207 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 208 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 209 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 210 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 210 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 3:
-# 211 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 211 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 212 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 212 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 4:
-# 213 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 213 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 fprintf(stdout,
-# 214 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 214 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 "Benchmark;Parameters;Model;Cutoff;Resources;Result;Time;Sequential;Speed-up;Nodes;Nodes/Sec;\n");
-# 215 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 216 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 217 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 215 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 216 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 217 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 218 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 218 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          default:
-# 219 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 219 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 220 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 220 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       }
-# 221 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 221 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    }
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 223 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 222 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 223 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 224 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    switch(bots_output_format)
-# 225 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 225 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    {
-# 226 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 226 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 0:
-# 227 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 227 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 228 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 228 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 1:
-# 229 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 229 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   fprintf(stdout, "\n");
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 230 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Program             = %s\n", str_name);
-# 231 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 231 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Parameters          = %s\n", str_parameters);
-# 232 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 232 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Model               = %s\n", str_model);
-# 233 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 233 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Embedded cut-off    = %s\n", str_cutoff);
-# 234 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 235 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 237 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 234 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 235 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 236 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 237 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Verification        = %s\n", str_result);
-# 238 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 239 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 240 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 242 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 238 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 239 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 240 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 241 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 242 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   if (bots_sequential_flag) {
-# 243 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 243 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Time Sequential     = %s seconds\n", str_time_sequential);
-# 244 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 244 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Speed-up            = %s\n", str_speed_up);
-# 245 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 245 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   }
-# 246 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 246 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 247 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          if ( bots_number_of_tasks > 0 ) {
-# 248 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 248 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Nodes               = %s\n", str_number_of_tasks);
-# 249 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 249 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Nodes/Sec           = %s\n", str_number_of_tasks_per_second);
-# 250 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 250 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   }
-# 251 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 252 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 253 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 254 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 255 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 251 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 252 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 253 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 254 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 255 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Execution Message   = %s\n", str_exec_message);
-# 256 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 257 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 256 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 257 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Architecture        = %s\n", str_architecture);
-# 258 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 258 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Load Avg [1:5:15]   = %s\n", str_load_avg);
-# 259 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 260 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 259 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 260 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Compilation Date    = %s\n", str_comp_date);
-# 261 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 261 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Compilation Message = %s\n", str_comp_message);
-# 262 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 263 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 262 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 263 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Compiler            = %s\n", str_cc);
-# 264 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 264 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Compiler Flags      = %s\n", str_cflags);
-# 265 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 265 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Linker              = %s\n", str_ld);
-# 266 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 266 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Linker Flags        = %s\n", str_ldflags);
-# 267 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 267 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   fflush(stdout);
-# 268 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 268 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 269 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 269 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 2:
-# 270 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 270 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;%s;%s;%s;%s;",
-# 271 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 271 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_name,
-# 272 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 272 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_parameters,
-# 273 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 273 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_model,
-# 274 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 274 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_cutoff,
-# 275 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 275 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_resources,
-# 276 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 276 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_result
-# 277 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 277 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 278 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;%s;",
-# 279 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 279 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_time_program,
-# 280 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 280 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_time_sequential,
-# 281 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 281 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_speed_up
-# 282 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 282 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 283 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 283 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;",
-# 284 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 284 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_number_of_tasks,
-# 285 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 285 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_number_of_tasks_per_second
-# 286 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 286 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 287 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 287 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;",
-# 288 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 288 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_exec_date,
-# 289 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 289 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_exec_message
-# 290 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 290 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 291 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 291 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;",
-# 292 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 292 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_architecture,
-# 293 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 293 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_load_avg
-# 294 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 294 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 295 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 295 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;",
-# 296 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 296 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_comp_date,
-# 297 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 297 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_comp_message
-# 298 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 298 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 299 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 299 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;%s;%s;",
-# 300 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 300 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_cc,
-# 301 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 301 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_cflags,
-# 302 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 302 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_ld,
-# 303 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 303 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_ldflags
-# 304 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 304 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 305 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 305 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"\n");
-# 306 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 306 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 307 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 307 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 3:
-# 308 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 308 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   fprintf(stdout, "\n");
-# 309 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 309 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Program             = %s\n", str_name);
-# 310 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 310 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Parameters          = %s\n", str_parameters);
-# 311 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 311 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Model               = %s\n", str_model);
-# 312 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 312 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Embedded cut-off    = %s\n", str_cutoff);
-# 313 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 313 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "# of Threads        = %s\n", str_resources);
-# 314 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 314 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Verification        = %s\n", str_result);
-# 315 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 316 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 315 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 316 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Time Program        = %s seconds\n", str_time_program);
-# 317 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 317 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   if (bots_sequential_flag) {
-# 318 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 318 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Time Sequential     = %s seconds\n", str_time_sequential);
-# 319 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 319 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Speed-up            = %s\n", str_speed_up);
-# 320 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 320 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   }
-# 321 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 322 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 321 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 322 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          if ( bots_number_of_tasks > 0 ) {
-# 323 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 323 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Nodes               = %s\n", str_number_of_tasks);
-# 324 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 324 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Nodes/Sec           = %s\n", str_number_of_tasks_per_second);
-# 325 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 325 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   }
-# 326 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 326 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 327 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 327 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 4:
-# 328 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 328 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;%s;%s;%s;%s;",
-# 329 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 329 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_name,
-# 330 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 330 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_parameters,
-# 331 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 331 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_model,
-# 332 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 332 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_cutoff,
-# 333 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 333 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_resources,
-# 334 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 334 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_result
-# 335 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 335 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 336 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 336 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;%s;",
-# 337 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 337 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_time_program,
-# 338 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 338 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_time_sequential,
-# 339 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 339 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_speed_up
-# 340 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 340 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 341 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 341 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;",
-# 342 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 342 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_number_of_tasks,
-# 343 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 343 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_number_of_tasks_per_second
-# 344 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 344 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 345 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 345 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"\n");
-# 346 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 346 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 347 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 347 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
        call_lbl_2: default:
-# 348 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-          ({ calling((void*)bots_error, 2, 0, 0UL, 2, (size_t)(0UL), (size_t)(268134479069371636UL)); bots_error_quick(0, "No valid output format\n"); }) ;
-# 349 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 348 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+          ({ calling((void*)bots_error, 2, 0, 0UL, 2, (size_t)(0UL), (size_t)(1536136952061706321UL)); bots_error_quick(0, "No valid output format\n"); }) ;
+# 349 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 350 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 350 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    }
-# 351 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 351 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 rm_stack(false, 0UL, "bots_print_results", &____must_manage_bots_print_results, 0, ____chimes_did_disable7, false); }
 
 void bots_print_results() { (____chimes_replaying ? bots_print_results_resumable() : bots_print_results_quick()); }
-# 34 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 34 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 void
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 35 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 bots_error_npm(int error, char *message)
-# 36 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 36 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 {
-# 37 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 37 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    if (message == __null) {{
-# 39 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 39 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       switch(error)
-# 40 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 40 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       {
-# 41 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 41 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 0:
-# 42 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 42 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             fprintf(stderr, "Error (%d): %s\n",error,"Unspecified error.");
-# 43 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 43 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 44 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 44 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 1:
-# 45 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 45 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             fprintf(stderr, "Error (%d): %s\n",error,"Not enough memory.");
-# 46 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 46 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 47 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 47 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 2:
-# 48 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 48 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             fprintf(stderr, "Error (%d): %s\n",error,"Unrecognized parameter.");
-# 49 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 49 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             (*____chimes_extern_func_bots_print_usage)();
-# 50 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 50 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          default:
-# 52 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 52 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             fprintf(stderr, "Error (%d): %s\n",error,"Invalid error code.");
-# 53 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 53 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 54 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 54 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       }
-# 55 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 55 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    }; } else {fprintf(stderr, "Error (%d): %s\n",error,message); } ;
-# 57 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 57 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    exit(100+error);
-# 58 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 58 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 }
-# 60 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 60 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 void
-# 61 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 61 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 bots_warning_npm(int warning, char *message)
-# 62 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 62 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 {
-# 63 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 63 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    if (message == __null) {{
-# 65 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 65 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       switch(warning)
-# 66 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 66 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       {
-# 67 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 67 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 0:
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 68 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             fprintf(stderr, "Warning (%d): %s\n",warning,"Unspecified warning.");
-# 69 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 69 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 70 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 70 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          default:
-# 71 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 71 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             fprintf(stderr, "Warning (%d): %s\n",warning,"Invalid warning code.");
-# 72 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 72 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 73 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 73 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       }
-# 74 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 74 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    }; } else {fprintf(stderr, "Warning (%d): %s\n",warning,message); } ;
-# 76 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 76 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 }
-# 78 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 78 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 long bots_usecs_npm (void)
-# 79 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 79 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 {
-# 80 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 80 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    struct timeval t;
-# 81 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 81 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    gettimeofday(&t,__null);
-# 82 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 82 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     long ____chimes_ret_var_0; ____chimes_ret_var_0 = (t.tv_sec*1000000+t.tv_usec); return ____chimes_ret_var_0; ;
-# 83 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 83 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 }
-# 85 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 85 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 void
-# 86 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 86 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 bots_get_date_npm(char *str)
-# 87 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 87 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 {
-# 88 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 88 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    time_t now;
-# 89 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 89 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    time(&now);
-# 90 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 90 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    strftime(str, 32, "%Y/%m/%d;%H:%M", gmtime(&now));
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 }
-# 120 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 120 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 int bots_get_max_cpus_npm(void) { int ____chimes_ret_var_1; ____chimes_ret_var_1 = (0); return ____chimes_ret_var_1; ; }
-# 121 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 121 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 void bots_get_architecture_npm(char *str) { sprintf(str,";"); }
-# 122 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 122 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 void bots_get_load_average_npm(char *str) { sprintf(str,";;"); }
-# 124 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 124 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 void bots_print_results_npm()
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 {
-# 126 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 126 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    char str_name[128];
-# 127 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 127 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    char str_parameters[128];
-# 128 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 128 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    char str_model[128];
-# 129 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 129 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    char str_resources[128];
-# 130 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 130 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    char str_result[15];
-# 131 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 131 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    char str_time_program[15];
-# 132 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 132 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    char str_time_sequential[15];
-# 133 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 133 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    char str_speed_up[15];
-# 134 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 134 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    char str_number_of_tasks[15];
-# 135 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 135 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    char str_number_of_tasks_per_second[15];
-# 136 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 136 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    char str_exec_date[128];
-# 137 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 137 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    char str_exec_message[128];
-# 138 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 138 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    char str_architecture[128];
-# 139 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 139 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    char str_load_avg[128];
-# 140 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 140 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    char str_comp_date[128];
-# 141 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 141 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    char str_comp_message[128];
-# 142 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 142 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    char str_cc[128];
-# 143 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 143 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    char str_cflags[128];
-# 144 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 144 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    char str_ld[128];
-# 145 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 145 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    char str_ldflags[128];
-# 146 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 146 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    char str_cutoff[128];
-# 147 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 148 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 149 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 147 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 148 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 149 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_name, "%s", bots_name);
-# 150 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 150 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_parameters, "%s", bots_parameters);
-# 151 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 151 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_model, "%s", bots_model);
-# 152 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 152 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_cutoff, "%s", bots_cutoff);
-# 153 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 153 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_resources, "%s", bots_resources);
-# 154 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 154 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    switch(bots_result)
-# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 155 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    {
-# 156 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 156 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 0:
-# 157 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 157 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          sprintf(str_result, "n/a");
-# 158 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 158 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 159 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 159 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 1:
-# 160 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 160 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          sprintf(str_result, "successful");
-# 161 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 161 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 162 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 162 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 2:
-# 163 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 163 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          sprintf(str_result, "UNSUCCESSFUL");
-# 164 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 164 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 165 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 165 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 3:
-# 166 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 166 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          sprintf(str_result, "Not requested");
-# 167 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 167 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 168 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 168 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       default:
-# 169 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 169 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          sprintf(str_result, "error");
-# 170 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 170 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 171 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 171 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    }
-# 172 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 172 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_time_program, "%f", bots_time_program);
-# 173 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 173 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    if (bots_sequential_flag) {sprintf(str_time_sequential, "%f", bots_time_sequential); } else {sprintf(str_time_sequential, "n/a"); } ;
-# 175 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 175 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    if (bots_sequential_flag) {sprintf(str_speed_up, "%3.2f", bots_time_sequential/bots_time_program); } else {sprintf(str_speed_up, "n/a"); } ;
-# 178 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 179 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 178 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 179 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_number_of_tasks, "%3.2f", (float) bots_number_of_tasks);
-# 180 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 180 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_number_of_tasks_per_second, "%3.2f", (float) bots_number_of_tasks/bots_time_program);
-# 181 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 182 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 181 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 182 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_exec_date, "%s", bots_exec_date);
-# 183 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 183 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_exec_message, "%s", bots_exec_message);
-# 184 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 184 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    bots_get_architecture_npm(str_architecture);
-# 185 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 185 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    bots_get_load_average_npm(str_load_avg);
-# 186 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 186 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_comp_date, "%s", bots_comp_date);
-# 187 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 187 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_comp_message, "%s", bots_comp_message);
-# 188 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 188 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_cc, "%s", bots_cc);
-# 189 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 189 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_cflags, "%s", bots_cflags);
-# 190 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 190 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_ld, "%s", bots_ld);
-# 191 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 191 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    sprintf(str_ldflags, "%s", bots_ldflags);
-# 192 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 193 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 192 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 193 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    if(bots_print_header)
-# 194 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 194 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    {
-# 195 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 195 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       switch(bots_output_format)
-# 196 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 196 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       {
-# 197 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 197 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 0:
-# 198 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 198 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 199 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 199 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 1:
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 200 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 201 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 2:
-# 202 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 202 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 fprintf(stdout,
-# 203 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 203 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 "Benchmark;Parameters;Model;Cutoff;Resources;Result;Time;Sequential;Speed-up;Nodes;Nodes/Sec;Exec Date;Exec Time;Exec Message;Architecture;Processors;Load Avg-1;Load Avg-5;Load Avg-15;Comp Date;Comp Time;Comp Message;CC;CFLAGS;LD;LDFLAGS\n");
-# 204 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 205 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 206 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 207 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 208 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 209 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 204 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 205 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 206 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 207 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 208 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 209 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 210 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 210 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 3:
-# 211 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 211 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 212 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 212 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          case 4:
-# 213 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 213 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 fprintf(stdout,
-# 214 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 214 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 "Benchmark;Parameters;Model;Cutoff;Resources;Result;Time;Sequential;Speed-up;Nodes;Nodes/Sec;\n");
-# 215 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 216 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 217 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 215 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 216 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 217 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 218 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 218 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          default:
-# 219 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 219 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
             break;
-# 220 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 220 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       }
-# 221 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 221 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    }
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 223 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 222 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 223 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 224 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    switch(bots_output_format)
-# 225 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 225 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    {
-# 226 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 226 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 0:
-# 227 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 227 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 228 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 228 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 1:
-# 229 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 229 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   fprintf(stdout, "\n");
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 230 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Program             = %s\n", str_name);
-# 231 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 231 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Parameters          = %s\n", str_parameters);
-# 232 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 232 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Model               = %s\n", str_model);
-# 233 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 233 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Embedded cut-off    = %s\n", str_cutoff);
-# 234 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 235 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 237 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 234 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 235 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 236 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 237 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Verification        = %s\n", str_result);
-# 238 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 239 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 240 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 242 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 238 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 239 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 240 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 241 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 242 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   if (bots_sequential_flag) {
-# 243 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 243 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Time Sequential     = %s seconds\n", str_time_sequential);
-# 244 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 244 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Speed-up            = %s\n", str_speed_up);
-# 245 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 245 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   }
-# 246 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 246 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 247 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          if ( bots_number_of_tasks > 0 ) {
-# 248 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 248 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Nodes               = %s\n", str_number_of_tasks);
-# 249 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 249 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Nodes/Sec           = %s\n", str_number_of_tasks_per_second);
-# 250 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 250 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   }
-# 251 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 252 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 253 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 254 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 255 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 251 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 252 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 253 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 254 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 255 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Execution Message   = %s\n", str_exec_message);
-# 256 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 257 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 256 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 257 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Architecture        = %s\n", str_architecture);
-# 258 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 258 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Load Avg [1:5:15]   = %s\n", str_load_avg);
-# 259 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 260 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 259 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 260 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Compilation Date    = %s\n", str_comp_date);
-# 261 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 261 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Compilation Message = %s\n", str_comp_message);
-# 262 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 263 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 262 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 263 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Compiler            = %s\n", str_cc);
-# 264 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 264 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Compiler Flags      = %s\n", str_cflags);
-# 265 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 265 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Linker              = %s\n", str_ld);
-# 266 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 266 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Linker Flags        = %s\n", str_ldflags);
-# 267 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 267 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   fflush(stdout);
-# 268 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 268 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 269 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 269 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 2:
-# 270 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 270 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;%s;%s;%s;%s;",
-# 271 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 271 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_name,
-# 272 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 272 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_parameters,
-# 273 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 273 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_model,
-# 274 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 274 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_cutoff,
-# 275 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 275 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_resources,
-# 276 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 276 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_result
-# 277 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 277 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 278 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;%s;",
-# 279 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 279 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_time_program,
-# 280 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 280 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_time_sequential,
-# 281 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 281 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_speed_up
-# 282 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 282 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 283 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 283 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;",
-# 284 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 284 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_number_of_tasks,
-# 285 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 285 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_number_of_tasks_per_second
-# 286 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 286 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 287 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 287 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;",
-# 288 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 288 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_exec_date,
-# 289 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 289 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_exec_message
-# 290 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 290 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 291 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 291 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;",
-# 292 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 292 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_architecture,
-# 293 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 293 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_load_avg
-# 294 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 294 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 295 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 295 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;",
-# 296 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 296 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_comp_date,
-# 297 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 297 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_comp_message
-# 298 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 298 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 299 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 299 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;%s;%s;",
-# 300 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 300 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_cc,
-# 301 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 301 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_cflags,
-# 302 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 302 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_ld,
-# 303 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 303 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_ldflags
-# 304 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 304 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 305 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 305 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"\n");
-# 306 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 306 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 307 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 307 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 3:
-# 308 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 308 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   fprintf(stdout, "\n");
-# 309 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 309 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Program             = %s\n", str_name);
-# 310 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 310 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Parameters          = %s\n", str_parameters);
-# 311 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 311 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Model               = %s\n", str_model);
-# 312 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 312 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Embedded cut-off    = %s\n", str_cutoff);
-# 313 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 313 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "# of Threads        = %s\n", str_resources);
-# 314 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 314 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Verification        = %s\n", str_result);
-# 315 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 316 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 315 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 316 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout, "Time Program        = %s seconds\n", str_time_program);
-# 317 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 317 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   if (bots_sequential_flag) {
-# 318 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 318 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Time Sequential     = %s seconds\n", str_time_sequential);
-# 319 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 319 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Speed-up            = %s\n", str_speed_up);
-# 320 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 320 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   }
-# 321 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-# 322 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 321 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 322 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          if ( bots_number_of_tasks > 0 ) {
-# 323 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 323 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Nodes               = %s\n", str_number_of_tasks);
-# 324 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 324 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
            fprintf(stdout, "Nodes/Sec           = %s\n", str_number_of_tasks_per_second);
-# 325 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 325 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
   }
-# 326 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 326 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 327 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 327 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       case 4:
-# 328 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 328 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;%s;%s;%s;%s;",
-# 329 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 329 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_name,
-# 330 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 330 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_parameters,
-# 331 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 331 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_model,
-# 332 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 332 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_cutoff,
-# 333 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 333 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_resources,
-# 334 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 334 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_result
-# 335 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 335 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 336 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 336 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;%s;",
-# 337 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 337 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_time_program,
-# 338 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 338 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_time_sequential,
-# 339 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 339 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_speed_up
-# 340 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 340 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 341 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 341 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"%s;%s;",
-# 342 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 342 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_number_of_tasks,
-# 343 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 343 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
               str_number_of_tasks_per_second
-# 344 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 344 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          );
-# 345 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 345 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          fprintf(stdout,"\n");
-# 346 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 346 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 347 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 347 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
       default:
-# 348 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 348 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          bots_error_npm(0, "No valid output format\n");
-# 349 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 349 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
-# 350 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 350 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    }
-# 351 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
+# 351 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 }
 
 
@@ -6445,21 +6445,21 @@ fprintf(stdout,
 
 
 static int module_init() {
-    init_module(268134479069371185UL, 6, 8, 2, 6, 8, 1, 9, 2, 0, 1,
-                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)0, (268134479069371185UL + 47UL), (268134479069371185UL + 48UL),
-                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (268134479069371185UL + 75UL), (268134479069371185UL + 76UL),
-                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (268134479069371185UL + 91UL), (268134479069371185UL + 92UL), (268134479069371185UL + 101UL),
-                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (268134479069371185UL + 108UL),
-                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (unsigned)0, (268134479069371185UL + 113UL),
-                           &____alias_loc_id_5, (unsigned)1, (unsigned)0, (unsigned)0, (268134479069371185UL + 122UL),
-                            "bots_get_load_average", 0, "_Z21bots_get_load_averagePc", "_Z25bots_get_load_average_npmPc", 0, 1, (268134479069371185UL + 128UL), 0UL, 1, "sprintf", 2, (268134479069371185UL + 128UL), (268134479069371185UL + 458UL), 0UL,
-                            "bots_usecs", 0, "_Z10bots_usecsv", "_Z14bots_usecs_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (268134479069371185UL + 75UL), (268134479069371185UL + 516UL), 0UL,
+    init_module(1536136952061705870UL, 6, 8, 2, 6, 8, 1, 9, 2, 0, 1,
+                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)0, (1536136952061705870UL + 47UL), (1536136952061705870UL + 48UL),
+                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (1536136952061705870UL + 75UL), (1536136952061705870UL + 76UL),
+                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (1536136952061705870UL + 91UL), (1536136952061705870UL + 92UL), (1536136952061705870UL + 101UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (1536136952061705870UL + 108UL),
+                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (unsigned)0, (1536136952061705870UL + 113UL),
+                           &____alias_loc_id_5, (unsigned)1, (unsigned)0, (unsigned)0, (1536136952061705870UL + 122UL),
+                            "bots_get_load_average", 0, "_Z21bots_get_load_averagePc", "_Z25bots_get_load_average_npmPc", 0, 1, (1536136952061705870UL + 128UL), 0UL, 1, "sprintf", 2, (1536136952061705870UL + 128UL), (1536136952061705870UL + 458UL), 0UL,
+                            "bots_usecs", 0, "_Z10bots_usecsv", "_Z14bots_usecs_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (1536136952061705870UL + 75UL), (1536136952061705870UL + 516UL), 0UL,
                             "bots_get_max_cpus", 0, "_Z17bots_get_max_cpusv", "_Z21bots_get_max_cpus_npmv", 0, 0, 0UL, 0,
-                            "bots_get_architecture", 0, "_Z21bots_get_architecturePc", "_Z25bots_get_architecture_npmPc", 0, 1, (268134479069371185UL + 119UL), 0UL, 1, "sprintf", 2, (268134479069371185UL + 119UL), (268134479069371185UL + 457UL), 0UL,
-                            "bots_warning", 0, "_Z12bots_warningiPc", "_Z16bots_warning_npmiPc", 0, 2, 0UL, (268134479069371185UL + 74UL), 0UL, 3, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 453UL), 0UL, (268134479069371185UL + 454UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 453UL), 0UL, (268134479069371185UL + 455UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 453UL), 0UL, (268134479069371185UL + 74UL), 0UL,
-                            "bots_print_results", 0, "_Z18bots_print_resultsv", "_Z22bots_print_results_npmv", 0, 0, 0UL, 74, "sprintf", 3, (268134479069371185UL + 129UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 3, (268134479069371185UL + 130UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 3, (268134479069371185UL + 131UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 3, (268134479069371185UL + 149UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 3, (268134479069371185UL + 132UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 2, (268134479069371185UL + 133UL), (268134479069371185UL + 466UL), 0UL, "sprintf", 2, (268134479069371185UL + 133UL), (268134479069371185UL + 467UL), 0UL, "sprintf", 2, (268134479069371185UL + 133UL), (268134479069371185UL + 468UL), 0UL, "sprintf", 2, (268134479069371185UL + 133UL), (268134479069371185UL + 469UL), 0UL, "sprintf", 2, (268134479069371185UL + 133UL), (268134479069371185UL + 470UL), 0UL, "sprintf", 3, (268134479069371185UL + 134UL), (268134479069371185UL + 458UL), 0UL, 0UL, "sprintf", 3, (268134479069371185UL + 135UL), (268134479069371185UL + 458UL), 0UL, 0UL, "sprintf", 2, (268134479069371185UL + 135UL), (268134479069371185UL + 466UL), 0UL, "sprintf", 3, (268134479069371185UL + 136UL), (268134479069371185UL + 470UL), 0UL, 0UL, "sprintf", 2, (268134479069371185UL + 136UL), (268134479069371185UL + 466UL), 0UL, "sprintf", 3, (268134479069371185UL + 137UL), (268134479069371185UL + 470UL), 0UL, 0UL, "sprintf", 3, (268134479069371185UL + 138UL), (268134479069371185UL + 470UL), 0UL, 0UL, "sprintf", 3, (268134479069371185UL + 139UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 3, (268134479069371185UL + 140UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "bots_get_architecture", 1, (268134479069371185UL + 141UL), 0UL, "bots_get_load_average", 1, (268134479069371185UL + 142UL), 0UL, "sprintf", 3, (268134479069371185UL + 143UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 3, (268134479069371185UL + 144UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 3, (268134479069371185UL + 145UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 3, (268134479069371185UL + 146UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 3, (268134479069371185UL + 147UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 3, (268134479069371185UL + 148UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "fprintf", 2, (268134479069371185UL + 30UL), (268134479069371185UL + 488UL), 0UL, "fprintf", 2, (268134479069371185UL + 30UL), (268134479069371185UL + 489UL), 0UL, "fprintf", 2, (268134479069371185UL + 30UL), (268134479069371185UL + 457UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 129UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 130UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 131UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 149UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 133UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 496UL), (268134479069371185UL + 135UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 136UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 137UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 138UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 140UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 141UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 142UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 143UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 144UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 145UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 146UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 147UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 148UL), 0UL, "fflush", 1, (268134479069371185UL + 30UL), 0UL, "fprintf", 8, (268134479069371185UL + 30UL), (268134479069371185UL + 449UL), (268134479069371185UL + 129UL), (268134479069371185UL + 130UL), (268134479069371185UL + 131UL), (268134479069371185UL + 149UL), (268134479069371185UL + 132UL), (268134479069371185UL + 133UL), 0UL, "fprintf", 5, (268134479069371185UL + 30UL), (268134479069371185UL + 510UL), (268134479069371185UL + 134UL), (268134479069371185UL + 135UL), (268134479069371185UL + 136UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 511UL), (268134479069371185UL + 137UL), (268134479069371185UL + 138UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 511UL), (268134479069371185UL + 139UL), (268134479069371185UL + 140UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 511UL), (268134479069371185UL + 141UL), (268134479069371185UL + 142UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 511UL), (268134479069371185UL + 143UL), (268134479069371185UL + 144UL), 0UL, "fprintf", 6, (268134479069371185UL + 30UL), (268134479069371185UL + 468UL), (268134479069371185UL + 145UL), (268134479069371185UL + 146UL), (268134479069371185UL + 147UL), (268134479069371185UL + 148UL), 0UL, "fprintf", 2, (268134479069371185UL + 30UL), (268134479069371185UL + 457UL), 0UL, "fprintf", 2, (268134479069371185UL + 30UL), (268134479069371185UL + 457UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 129UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 130UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 131UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 149UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 132UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 133UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 496UL), (268134479069371185UL + 134UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 496UL), (268134479069371185UL + 135UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 136UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 137UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 138UL), 0UL, "fprintf", 8, (268134479069371185UL + 30UL), (268134479069371185UL + 449UL), (268134479069371185UL + 129UL), (268134479069371185UL + 130UL), (268134479069371185UL + 131UL), (268134479069371185UL + 149UL), (268134479069371185UL + 132UL), (268134479069371185UL + 133UL), 0UL, "fprintf", 5, (268134479069371185UL + 30UL), (268134479069371185UL + 510UL), (268134479069371185UL + 134UL), (268134479069371185UL + 135UL), (268134479069371185UL + 136UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 511UL), (268134479069371185UL + 137UL), (268134479069371185UL + 138UL), 0UL, "fprintf", 2, (268134479069371185UL + 30UL), (268134479069371185UL + 457UL), 0UL, "bots_error", 2, 0UL, (268134479069371185UL + 451UL), 0UL,
-                            "bots_get_date", 0, "_Z13bots_get_datePc", "_Z17bots_get_date_npmPc", 0, 1, (268134479069371185UL + 101UL), 0UL, 3, "time", 1, (268134479069371185UL + 92UL), 0UL, "gmtime", 1, (268134479069371185UL + 92UL), (268134479069371185UL + 98UL), "strftime", 4, (268134479069371185UL + 101UL), 0UL, (268134479069371185UL + 456UL), (268134479069371185UL + 98UL), 0UL,
-                            "bots_error", 0, "_Z10bots_erroriPc", "_Z14bots_error_npmiPc", 0, 2, 0UL, (268134479069371185UL + 41UL), 0UL, 7, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 448UL), 0UL, (268134479069371185UL + 449UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 448UL), 0UL, (268134479069371185UL + 449UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 448UL), 0UL, (268134479069371185UL + 451UL), 0UL, "bots_print_usage", 0, 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 448UL), 0UL, (268134479069371185UL + 452UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 448UL), 0UL, (268134479069371185UL + 41UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "bots_get_architecture", 0, "_Z21bots_get_architecturePc", "_Z25bots_get_architecture_npmPc", 0, 1, (1536136952061705870UL + 119UL), 0UL, 1, "sprintf", 2, (1536136952061705870UL + 119UL), (1536136952061705870UL + 457UL), 0UL,
+                            "bots_warning", 0, "_Z12bots_warningiPc", "_Z16bots_warning_npmiPc", 0, 2, 0UL, (1536136952061705870UL + 74UL), 0UL, 3, "fprintf", 4, (1536136952061705870UL + 30UL), (1536136952061705870UL + 453UL), 0UL, (1536136952061705870UL + 454UL), 0UL, "fprintf", 4, (1536136952061705870UL + 30UL), (1536136952061705870UL + 453UL), 0UL, (1536136952061705870UL + 455UL), 0UL, "fprintf", 4, (1536136952061705870UL + 30UL), (1536136952061705870UL + 453UL), 0UL, (1536136952061705870UL + 74UL), 0UL,
+                            "bots_print_results", 0, "_Z18bots_print_resultsv", "_Z22bots_print_results_npmv", 0, 0, 0UL, 74, "sprintf", 3, (1536136952061705870UL + 129UL), (1536136952061705870UL + 458UL), (1536136952061705870UL + 460UL), 0UL, "sprintf", 3, (1536136952061705870UL + 130UL), (1536136952061705870UL + 458UL), (1536136952061705870UL + 460UL), 0UL, "sprintf", 3, (1536136952061705870UL + 131UL), (1536136952061705870UL + 458UL), (1536136952061705870UL + 460UL), 0UL, "sprintf", 3, (1536136952061705870UL + 149UL), (1536136952061705870UL + 458UL), (1536136952061705870UL + 460UL), 0UL, "sprintf", 3, (1536136952061705870UL + 132UL), (1536136952061705870UL + 458UL), (1536136952061705870UL + 460UL), 0UL, "sprintf", 2, (1536136952061705870UL + 133UL), (1536136952061705870UL + 466UL), 0UL, "sprintf", 2, (1536136952061705870UL + 133UL), (1536136952061705870UL + 467UL), 0UL, "sprintf", 2, (1536136952061705870UL + 133UL), (1536136952061705870UL + 468UL), 0UL, "sprintf", 2, (1536136952061705870UL + 133UL), (1536136952061705870UL + 469UL), 0UL, "sprintf", 2, (1536136952061705870UL + 133UL), (1536136952061705870UL + 470UL), 0UL, "sprintf", 3, (1536136952061705870UL + 134UL), (1536136952061705870UL + 458UL), 0UL, 0UL, "sprintf", 3, (1536136952061705870UL + 135UL), (1536136952061705870UL + 458UL), 0UL, 0UL, "sprintf", 2, (1536136952061705870UL + 135UL), (1536136952061705870UL + 466UL), 0UL, "sprintf", 3, (1536136952061705870UL + 136UL), (1536136952061705870UL + 470UL), 0UL, 0UL, "sprintf", 2, (1536136952061705870UL + 136UL), (1536136952061705870UL + 466UL), 0UL, "sprintf", 3, (1536136952061705870UL + 137UL), (1536136952061705870UL + 470UL), 0UL, 0UL, "sprintf", 3, (1536136952061705870UL + 138UL), (1536136952061705870UL + 470UL), 0UL, 0UL, "sprintf", 3, (1536136952061705870UL + 139UL), (1536136952061705870UL + 458UL), (1536136952061705870UL + 460UL), 0UL, "sprintf", 3, (1536136952061705870UL + 140UL), (1536136952061705870UL + 458UL), (1536136952061705870UL + 460UL), 0UL, "bots_get_architecture", 1, (1536136952061705870UL + 141UL), 0UL, "bots_get_load_average", 1, (1536136952061705870UL + 142UL), 0UL, "sprintf", 3, (1536136952061705870UL + 143UL), (1536136952061705870UL + 458UL), (1536136952061705870UL + 460UL), 0UL, "sprintf", 3, (1536136952061705870UL + 144UL), (1536136952061705870UL + 458UL), (1536136952061705870UL + 460UL), 0UL, "sprintf", 3, (1536136952061705870UL + 145UL), (1536136952061705870UL + 458UL), (1536136952061705870UL + 460UL), 0UL, "sprintf", 3, (1536136952061705870UL + 146UL), (1536136952061705870UL + 458UL), (1536136952061705870UL + 460UL), 0UL, "sprintf", 3, (1536136952061705870UL + 147UL), (1536136952061705870UL + 458UL), (1536136952061705870UL + 460UL), 0UL, "sprintf", 3, (1536136952061705870UL + 148UL), (1536136952061705870UL + 458UL), (1536136952061705870UL + 460UL), 0UL, "fprintf", 2, (1536136952061705870UL + 30UL), (1536136952061705870UL + 488UL), 0UL, "fprintf", 2, (1536136952061705870UL + 30UL), (1536136952061705870UL + 489UL), 0UL, "fprintf", 2, (1536136952061705870UL + 30UL), (1536136952061705870UL + 457UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 129UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 130UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 131UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 149UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 133UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 496UL), (1536136952061705870UL + 135UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 136UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 137UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 138UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 140UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 141UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 142UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 143UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 144UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 145UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 146UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 147UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 148UL), 0UL, "fflush", 1, (1536136952061705870UL + 30UL), 0UL, "fprintf", 8, (1536136952061705870UL + 30UL), (1536136952061705870UL + 449UL), (1536136952061705870UL + 129UL), (1536136952061705870UL + 130UL), (1536136952061705870UL + 131UL), (1536136952061705870UL + 149UL), (1536136952061705870UL + 132UL), (1536136952061705870UL + 133UL), 0UL, "fprintf", 5, (1536136952061705870UL + 30UL), (1536136952061705870UL + 510UL), (1536136952061705870UL + 134UL), (1536136952061705870UL + 135UL), (1536136952061705870UL + 136UL), 0UL, "fprintf", 4, (1536136952061705870UL + 30UL), (1536136952061705870UL + 511UL), (1536136952061705870UL + 137UL), (1536136952061705870UL + 138UL), 0UL, "fprintf", 4, (1536136952061705870UL + 30UL), (1536136952061705870UL + 511UL), (1536136952061705870UL + 139UL), (1536136952061705870UL + 140UL), 0UL, "fprintf", 4, (1536136952061705870UL + 30UL), (1536136952061705870UL + 511UL), (1536136952061705870UL + 141UL), (1536136952061705870UL + 142UL), 0UL, "fprintf", 4, (1536136952061705870UL + 30UL), (1536136952061705870UL + 511UL), (1536136952061705870UL + 143UL), (1536136952061705870UL + 144UL), 0UL, "fprintf", 6, (1536136952061705870UL + 30UL), (1536136952061705870UL + 468UL), (1536136952061705870UL + 145UL), (1536136952061705870UL + 146UL), (1536136952061705870UL + 147UL), (1536136952061705870UL + 148UL), 0UL, "fprintf", 2, (1536136952061705870UL + 30UL), (1536136952061705870UL + 457UL), 0UL, "fprintf", 2, (1536136952061705870UL + 30UL), (1536136952061705870UL + 457UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 129UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 130UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 131UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 149UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 132UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 133UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 496UL), (1536136952061705870UL + 134UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 496UL), (1536136952061705870UL + 135UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 136UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 137UL), 0UL, "fprintf", 3, (1536136952061705870UL + 30UL), (1536136952061705870UL + 491UL), (1536136952061705870UL + 138UL), 0UL, "fprintf", 8, (1536136952061705870UL + 30UL), (1536136952061705870UL + 449UL), (1536136952061705870UL + 129UL), (1536136952061705870UL + 130UL), (1536136952061705870UL + 131UL), (1536136952061705870UL + 149UL), (1536136952061705870UL + 132UL), (1536136952061705870UL + 133UL), 0UL, "fprintf", 5, (1536136952061705870UL + 30UL), (1536136952061705870UL + 510UL), (1536136952061705870UL + 134UL), (1536136952061705870UL + 135UL), (1536136952061705870UL + 136UL), 0UL, "fprintf", 4, (1536136952061705870UL + 30UL), (1536136952061705870UL + 511UL), (1536136952061705870UL + 137UL), (1536136952061705870UL + 138UL), 0UL, "fprintf", 2, (1536136952061705870UL + 30UL), (1536136952061705870UL + 457UL), 0UL, "bots_error", 2, 0UL, (1536136952061705870UL + 451UL), 0UL,
+                            "bots_get_date", 0, "_Z13bots_get_datePc", "_Z17bots_get_date_npmPc", 0, 1, (1536136952061705870UL + 101UL), 0UL, 3, "time", 1, (1536136952061705870UL + 92UL), 0UL, "gmtime", 1, (1536136952061705870UL + 92UL), (1536136952061705870UL + 98UL), "strftime", 4, (1536136952061705870UL + 101UL), 0UL, (1536136952061705870UL + 456UL), (1536136952061705870UL + 98UL), 0UL,
+                            "bots_error", 0, "_Z10bots_erroriPc", "_Z14bots_error_npmiPc", 0, 2, 0UL, (1536136952061705870UL + 41UL), 0UL, 7, "fprintf", 4, (1536136952061705870UL + 30UL), (1536136952061705870UL + 448UL), 0UL, (1536136952061705870UL + 449UL), 0UL, "fprintf", 4, (1536136952061705870UL + 30UL), (1536136952061705870UL + 448UL), 0UL, (1536136952061705870UL + 449UL), 0UL, "fprintf", 4, (1536136952061705870UL + 30UL), (1536136952061705870UL + 448UL), 0UL, (1536136952061705870UL + 451UL), 0UL, "bots_print_usage", 0, 0UL, "fprintf", 4, (1536136952061705870UL + 30UL), (1536136952061705870UL + 448UL), 0UL, (1536136952061705870UL + 452UL), 0UL, "fprintf", 4, (1536136952061705870UL + 30UL), (1536136952061705870UL + 448UL), 0UL, (1536136952061705870UL + 41UL), 0UL, "exit", 1, 0UL, 0UL,
                                "bots_print_usage", (void **)&(____chimes_extern_func_bots_print_usage),
                            "bots_get_load_average", &(____chimes_does_checkpoint_bots_get_load_average_npm),
                            "bots_usecs", &(____chimes_does_checkpoint_bots_usecs_npm),
@@ -6470,12 +6470,12 @@ static int module_init() {
                            "bots_get_date", &(____chimes_does_checkpoint_bots_get_date_npm),
                            "bots_error", &(____chimes_does_checkpoint_bots_error_npm),
                            "bots_print_usage", &(____chimes_does_checkpoint_bots_print_usage_npm),
-                             (268134479069371185UL + 48UL), (268134479069371185UL + 74UL),
-                             (268134479069371185UL + 447UL), (268134479069371185UL + 30UL),
-                             (268134479069371185UL + 122UL), (268134479069371185UL + 128UL),
-                             (268134479069371185UL + 2UL), (268134479069371185UL + 41UL),
-                             (268134479069371185UL + 113UL), (268134479069371185UL + 119UL),
-                             (268134479069371185UL + 91UL), (268134479069371185UL + 101UL),
+                             (1536136952061705870UL + 48UL), (1536136952061705870UL + 74UL),
+                             (1536136952061705870UL + 447UL), (1536136952061705870UL + 30UL),
+                             (1536136952061705870UL + 122UL), (1536136952061705870UL + 128UL),
+                             (1536136952061705870UL + 2UL), (1536136952061705870UL + 41UL),
+                             (1536136952061705870UL + 113UL), (1536136952061705870UL + 119UL),
+                             (1536136952061705870UL + 91UL), (1536136952061705870UL + 101UL),
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
                              "bots_get_load_average", "_Z21bots_get_load_averagePc", 0, 0,
                              "bots_usecs", "_Z10bots_usecsv", 0, 0,
@@ -6487,8 +6487,8 @@ static int module_init() {
                              "bots_error", "_Z10bots_erroriPc", 0, 1, "bots_print_usage",
                         "bots_print_results|str_architecture|0", 1, "bots_print_results",
                         "bots_print_results|str_load_avg|0", 1, "bots_print_results",
-        "bots_get_architecture", 0UL, (int)1, 268134479069371326UL,
-        "bots_get_load_average", 0UL, (int)1, 268134479069371327UL);
+        "bots_get_architecture", 0UL, (int)1, 1536136952061706011UL,
+        "bots_get_load_average", 0UL, (int)1, 1536136952061706012UL);
     return 0;
 }
 

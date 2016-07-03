@@ -1,9 +1,9 @@
-ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c 20 6 len=17 getUserParameters_npm
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c 20 30 const int ____chimes_did_disable0 = new_stack((void *)(&getUserParameters), "getUserParameters", &____must_manage_getUserParameters, 0, 0); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c 32 1 rm_stack(false, 0UL, "getUserParameters", &____must_manage_getUserParameters, 0, ____chimes_did_disable0, false); 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c 20 31 const int ____chimes_did_disable0 = new_stack((void *)(&getUserParameters), "getUserParameters", &____must_manage_getUserParameters, 0, 0); ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c 20 169 
-ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c 20 6 len=17 getUserParameters_quick
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c 20 168  ; 
-ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c 20 6 len=17 getUserParameters_resumable
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c 20 168  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c 20 6 len=17 getUserParameters_npm
+InsertTextAfterToken /scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c 20 30 const int ____chimes_did_disable0 = new_stack((void *)(&getUserParameters), "getUserParameters", &____must_manage_getUserParameters, 0, 0); 
+InsertText /scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c 32 1 rm_stack(false, 0UL, "getUserParameters", &____must_manage_getUserParameters, 0, ____chimes_did_disable0, false); 
+ReplaceTextStart /scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c 20 31 const int ____chimes_did_disable0 = new_stack((void *)(&getUserParameters), "getUserParameters", &____must_manage_getUserParameters, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c 20 169 
+ReplaceText /scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c 20 6 len=17 getUserParameters_quick
+InsertTextAfterToken /scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c 20 168  ; 
+ReplaceText /scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c 20 6 len=17 getUserParameters_resumable
+InsertTextAfterToken /scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c 20 168  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

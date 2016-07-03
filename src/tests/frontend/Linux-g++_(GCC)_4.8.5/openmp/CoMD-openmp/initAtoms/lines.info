@@ -1,17 +1,17 @@
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 117 4 : {  } {  } call:addIntParallel { addIntParallel { 508 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 116 9 : { 245, 246, 247, 248, 249, 250, 251, 252, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266 } {  } call:profileStart {  }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 112 16 : { 267 } {  } call:putAtomInBox { putAtomInBox { 508 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 128 4 : { 568, 569 } {  } call:computeVcm {  }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 250 4 : {  } {  } call:addRealParallel { addRealParallel { 727, 728 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 249 9 : { 725, 726, 727, 729, 730, 731, 732, 733, 734, 735, 736 } {  } call:profileStart {  }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 196 4 : { 919, 920, 921, 922, 923, 965 } {  } call:kineticEnergy { kineticEnergy { 1187 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 174 48 : { 965 } {  } call:gasdev { gasdev { 917 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 182 4 : {  } {  } call:kineticEnergy { kineticEnergy { 1187 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 173 48 : { 965 } {  } call:gasdev { gasdev { 917 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 181 4 : { 909, 910, 911, 912, 913, 965 } {  } call:setVcm {  }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 172 48 : { 917 } {  } call:gasdev { gasdev { 917 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 171 26 : { 912, 913, 914, 915, 916, 965 } {  } call:mkSeed {  }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 214 39 : { 1246 } {  } call:lcg61 { lcg61 { 1204 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 213 39 : { 1246 } {  } call:lcg61 { lcg61 { 1204 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 212 39 : { 1204 } {  } call:lcg61 { lcg61 { 1204 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 211 26 : { 1202, 1203, 1246 } {  } call:mkSeed {  }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 117 4 : {  } {  } call:addIntParallel { addIntParallel { 508 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 116 9 : { 245, 246, 247, 248, 249, 250, 251, 252, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266 } {  } call:profileStart {  }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 112 16 : { 267 } {  } call:putAtomInBox { putAtomInBox { 508 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 128 4 : { 568, 569 } {  } call:computeVcm {  }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 250 4 : {  } {  } call:addRealParallel { addRealParallel { 727, 728 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 249 9 : { 725, 726, 727, 729, 730, 731, 732, 733, 734, 735, 736 } {  } call:profileStart {  }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 196 4 : { 919, 920, 921, 922, 923, 965 } {  } call:kineticEnergy { kineticEnergy { 1187 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 174 48 : { 965 } {  } call:gasdev { gasdev { 917 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 182 4 : {  } {  } call:kineticEnergy { kineticEnergy { 1187 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 173 48 : { 965 } {  } call:gasdev { gasdev { 917 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 181 4 : { 909, 910, 911, 912, 913, 965 } {  } call:setVcm {  }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 172 48 : { 917 } {  } call:gasdev { gasdev { 917 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 171 26 : { 912, 913, 914, 915, 916, 965 } {  } call:mkSeed {  }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 214 39 : { 1246 } {  } call:lcg61 { lcg61 { 1204 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 213 39 : { 1246 } {  } call:lcg61 { lcg61 { 1204 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 212 39 : { 1204 } {  } call:lcg61 { lcg61 { 1204 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/initAtoms.c 211 26 : { 1202, 1203, 1246 } {  } call:mkSeed {  }

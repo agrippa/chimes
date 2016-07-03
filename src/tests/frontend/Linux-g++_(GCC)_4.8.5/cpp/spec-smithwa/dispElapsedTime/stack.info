@@ -1,2 +1,2 @@
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c getSeconds|____chimes_ret_var_0|0 " double " 64 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c dispElapsedTime|startTime|0 " double " 64 0 0 0
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c getSeconds|____chimes_ret_var_0|0 " double " 64 0 0 0
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c dispElapsedTime|startTime|0 " double " 64 0 0 0

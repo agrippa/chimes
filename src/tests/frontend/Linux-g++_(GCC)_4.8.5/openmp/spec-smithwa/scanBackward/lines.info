@@ -1,1 +1,1 @@
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 968 5 : { 50, 51, 52, 53, 54, 65, 69, 95, 3081, 3751 } {  } call:gridInfo { gridInfo { 72, 73, 74, 75 } }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 968 5 : { 50, 51, 52, 53, 54, 65, 69, 95, 3081, 3751 } {  } call:gridInfo { gridInfo { 72, 73, 74, 75 } }

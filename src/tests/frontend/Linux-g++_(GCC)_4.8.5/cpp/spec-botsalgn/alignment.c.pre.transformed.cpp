@@ -68,11 +68,11 @@ static unsigned ____alias_loc_id_16;
 static unsigned ____alias_loc_id_17;
 static unsigned ____alias_loc_id_18;
 static unsigned ____alias_loc_id_19;
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -81,7 +81,7 @@ static unsigned ____alias_loc_id_19;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -137,15 +137,15 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 22 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 22 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 28 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1090,7 +1090,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 23 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
+# 23 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 1 3 4
@@ -2266,7 +2266,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 24 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
+# 24 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 29 "/usr/include/string.h" 3 4
 extern "C" {
@@ -2742,7 +2742,7 @@ extern "C++" __const char *basename (__const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 # 646 "/usr/include/string.h" 3 4
 }
-# 25 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
+# 25 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
 # 1 "/usr/include/math.h" 1 3 4
 # 30 "/usr/include/math.h" 3 4
 extern "C" {
@@ -3747,7 +3747,7 @@ __signbitl (long double __x) throw ()
 # 417 "/usr/include/math.h" 2 3 4
 # 472 "/usr/include/math.h" 3 4
 }
-# 26 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
+# 26 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
 # 1 "/usr/include/sys/time.h" 1 3 4
 # 27 "/usr/include/sys/time.h" 3 4
 # 1 "/usr/include/time.h" 1 3 4
@@ -3853,7 +3853,7 @@ extern int futimesat (int __fd, __const char *__file,
         __const struct timeval __tvp[2]) throw ();
 # 191 "/usr/include/sys/time.h" 3 4
 }
-# 27 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
+# 27 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
 # 1 "/usr/include/libgen.h" 1 3 4
 # 24 "/usr/include/libgen.h" 3 4
 extern "C" {
@@ -3871,9 +3871,9 @@ extern char *__xpg_basename (char *__path) throw ();
 
 
 }
-# 28 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/param.h" 1
-# 23 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/param.h"
+# 28 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/param.h" 1
+# 23 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/param.h"
 char *amino_acid_order = "ABCDEFGHIKLMNPQRSTVWXYZ";
 char *amino_acid_codes = "ABCDEFGHIKLMNPQRSTUVWXYZ-";
 
@@ -3901,11 +3901,11 @@ int gon250mt[]={
    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
  -22, 0, -5, -28, -27, 51, -40, 22, -7, -21, 0, -2, -14, -31, -17, -18, -19, -19, -11, 41, 0, 78,
    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-# 29 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.h" 1
-# 30 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots.h" 1
-# 27 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots.h"
+# 29 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.h" 1
+# 30 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots.h" 1
+# 27 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots.h"
 extern int bots_sequential_flag;
 extern int bots_benchmark_flag;
 extern int bots_check_flag;
@@ -3958,2860 +3958,2860 @@ typedef enum { BOTS_VERBOSE_NONE=0,
                BOTS_VERBOSE_DEBUG } bots_verbose_mode_t;
 
 extern bots_verbose_mode_t bots_verbose_mode;
-# 31 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
+# 31 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
 # 1 "/usr/include/assert.h" 1 3 4
-# 32 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
-# 32 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 33 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 32 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
+# 32 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 33 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 
-# 1 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 1
-# 11 "/home/jmg3/chimes/src/libchimes/checkpoint.h"
+# 1 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 11 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h"
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*____chimes_fp)(void *));
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 36 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 37 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 35 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c" 2
+# 35 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 36 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 37 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int readseqs(int first_seq, char *filename);
-# 38 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 39 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 38 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 39 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int ktup, window, signif;
-# 40 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 40 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int prot_ktup, prot_window, prot_signif;
-# 41 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 42 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 41 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 42 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int gap_pos1, gap_pos2, mat_avscore;
-# 43 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 43 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int nseqs, max_aa;
-# 44 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 45 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 46 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 44 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 45 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 46 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int *seqlen_array, def_aa_xref[32 +1];
-# 47 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 48 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 47 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 48 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int *bench_output, *seq_output;
-# 49 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 50 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 49 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 50 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 double gap_open, gap_extend;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 double prot_gap_open, prot_gap_extend;
-# 52 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 52 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 double pw_go_penalty, pw_ge_penalty;
-# 53 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 53 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 double prot_pw_go_penalty, prot_pw_ge_penalty;
-# 54 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 55 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 54 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 55 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 char **args, **names, **seq_array;
-# 56 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 57 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 56 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 57 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 static int *matrix = __null;
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 68 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 68 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void del_npm(int k, int *print_ptr, int *last_print, int *displ);
 void del_quick(int k, int *print_ptr, int *last_print, int *displ); void del(int k, int *print_ptr, int *last_print, int *displ);
 void del_resumable(int k, int *print_ptr, int *last_print, int *displ)
-# 69 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&del), "del", &____must_manage_del, 4, 0, (size_t)(0UL), (size_t)(2235191825397909493UL), (size_t)(2235191825397909494UL), (size_t)(2235191825397909495UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 70 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 69 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&del), "del", &____must_manage_del, 4, 0, (size_t)(0UL), (size_t)(4673255111730560070UL), (size_t)(4673255111730560071UL), (size_t)(4673255111730560072UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 70 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (*last_print<0) {*last_print = displ[(*print_ptr)-1] -= k; } else {*last_print = displ[(*print_ptr)++] = -k; } ;
-# 72 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 72 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "del", &____must_manage_del, ____alias_loc_id_4, ____chimes_did_disable0, false); }
-# 73 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 74 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 75 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 76 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 77 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 73 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 74 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 75 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 76 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 77 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void add_npm(int v, int *print_ptr, int *last_print, int *displ);
 void add_quick(int v, int *print_ptr, int *last_print, int *displ); void add(int v, int *print_ptr, int *last_print, int *displ);
 void add_resumable(int v, int *print_ptr, int *last_print, int *displ)
-# 78 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&add), "add", &____must_manage_add, 4, 0, (size_t)(0UL), (size_t)(2235191825397909547UL), (size_t)(2235191825397909548UL), (size_t)(2235191825397909549UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 79 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 78 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+{const int ____chimes_did_disable1 = new_stack((void *)(&add), "add", &____must_manage_add, 4, 0, (size_t)(0UL), (size_t)(4673255111730560124UL), (size_t)(4673255111730560125UL), (size_t)(4673255111730560126UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 79 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (*last_print < 0) {
-# 80 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 80 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       displ[(*print_ptr)-1] = v;
-# 81 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 81 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       displ[(*print_ptr)++] = *last_print;
-# 82 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 82 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    } else {
-# 83 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 83 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       *last_print = displ[(*print_ptr)++] = v;
-# 84 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 84 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 85 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 85 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "add", &____must_manage_add, ____alias_loc_id_5, ____chimes_did_disable1, false); }
-# 86 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 87 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 88 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 89 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 90 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 86 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 87 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 88 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 89 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 90 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int calc_score_npm(int iat, int jat, int v1, int v2, int seq1, int seq2);
 int calc_score_quick(int iat, int jat, int v1, int v2, int seq1, int seq2); int calc_score(int iat, int jat, int v1, int v2, int seq1, int seq2);
 int calc_score_resumable(int iat, int jat, int v1, int v2, int seq1, int seq2)
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&calc_score), "calc_score", &____must_manage_calc_score, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 92 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 92 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; int ipos; int jpos; ;
-# 93 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 94 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 93 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 94 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    ipos = v1 + iat;
-# 95 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 95 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    jpos = v2 + jat;
-# 96 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 96 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    i = seq_array[seq1][ipos];
-# 97 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 97 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    j = seq_array[seq2][jpos];
-# 98 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 99 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 98 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 99 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((matrix[i * 32 + j])); rm_stack(false, 0UL, "calc_score", &____must_manage_calc_score, ____alias_loc_id_6, ____chimes_did_disable2, false); return ____chimes_ret_var_0; ;
-# 100 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 100 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "calc_score", &____must_manage_calc_score, ____alias_loc_id_6, ____chimes_did_disable2, false); }
-# 101 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 102 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 103 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 104 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 105 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 101 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 102 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 103 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 104 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 105 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int get_matrix_npm(int *matptr, int *xref, int scale);
 int get_matrix_quick(int *matptr, int *xref, int scale); int get_matrix(int *matptr, int *xref, int scale);
 int get_matrix_resumable(int *matptr, int *xref, int scale)
-# 106 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&get_matrix), "get_matrix", &____must_manage_get_matrix, 3, 0, (size_t)(2235191825397910045UL), (size_t)(2235191825397910046UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 107 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   matrix = (int *) ({ void *____chimes_tmp_ptr = malloc((32 * 32 * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, 32 * 32 * sizeof(int), 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 108 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 106 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+{const int ____chimes_did_disable3 = new_stack((void *)(&get_matrix), "get_matrix", &____must_manage_get_matrix, 3, 0, (size_t)(4673255111730560622UL), (size_t)(4673255111730560623UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 107 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+   matrix = (int *) ({ void *____chimes_tmp_ptr = malloc((32 * 32 * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, 32 * 32 * sizeof(int), 4673255111730562892UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 108 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int gg_score; gg_score = (0) ;
-# 109 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 109 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int gr_score; gr_score = (0) ;
-# 110 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 110 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; int k; int ti; int tj; int ix; ;
-# 111 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 111 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int av1; int av2; int av3; int min; int max; int maxres; ;
-# 112 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 113 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 112 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 113 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i <= max_aa; i++) { for (j = 0; j <= max_aa; j++) { matrix[i * 32 + j] = 0; }; };
-# 115 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 116 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 115 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 116 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    ix = 0;
-# 117 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 117 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    maxres = 0;
-# 118 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 119 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 118 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 119 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i <= max_aa; i++) {
-# 120 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 120 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       ti = xref[i];
-# 121 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 121 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = 0; j <= i; j++) {
-# 122 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 122 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          tj = xref[j];
-# 123 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 123 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((ti != -1) && (tj != -1)) {
-# 124 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 124 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             k = matptr[ix];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             if (ti == tj) {
-# 126 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 126 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                matrix[ti * 32 + ti] = k * scale;
-# 127 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 127 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                maxres++;
-# 128 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 128 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             } else {
-# 129 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 129 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                matrix[ti * 32 + tj] = k * scale;
-# 130 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 130 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                matrix[tj * 32 + ti] = k * scale;
-# 131 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 131 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             }
-# 132 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 132 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             ix++;
-# 133 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 133 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          }
-# 134 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 134 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 135 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 135 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 136 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 137 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 136 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 137 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    maxres--;
-# 138 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 138 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    av1 = av2 = av3 = 0;
-# 139 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 140 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 139 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 140 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i <= max_aa; i++) {
-# 141 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 141 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = 0; j <= i; j++) {
-# 142 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 142 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          av1 += matrix[i * 32 + j];
-# 143 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 143 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (i == j) {av2 += matrix[i * 32 + j]; } else {av3 += matrix[i * 32 + j]; } ;
-# 145 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 145 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 146 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 146 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 147 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 148 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 147 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 148 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    av1 /= (maxres*maxres)/2;
-# 149 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 149 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    av2 /= maxres;
-# 150 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 150 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    av3 /= ((double)(maxres*maxres-maxres))/2;
-# 151 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 151 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    mat_avscore = -av3;
-# 152 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 153 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 152 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 153 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    min = max = matrix[0 * 32 + 0];
-# 154 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 154 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 155 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i <= max_aa; i++) { for (j = 1; j <= i; j++) {
-# 157 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 157 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (matrix[i * 32 + j] < min) {min = matrix[i * 32 + j]; };
-# 158 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 158 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             if (matrix[i * 32 + j] > max) {max = matrix[i * 32 + j]; };
-# 159 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 159 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }; }
-# 160 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 161 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 160 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 161 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i < gap_pos1; i++) {
-# 162 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 162 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       matrix[i * 32 + gap_pos1] = gr_score;
-# 163 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 163 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       matrix[gap_pos1 * 32 + i] = gr_score;
-# 164 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 164 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       matrix[i * 32 + gap_pos2] = gr_score;
-# 165 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 165 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       matrix[gap_pos2 * 32 + i] = gr_score;
-# 166 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 166 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 167 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 168 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 167 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 168 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    matrix[gap_pos1 * 32 + gap_pos1] = gg_score;
-# 169 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 169 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    matrix[gap_pos2 * 32 + gap_pos2] = gg_score;
-# 170 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 170 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    matrix[gap_pos2 * 32 + gap_pos1] = gg_score;
-# 171 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 171 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    matrix[gap_pos1 * 32 + gap_pos2] = gg_score;
-# 172 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 173 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 172 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 173 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    maxres += 2;
-# 174 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 175 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 174 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 175 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((maxres)); rm_stack(false, 0UL, "get_matrix", &____must_manage_get_matrix, ____alias_loc_id_7, ____chimes_did_disable3, false); return ____chimes_ret_var_1; ;
-# 176 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 176 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "get_matrix", &____must_manage_get_matrix, ____alias_loc_id_7, ____chimes_did_disable3, false); }
-# 177 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 178 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 179 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 180 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 181 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 177 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 178 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 179 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 180 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 181 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void forward_pass_npm(char *ia, char *ib, int n, int m, int *se1, int *se2, int *maxscore, int g, int gh);
 void forward_pass_quick(char *ia, char *ib, int n, int m, int *se1, int *se2, int *maxscore, int g, int gh); void forward_pass(char *ia, char *ib, int n, int m, int *se1, int *se2, int *maxscore, int g, int gh);
 void forward_pass_resumable(char *ia, char *ib, int n, int m, int *se1, int *se2, int *maxscore, int g, int gh)
-# 182 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&forward_pass), "forward_pass", &____must_manage_forward_pass, 9, 0, (size_t)(2235191825397910264UL), (size_t)(2235191825397910265UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397910268UL), (size_t)(2235191825397910269UL), (size_t)(2235191825397910270UL), (size_t)(0UL), (size_t)(0UL)) ; int DD[5000];
-# 182 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 182 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+{const int ____chimes_did_disable4 = new_stack((void *)(&forward_pass), "forward_pass", &____must_manage_forward_pass, 9, 0, (size_t)(4673255111730560841UL), (size_t)(4673255111730560842UL), (size_t)(0UL), (size_t)(0UL), (size_t)(4673255111730560845UL), (size_t)(4673255111730560846UL), (size_t)(4673255111730560847UL), (size_t)(0UL), (size_t)(0UL)) ; int DD[5000];
+# 182 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int HH[5000];
-# 182 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 182 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
  if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 183 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 183 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; int f; int p; int t; int hh; ;
-# 184 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 184 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     ;
-# 185 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 185 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          ;
-# 186 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 187 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 186 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 187 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    *maxscore = 0;
-# 188 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 188 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    *se1 = *se2 = 0;
-# 189 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 190 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 189 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 190 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i <= m; i++) {HH[i] = 0; DD[i] = -g;}
-# 191 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 192 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 191 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 192 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 1; i <= n; i++) {
-# 193 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 193 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       hh = p = 0;
-# 194 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 194 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       f = -g;
-# 195 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 196 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 195 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 196 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = 1; j <= m; j++) {
-# 197 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 197 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          f -= gh;
-# 198 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 198 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          t = hh - g - gh;
-# 199 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 199 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 200 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (f < t) {f = t; };
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 202 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 201 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 202 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          DD[j] -= gh;
-# 203 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 203 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          t = HH[j] - g - gh;
-# 204 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 205 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 204 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 205 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (DD[j] < t) {DD[j] = t; };
-# 206 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 207 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 206 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 207 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          hh = p + matrix[((int)ia[i]) * 32 + ((int)ib[j])];
-# 208 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 208 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh < f) {hh = f; };
-# 209 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 209 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh < DD[j]) {hh = DD[j]; };
-# 210 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 210 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh < 0) {hh = 0; };
-# 211 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 212 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 211 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 212 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          p = HH[j];
-# 213 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 213 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          HH[j] = hh;
-# 214 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 215 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 214 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 215 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh > *maxscore) {*maxscore = hh; *se1 = i; *se2 = j;}
-# 216 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 216 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 217 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 217 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 218 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 218 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "forward_pass", &____must_manage_forward_pass, ____alias_loc_id_8, ____chimes_did_disable4, false); }
-# 219 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 220 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 221 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 223 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 219 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 220 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 221 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 222 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 223 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void reverse_pass_npm(char *ia, char *ib, int se1, int se2, int *sb1, int *sb2, int maxscore, int g, int gh);
 void reverse_pass_quick(char *ia, char *ib, int se1, int se2, int *sb1, int *sb2, int maxscore, int g, int gh); void reverse_pass(char *ia, char *ib, int se1, int se2, int *sb1, int *sb2, int maxscore, int g, int gh);
 void reverse_pass_resumable(char *ia, char *ib, int se1, int se2, int *sb1, int *sb2, int maxscore, int g, int gh)
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&reverse_pass), "reverse_pass", &____must_manage_reverse_pass, 9, 0, (size_t)(2235191825397910503UL), (size_t)(2235191825397910504UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397910507UL), (size_t)(2235191825397910508UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int DD[5000];
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 224 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+{const int ____chimes_did_disable5 = new_stack((void *)(&reverse_pass), "reverse_pass", &____must_manage_reverse_pass, 9, 0, (size_t)(4673255111730561080UL), (size_t)(4673255111730561081UL), (size_t)(0UL), (size_t)(0UL), (size_t)(4673255111730561084UL), (size_t)(4673255111730561085UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int DD[5000];
+# 224 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int HH[5000];
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 224 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
  if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 225 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 225 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; int f; int p; int t; int hh; int cost; ;
-# 226 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 226 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     ;
-# 227 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 227 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          ;
-# 228 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 229 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 228 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 229 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    cost = 0;
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 230 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    *sb1 = *sb2 = 1;
-# 231 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 232 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 231 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 232 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = se2; i > 0; i--){ HH[i] = -1; DD[i] = -1;}
-# 233 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 234 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 233 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 234 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = se1; i > 0; i--) {
-# 235 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 235 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       hh = f = -1;
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 236 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (i == se1) {p = 0; } else {p = -1; } ;
-# 237 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 238 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 237 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 238 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = se2; j > 0; j--) {
-# 239 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 240 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 239 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 240 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          f -= gh;
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 241 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          t = hh - g - gh;
-# 242 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 242 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (f < t) {f = t; };
-# 243 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 244 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 243 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 244 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          DD[j] -= gh;
-# 245 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 245 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          t = HH[j] - g - gh;
-# 246 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 246 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (DD[j] < t) {DD[j] = t; };
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 248 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 247 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 248 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
           int tmp1; tmp1 = ((int)ia[i]) ;
-# 249 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 249 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
           int tmp2; tmp2 = ((int)ib[j]) ;
-# 250 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 250 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          hh = p + matrix[tmp1 * 32 + tmp2];
-# 251 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 251 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh < f) {hh = f; };
-# 252 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 252 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh < DD[j]) {hh = DD[j]; };
-# 253 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 254 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 253 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 254 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          p = HH[j];
-# 255 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 255 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          HH[j] = hh;
-# 256 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 257 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 256 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 257 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh > cost) {
-# 258 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 258 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             cost = hh; *sb1 = i; *sb2 = j;
-# 259 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 259 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             if (cost >= maxscore) {break; };
-# 260 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 260 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          }
-# 261 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 261 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 262 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 263 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 262 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 263 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (cost >= maxscore) {break; };
-# 264 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 264 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 265 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 265 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "reverse_pass", &____must_manage_reverse_pass, ____alias_loc_id_9, ____chimes_did_disable5, false); }
-# 266 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 267 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 268 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 269 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 270 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 266 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 267 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 268 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 269 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 270 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int diff_npm (int A, int B, int M, int N, int tb, int te, int *print_ptr, int *last_print, int *displ, int seq1, int seq2, int g, int gh);
 int diff_quick (int A, int B, int M, int N, int tb, int te, int *print_ptr, int *last_print, int *displ, int seq1, int seq2, int g, int gh); int diff (int A, int B, int M, int N, int tb, int te, int *print_ptr, int *last_print, int *displ, int seq1, int seq2, int g, int gh);
 int diff_resumable (int A, int B, int M, int N, int tb, int te, int *print_ptr, int *last_print, int *displ, int seq1, int seq2, int g, int gh)
-# 271 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable6 = new_stack((void *)(&diff), "diff", &____must_manage_diff, 13, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397911303UL), (size_t)(2235191825397911304UL), (size_t)(2235191825397911305UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int SS[5000];
-# 271 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 271 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+{const int ____chimes_did_disable6 = new_stack((void *)(&diff), "diff", &____must_manage_diff, 13, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(4673255111730561880UL), (size_t)(4673255111730561881UL), (size_t)(4673255111730561882UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int SS[5000];
+# 271 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int RR[5000];
-# 271 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 271 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int DD[5000];
-# 271 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 271 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int HH[5000];
-# 271 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 271 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
  if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 272 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 272 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; int f; int e; int s; int t; int hh; ;
-# 273 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 273 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int midi; int midj; int midh; int type; ;
-# 274 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 274 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     ;
-# 275 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 275 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          ;
-# 276 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 276 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     ;
-# 277 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 277 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     ;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 279 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 278 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 279 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (N <= 0) {if (M > 0) { call_lbl_0: ({ calling_npm("del", 0); del_npm(M, print_ptr, last_print, displ); }); }; int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (( - (int) ((M) <= 0 ? 0 : tb + gh * (M)))); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_10, ____chimes_did_disable6, false); return ____chimes_ret_var_2; ; }
-# 280 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 281 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 280 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 281 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (M <= 1) {
-# 282 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 283 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 282 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 283 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (M <= 0) { call_lbl_1: ({ calling_npm("add", 0); add_npm(N, print_ptr, last_print, displ); }); int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (( - (int)((N) <= 0 ? 0 : tb + gh * (N)))); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_10, ____chimes_did_disable6, false); return ____chimes_ret_var_3; ;}
-# 284 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 285 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 284 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 285 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       midh = -(tb+gh) - ((N) <= 0 ? 0 : te + gh * (N));
-# 286 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 286 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       hh = -(te+gh) - ((N) <= 0 ? 0 : tb + gh * (N));
-# 287 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 288 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 287 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 288 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (hh > midh) {midh = hh; };
-# 289 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 289 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       midj = 0;
-# 290 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 291 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 290 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 291 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = 1; j <= N; j++) {
-# 292 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 292 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
           call_lbl_2: hh = ({ calling_npm("calc_score", 0); calc_score_npm(1, j, A, B, seq1, seq2); }) - ((N-j) <= 0 ? 0 : te + gh * (N-j)) - ((j-1) <= 0 ? 0 : tb + gh * (j-1));
-# 293 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 293 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh > midh) {midh = hh; midj = j;}
-# 294 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 294 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 295 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 296 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 295 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 296 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (midj == 0) {
-# 297 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 297 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
           call_lbl_3: ({ calling_npm("del", 0); del_npm(1, print_ptr, last_print, displ); });
-# 298 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 298 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
           call_lbl_4: ({ calling_npm("add", 0); add_npm(N, print_ptr, last_print, displ); });
-# 299 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 299 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       } else {
-# 300 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 300 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (midj > 1) { call_lbl_5: ({ calling_npm("add", 0); add_npm(midj-1, print_ptr, last_print, displ); }); };
-# 301 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 301 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          displ[(*print_ptr)++] = *last_print = 0;
-# 302 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 302 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (midj < N) { call_lbl_6: ({ calling_npm("add", 0); add_npm(N-midj, print_ptr, last_print, displ); }); };
-# 303 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 303 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 304 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 305 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 304 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 305 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
        int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (midh); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_10, ____chimes_did_disable6, false); return ____chimes_ret_var_4; ;
-# 306 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 306 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 307 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 308 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 307 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 308 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    midi = M / 2;
-# 309 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 309 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    HH[0] = 0.0;
-# 310 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 310 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    t = -tb;
-# 311 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 312 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 311 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 312 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (j = 1; j <= N; j++) {
-# 313 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 313 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       HH[j] = t = t - gh;
-# 314 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 314 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       DD[j] = t - g;
-# 315 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 315 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 316 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 317 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 316 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 317 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    t = -tb;
-# 318 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 319 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 318 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 319 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 1; i <= midi; i++) {
-# 320 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 320 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       s = HH[0];
-# 321 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 321 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       HH[0] = hh = t = t - gh;
-# 322 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 322 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       f = t - g;
-# 323 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 323 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = 1; j <= N; j++) {
-# 324 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 324 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((hh = hh - g - gh) > (f = f - gh)) {f = hh; };
-# 325 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 325 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((hh = HH[j] - g - gh) > (e = DD[j]- gh)) {e = hh; };
-# 326 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 326 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
           call_lbl_7: hh = s + ({ calling_npm("calc_score", 0); calc_score_npm(i, j, A, B, seq1, seq2); });
-# 327 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 327 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (f > hh) {hh = f; };
-# 328 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 328 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (e > hh) {hh = e; };
-# 329 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 330 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 329 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 330 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          s = HH[j];
-# 331 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 331 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          HH[j] = hh;
-# 332 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 332 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          DD[j] = e;
-# 333 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 333 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 334 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 334 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 335 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 336 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 335 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 336 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    DD[0] = HH[0];
-# 337 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 337 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    RR[N] = 0;
-# 338 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 338 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    t = -te;
-# 339 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 340 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 339 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 340 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (j = N-1; j >= 0; j--) {RR[j] = t = t - gh; SS[j] = t - g;}
-# 341 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 342 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 341 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 342 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    t = -te;
-# 343 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 344 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 343 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 344 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = M - 1; i >= midi; i--) {
-# 345 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 345 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       s = RR[N];
-# 346 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 346 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       RR[N] = hh = t = t-gh;
-# 347 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 347 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       f = t - g;
-# 348 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 348 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = N - 1; j >= 0; j--) {
-# 349 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 349 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((hh = hh - g - gh) > (f = f - gh)) {f = hh; };
-# 350 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 350 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((hh = RR[j] - g - gh) > (e = SS[j] - gh)) {e = hh; };
-# 351 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 351 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
           call_lbl_8: hh = s + ({ calling_npm("calc_score", 0); calc_score_npm(i+1, j+1, A, B, seq1, seq2); });
-# 352 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 352 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (f > hh) {hh = f; };
-# 353 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 353 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (e > hh) {hh = e; };
-# 354 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 355 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 354 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 355 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          s = RR[j];
-# 356 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 356 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          RR[j] = hh;
-# 357 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 357 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          SS[j] = e;
-# 358 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 358 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 359 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 359 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 360 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 361 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 360 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 361 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    SS[N] = RR[N];
-# 362 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 363 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 362 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 363 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    midh = HH[0] + RR[0];
-# 364 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 364 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    midj = 0;
-# 365 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 365 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    type = 1;
-# 366 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 367 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 366 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 367 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (j = 0; j <= N; j++) {
-# 368 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 368 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       hh = HH[j] + RR[j];
-# 369 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 369 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (hh >= midh) {if (hh > midh || (HH[j] != DD[j] && RR[j] == SS[j]))
-# 371 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 371 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          {midh = hh; midj = j;}; }
-# 372 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 372 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 373 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 374 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 373 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 374 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (j = N; j >= 0; j--) {
-# 375 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 375 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       hh = DD[j] + SS[j] + g;
-# 376 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 376 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (hh > midh) {midh = hh;midj = j;type = 2;}
-# 377 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 377 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 378 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 379 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 380 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 378 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 379 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 380 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (type == 1) {
-# 381 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 381 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
        call_lbl_9: ({ calling_npm("diff", 0); diff_npm(A, B, midi, midj, tb, g, print_ptr, last_print, displ, seq1, seq2, g, gh); });
-# 382 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 382 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
        call_lbl_10: ({ calling_npm("diff", 0); diff_npm(A+midi, B+midj, M-midi, N-midj, g, te, print_ptr, last_print, displ, seq1, seq2, g, gh); });
-# 383 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 383 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    } else {
-# 384 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 384 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
        call_lbl_11: ({ calling_npm("diff", 0); diff_npm(A, B, midi-1, midj, tb, 0.0, print_ptr, last_print, displ, seq1, seq2, g, gh); });
-# 385 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 385 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
        call_lbl_12: ({ calling_npm("del", 0); del_npm(2, print_ptr, last_print, displ); });
-# 386 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 386 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
        call_lbl_13: ({ calling_npm("diff", 0); diff_npm(A+midi+1, B+midj, M-midi-1, N-midj, 0.0, te, print_ptr, last_print, displ, seq1, seq2, g, gh); });
-# 387 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 387 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 388 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 389 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 388 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 389 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (midh); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_10, ____chimes_did_disable6, false); return ____chimes_ret_var_5; ;
-# 390 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 390 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_10, ____chimes_did_disable6, false); }
-# 391 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 392 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 393 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 394 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 395 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 391 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 392 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 393 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 394 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 395 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 double tracepath_npm(int tsb1, int tsb2, int *print_ptr, int *last_print, int *displ, int seq1, int seq2);
 double tracepath_quick(int tsb1, int tsb2, int *print_ptr, int *last_print, int *displ, int seq1, int seq2); double tracepath(int tsb1, int tsb2, int *print_ptr, int *last_print, int *displ, int seq1, int seq2);
 double tracepath_resumable(int tsb1, int tsb2, int *print_ptr, int *last_print, int *displ, int seq1, int seq2)
-# 396 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&tracepath), "tracepath", &____must_manage_tracepath, 7, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397911460UL), (size_t)(2235191825397911461UL), (size_t)(2235191825397911462UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 397 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 396 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+{const int ____chimes_did_disable7 = new_stack((void *)(&tracepath), "tracepath", &____must_manage_tracepath, 7, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(4673255111730562037UL), (size_t)(4673255111730562038UL), (size_t)(4673255111730562039UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 397 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int k; ;
-# 398 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 398 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int i1; i1 = (tsb1) ;
-# 399 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 399 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int i2; i2 = (tsb2) ;
-# 400 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 400 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int pos; pos = (0) ;
-# 401 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 401 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int count; count = (0) ;
-# 402 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 403 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 402 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 403 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 1; i <= *print_ptr - 1; ++i) {
-# 404 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 404 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (displ[i]==0) {{
-# 405 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 405 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
           char c1; c1 = (seq_array[seq1][i1]) ;
-# 406 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 406 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
           char c2; c2 = (seq_array[seq2][i2]) ;
-# 407 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 408 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 407 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 408 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((c1!=gap_pos1) && (c1 != gap_pos2) && (c1 == c2)) {count++; };
-# 409 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 410 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 409 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 410 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          ++i1; ++i2; ++pos;
-# 411 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 412 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 411 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 412 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }; } else if ((k = displ[i]) > 0) {
-# 413 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 413 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          i2 += k;
-# 414 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 414 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          pos += k;
-# 415 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 415 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       } else {
-# 416 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 416 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          i1 -= k;
-# 417 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 417 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          pos -= k;
-# 418 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 418 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 419 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 419 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 420 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 421 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 420 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 421 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     double ____chimes_ret_var_6; ; ____chimes_ret_var_6 = ((100.0 * (double) count)); rm_stack(false, 0UL, "tracepath", &____must_manage_tracepath, ____alias_loc_id_11, ____chimes_did_disable7, false); return ____chimes_ret_var_6; ;
-# 422 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 422 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "tracepath", &____must_manage_tracepath, ____alias_loc_id_11, ____chimes_did_disable7, false); }
-# 423 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 424 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 425 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 423 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 424 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 425 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int pairalign_quick(int istart, int iend, int jstart, int jend); int pairalign(int istart, int iend, int jstart, int jend);
 int pairalign_resumable(int istart, int iend, int jstart, int jend)
-# 426 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 426 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable8 = new_stack((void *)(&pairalign), "pairalign", (int *)0, 4, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int displ[10001];
-# 426 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 426 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int sb1;
-# 426 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 426 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int se1;
-# 426 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 426 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
  register_stack_vars(3, "pairalign|displ|0", (int *)0x0, "[10001 x i32]", (void *)(displ), (size_t)40004, 0, 0, 0, "pairalign|sb1|0", (int *)0x0, "i32", (void *)(&sb1), (size_t)4, 0, 0, 0, "pairalign|se1|0", (int *)0x0, "i32", (void *)(&se1), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
-# 427 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 427 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int n; int m; int si; int sj; ;
-# 428 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 428 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int len1; int len2; int maxres; ;
-# 429 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 429 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    double gg; double mm_score; ;
-# 430 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 430 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int *mat_xref; int *matptr; ;
-# 431 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 432 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 431 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 432 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    matptr = gon250mt;
-# 433 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 433 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    mat_xref = def_aa_xref;
-# 434 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 434 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     call_lbl_0: maxres = ({ calling_npm("get_matrix", 0); get_matrix_npm(matptr, mat_xref, 10); });
-# 435 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 435 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (maxres == 0) { int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = ((-1)); rm_stack(false, 0UL, "pairalign", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable8, false); return ____chimes_ret_var_7; ; };
-# 436 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 437 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 436 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 437 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
         { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Start aligning "); } };
-# 438 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 438 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 #pragma omp parallel
-# 439 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 439 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    {
-# 440 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 440 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 #pragma omp for schedule(dynamic) private(i,n,si,sj,len1,m)
-# 441 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 441 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (si = 0; si < nseqs; si++) {
-# 442 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 442 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((n = seqlen_array[si+1]) != 0){
-# 443 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 443 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             for (i = 1, len1 = 0; i <= n; i++) {
-# 444 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 444 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                 char c; c = (seq_array[si+1][i]) ;
-# 445 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 445 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                if ((c != gap_pos1) && (c != gap_pos2)) {len1++; };
-# 446 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 446 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             }
-# 447 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 448 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 447 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 448 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             for (sj = si + 1; sj < nseqs; sj++)
-# 449 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 449 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             {
-# 450 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 450 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                if ((m = seqlen_array[sj+1]) != 0)
-# 451 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 451 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                {
-# 452 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 452 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 #pragma omp task private(i,gg,len2,mm_score) firstprivate(m,n,si,sj,len1) shared(nseqs, bench_output,seqlen_array,seq_array,gap_pos1,gap_pos2,pw_ge_penalty,pw_go_penalty,mat_avscore)
-# 453 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 454 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 455 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 453 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 454 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 455 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   {
-# 456 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 456 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                    int se2; int sb2; int maxscore; int seq1; int seq2; int g; int gh; ;
-# 457 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 457 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                    ;
-# 458 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 458 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   int print_ptr; int last_print; ;
-# 459 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 460 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 459 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 460 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   for (i = 1, len2 = 0; i <= m; i++) {
-# 461 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 461 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                       char c; c = (seq_array[sj+1][i]) ;
-# 462 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 462 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                      if ((c != gap_pos1) && (c != gap_pos2)) {len2++; };
-# 463 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 463 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   }
-# 464 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 465 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 464 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 465 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   gh = 10 * pw_ge_penalty;
-# 466 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 466 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   gg = pw_go_penalty + log((double) ((n)<(m)?(n):(m)));
-# 467 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 467 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   g = (mat_avscore <= 0) ? 20 * gg : 2 * mat_avscore * gg;
-# 468 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 469 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 468 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 469 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   seq1 = si + 1;
-# 470 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 470 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   seq2 = sj + 1;
-# 471 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 472 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 471 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 472 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                    call_lbl_1: ({ calling_npm("forward_pass", 0); forward_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], n, m, &se1, &se2, &maxscore, g, gh); });
-# 473 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 473 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                    call_lbl_2: ({ calling_npm("reverse_pass", 0); reverse_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], se1, se2, &sb1, &sb2, maxscore, g, gh); });
-# 474 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 475 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 474 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 475 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   print_ptr = 1;
-# 476 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 476 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   last_print = 0;
-# 477 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 478 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 477 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 478 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                    call_lbl_3: ({ calling_npm("diff", 0); diff_npm(sb1-1, sb2-1, se1-sb1+1, se2-sb2+1, 0, 0, &print_ptr, &last_print, displ, seq1, seq2, g, gh); });
-# 479 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 479 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                    call_lbl_4: mm_score = ({ calling_npm("tracepath", 0); tracepath_npm(sb1, sb2, &print_ptr, &last_print, displ, seq1, seq2); });
-# 480 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 481 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 480 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 481 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   if (len1 == 0 || len2 == 0) {mm_score = 0.0; } else {mm_score /= (double) ((len1)<(len2)?(len1):(len2)); } ;
-# 483 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 484 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 483 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 484 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   bench_output[si*nseqs+sj] = mm_score;
-# 485 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 485 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   }
-# 486 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 486 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                }
-# 487 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 487 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             }
-# 488 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 488 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          }
-# 489 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 489 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 490 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 490 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 491 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 492 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 491 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 492 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " about to call checkpoint "); } };
-# 493 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 494 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 493 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 494 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " calling checkpoint "); } };
-# 495 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 495 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     call_lbl_5: checkpoint_transformed(5, ____alias_loc_id_0);
-# 496 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 497 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 496 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 497 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
         { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " completed!\n"); } };
-# 498 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 498 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (0); rm_stack(false, 0UL, "pairalign", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable8, false); return ____chimes_ret_var_8; ;
-# 499 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 499 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "pairalign", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable8, false); }
-# 500 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 501 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 500 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 501 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int pairalign_seq_quick(int istart, int iend, int jstart, int jend); int pairalign_seq(int istart, int iend, int jstart, int jend);
 int pairalign_seq_resumable(int istart, int iend, int jstart, int jend)
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 502 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable9 = new_stack((void *)(&pairalign_seq), "pairalign_seq", (int *)0, 4, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int displ[10001];
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 502 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int maxscore;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 502 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int sb2;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 502 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int sb1;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 502 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int se2;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 502 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int se1;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 502 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int si;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 502 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
  register_stack_vars(7, "pairalign_seq|displ|0", (int *)0x0, "[10001 x i32]", (void *)(displ), (size_t)40004, 0, 0, 0, "pairalign_seq|maxscore|0", (int *)0x0, "i32", (void *)(&maxscore), (size_t)4, 0, 0, 0, "pairalign_seq|sb2|0", (int *)0x0, "i32", (void *)(&sb2), (size_t)4, 0, 0, 0, "pairalign_seq|sb1|0", (int *)0x0, "i32", (void *)(&sb1), (size_t)4, 0, 0, 0, "pairalign_seq|se2|0", (int *)0x0, "i32", (void *)(&se2), (size_t)4, 0, 0, 0, "pairalign_seq|se1|0", (int *)0x0, "i32", (void *)(&se1), (size_t)4, 0, 0, 0, "pairalign_seq|si|0", (int *)0x0, "i32", (void *)(&si), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
-# 503 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 503 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int n; int m; int sj; ;
-# 504 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 504 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int len1; int len2; int maxres; ;
-# 505 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 505 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    double gg; double mm_score; ;
-# 506 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 506 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int *mat_xref; int *matptr; ;
-# 507 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 508 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 507 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 508 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    matptr = gon250mt;
-# 509 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 509 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    mat_xref = def_aa_xref;
-# 510 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 510 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     call_lbl_0: maxres = ({ calling_npm("get_matrix", 0); get_matrix_npm(matptr, mat_xref, 10); });
-# 511 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 511 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (maxres == 0) { int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = ((-1)); rm_stack(false, 0UL, "pairalign_seq", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable9, false); return ____chimes_ret_var_9; ; };
-# 512 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 513 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 512 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 513 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (si = 0; si < nseqs; si++) {
-# 514 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 514 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if ((n = seqlen_array[si+1]) != 0){
-# 515 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 515 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          for (i = 1, len1 = 0; i <= n; i++) {
-# 516 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 516 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
              char c; c = (seq_array[si+1][i]) ;
-# 517 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 517 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             if ((c != gap_pos1) && (c != gap_pos2)) {len1++; };
-# 518 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 518 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          }
-# 519 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 520 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 519 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 520 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          for (sj = si + 1; sj < nseqs; sj++) {
-# 521 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 521 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             if ((m = seqlen_array[sj+1]) != 0){
-# 522 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 522 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                     int seq1; int seq2; int g; int gh; ;
-# 523 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 523 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                 ;
-# 524 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 524 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                int print_ptr; int last_print; ;
-# 525 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 526 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 525 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 526 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                for (i = 1, len2 = 0; i <= m; i++) {
-# 527 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 527 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                    char c; c = (seq_array[sj+1][i]) ;
-# 528 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 528 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   if ((c != gap_pos1) && (c != gap_pos2)) {len2++; };
-# 529 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 529 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                }
-# 530 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 531 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 530 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 531 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                gh = 10 * pw_ge_penalty;
-# 532 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 532 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                gg = pw_go_penalty + log((double) ((n)<(m)?(n):(m)));
-# 533 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 533 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                g = (mat_avscore <= 0) ? 20 * gg : 2 * mat_avscore * gg;
-# 534 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 535 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 534 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 535 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                seq1 = si + 1;
-# 536 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 536 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                seq2 = sj + 1;
-# 537 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 538 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 537 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 538 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                 call_lbl_1: ({ calling_npm("forward_pass", 0); forward_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], n, m, &se1, &se2, &maxscore, g, gh); });
-# 539 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 539 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                 call_lbl_2: ({ calling_npm("reverse_pass", 0); reverse_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], se1, se2, &sb1, &sb2, maxscore, g, gh); });
-# 540 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 541 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 540 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 541 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                print_ptr = 1;
-# 542 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 542 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                last_print = 0;
-# 543 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 544 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 543 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 544 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                 call_lbl_3: ({ calling_npm("diff", 0); diff_npm(sb1-1, sb2-1, se1-sb1+1, se2-sb2+1, 0, 0, &print_ptr, &last_print, displ, seq1, seq2, g, gh); });
-# 545 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 545 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                 call_lbl_4: mm_score = ({ calling_npm("tracepath", 0); tracepath_npm(sb1, sb2, &print_ptr, &last_print, displ, seq1, seq2); });
-# 546 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 547 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 546 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 547 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                if (len1 == 0 || len2 == 0) {mm_score = 0.0; } else {mm_score /= (double) ((len1)<(len2)?(len1):(len2)); } ;
-# 549 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 550 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 549 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 550 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                seq_output[si*nseqs+sj] = mm_score;
-# 551 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 551 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             }
-# 552 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 552 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          }
-# 553 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 553 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 554 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 555 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 554 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 555 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
        call_lbl_5: checkpoint_transformed(5, ____alias_loc_id_1);
-# 556 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 557 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 556 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 557 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 558 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 558 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = (0); rm_stack(false, 0UL, "pairalign_seq", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable9, false); return ____chimes_ret_var_10; ;
-# 559 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 559 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "pairalign_seq", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable9, false); }
-# 560 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 561 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 562 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 563 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 564 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 565 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 560 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 561 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 562 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 563 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 564 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 565 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void init_matrix_npm(void);
 void init_matrix_quick(void); void init_matrix(void);
 void init_matrix_resumable(void)
-# 566 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 566 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable10 = new_stack((void *)(&init_matrix), "init_matrix", &____must_manage_init_matrix, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 567 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 567 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
-# 568 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 568 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    char c1; char c2; ;
-# 569 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 570 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 569 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 570 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    gap_pos1 = 32 - 2;
-# 571 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 571 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    gap_pos2 = 32 - 1;
-# 572 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 572 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    max_aa = strlen(amino_acid_codes) - 2;
-# 573 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 574 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 573 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 574 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i < 32; i++) { def_aa_xref[i] = -1; };
-# 575 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 576 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 575 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 576 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; (c1 = amino_acid_order[i]); i++) { for (j = 0; (c2 = amino_acid_codes[j]); j++) { if (c1 == c2) {def_aa_xref[i] = j; break;}; }; }
-# 579 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 579 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "init_matrix", &____must_manage_init_matrix, ____alias_loc_id_14, ____chimes_did_disable10, false); }
-# 580 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 581 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 580 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 581 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void pairalign_init_npm (char *filename);static void (*____chimes_extern_func_bots_error)(int, char *) = bots_error;static int (*____chimes_extern_func_readseqs)(int, char *) = readseqs;
 void pairalign_init_quick (char *filename); void pairalign_init (char *filename);
 void pairalign_init_resumable (char *filename)
-# 582 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable11 = new_stack((void *)(&pairalign_init), "pairalign_init", &____must_manage_pairalign_init, 1, 1, (size_t)(2235191825397912300UL), "pairalign_init|filename|0", &____must_checkpoint_pairalign_init_filename_0, "i8*", (void *)(&filename), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
-# 583 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 582 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+{const int ____chimes_did_disable11 = new_stack((void *)(&pairalign_init), "pairalign_init", &____must_manage_pairalign_init, 1, 1, (size_t)(4673255111730562877UL), "pairalign_init|filename|0", &____must_checkpoint_pairalign_init_filename_0, "i8*", (void *)(&filename), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+# 583 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; ;
-# 584 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 585 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 584 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 585 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (!filename || !filename[0]) {
-# 586 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-       call_lbl_0: ({ char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = ("Please specify an input file with the -f option\n"); } calling((void*)bots_error, 0, ____alias_loc_id_3, 0UL, 2, (size_t)(0UL), (size_t)(2235191825397912543UL)); (bots_error)(0, ____chimes_arg1); }) ;
-# 587 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 586 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+       call_lbl_0: ({ char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = ("Please specify an input file with the -f option\n"); } calling((void*)bots_error, 0, ____alias_loc_id_3, 0UL, 2, (size_t)(0UL), (size_t)(4673255111730563120UL)); (bots_error)(0, ____chimes_arg1); }) ;
+# 587 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 588 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 589 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 588 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 589 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     call_lbl_1: ({ calling_npm("init_matrix", 0); init_matrix_npm(); });
-# 590 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 591 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 592 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-    call_lbl_2: nseqs = ({ calling((void*)readseqs, 2, ____alias_loc_id_2, 0UL, 2, (size_t)(0UL), (size_t)(2235191825397912300UL)); (readseqs)(1, filename); }) ;
-# 593 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 594 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 590 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 591 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 592 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+    call_lbl_2: nseqs = ({ calling((void*)readseqs, 2, ____alias_loc_id_2, 0UL, 2, (size_t)(0UL), (size_t)(4673255111730562877UL)); (readseqs)(1, filename); }) ;
+# 593 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 594 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Multiple Pairwise Alignment (%d sequences)\n" ,nseqs); } };
-# 595 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 596 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 595 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 596 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 1; i <= nseqs; i++) { ;; }
-# 598 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 599 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 598 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 599 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    ktup = 1;
-# 600 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 600 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    window = 5;
-# 601 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 601 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    signif = 5;
-# 602 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 602 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    gap_open = 10.0;
-# 603 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 603 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    gap_extend = 0.2;
-# 604 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 604 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    pw_go_penalty = 10.0;
-# 605 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 605 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    pw_ge_penalty = 0.1;
-# 606 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 606 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "pairalign_init", &____must_manage_pairalign_init, ____alias_loc_id_15, ____chimes_did_disable11, false); }
-# 607 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 608 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 607 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 608 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void align_init_npm ();
 void align_init_quick (); void align_init ();
 void align_init_resumable ()
-# 609 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 609 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable12 = new_stack((void *)(&align_init), "align_init", &____must_manage_align_init, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 610 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 610 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
-# 611 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 612 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 613 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 611 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 4673255111730562892UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 612 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 613 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { bench_output[i*nseqs+j] = 0; }; };
-# 616 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 616 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "align_init", &____must_manage_align_init, ____alias_loc_id_16, ____chimes_did_disable12, false); }
-# 617 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 618 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 617 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 618 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void align_quick(); void align();
 void align_resumable()
-# 619 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 619 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable13 = new_stack((void *)(&align), "align", (int *)0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
-# 620 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 620 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     call_lbl_0: ({ calling((void*)pairalign, 0, 0, 0UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (pairalign)(0, nseqs, 0, nseqs); }) ;
-# 621 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 621 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "align", (int *)0x0, 0, ____chimes_did_disable13, false); }
-# 622 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 623 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 622 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 623 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void align_seq_init_npm ();
 void align_seq_init_quick (); void align_seq_init ();
 void align_seq_init_resumable ()
-# 624 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 624 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable14 = new_stack((void *)(&align_seq_init), "align_seq_init", &____must_manage_align_seq_init, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 625 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 625 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
-# 626 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   seq_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 627 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 628 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 629 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 626 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+   seq_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 4673255111730562892UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 627 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 4673255111730562892UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 628 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 629 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { seq_output[i*nseqs+j] = 0; }; };
-# 632 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 632 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "align_seq_init", &____must_manage_align_seq_init, ____alias_loc_id_17, ____chimes_did_disable14, false); }
-# 633 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 634 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 633 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 634 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void align_seq_quick(); void align_seq();
 void align_seq_resumable()
-# 635 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 635 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable15 = new_stack((void *)(&align_seq), "align_seq", (int *)0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
-# 636 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 636 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     call_lbl_0: ({ calling((void*)pairalign_seq, 0, 0, 0UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (pairalign_seq)(0, nseqs, 0, nseqs); }) ;
-# 637 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 637 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "align_seq", (int *)0x0, 0, ____chimes_did_disable15, false); }
-# 638 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 639 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 640 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 638 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 639 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 640 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void align_end_npm ();
 void align_end_quick (); void align_end ();
 void align_end_resumable ()
-# 641 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 641 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable16 = new_stack((void *)(&align_end), "align_end", &____must_manage_align_end, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 642 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 642 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
-# 643 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 643 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { if (bench_output[i*nseqs+j] != 0) {;; }; }; }
-# 648 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 648 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "align_end", &____must_manage_align_end, ____alias_loc_id_18, ____chimes_did_disable16, false); }
-# 671 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 671 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 671 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 671 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int align_verify_npm ();
 int align_verify_quick (); int align_verify ();
 int align_verify_resumable ()
-# 672 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 672 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable17 = new_stack((void *)(&align_verify), "align_verify", &____must_manage_align_verify, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 673 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 673 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
-# 674 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 674 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int result; result = (1) ;
-# 675 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 675 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i+=200) { for(j = 0; j<nseqs; j++)
-# 677 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 677 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          {
-# 678 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 678 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Output: Optimized prot. (%3d:%3d)=%5d \n" , i+1, j+1, (int) bench_output[i*nseqs+j]); } }
-# 679 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 679 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                                                        ;
-# 680 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 680 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          }; }
-# 681 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 681 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int ____chimes_ret_var_11; ; ____chimes_ret_var_11 = (result); rm_stack(false, 0UL, "align_verify", &____must_manage_align_verify, ____alias_loc_id_19, ____chimes_did_disable17, false); return ____chimes_ret_var_11; ;
-# 682 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 682 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "align_verify", &____must_manage_align_verify, ____alias_loc_id_19, ____chimes_did_disable17, false); }
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 68 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void del_quick(int k, int *print_ptr, int *last_print, int *displ)
-# 69 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&del), "del", &____must_manage_del, 4, 0, (size_t)(0UL), (size_t)(2235191825397909493UL), (size_t)(2235191825397909494UL), (size_t)(2235191825397909495UL)) ; ; ;
-# 70 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 69 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&del), "del", &____must_manage_del, 4, 0, (size_t)(0UL), (size_t)(4673255111730560070UL), (size_t)(4673255111730560071UL), (size_t)(4673255111730560072UL)) ; ; ;
+# 70 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (*last_print<0) {*last_print = displ[(*print_ptr)-1] -= k; } else {*last_print = displ[(*print_ptr)++] = -k; } ;
-# 72 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 72 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "del", &____must_manage_del, ____alias_loc_id_4, ____chimes_did_disable0, false); }
 
 void del(int k, int *print_ptr, int *last_print, int *displ) { (____chimes_replaying ? del_resumable(k, print_ptr, last_print, displ) : del_quick(k, print_ptr, last_print, displ)); }
-# 77 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 77 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void add_quick(int v, int *print_ptr, int *last_print, int *displ)
-# 78 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&add), "add", &____must_manage_add, 4, 0, (size_t)(0UL), (size_t)(2235191825397909547UL), (size_t)(2235191825397909548UL), (size_t)(2235191825397909549UL)) ; ; ;
-# 79 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 78 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+{const int ____chimes_did_disable1 = new_stack((void *)(&add), "add", &____must_manage_add, 4, 0, (size_t)(0UL), (size_t)(4673255111730560124UL), (size_t)(4673255111730560125UL), (size_t)(4673255111730560126UL)) ; ; ;
+# 79 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (*last_print < 0) {
-# 80 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 80 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       displ[(*print_ptr)-1] = v;
-# 81 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 81 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       displ[(*print_ptr)++] = *last_print;
-# 82 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 82 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    } else {
-# 83 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 83 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       *last_print = displ[(*print_ptr)++] = v;
-# 84 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 84 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 85 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 85 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "add", &____must_manage_add, ____alias_loc_id_5, ____chimes_did_disable1, false); }
 
 void add(int v, int *print_ptr, int *last_print, int *displ) { (____chimes_replaying ? add_resumable(v, print_ptr, last_print, displ) : add_quick(v, print_ptr, last_print, displ)); }
-# 90 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 90 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int calc_score_quick(int iat, int jat, int v1, int v2, int seq1, int seq2)
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&calc_score), "calc_score", &____must_manage_calc_score, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 92 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 92 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; int ipos; int jpos; ;
-# 93 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 94 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 93 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 94 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    ipos = v1 + iat;
-# 95 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 95 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    jpos = v2 + jat;
-# 96 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 96 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    i = seq_array[seq1][ipos];
-# 97 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 97 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    j = seq_array[seq2][jpos];
-# 98 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 99 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 98 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 99 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((matrix[i * 32 + j])); rm_stack(false, 0UL, "calc_score", &____must_manage_calc_score, ____alias_loc_id_6, ____chimes_did_disable2, false); return ____chimes_ret_var_0; ;
-# 100 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 100 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "calc_score", &____must_manage_calc_score, ____alias_loc_id_6, ____chimes_did_disable2, false); }
 
 int calc_score(int iat, int jat, int v1, int v2, int seq1, int seq2) { return (____chimes_replaying ? calc_score_resumable(iat, jat, v1, v2, seq1, seq2) : calc_score_quick(iat, jat, v1, v2, seq1, seq2)); }
-# 105 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 105 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int get_matrix_quick(int *matptr, int *xref, int scale)
-# 106 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&get_matrix), "get_matrix", &____must_manage_get_matrix, 3, 0, (size_t)(2235191825397910045UL), (size_t)(2235191825397910046UL), (size_t)(0UL)) ; ; ;
-# 107 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   matrix = (int *) ({ void *____chimes_tmp_ptr = malloc((32 * 32 * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, 32 * 32 * sizeof(int), 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 108 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 106 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+{const int ____chimes_did_disable3 = new_stack((void *)(&get_matrix), "get_matrix", &____must_manage_get_matrix, 3, 0, (size_t)(4673255111730560622UL), (size_t)(4673255111730560623UL), (size_t)(0UL)) ; ; ;
+# 107 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+   matrix = (int *) ({ void *____chimes_tmp_ptr = malloc((32 * 32 * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, 32 * 32 * sizeof(int), 4673255111730562892UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 108 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int gg_score; gg_score = (0) ;
-# 109 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 109 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int gr_score; gr_score = (0) ;
-# 110 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 110 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; int k; int ti; int tj; int ix; ;
-# 111 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 111 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int av1; int av2; int av3; int min; int max; int maxres; ;
-# 112 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 113 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 112 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 113 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i <= max_aa; i++) { for (j = 0; j <= max_aa; j++) { matrix[i * 32 + j] = 0; }; };
-# 115 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 116 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 115 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 116 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    ix = 0;
-# 117 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 117 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    maxres = 0;
-# 118 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 119 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 118 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 119 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i <= max_aa; i++) {
-# 120 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 120 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       ti = xref[i];
-# 121 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 121 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = 0; j <= i; j++) {
-# 122 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 122 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          tj = xref[j];
-# 123 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 123 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((ti != -1) && (tj != -1)) {
-# 124 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 124 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             k = matptr[ix];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             if (ti == tj) {
-# 126 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 126 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                matrix[ti * 32 + ti] = k * scale;
-# 127 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 127 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                maxres++;
-# 128 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 128 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             } else {
-# 129 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 129 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                matrix[ti * 32 + tj] = k * scale;
-# 130 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 130 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                matrix[tj * 32 + ti] = k * scale;
-# 131 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 131 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             }
-# 132 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 132 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             ix++;
-# 133 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 133 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          }
-# 134 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 134 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 135 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 135 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 136 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 137 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 136 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 137 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    maxres--;
-# 138 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 138 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    av1 = av2 = av3 = 0;
-# 139 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 140 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 139 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 140 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i <= max_aa; i++) {
-# 141 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 141 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = 0; j <= i; j++) {
-# 142 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 142 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          av1 += matrix[i * 32 + j];
-# 143 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 143 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (i == j) {av2 += matrix[i * 32 + j]; } else {av3 += matrix[i * 32 + j]; } ;
-# 145 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 145 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 146 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 146 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 147 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 148 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 147 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 148 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    av1 /= (maxres*maxres)/2;
-# 149 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 149 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    av2 /= maxres;
-# 150 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 150 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    av3 /= ((double)(maxres*maxres-maxres))/2;
-# 151 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 151 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    mat_avscore = -av3;
-# 152 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 153 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 152 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 153 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    min = max = matrix[0 * 32 + 0];
-# 154 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 154 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 155 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i <= max_aa; i++) { for (j = 1; j <= i; j++) {
-# 157 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 157 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (matrix[i * 32 + j] < min) {min = matrix[i * 32 + j]; };
-# 158 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 158 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             if (matrix[i * 32 + j] > max) {max = matrix[i * 32 + j]; };
-# 159 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 159 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }; }
-# 160 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 161 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 160 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 161 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i < gap_pos1; i++) {
-# 162 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 162 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       matrix[i * 32 + gap_pos1] = gr_score;
-# 163 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 163 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       matrix[gap_pos1 * 32 + i] = gr_score;
-# 164 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 164 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       matrix[i * 32 + gap_pos2] = gr_score;
-# 165 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 165 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       matrix[gap_pos2 * 32 + i] = gr_score;
-# 166 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 166 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 167 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 168 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 167 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 168 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    matrix[gap_pos1 * 32 + gap_pos1] = gg_score;
-# 169 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 169 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    matrix[gap_pos2 * 32 + gap_pos2] = gg_score;
-# 170 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 170 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    matrix[gap_pos2 * 32 + gap_pos1] = gg_score;
-# 171 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 171 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    matrix[gap_pos1 * 32 + gap_pos2] = gg_score;
-# 172 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 173 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 172 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 173 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    maxres += 2;
-# 174 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 175 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 174 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 175 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((maxres)); rm_stack(false, 0UL, "get_matrix", &____must_manage_get_matrix, ____alias_loc_id_7, ____chimes_did_disable3, false); return ____chimes_ret_var_1; ;
-# 176 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 176 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "get_matrix", &____must_manage_get_matrix, ____alias_loc_id_7, ____chimes_did_disable3, false); }
 
 int get_matrix(int *matptr, int *xref, int scale) { return (____chimes_replaying ? get_matrix_resumable(matptr, xref, scale) : get_matrix_quick(matptr, xref, scale)); }
-# 181 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 181 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void forward_pass_quick(char *ia, char *ib, int n, int m, int *se1, int *se2, int *maxscore, int g, int gh)
-# 182 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&forward_pass), "forward_pass", &____must_manage_forward_pass, 9, 0, (size_t)(2235191825397910264UL), (size_t)(2235191825397910265UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397910268UL), (size_t)(2235191825397910269UL), (size_t)(2235191825397910270UL), (size_t)(0UL), (size_t)(0UL)) ; int DD[5000];
-# 182 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 182 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+{const int ____chimes_did_disable4 = new_stack((void *)(&forward_pass), "forward_pass", &____must_manage_forward_pass, 9, 0, (size_t)(4673255111730560841UL), (size_t)(4673255111730560842UL), (size_t)(0UL), (size_t)(0UL), (size_t)(4673255111730560845UL), (size_t)(4673255111730560846UL), (size_t)(4673255111730560847UL), (size_t)(0UL), (size_t)(0UL)) ; int DD[5000];
+# 182 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int HH[5000];
-# 182 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 182 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
  ; ;
-# 183 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 183 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; int f; int p; int t; int hh; ;
-# 184 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 184 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     ;
-# 185 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 185 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          ;
-# 186 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 187 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 186 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 187 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    *maxscore = 0;
-# 188 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 188 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    *se1 = *se2 = 0;
-# 189 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 190 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 189 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 190 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i <= m; i++) {HH[i] = 0; DD[i] = -g;}
-# 191 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 192 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 191 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 192 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 1; i <= n; i++) {
-# 193 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 193 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       hh = p = 0;
-# 194 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 194 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       f = -g;
-# 195 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 196 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 195 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 196 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = 1; j <= m; j++) {
-# 197 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 197 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          f -= gh;
-# 198 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 198 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          t = hh - g - gh;
-# 199 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 199 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 200 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (f < t) {f = t; };
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 202 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 201 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 202 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          DD[j] -= gh;
-# 203 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 203 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          t = HH[j] - g - gh;
-# 204 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 205 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 204 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 205 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (DD[j] < t) {DD[j] = t; };
-# 206 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 207 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 206 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 207 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          hh = p + matrix[((int)ia[i]) * 32 + ((int)ib[j])];
-# 208 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 208 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh < f) {hh = f; };
-# 209 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 209 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh < DD[j]) {hh = DD[j]; };
-# 210 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 210 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh < 0) {hh = 0; };
-# 211 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 212 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 211 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 212 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          p = HH[j];
-# 213 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 213 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          HH[j] = hh;
-# 214 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 215 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 214 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 215 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh > *maxscore) {*maxscore = hh; *se1 = i; *se2 = j;}
-# 216 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 216 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 217 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 217 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 218 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 218 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "forward_pass", &____must_manage_forward_pass, ____alias_loc_id_8, ____chimes_did_disable4, false); }
 
 void forward_pass(char *ia, char *ib, int n, int m, int *se1, int *se2, int *maxscore, int g, int gh) { (____chimes_replaying ? forward_pass_resumable(ia, ib, n, m, se1, se2, maxscore, g, gh) : forward_pass_quick(ia, ib, n, m, se1, se2, maxscore, g, gh)); }
-# 223 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 223 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void reverse_pass_quick(char *ia, char *ib, int se1, int se2, int *sb1, int *sb2, int maxscore, int g, int gh)
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&reverse_pass), "reverse_pass", &____must_manage_reverse_pass, 9, 0, (size_t)(2235191825397910503UL), (size_t)(2235191825397910504UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397910507UL), (size_t)(2235191825397910508UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int DD[5000];
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 224 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+{const int ____chimes_did_disable5 = new_stack((void *)(&reverse_pass), "reverse_pass", &____must_manage_reverse_pass, 9, 0, (size_t)(4673255111730561080UL), (size_t)(4673255111730561081UL), (size_t)(0UL), (size_t)(0UL), (size_t)(4673255111730561084UL), (size_t)(4673255111730561085UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int DD[5000];
+# 224 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int HH[5000];
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 224 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
  ; ;
-# 225 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 225 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; int f; int p; int t; int hh; int cost; ;
-# 226 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 226 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     ;
-# 227 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 227 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          ;
-# 228 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 229 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 228 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 229 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    cost = 0;
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 230 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    *sb1 = *sb2 = 1;
-# 231 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 232 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 231 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 232 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = se2; i > 0; i--){ HH[i] = -1; DD[i] = -1;}
-# 233 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 234 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 233 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 234 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = se1; i > 0; i--) {
-# 235 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 235 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       hh = f = -1;
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 236 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (i == se1) {p = 0; } else {p = -1; } ;
-# 237 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 238 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 237 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 238 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = se2; j > 0; j--) {
-# 239 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 240 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 239 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 240 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          f -= gh;
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 241 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          t = hh - g - gh;
-# 242 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 242 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (f < t) {f = t; };
-# 243 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 244 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 243 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 244 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          DD[j] -= gh;
-# 245 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 245 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          t = HH[j] - g - gh;
-# 246 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 246 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (DD[j] < t) {DD[j] = t; };
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 248 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 247 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 248 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
           int tmp1; tmp1 = ((int)ia[i]) ;
-# 249 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 249 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
           int tmp2; tmp2 = ((int)ib[j]) ;
-# 250 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 250 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          hh = p + matrix[tmp1 * 32 + tmp2];
-# 251 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 251 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh < f) {hh = f; };
-# 252 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 252 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh < DD[j]) {hh = DD[j]; };
-# 253 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 254 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 253 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 254 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          p = HH[j];
-# 255 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 255 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          HH[j] = hh;
-# 256 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 257 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 256 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 257 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh > cost) {
-# 258 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 258 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             cost = hh; *sb1 = i; *sb2 = j;
-# 259 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 259 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             if (cost >= maxscore) {break; };
-# 260 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 260 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          }
-# 261 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 261 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 262 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 263 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 262 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 263 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (cost >= maxscore) {break; };
-# 264 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 264 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 265 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 265 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "reverse_pass", &____must_manage_reverse_pass, ____alias_loc_id_9, ____chimes_did_disable5, false); }
 
 void reverse_pass(char *ia, char *ib, int se1, int se2, int *sb1, int *sb2, int maxscore, int g, int gh) { (____chimes_replaying ? reverse_pass_resumable(ia, ib, se1, se2, sb1, sb2, maxscore, g, gh) : reverse_pass_quick(ia, ib, se1, se2, sb1, sb2, maxscore, g, gh)); }
-# 270 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 270 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int diff_quick (int A, int B, int M, int N, int tb, int te, int *print_ptr, int *last_print, int *displ, int seq1, int seq2, int g, int gh)
-# 271 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable6 = new_stack((void *)(&diff), "diff", &____must_manage_diff, 13, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397911303UL), (size_t)(2235191825397911304UL), (size_t)(2235191825397911305UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int SS[5000];
-# 271 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 271 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+{const int ____chimes_did_disable6 = new_stack((void *)(&diff), "diff", &____must_manage_diff, 13, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(4673255111730561880UL), (size_t)(4673255111730561881UL), (size_t)(4673255111730561882UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int SS[5000];
+# 271 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int RR[5000];
-# 271 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 271 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int DD[5000];
-# 271 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 271 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int HH[5000];
-# 271 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 271 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
  ; ;
-# 272 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 272 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; int f; int e; int s; int t; int hh; ;
-# 273 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 273 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int midi; int midj; int midh; int type; ;
-# 274 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 274 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     ;
-# 275 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 275 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          ;
-# 276 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 276 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     ;
-# 277 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 277 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     ;
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 279 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 278 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 279 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (N <= 0) {if (M > 0) { call_lbl_0: ({ calling_npm("del", 0); del_npm(M, print_ptr, last_print, displ); }); }; int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (( - (int) ((M) <= 0 ? 0 : tb + gh * (M)))); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_10, ____chimes_did_disable6, false); return ____chimes_ret_var_2; ; }
-# 280 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 281 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 280 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 281 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (M <= 1) {
-# 282 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 283 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 282 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 283 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (M <= 0) { call_lbl_1: ({ calling_npm("add", 0); add_npm(N, print_ptr, last_print, displ); }); int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (( - (int)((N) <= 0 ? 0 : tb + gh * (N)))); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_10, ____chimes_did_disable6, false); return ____chimes_ret_var_3; ;}
-# 284 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 285 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 284 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 285 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       midh = -(tb+gh) - ((N) <= 0 ? 0 : te + gh * (N));
-# 286 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 286 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       hh = -(te+gh) - ((N) <= 0 ? 0 : tb + gh * (N));
-# 287 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 288 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 287 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 288 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (hh > midh) {midh = hh; };
-# 289 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 289 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       midj = 0;
-# 290 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 291 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 290 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 291 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = 1; j <= N; j++) {
-# 292 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 292 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
           call_lbl_2: hh = ({ calling_npm("calc_score", 0); calc_score_npm(1, j, A, B, seq1, seq2); }) - ((N-j) <= 0 ? 0 : te + gh * (N-j)) - ((j-1) <= 0 ? 0 : tb + gh * (j-1));
-# 293 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 293 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh > midh) {midh = hh; midj = j;}
-# 294 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 294 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 295 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 296 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 295 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 296 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (midj == 0) {
-# 297 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 297 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
           call_lbl_3: ({ calling_npm("del", 0); del_npm(1, print_ptr, last_print, displ); });
-# 298 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 298 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
           call_lbl_4: ({ calling_npm("add", 0); add_npm(N, print_ptr, last_print, displ); });
-# 299 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 299 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       } else {
-# 300 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 300 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (midj > 1) { call_lbl_5: ({ calling_npm("add", 0); add_npm(midj-1, print_ptr, last_print, displ); }); };
-# 301 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 301 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          displ[(*print_ptr)++] = *last_print = 0;
-# 302 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 302 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (midj < N) { call_lbl_6: ({ calling_npm("add", 0); add_npm(N-midj, print_ptr, last_print, displ); }); };
-# 303 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 303 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 304 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 305 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 304 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 305 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
        int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (midh); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_10, ____chimes_did_disable6, false); return ____chimes_ret_var_4; ;
-# 306 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 306 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 307 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 308 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 307 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 308 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    midi = M / 2;
-# 309 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 309 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    HH[0] = 0.0;
-# 310 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 310 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    t = -tb;
-# 311 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 312 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 311 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 312 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (j = 1; j <= N; j++) {
-# 313 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 313 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       HH[j] = t = t - gh;
-# 314 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 314 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       DD[j] = t - g;
-# 315 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 315 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 316 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 317 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 316 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 317 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    t = -tb;
-# 318 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 319 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 318 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 319 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 1; i <= midi; i++) {
-# 320 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 320 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       s = HH[0];
-# 321 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 321 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       HH[0] = hh = t = t - gh;
-# 322 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 322 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       f = t - g;
-# 323 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 323 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = 1; j <= N; j++) {
-# 324 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 324 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((hh = hh - g - gh) > (f = f - gh)) {f = hh; };
-# 325 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 325 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((hh = HH[j] - g - gh) > (e = DD[j]- gh)) {e = hh; };
-# 326 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 326 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
           call_lbl_7: hh = s + ({ calling_npm("calc_score", 0); calc_score_npm(i, j, A, B, seq1, seq2); });
-# 327 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 327 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (f > hh) {hh = f; };
-# 328 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 328 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (e > hh) {hh = e; };
-# 329 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 330 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 329 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 330 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          s = HH[j];
-# 331 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 331 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          HH[j] = hh;
-# 332 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 332 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          DD[j] = e;
-# 333 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 333 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 334 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 334 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 335 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 336 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 335 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 336 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    DD[0] = HH[0];
-# 337 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 337 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    RR[N] = 0;
-# 338 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 338 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    t = -te;
-# 339 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 340 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 339 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 340 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (j = N-1; j >= 0; j--) {RR[j] = t = t - gh; SS[j] = t - g;}
-# 341 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 342 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 341 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 342 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    t = -te;
-# 343 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 344 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 343 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 344 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = M - 1; i >= midi; i--) {
-# 345 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 345 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       s = RR[N];
-# 346 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 346 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       RR[N] = hh = t = t-gh;
-# 347 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 347 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       f = t - g;
-# 348 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 348 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = N - 1; j >= 0; j--) {
-# 349 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 349 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((hh = hh - g - gh) > (f = f - gh)) {f = hh; };
-# 350 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 350 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((hh = RR[j] - g - gh) > (e = SS[j] - gh)) {e = hh; };
-# 351 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 351 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
           call_lbl_8: hh = s + ({ calling_npm("calc_score", 0); calc_score_npm(i+1, j+1, A, B, seq1, seq2); });
-# 352 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 352 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (f > hh) {hh = f; };
-# 353 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 353 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (e > hh) {hh = e; };
-# 354 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 355 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 354 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 355 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          s = RR[j];
-# 356 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 356 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          RR[j] = hh;
-# 357 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 357 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          SS[j] = e;
-# 358 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 358 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 359 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 359 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 360 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 361 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 360 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 361 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    SS[N] = RR[N];
-# 362 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 363 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 362 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 363 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    midh = HH[0] + RR[0];
-# 364 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 364 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    midj = 0;
-# 365 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 365 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    type = 1;
-# 366 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 367 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 366 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 367 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (j = 0; j <= N; j++) {
-# 368 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 368 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       hh = HH[j] + RR[j];
-# 369 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 369 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (hh >= midh) {if (hh > midh || (HH[j] != DD[j] && RR[j] == SS[j]))
-# 371 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 371 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          {midh = hh; midj = j;}; }
-# 372 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 372 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 373 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 374 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 373 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 374 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (j = N; j >= 0; j--) {
-# 375 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 375 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       hh = DD[j] + SS[j] + g;
-# 376 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 376 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (hh > midh) {midh = hh;midj = j;type = 2;}
-# 377 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 377 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 378 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 379 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 380 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 378 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 379 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 380 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (type == 1) {
-# 381 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 381 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
        call_lbl_9: ({ calling_npm("diff", 0); diff_npm(A, B, midi, midj, tb, g, print_ptr, last_print, displ, seq1, seq2, g, gh); });
-# 382 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 382 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
        call_lbl_10: ({ calling_npm("diff", 0); diff_npm(A+midi, B+midj, M-midi, N-midj, g, te, print_ptr, last_print, displ, seq1, seq2, g, gh); });
-# 383 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 383 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    } else {
-# 384 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 384 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
        call_lbl_11: ({ calling_npm("diff", 0); diff_npm(A, B, midi-1, midj, tb, 0.0, print_ptr, last_print, displ, seq1, seq2, g, gh); });
-# 385 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 385 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
        call_lbl_12: ({ calling_npm("del", 0); del_npm(2, print_ptr, last_print, displ); });
-# 386 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 386 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
        call_lbl_13: ({ calling_npm("diff", 0); diff_npm(A+midi+1, B+midj, M-midi-1, N-midj, 0.0, te, print_ptr, last_print, displ, seq1, seq2, g, gh); });
-# 387 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 387 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 388 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 389 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 388 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 389 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (midh); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_10, ____chimes_did_disable6, false); return ____chimes_ret_var_5; ;
-# 390 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 390 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_10, ____chimes_did_disable6, false); }
 
 int diff (int A, int B, int M, int N, int tb, int te, int *print_ptr, int *last_print, int *displ, int seq1, int seq2, int g, int gh) { return (____chimes_replaying ? diff_resumable(A, B, M, N, tb, te, print_ptr, last_print, displ, seq1, seq2, g, gh) : diff_quick(A, B, M, N, tb, te, print_ptr, last_print, displ, seq1, seq2, g, gh)); }
-# 395 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 395 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 double tracepath_quick(int tsb1, int tsb2, int *print_ptr, int *last_print, int *displ, int seq1, int seq2)
-# 396 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&tracepath), "tracepath", &____must_manage_tracepath, 7, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397911460UL), (size_t)(2235191825397911461UL), (size_t)(2235191825397911462UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 397 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 396 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+{const int ____chimes_did_disable7 = new_stack((void *)(&tracepath), "tracepath", &____must_manage_tracepath, 7, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(4673255111730562037UL), (size_t)(4673255111730562038UL), (size_t)(4673255111730562039UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+# 397 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int k; ;
-# 398 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 398 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int i1; i1 = (tsb1) ;
-# 399 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 399 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int i2; i2 = (tsb2) ;
-# 400 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 400 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int pos; pos = (0) ;
-# 401 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 401 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int count; count = (0) ;
-# 402 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 403 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 402 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 403 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 1; i <= *print_ptr - 1; ++i) {
-# 404 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 404 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (displ[i]==0) {{
-# 405 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 405 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
           char c1; c1 = (seq_array[seq1][i1]) ;
-# 406 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 406 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
           char c2; c2 = (seq_array[seq2][i2]) ;
-# 407 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 408 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 407 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 408 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((c1!=gap_pos1) && (c1 != gap_pos2) && (c1 == c2)) {count++; };
-# 409 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 410 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 409 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 410 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          ++i1; ++i2; ++pos;
-# 411 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 412 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 411 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 412 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }; } else if ((k = displ[i]) > 0) {
-# 413 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 413 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          i2 += k;
-# 414 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 414 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          pos += k;
-# 415 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 415 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       } else {
-# 416 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 416 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          i1 -= k;
-# 417 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 417 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          pos -= k;
-# 418 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 418 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 419 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 419 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 420 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 421 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 420 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 421 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     double ____chimes_ret_var_6; ; ____chimes_ret_var_6 = ((100.0 * (double) count)); rm_stack(false, 0UL, "tracepath", &____must_manage_tracepath, ____alias_loc_id_11, ____chimes_did_disable7, false); return ____chimes_ret_var_6; ;
-# 422 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 422 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "tracepath", &____must_manage_tracepath, ____alias_loc_id_11, ____chimes_did_disable7, false); }
 
 double tracepath(int tsb1, int tsb2, int *print_ptr, int *last_print, int *displ, int seq1, int seq2) { return (____chimes_replaying ? tracepath_resumable(tsb1, tsb2, print_ptr, last_print, displ, seq1, seq2) : tracepath_quick(tsb1, tsb2, print_ptr, last_print, displ, seq1, seq2)); }
-# 425 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 425 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int pairalign_quick(int istart, int iend, int jstart, int jend)
-# 426 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 426 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable8 = new_stack((void *)(&pairalign), "pairalign", (int *)0, 4, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int displ[10001];
-# 426 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 426 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int sb1;
-# 426 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 426 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int se1;
-# 426 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 426 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
  register_stack_vars(3, "pairalign|displ|0", (int *)0x0, "[10001 x i32]", (void *)(displ), (size_t)40004, 0, 0, 0, "pairalign|sb1|0", (int *)0x0, "i32", (void *)(&sb1), (size_t)4, 0, 0, 0, "pairalign|se1|0", (int *)0x0, "i32", (void *)(&se1), (size_t)4, 0, 0, 0); ; ;
-# 427 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 427 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int n; int m; int si; int sj; ;
-# 428 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 428 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int len1; int len2; int maxres; ;
-# 429 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 429 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    double gg; double mm_score; ;
-# 430 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 430 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int *mat_xref; int *matptr; ;
-# 431 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 432 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 431 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 432 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    matptr = gon250mt;
-# 433 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 433 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    mat_xref = def_aa_xref;
-# 434 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 434 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     call_lbl_0: maxres = ({ calling_npm("get_matrix", 0); get_matrix_npm(matptr, mat_xref, 10); });
-# 435 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 435 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (maxres == 0) { int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = ((-1)); rm_stack(false, 0UL, "pairalign", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable8, false); return ____chimes_ret_var_7; ; };
-# 436 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 437 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 436 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 437 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
         { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Start aligning "); } };
-# 438 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 438 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 #pragma omp parallel
-# 439 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 439 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    {
-# 440 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 440 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 #pragma omp for schedule(dynamic) private(i,n,si,sj,len1,m)
-# 441 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 441 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (si = 0; si < nseqs; si++) {
-# 442 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 442 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((n = seqlen_array[si+1]) != 0){
-# 443 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 443 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             for (i = 1, len1 = 0; i <= n; i++) {
-# 444 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 444 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                 char c; c = (seq_array[si+1][i]) ;
-# 445 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 445 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                if ((c != gap_pos1) && (c != gap_pos2)) {len1++; };
-# 446 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 446 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             }
-# 447 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 448 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 447 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 448 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             for (sj = si + 1; sj < nseqs; sj++)
-# 449 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 449 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             {
-# 450 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 450 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                if ((m = seqlen_array[sj+1]) != 0)
-# 451 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 451 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                {
-# 452 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 452 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 #pragma omp task private(i,gg,len2,mm_score) firstprivate(m,n,si,sj,len1) shared(nseqs, bench_output,seqlen_array,seq_array,gap_pos1,gap_pos2,pw_ge_penalty,pw_go_penalty,mat_avscore)
-# 453 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 454 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 455 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 453 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 454 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 455 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   {
-# 456 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 456 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                    int se2; int sb2; int maxscore; int seq1; int seq2; int g; int gh; ;
-# 457 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 457 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                    ;
-# 458 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 458 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   int print_ptr; int last_print; ;
-# 459 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 460 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 459 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 460 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   for (i = 1, len2 = 0; i <= m; i++) {
-# 461 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 461 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                       char c; c = (seq_array[sj+1][i]) ;
-# 462 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 462 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                      if ((c != gap_pos1) && (c != gap_pos2)) {len2++; };
-# 463 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 463 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   }
-# 464 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 465 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 464 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 465 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   gh = 10 * pw_ge_penalty;
-# 466 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 466 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   gg = pw_go_penalty + log((double) ((n)<(m)?(n):(m)));
-# 467 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 467 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   g = (mat_avscore <= 0) ? 20 * gg : 2 * mat_avscore * gg;
-# 468 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 469 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 468 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 469 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   seq1 = si + 1;
-# 470 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 470 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   seq2 = sj + 1;
-# 471 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 472 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 471 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 472 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                    call_lbl_1: ({ calling_npm("forward_pass", 0); forward_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], n, m, &se1, &se2, &maxscore, g, gh); });
-# 473 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 473 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                    call_lbl_2: ({ calling_npm("reverse_pass", 0); reverse_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], se1, se2, &sb1, &sb2, maxscore, g, gh); });
-# 474 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 475 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 474 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 475 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   print_ptr = 1;
-# 476 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 476 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   last_print = 0;
-# 477 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 478 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 477 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 478 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                    call_lbl_3: ({ calling_npm("diff", 0); diff_npm(sb1-1, sb2-1, se1-sb1+1, se2-sb2+1, 0, 0, &print_ptr, &last_print, displ, seq1, seq2, g, gh); });
-# 479 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 479 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                    call_lbl_4: mm_score = ({ calling_npm("tracepath", 0); tracepath_npm(sb1, sb2, &print_ptr, &last_print, displ, seq1, seq2); });
-# 480 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 481 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 480 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 481 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   if (len1 == 0 || len2 == 0) {mm_score = 0.0; } else {mm_score /= (double) ((len1)<(len2)?(len1):(len2)); } ;
-# 483 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 484 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 483 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 484 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   bench_output[si*nseqs+sj] = mm_score;
-# 485 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 485 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   }
-# 486 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 486 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                }
-# 487 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 487 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             }
-# 488 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 488 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          }
-# 489 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 489 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 490 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 490 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 491 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 492 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 491 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 492 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " about to call checkpoint "); } };
-# 493 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 494 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 493 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 494 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " calling checkpoint "); } };
-# 495 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 495 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     call_lbl_5: checkpoint_transformed(5, ____alias_loc_id_0);
-# 496 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 497 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 496 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 497 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
         { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " completed!\n"); } };
-# 498 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 498 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (0); rm_stack(false, 0UL, "pairalign", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable8, false); return ____chimes_ret_var_8; ;
-# 499 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 499 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "pairalign", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable8, false); }
 
 int pairalign(int istart, int iend, int jstart, int jend) { return (____chimes_replaying ? pairalign_resumable(istart, iend, jstart, jend) : pairalign_quick(istart, iend, jstart, jend)); }
-# 501 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 501 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int pairalign_seq_quick(int istart, int iend, int jstart, int jend)
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 502 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable9 = new_stack((void *)(&pairalign_seq), "pairalign_seq", (int *)0, 4, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int displ[10001];
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 502 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int maxscore;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 502 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int sb2;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 502 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int sb1;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 502 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int se2;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 502 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int se1;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 502 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int si;
-# 502 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 502 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
  register_stack_vars(7, "pairalign_seq|displ|0", (int *)0x0, "[10001 x i32]", (void *)(displ), (size_t)40004, 0, 0, 0, "pairalign_seq|maxscore|0", (int *)0x0, "i32", (void *)(&maxscore), (size_t)4, 0, 0, 0, "pairalign_seq|sb2|0", (int *)0x0, "i32", (void *)(&sb2), (size_t)4, 0, 0, 0, "pairalign_seq|sb1|0", (int *)0x0, "i32", (void *)(&sb1), (size_t)4, 0, 0, 0, "pairalign_seq|se2|0", (int *)0x0, "i32", (void *)(&se2), (size_t)4, 0, 0, 0, "pairalign_seq|se1|0", (int *)0x0, "i32", (void *)(&se1), (size_t)4, 0, 0, 0, "pairalign_seq|si|0", (int *)0x0, "i32", (void *)(&si), (size_t)4, 0, 0, 0); ; ;
-# 503 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 503 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int n; int m; int sj; ;
-# 504 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 504 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int len1; int len2; int maxres; ;
-# 505 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 505 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    double gg; double mm_score; ;
-# 506 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 506 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int *mat_xref; int *matptr; ;
-# 507 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 508 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 507 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 508 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    matptr = gon250mt;
-# 509 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 509 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    mat_xref = def_aa_xref;
-# 510 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 510 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     call_lbl_0: maxres = ({ calling_npm("get_matrix", 0); get_matrix_npm(matptr, mat_xref, 10); });
-# 511 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 511 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (maxres == 0) { int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = ((-1)); rm_stack(false, 0UL, "pairalign_seq", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable9, false); return ____chimes_ret_var_9; ; };
-# 512 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 513 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 512 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 513 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (si = 0; si < nseqs; si++) {
-# 514 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 514 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if ((n = seqlen_array[si+1]) != 0){
-# 515 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 515 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          for (i = 1, len1 = 0; i <= n; i++) {
-# 516 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 516 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
              char c; c = (seq_array[si+1][i]) ;
-# 517 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 517 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             if ((c != gap_pos1) && (c != gap_pos2)) {len1++; };
-# 518 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 518 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          }
-# 519 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 520 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 519 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 520 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          for (sj = si + 1; sj < nseqs; sj++) {
-# 521 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 521 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             if ((m = seqlen_array[sj+1]) != 0){
-# 522 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 522 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                     int seq1; int seq2; int g; int gh; ;
-# 523 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 523 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                 ;
-# 524 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 524 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                int print_ptr; int last_print; ;
-# 525 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 526 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 525 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 526 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                for (i = 1, len2 = 0; i <= m; i++) {
-# 527 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 527 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                    char c; c = (seq_array[sj+1][i]) ;
-# 528 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 528 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                   if ((c != gap_pos1) && (c != gap_pos2)) {len2++; };
-# 529 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 529 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                }
-# 530 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 531 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 530 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 531 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                gh = 10 * pw_ge_penalty;
-# 532 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 532 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                gg = pw_go_penalty + log((double) ((n)<(m)?(n):(m)));
-# 533 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 533 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                g = (mat_avscore <= 0) ? 20 * gg : 2 * mat_avscore * gg;
-# 534 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 535 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 534 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 535 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                seq1 = si + 1;
-# 536 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 536 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                seq2 = sj + 1;
-# 537 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 538 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 537 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 538 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                 call_lbl_1: ({ calling_npm("forward_pass", 0); forward_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], n, m, &se1, &se2, &maxscore, g, gh); });
-# 539 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 539 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                 call_lbl_2: ({ calling_npm("reverse_pass", 0); reverse_pass_npm(&seq_array[seq1][0], &seq_array[seq2][0], se1, se2, &sb1, &sb2, maxscore, g, gh); });
-# 540 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 541 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 540 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 541 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                print_ptr = 1;
-# 542 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 542 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                last_print = 0;
-# 543 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 544 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 543 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 544 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                 call_lbl_3: ({ calling_npm("diff", 0); diff_npm(sb1-1, sb2-1, se1-sb1+1, se2-sb2+1, 0, 0, &print_ptr, &last_print, displ, seq1, seq2, g, gh); });
-# 545 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 545 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                 call_lbl_4: mm_score = ({ calling_npm("tracepath", 0); tracepath_npm(sb1, sb2, &print_ptr, &last_print, displ, seq1, seq2); });
-# 546 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 547 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 546 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 547 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                if (len1 == 0 || len2 == 0) {mm_score = 0.0; } else {mm_score /= (double) ((len1)<(len2)?(len1):(len2)); } ;
-# 549 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 550 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 549 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 550 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                seq_output[si*nseqs+sj] = mm_score;
-# 551 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 551 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             }
-# 552 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 552 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          }
-# 553 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 553 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 554 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 555 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 554 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 555 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
        call_lbl_5: checkpoint_transformed(5, ____alias_loc_id_1);
-# 556 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 557 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 556 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 557 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 558 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 558 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = (0); rm_stack(false, 0UL, "pairalign_seq", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable9, false); return ____chimes_ret_var_10; ;
-# 559 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 559 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "pairalign_seq", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable9, false); }
 
 int pairalign_seq(int istart, int iend, int jstart, int jend) { return (____chimes_replaying ? pairalign_seq_resumable(istart, iend, jstart, jend) : pairalign_seq_quick(istart, iend, jstart, jend)); }
-# 565 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 565 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void init_matrix_quick(void)
-# 566 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 566 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable10 = new_stack((void *)(&init_matrix), "init_matrix", &____must_manage_init_matrix, 0, 0) ; ; ;
-# 567 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 567 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
-# 568 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 568 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    char c1; char c2; ;
-# 569 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 570 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 569 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 570 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    gap_pos1 = 32 - 2;
-# 571 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 571 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    gap_pos2 = 32 - 1;
-# 572 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 572 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    max_aa = strlen(amino_acid_codes) - 2;
-# 573 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 574 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 573 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 574 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i < 32; i++) { def_aa_xref[i] = -1; };
-# 575 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 576 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 575 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 576 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; (c1 = amino_acid_order[i]); i++) { for (j = 0; (c2 = amino_acid_codes[j]); j++) { if (c1 == c2) {def_aa_xref[i] = j; break;}; }; }
-# 579 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 579 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "init_matrix", &____must_manage_init_matrix, ____alias_loc_id_14, ____chimes_did_disable10, false); }
 
 void init_matrix(void) { (____chimes_replaying ? init_matrix_resumable() : init_matrix_quick()); }
-# 581 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 581 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void pairalign_init_quick (char *filename)
-# 582 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable11 = new_stack((void *)(&pairalign_init), "pairalign_init", &____must_manage_pairalign_init, 1, 1, (size_t)(2235191825397912300UL), "pairalign_init|filename|0", &____must_checkpoint_pairalign_init_filename_0, "i8*", (void *)(&filename), (size_t)8, 1, 0, 0) ; ; ;
-# 583 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 582 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+{const int ____chimes_did_disable11 = new_stack((void *)(&pairalign_init), "pairalign_init", &____must_manage_pairalign_init, 1, 1, (size_t)(4673255111730562877UL), "pairalign_init|filename|0", &____must_checkpoint_pairalign_init_filename_0, "i8*", (void *)(&filename), (size_t)8, 1, 0, 0) ; ; ;
+# 583 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; ;
-# 584 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 585 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 584 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 585 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (!filename || !filename[0]) {
-# 586 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-       call_lbl_0: ({ calling((void*)bots_error, 0, ____alias_loc_id_3, 0UL, 2, (size_t)(0UL), (size_t)(2235191825397912543UL)); (bots_error)(0, "Please specify an input file with the -f option\n"); }) ;
-# 587 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 586 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+       call_lbl_0: ({ calling((void*)bots_error, 0, ____alias_loc_id_3, 0UL, 2, (size_t)(0UL), (size_t)(4673255111730563120UL)); (bots_error)(0, "Please specify an input file with the -f option\n"); }) ;
+# 587 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 588 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 589 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 588 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 589 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     call_lbl_1: ({ calling_npm("init_matrix", 0); init_matrix_npm(); });
-# 590 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 591 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 592 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-    call_lbl_2: nseqs = ({ calling((void*)readseqs, 2, ____alias_loc_id_2, 0UL, 2, (size_t)(0UL), (size_t)(2235191825397912300UL)); (readseqs)(1, filename); }) ;
-# 593 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 594 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 590 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 591 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 592 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+    call_lbl_2: nseqs = ({ calling((void*)readseqs, 2, ____alias_loc_id_2, 0UL, 2, (size_t)(0UL), (size_t)(4673255111730562877UL)); (readseqs)(1, filename); }) ;
+# 593 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 594 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Multiple Pairwise Alignment (%d sequences)\n" ,nseqs); } };
-# 595 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 596 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 595 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 596 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 1; i <= nseqs; i++) { ;; }
-# 598 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 599 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 598 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 599 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    ktup = 1;
-# 600 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 600 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    window = 5;
-# 601 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 601 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    signif = 5;
-# 602 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 602 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    gap_open = 10.0;
-# 603 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 603 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    gap_extend = 0.2;
-# 604 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 604 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    pw_go_penalty = 10.0;
-# 605 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 605 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    pw_ge_penalty = 0.1;
-# 606 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 606 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "pairalign_init", &____must_manage_pairalign_init, ____alias_loc_id_15, ____chimes_did_disable11, false); }
 
 void pairalign_init (char *filename) { (____chimes_replaying ? pairalign_init_resumable(filename) : pairalign_init_quick(filename)); }
-# 608 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 608 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void align_init_quick ()
-# 609 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 609 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable12 = new_stack((void *)(&align_init), "align_init", &____must_manage_align_init, 0, 0) ; ; ;
-# 610 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 610 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
-# 611 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 612 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 613 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 611 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 4673255111730562892UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 612 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 613 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { bench_output[i*nseqs+j] = 0; }; };
-# 616 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 616 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "align_init", &____must_manage_align_init, ____alias_loc_id_16, ____chimes_did_disable12, false); }
 
 void align_init () { (____chimes_replaying ? align_init_resumable() : align_init_quick()); }
-# 618 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 618 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void align_quick()
-# 619 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 619 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable13 = new_stack((void *)(&align), "align", (int *)0, 0, 0) ; ; ;
-# 620 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 620 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     call_lbl_0: ({ calling((void*)pairalign, 0, 0, 0UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); pairalign_quick(0, nseqs, 0, nseqs); }) ;
-# 621 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 621 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "align", (int *)0x0, 0, ____chimes_did_disable13, false); }
 
 void align() { (____chimes_replaying ? align_resumable() : align_quick()); }
-# 623 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 623 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void align_seq_init_quick ()
-# 624 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 624 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable14 = new_stack((void *)(&align_seq_init), "align_seq_init", &____must_manage_align_seq_init, 0, 0) ; ; ;
-# 625 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 625 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
-# 626 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   seq_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 627 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 628 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 629 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 626 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+   seq_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 4673255111730562892UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 627 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 4673255111730562892UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 628 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 629 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { seq_output[i*nseqs+j] = 0; }; };
-# 632 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 632 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "align_seq_init", &____must_manage_align_seq_init, ____alias_loc_id_17, ____chimes_did_disable14, false); }
 
 void align_seq_init () { (____chimes_replaying ? align_seq_init_resumable() : align_seq_init_quick()); }
-# 634 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 634 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void align_seq_quick()
-# 635 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 635 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable15 = new_stack((void *)(&align_seq), "align_seq", (int *)0, 0, 0) ; ; ;
-# 636 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 636 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     call_lbl_0: ({ calling((void*)pairalign_seq, 0, 0, 0UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); pairalign_seq_quick(0, nseqs, 0, nseqs); }) ;
-# 637 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 637 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "align_seq", (int *)0x0, 0, ____chimes_did_disable15, false); }
 
 void align_seq() { (____chimes_replaying ? align_seq_resumable() : align_seq_quick()); }
-# 640 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 640 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void align_end_quick ()
-# 641 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 641 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable16 = new_stack((void *)(&align_end), "align_end", &____must_manage_align_end, 0, 0) ; ; ;
-# 642 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 642 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
-# 643 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 643 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { if (bench_output[i*nseqs+j] != 0) {;; }; }; }
-# 648 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 648 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "align_end", &____must_manage_align_end, ____alias_loc_id_18, ____chimes_did_disable16, false); }
 
 void align_end () { (____chimes_replaying ? align_end_resumable() : align_end_quick()); }
-# 671 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 671 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int align_verify_quick ()
-# 672 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 672 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable17 = new_stack((void *)(&align_verify), "align_verify", &____must_manage_align_verify, 0, 0) ; ; ;
-# 673 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 673 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
-# 674 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 674 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int result; result = (1) ;
-# 675 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 675 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i+=200) { for(j = 0; j<nseqs; j++)
-# 677 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 677 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          {
-# 678 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 678 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Output: Optimized prot. (%3d:%3d)=%5d \n" , i+1, j+1, (int) bench_output[i*nseqs+j]); } }
-# 679 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 679 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                                                        ;
-# 680 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 680 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          }; }
-# 681 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 681 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int ____chimes_ret_var_11; ; ____chimes_ret_var_11 = (result); rm_stack(false, 0UL, "align_verify", &____must_manage_align_verify, ____alias_loc_id_19, ____chimes_did_disable17, false); return ____chimes_ret_var_11; ;
-# 682 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 682 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 rm_stack(false, 0UL, "align_verify", &____must_manage_align_verify, ____alias_loc_id_19, ____chimes_did_disable17, false); }
 
 int align_verify () { return (____chimes_replaying ? align_verify_resumable() : align_verify_quick()); }
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 68 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void del_npm(int k, int *print_ptr, int *last_print, int *displ)
-# 69 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 69 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {
-# 70 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 70 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (*last_print<0) {*last_print = displ[(*print_ptr)-1] -= k; } else {*last_print = displ[(*print_ptr)++] = -k; } ;
-# 72 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 72 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 }
-# 77 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 77 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void add_npm(int v, int *print_ptr, int *last_print, int *displ)
-# 78 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 78 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {
-# 79 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 79 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (*last_print < 0) {
-# 80 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 80 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       displ[(*print_ptr)-1] = v;
-# 81 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 81 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       displ[(*print_ptr)++] = *last_print;
-# 82 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 82 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    } else {
-# 83 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 83 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       *last_print = displ[(*print_ptr)++] = v;
-# 84 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 84 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 85 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 85 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 }
-# 90 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 90 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int calc_score_npm(int iat, int jat, int v1, int v2, int seq1, int seq2)
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {
-# 92 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 92 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i, j, ipos, jpos;
-# 93 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 94 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 93 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 94 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    ipos = v1 + iat;
-# 95 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 95 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    jpos = v2 + jat;
-# 96 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 96 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    i = seq_array[seq1][ipos];
-# 97 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 97 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    j = seq_array[seq2][jpos];
-# 98 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 99 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 98 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 99 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int ____chimes_ret_var_0; ____chimes_ret_var_0 = ((matrix[i * 32 + j])); return ____chimes_ret_var_0; ;
-# 100 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 100 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 }
-# 105 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 105 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int get_matrix_npm(int *matptr, int *xref, int scale)
-# 106 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 106 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {
-# 107 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   matrix = (int *) ({ void *____chimes_tmp_ptr = malloc((32 * 32 * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 32 * 32 * sizeof(int), 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 108 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 107 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+   matrix = (int *) ({ void *____chimes_tmp_ptr = malloc((32 * 32 * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, 32 * 32 * sizeof(int), 4673255111730562892UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 108 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int gg_score = 0;
-# 109 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 109 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int gr_score = 0;
-# 110 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 110 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i, j, k, ti, tj, ix;
-# 111 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 111 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int av1, av2, av3, min, max, maxres;
-# 112 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 113 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 112 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 113 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i <= max_aa; i++) { for (j = 0; j <= max_aa; j++) { matrix[i * 32 + j] = 0; }; };
-# 115 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 116 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 115 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 116 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    ix = 0;
-# 117 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 117 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    maxres = 0;
-# 118 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 119 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 118 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 119 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i <= max_aa; i++) {
-# 120 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 120 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       ti = xref[i];
-# 121 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 121 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = 0; j <= i; j++) {
-# 122 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 122 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          tj = xref[j];
-# 123 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 123 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((ti != -1) && (tj != -1)) {
-# 124 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 124 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             k = matptr[ix];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             if (ti == tj) {
-# 126 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 126 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                matrix[ti * 32 + ti] = k * scale;
-# 127 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 127 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                maxres++;
-# 128 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 128 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             } else {
-# 129 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 129 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                matrix[ti * 32 + tj] = k * scale;
-# 130 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 130 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                matrix[tj * 32 + ti] = k * scale;
-# 131 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 131 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             }
-# 132 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 132 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             ix++;
-# 133 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 133 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          }
-# 134 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 134 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 135 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 135 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 136 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 137 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 136 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 137 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    maxres--;
-# 138 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 138 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    av1 = av2 = av3 = 0;
-# 139 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 140 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 139 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 140 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i <= max_aa; i++) {
-# 141 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 141 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = 0; j <= i; j++) {
-# 142 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 142 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          av1 += matrix[i * 32 + j];
-# 143 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 143 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (i == j) {av2 += matrix[i * 32 + j]; } else {av3 += matrix[i * 32 + j]; } ;
-# 145 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 145 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 146 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 146 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 147 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 148 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 147 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 148 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    av1 /= (maxres*maxres)/2;
-# 149 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 149 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    av2 /= maxres;
-# 150 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 150 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    av3 /= ((double)(maxres*maxres-maxres))/2;
-# 151 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 151 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    mat_avscore = -av3;
-# 152 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 153 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 152 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 153 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    min = max = matrix[0 * 32 + 0];
-# 154 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 154 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 155 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i <= max_aa; i++) { for (j = 1; j <= i; j++) {
-# 157 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 157 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (matrix[i * 32 + j] < min) {min = matrix[i * 32 + j]; };
-# 158 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 158 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             if (matrix[i * 32 + j] > max) {max = matrix[i * 32 + j]; };
-# 159 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 159 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }; }
-# 160 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 161 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 160 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 161 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i < gap_pos1; i++) {
-# 162 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 162 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       matrix[i * 32 + gap_pos1] = gr_score;
-# 163 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 163 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       matrix[gap_pos1 * 32 + i] = gr_score;
-# 164 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 164 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       matrix[i * 32 + gap_pos2] = gr_score;
-# 165 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 165 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       matrix[gap_pos2 * 32 + i] = gr_score;
-# 166 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 166 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 167 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 168 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 167 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 168 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    matrix[gap_pos1 * 32 + gap_pos1] = gg_score;
-# 169 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 169 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    matrix[gap_pos2 * 32 + gap_pos2] = gg_score;
-# 170 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 170 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    matrix[gap_pos2 * 32 + gap_pos1] = gg_score;
-# 171 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 171 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    matrix[gap_pos1 * 32 + gap_pos2] = gg_score;
-# 172 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 173 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 172 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 173 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    maxres += 2;
-# 174 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 175 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 174 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 175 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int ____chimes_ret_var_1; ____chimes_ret_var_1 = ((maxres)); return ____chimes_ret_var_1; ;
-# 176 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 176 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 }
-# 181 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 181 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void forward_pass_npm(char *ia, char *ib, int n, int m, int *se1, int *se2, int *maxscore, int g, int gh)
-# 182 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 182 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {
-# 183 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 183 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i, j, f, p, t, hh;
-# 184 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 184 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int HH[5000];
-# 185 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 185 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
         int DD[5000];
-# 186 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 187 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 186 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 187 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    *maxscore = 0;
-# 188 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 188 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    *se1 = *se2 = 0;
-# 189 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 190 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 189 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 190 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i <= m; i++) {HH[i] = 0; DD[i] = -g;}
-# 191 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 192 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 191 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 192 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 1; i <= n; i++) {
-# 193 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 193 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       hh = p = 0;
-# 194 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 194 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       f = -g;
-# 195 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 196 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 195 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 196 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = 1; j <= m; j++) {
-# 197 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 197 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          f -= gh;
-# 198 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 198 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          t = hh - g - gh;
-# 199 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 199 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 200 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (f < t) {f = t; };
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 202 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 201 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 202 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          DD[j] -= gh;
-# 203 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 203 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          t = HH[j] - g - gh;
-# 204 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 205 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 204 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 205 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (DD[j] < t) {DD[j] = t; };
-# 206 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 207 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 206 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 207 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          hh = p + matrix[((int)ia[i]) * 32 + ((int)ib[j])];
-# 208 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 208 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh < f) {hh = f; };
-# 209 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 209 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh < DD[j]) {hh = DD[j]; };
-# 210 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 210 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh < 0) {hh = 0; };
-# 211 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 212 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 211 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 212 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          p = HH[j];
-# 213 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 213 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          HH[j] = hh;
-# 214 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 215 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 214 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 215 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh > *maxscore) {*maxscore = hh; *se1 = i; *se2 = j;}
-# 216 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 216 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 217 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 217 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 218 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 218 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 }
-# 223 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 223 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void reverse_pass_npm(char *ia, char *ib, int se1, int se2, int *sb1, int *sb2, int maxscore, int g, int gh)
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 224 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {
-# 225 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 225 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i, j, f, p, t, hh, cost;
-# 226 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 226 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int HH[5000];
-# 227 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 227 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
         int DD[5000];
-# 228 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 229 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 228 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 229 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    cost = 0;
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 230 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    *sb1 = *sb2 = 1;
-# 231 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 232 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 231 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 232 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = se2; i > 0; i--){ HH[i] = -1; DD[i] = -1;}
-# 233 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 234 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 233 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 234 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = se1; i > 0; i--) {
-# 235 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 235 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       hh = f = -1;
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 236 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (i == se1) {p = 0; } else {p = -1; } ;
-# 237 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 238 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 237 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 238 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = se2; j > 0; j--) {
-# 239 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 240 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 239 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 240 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          f -= gh;
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 241 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          t = hh - g - gh;
-# 242 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 242 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (f < t) {f = t; };
-# 243 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 244 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 243 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 244 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          DD[j] -= gh;
-# 245 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 245 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          t = HH[j] - g - gh;
-# 246 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 246 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (DD[j] < t) {DD[j] = t; };
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 248 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 247 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 248 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          int tmp1 = (int)ia[i];
-# 249 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 249 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          int tmp2 = (int)ib[j];
-# 250 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 250 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          hh = p + matrix[tmp1 * 32 + tmp2];
-# 251 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 251 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh < f) {hh = f; };
-# 252 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 252 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh < DD[j]) {hh = DD[j]; };
-# 253 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 254 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 253 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 254 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          p = HH[j];
-# 255 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 255 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          HH[j] = hh;
-# 256 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 257 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 256 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 257 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh > cost) {
-# 258 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 258 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             cost = hh; *sb1 = i; *sb2 = j;
-# 259 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 259 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             if (cost >= maxscore) {break; };
-# 260 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 260 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          }
-# 261 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 261 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 262 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 263 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 262 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 263 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (cost >= maxscore) {break; };
-# 264 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 264 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 265 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 265 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 }
-# 270 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 270 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int diff_npm (int A, int B, int M, int N, int tb, int te, int *print_ptr, int *last_print, int *displ, int seq1, int seq2, int g, int gh)
-# 271 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 271 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {
-# 272 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 272 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i, j, f, e, s, t, hh;
-# 273 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 273 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int midi, midj, midh, type;
-# 274 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 274 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int HH[5000];
-# 275 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 275 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
         int DD[5000];
-# 276 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 276 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int RR[5000];
-# 277 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 277 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int SS[5000];
-# 278 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 279 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 278 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 279 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (N <= 0) {if (M > 0) {del_npm(M, print_ptr, last_print, displ); }; int ____chimes_ret_var_2; ____chimes_ret_var_2 = (( - (int) ((M) <= 0 ? 0 : tb + gh * (M)))); return ____chimes_ret_var_2; ; }
-# 280 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 281 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 280 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 281 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (M <= 1) {
-# 282 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 283 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 282 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 283 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (M <= 0) {add_npm(N, print_ptr, last_print, displ); int ____chimes_ret_var_3; ____chimes_ret_var_3 = (( - (int)((N) <= 0 ? 0 : tb + gh * (N)))); return ____chimes_ret_var_3; ;}
-# 284 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 285 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 284 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 285 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       midh = -(tb+gh) - ((N) <= 0 ? 0 : te + gh * (N));
-# 286 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 286 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       hh = -(te+gh) - ((N) <= 0 ? 0 : tb + gh * (N));
-# 287 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 288 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 287 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 288 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (hh > midh) {midh = hh; };
-# 289 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 289 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       midj = 0;
-# 290 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 291 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 290 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 291 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = 1; j <= N; j++) {
-# 292 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 292 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          hh = calc_score_npm(1, j, A, B, seq1, seq2) - ((N-j) <= 0 ? 0 : te + gh * (N-j)) - ((j-1) <= 0 ? 0 : tb + gh * (j-1));
-# 293 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 293 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (hh > midh) {midh = hh; midj = j;}
-# 294 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 294 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 295 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 296 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 295 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 296 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (midj == 0) {
-# 297 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 297 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          del_npm(1, print_ptr, last_print, displ);
-# 298 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 298 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          add_npm(N, print_ptr, last_print, displ);
-# 299 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 299 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       } else {
-# 300 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 300 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (midj > 1) {add_npm(midj-1, print_ptr, last_print, displ); };
-# 301 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 301 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          displ[(*print_ptr)++] = *last_print = 0;
-# 302 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 302 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (midj < N) {add_npm(N-midj, print_ptr, last_print, displ); };
-# 303 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 303 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 304 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 305 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 304 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 305 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
        int ____chimes_ret_var_4; ____chimes_ret_var_4 = (midh); return ____chimes_ret_var_4; ;
-# 306 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 306 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 307 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 308 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 307 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 308 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    midi = M / 2;
-# 309 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 309 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    HH[0] = 0.0;
-# 310 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 310 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    t = -tb;
-# 311 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 312 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 311 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 312 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (j = 1; j <= N; j++) {
-# 313 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 313 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       HH[j] = t = t - gh;
-# 314 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 314 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       DD[j] = t - g;
-# 315 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 315 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 316 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 317 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 316 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 317 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    t = -tb;
-# 318 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 319 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 318 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 319 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 1; i <= midi; i++) {
-# 320 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 320 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       s = HH[0];
-# 321 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 321 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       HH[0] = hh = t = t - gh;
-# 322 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 322 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       f = t - g;
-# 323 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 323 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = 1; j <= N; j++) {
-# 324 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 324 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((hh = hh - g - gh) > (f = f - gh)) {f = hh; };
-# 325 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 325 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((hh = HH[j] - g - gh) > (e = DD[j]- gh)) {e = hh; };
-# 326 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 326 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          hh = s + calc_score_npm(i, j, A, B, seq1, seq2);
-# 327 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 327 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (f > hh) {hh = f; };
-# 328 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 328 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (e > hh) {hh = e; };
-# 329 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 330 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 329 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 330 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          s = HH[j];
-# 331 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 331 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          HH[j] = hh;
-# 332 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 332 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          DD[j] = e;
-# 333 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 333 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 334 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 334 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 335 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 336 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 335 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 336 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    DD[0] = HH[0];
-# 337 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 337 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    RR[N] = 0;
-# 338 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 338 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    t = -te;
-# 339 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 340 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 339 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 340 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (j = N-1; j >= 0; j--) {RR[j] = t = t - gh; SS[j] = t - g;}
-# 341 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 342 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 341 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 342 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    t = -te;
-# 343 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 344 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 343 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 344 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = M - 1; i >= midi; i--) {
-# 345 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 345 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       s = RR[N];
-# 346 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 346 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       RR[N] = hh = t = t-gh;
-# 347 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 347 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       f = t - g;
-# 348 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 348 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       for (j = N - 1; j >= 0; j--) {
-# 349 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 349 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((hh = hh - g - gh) > (f = f - gh)) {f = hh; };
-# 350 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 350 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((hh = RR[j] - g - gh) > (e = SS[j] - gh)) {e = hh; };
-# 351 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 351 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          hh = s + calc_score_npm(i+1, j+1, A, B, seq1, seq2);
-# 352 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 352 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (f > hh) {hh = f; };
-# 353 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 353 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if (e > hh) {hh = e; };
-# 354 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 355 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 354 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 355 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          s = RR[j];
-# 356 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 356 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          RR[j] = hh;
-# 357 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 357 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          SS[j] = e;
-# 358 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 358 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 359 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 359 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 360 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 361 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 360 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 361 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    SS[N] = RR[N];
-# 362 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 363 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 362 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 363 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    midh = HH[0] + RR[0];
-# 364 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 364 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    midj = 0;
-# 365 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 365 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    type = 1;
-# 366 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 367 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 366 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 367 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (j = 0; j <= N; j++) {
-# 368 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 368 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       hh = HH[j] + RR[j];
-# 369 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 369 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (hh >= midh) {if (hh > midh || (HH[j] != DD[j] && RR[j] == SS[j]))
-# 371 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 371 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          {midh = hh; midj = j;}; }
-# 372 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 372 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 373 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 374 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 373 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 374 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (j = N; j >= 0; j--) {
-# 375 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 375 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       hh = DD[j] + SS[j] + g;
-# 376 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 376 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (hh > midh) {midh = hh;midj = j;type = 2;}
-# 377 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 377 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 378 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 379 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 380 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 378 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 379 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 380 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (type == 1) {
-# 381 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 381 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       diff_npm(A, B, midi, midj, tb, g, print_ptr, last_print, displ, seq1, seq2, g, gh);
-# 382 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 382 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       diff_npm(A+midi, B+midj, M-midi, N-midj, g, te, print_ptr, last_print, displ, seq1, seq2, g, gh);
-# 383 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 383 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    } else {
-# 384 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 384 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       diff_npm(A, B, midi-1, midj, tb, 0.0, print_ptr, last_print, displ, seq1, seq2, g, gh);
-# 385 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 385 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       del_npm(2, print_ptr, last_print, displ);
-# 386 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 386 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       diff_npm(A+midi+1, B+midj, M-midi-1, N-midj, 0.0, te, print_ptr, last_print, displ, seq1, seq2, g, gh);
-# 387 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 387 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 388 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 389 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 388 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 389 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int ____chimes_ret_var_5; ____chimes_ret_var_5 = (midh); return ____chimes_ret_var_5; ;
-# 390 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 390 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 }
-# 395 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 395 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 double tracepath_npm(int tsb1, int tsb2, int *print_ptr, int *last_print, int *displ, int seq1, int seq2)
-# 396 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 396 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {
-# 397 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 397 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i, k;
-# 398 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 398 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i1 = tsb1;
-# 399 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 399 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i2 = tsb2;
-# 400 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 400 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int pos = 0;
-# 401 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 401 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int count = 0;
-# 402 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 403 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 402 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 403 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 1; i <= *print_ptr - 1; ++i) {
-# 404 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 404 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       if (displ[i]==0) {{
-# 405 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 405 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          char c1 = seq_array[seq1][i1];
-# 406 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 406 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          char c2 = seq_array[seq2][i2];
-# 407 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 408 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 407 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 408 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          if ((c1!=gap_pos1) && (c1 != gap_pos2) && (c1 == c2)) {count++; };
-# 409 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 410 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 409 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 410 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          ++i1; ++i2; ++pos;
-# 411 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 412 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 411 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 412 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }; } else if ((k = displ[i]) > 0) {
-# 413 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 413 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          i2 += k;
-# 414 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 414 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          pos += k;
-# 415 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 415 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       } else {
-# 416 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 416 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          i1 -= k;
-# 417 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 417 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          pos -= k;
-# 418 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 418 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       }
-# 419 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 419 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 420 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 421 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 420 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 421 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     double ____chimes_ret_var_6; ____chimes_ret_var_6 = ((100.0 * (double) count)); return ____chimes_ret_var_6; ;
-# 422 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 422 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 }
-# 565 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 565 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void init_matrix_npm(void)
-# 566 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 566 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {
-# 567 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 567 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i, j;
-# 568 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 568 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    char c1, c2;
-# 569 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 570 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 569 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 570 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    gap_pos1 = 32 - 2;
-# 571 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 571 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    gap_pos2 = 32 - 1;
-# 572 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 572 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    max_aa = strlen(amino_acid_codes) - 2;
-# 573 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 574 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 573 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 574 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i < 32; i++) { def_aa_xref[i] = -1; };
-# 575 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 576 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 575 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 576 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; (c1 = amino_acid_order[i]); i++) { for (j = 0; (c2 = amino_acid_codes[j]); j++) { if (c1 == c2) {def_aa_xref[i] = j; break;}; }; }
-# 579 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 579 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 }
-# 581 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 581 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void pairalign_init_npm (char *filename)
-# 582 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 582 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {
-# 583 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 583 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i;
-# 584 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 585 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 584 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 585 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (!filename || !filename[0]) {
-# 586 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 586 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       (*____chimes_extern_func_bots_error)(0, "Please specify an input file with the -f option\n");
-# 587 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 587 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
-# 588 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 589 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 588 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 589 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    init_matrix_npm();
-# 590 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 591 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 592 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 590 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 591 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 592 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    nseqs = (*____chimes_extern_func_readseqs)(1, filename);
-# 593 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 594 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 593 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 594 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Multiple Pairwise Alignment (%d sequences)\n" ,nseqs); } };
-# 595 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 596 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 595 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 596 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 1; i <= nseqs; i++) { ;; }
-# 598 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 599 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 598 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 599 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    ktup = 1;
-# 600 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 600 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    window = 5;
-# 601 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 601 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    signif = 5;
-# 602 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 602 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    gap_open = 10.0;
-# 603 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 603 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    gap_extend = 0.2;
-# 604 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 604 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    pw_go_penalty = 10.0;
-# 605 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 605 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    pw_ge_penalty = 0.1;
-# 606 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 606 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 }
-# 608 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 608 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void align_init_npm ()
-# 609 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 609 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {
-# 610 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 610 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i,j;
-# 611 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 612 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 613 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 611 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 4673255111730562892UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 612 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 613 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { bench_output[i*nseqs+j] = 0; }; };
-# 616 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 616 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 }
-# 623 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 623 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void align_seq_init_npm ()
-# 624 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 624 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {
-# 625 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 625 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i,j;
-# 626 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   seq_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 627 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 2235191825397912315UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 628 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-# 629 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 626 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+   seq_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 4673255111730562892UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 627 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+   bench_output = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * nseqs * nseqs) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*nseqs*nseqs, 4673255111730562892UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 628 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 629 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { seq_output[i*nseqs+j] = 0; }; };
-# 632 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 632 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 }
-# 640 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 640 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 void align_end_npm ()
-# 641 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 641 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {
-# 642 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 642 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i,j;
-# 643 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 643 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { if (bench_output[i*nseqs+j] != 0) {;; }; }; }
-# 648 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 648 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 }
-# 671 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 671 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int align_verify_npm ()
-# 672 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 672 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {
-# 673 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 673 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i,j;
-# 674 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 674 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int result = 1;
-# 675 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 675 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i+=200) { for(j = 0; j<nseqs; j++)
-# 677 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 677 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          {
-# 678 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 678 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
             { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Output: Optimized prot. (%3d:%3d)=%5d \n" , i+1, j+1, (int) bench_output[i*nseqs+j]); } }
-# 679 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 679 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
                                                        ;
-# 680 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 680 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          }; }
-# 681 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 681 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int ____chimes_ret_var_11; ____chimes_ret_var_11 = (result); return ____chimes_ret_var_11; ;
-# 682 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
+# 682 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 }
 
 
@@ -6819,41 +6819,41 @@ int align_verify_npm ()
 
 
 static int module_init() {
-    init_module(2235191825397909448UL, 33, 18, 7, 20, 14, 2, 16, 25, 0, 1,
-                           &____alias_loc_id_0, (unsigned)25, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2018UL), (2235191825397909448UL + 2019UL), (2235191825397909448UL + 2020UL), (2235191825397909448UL + 2021UL), (2235191825397909448UL + 2022UL), (2235191825397909448UL + 2023UL), (2235191825397909448UL + 2024UL), (2235191825397909448UL + 2025UL), (2235191825397909448UL + 2026UL), (2235191825397909448UL + 2027UL), (2235191825397909448UL + 2028UL), (2235191825397909448UL + 2029UL), (2235191825397909448UL + 2030UL), (2235191825397909448UL + 2031UL), (2235191825397909448UL + 2032UL), (2235191825397909448UL + 2033UL), (2235191825397909448UL + 2035UL), (2235191825397909448UL + 2041UL), (2235191825397909448UL + 2042UL), (2235191825397909448UL + 2043UL), (2235191825397909448UL + 2044UL), (2235191825397909448UL + 2046UL), (2235191825397909448UL + 2047UL), (2235191825397909448UL + 2048UL), (2235191825397909448UL + 2867UL),
-                           &____alias_loc_id_1, (unsigned)18, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2394UL), (2235191825397909448UL + 2395UL), (2235191825397909448UL + 2396UL), (2235191825397909448UL + 2397UL), (2235191825397909448UL + 2398UL), (2235191825397909448UL + 2399UL), (2235191825397909448UL + 2400UL), (2235191825397909448UL + 2402UL), (2235191825397909448UL + 2403UL), (2235191825397909448UL + 2407UL), (2235191825397909448UL + 2413UL), (2235191825397909448UL + 2414UL), (2235191825397909448UL + 2415UL), (2235191825397909448UL + 2416UL), (2235191825397909448UL + 2418UL), (2235191825397909448UL + 2419UL), (2235191825397909448UL + 2420UL), (2235191825397909448UL + 2867UL),
-                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (2235191825397909448UL + 2807UL), "readseqs", (unsigned)1, (2235191825397909448UL + 2852UL),
-                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)1, (2235191825397909448UL + 2807UL), "bots_error", (unsigned)1, (2235191825397909448UL + 3095UL),
-                           &____alias_loc_id_4, (unsigned)7, (unsigned)0, (unsigned)0, (2235191825397909448UL + 1UL), (2235191825397909448UL + 2UL), (2235191825397909448UL + 3UL), (2235191825397909448UL + 4UL), (2235191825397909448UL + 45UL), (2235191825397909448UL + 46UL), (2235191825397909448UL + 47UL),
-                           &____alias_loc_id_5, (unsigned)7, (unsigned)0, (unsigned)0, (2235191825397909448UL + 50UL), (2235191825397909448UL + 51UL), (2235191825397909448UL + 52UL), (2235191825397909448UL + 53UL), (2235191825397909448UL + 99UL), (2235191825397909448UL + 100UL), (2235191825397909448UL + 101UL),
-                           &____alias_loc_id_6, (unsigned)11, (unsigned)0, (unsigned)0, (2235191825397909448UL + 102UL), (2235191825397909448UL + 103UL), (2235191825397909448UL + 104UL), (2235191825397909448UL + 105UL), (2235191825397909448UL + 106UL), (2235191825397909448UL + 107UL), (2235191825397909448UL + 108UL), (2235191825397909448UL + 109UL), (2235191825397909448UL + 110UL), (2235191825397909448UL + 111UL), (2235191825397909448UL + 112UL),
-                           &____alias_loc_id_7, (unsigned)21, (unsigned)0, (unsigned)0, (2235191825397909448UL + 177UL), (2235191825397909448UL + 178UL), (2235191825397909448UL + 179UL), (2235191825397909448UL + 180UL), (2235191825397909448UL + 181UL), (2235191825397909448UL + 182UL), (2235191825397909448UL + 183UL), (2235191825397909448UL + 184UL), (2235191825397909448UL + 185UL), (2235191825397909448UL + 186UL), (2235191825397909448UL + 187UL), (2235191825397909448UL + 188UL), (2235191825397909448UL + 189UL), (2235191825397909448UL + 190UL), (2235191825397909448UL + 191UL), (2235191825397909448UL + 192UL), (2235191825397909448UL + 193UL), (2235191825397909448UL + 194UL), (2235191825397909448UL + 2867UL), (2235191825397909448UL + 3062UL), (2235191825397909448UL + 3073UL),
-                           &____alias_loc_id_8, (unsigned)20, (unsigned)0, (unsigned)0, (2235191825397909448UL + 601UL), (2235191825397909448UL + 602UL), (2235191825397909448UL + 603UL), (2235191825397909448UL + 604UL), (2235191825397909448UL + 605UL), (2235191825397909448UL + 606UL), (2235191825397909448UL + 607UL), (2235191825397909448UL + 608UL), (2235191825397909448UL + 609UL), (2235191825397909448UL + 610UL), (2235191825397909448UL + 611UL), (2235191825397909448UL + 612UL), (2235191825397909448UL + 613UL), (2235191825397909448UL + 614UL), (2235191825397909448UL + 615UL), (2235191825397909448UL + 616UL), (2235191825397909448UL + 617UL), (2235191825397909448UL + 820UL), (2235191825397909448UL + 821UL), (2235191825397909448UL + 822UL),
-                           &____alias_loc_id_9, (unsigned)22, (unsigned)0, (unsigned)0, (2235191825397909448UL + 825UL), (2235191825397909448UL + 826UL), (2235191825397909448UL + 827UL), (2235191825397909448UL + 828UL), (2235191825397909448UL + 829UL), (2235191825397909448UL + 830UL), (2235191825397909448UL + 831UL), (2235191825397909448UL + 832UL), (2235191825397909448UL + 833UL), (2235191825397909448UL + 834UL), (2235191825397909448UL + 835UL), (2235191825397909448UL + 836UL), (2235191825397909448UL + 837UL), (2235191825397909448UL + 838UL), (2235191825397909448UL + 839UL), (2235191825397909448UL + 840UL), (2235191825397909448UL + 841UL), (2235191825397909448UL + 842UL), (2235191825397909448UL + 843UL), (2235191825397909448UL + 844UL), (2235191825397909448UL + 1059UL), (2235191825397909448UL + 1060UL),
-                            &____alias_loc_id_10, (unsigned)36, (unsigned)0, (unsigned)0, (2235191825397909448UL + 1064UL), (2235191825397909448UL + 1065UL), (2235191825397909448UL + 1066UL), (2235191825397909448UL + 1067UL), (2235191825397909448UL + 1068UL), (2235191825397909448UL + 1069UL), (2235191825397909448UL + 1070UL), (2235191825397909448UL + 1071UL), (2235191825397909448UL + 1072UL), (2235191825397909448UL + 1073UL), (2235191825397909448UL + 1074UL), (2235191825397909448UL + 1075UL), (2235191825397909448UL + 1076UL), (2235191825397909448UL + 1077UL), (2235191825397909448UL + 1078UL), (2235191825397909448UL + 1079UL), (2235191825397909448UL + 1080UL), (2235191825397909448UL + 1081UL), (2235191825397909448UL + 1082UL), (2235191825397909448UL + 1083UL), (2235191825397909448UL + 1084UL), (2235191825397909448UL + 1085UL), (2235191825397909448UL + 1086UL), (2235191825397909448UL + 1087UL), (2235191825397909448UL + 1088UL), (2235191825397909448UL + 1089UL), (2235191825397909448UL + 1090UL), (2235191825397909448UL + 1091UL), (2235191825397909448UL + 1092UL), (2235191825397909448UL + 1093UL), (2235191825397909448UL + 1094UL), (2235191825397909448UL + 1095UL), (2235191825397909448UL + 1096UL), (2235191825397909448UL + 1855UL), (2235191825397909448UL + 1856UL), (2235191825397909448UL + 1857UL),
-                            &____alias_loc_id_11, (unsigned)16, (unsigned)0, (unsigned)0, (2235191825397909448UL + 1862UL), (2235191825397909448UL + 1863UL), (2235191825397909448UL + 1864UL), (2235191825397909448UL + 1865UL), (2235191825397909448UL + 1866UL), (2235191825397909448UL + 1867UL), (2235191825397909448UL + 1868UL), (2235191825397909448UL + 1869UL), (2235191825397909448UL + 1870UL), (2235191825397909448UL + 1871UL), (2235191825397909448UL + 1872UL), (2235191825397909448UL + 1873UL), (2235191825397909448UL + 1874UL), (2235191825397909448UL + 1875UL), (2235191825397909448UL + 1876UL), (2235191825397909448UL + 1877UL),
-                            &____alias_loc_id_12, (unsigned)10, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2017UL), (2235191825397909448UL + 2018UL), (2235191825397909448UL + 2019UL), (2235191825397909448UL + 2020UL), (2235191825397909448UL + 2021UL), (2235191825397909448UL + 2029UL), (2235191825397909448UL + 2032UL), (2235191825397909448UL + 2033UL), (2235191825397909448UL + 2034UL), (2235191825397909448UL + 2049UL),
-                            &____alias_loc_id_13, (unsigned)11, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2389UL), (2235191825397909448UL + 2390UL), (2235191825397909448UL + 2391UL), (2235191825397909448UL + 2392UL), (2235191825397909448UL + 2393UL), (2235191825397909448UL + 2397UL), (2235191825397909448UL + 2401UL), (2235191825397909448UL + 2404UL), (2235191825397909448UL + 2405UL), (2235191825397909448UL + 2406UL), (2235191825397909448UL + 2421UL),
-                            &____alias_loc_id_14, (unsigned)6, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2734UL), (2235191825397909448UL + 2735UL), (2235191825397909448UL + 2736UL), (2235191825397909448UL + 2737UL), (2235191825397909448UL + 3062UL), (2235191825397909448UL + 3074UL),
-                            &____alias_loc_id_15, (unsigned)3, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2808UL), (2235191825397909448UL + 3062UL), (2235191825397909448UL + 3077UL),
-                            &____alias_loc_id_16, (unsigned)4, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2857UL), (2235191825397909448UL + 2858UL), (2235191825397909448UL + 2867UL), (2235191825397909448UL + 3073UL),
-                            &____alias_loc_id_17, (unsigned)4, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2867UL), (2235191825397909448UL + 2906UL), (2235191825397909448UL + 2907UL), (2235191825397909448UL + 3073UL),
-                            &____alias_loc_id_18, (unsigned)2, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2964UL), (2235191825397909448UL + 2965UL),
-                            &____alias_loc_id_19, (unsigned)4, (unsigned)0, (unsigned)0, (2235191825397909448UL + 3003UL), (2235191825397909448UL + 3004UL), (2235191825397909448UL + 3005UL), (2235191825397909448UL + 3006UL),
-                            "align_verify", 0, "_Z12align_verifyv", "_Z16align_verify_npmv", 0, 0, 0UL, 1, "fprintf", 5, (2235191825397909448UL + 3026UL), (2235191825397909448UL + 3097UL), 0UL, 0UL, 0UL, 0UL,
+    init_module(4673255111730560025UL, 33, 18, 7, 20, 14, 2, 16, 25, 0, 1,
+                           &____alias_loc_id_0, (unsigned)25, (unsigned)0, (unsigned)0, (4673255111730560025UL + 2018UL), (4673255111730560025UL + 2019UL), (4673255111730560025UL + 2020UL), (4673255111730560025UL + 2021UL), (4673255111730560025UL + 2022UL), (4673255111730560025UL + 2023UL), (4673255111730560025UL + 2024UL), (4673255111730560025UL + 2025UL), (4673255111730560025UL + 2026UL), (4673255111730560025UL + 2027UL), (4673255111730560025UL + 2028UL), (4673255111730560025UL + 2029UL), (4673255111730560025UL + 2030UL), (4673255111730560025UL + 2031UL), (4673255111730560025UL + 2032UL), (4673255111730560025UL + 2033UL), (4673255111730560025UL + 2035UL), (4673255111730560025UL + 2041UL), (4673255111730560025UL + 2042UL), (4673255111730560025UL + 2043UL), (4673255111730560025UL + 2044UL), (4673255111730560025UL + 2046UL), (4673255111730560025UL + 2047UL), (4673255111730560025UL + 2048UL), (4673255111730560025UL + 2867UL),
+                           &____alias_loc_id_1, (unsigned)18, (unsigned)0, (unsigned)0, (4673255111730560025UL + 2394UL), (4673255111730560025UL + 2395UL), (4673255111730560025UL + 2396UL), (4673255111730560025UL + 2397UL), (4673255111730560025UL + 2398UL), (4673255111730560025UL + 2399UL), (4673255111730560025UL + 2400UL), (4673255111730560025UL + 2402UL), (4673255111730560025UL + 2403UL), (4673255111730560025UL + 2407UL), (4673255111730560025UL + 2413UL), (4673255111730560025UL + 2414UL), (4673255111730560025UL + 2415UL), (4673255111730560025UL + 2416UL), (4673255111730560025UL + 2418UL), (4673255111730560025UL + 2419UL), (4673255111730560025UL + 2420UL), (4673255111730560025UL + 2867UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (4673255111730560025UL + 2807UL), "readseqs", (unsigned)1, (4673255111730560025UL + 2852UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)1, (4673255111730560025UL + 2807UL), "bots_error", (unsigned)1, (4673255111730560025UL + 3095UL),
+                           &____alias_loc_id_4, (unsigned)7, (unsigned)0, (unsigned)0, (4673255111730560025UL + 1UL), (4673255111730560025UL + 2UL), (4673255111730560025UL + 3UL), (4673255111730560025UL + 4UL), (4673255111730560025UL + 45UL), (4673255111730560025UL + 46UL), (4673255111730560025UL + 47UL),
+                           &____alias_loc_id_5, (unsigned)7, (unsigned)0, (unsigned)0, (4673255111730560025UL + 50UL), (4673255111730560025UL + 51UL), (4673255111730560025UL + 52UL), (4673255111730560025UL + 53UL), (4673255111730560025UL + 99UL), (4673255111730560025UL + 100UL), (4673255111730560025UL + 101UL),
+                           &____alias_loc_id_6, (unsigned)11, (unsigned)0, (unsigned)0, (4673255111730560025UL + 102UL), (4673255111730560025UL + 103UL), (4673255111730560025UL + 104UL), (4673255111730560025UL + 105UL), (4673255111730560025UL + 106UL), (4673255111730560025UL + 107UL), (4673255111730560025UL + 108UL), (4673255111730560025UL + 109UL), (4673255111730560025UL + 110UL), (4673255111730560025UL + 111UL), (4673255111730560025UL + 112UL),
+                           &____alias_loc_id_7, (unsigned)21, (unsigned)0, (unsigned)0, (4673255111730560025UL + 177UL), (4673255111730560025UL + 178UL), (4673255111730560025UL + 179UL), (4673255111730560025UL + 180UL), (4673255111730560025UL + 181UL), (4673255111730560025UL + 182UL), (4673255111730560025UL + 183UL), (4673255111730560025UL + 184UL), (4673255111730560025UL + 185UL), (4673255111730560025UL + 186UL), (4673255111730560025UL + 187UL), (4673255111730560025UL + 188UL), (4673255111730560025UL + 189UL), (4673255111730560025UL + 190UL), (4673255111730560025UL + 191UL), (4673255111730560025UL + 192UL), (4673255111730560025UL + 193UL), (4673255111730560025UL + 194UL), (4673255111730560025UL + 2867UL), (4673255111730560025UL + 3062UL), (4673255111730560025UL + 3073UL),
+                           &____alias_loc_id_8, (unsigned)20, (unsigned)0, (unsigned)0, (4673255111730560025UL + 601UL), (4673255111730560025UL + 602UL), (4673255111730560025UL + 603UL), (4673255111730560025UL + 604UL), (4673255111730560025UL + 605UL), (4673255111730560025UL + 606UL), (4673255111730560025UL + 607UL), (4673255111730560025UL + 608UL), (4673255111730560025UL + 609UL), (4673255111730560025UL + 610UL), (4673255111730560025UL + 611UL), (4673255111730560025UL + 612UL), (4673255111730560025UL + 613UL), (4673255111730560025UL + 614UL), (4673255111730560025UL + 615UL), (4673255111730560025UL + 616UL), (4673255111730560025UL + 617UL), (4673255111730560025UL + 820UL), (4673255111730560025UL + 821UL), (4673255111730560025UL + 822UL),
+                           &____alias_loc_id_9, (unsigned)22, (unsigned)0, (unsigned)0, (4673255111730560025UL + 825UL), (4673255111730560025UL + 826UL), (4673255111730560025UL + 827UL), (4673255111730560025UL + 828UL), (4673255111730560025UL + 829UL), (4673255111730560025UL + 830UL), (4673255111730560025UL + 831UL), (4673255111730560025UL + 832UL), (4673255111730560025UL + 833UL), (4673255111730560025UL + 834UL), (4673255111730560025UL + 835UL), (4673255111730560025UL + 836UL), (4673255111730560025UL + 837UL), (4673255111730560025UL + 838UL), (4673255111730560025UL + 839UL), (4673255111730560025UL + 840UL), (4673255111730560025UL + 841UL), (4673255111730560025UL + 842UL), (4673255111730560025UL + 843UL), (4673255111730560025UL + 844UL), (4673255111730560025UL + 1059UL), (4673255111730560025UL + 1060UL),
+                            &____alias_loc_id_10, (unsigned)36, (unsigned)0, (unsigned)0, (4673255111730560025UL + 1064UL), (4673255111730560025UL + 1065UL), (4673255111730560025UL + 1066UL), (4673255111730560025UL + 1067UL), (4673255111730560025UL + 1068UL), (4673255111730560025UL + 1069UL), (4673255111730560025UL + 1070UL), (4673255111730560025UL + 1071UL), (4673255111730560025UL + 1072UL), (4673255111730560025UL + 1073UL), (4673255111730560025UL + 1074UL), (4673255111730560025UL + 1075UL), (4673255111730560025UL + 1076UL), (4673255111730560025UL + 1077UL), (4673255111730560025UL + 1078UL), (4673255111730560025UL + 1079UL), (4673255111730560025UL + 1080UL), (4673255111730560025UL + 1081UL), (4673255111730560025UL + 1082UL), (4673255111730560025UL + 1083UL), (4673255111730560025UL + 1084UL), (4673255111730560025UL + 1085UL), (4673255111730560025UL + 1086UL), (4673255111730560025UL + 1087UL), (4673255111730560025UL + 1088UL), (4673255111730560025UL + 1089UL), (4673255111730560025UL + 1090UL), (4673255111730560025UL + 1091UL), (4673255111730560025UL + 1092UL), (4673255111730560025UL + 1093UL), (4673255111730560025UL + 1094UL), (4673255111730560025UL + 1095UL), (4673255111730560025UL + 1096UL), (4673255111730560025UL + 1855UL), (4673255111730560025UL + 1856UL), (4673255111730560025UL + 1857UL),
+                            &____alias_loc_id_11, (unsigned)16, (unsigned)0, (unsigned)0, (4673255111730560025UL + 1862UL), (4673255111730560025UL + 1863UL), (4673255111730560025UL + 1864UL), (4673255111730560025UL + 1865UL), (4673255111730560025UL + 1866UL), (4673255111730560025UL + 1867UL), (4673255111730560025UL + 1868UL), (4673255111730560025UL + 1869UL), (4673255111730560025UL + 1870UL), (4673255111730560025UL + 1871UL), (4673255111730560025UL + 1872UL), (4673255111730560025UL + 1873UL), (4673255111730560025UL + 1874UL), (4673255111730560025UL + 1875UL), (4673255111730560025UL + 1876UL), (4673255111730560025UL + 1877UL),
+                            &____alias_loc_id_12, (unsigned)10, (unsigned)0, (unsigned)0, (4673255111730560025UL + 2017UL), (4673255111730560025UL + 2018UL), (4673255111730560025UL + 2019UL), (4673255111730560025UL + 2020UL), (4673255111730560025UL + 2021UL), (4673255111730560025UL + 2029UL), (4673255111730560025UL + 2032UL), (4673255111730560025UL + 2033UL), (4673255111730560025UL + 2034UL), (4673255111730560025UL + 2049UL),
+                            &____alias_loc_id_13, (unsigned)11, (unsigned)0, (unsigned)0, (4673255111730560025UL + 2389UL), (4673255111730560025UL + 2390UL), (4673255111730560025UL + 2391UL), (4673255111730560025UL + 2392UL), (4673255111730560025UL + 2393UL), (4673255111730560025UL + 2397UL), (4673255111730560025UL + 2401UL), (4673255111730560025UL + 2404UL), (4673255111730560025UL + 2405UL), (4673255111730560025UL + 2406UL), (4673255111730560025UL + 2421UL),
+                            &____alias_loc_id_14, (unsigned)6, (unsigned)0, (unsigned)0, (4673255111730560025UL + 2734UL), (4673255111730560025UL + 2735UL), (4673255111730560025UL + 2736UL), (4673255111730560025UL + 2737UL), (4673255111730560025UL + 3062UL), (4673255111730560025UL + 3074UL),
+                            &____alias_loc_id_15, (unsigned)3, (unsigned)0, (unsigned)0, (4673255111730560025UL + 2808UL), (4673255111730560025UL + 3062UL), (4673255111730560025UL + 3077UL),
+                            &____alias_loc_id_16, (unsigned)4, (unsigned)0, (unsigned)0, (4673255111730560025UL + 2857UL), (4673255111730560025UL + 2858UL), (4673255111730560025UL + 2867UL), (4673255111730560025UL + 3073UL),
+                            &____alias_loc_id_17, (unsigned)4, (unsigned)0, (unsigned)0, (4673255111730560025UL + 2867UL), (4673255111730560025UL + 2906UL), (4673255111730560025UL + 2907UL), (4673255111730560025UL + 3073UL),
+                            &____alias_loc_id_18, (unsigned)2, (unsigned)0, (unsigned)0, (4673255111730560025UL + 2964UL), (4673255111730560025UL + 2965UL),
+                            &____alias_loc_id_19, (unsigned)4, (unsigned)0, (unsigned)0, (4673255111730560025UL + 3003UL), (4673255111730560025UL + 3004UL), (4673255111730560025UL + 3005UL), (4673255111730560025UL + 3006UL),
+                            "align_verify", 0, "_Z12align_verifyv", "_Z16align_verify_npmv", 0, 0, 0UL, 1, "fprintf", 5, (4673255111730560025UL + 3026UL), (4673255111730560025UL + 3097UL), 0UL, 0UL, 0UL, 0UL,
                             "calc_score", 0, "_Z10calc_scoreiiiiii", "_Z14calc_score_npmiiiiii", 0, 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0,
                             "align_end", 0, "_Z9align_endv", "_Z13align_end_npmv", 0, 0, 0UL, 0,
-                            "align_seq_init", 0, "_Z14align_seq_initv", "_Z18align_seq_init_npmv", 0, 0, 0UL, 2, "malloc", 1, 0UL, (2235191825397909448UL + 2867UL), "malloc", 1, 0UL, (2235191825397909448UL + 2867UL),
-                            "align_init", 0, "_Z10align_initv", "_Z14align_init_npmv", 0, 0, 0UL, 1, "malloc", 1, 0UL, (2235191825397909448UL + 2867UL),
-                            "forward_pass", 0, "_Z12forward_passPcS_iiPiS0_S0_ii", "_Z16forward_pass_npmPcS_iiPiS0_S0_ii", 0, 9, (2235191825397909448UL + 816UL), (2235191825397909448UL + 817UL), 0UL, 0UL, (2235191825397909448UL + 820UL), (2235191825397909448UL + 821UL), (2235191825397909448UL + 822UL), 0UL, 0UL, 0UL, 0,
-                            "add", 0, "_Z3addiPiS_S_", "_Z7add_npmiPiS_S_", 0, 4, 0UL, (2235191825397909448UL + 99UL), (2235191825397909448UL + 100UL), (2235191825397909448UL + 101UL), 0UL, 0,
-                            "del", 0, "_Z3deliPiS_S_", "_Z7del_npmiPiS_S_", 0, 4, 0UL, (2235191825397909448UL + 45UL), (2235191825397909448UL + 46UL), (2235191825397909448UL + 47UL), 0UL, 0,
-                            "init_matrix", 0, "_Z11init_matrixv", "_Z15init_matrix_npmv", 0, 0, 0UL, 1, "strlen", 1, (2235191825397909448UL + 2744UL), 0UL,
-                            "reverse_pass", 0, "_Z12reverse_passPcS_iiPiS0_iii", "_Z16reverse_pass_npmPcS_iiPiS0_iii", 0, 9, (2235191825397909448UL + 1055UL), (2235191825397909448UL + 1056UL), 0UL, 0UL, (2235191825397909448UL + 1059UL), (2235191825397909448UL + 1060UL), 0UL, 0UL, 0UL, 0UL, 0,
-                            "diff", 0, "_Z4diffiiiiiiPiS_S_iiii", "_Z8diff_npmiiiiiiPiS_S_iiii", 0, 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (2235191825397909448UL + 1855UL), (2235191825397909448UL + 1856UL), (2235191825397909448UL + 1857UL), 0UL, 0UL, 0UL, 0UL, 0UL, 14, "del", 4, 0UL, (2235191825397909448UL + 1855UL), (2235191825397909448UL + 1856UL), (2235191825397909448UL + 1857UL), 0UL, "add", 4, 0UL, (2235191825397909448UL + 1855UL), (2235191825397909448UL + 1856UL), (2235191825397909448UL + 1857UL), 0UL, "calc_score", 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "del", 4, 0UL, (2235191825397909448UL + 1855UL), (2235191825397909448UL + 1856UL), (2235191825397909448UL + 1857UL), 0UL, "add", 4, 0UL, (2235191825397909448UL + 1855UL), (2235191825397909448UL + 1856UL), (2235191825397909448UL + 1857UL), 0UL, "add", 4, 0UL, (2235191825397909448UL + 1855UL), (2235191825397909448UL + 1856UL), (2235191825397909448UL + 1857UL), 0UL, "add", 4, 0UL, (2235191825397909448UL + 1855UL), (2235191825397909448UL + 1856UL), (2235191825397909448UL + 1857UL), 0UL, "calc_score", 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "calc_score", 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "diff", 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (2235191825397909448UL + 1855UL), (2235191825397909448UL + 1856UL), (2235191825397909448UL + 1857UL), 0UL, 0UL, 0UL, 0UL, 0UL, "diff", 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (2235191825397909448UL + 1855UL), (2235191825397909448UL + 1856UL), (2235191825397909448UL + 1857UL), 0UL, 0UL, 0UL, 0UL, 0UL, "diff", 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (2235191825397909448UL + 1855UL), (2235191825397909448UL + 1856UL), (2235191825397909448UL + 1857UL), 0UL, 0UL, 0UL, 0UL, 0UL, "del", 4, 0UL, (2235191825397909448UL + 1855UL), (2235191825397909448UL + 1856UL), (2235191825397909448UL + 1857UL), 0UL, "diff", 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (2235191825397909448UL + 1855UL), (2235191825397909448UL + 1856UL), (2235191825397909448UL + 1857UL), 0UL, 0UL, 0UL, 0UL, 0UL,
-                            "get_matrix", 0, "_Z10get_matrixPiS_i", "_Z14get_matrix_npmPiS_i", 0, 3, (2235191825397909448UL + 597UL), (2235191825397909448UL + 598UL), 0UL, 0UL, 1, "malloc", 1, 0UL, (2235191825397909448UL + 2867UL),
-                            "pairalign_init", 0, "_Z14pairalign_initPc", "_Z18pairalign_init_npmPc", 2, &____alias_loc_id_2, &____alias_loc_id_3, 1, (2235191825397909448UL + 2852UL), 0UL, 4, "bots_error", 2, 0UL, (2235191825397909448UL + 3095UL), 0UL, "init_matrix", 0, 0UL, "readseqs", 2, 0UL, (2235191825397909448UL + 2852UL), 0UL, "fprintf", 3, (2235191825397909448UL + 3026UL), (2235191825397909448UL + 3096UL), 0UL, 0UL,
-                            "tracepath", 0, "_Z9tracepathiiPiS_S_ii", "_Z13tracepath_npmiiPiS_S_ii", 0, 7, 0UL, 0UL, (2235191825397909448UL + 2012UL), (2235191825397909448UL + 2013UL), (2235191825397909448UL + 2014UL), 0UL, 0UL, 0UL, 0,
+                            "align_seq_init", 0, "_Z14align_seq_initv", "_Z18align_seq_init_npmv", 0, 0, 0UL, 2, "malloc", 1, 0UL, (4673255111730560025UL + 2867UL), "malloc", 1, 0UL, (4673255111730560025UL + 2867UL),
+                            "align_init", 0, "_Z10align_initv", "_Z14align_init_npmv", 0, 0, 0UL, 1, "malloc", 1, 0UL, (4673255111730560025UL + 2867UL),
+                            "forward_pass", 0, "_Z12forward_passPcS_iiPiS0_S0_ii", "_Z16forward_pass_npmPcS_iiPiS0_S0_ii", 0, 9, (4673255111730560025UL + 816UL), (4673255111730560025UL + 817UL), 0UL, 0UL, (4673255111730560025UL + 820UL), (4673255111730560025UL + 821UL), (4673255111730560025UL + 822UL), 0UL, 0UL, 0UL, 0,
+                            "add", 0, "_Z3addiPiS_S_", "_Z7add_npmiPiS_S_", 0, 4, 0UL, (4673255111730560025UL + 99UL), (4673255111730560025UL + 100UL), (4673255111730560025UL + 101UL), 0UL, 0,
+                            "del", 0, "_Z3deliPiS_S_", "_Z7del_npmiPiS_S_", 0, 4, 0UL, (4673255111730560025UL + 45UL), (4673255111730560025UL + 46UL), (4673255111730560025UL + 47UL), 0UL, 0,
+                            "init_matrix", 0, "_Z11init_matrixv", "_Z15init_matrix_npmv", 0, 0, 0UL, 1, "strlen", 1, (4673255111730560025UL + 2744UL), 0UL,
+                            "reverse_pass", 0, "_Z12reverse_passPcS_iiPiS0_iii", "_Z16reverse_pass_npmPcS_iiPiS0_iii", 0, 9, (4673255111730560025UL + 1055UL), (4673255111730560025UL + 1056UL), 0UL, 0UL, (4673255111730560025UL + 1059UL), (4673255111730560025UL + 1060UL), 0UL, 0UL, 0UL, 0UL, 0,
+                            "diff", 0, "_Z4diffiiiiiiPiS_S_iiii", "_Z8diff_npmiiiiiiPiS_S_iiii", 0, 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (4673255111730560025UL + 1855UL), (4673255111730560025UL + 1856UL), (4673255111730560025UL + 1857UL), 0UL, 0UL, 0UL, 0UL, 0UL, 14, "del", 4, 0UL, (4673255111730560025UL + 1855UL), (4673255111730560025UL + 1856UL), (4673255111730560025UL + 1857UL), 0UL, "add", 4, 0UL, (4673255111730560025UL + 1855UL), (4673255111730560025UL + 1856UL), (4673255111730560025UL + 1857UL), 0UL, "calc_score", 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "del", 4, 0UL, (4673255111730560025UL + 1855UL), (4673255111730560025UL + 1856UL), (4673255111730560025UL + 1857UL), 0UL, "add", 4, 0UL, (4673255111730560025UL + 1855UL), (4673255111730560025UL + 1856UL), (4673255111730560025UL + 1857UL), 0UL, "add", 4, 0UL, (4673255111730560025UL + 1855UL), (4673255111730560025UL + 1856UL), (4673255111730560025UL + 1857UL), 0UL, "add", 4, 0UL, (4673255111730560025UL + 1855UL), (4673255111730560025UL + 1856UL), (4673255111730560025UL + 1857UL), 0UL, "calc_score", 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "calc_score", 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "diff", 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (4673255111730560025UL + 1855UL), (4673255111730560025UL + 1856UL), (4673255111730560025UL + 1857UL), 0UL, 0UL, 0UL, 0UL, 0UL, "diff", 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (4673255111730560025UL + 1855UL), (4673255111730560025UL + 1856UL), (4673255111730560025UL + 1857UL), 0UL, 0UL, 0UL, 0UL, 0UL, "diff", 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (4673255111730560025UL + 1855UL), (4673255111730560025UL + 1856UL), (4673255111730560025UL + 1857UL), 0UL, 0UL, 0UL, 0UL, 0UL, "del", 4, 0UL, (4673255111730560025UL + 1855UL), (4673255111730560025UL + 1856UL), (4673255111730560025UL + 1857UL), 0UL, "diff", 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (4673255111730560025UL + 1855UL), (4673255111730560025UL + 1856UL), (4673255111730560025UL + 1857UL), 0UL, 0UL, 0UL, 0UL, 0UL,
+                            "get_matrix", 0, "_Z10get_matrixPiS_i", "_Z14get_matrix_npmPiS_i", 0, 3, (4673255111730560025UL + 597UL), (4673255111730560025UL + 598UL), 0UL, 0UL, 1, "malloc", 1, 0UL, (4673255111730560025UL + 2867UL),
+                            "pairalign_init", 0, "_Z14pairalign_initPc", "_Z18pairalign_init_npmPc", 2, &____alias_loc_id_2, &____alias_loc_id_3, 1, (4673255111730560025UL + 2852UL), 0UL, 4, "bots_error", 2, 0UL, (4673255111730560025UL + 3095UL), 0UL, "init_matrix", 0, 0UL, "readseqs", 2, 0UL, (4673255111730560025UL + 2852UL), 0UL, "fprintf", 3, (4673255111730560025UL + 3026UL), (4673255111730560025UL + 3096UL), 0UL, 0UL,
+                            "tracepath", 0, "_Z9tracepathiiPiS_S_ii", "_Z13tracepath_npmiiPiS_S_ii", 0, 7, 0UL, 0UL, (4673255111730560025UL + 2012UL), (4673255111730560025UL + 2013UL), (4673255111730560025UL + 2014UL), 0UL, 0UL, 0UL, 0,
                                "bots_error", (void **)&(____chimes_extern_func_bots_error),
                                "readseqs", (void **)&(____chimes_extern_func_readseqs),
                            "align_verify", &(____chimes_does_checkpoint_align_verify_npm),
@@ -6872,39 +6872,39 @@ static int module_init() {
                            "tracepath", &(____chimes_does_checkpoint_tracepath_npm),
                            "bots_error", &(____chimes_does_checkpoint_bots_error_npm),
                            "readseqs", &(____chimes_does_checkpoint_readseqs_npm),
-                             (2235191825397909448UL + 605UL), (2235191825397909448UL + 820UL),
-                             (2235191825397909448UL + 607UL), (2235191825397909448UL + 822UL),
-                             (2235191825397909448UL + 606UL), (2235191825397909448UL + 821UL),
-                             (2235191825397909448UL + 601UL), (2235191825397909448UL + 816UL),
-                             (2235191825397909448UL + 602UL), (2235191825397909448UL + 817UL),
-                             (2235191825397909448UL + 178UL), (2235191825397909448UL + 598UL),
-                             (2235191825397909448UL + 177UL), (2235191825397909448UL + 597UL),
-                             (2235191825397909448UL + 2807UL), (2235191825397909448UL + 2852UL),
-                             (2235191825397909448UL + 830UL), (2235191825397909448UL + 1060UL),
-                             (2235191825397909448UL + 1072UL), (2235191825397909448UL + 1856UL),
-                             (2235191825397909448UL + 1073UL), (2235191825397909448UL + 1857UL),
-                             (2235191825397909448UL + 1071UL), (2235191825397909448UL + 1855UL),
-                             (2235191825397909448UL + 3UL), (2235191825397909448UL + 46UL),
-                             (2235191825397909448UL + 2UL), (2235191825397909448UL + 45UL),
-                             (2235191825397909448UL + 2033UL), (2235191825397909448UL + 3061UL),
-                             (2235191825397909448UL + 4UL), (2235191825397909448UL + 47UL),
-                             (2235191825397909448UL + 3085UL), (2235191825397909448UL + 141UL),
-                             (2235191825397909448UL + 2032UL), (2235191825397909448UL + 3074UL),
-                             (2235191825397909448UL + 141UL), (2235191825397909448UL + 143UL),
-                             (2235191825397909448UL + 2405UL), (2235191825397909448UL + 3061UL),
-                             (2235191825397909448UL + 3073UL), (2235191825397909448UL + 2867UL),
-                             (2235191825397909448UL + 1865UL), (2235191825397909448UL + 2013UL),
-                             (2235191825397909448UL + 1864UL), (2235191825397909448UL + 2012UL),
-                             (2235191825397909448UL + 3058UL), (2235191825397909448UL + 2744UL),
-                             (2235191825397909448UL + 1866UL), (2235191825397909448UL + 2014UL),
-                             (2235191825397909448UL + 2404UL), (2235191825397909448UL + 3074UL),
-                             (2235191825397909448UL + 51UL), (2235191825397909448UL + 99UL),
-                             (2235191825397909448UL + 53UL), (2235191825397909448UL + 101UL),
-                             (2235191825397909448UL + 52UL), (2235191825397909448UL + 100UL),
-                             (2235191825397909448UL + 3090UL), (2235191825397909448UL + 3026UL),
-                             (2235191825397909448UL + 829UL), (2235191825397909448UL + 1059UL),
-                             (2235191825397909448UL + 825UL), (2235191825397909448UL + 1055UL),
-                             (2235191825397909448UL + 826UL), (2235191825397909448UL + 1056UL),
+                             (4673255111730560025UL + 605UL), (4673255111730560025UL + 820UL),
+                             (4673255111730560025UL + 607UL), (4673255111730560025UL + 822UL),
+                             (4673255111730560025UL + 606UL), (4673255111730560025UL + 821UL),
+                             (4673255111730560025UL + 601UL), (4673255111730560025UL + 816UL),
+                             (4673255111730560025UL + 602UL), (4673255111730560025UL + 817UL),
+                             (4673255111730560025UL + 178UL), (4673255111730560025UL + 598UL),
+                             (4673255111730560025UL + 177UL), (4673255111730560025UL + 597UL),
+                             (4673255111730560025UL + 2807UL), (4673255111730560025UL + 2852UL),
+                             (4673255111730560025UL + 830UL), (4673255111730560025UL + 1060UL),
+                             (4673255111730560025UL + 1072UL), (4673255111730560025UL + 1856UL),
+                             (4673255111730560025UL + 1073UL), (4673255111730560025UL + 1857UL),
+                             (4673255111730560025UL + 1071UL), (4673255111730560025UL + 1855UL),
+                             (4673255111730560025UL + 3UL), (4673255111730560025UL + 46UL),
+                             (4673255111730560025UL + 2UL), (4673255111730560025UL + 45UL),
+                             (4673255111730560025UL + 2033UL), (4673255111730560025UL + 3061UL),
+                             (4673255111730560025UL + 4UL), (4673255111730560025UL + 47UL),
+                             (4673255111730560025UL + 3085UL), (4673255111730560025UL + 141UL),
+                             (4673255111730560025UL + 2032UL), (4673255111730560025UL + 3074UL),
+                             (4673255111730560025UL + 141UL), (4673255111730560025UL + 143UL),
+                             (4673255111730560025UL + 2405UL), (4673255111730560025UL + 3061UL),
+                             (4673255111730560025UL + 3073UL), (4673255111730560025UL + 2867UL),
+                             (4673255111730560025UL + 1865UL), (4673255111730560025UL + 2013UL),
+                             (4673255111730560025UL + 1864UL), (4673255111730560025UL + 2012UL),
+                             (4673255111730560025UL + 3058UL), (4673255111730560025UL + 2744UL),
+                             (4673255111730560025UL + 1866UL), (4673255111730560025UL + 2014UL),
+                             (4673255111730560025UL + 2404UL), (4673255111730560025UL + 3074UL),
+                             (4673255111730560025UL + 51UL), (4673255111730560025UL + 99UL),
+                             (4673255111730560025UL + 53UL), (4673255111730560025UL + 101UL),
+                             (4673255111730560025UL + 52UL), (4673255111730560025UL + 100UL),
+                             (4673255111730560025UL + 3090UL), (4673255111730560025UL + 3026UL),
+                             (4673255111730560025UL + 829UL), (4673255111730560025UL + 1059UL),
+                             (4673255111730560025UL + 825UL), (4673255111730560025UL + 1055UL),
+                             (4673255111730560025UL + 826UL), (4673255111730560025UL + 1056UL),
                      "bots_verbose_mode_t", 32UL, 0,
                              "align_verify", "_Z12align_verifyv", 0, 0,
                              "pairalign", "_Z9pairaligniiii", 0, 6, "get_matrix", "forward_pass", "reverse_pass", "diff", "tracepath", "checkpoint",
@@ -6931,33 +6931,33 @@ static int module_init() {
                         "pairalign_seq|sb1|0", 1, "pairalign_seq",
                         "pairalign_seq|displ|0", 1, "pairalign_seq",
                         "pairalign_init|filename|0", 1, "bots_error",
-        "del", 0UL, (int)4, 0UL, 2235191825397911303UL, 2235191825397911304UL, 2235191825397911305UL,
-        "add", 0UL, (int)4, 0UL, 2235191825397911303UL, 2235191825397911304UL, 2235191825397911305UL,
+        "del", 0UL, (int)4, 0UL, 4673255111730561880UL, 4673255111730561881UL, 4673255111730561882UL,
+        "add", 0UL, (int)4, 0UL, 4673255111730561880UL, 4673255111730561881UL, 4673255111730561882UL,
         "calc_score", 0UL, (int)6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-        "del", 0UL, (int)4, 0UL, 2235191825397911303UL, 2235191825397911304UL, 2235191825397911305UL,
-        "add", 0UL, (int)4, 0UL, 2235191825397911303UL, 2235191825397911304UL, 2235191825397911305UL,
-        "add", 0UL, (int)4, 0UL, 2235191825397911303UL, 2235191825397911304UL, 2235191825397911305UL,
-        "add", 0UL, (int)4, 0UL, 2235191825397911303UL, 2235191825397911304UL, 2235191825397911305UL,
+        "del", 0UL, (int)4, 0UL, 4673255111730561880UL, 4673255111730561881UL, 4673255111730561882UL,
+        "add", 0UL, (int)4, 0UL, 4673255111730561880UL, 4673255111730561881UL, 4673255111730561882UL,
+        "add", 0UL, (int)4, 0UL, 4673255111730561880UL, 4673255111730561881UL, 4673255111730561882UL,
+        "add", 0UL, (int)4, 0UL, 4673255111730561880UL, 4673255111730561881UL, 4673255111730561882UL,
         "calc_score", 0UL, (int)6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
         "calc_score", 0UL, (int)6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2235191825397911303UL, 2235191825397911304UL, 2235191825397911305UL, 0UL, 0UL, 0UL, 0UL,
-        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2235191825397911303UL, 2235191825397911304UL, 2235191825397911305UL, 0UL, 0UL, 0UL, 0UL,
-        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2235191825397911303UL, 2235191825397911304UL, 2235191825397911305UL, 0UL, 0UL, 0UL, 0UL,
-        "del", 0UL, (int)4, 0UL, 2235191825397911303UL, 2235191825397911304UL, 2235191825397911305UL,
-        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2235191825397911303UL, 2235191825397911304UL, 2235191825397911305UL, 0UL, 0UL, 0UL, 0UL,
-        "get_matrix", 0UL, (int)3, 2235191825397912509UL, 2235191825397912522UL, 0UL,
-        "forward_pass", 0UL, (int)9, 2235191825397909591UL, 2235191825397909591UL, 0UL, 0UL, 2235191825397911484UL, 2235191825397911485UL, 2235191825397911488UL, 0UL, 0UL,
-        "reverse_pass", 0UL, (int)9, 2235191825397909591UL, 2235191825397909591UL, 0UL, 0UL, 2235191825397911486UL, 2235191825397911487UL, 0UL, 0UL, 0UL,
-        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2235191825397911494UL, 2235191825397911495UL, 2235191825397911493UL, 0UL, 0UL, 0UL, 0UL,
-        "tracepath", 0UL, (int)7, 0UL, 0UL, 2235191825397911494UL, 2235191825397911495UL, 2235191825397911493UL, 0UL, 0UL,
-        "get_matrix", 0UL, (int)3, 2235191825397912509UL, 2235191825397912522UL, 0UL,
-        "forward_pass", 0UL, (int)9, 2235191825397909591UL, 2235191825397909591UL, 0UL, 0UL, 2235191825397911856UL, 2235191825397911857UL, 2235191825397911860UL, 0UL, 0UL,
-        "reverse_pass", 0UL, (int)9, 2235191825397909591UL, 2235191825397909591UL, 0UL, 0UL, 2235191825397911858UL, 2235191825397911859UL, 0UL, 0UL, 0UL,
-        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2235191825397911866UL, 2235191825397911867UL, 2235191825397911865UL, 0UL, 0UL, 0UL, 0UL,
-        "tracepath", 0UL, (int)7, 0UL, 0UL, 2235191825397911866UL, 2235191825397911867UL, 2235191825397911865UL, 0UL, 0UL,
+        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4673255111730561880UL, 4673255111730561881UL, 4673255111730561882UL, 0UL, 0UL, 0UL, 0UL,
+        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4673255111730561880UL, 4673255111730561881UL, 4673255111730561882UL, 0UL, 0UL, 0UL, 0UL,
+        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4673255111730561880UL, 4673255111730561881UL, 4673255111730561882UL, 0UL, 0UL, 0UL, 0UL,
+        "del", 0UL, (int)4, 0UL, 4673255111730561880UL, 4673255111730561881UL, 4673255111730561882UL,
+        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4673255111730561880UL, 4673255111730561881UL, 4673255111730561882UL, 0UL, 0UL, 0UL, 0UL,
+        "get_matrix", 0UL, (int)3, 4673255111730563086UL, 4673255111730563099UL, 0UL,
+        "forward_pass", 0UL, (int)9, 4673255111730560168UL, 4673255111730560168UL, 0UL, 0UL, 4673255111730562061UL, 4673255111730562062UL, 4673255111730562065UL, 0UL, 0UL,
+        "reverse_pass", 0UL, (int)9, 4673255111730560168UL, 4673255111730560168UL, 0UL, 0UL, 4673255111730562063UL, 4673255111730562064UL, 0UL, 0UL, 0UL,
+        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4673255111730562071UL, 4673255111730562072UL, 4673255111730562070UL, 0UL, 0UL, 0UL, 0UL,
+        "tracepath", 0UL, (int)7, 0UL, 0UL, 4673255111730562071UL, 4673255111730562072UL, 4673255111730562070UL, 0UL, 0UL,
+        "get_matrix", 0UL, (int)3, 4673255111730563086UL, 4673255111730563099UL, 0UL,
+        "forward_pass", 0UL, (int)9, 4673255111730560168UL, 4673255111730560168UL, 0UL, 0UL, 4673255111730562433UL, 4673255111730562434UL, 4673255111730562437UL, 0UL, 0UL,
+        "reverse_pass", 0UL, (int)9, 4673255111730560168UL, 4673255111730560168UL, 0UL, 0UL, 4673255111730562435UL, 4673255111730562436UL, 0UL, 0UL, 0UL,
+        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4673255111730562443UL, 4673255111730562444UL, 4673255111730562442UL, 0UL, 0UL, 0UL, 0UL,
+        "tracepath", 0UL, (int)7, 0UL, 0UL, 4673255111730562443UL, 4673255111730562444UL, 4673255111730562442UL, 0UL, 0UL,
         "init_matrix", 0UL, (int)0);
-    register_global_var("global|amino_acid_order", "i8*", (void *)(&amino_acid_order), 8, 1, 0, (2235191825397909448UL + 3058UL), 0);
-    register_global_var("global|amino_acid_codes", "i8*", (void *)(&amino_acid_codes), 8, 1, 0, (2235191825397909448UL + 3058UL), 0);
+    register_global_var("global|amino_acid_order", "i8*", (void *)(&amino_acid_order), 8, 1, 0, (4673255111730560025UL + 3058UL), 0);
+    register_global_var("global|amino_acid_codes", "i8*", (void *)(&amino_acid_codes), 8, 1, 0, (4673255111730560025UL + 3058UL), 0);
     register_global_var("global|gon250mt", "[276 x i32]", (void *)(&gon250mt), 1104, 0, 0, 0UL, 0);
     register_global_var("global|ktup", "i32", (void *)(&ktup), 4, 0, 0, 0UL, 0);
     register_global_var("global|window", "i32", (void *)(&window), 4, 0, 0, 0UL, 0);
@@ -6970,10 +6970,10 @@ static int module_init() {
     register_global_var("global|mat_avscore", "i32", (void *)(&mat_avscore), 4, 0, 0, 0UL, 0);
     register_global_var("global|nseqs", "i32", (void *)(&nseqs), 4, 0, 0, 0UL, 0);
     register_global_var("global|max_aa", "i32", (void *)(&max_aa), 4, 0, 0, 0UL, 0);
-    register_global_var("global|seqlen_array", "i32*", (void *)(&seqlen_array), 8, 1, 0, (2235191825397909448UL + 3073UL), 0);
+    register_global_var("global|seqlen_array", "i32*", (void *)(&seqlen_array), 8, 1, 0, (4673255111730560025UL + 3073UL), 0);
     register_global_var("global|def_aa_xref", "[33 x i32]", (void *)(&def_aa_xref), 132, 0, 0, 0UL, 0);
-    register_global_var("global|bench_output", "i32*", (void *)(&bench_output), 8, 1, 0, (2235191825397909448UL + 3073UL), 0);
-    register_global_var("global|seq_output", "i32*", (void *)(&seq_output), 8, 1, 0, (2235191825397909448UL + 3073UL), 0);
+    register_global_var("global|bench_output", "i32*", (void *)(&bench_output), 8, 1, 0, (4673255111730560025UL + 3073UL), 0);
+    register_global_var("global|seq_output", "i32*", (void *)(&seq_output), 8, 1, 0, (4673255111730560025UL + 3073UL), 0);
     register_global_var("global|gap_open", "double", (void *)(&gap_open), 8, 0, 0, 0UL, 0);
     register_global_var("global|gap_extend", "double", (void *)(&gap_extend), 8, 0, 0, 0UL, 0);
     register_global_var("global|prot_gap_open", "double", (void *)(&prot_gap_open), 8, 0, 0, 0UL, 0);
@@ -6982,12 +6982,12 @@ static int module_init() {
     register_global_var("global|pw_ge_penalty", "double", (void *)(&pw_ge_penalty), 8, 0, 0, 0UL, 0);
     register_global_var("global|prot_pw_go_penalty", "double", (void *)(&prot_pw_go_penalty), 8, 0, 0, 0UL, 0);
     register_global_var("global|prot_pw_ge_penalty", "double", (void *)(&prot_pw_ge_penalty), 8, 0, 0, 0UL, 0);
-    register_global_var("global|args", "i8**", (void *)(&args), 8, 1, 0, (2235191825397909448UL + 3085UL), 0);
-    register_global_var("global|names", "i8**", (void *)(&names), 8, 1, 0, (2235191825397909448UL + 3085UL), 0);
-    register_global_var("global|seq_array", "i8**", (void *)(&seq_array), 8, 1, 0, (2235191825397909448UL + 3085UL), 0);
-    register_global_var("global|matrix", "i32*", (void *)(&matrix), 8, 1, 0, (2235191825397909448UL + 3073UL), 0);
-    register_constant(2235191825397909448UL + 0UL, (void *)amino_acid_order, 24);
-    register_constant(2235191825397909448UL + 1UL, (void *)amino_acid_codes, 26);
+    register_global_var("global|args", "i8**", (void *)(&args), 8, 1, 0, (4673255111730560025UL + 3085UL), 0);
+    register_global_var("global|names", "i8**", (void *)(&names), 8, 1, 0, (4673255111730560025UL + 3085UL), 0);
+    register_global_var("global|seq_array", "i8**", (void *)(&seq_array), 8, 1, 0, (4673255111730560025UL + 3085UL), 0);
+    register_global_var("global|matrix", "i32*", (void *)(&matrix), 8, 1, 0, (4673255111730560025UL + 3073UL), 0);
+    register_constant(4673255111730560025UL + 0UL, (void *)amino_acid_order, 24);
+    register_constant(4673255111730560025UL + 1UL, (void *)amino_acid_codes, 26);
     return 0;
 }
 

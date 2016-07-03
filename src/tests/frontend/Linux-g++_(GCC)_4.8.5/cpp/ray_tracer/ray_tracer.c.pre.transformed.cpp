@@ -49,11 +49,11 @@ static unsigned ____alias_loc_id_9;
 static unsigned ____alias_loc_id_10;
 static unsigned ____alias_loc_id_11;
 static unsigned ____alias_loc_id_12;
-# 1 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -62,7 +62,7 @@ static unsigned ____alias_loc_id_12;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -118,14 +118,14 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 28 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1070,7 +1070,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 2 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c" 2
+# 2 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 1 3 4
@@ -2246,7 +2246,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 3 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c" 2
+# 3 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c" 2
 # 1 "/usr/include/assert.h" 1 3 4
 # 66 "/usr/include/assert.h" 3 4
 extern "C" {
@@ -2270,7 +2270,7 @@ extern void __assert (const char *__assertion, const char *__file, int __line)
 
 
 }
-# 4 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c" 2
+# 4 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c" 2
 # 1 "/usr/include/math.h" 1 3 4
 # 30 "/usr/include/math.h" 3 4
 extern "C" {
@@ -3275,7 +3275,7 @@ __signbitl (long double __x) throw ()
 # 417 "/usr/include/math.h" 2 3 4
 # 472 "/usr/include/math.h" 3 4
 }
-# 5 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c" 2
+# 5 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 29 "/usr/include/string.h" 3 4
 extern "C" {
@@ -3751,7 +3751,7 @@ extern "C++" __const char *basename (__const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 # 646 "/usr/include/string.h" 3 4
 }
-# 6 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c" 2
+# 6 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c" 2
 # 1 "/usr/include/unistd.h" 1 3 4
 # 28 "/usr/include/unistd.h" 3 4
 extern "C" {
@@ -5083,1374 +5083,1374 @@ extern void swab (__const void *__restrict __from, void *__restrict __to,
 extern char *ctermid (char *__s) throw ();
 # 1160 "/usr/include/unistd.h" 3 4
 }
-# 7 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c" 2
-# 7 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 8 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 7 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c" 2
+# 7 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 8 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 
-# 1 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 1
-# 11 "/home/jmg3/chimes/src/libchimes/checkpoint.h"
+# 1 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 11 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h"
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*____chimes_fp)(void *));
-# 10 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c" 2
-# 10 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 11 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 12 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 10 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c" 2
+# 10 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 11 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 12 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 typedef struct _sphere {
-# 13 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 13 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     double cx, cy, cz;
-# 14 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 14 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     double radius;
-# 15 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 15 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     double clR, clG, clB;
-# 16 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 16 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 } sphere;
-# 17 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 18 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 17 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 18 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 typedef struct _rgb {
-# 19 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 19 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     double r, g, b;
-# 20 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 20 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 } rgb;
-# 21 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 22 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 21 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 22 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 typedef struct _config {
-# 23 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 23 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     double px, py, pz;
-# 24 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 24 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     double lx, ly, lz;
-# 25 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 25 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     double dx, dy, dz;
-# 26 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 26 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     double svx, svy, svz;
-# 27 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 27 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     int nx, ny;
-# 28 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 28 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     sphere *spheres;
-# 29 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 29 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     int nspheres;
-# 30 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 30 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     int nt;
-# 31 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 31 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 } config;
-# 32 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 33 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 32 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 33 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 void init_npm(sphere *s, double cx, double cy, double cz, double radius, double clR, double clG, double clB);
 void init_quick(sphere *s, double cx, double cy, double cz, double radius, double clR, double clG, double clB); void init(sphere *s, double cx, double cy, double cz, double radius, double clR, double clG, double clB);
 void init_resumable(sphere *s, double cx, double cy, double cz, double radius, double clR,
-# 34 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-        double clG, double clB) {const int ____chimes_did_disable0 = new_stack((void *)(&init), "init", &____must_manage_init, 8, 0, (size_t)(11205885433679074312UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 35 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-    ((s) ? static_cast<void> (0) : __assert_fail ("s", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 35, __PRETTY_FUNCTION__));
-# 36 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 37 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 34 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+        double clG, double clB) {const int ____chimes_did_disable0 = new_stack((void *)(&init), "init", &____must_manage_init, 8, 0, (size_t)(16099212990272105688UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 35 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+    ((s) ? static_cast<void> (0) : __assert_fail ("s", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 35, __PRETTY_FUNCTION__));
+# 36 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 37 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     s->cx = cx;
-# 38 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 38 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     s->cy = cy;
-# 39 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 39 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     s->cz = cz;
-# 40 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 41 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 40 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 41 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     s->radius = radius;
-# 42 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 43 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 42 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 43 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     s->clR = clR;
-# 44 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 44 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     s->clG = clG;
-# 45 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 45 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     s->clB = clB;
-# 46 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 46 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "init", &____must_manage_init, ____alias_loc_id_1, ____chimes_did_disable0, false); }
-# 47 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 48 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 47 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 48 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 double get_coord_npm(double i1, double i2, double w1, double w2, double p);
 double get_coord_quick(double i1, double i2, double w1, double w2, double p); double get_coord(double i1, double i2, double w1, double w2, double p);
 double get_coord_resumable(double i1, double i2, double w1, double w2, double p) {const int ____chimes_did_disable1 = new_stack((void *)(&get_coord), "get_coord", &____must_manage_get_coord, 5, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 49 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 49 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (((p - i1) / (i2 - i1)) * (w2 - w1) + w1); rm_stack(false, 0UL, "get_coord", &____must_manage_get_coord, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_0; ;
-# 50 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 50 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "get_coord", &____must_manage_get_coord, ____alias_loc_id_2, ____chimes_did_disable1, false); }
-# 51 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 52 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 51 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 52 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 double modv_npm(double vx, double vy, double vz);
 double modv_quick(double vx, double vy, double vz); double modv(double vx, double vy, double vz);
 double modv_resumable(double vx, double vy, double vz) {const int ____chimes_did_disable2 = new_stack((void *)(&modv), "modv", &____must_manage_modv, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 53 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 53 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (sqrt(vx * vx + vy * vy + vz * vz)); rm_stack(false, 0UL, "modv", &____must_manage_modv, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_1; ;
-# 54 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 54 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "modv", &____must_manage_modv, ____alias_loc_id_3, ____chimes_did_disable2, false); }
-# 55 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 56 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 55 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 56 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 void move_npm(sphere *self, double vx, double vy, double vz);
 void move_quick(sphere *self, double vx, double vy, double vz); void move(sphere *self, double vx, double vy, double vz);
-void move_resumable(sphere *self, double vx, double vy, double vz) {const int ____chimes_did_disable3 = new_stack((void *)(&move), "move", &____must_manage_move, 4, 0, (size_t)(11205885433679074453UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 57 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+void move_resumable(sphere *self, double vx, double vy, double vz) {const int ____chimes_did_disable3 = new_stack((void *)(&move), "move", &____must_manage_move, 4, 0, (size_t)(16099212990272105829UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 57 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cx += vx;
-# 58 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 58 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cy += vy;
-# 59 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 59 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cz += vz;
-# 60 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 60 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "move", &____must_manage_move, ____alias_loc_id_4, ____chimes_did_disable3, false); }
-# 61 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 62 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 61 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 62 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 void move_to_npm(sphere *self, double vx, double vy, double vz);
 void move_to_quick(sphere *self, double vx, double vy, double vz); void move_to(sphere *self, double vx, double vy, double vz);
-void move_to_resumable(sphere *self, double vx, double vy, double vz) {const int ____chimes_did_disable4 = new_stack((void *)(&move_to), "move_to", &____must_manage_move_to, 4, 0, (size_t)(11205885433679074482UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 63 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+void move_to_resumable(sphere *self, double vx, double vy, double vz) {const int ____chimes_did_disable4 = new_stack((void *)(&move_to), "move_to", &____must_manage_move_to, 4, 0, (size_t)(16099212990272105858UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 63 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cx = vx;
-# 64 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 64 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cy = vy;
-# 65 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 65 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cz = vz;
-# 66 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 66 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "move_to", &____must_manage_move_to, ____alias_loc_id_5, ____chimes_did_disable4, false); }
-# 67 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 68 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 67 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 68 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 void rot_x_npm(sphere *self, double angle);
 void rot_x_quick(sphere *self, double angle); void rot_x(sphere *self, double angle);
-void rot_x_resumable(sphere *self, double angle) {const int ____chimes_did_disable5 = new_stack((void *)(&rot_x), "rot_x", &____must_manage_rot_x, 2, 0, (size_t)(11205885433679074533UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 69 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+void rot_x_resumable(sphere *self, double angle) {const int ____chimes_did_disable5 = new_stack((void *)(&rot_x), "rot_x", &____must_manage_rot_x, 2, 0, (size_t)(16099212990272105909UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 69 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double y; y = (self->cy * cos(angle) - self->cz * sin(angle)) ;
-# 70 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 70 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double z; z = (self->cy * sin(angle) + self->cz * cos(angle)) ;
-# 71 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 71 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cy = y;
-# 72 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 72 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cz = z;
-# 73 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 73 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "rot_x", &____must_manage_rot_x, ____alias_loc_id_6, ____chimes_did_disable5, false); }
-# 74 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 75 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 74 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 75 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 void rot_y_npm(sphere *self, double angle);
 void rot_y_quick(sphere *self, double angle); void rot_y(sphere *self, double angle);
-void rot_y_resumable(sphere *self, double angle) {const int ____chimes_did_disable6 = new_stack((void *)(&rot_y), "rot_y", &____must_manage_rot_y, 2, 0, (size_t)(11205885433679074584UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 76 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+void rot_y_resumable(sphere *self, double angle) {const int ____chimes_did_disable6 = new_stack((void *)(&rot_y), "rot_y", &____must_manage_rot_y, 2, 0, (size_t)(16099212990272105960UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 76 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
    double x; x = (self->cx * cos(angle) - self->cz * sin(angle)) ;
-# 77 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 77 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
    double z; z = (self->cx * sin(angle) + self->cz * cos(angle)) ;
-# 78 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 78 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
   self->cx = x;
-# 79 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 79 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
   self->cz = z;
-# 80 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 80 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "rot_y", &____must_manage_rot_y, ____alias_loc_id_7, ____chimes_did_disable6, false); }
-# 81 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 82 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 81 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 82 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 double get_sphere_intersec_npm(double cx, double cy, double cz, double radius, double px, double py, double pz, double vx, double vy, double vz);
 double get_sphere_intersec_quick(double cx, double cy, double cz, double radius, double px, double py, double pz, double vx, double vy, double vz); double get_sphere_intersec(double cx, double cy, double cz, double radius, double px, double py, double pz, double vx, double vy, double vz);
 double get_sphere_intersec_resumable(double cx, double cy, double cz, double radius,
-# 83 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 83 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         double px, double py, double pz, double vx, double vy, double vz) {const int ____chimes_did_disable7 = new_stack((void *)(&get_sphere_intersec), "get_sphere_intersec", &____must_manage_get_sphere_intersec, 10, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 84 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 84 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double A; A = ((vx * vx + vy * vy + vz * vz)) ;
-# 85 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 85 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double B; B = (2.0 * (px * vx + py * vy + pz * vz - vx * cx - vy *
-# 86 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 86 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         cy - vz * cz)) ;
-# 87 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 87 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double C; C = (px * px - 2 * px * cx + cx * cx + py * py - 2 * py *
-# 88 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 88 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       cy + cy * cy + pz * pz - 2 * pz * cz + cz * cz -
-# 89 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 89 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       radius * radius) ;
-# 90 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 90 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double D; D = (B * B - 4 * A * C) ;
-# 91 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 91 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double t; t = (-1.0) ;
-# 92 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 92 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     if (D >= 0)
-# 93 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 93 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     {
-# 94 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 94 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
        double t1; t1 = ((-B - sqrt(D)) / (2.0 * A)) ;
-# 95 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 95 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
        double t2; t2 = ((-B + sqrt(D)) / (2.0 * A)) ;
-# 96 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 96 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       if (t1 > t2) {t = t1; } else {t = t2; } ;
-# 97 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 97 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     }
-# 98 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 98 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (t); rm_stack(false, 0UL, "get_sphere_intersec", &____must_manage_get_sphere_intersec, ____alias_loc_id_8, ____chimes_did_disable7, false); return ____chimes_ret_var_2; ;
-# 99 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 99 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "get_sphere_intersec", &____must_manage_get_sphere_intersec, ____alias_loc_id_8, ____chimes_did_disable7, false); }
-# 100 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 101 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 100 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 101 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 double get_cos_angle_v1v2_npm(double v1x, double v1y, double v1z, double v2x, double v2y, double v2z);
 double get_cos_angle_v1v2_quick(double v1x, double v1y, double v1z, double v2x, double v2y, double v2z); double get_cos_angle_v1v2(double v1x, double v1y, double v1z, double v2x, double v2y, double v2z);
 double get_cos_angle_v1v2_resumable(double v1x, double v1y, double v1z, double v2x,
-# 102 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 102 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         double v2y, double v2z) {const int ____chimes_did_disable8 = new_stack((void *)(&get_cos_angle_v1v2), "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 103 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 103 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double a; call_lbl_0: a = (({ calling_npm("modv", 0); modv_npm(v1x, v1y, v1z); })) ;
-# 104 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 104 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double b; call_lbl_1: b = (({ calling_npm("modv", 0); modv_npm(v2x, v2y, v2z); })) ;
-# 105 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 105 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double ____chimes_ret_var_3; ; ____chimes_ret_var_3 = ((v1x * v2x + v1y * v2y + v1z * v2z) / (a * b)); rm_stack(false, 0UL, "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, ____alias_loc_id_9, ____chimes_did_disable8, false); return ____chimes_ret_var_3; ;
-# 106 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 106 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, ____alias_loc_id_9, ____chimes_did_disable8, false); }
-# 107 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 108 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 107 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 108 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 void usage_npm(char **argv);
 void usage_quick(char **argv); void usage(char **argv);
-void usage_resumable(char **argv) {const int ____chimes_did_disable9 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(11205885433679074837UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 109 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+void usage_resumable(char **argv) {const int ____chimes_did_disable9 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(16099212990272106213UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 109 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     fprintf(stderr, "usage: %s [-x nx] [-y ny] [-s sx,sy,sz,r,clr,clg,clb] "
-# 110 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 110 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         "[-p px,py,pz]\n", argv[0]);
-# 111 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 111 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     exit(1);
-# 112 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 112 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable9, false); }
-# 113 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 114 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 113 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 114 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 void parse_three_doubles_npm(char *def, double *a, double *b, double *c);
 void parse_three_doubles_quick(char *def, double *a, double *b, double *c); void parse_three_doubles(char *def, double *a, double *b, double *c);
-void parse_three_doubles_resumable(char *def, double *a, double *b, double *c) {const int ____chimes_did_disable10 = new_stack((void *)(&parse_three_doubles), "parse_three_doubles", &____must_manage_parse_three_doubles, 4, 0, (size_t)(11205885433679074882UL), (size_t)(11205885433679074884UL), (size_t)(11205885433679074889UL), (size_t)(11205885433679074894UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 115 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+void parse_three_doubles_resumable(char *def, double *a, double *b, double *c) {const int ____chimes_did_disable10 = new_stack((void *)(&parse_three_doubles), "parse_three_doubles", &____must_manage_parse_three_doubles, 4, 0, (size_t)(16099212990272106258UL), (size_t)(16099212990272106260UL), (size_t)(16099212990272106265UL), (size_t)(16099212990272106270UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 115 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      char *first_comma; first_comma = (strchr(def, ',')) ;
-# 116 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-    ((first_comma) ? static_cast<void> (0) : __assert_fail ("first_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 116, __PRETTY_FUNCTION__));
-# 117 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 116 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+    ((first_comma) ? static_cast<void> (0) : __assert_fail ("first_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 116, __PRETTY_FUNCTION__));
+# 117 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      char *second_comma; second_comma = (strchr(first_comma + 1, ',')) ;
-# 118 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-    ((second_comma) ? static_cast<void> (0) : __assert_fail ("second_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 118, __PRETTY_FUNCTION__));
-# 119 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 120 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 118 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+    ((second_comma) ? static_cast<void> (0) : __assert_fail ("second_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 118, __PRETTY_FUNCTION__));
+# 119 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 120 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     *first_comma = '\0';
-# 121 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 121 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     *second_comma = '\0';
-# 122 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 123 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 122 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 123 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     *a = atof(def);
-# 124 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 124 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     *b = atof(first_comma + 1);
-# 125 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 125 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     *c = atof(second_comma + 1);
-# 126 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 126 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "parse_three_doubles", &____must_manage_parse_three_doubles, ____alias_loc_id_10, ____chimes_did_disable10, false); }
-# 127 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 128 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 127 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 128 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 void parse_config_npm(int argc, char **argv, config *conf);
 void parse_config_quick(int argc, char **argv, config *conf); void parse_config(int argc, char **argv, config *conf);
-void parse_config_resumable(int argc, char **argv, config *conf) {const int ____chimes_did_disable11 = new_stack((void *)(&parse_config), "parse_config", &____must_manage_parse_config, 3, 0, (size_t)(0UL), (size_t)(11205885433679075166UL), (size_t)(11205885433679075105UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 129 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+void parse_config_resumable(int argc, char **argv, config *conf) {const int ____chimes_did_disable11 = new_stack((void *)(&parse_config), "parse_config", &____must_manage_parse_config, 3, 0, (size_t)(0UL), (size_t)(16099212990272106542UL), (size_t)(16099212990272106481UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 129 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     int c; ;
-# 130 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 130 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     opterr = 0;
-# 131 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 132 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 131 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 132 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->nx = 200;
-# 133 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 133 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->ny = 200;
-# 134 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 134 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->px = 0.0;
-# 135 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 135 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->py = 0.0;
-# 136 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 136 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->pz = 0.0;
-# 137 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 137 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->svx = 1.0;
-# 138 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 138 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->svy = 1.0;
-# 139 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 139 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->svz = 1.0;
-# 140 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 140 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->nt = 1000;
-# 141 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 141 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->spheres = __null;
-# 142 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 142 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->nspheres = 0;
-# 143 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 144 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 143 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     while ((c = getopt(argc, argv, "s:x:y:p:l:d:v:t:h")) != -1) {
-# 145 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 145 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         switch (c) {
-# 146 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 146 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 'x':
-# 147 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 147 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 conf->nx = atoi(optarg);
-# 148 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 148 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 149 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 149 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 'y':
-# 150 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 150 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 conf->ny = atoi(optarg);
-# 151 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 151 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 152 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 152 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 't':
-# 153 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 153 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 conf->nt = atoi(optarg);
-# 154 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 154 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 155 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 155 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 'v':
-# 156 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 156 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  call_lbl_0: ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->svx, &conf->svy, &conf->svz); });
-# 157 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 157 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 158 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 158 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 'p':
-# 159 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 159 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  call_lbl_1: ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->px, &conf->py, &conf->pz); });
-# 160 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 160 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 161 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 161 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 'l':
-# 162 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 162 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  call_lbl_2: ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->lx, &conf->ly, &conf->lz); });
-# 163 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 163 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 164 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 164 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 'd':
-# 165 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 165 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  call_lbl_3: ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->dx, &conf->dy, &conf->dz); });
-# 166 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 166 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 167 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 167 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 's': {
-# 168 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 168 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  char *sphere_def; sphere_def = (optarg) ;
-# 169 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 170 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 169 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 170 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  char *first_comma; first_comma = (strchr(sphere_def, ',')) ;
-# 171 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-                ((first_comma) ? static_cast<void> (0) : __assert_fail ("first_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 171, __PRETTY_FUNCTION__));
-# 172 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 171 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+                ((first_comma) ? static_cast<void> (0) : __assert_fail ("first_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 171, __PRETTY_FUNCTION__));
+# 172 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  char *second_comma; second_comma = (strchr(first_comma + 1, ',')) ;
-# 173 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-                ((second_comma) ? static_cast<void> (0) : __assert_fail ("second_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 173, __PRETTY_FUNCTION__));
-# 174 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 173 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+                ((second_comma) ? static_cast<void> (0) : __assert_fail ("second_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 173, __PRETTY_FUNCTION__));
+# 174 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  char *third_comma; third_comma = (strchr(second_comma + 1, ',')) ;
-# 175 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-                ((third_comma) ? static_cast<void> (0) : __assert_fail ("third_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 175, __PRETTY_FUNCTION__));
-# 176 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 175 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+                ((third_comma) ? static_cast<void> (0) : __assert_fail ("third_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 175, __PRETTY_FUNCTION__));
+# 176 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  char *fourth_comma; fourth_comma = (strchr(third_comma + 1, ',')) ;
-# 177 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-                ((fourth_comma) ? static_cast<void> (0) : __assert_fail ("fourth_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 177, __PRETTY_FUNCTION__));
-# 178 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 177 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+                ((fourth_comma) ? static_cast<void> (0) : __assert_fail ("fourth_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 177, __PRETTY_FUNCTION__));
+# 178 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  char *fifth_comma; fifth_comma = (strchr(fourth_comma + 1, ',')) ;
-# 179 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-                ((fifth_comma) ? static_cast<void> (0) : __assert_fail ("fifth_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 179, __PRETTY_FUNCTION__));
-# 180 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 179 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+                ((fifth_comma) ? static_cast<void> (0) : __assert_fail ("fifth_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 179, __PRETTY_FUNCTION__));
+# 180 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  char *sixth_comma; sixth_comma = (strchr(fifth_comma + 1, ',')) ;
-# 181 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-                ((sixth_comma) ? static_cast<void> (0) : __assert_fail ("sixth_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 181, __PRETTY_FUNCTION__));
-# 182 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 183 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 181 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+                ((sixth_comma) ? static_cast<void> (0) : __assert_fail ("sixth_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 181, __PRETTY_FUNCTION__));
+# 182 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 183 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 *first_comma = '\0';
-# 184 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 184 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 *second_comma = '\0';
-# 185 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 185 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 *third_comma = '\0';
-# 186 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 186 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 *fourth_comma = '\0';
-# 187 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 187 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 *fifth_comma = '\0';
-# 188 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 188 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 *sixth_comma = '\0';
-# 189 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 190 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-                conf->spheres = (sphere *) ({ void *____chimes_tmp_header; ____chimes_tmp_header = (conf->spheres) ; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ((conf->nspheres + 1) * sizeof(sphere)) + sizeof(void *)); ; realloc_helper(____chimes_tmp_ptr, (conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ____chimes_tmp_header, (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 192 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 189 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 190 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+                conf->spheres = (sphere *) ({ void *____chimes_tmp_header; ____chimes_tmp_header = (conf->spheres) ; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ((conf->nspheres + 1) * sizeof(sphere)) + sizeof(void *)); ; realloc_helper(____chimes_tmp_ptr, (conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ____chimes_tmp_header, (conf->nspheres + 1) * sizeof(sphere), 16099212990272106836UL, 0, 1, (int)sizeof(struct _sphere), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 192 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  call_lbl_4: ({ calling_npm("init", 0); init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1)); });
-# 196 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 196 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 conf->nspheres += 1;
-# 197 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 198 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 197 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 198 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 199 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 199 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             }
-# 200 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 200 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         case '?':
-# 201 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 201 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             fprintf(stderr, "Missing argument to option %c\n", optopt);
-# 202 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 202 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         case 'h':
-# 203 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 203 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          call_lbl_5: default:
-# 204 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 204 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             ({ calling_npm("usage", 0); usage_npm(argv); });
-# 205 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 205 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         }
-# 206 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 206 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     }
-# 207 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 207 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "parse_config", &____must_manage_parse_config, ____alias_loc_id_11, ____chimes_did_disable11, false); }
-# 208 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 209 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 208 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 209 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
-int main_resumable(int argc, char **argv) {const int ____chimes_did_disable12 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11205885433679075652UL)) ; double f_max;
-# 209 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable12 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(16099212990272107028UL)) ; double f_max;
+# 209 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rgb *screen;
-# 209 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 209 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 config conf;
-# 209 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 209 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
  register_stack_vars(3, "main|f_max|0", (int *)0x0, "double", (void *)(&f_max), (size_t)8, 0, 0, 0, "main|screen|0", (int *)0x0, "%struct._rgb*", (void *)(&screen), (size_t)8, 1, 0, 0, "main|conf|0", (int *)0x0, "%struct._config = type { double, double, double, double, double, double, double, double, double, double, double, double, i32, i32, %struct._sphere*, i32, i32 }", (void *)(&conf), (size_t)120, 0, 1, 1, (int)__builtin_offsetof(struct _config, spheres)); if (____chimes_replaying) { goto lbl_0; } ; ;
-# 210 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 210 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       ;
-# 211 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 211 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      call_lbl_0: ({ calling_npm("parse_config", 0); parse_config_npm(argc, argv, &conf); });
-# 212 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-       screen = ((rgb *) ({ void *____chimes_tmp_ptr = malloc((sizeof(rgb) * conf.nx * conf.ny) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(rgb) * conf.nx * conf.ny, 11205885433679075224UL, 0, 1, (int)sizeof(struct _rgb), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 213 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 214 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 212 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+       screen = ((rgb *) ({ void *____chimes_tmp_ptr = malloc((sizeof(rgb) * conf.nx * conf.ny) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(rgb) * conf.nx * conf.ny, 16099212990272106600UL, 0, 1, (int)sizeof(struct _rgb), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 213 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 214 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
        f_max = (200.0) ;
-# 215 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 215 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     { lbl_0: int t; register_stack_var("main|t|0", (int *)0x0, "i32", (void *)(&t), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(9): { goto call_lbl_9; } default: { chimes_error(); } } } for ( t = (0) ; t < conf.nt; t++) {
-# 216 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 216 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       int i; ;
-# 217 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 218 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 217 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 218 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 #pragma omp parallel for
-# 219 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 219 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       for (i = 0; i < conf.nx * conf.ny; i++) {
-# 220 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 220 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          double x; call_lbl_1: x = (({ calling_npm("get_coord", 0); get_coord_npm(0.0, conf.nx, -f_max, f_max, i / conf.ny); })) ;
-# 221 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 221 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          double y; call_lbl_2: y = (({ calling_npm("get_coord", 0); get_coord_npm(0.0, conf.ny, -f_max, f_max, i % conf.ny); })) ;
-# 222 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 222 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          double t; t = (1.0E10) ;
-# 223 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 223 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          double vx; vx = (x - conf.px) ;
-# 224 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 224 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          double vy; vy = (y - conf.py) ;
-# 225 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 225 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          double vz; vz = (-conf.pz) ;
-# 226 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 227 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 226 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 227 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          double mod_v; call_lbl_3: mod_v = (({ calling_npm("modv", 0); modv_npm(vx, vy, vz); })) ;
-# 228 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 228 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         vx = vx / mod_v;
-# 229 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 229 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         vy = vy / mod_v;
-# 230 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 230 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         vz = vz / mod_v;
-# 231 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 232 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 231 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 232 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          bool bShadow; bShadow = (false) ;
-# 233 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 233 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          sphere *spherehit; spherehit = (__null) ;
-# 234 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 234 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         { int k; for ( k = (0) ; k < conf.nspheres; k++) {
-# 235 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 235 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
            sphere *sphn; sphn = (conf.spheres + k) ;
-# 236 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 236 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
            double taux; call_lbl_4: taux = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphn->cx, sphn->cy, sphn->cz, sphn->radius, conf.px, conf.py, conf.pz, vx, vy, vz); })) ;
-# 238 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 238 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
           if (taux < 0) {continue; };
-# 239 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 239 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
           if (taux > 0 && taux < t) {
-# 240 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 240 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             t = taux;
-# 241 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 241 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             spherehit = sphn;
-# 242 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 242 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
           }
-# 243 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 243 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         } }
-# 244 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 245 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 244 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 245 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          rgb color; ; color.r = 0.03; color.g = 0.06; color.b = 0.03;
-# 246 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 246 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         if (spherehit != __null) {
-# 247 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 247 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
            double itx; itx = (conf.px + t * vx) ;
-# 248 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 248 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
            double ity; ity = (conf.py + t * vy) ;
-# 249 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 249 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
            double itz; itz = (conf.pz + t * vz) ;
-# 250 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 251 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 250 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 251 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
            double tauxla; call_lbl_5: tauxla = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(spherehit->cx, spherehit->cy, spherehit->cz, spherehit->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
-# 254 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 255 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 254 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 255 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
           { int k; for ( k = (0) ; k < conf.nspheres; k++) {
-# 256 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 256 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
              sphere *sphnb; sphnb = (conf.spheres + k) ;
-# 257 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 257 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             if (sphnb != spherehit) {
-# 258 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 258 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                double tauxlb; call_lbl_6: tauxlb = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphnb->cx, sphnb->cy, sphnb->cz, sphnb->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz -
-# 261 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 261 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                   conf.lz); })) ;
-# 262 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 262 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
               if (tauxlb > 0 && tauxla < tauxlb) {
-# 263 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 263 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 bShadow = true;
-# 264 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 264 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 265 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 265 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
               }
-# 266 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 266 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             }
-# 267 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 267 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
           } }
-# 268 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 268 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
            double cost; call_lbl_7: cost = (({ calling_npm("get_cos_angle_v1v2", 0); get_cos_angle_v1v2_npm(conf.dx, conf.dy, conf.dz, itx -
-# 269 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 269 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
               spherehit->cx, ity - spherehit->cy, itz -
-# 270 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 270 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
               spherehit->cz); })) ;
-# 271 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 271 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
           if (cost < 0) {cost = 0; };
-# 272 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 272 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
            double fact; fact = (1.0) ;
-# 273 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 273 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
           if (bShadow == true) {fact = 0.5; } else {fact = 1.0; } ;
-# 274 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 274 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
           color.r = spherehit->clR * cost * fact;
-# 275 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 275 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
           color.g = spherehit->clG * cost * fact;
-# 276 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 276 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
           color.b = spherehit->clB * cost * fact;
-# 277 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 277 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         }
-# 278 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 279 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 278 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 279 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         screen[i].r = color.r;
-# 280 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 280 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         screen[i].g = color.g;
-# 281 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 281 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         screen[i].b = color.b;
-# 282 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 282 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       }
-# 283 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 284 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 283 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 284 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       { int i; for ( i = (0) ; i < conf.nspheres; i++) {
-# 285 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 285 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
            call_lbl_8: ({ calling_npm("move", 0); move_npm(conf.spheres + i, conf.svx, conf.svy, conf.svz); });
-# 286 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 286 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       } }
-# 287 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 288 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 289 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 287 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 288 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 289 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          call_lbl_9: checkpoint_transformed(9, ____alias_loc_id_0);
-# 290 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 291 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 292 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 290 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 291 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 292 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       printf("%d/%d\n", (t + 1), conf.nt);
-# 293 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 293 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     } }
-# 294 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 295 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-     ({ free_helper((((unsigned char *)screen) - sizeof(void *)), 11205885433679075224UL);free((((unsigned char *)screen) - sizeof(void *))); }) ;
-# 296 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 294 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 295 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+     ({ free_helper((((unsigned char *)screen) - sizeof(void *)), 16099212990272106600UL);free((((unsigned char *)screen) - sizeof(void *))); }) ;
+# 296 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = ((0)); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable12, false); return ____chimes_ret_var_4; ;
-# 297 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 297 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable12, false); }
-# 33 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 33 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 void init_quick(sphere *s, double cx, double cy, double cz, double radius, double clR,
-# 34 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-        double clG, double clB) {const int ____chimes_did_disable0 = new_stack((void *)(&init), "init", &____must_manage_init, 8, 0, (size_t)(11205885433679074312UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 35 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-    ((s) ? static_cast<void> (0) : __assert_fail ("s", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 35, __PRETTY_FUNCTION__));
-# 36 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 37 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 34 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+        double clG, double clB) {const int ____chimes_did_disable0 = new_stack((void *)(&init), "init", &____must_manage_init, 8, 0, (size_t)(16099212990272105688UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+# 35 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+    ((s) ? static_cast<void> (0) : __assert_fail ("s", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 35, __PRETTY_FUNCTION__));
+# 36 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 37 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     s->cx = cx;
-# 38 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 38 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     s->cy = cy;
-# 39 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 39 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     s->cz = cz;
-# 40 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 41 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 40 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 41 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     s->radius = radius;
-# 42 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 43 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 42 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 43 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     s->clR = clR;
-# 44 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 44 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     s->clG = clG;
-# 45 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 45 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     s->clB = clB;
-# 46 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 46 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "init", &____must_manage_init, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
 void init(sphere *s, double cx, double cy, double cz, double radius, double clR,
-# 34 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 34 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         double clG, double clB) { (____chimes_replaying ? init_resumable(s, cx, cy, cz, radius, clR, clG, clB) : init_quick(s, cx, cy, cz, radius, clR, clG, clB)); }
-# 48 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 48 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 double get_coord_quick(double i1, double i2, double w1, double w2, double p) {const int ____chimes_did_disable1 = new_stack((void *)(&get_coord), "get_coord", &____must_manage_get_coord, 5, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 49 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 49 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (((p - i1) / (i2 - i1)) * (w2 - w1) + w1); rm_stack(false, 0UL, "get_coord", &____must_manage_get_coord, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_0; ;
-# 50 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 50 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "get_coord", &____must_manage_get_coord, ____alias_loc_id_2, ____chimes_did_disable1, false); }
 
 double get_coord(double i1, double i2, double w1, double w2, double p) { return (____chimes_replaying ? get_coord_resumable(i1, i2, w1, w2, p) : get_coord_quick(i1, i2, w1, w2, p)); }
-# 52 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 52 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 double modv_quick(double vx, double vy, double vz) {const int ____chimes_did_disable2 = new_stack((void *)(&modv), "modv", &____must_manage_modv, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 53 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 53 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (sqrt(vx * vx + vy * vy + vz * vz)); rm_stack(false, 0UL, "modv", &____must_manage_modv, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_1; ;
-# 54 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 54 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "modv", &____must_manage_modv, ____alias_loc_id_3, ____chimes_did_disable2, false); }
 
 double modv(double vx, double vy, double vz) { return (____chimes_replaying ? modv_resumable(vx, vy, vz) : modv_quick(vx, vy, vz)); }
-# 56 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-void move_quick(sphere *self, double vx, double vy, double vz) {const int ____chimes_did_disable3 = new_stack((void *)(&move), "move", &____must_manage_move, 4, 0, (size_t)(11205885433679074453UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 57 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 56 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+void move_quick(sphere *self, double vx, double vy, double vz) {const int ____chimes_did_disable3 = new_stack((void *)(&move), "move", &____must_manage_move, 4, 0, (size_t)(16099212990272105829UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+# 57 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cx += vx;
-# 58 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 58 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cy += vy;
-# 59 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 59 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cz += vz;
-# 60 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 60 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "move", &____must_manage_move, ____alias_loc_id_4, ____chimes_did_disable3, false); }
 
 void move(sphere *self, double vx, double vy, double vz) { (____chimes_replaying ? move_resumable(self, vx, vy, vz) : move_quick(self, vx, vy, vz)); }
-# 62 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-void move_to_quick(sphere *self, double vx, double vy, double vz) {const int ____chimes_did_disable4 = new_stack((void *)(&move_to), "move_to", &____must_manage_move_to, 4, 0, (size_t)(11205885433679074482UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 63 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 62 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+void move_to_quick(sphere *self, double vx, double vy, double vz) {const int ____chimes_did_disable4 = new_stack((void *)(&move_to), "move_to", &____must_manage_move_to, 4, 0, (size_t)(16099212990272105858UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+# 63 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cx = vx;
-# 64 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 64 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cy = vy;
-# 65 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 65 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cz = vz;
-# 66 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 66 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "move_to", &____must_manage_move_to, ____alias_loc_id_5, ____chimes_did_disable4, false); }
 
 void move_to(sphere *self, double vx, double vy, double vz) { (____chimes_replaying ? move_to_resumable(self, vx, vy, vz) : move_to_quick(self, vx, vy, vz)); }
-# 68 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-void rot_x_quick(sphere *self, double angle) {const int ____chimes_did_disable5 = new_stack((void *)(&rot_x), "rot_x", &____must_manage_rot_x, 2, 0, (size_t)(11205885433679074533UL), (size_t)(0UL)) ; ; ;
-# 69 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 68 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+void rot_x_quick(sphere *self, double angle) {const int ____chimes_did_disable5 = new_stack((void *)(&rot_x), "rot_x", &____must_manage_rot_x, 2, 0, (size_t)(16099212990272105909UL), (size_t)(0UL)) ; ; ;
+# 69 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double y; y = (self->cy * cos(angle) - self->cz * sin(angle)) ;
-# 70 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 70 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double z; z = (self->cy * sin(angle) + self->cz * cos(angle)) ;
-# 71 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 71 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cy = y;
-# 72 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 72 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cz = z;
-# 73 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 73 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "rot_x", &____must_manage_rot_x, ____alias_loc_id_6, ____chimes_did_disable5, false); }
 
 void rot_x(sphere *self, double angle) { (____chimes_replaying ? rot_x_resumable(self, angle) : rot_x_quick(self, angle)); }
-# 75 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-void rot_y_quick(sphere *self, double angle) {const int ____chimes_did_disable6 = new_stack((void *)(&rot_y), "rot_y", &____must_manage_rot_y, 2, 0, (size_t)(11205885433679074584UL), (size_t)(0UL)) ; ; ;
-# 76 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 75 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+void rot_y_quick(sphere *self, double angle) {const int ____chimes_did_disable6 = new_stack((void *)(&rot_y), "rot_y", &____must_manage_rot_y, 2, 0, (size_t)(16099212990272105960UL), (size_t)(0UL)) ; ; ;
+# 76 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
    double x; x = (self->cx * cos(angle) - self->cz * sin(angle)) ;
-# 77 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 77 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
    double z; z = (self->cx * sin(angle) + self->cz * cos(angle)) ;
-# 78 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 78 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
   self->cx = x;
-# 79 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 79 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
   self->cz = z;
-# 80 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 80 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "rot_y", &____must_manage_rot_y, ____alias_loc_id_7, ____chimes_did_disable6, false); }
 
 void rot_y(sphere *self, double angle) { (____chimes_replaying ? rot_y_resumable(self, angle) : rot_y_quick(self, angle)); }
-# 82 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 82 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 double get_sphere_intersec_quick(double cx, double cy, double cz, double radius,
-# 83 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 83 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         double px, double py, double pz, double vx, double vy, double vz) {const int ____chimes_did_disable7 = new_stack((void *)(&get_sphere_intersec), "get_sphere_intersec", &____must_manage_get_sphere_intersec, 10, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 84 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 84 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double A; A = ((vx * vx + vy * vy + vz * vz)) ;
-# 85 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 85 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double B; B = (2.0 * (px * vx + py * vy + pz * vz - vx * cx - vy *
-# 86 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 86 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         cy - vz * cz)) ;
-# 87 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 87 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double C; C = (px * px - 2 * px * cx + cx * cx + py * py - 2 * py *
-# 88 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 88 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       cy + cy * cy + pz * pz - 2 * pz * cz + cz * cz -
-# 89 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 89 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       radius * radius) ;
-# 90 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 90 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double D; D = (B * B - 4 * A * C) ;
-# 91 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 91 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double t; t = (-1.0) ;
-# 92 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 92 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     if (D >= 0)
-# 93 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 93 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     {
-# 94 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 94 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
        double t1; t1 = ((-B - sqrt(D)) / (2.0 * A)) ;
-# 95 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 95 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
        double t2; t2 = ((-B + sqrt(D)) / (2.0 * A)) ;
-# 96 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 96 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       if (t1 > t2) {t = t1; } else {t = t2; } ;
-# 97 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 97 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     }
-# 98 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 98 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (t); rm_stack(false, 0UL, "get_sphere_intersec", &____must_manage_get_sphere_intersec, ____alias_loc_id_8, ____chimes_did_disable7, false); return ____chimes_ret_var_2; ;
-# 99 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 99 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "get_sphere_intersec", &____must_manage_get_sphere_intersec, ____alias_loc_id_8, ____chimes_did_disable7, false); }
 
 double get_sphere_intersec(double cx, double cy, double cz, double radius,
-# 83 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 83 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         double px, double py, double pz, double vx, double vy, double vz) { return (____chimes_replaying ? get_sphere_intersec_resumable(cx, cy, cz, radius, px, py, pz, vx, vy, vz) : get_sphere_intersec_quick(cx, cy, cz, radius, px, py, pz, vx, vy, vz)); }
-# 101 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 101 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 double get_cos_angle_v1v2_quick(double v1x, double v1y, double v1z, double v2x,
-# 102 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 102 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         double v2y, double v2z) {const int ____chimes_did_disable8 = new_stack((void *)(&get_cos_angle_v1v2), "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 103 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 103 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double a; call_lbl_0: a = (({ calling_npm("modv", 0); modv_npm(v1x, v1y, v1z); })) ;
-# 104 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 104 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double b; call_lbl_1: b = (({ calling_npm("modv", 0); modv_npm(v2x, v2y, v2z); })) ;
-# 105 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 105 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double ____chimes_ret_var_3; ; ____chimes_ret_var_3 = ((v1x * v2x + v1y * v2y + v1z * v2z) / (a * b)); rm_stack(false, 0UL, "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, ____alias_loc_id_9, ____chimes_did_disable8, false); return ____chimes_ret_var_3; ;
-# 106 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 106 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, ____alias_loc_id_9, ____chimes_did_disable8, false); }
 
 double get_cos_angle_v1v2(double v1x, double v1y, double v1z, double v2x,
-# 102 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 102 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         double v2y, double v2z) { return (____chimes_replaying ? get_cos_angle_v1v2_resumable(v1x, v1y, v1z, v2x, v2y, v2z) : get_cos_angle_v1v2_quick(v1x, v1y, v1z, v2x, v2y, v2z)); }
-# 108 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-void usage_quick(char **argv) {const int ____chimes_did_disable9 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(11205885433679074837UL)) ; ; ;
-# 109 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 108 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+void usage_quick(char **argv) {const int ____chimes_did_disable9 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(16099212990272106213UL)) ; ; ;
+# 109 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     fprintf(stderr, "usage: %s [-x nx] [-y ny] [-s sx,sy,sz,r,clr,clg,clb] "
-# 110 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 110 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         "[-p px,py,pz]\n", argv[0]);
-# 111 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 111 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     exit(1);
-# 112 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 112 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable9, false); }
 
 void usage(char **argv) { (____chimes_replaying ? usage_resumable(argv) : usage_quick(argv)); }
-# 114 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-void parse_three_doubles_quick(char *def, double *a, double *b, double *c) {const int ____chimes_did_disable10 = new_stack((void *)(&parse_three_doubles), "parse_three_doubles", &____must_manage_parse_three_doubles, 4, 0, (size_t)(11205885433679074882UL), (size_t)(11205885433679074884UL), (size_t)(11205885433679074889UL), (size_t)(11205885433679074894UL)) ; ; ;
-# 115 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 114 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+void parse_three_doubles_quick(char *def, double *a, double *b, double *c) {const int ____chimes_did_disable10 = new_stack((void *)(&parse_three_doubles), "parse_three_doubles", &____must_manage_parse_three_doubles, 4, 0, (size_t)(16099212990272106258UL), (size_t)(16099212990272106260UL), (size_t)(16099212990272106265UL), (size_t)(16099212990272106270UL)) ; ; ;
+# 115 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      char *first_comma; first_comma = (strchr(def, ',')) ;
-# 116 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-    ((first_comma) ? static_cast<void> (0) : __assert_fail ("first_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 116, __PRETTY_FUNCTION__));
-# 117 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 116 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+    ((first_comma) ? static_cast<void> (0) : __assert_fail ("first_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 116, __PRETTY_FUNCTION__));
+# 117 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      char *second_comma; second_comma = (strchr(first_comma + 1, ',')) ;
-# 118 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-    ((second_comma) ? static_cast<void> (0) : __assert_fail ("second_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 118, __PRETTY_FUNCTION__));
-# 119 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 120 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 118 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+    ((second_comma) ? static_cast<void> (0) : __assert_fail ("second_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 118, __PRETTY_FUNCTION__));
+# 119 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 120 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     *first_comma = '\0';
-# 121 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 121 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     *second_comma = '\0';
-# 122 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 123 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 122 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 123 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     *a = atof(def);
-# 124 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 124 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     *b = atof(first_comma + 1);
-# 125 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 125 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     *c = atof(second_comma + 1);
-# 126 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 126 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "parse_three_doubles", &____must_manage_parse_three_doubles, ____alias_loc_id_10, ____chimes_did_disable10, false); }
 
 void parse_three_doubles(char *def, double *a, double *b, double *c) { (____chimes_replaying ? parse_three_doubles_resumable(def, a, b, c) : parse_three_doubles_quick(def, a, b, c)); }
-# 128 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-void parse_config_quick(int argc, char **argv, config *conf) {const int ____chimes_did_disable11 = new_stack((void *)(&parse_config), "parse_config", &____must_manage_parse_config, 3, 0, (size_t)(0UL), (size_t)(11205885433679075166UL), (size_t)(11205885433679075105UL)) ; ; ;
-# 129 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 128 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+void parse_config_quick(int argc, char **argv, config *conf) {const int ____chimes_did_disable11 = new_stack((void *)(&parse_config), "parse_config", &____must_manage_parse_config, 3, 0, (size_t)(0UL), (size_t)(16099212990272106542UL), (size_t)(16099212990272106481UL)) ; ; ;
+# 129 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     int c; ;
-# 130 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 130 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     opterr = 0;
-# 131 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 132 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 131 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 132 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->nx = 200;
-# 133 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 133 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->ny = 200;
-# 134 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 134 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->px = 0.0;
-# 135 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 135 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->py = 0.0;
-# 136 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 136 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->pz = 0.0;
-# 137 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 137 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->svx = 1.0;
-# 138 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 138 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->svy = 1.0;
-# 139 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 139 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->svz = 1.0;
-# 140 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 140 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->nt = 1000;
-# 141 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 141 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->spheres = __null;
-# 142 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 142 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->nspheres = 0;
-# 143 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 144 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 143 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     while ((c = getopt(argc, argv, "s:x:y:p:l:d:v:t:h")) != -1) {
-# 145 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 145 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         switch (c) {
-# 146 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 146 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 'x':
-# 147 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 147 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 conf->nx = atoi(optarg);
-# 148 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 148 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 149 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 149 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 'y':
-# 150 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 150 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 conf->ny = atoi(optarg);
-# 151 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 151 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 152 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 152 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 't':
-# 153 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 153 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 conf->nt = atoi(optarg);
-# 154 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 154 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 155 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 155 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 'v':
-# 156 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 156 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  call_lbl_0: ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->svx, &conf->svy, &conf->svz); });
-# 157 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 157 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 158 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 158 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 'p':
-# 159 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 159 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  call_lbl_1: ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->px, &conf->py, &conf->pz); });
-# 160 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 160 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 161 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 161 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 'l':
-# 162 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 162 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  call_lbl_2: ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->lx, &conf->ly, &conf->lz); });
-# 163 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 163 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 164 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 164 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 'd':
-# 165 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 165 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  call_lbl_3: ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->dx, &conf->dy, &conf->dz); });
-# 166 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 166 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 167 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 167 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 's': {
-# 168 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 168 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  char *sphere_def; sphere_def = (optarg) ;
-# 169 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 170 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 169 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 170 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  char *first_comma; first_comma = (strchr(sphere_def, ',')) ;
-# 171 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-                ((first_comma) ? static_cast<void> (0) : __assert_fail ("first_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 171, __PRETTY_FUNCTION__));
-# 172 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 171 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+                ((first_comma) ? static_cast<void> (0) : __assert_fail ("first_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 171, __PRETTY_FUNCTION__));
+# 172 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  char *second_comma; second_comma = (strchr(first_comma + 1, ',')) ;
-# 173 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-                ((second_comma) ? static_cast<void> (0) : __assert_fail ("second_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 173, __PRETTY_FUNCTION__));
-# 174 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 173 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+                ((second_comma) ? static_cast<void> (0) : __assert_fail ("second_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 173, __PRETTY_FUNCTION__));
+# 174 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  char *third_comma; third_comma = (strchr(second_comma + 1, ',')) ;
-# 175 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-                ((third_comma) ? static_cast<void> (0) : __assert_fail ("third_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 175, __PRETTY_FUNCTION__));
-# 176 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 175 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+                ((third_comma) ? static_cast<void> (0) : __assert_fail ("third_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 175, __PRETTY_FUNCTION__));
+# 176 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  char *fourth_comma; fourth_comma = (strchr(third_comma + 1, ',')) ;
-# 177 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-                ((fourth_comma) ? static_cast<void> (0) : __assert_fail ("fourth_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 177, __PRETTY_FUNCTION__));
-# 178 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 177 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+                ((fourth_comma) ? static_cast<void> (0) : __assert_fail ("fourth_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 177, __PRETTY_FUNCTION__));
+# 178 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  char *fifth_comma; fifth_comma = (strchr(fourth_comma + 1, ',')) ;
-# 179 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-                ((fifth_comma) ? static_cast<void> (0) : __assert_fail ("fifth_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 179, __PRETTY_FUNCTION__));
-# 180 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 179 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+                ((fifth_comma) ? static_cast<void> (0) : __assert_fail ("fifth_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 179, __PRETTY_FUNCTION__));
+# 180 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  char *sixth_comma; sixth_comma = (strchr(fifth_comma + 1, ',')) ;
-# 181 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-                ((sixth_comma) ? static_cast<void> (0) : __assert_fail ("sixth_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 181, __PRETTY_FUNCTION__));
-# 182 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 183 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 181 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+                ((sixth_comma) ? static_cast<void> (0) : __assert_fail ("sixth_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 181, __PRETTY_FUNCTION__));
+# 182 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 183 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 *first_comma = '\0';
-# 184 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 184 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 *second_comma = '\0';
-# 185 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 185 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 *third_comma = '\0';
-# 186 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 186 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 *fourth_comma = '\0';
-# 187 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 187 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 *fifth_comma = '\0';
-# 188 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 188 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 *sixth_comma = '\0';
-# 189 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 190 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-                conf->spheres = (sphere *) ({ void *____chimes_tmp_header; ____chimes_tmp_header = (conf->spheres) ; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ((conf->nspheres + 1) * sizeof(sphere)) + sizeof(void *)); ; realloc_helper(____chimes_tmp_ptr, (conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ____chimes_tmp_header, (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 192 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 189 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 190 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+                conf->spheres = (sphere *) ({ void *____chimes_tmp_header; ____chimes_tmp_header = (conf->spheres) ; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ((conf->nspheres + 1) * sizeof(sphere)) + sizeof(void *)); ; realloc_helper(____chimes_tmp_ptr, (conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ____chimes_tmp_header, (conf->nspheres + 1) * sizeof(sphere), 16099212990272106836UL, 0, 1, (int)sizeof(struct _sphere), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 192 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                  call_lbl_4: ({ calling_npm("init", 0); init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1)); });
-# 196 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 196 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 conf->nspheres += 1;
-# 197 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 198 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 197 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 198 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 199 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 199 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             }
-# 200 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 200 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         case '?':
-# 201 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 201 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             fprintf(stderr, "Missing argument to option %c\n", optopt);
-# 202 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 202 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         case 'h':
-# 203 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 203 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          call_lbl_5: default:
-# 204 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 204 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             ({ calling_npm("usage", 0); usage_npm(argv); });
-# 205 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 205 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         }
-# 206 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 206 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     }
-# 207 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 207 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "parse_config", &____must_manage_parse_config, ____alias_loc_id_11, ____chimes_did_disable11, false); }
 
 void parse_config(int argc, char **argv, config *conf) { (____chimes_replaying ? parse_config_resumable(argc, argv, conf) : parse_config_quick(argc, argv, conf)); }
-# 209 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-int main_quick(int argc, char **argv) {const int ____chimes_did_disable12 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11205885433679075652UL)) ; double f_max;
-# 209 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 209 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable12 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(16099212990272107028UL)) ; double f_max;
+# 209 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rgb *screen;
-# 209 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 209 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 config conf;
-# 209 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 209 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
  register_stack_vars(3, "main|f_max|0", (int *)0x0, "double", (void *)(&f_max), (size_t)8, 0, 0, 0, "main|screen|0", (int *)0x0, "%struct._rgb*", (void *)(&screen), (size_t)8, 1, 0, 0, "main|conf|0", (int *)0x0, "%struct._config = type { double, double, double, double, double, double, double, double, double, double, double, double, i32, i32, %struct._sphere*, i32, i32 }", (void *)(&conf), (size_t)120, 0, 1, 1, (int)__builtin_offsetof(struct _config, spheres)); ; ;
-# 210 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 210 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       ;
-# 211 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 211 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      call_lbl_0: ({ calling_npm("parse_config", 0); parse_config_npm(argc, argv, &conf); });
-# 212 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-       screen = ((rgb *) ({ void *____chimes_tmp_ptr = malloc((sizeof(rgb) * conf.nx * conf.ny) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(rgb) * conf.nx * conf.ny, 11205885433679075224UL, 0, 1, (int)sizeof(struct _rgb), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 213 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 214 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 212 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+       screen = ((rgb *) ({ void *____chimes_tmp_ptr = malloc((sizeof(rgb) * conf.nx * conf.ny) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(rgb) * conf.nx * conf.ny, 16099212990272106600UL, 0, 1, (int)sizeof(struct _rgb), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 213 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 214 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
        f_max = (200.0) ;
-# 215 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 215 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     { lbl_0: int t; register_stack_var("main|t|0", (int *)0x0, "i32", (void *)(&t), (size_t)4, 0, 0, 0); for ( t = (0) ; t < conf.nt; t++) {
-# 216 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 216 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       int i; ;
-# 217 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 218 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 217 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 218 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 #pragma omp parallel for
-# 219 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 219 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       for (i = 0; i < conf.nx * conf.ny; i++) {
-# 220 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 220 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          double x; call_lbl_1: x = (({ calling_npm("get_coord", 0); get_coord_npm(0.0, conf.nx, -f_max, f_max, i / conf.ny); })) ;
-# 221 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 221 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          double y; call_lbl_2: y = (({ calling_npm("get_coord", 0); get_coord_npm(0.0, conf.ny, -f_max, f_max, i % conf.ny); })) ;
-# 222 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 222 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          double t; t = (1.0E10) ;
-# 223 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 223 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          double vx; vx = (x - conf.px) ;
-# 224 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 224 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          double vy; vy = (y - conf.py) ;
-# 225 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 225 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          double vz; vz = (-conf.pz) ;
-# 226 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 227 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 226 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 227 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          double mod_v; call_lbl_3: mod_v = (({ calling_npm("modv", 0); modv_npm(vx, vy, vz); })) ;
-# 228 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 228 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         vx = vx / mod_v;
-# 229 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 229 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         vy = vy / mod_v;
-# 230 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 230 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         vz = vz / mod_v;
-# 231 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 232 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 231 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 232 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          bool bShadow; bShadow = (false) ;
-# 233 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 233 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          sphere *spherehit; spherehit = (__null) ;
-# 234 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 234 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         { int k; for ( k = (0) ; k < conf.nspheres; k++) {
-# 235 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 235 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
            sphere *sphn; sphn = (conf.spheres + k) ;
-# 236 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 236 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
            double taux; call_lbl_4: taux = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphn->cx, sphn->cy, sphn->cz, sphn->radius, conf.px, conf.py, conf.pz, vx, vy, vz); })) ;
-# 238 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 238 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
           if (taux < 0) {continue; };
-# 239 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 239 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
           if (taux > 0 && taux < t) {
-# 240 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 240 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             t = taux;
-# 241 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 241 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             spherehit = sphn;
-# 242 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 242 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
           }
-# 243 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 243 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         } }
-# 244 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 245 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 244 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 245 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          rgb color; ; color.r = 0.03; color.g = 0.06; color.b = 0.03;
-# 246 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 246 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         if (spherehit != __null) {
-# 247 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 247 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
            double itx; itx = (conf.px + t * vx) ;
-# 248 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 248 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
            double ity; ity = (conf.py + t * vy) ;
-# 249 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 249 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
            double itz; itz = (conf.pz + t * vz) ;
-# 250 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 251 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 250 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 251 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
            double tauxla; call_lbl_5: tauxla = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(spherehit->cx, spherehit->cy, spherehit->cz, spherehit->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
-# 254 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 255 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 254 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 255 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
           { int k; for ( k = (0) ; k < conf.nspheres; k++) {
-# 256 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 256 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
              sphere *sphnb; sphnb = (conf.spheres + k) ;
-# 257 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 257 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             if (sphnb != spherehit) {
-# 258 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 258 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                double tauxlb; call_lbl_6: tauxlb = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphnb->cx, sphnb->cy, sphnb->cz, sphnb->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz -
-# 261 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 261 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                   conf.lz); })) ;
-# 262 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 262 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
               if (tauxlb > 0 && tauxla < tauxlb) {
-# 263 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 263 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 bShadow = true;
-# 264 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 264 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 265 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 265 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
               }
-# 266 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 266 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             }
-# 267 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 267 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
           } }
-# 268 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 268 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
            double cost; call_lbl_7: cost = (({ calling_npm("get_cos_angle_v1v2", 0); get_cos_angle_v1v2_npm(conf.dx, conf.dy, conf.dz, itx -
-# 269 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 269 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
               spherehit->cx, ity - spherehit->cy, itz -
-# 270 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 270 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
               spherehit->cz); })) ;
-# 271 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 271 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
           if (cost < 0) {cost = 0; };
-# 272 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 272 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
            double fact; fact = (1.0) ;
-# 273 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 273 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
           if (bShadow == true) {fact = 0.5; } else {fact = 1.0; } ;
-# 274 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 274 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
           color.r = spherehit->clR * cost * fact;
-# 275 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 275 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
           color.g = spherehit->clG * cost * fact;
-# 276 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 276 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
           color.b = spherehit->clB * cost * fact;
-# 277 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 277 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         }
-# 278 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 279 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 278 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 279 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         screen[i].r = color.r;
-# 280 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 280 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         screen[i].g = color.g;
-# 281 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 281 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         screen[i].b = color.b;
-# 282 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 282 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       }
-# 283 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 284 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 283 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 284 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       { int i; for ( i = (0) ; i < conf.nspheres; i++) {
-# 285 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 285 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
            call_lbl_8: ({ calling_npm("move", 0); move_npm(conf.spheres + i, conf.svx, conf.svy, conf.svz); });
-# 286 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 286 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       } }
-# 287 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 288 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 289 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 287 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 288 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 289 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
          call_lbl_9: checkpoint_transformed(9, ____alias_loc_id_0);
-# 290 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 291 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 292 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 290 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 291 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 292 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       printf("%d/%d\n", (t + 1), conf.nt);
-# 293 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 293 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     } }
-# 294 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 295 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-     ({ free_helper((((unsigned char *)screen) - sizeof(void *)), 11205885433679075224UL);free((((unsigned char *)screen) - sizeof(void *))); }) ;
-# 296 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 294 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 295 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+     ({ free_helper((((unsigned char *)screen) - sizeof(void *)), 16099212990272106600UL);free((((unsigned char *)screen) - sizeof(void *))); }) ;
+# 296 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = ((0)); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable12, false); return ____chimes_ret_var_4; ;
-# 297 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 297 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable12, false); }
 
 int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
-# 33 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 33 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 void init_npm(sphere *s, double cx, double cy, double cz, double radius, double clR,
-# 34 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 34 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         double clG, double clB) {
-# 35 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-    ((s) ? static_cast<void> (0) : __assert_fail ("s", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 35, __PRETTY_FUNCTION__));
-# 36 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 37 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 35 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+    ((s) ? static_cast<void> (0) : __assert_fail ("s", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 35, __PRETTY_FUNCTION__));
+# 36 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 37 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     s->cx = cx;
-# 38 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 38 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     s->cy = cy;
-# 39 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 39 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     s->cz = cz;
-# 40 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 41 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 40 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 41 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     s->radius = radius;
-# 42 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 43 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 42 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 43 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     s->clR = clR;
-# 44 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 44 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     s->clG = clG;
-# 45 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 45 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     s->clB = clB;
-# 46 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 46 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 }
-# 48 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 48 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 double get_coord_npm(double i1, double i2, double w1, double w2, double p) {
-# 49 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 49 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double ____chimes_ret_var_0; ____chimes_ret_var_0 = (((p - i1) / (i2 - i1)) * (w2 - w1) + w1); return ____chimes_ret_var_0; ;
-# 50 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 50 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 }
-# 52 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 52 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 double modv_npm(double vx, double vy, double vz) {
-# 53 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 53 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double ____chimes_ret_var_1; ____chimes_ret_var_1 = (sqrt(vx * vx + vy * vy + vz * vz)); return ____chimes_ret_var_1; ;
-# 54 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 54 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 }
-# 56 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 56 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 void move_npm(sphere *self, double vx, double vy, double vz) {
-# 57 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 57 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cx += vx;
-# 58 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 58 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cy += vy;
-# 59 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 59 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cz += vz;
-# 60 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 60 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 }
-# 62 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 62 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 void move_to_npm(sphere *self, double vx, double vy, double vz) {
-# 63 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 63 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cx = vx;
-# 64 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 64 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cy = vy;
-# 65 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 65 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cz = vz;
-# 66 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 66 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 }
-# 68 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 68 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 void rot_x_npm(sphere *self, double angle) {
-# 69 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 69 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     double y = self->cy * cos(angle) - self->cz * sin(angle);
-# 70 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 70 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     double z = self->cy * sin(angle) + self->cz * cos(angle);
-# 71 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 71 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cy = y;
-# 72 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 72 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     self->cz = z;
-# 73 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 73 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 }
-# 75 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 75 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 void rot_y_npm(sphere *self, double angle) {
-# 76 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 76 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
   double x = self->cx * cos(angle) - self->cz * sin(angle);
-# 77 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 77 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
   double z = self->cx * sin(angle) + self->cz * cos(angle);
-# 78 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 78 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
   self->cx = x;
-# 79 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 79 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
   self->cz = z;
-# 80 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 80 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 }
-# 82 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 82 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 double get_sphere_intersec_npm(double cx, double cy, double cz, double radius,
-# 83 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 83 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         double px, double py, double pz, double vx, double vy, double vz) {
-# 84 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 84 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     double A = (vx * vx + vy * vy + vz * vz);
-# 85 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 85 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     double B = 2.0 * (px * vx + py * vy + pz * vz - vx * cx - vy *
-# 86 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 86 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         cy - vz * cz);
-# 87 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 87 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     double C = px * px - 2 * px * cx + cx * cx + py * py - 2 * py *
-# 88 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 88 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       cy + cy * cy + pz * pz - 2 * pz * cz + cz * cz -
-# 89 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 89 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       radius * radius;
-# 90 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 90 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     double D = B * B - 4 * A * C;
-# 91 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 91 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     double t = -1.0;
-# 92 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 92 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     if (D >= 0)
-# 93 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 93 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     {
-# 94 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 94 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       double t1 = (-B - sqrt(D)) / (2.0 * A);
-# 95 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 95 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       double t2 = (-B + sqrt(D)) / (2.0 * A);
-# 96 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 96 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
       if (t1 > t2) {t = t1; } else {t = t2; } ;
-# 97 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 97 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     }
-# 98 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 98 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double ____chimes_ret_var_2; ____chimes_ret_var_2 = (t); return ____chimes_ret_var_2; ;
-# 99 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 99 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 }
-# 101 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 101 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 double get_cos_angle_v1v2_npm(double v1x, double v1y, double v1z, double v2x,
-# 102 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 102 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         double v2y, double v2z) {
-# 103 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 103 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     double a = modv_npm(v1x, v1y, v1z);
-# 104 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 104 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     double b = modv_npm(v2x, v2y, v2z);
-# 105 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 105 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
      double ____chimes_ret_var_3; ____chimes_ret_var_3 = ((v1x * v2x + v1y * v2y + v1z * v2z) / (a * b)); return ____chimes_ret_var_3; ;
-# 106 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 106 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 }
-# 108 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 108 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 void usage_npm(char **argv) {
-# 109 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 109 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     fprintf(stderr, "usage: %s [-x nx] [-y ny] [-s sx,sy,sz,r,clr,clg,clb] "
-# 110 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 110 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         "[-p px,py,pz]\n", argv[0]);
-# 111 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 111 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     exit(1);
-# 112 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 112 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 }
-# 114 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 114 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 void parse_three_doubles_npm(char *def, double *a, double *b, double *c) {
-# 115 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 115 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     char *first_comma = strchr(def, ',');
-# 116 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-    ((first_comma) ? static_cast<void> (0) : __assert_fail ("first_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 116, __PRETTY_FUNCTION__));
-# 117 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 116 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+    ((first_comma) ? static_cast<void> (0) : __assert_fail ("first_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 116, __PRETTY_FUNCTION__));
+# 117 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     char *second_comma = strchr(first_comma + 1, ',');
-# 118 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-    ((second_comma) ? static_cast<void> (0) : __assert_fail ("second_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 118, __PRETTY_FUNCTION__));
-# 119 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 120 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 118 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+    ((second_comma) ? static_cast<void> (0) : __assert_fail ("second_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 118, __PRETTY_FUNCTION__));
+# 119 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 120 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     *first_comma = '\0';
-# 121 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 121 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     *second_comma = '\0';
-# 122 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 123 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 122 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 123 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     *a = atof(def);
-# 124 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 124 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     *b = atof(first_comma + 1);
-# 125 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 125 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     *c = atof(second_comma + 1);
-# 126 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 126 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 }
-# 128 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 128 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 void parse_config_npm(int argc, char **argv, config *conf) {
-# 129 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 129 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     int c;
-# 130 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 130 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     opterr = 0;
-# 131 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 132 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 131 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 132 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->nx = 200;
-# 133 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 133 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->ny = 200;
-# 134 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 134 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->px = 0.0;
-# 135 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 135 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->py = 0.0;
-# 136 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 136 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->pz = 0.0;
-# 137 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 137 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->svx = 1.0;
-# 138 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 138 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->svy = 1.0;
-# 139 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 139 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->svz = 1.0;
-# 140 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 140 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->nt = 1000;
-# 141 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 141 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->spheres = __null;
-# 142 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 142 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     conf->nspheres = 0;
-# 143 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 144 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 143 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     while ((c = getopt(argc, argv, "s:x:y:p:l:d:v:t:h")) != -1) {
-# 145 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 145 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         switch (c) {
-# 146 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 146 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 'x':
-# 147 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 147 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 conf->nx = atoi(optarg);
-# 148 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 148 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 149 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 149 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 'y':
-# 150 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 150 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 conf->ny = atoi(optarg);
-# 151 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 151 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 152 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 152 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 't':
-# 153 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 153 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 conf->nt = atoi(optarg);
-# 154 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 154 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 155 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 155 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 'v':
-# 156 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 156 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 parse_three_doubles_npm(optarg, &conf->svx, &conf->svy, &conf->svz);
-# 157 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 157 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 158 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 158 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 'p':
-# 159 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 159 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 parse_three_doubles_npm(optarg, &conf->px, &conf->py, &conf->pz);
-# 160 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 160 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 161 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 161 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 'l':
-# 162 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 162 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 parse_three_doubles_npm(optarg, &conf->lx, &conf->ly, &conf->lz);
-# 163 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 163 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 164 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 164 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 'd':
-# 165 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 165 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 parse_three_doubles_npm(optarg, &conf->dx, &conf->dy, &conf->dz);
-# 166 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 166 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 167 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 167 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             case 's': {
-# 168 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 168 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 char *sphere_def = optarg;
-# 169 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 170 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 169 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 170 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 char *first_comma = strchr(sphere_def, ',');
-# 171 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-                ((first_comma) ? static_cast<void> (0) : __assert_fail ("first_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 171, __PRETTY_FUNCTION__));
-# 172 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 171 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+                ((first_comma) ? static_cast<void> (0) : __assert_fail ("first_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 171, __PRETTY_FUNCTION__));
+# 172 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 char *second_comma = strchr(first_comma + 1, ',');
-# 173 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-                ((second_comma) ? static_cast<void> (0) : __assert_fail ("second_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 173, __PRETTY_FUNCTION__));
-# 174 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 173 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+                ((second_comma) ? static_cast<void> (0) : __assert_fail ("second_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 173, __PRETTY_FUNCTION__));
+# 174 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 char *third_comma = strchr(second_comma + 1, ',');
-# 175 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-                ((third_comma) ? static_cast<void> (0) : __assert_fail ("third_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 175, __PRETTY_FUNCTION__));
-# 176 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 175 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+                ((third_comma) ? static_cast<void> (0) : __assert_fail ("third_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 175, __PRETTY_FUNCTION__));
+# 176 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 char *fourth_comma = strchr(third_comma + 1, ',');
-# 177 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-                ((fourth_comma) ? static_cast<void> (0) : __assert_fail ("fourth_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 177, __PRETTY_FUNCTION__));
-# 178 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 177 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+                ((fourth_comma) ? static_cast<void> (0) : __assert_fail ("fourth_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 177, __PRETTY_FUNCTION__));
+# 178 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 char *fifth_comma = strchr(fourth_comma + 1, ',');
-# 179 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-                ((fifth_comma) ? static_cast<void> (0) : __assert_fail ("fifth_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 179, __PRETTY_FUNCTION__));
-# 180 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 179 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+                ((fifth_comma) ? static_cast<void> (0) : __assert_fail ("fifth_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 179, __PRETTY_FUNCTION__));
+# 180 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 char *sixth_comma = strchr(fifth_comma + 1, ',');
-# 181 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-                ((sixth_comma) ? static_cast<void> (0) : __assert_fail ("sixth_comma", "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 181, __PRETTY_FUNCTION__));
-# 182 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 183 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 181 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+                ((sixth_comma) ? static_cast<void> (0) : __assert_fail ("sixth_comma", "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c", 181, __PRETTY_FUNCTION__));
+# 182 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 183 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 *first_comma = '\0';
-# 184 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 184 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 *second_comma = '\0';
-# 185 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 185 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 *third_comma = '\0';
-# 186 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 186 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 *fourth_comma = '\0';
-# 187 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 187 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 *fifth_comma = '\0';
-# 188 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 188 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 *sixth_comma = '\0';
-# 189 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 190 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-                conf->spheres = (sphere *) ({ void *____chimes_tmp_header = conf->spheres; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ((conf->nspheres + 1) * sizeof(sphere)) + sizeof(void *)); realloc_helper(____chimes_tmp_ptr, (conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ____chimes_tmp_header, (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 192 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 189 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 190 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+                conf->spheres = (sphere *) ({ void *____chimes_tmp_header = conf->spheres; if (____chimes_tmp_header) { ____chimes_tmp_header = *((void **)(((unsigned char *)____chimes_tmp_header) - sizeof(void *))); } void *____chimes_tmp_ptr = realloc((conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ((conf->nspheres + 1) * sizeof(sphere)) + sizeof(void *)); realloc_helper(____chimes_tmp_ptr, (conf->spheres ? (((unsigned char *)conf->spheres) - sizeof(void *)) : (unsigned char *)(conf->spheres)), ____chimes_tmp_header, (conf->nspheres + 1) * sizeof(sphere), 16099212990272106836UL, 0, 1, (int)sizeof(struct _sphere), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 192 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1));
-# 196 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 196 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 conf->nspheres += 1;
-# 197 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
-# 198 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 197 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 198 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
                 break;
-# 199 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 199 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             }
-# 200 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 200 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         case '?':
-# 201 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 201 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             fprintf(stderr, "Missing argument to option %c\n", optopt);
-# 202 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 202 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         case 'h':
-# 203 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 203 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         default:
-# 204 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 204 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
             usage_npm(argv);
-# 205 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 205 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
         }
-# 206 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 206 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
     }
-# 207 "/home/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
+# 207 "/scratch/jmg3/chimes/src/examples/cpp/./ray_tracer.c"
 }
 
 
@@ -6458,32 +6458,32 @@ void parse_config_npm(int argc, char **argv, config *conf) {
 
 
 static int module_init() {
-    init_module(11205885433679074279UL, 31, 13, 1, 13, 12, 0, 12, 17, 0, 3,
-                           &____alias_loc_id_0, (unsigned)31, (unsigned)0, (unsigned)0, (11205885433679074279UL + 895UL), (11205885433679074279UL + 896UL), (11205885433679074279UL + 897UL), (11205885433679074279UL + 899UL), (11205885433679074279UL + 900UL), (11205885433679074279UL + 901UL), (11205885433679074279UL + 902UL), (11205885433679074279UL + 903UL), (11205885433679074279UL + 904UL), (11205885433679074279UL + 905UL), (11205885433679074279UL + 906UL), (11205885433679074279UL + 907UL), (11205885433679074279UL + 908UL), (11205885433679074279UL + 909UL), (11205885433679074279UL + 910UL), (11205885433679074279UL + 911UL), (11205885433679074279UL + 912UL), (11205885433679074279UL + 913UL), (11205885433679074279UL + 914UL), (11205885433679074279UL + 915UL), (11205885433679074279UL + 916UL), (11205885433679074279UL + 917UL), (11205885433679074279UL + 918UL), (11205885433679074279UL + 919UL), (11205885433679074279UL + 920UL), (11205885433679074279UL + 921UL), (11205885433679074279UL + 922UL), (11205885433679074279UL + 923UL), (11205885433679074279UL + 924UL), (11205885433679074279UL + 925UL), (11205885433679074279UL + 945UL),
-                           &____alias_loc_id_1, (unsigned)9, (unsigned)0, (unsigned)0, (11205885433679074279UL + 1UL), (11205885433679074279UL + 2UL), (11205885433679074279UL + 3UL), (11205885433679074279UL + 4UL), (11205885433679074279UL + 5UL), (11205885433679074279UL + 6UL), (11205885433679074279UL + 7UL), (11205885433679074279UL + 8UL), (11205885433679074279UL + 33UL),
-                           &____alias_loc_id_2, (unsigned)6, (unsigned)0, (unsigned)0, (11205885433679074279UL + 75UL), (11205885433679074279UL + 76UL), (11205885433679074279UL + 77UL), (11205885433679074279UL + 78UL), (11205885433679074279UL + 79UL), (11205885433679074279UL + 80UL),
-                           &____alias_loc_id_3, (unsigned)4, (unsigned)0, (unsigned)0, (11205885433679074279UL + 113UL), (11205885433679074279UL + 114UL), (11205885433679074279UL + 115UL), (11205885433679074279UL + 116UL),
-                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (unsigned)0, (11205885433679074279UL + 143UL), (11205885433679074279UL + 144UL), (11205885433679074279UL + 145UL), (11205885433679074279UL + 146UL), (11205885433679074279UL + 174UL),
-                           &____alias_loc_id_5, (unsigned)5, (unsigned)0, (unsigned)0, (11205885433679074279UL + 178UL), (11205885433679074279UL + 179UL), (11205885433679074279UL + 180UL), (11205885433679074279UL + 181UL), (11205885433679074279UL + 203UL),
-                           &____alias_loc_id_6, (unsigned)5, (unsigned)0, (unsigned)0, (11205885433679074279UL + 207UL), (11205885433679074279UL + 208UL), (11205885433679074279UL + 209UL), (11205885433679074279UL + 210UL), (11205885433679074279UL + 254UL),
-                           &____alias_loc_id_7, (unsigned)5, (unsigned)0, (unsigned)0, (11205885433679074279UL + 258UL), (11205885433679074279UL + 259UL), (11205885433679074279UL + 260UL), (11205885433679074279UL + 261UL), (11205885433679074279UL + 305UL),
-                           &____alias_loc_id_8, (unsigned)18, (unsigned)0, (unsigned)0, (11205885433679074279UL + 307UL), (11205885433679074279UL + 308UL), (11205885433679074279UL + 309UL), (11205885433679074279UL + 310UL), (11205885433679074279UL + 311UL), (11205885433679074279UL + 312UL), (11205885433679074279UL + 313UL), (11205885433679074279UL + 314UL), (11205885433679074279UL + 315UL), (11205885433679074279UL + 316UL), (11205885433679074279UL + 317UL), (11205885433679074279UL + 318UL), (11205885433679074279UL + 319UL), (11205885433679074279UL + 320UL), (11205885433679074279UL + 321UL), (11205885433679074279UL + 322UL), (11205885433679074279UL + 323UL), (11205885433679074279UL + 324UL),
-                           &____alias_loc_id_9, (unsigned)9, (unsigned)0, (unsigned)0, (11205885433679074279UL + 489UL), (11205885433679074279UL + 490UL), (11205885433679074279UL + 491UL), (11205885433679074279UL + 492UL), (11205885433679074279UL + 493UL), (11205885433679074279UL + 494UL), (11205885433679074279UL + 495UL), (11205885433679074279UL + 496UL), (11205885433679074279UL + 497UL),
-                            &____alias_loc_id_10, (unsigned)11, (unsigned)0, (unsigned)0, (11205885433679074279UL + 562UL), (11205885433679074279UL + 563UL), (11205885433679074279UL + 564UL), (11205885433679074279UL + 565UL), (11205885433679074279UL + 566UL), (11205885433679074279UL + 567UL), (11205885433679074279UL + 588UL), (11205885433679074279UL + 590UL), (11205885433679074279UL + 605UL), (11205885433679074279UL + 610UL), (11205885433679074279UL + 615UL),
-                            &____alias_loc_id_11, (unsigned)19, (unsigned)0, (unsigned)0, (11205885433679074279UL + 625UL), (11205885433679074279UL + 626UL), (11205885433679074279UL + 627UL), (11205885433679074279UL + 628UL), (11205885433679074279UL + 629UL), (11205885433679074279UL + 630UL), (11205885433679074279UL + 631UL), (11205885433679074279UL + 632UL), (11205885433679074279UL + 633UL), (11205885433679074279UL + 634UL), (11205885433679074279UL + 635UL), (11205885433679074279UL + 755UL), (11205885433679074279UL + 757UL), (11205885433679074279UL + 769UL), (11205885433679074279UL + 781UL), (11205885433679074279UL + 793UL), (11205885433679074279UL + 805UL), (11205885433679074279UL + 826UL), (11205885433679074279UL + 1385UL),
-                            &____alias_loc_id_12, (unsigned)7, (unsigned)0, (unsigned)0, (11205885433679074279UL + 895UL), (11205885433679074279UL + 896UL), (11205885433679074279UL + 897UL), (11205885433679074279UL + 899UL), (11205885433679074279UL + 900UL), (11205885433679074279UL + 901UL), (11205885433679074279UL + 926UL),
+    init_module(16099212990272105655UL, 31, 13, 1, 13, 12, 0, 12, 17, 0, 3,
+                           &____alias_loc_id_0, (unsigned)31, (unsigned)0, (unsigned)0, (16099212990272105655UL + 895UL), (16099212990272105655UL + 896UL), (16099212990272105655UL + 897UL), (16099212990272105655UL + 899UL), (16099212990272105655UL + 900UL), (16099212990272105655UL + 901UL), (16099212990272105655UL + 902UL), (16099212990272105655UL + 903UL), (16099212990272105655UL + 904UL), (16099212990272105655UL + 905UL), (16099212990272105655UL + 906UL), (16099212990272105655UL + 907UL), (16099212990272105655UL + 908UL), (16099212990272105655UL + 909UL), (16099212990272105655UL + 910UL), (16099212990272105655UL + 911UL), (16099212990272105655UL + 912UL), (16099212990272105655UL + 913UL), (16099212990272105655UL + 914UL), (16099212990272105655UL + 915UL), (16099212990272105655UL + 916UL), (16099212990272105655UL + 917UL), (16099212990272105655UL + 918UL), (16099212990272105655UL + 919UL), (16099212990272105655UL + 920UL), (16099212990272105655UL + 921UL), (16099212990272105655UL + 922UL), (16099212990272105655UL + 923UL), (16099212990272105655UL + 924UL), (16099212990272105655UL + 925UL), (16099212990272105655UL + 945UL),
+                           &____alias_loc_id_1, (unsigned)9, (unsigned)0, (unsigned)0, (16099212990272105655UL + 1UL), (16099212990272105655UL + 2UL), (16099212990272105655UL + 3UL), (16099212990272105655UL + 4UL), (16099212990272105655UL + 5UL), (16099212990272105655UL + 6UL), (16099212990272105655UL + 7UL), (16099212990272105655UL + 8UL), (16099212990272105655UL + 33UL),
+                           &____alias_loc_id_2, (unsigned)6, (unsigned)0, (unsigned)0, (16099212990272105655UL + 75UL), (16099212990272105655UL + 76UL), (16099212990272105655UL + 77UL), (16099212990272105655UL + 78UL), (16099212990272105655UL + 79UL), (16099212990272105655UL + 80UL),
+                           &____alias_loc_id_3, (unsigned)4, (unsigned)0, (unsigned)0, (16099212990272105655UL + 113UL), (16099212990272105655UL + 114UL), (16099212990272105655UL + 115UL), (16099212990272105655UL + 116UL),
+                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (unsigned)0, (16099212990272105655UL + 143UL), (16099212990272105655UL + 144UL), (16099212990272105655UL + 145UL), (16099212990272105655UL + 146UL), (16099212990272105655UL + 174UL),
+                           &____alias_loc_id_5, (unsigned)5, (unsigned)0, (unsigned)0, (16099212990272105655UL + 178UL), (16099212990272105655UL + 179UL), (16099212990272105655UL + 180UL), (16099212990272105655UL + 181UL), (16099212990272105655UL + 203UL),
+                           &____alias_loc_id_6, (unsigned)5, (unsigned)0, (unsigned)0, (16099212990272105655UL + 207UL), (16099212990272105655UL + 208UL), (16099212990272105655UL + 209UL), (16099212990272105655UL + 210UL), (16099212990272105655UL + 254UL),
+                           &____alias_loc_id_7, (unsigned)5, (unsigned)0, (unsigned)0, (16099212990272105655UL + 258UL), (16099212990272105655UL + 259UL), (16099212990272105655UL + 260UL), (16099212990272105655UL + 261UL), (16099212990272105655UL + 305UL),
+                           &____alias_loc_id_8, (unsigned)18, (unsigned)0, (unsigned)0, (16099212990272105655UL + 307UL), (16099212990272105655UL + 308UL), (16099212990272105655UL + 309UL), (16099212990272105655UL + 310UL), (16099212990272105655UL + 311UL), (16099212990272105655UL + 312UL), (16099212990272105655UL + 313UL), (16099212990272105655UL + 314UL), (16099212990272105655UL + 315UL), (16099212990272105655UL + 316UL), (16099212990272105655UL + 317UL), (16099212990272105655UL + 318UL), (16099212990272105655UL + 319UL), (16099212990272105655UL + 320UL), (16099212990272105655UL + 321UL), (16099212990272105655UL + 322UL), (16099212990272105655UL + 323UL), (16099212990272105655UL + 324UL),
+                           &____alias_loc_id_9, (unsigned)9, (unsigned)0, (unsigned)0, (16099212990272105655UL + 489UL), (16099212990272105655UL + 490UL), (16099212990272105655UL + 491UL), (16099212990272105655UL + 492UL), (16099212990272105655UL + 493UL), (16099212990272105655UL + 494UL), (16099212990272105655UL + 495UL), (16099212990272105655UL + 496UL), (16099212990272105655UL + 497UL),
+                            &____alias_loc_id_10, (unsigned)11, (unsigned)0, (unsigned)0, (16099212990272105655UL + 562UL), (16099212990272105655UL + 563UL), (16099212990272105655UL + 564UL), (16099212990272105655UL + 565UL), (16099212990272105655UL + 566UL), (16099212990272105655UL + 567UL), (16099212990272105655UL + 588UL), (16099212990272105655UL + 590UL), (16099212990272105655UL + 605UL), (16099212990272105655UL + 610UL), (16099212990272105655UL + 615UL),
+                            &____alias_loc_id_11, (unsigned)19, (unsigned)0, (unsigned)0, (16099212990272105655UL + 625UL), (16099212990272105655UL + 626UL), (16099212990272105655UL + 627UL), (16099212990272105655UL + 628UL), (16099212990272105655UL + 629UL), (16099212990272105655UL + 630UL), (16099212990272105655UL + 631UL), (16099212990272105655UL + 632UL), (16099212990272105655UL + 633UL), (16099212990272105655UL + 634UL), (16099212990272105655UL + 635UL), (16099212990272105655UL + 755UL), (16099212990272105655UL + 757UL), (16099212990272105655UL + 769UL), (16099212990272105655UL + 781UL), (16099212990272105655UL + 793UL), (16099212990272105655UL + 805UL), (16099212990272105655UL + 826UL), (16099212990272105655UL + 1385UL),
+                            &____alias_loc_id_12, (unsigned)7, (unsigned)0, (unsigned)0, (16099212990272105655UL + 895UL), (16099212990272105655UL + 896UL), (16099212990272105655UL + 897UL), (16099212990272105655UL + 899UL), (16099212990272105655UL + 900UL), (16099212990272105655UL + 901UL), (16099212990272105655UL + 926UL),
                             "get_cos_angle_v1v2", 0, "_Z18get_cos_angle_v1v2dddddd", "_Z22get_cos_angle_v1v2_npmdddddd", 0, 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2, "modv", 3, 0UL, 0UL, 0UL, 0UL, "modv", 3, 0UL, 0UL, 0UL, 0UL,
                             "modv", 0, "_Z4modvddd", "_Z8modv_npmddd", 0, 3, 0UL, 0UL, 0UL, 0UL, 1, "sqrt", 1, 0UL, 0UL,
-                            "move", 0, "_Z4moveP7_sphereddd", "_Z8move_npmP7_sphereddd", 0, 4, (11205885433679074279UL + 174UL), 0UL, 0UL, 0UL, 0UL, 0,
+                            "move", 0, "_Z4moveP7_sphereddd", "_Z8move_npmP7_sphereddd", 0, 4, (16099212990272105655UL + 174UL), 0UL, 0UL, 0UL, 0UL, 0,
                             "get_sphere_intersec", 0, "_Z19get_sphere_intersecdddddddddd", "_Z23get_sphere_intersec_npmdddddddddd", 0, 10, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2, "sqrt", 1, 0UL, 0UL, "sqrt", 1, 0UL, 0UL,
-                            "move_to", 0, "_Z7move_toP7_sphereddd", "_Z11move_to_npmP7_sphereddd", 0, 4, (11205885433679074279UL + 203UL), 0UL, 0UL, 0UL, 0UL, 0,
+                            "move_to", 0, "_Z7move_toP7_sphereddd", "_Z11move_to_npmP7_sphereddd", 0, 4, (16099212990272105655UL + 203UL), 0UL, 0UL, 0UL, 0UL, 0,
                             "get_coord", 0, "_Z9get_coordddddd", "_Z13get_coord_npmddddd", 0, 5, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0,
-                            "parse_three_doubles", 0, "_Z19parse_three_doublesPcPdS0_S0_", "_Z23parse_three_doubles_npmPcPdS0_S0_", 0, 4, (11205885433679074279UL + 603UL), (11205885433679074279UL + 605UL), (11205885433679074279UL + 610UL), (11205885433679074279UL + 615UL), 0UL, 7, "strchr", 2, (11205885433679074279UL + 603UL), 0UL, (11205885433679074279UL + 588UL), "__assert_fail", 4, (11205885433679074279UL + 1382UL), (11205885433679074279UL + 1378UL), 0UL, (11205885433679074279UL + 1383UL), 0UL, "strchr", 2, (11205885433679074279UL + 588UL), 0UL, (11205885433679074279UL + 590UL), "__assert_fail", 4, (11205885433679074279UL + 1384UL), (11205885433679074279UL + 1378UL), 0UL, (11205885433679074279UL + 1383UL), 0UL, "atof", 1, (11205885433679074279UL + 603UL), 0UL, "atof", 1, (11205885433679074279UL + 588UL), 0UL, "atof", 1, (11205885433679074279UL + 590UL), 0UL,
-                            "init", 0, "_Z4initP7_sphereddddddd", "_Z8init_npmP7_sphereddddddd", 0, 8, (11205885433679074279UL + 33UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 1, "__assert_fail", 4, (11205885433679074279UL + 1377UL), (11205885433679074279UL + 1378UL), 0UL, (11205885433679074279UL + 1379UL), 0UL,
-                            "parse_config", 0, "_Z12parse_configiPPcP7_config", "_Z16parse_config_npmiPPcP7_config", 0, 3, 0UL, (11205885433679074279UL + 887UL), (11205885433679074279UL + 826UL), 0UL, 31, "getopt", 3, 0UL, (11205885433679074279UL + 887UL), (11205885433679074279UL + 1386UL), 0UL, "atoi", 1, (11205885433679074279UL + 849UL), 0UL, "atoi", 1, (11205885433679074279UL + 849UL), 0UL, "atoi", 1, (11205885433679074279UL + 849UL), 0UL, "parse_three_doubles", 4, (11205885433679074279UL + 849UL), (11205885433679074279UL + 826UL), (11205885433679074279UL + 826UL), (11205885433679074279UL + 826UL), 0UL, "parse_three_doubles", 4, (11205885433679074279UL + 849UL), (11205885433679074279UL + 826UL), (11205885433679074279UL + 826UL), (11205885433679074279UL + 826UL), 0UL, "parse_three_doubles", 4, (11205885433679074279UL + 849UL), (11205885433679074279UL + 826UL), (11205885433679074279UL + 826UL), (11205885433679074279UL + 826UL), 0UL, "parse_three_doubles", 4, (11205885433679074279UL + 849UL), (11205885433679074279UL + 826UL), (11205885433679074279UL + 826UL), (11205885433679074279UL + 826UL), 0UL, "strchr", 2, (11205885433679074279UL + 849UL), 0UL, (11205885433679074279UL + 755UL), "__assert_fail", 4, (11205885433679074279UL + 1382UL), (11205885433679074279UL + 1378UL), 0UL, (11205885433679074279UL + 1388UL), 0UL, "strchr", 2, (11205885433679074279UL + 755UL), 0UL, (11205885433679074279UL + 757UL), "__assert_fail", 4, (11205885433679074279UL + 1384UL), (11205885433679074279UL + 1378UL), 0UL, (11205885433679074279UL + 1388UL), 0UL, "strchr", 2, (11205885433679074279UL + 757UL), 0UL, (11205885433679074279UL + 769UL), "__assert_fail", 4, (11205885433679074279UL + 1382UL), (11205885433679074279UL + 1378UL), 0UL, (11205885433679074279UL + 1388UL), 0UL, "strchr", 2, (11205885433679074279UL + 769UL), 0UL, (11205885433679074279UL + 781UL), "__assert_fail", 4, (11205885433679074279UL + 1384UL), (11205885433679074279UL + 1378UL), 0UL, (11205885433679074279UL + 1388UL), 0UL, "strchr", 2, (11205885433679074279UL + 781UL), 0UL, (11205885433679074279UL + 793UL), "__assert_fail", 4, (11205885433679074279UL + 1382UL), (11205885433679074279UL + 1378UL), 0UL, (11205885433679074279UL + 1388UL), 0UL, "strchr", 2, (11205885433679074279UL + 793UL), 0UL, (11205885433679074279UL + 805UL), "__assert_fail", 4, (11205885433679074279UL + 1382UL), (11205885433679074279UL + 1378UL), 0UL, (11205885433679074279UL + 1388UL), 0UL, "realloc", 2, (11205885433679074279UL + 1181UL), 0UL, (11205885433679074279UL + 1181UL), "atof", 1, (11205885433679074279UL + 849UL), 0UL, "atof", 1, (11205885433679074279UL + 755UL), 0UL, "atof", 1, (11205885433679074279UL + 757UL), 0UL, "atof", 1, (11205885433679074279UL + 769UL), 0UL, "atof", 1, (11205885433679074279UL + 781UL), 0UL, "atof", 1, (11205885433679074279UL + 793UL), 0UL, "atof", 1, (11205885433679074279UL + 805UL), 0UL, "init", 8, (11205885433679074279UL + 1181UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "fprintf", 3, (11205885433679074279UL + 876UL), (11205885433679074279UL + 1393UL), 0UL, 0UL, "usage", 1, (11205885433679074279UL + 887UL), 0UL,
-                            "usage", 0, "_Z5usagePPc", "_Z9usage_npmPPc", 0, 1, (11205885433679074279UL + 558UL), 0UL, 2, "fprintf", 3, (11205885433679074279UL + 876UL), (11205885433679074279UL + 1381UL), (11205885433679074279UL + 553UL), 0UL, "exit", 1, 0UL, 0UL,
-                            "rot_y", 0, "_Z5rot_yP7_sphered", "_Z9rot_y_npmP7_sphered", 0, 2, (11205885433679074279UL + 305UL), 0UL, 0UL, 4, "cos", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "cos", 1, 0UL, 0UL,
-                            "rot_x", 0, "_Z5rot_xP7_sphered", "_Z9rot_x_npmP7_sphered", 0, 2, (11205885433679074279UL + 254UL), 0UL, 0UL, 4, "cos", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "cos", 1, 0UL, 0UL,
+                            "parse_three_doubles", 0, "_Z19parse_three_doublesPcPdS0_S0_", "_Z23parse_three_doubles_npmPcPdS0_S0_", 0, 4, (16099212990272105655UL + 603UL), (16099212990272105655UL + 605UL), (16099212990272105655UL + 610UL), (16099212990272105655UL + 615UL), 0UL, 7, "strchr", 2, (16099212990272105655UL + 603UL), 0UL, (16099212990272105655UL + 588UL), "__assert_fail", 4, (16099212990272105655UL + 1382UL), (16099212990272105655UL + 1378UL), 0UL, (16099212990272105655UL + 1383UL), 0UL, "strchr", 2, (16099212990272105655UL + 588UL), 0UL, (16099212990272105655UL + 590UL), "__assert_fail", 4, (16099212990272105655UL + 1384UL), (16099212990272105655UL + 1378UL), 0UL, (16099212990272105655UL + 1383UL), 0UL, "atof", 1, (16099212990272105655UL + 603UL), 0UL, "atof", 1, (16099212990272105655UL + 588UL), 0UL, "atof", 1, (16099212990272105655UL + 590UL), 0UL,
+                            "init", 0, "_Z4initP7_sphereddddddd", "_Z8init_npmP7_sphereddddddd", 0, 8, (16099212990272105655UL + 33UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 1, "__assert_fail", 4, (16099212990272105655UL + 1377UL), (16099212990272105655UL + 1378UL), 0UL, (16099212990272105655UL + 1379UL), 0UL,
+                            "parse_config", 0, "_Z12parse_configiPPcP7_config", "_Z16parse_config_npmiPPcP7_config", 0, 3, 0UL, (16099212990272105655UL + 887UL), (16099212990272105655UL + 826UL), 0UL, 31, "getopt", 3, 0UL, (16099212990272105655UL + 887UL), (16099212990272105655UL + 1386UL), 0UL, "atoi", 1, (16099212990272105655UL + 849UL), 0UL, "atoi", 1, (16099212990272105655UL + 849UL), 0UL, "atoi", 1, (16099212990272105655UL + 849UL), 0UL, "parse_three_doubles", 4, (16099212990272105655UL + 849UL), (16099212990272105655UL + 826UL), (16099212990272105655UL + 826UL), (16099212990272105655UL + 826UL), 0UL, "parse_three_doubles", 4, (16099212990272105655UL + 849UL), (16099212990272105655UL + 826UL), (16099212990272105655UL + 826UL), (16099212990272105655UL + 826UL), 0UL, "parse_three_doubles", 4, (16099212990272105655UL + 849UL), (16099212990272105655UL + 826UL), (16099212990272105655UL + 826UL), (16099212990272105655UL + 826UL), 0UL, "parse_three_doubles", 4, (16099212990272105655UL + 849UL), (16099212990272105655UL + 826UL), (16099212990272105655UL + 826UL), (16099212990272105655UL + 826UL), 0UL, "strchr", 2, (16099212990272105655UL + 849UL), 0UL, (16099212990272105655UL + 755UL), "__assert_fail", 4, (16099212990272105655UL + 1382UL), (16099212990272105655UL + 1378UL), 0UL, (16099212990272105655UL + 1388UL), 0UL, "strchr", 2, (16099212990272105655UL + 755UL), 0UL, (16099212990272105655UL + 757UL), "__assert_fail", 4, (16099212990272105655UL + 1384UL), (16099212990272105655UL + 1378UL), 0UL, (16099212990272105655UL + 1388UL), 0UL, "strchr", 2, (16099212990272105655UL + 757UL), 0UL, (16099212990272105655UL + 769UL), "__assert_fail", 4, (16099212990272105655UL + 1382UL), (16099212990272105655UL + 1378UL), 0UL, (16099212990272105655UL + 1388UL), 0UL, "strchr", 2, (16099212990272105655UL + 769UL), 0UL, (16099212990272105655UL + 781UL), "__assert_fail", 4, (16099212990272105655UL + 1384UL), (16099212990272105655UL + 1378UL), 0UL, (16099212990272105655UL + 1388UL), 0UL, "strchr", 2, (16099212990272105655UL + 781UL), 0UL, (16099212990272105655UL + 793UL), "__assert_fail", 4, (16099212990272105655UL + 1382UL), (16099212990272105655UL + 1378UL), 0UL, (16099212990272105655UL + 1388UL), 0UL, "strchr", 2, (16099212990272105655UL + 793UL), 0UL, (16099212990272105655UL + 805UL), "__assert_fail", 4, (16099212990272105655UL + 1382UL), (16099212990272105655UL + 1378UL), 0UL, (16099212990272105655UL + 1388UL), 0UL, "realloc", 2, (16099212990272105655UL + 1181UL), 0UL, (16099212990272105655UL + 1181UL), "atof", 1, (16099212990272105655UL + 849UL), 0UL, "atof", 1, (16099212990272105655UL + 755UL), 0UL, "atof", 1, (16099212990272105655UL + 757UL), 0UL, "atof", 1, (16099212990272105655UL + 769UL), 0UL, "atof", 1, (16099212990272105655UL + 781UL), 0UL, "atof", 1, (16099212990272105655UL + 793UL), 0UL, "atof", 1, (16099212990272105655UL + 805UL), 0UL, "init", 8, (16099212990272105655UL + 1181UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "fprintf", 3, (16099212990272105655UL + 876UL), (16099212990272105655UL + 1393UL), 0UL, 0UL, "usage", 1, (16099212990272105655UL + 887UL), 0UL,
+                            "usage", 0, "_Z5usagePPc", "_Z9usage_npmPPc", 0, 1, (16099212990272105655UL + 558UL), 0UL, 2, "fprintf", 3, (16099212990272105655UL + 876UL), (16099212990272105655UL + 1381UL), (16099212990272105655UL + 553UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "rot_y", 0, "_Z5rot_yP7_sphered", "_Z9rot_y_npmP7_sphered", 0, 2, (16099212990272105655UL + 305UL), 0UL, 0UL, 4, "cos", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "cos", 1, 0UL, 0UL,
+                            "rot_x", 0, "_Z5rot_xP7_sphered", "_Z9rot_x_npmP7_sphered", 0, 2, (16099212990272105655UL + 254UL), 0UL, 0UL, 4, "cos", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "cos", 1, 0UL, 0UL,
                            "get_cos_angle_v1v2", &(____chimes_does_checkpoint_get_cos_angle_v1v2_npm),
                            "modv", &(____chimes_does_checkpoint_modv_npm),
                            "move", &(____chimes_does_checkpoint_move_npm),
@@ -6496,37 +6496,37 @@ static int module_init() {
                            "usage", &(____chimes_does_checkpoint_usage_npm),
                            "rot_y", &(____chimes_does_checkpoint_rot_y_npm),
                            "rot_x", &(____chimes_does_checkpoint_rot_x_npm),
-                             (11205885433679074279UL + 627UL), (11205885433679074279UL + 826UL),
-                             (11205885433679074279UL + 626UL), (11205885433679074279UL + 887UL),
-                             (11205885433679074279UL + 629UL), (11205885433679074279UL + 849UL),
-                             (11205885433679074279UL + 258UL), (11205885433679074279UL + 305UL),
-                             (11205885433679074279UL + 178UL), (11205885433679074279UL + 203UL),
-                             (11205885433679074279UL + 635UL), (11205885433679074279UL + 805UL),
-                             (11205885433679074279UL + 558UL), (11205885433679074279UL + 553UL),
-                             (11205885433679074279UL + 1UL), (11205885433679074279UL + 33UL),
-                             (11205885433679074279UL + 547UL), (11205885433679074279UL + 558UL),
-                             (11205885433679074279UL + 911UL), (11205885433679074279UL + 1181UL),
-                             (11205885433679074279UL + 913UL), (11205885433679074279UL + 1181UL),
-                             (11205885433679074279UL + 630UL), (11205885433679074279UL + 755UL),
-                             (11205885433679074279UL + 631UL), (11205885433679074279UL + 757UL),
-                             (11205885433679074279UL + 632UL), (11205885433679074279UL + 769UL),
-                             (11205885433679074279UL + 633UL), (11205885433679074279UL + 781UL),
-                             (11205885433679074279UL + 634UL), (11205885433679074279UL + 793UL),
-                             (11205885433679074279UL + 143UL), (11205885433679074279UL + 174UL),
-                             (11205885433679074279UL + 207UL), (11205885433679074279UL + 254UL),
-                             (11205885433679074279UL + 897UL), (11205885433679074279UL + 1373UL),
-                             (11205885433679074279UL + 898UL), (11205885433679074279UL + 1181UL),
-                             (11205885433679074279UL + 899UL), (11205885433679074279UL + 945UL),
-                             (11205885433679074279UL + 562UL), (11205885433679074279UL + 603UL),
-                             (11205885433679074279UL + 563UL), (11205885433679074279UL + 605UL),
-                             (11205885433679074279UL + 564UL), (11205885433679074279UL + 610UL),
-                             (11205885433679074279UL + 565UL), (11205885433679074279UL + 615UL),
-                             (11205885433679074279UL + 566UL), (11205885433679074279UL + 588UL),
-                             (11205885433679074279UL + 567UL), (11205885433679074279UL + 590UL),
-                             (11205885433679074279UL + 1387UL), (11205885433679074279UL + 849UL),
-                             (11205885433679074279UL + 921UL), (11205885433679074279UL + 1181UL),
-                             (11205885433679074279UL + 826UL), (11205885433679074279UL + 1181UL),
-                             (11205885433679074279UL + 1380UL), (11205885433679074279UL + 876UL),
+                             (16099212990272105655UL + 627UL), (16099212990272105655UL + 826UL),
+                             (16099212990272105655UL + 626UL), (16099212990272105655UL + 887UL),
+                             (16099212990272105655UL + 629UL), (16099212990272105655UL + 849UL),
+                             (16099212990272105655UL + 258UL), (16099212990272105655UL + 305UL),
+                             (16099212990272105655UL + 178UL), (16099212990272105655UL + 203UL),
+                             (16099212990272105655UL + 635UL), (16099212990272105655UL + 805UL),
+                             (16099212990272105655UL + 558UL), (16099212990272105655UL + 553UL),
+                             (16099212990272105655UL + 1UL), (16099212990272105655UL + 33UL),
+                             (16099212990272105655UL + 547UL), (16099212990272105655UL + 558UL),
+                             (16099212990272105655UL + 911UL), (16099212990272105655UL + 1181UL),
+                             (16099212990272105655UL + 913UL), (16099212990272105655UL + 1181UL),
+                             (16099212990272105655UL + 630UL), (16099212990272105655UL + 755UL),
+                             (16099212990272105655UL + 631UL), (16099212990272105655UL + 757UL),
+                             (16099212990272105655UL + 632UL), (16099212990272105655UL + 769UL),
+                             (16099212990272105655UL + 633UL), (16099212990272105655UL + 781UL),
+                             (16099212990272105655UL + 634UL), (16099212990272105655UL + 793UL),
+                             (16099212990272105655UL + 143UL), (16099212990272105655UL + 174UL),
+                             (16099212990272105655UL + 207UL), (16099212990272105655UL + 254UL),
+                             (16099212990272105655UL + 897UL), (16099212990272105655UL + 1373UL),
+                             (16099212990272105655UL + 898UL), (16099212990272105655UL + 1181UL),
+                             (16099212990272105655UL + 899UL), (16099212990272105655UL + 945UL),
+                             (16099212990272105655UL + 562UL), (16099212990272105655UL + 603UL),
+                             (16099212990272105655UL + 563UL), (16099212990272105655UL + 605UL),
+                             (16099212990272105655UL + 564UL), (16099212990272105655UL + 610UL),
+                             (16099212990272105655UL + 565UL), (16099212990272105655UL + 615UL),
+                             (16099212990272105655UL + 566UL), (16099212990272105655UL + 588UL),
+                             (16099212990272105655UL + 567UL), (16099212990272105655UL + 590UL),
+                             (16099212990272105655UL + 1387UL), (16099212990272105655UL + 849UL),
+                             (16099212990272105655UL + 921UL), (16099212990272105655UL + 1181UL),
+                             (16099212990272105655UL + 826UL), (16099212990272105655UL + 1181UL),
+                             (16099212990272105655UL + 1380UL), (16099212990272105655UL + 876UL),
                      "_config", 960UL, 17, "double", (int)__builtin_offsetof (struct _config, px), "double", (int)__builtin_offsetof (struct _config, py), "double", (int)__builtin_offsetof (struct _config, pz), "double", (int)__builtin_offsetof (struct _config, lx), "double", (int)__builtin_offsetof (struct _config, ly), "double", (int)__builtin_offsetof (struct _config, lz), "double", (int)__builtin_offsetof (struct _config, dx), "double", (int)__builtin_offsetof (struct _config, dy), "double", (int)__builtin_offsetof (struct _config, dz), "double", (int)__builtin_offsetof (struct _config, svx), "double", (int)__builtin_offsetof (struct _config, svy), "double", (int)__builtin_offsetof (struct _config, svz), "int", (int)__builtin_offsetof (struct _config, nx), "int", (int)__builtin_offsetof (struct _config, ny), "%struct._sphere*", (int)__builtin_offsetof (struct _config, spheres), "int", (int)__builtin_offsetof (struct _config, nspheres), "int", (int)__builtin_offsetof (struct _config, nt),
                      "_rgb", 192UL, 3, "double", (int)__builtin_offsetof (struct _rgb, r), "double", (int)__builtin_offsetof (struct _rgb, g), "double", (int)__builtin_offsetof (struct _rgb, b),
                      "_sphere", 448UL, 7, "double", (int)__builtin_offsetof (struct _sphere, cx), "double", (int)__builtin_offsetof (struct _sphere, cy), "double", (int)__builtin_offsetof (struct _sphere, cz), "double", (int)__builtin_offsetof (struct _sphere, radius), "double", (int)__builtin_offsetof (struct _sphere, clR), "double", (int)__builtin_offsetof (struct _sphere, clG), "double", (int)__builtin_offsetof (struct _sphere, clB),
@@ -6546,13 +6546,13 @@ static int module_init() {
                         "main|conf|0", 1, "main",
         "modv", 0UL, (int)3, 0UL, 0UL, 0UL,
         "modv", 0UL, (int)3, 0UL, 0UL, 0UL,
-        "parse_three_doubles", 0UL, (int)4, 11205885433679075128UL, 11205885433679075105UL, 11205885433679075105UL, 11205885433679075105UL,
-        "parse_three_doubles", 0UL, (int)4, 11205885433679075128UL, 11205885433679075105UL, 11205885433679075105UL, 11205885433679075105UL,
-        "parse_three_doubles", 0UL, (int)4, 11205885433679075128UL, 11205885433679075105UL, 11205885433679075105UL, 11205885433679075105UL,
-        "parse_three_doubles", 0UL, (int)4, 11205885433679075128UL, 11205885433679075105UL, 11205885433679075105UL, 11205885433679075105UL,
-        "init", 0UL, (int)8, 11205885433679075460UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-        "usage", 0UL, (int)1, 11205885433679075166UL,
-        "parse_config", 0UL, (int)3, 0UL, 11205885433679075652UL, 11205885433679075177UL,
+        "parse_three_doubles", 0UL, (int)4, 16099212990272106504UL, 16099212990272106481UL, 16099212990272106481UL, 16099212990272106481UL,
+        "parse_three_doubles", 0UL, (int)4, 16099212990272106504UL, 16099212990272106481UL, 16099212990272106481UL, 16099212990272106481UL,
+        "parse_three_doubles", 0UL, (int)4, 16099212990272106504UL, 16099212990272106481UL, 16099212990272106481UL, 16099212990272106481UL,
+        "parse_three_doubles", 0UL, (int)4, 16099212990272106504UL, 16099212990272106481UL, 16099212990272106481UL, 16099212990272106481UL,
+        "init", 0UL, (int)8, 16099212990272106836UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "usage", 0UL, (int)1, 16099212990272106542UL,
+        "parse_config", 0UL, (int)3, 0UL, 16099212990272107028UL, 16099212990272106553UL,
         "get_coord", 0UL, (int)5, 0UL, 0UL, 0UL, 0UL, 0UL,
         "get_coord", 0UL, (int)5, 0UL, 0UL, 0UL, 0UL, 0UL,
         "modv", 0UL, (int)3, 0UL, 0UL, 0UL,
@@ -6560,7 +6560,7 @@ static int module_init() {
         "get_sphere_intersec", 0UL, (int)10, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
         "get_sphere_intersec", 0UL, (int)10, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
         "get_cos_angle_v1v2", 0UL, (int)6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-        "move", 0UL, (int)4, 11205885433679075460UL, 0UL, 0UL, 0UL);
+        "move", 0UL, (int)4, 16099212990272106836UL, 0UL, 0UL, 0UL);
     return 0;
 }
 

@@ -24,11 +24,11 @@ static int ____must_manage_verifyData = 2;
 
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -37,7 +37,7 @@ static unsigned ____alias_loc_id_1;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -93,7 +93,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 69 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 69 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -107,8 +107,8 @@ inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 11 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 11 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 28 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1053,7 +1053,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 12 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c" 2
+# 12 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 1 3 4
@@ -2229,11 +2229,11 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 13 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c" 2
-# 13 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 13 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c" 2
+# 13 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h" 1
-# 22 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h" 1
+# 22 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 1 3 4
 # 34 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 3 4
 typedef struct
@@ -2307,8 +2307,8 @@ int omp_in_final (void) throw ();
 
 
 }
-# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h" 2
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
+# 23 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h" 2
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
 typedef struct simmat {
   char similarity[((64) + 1)][((64) + 1)];
   char aminoAcid[(((64) + 1) + 1)];
@@ -2369,7 +2369,7 @@ typedef struct cstr {
   int *finalStartsI, *finalStartsJ, *finalEndsI, *finalEndsJ;
   unsigned char **finalSeqsI, **finalSeqsJ;
 } CSTR_T;
-# 207 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
+# 207 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
 void getUserParameters(void);
 
 SEQDATA_T *genScalData(unsigned int, SIMMATRIX_T*, int, int, int);
@@ -2407,430 +2407,430 @@ void verifyMergeAlignment(SIMMATRIX_T*, CSTR_T*, int);
 double getSeconds(void);
 
 void dispElapsedTime(double);
-# 15 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c" 2
-# 34 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 34 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 15 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c" 2
+# 34 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 34 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 void verifyData_npm(SIMMATRIX_T *simMatrix, SEQDATA_T *seqData, int minScore, int minSeparation);static int (*____chimes_extern_func_gridInfo)(int *, int *, int *, int *) = gridInfo;
 void verifyData_quick(SIMMATRIX_T *simMatrix, SEQDATA_T *seqData, int minScore, int minSeparation); void verifyData(SIMMATRIX_T *simMatrix, SEQDATA_T *seqData, int minScore, int minSeparation);
 void verifyData_resumable(SIMMATRIX_T *simMatrix, SEQDATA_T *seqData,
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-  int minScore, int minSeparation) {const int ____chimes_did_disable0 = new_stack((void *)(&verifyData), "verifyData", &____must_manage_verifyData, 4, 3, (size_t)(8188620330301190675UL), (size_t)(8188620330301190676UL), (size_t)(0UL), (size_t)(0UL), "verifyData|simMatrix|0", &____must_checkpoint_verifyData_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "verifyData|seqData|0", &____must_checkpoint_verifyData_seqData_0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0, "verifyData|minScore|0", &____must_checkpoint_verifyData_minScore_0, "i32", (void *)(&minScore), (size_t)4, 0, 0, 0) ; int npCol;
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 35 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+  int minScore, int minSeparation) {const int ____chimes_did_disable0 = new_stack((void *)(&verifyData), "verifyData", &____must_manage_verifyData, 4, 3, (size_t)(17934975424406224844UL), (size_t)(17934975424406224845UL), (size_t)(0UL), (size_t)(0UL), "verifyData|simMatrix|0", &____must_checkpoint_verifyData_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "verifyData|seqData|0", &____must_checkpoint_verifyData_seqData_0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0, "verifyData|minScore|0", &____must_checkpoint_verifyData_minScore_0, "i32", (void *)(&minScore), (size_t)4, 0, 0, 0) ; int npCol;
+# 35 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 int npRow;
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 35 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 int myCol;
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 35 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 int myRow;
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 35 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 int matchLimit;
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 35 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
  if (____must_checkpoint_verifyData_npCol_0 || ____must_checkpoint_verifyData_npRow_0 || ____must_checkpoint_verifyData_myCol_0 || ____must_checkpoint_verifyData_myRow_0 || ____must_checkpoint_verifyData_matchLimit_0) { register_stack_vars(5, "verifyData|npCol|0", &____must_checkpoint_verifyData_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "verifyData|npRow|0", &____must_checkpoint_verifyData_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "verifyData|myCol|0", &____must_checkpoint_verifyData_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "verifyData|myRow|0", &____must_checkpoint_verifyData_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "verifyData|matchLimit|0", &____must_checkpoint_verifyData_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
-# 36 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 37 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 36 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 37 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   int myTaskID; int globalNpRow; int globalNpCol; ;
-# 38 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 38 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   int iBeg; int iEnd; int jBeg; int jEnd; int n; int m; ;
-# 39 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 39 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   unsigned long long comparisons; unsigned long long reduced_comparisons; ;
-# 40 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 41 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 40 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 41 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   myTaskID = 0;
-# 42 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 42 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   comparisons = 0L;
-# 43 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 43 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   matchLimit = simMatrix->matchLimit;
-# 44 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 45 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 44 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 45 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 46 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 46 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 46 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 { call_lbl_1: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(1, &____chimes_region_id0, 11, &iBeg, &iEnd, &jBeg, &jEnd, &m, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow);
-# 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 46 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 #pragma omp parallel reduction(+:comparisons) private(iBeg, iEnd, jBeg, jEnd, myRow, myCol, npRow, npCol, n, m, myTaskID)
-# 47 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 48 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 49 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 50 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 47 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 48 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 49 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 50 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 11, &iBeg, &iEnd, &jBeg, &jEnd, &m, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } {
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 52 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 53 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 54 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 55 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 56 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 57 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-     call_lbl_0: ({ calling((void*)gridInfo, 0, ____alias_loc_id_0, 0UL, 4, (size_t)(8188620330301190502UL), (size_t)(8188620330301190503UL), (size_t)(8188620330301190500UL), (size_t)(8188620330301190501UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) ;
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 52 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 53 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 54 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 55 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 56 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 57 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+     call_lbl_0: ({ calling((void*)gridInfo, 0, ____alias_loc_id_0, 0UL, 4, (size_t)(17934975424406224671UL), (size_t)(17934975424406224672UL), (size_t)(17934975424406224669UL), (size_t)(17934975424406224670UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) ;
+# 68 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 68 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     myTaskID = omp_get_thread_num();
-# 69 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 70 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 69 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 70 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 71 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     if (myTaskID == 0) {
-# 72 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 72 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
       globalNpRow = npRow;
-# 73 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 73 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
       globalNpCol = npCol;
-# 74 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 74 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     }
-# 83 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 83 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 83 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 83 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     n = seqData->mainLen;
-# 84 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 84 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     m = seqData->matchLen;
-# 85 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 86 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 85 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 86 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     iBeg = 1 + (n*myRow)/npRow;
-# 87 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 87 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     jBeg = 1 + (m*myCol)/npCol;
-# 88 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 89 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 88 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 89 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     iEnd = ( (n < (n*(myRow+1))/npRow + (matchLimit-1)) ? n : (n*(myRow+1))/npRow + (matchLimit-1) );
-# 90 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 90 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     jEnd = ( (m < (m*(myCol+1))/npCol + (matchLimit-1)) ? m : (m*(myCol+1))/npCol + (matchLimit-1) );
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 92 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 93 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 94 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 92 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 93 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 94 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     comparisons =
-# 95 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 95 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
       ((unsigned long long)(iEnd - iBeg + 1)) *
-# 96 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 96 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
       ((unsigned long long)(jEnd - jBeg + 1));
-# 110 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 110 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 110 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 110 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
    } thread_leaving(); } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
-# 111 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 112 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 111 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 112 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   if (myTaskID == 0) {
-# 113 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 113 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("\n");
-# 114 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 114 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("         Length of main sequence in codons: %d\n",
-# 115 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 115 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     seqData->mainLen);
-# 116 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 117 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 116 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 117 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("        Length of match sequence in codons: %d\n",
-# 118 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 118 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     seqData->matchLen);
-# 119 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 120 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 119 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 120 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("        Weight for exactly matching codons: %d\n",
-# 121 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 121 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     simMatrix->exact);
-# 122 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 123 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 122 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 123 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("                 Weight for similar codons: %d\n",
-# 124 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 124 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     simMatrix->similar);
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 126 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 126 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("              Weight for dissimilar codons: %d\n",
-# 127 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 127 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     simMatrix->dissimilar);
-# 128 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 129 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 128 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 129 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("                    Penalty to start a gap: %d\n",
-# 130 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 130 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     simMatrix->gapStart);
-# 131 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 132 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 131 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 132 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("           Penalty for each codon in a gap: %d\n",
-# 133 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 133 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     simMatrix->gapExtend);
-# 134 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 135 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 134 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 135 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("   Maximum length of a biological sequence: %d\n",
-# 136 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 136 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     simMatrix->matchLimit);
-# 137 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 138 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 137 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 138 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("   Minimum cumulative score for a sequence: %d\n",
-# 139 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 139 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     minScore);
-# 149 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 149 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 149 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 149 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   }
-# 150 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 150 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 rm_stack(false, 0UL, "verifyData", &____must_manage_verifyData, ____alias_loc_id_1, ____chimes_did_disable0, false); }
-# 34 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 34 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 void verifyData_quick(SIMMATRIX_T *simMatrix, SEQDATA_T *seqData,
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-  int minScore, int minSeparation) {const int ____chimes_did_disable0 = new_stack((void *)(&verifyData), "verifyData", &____must_manage_verifyData, 4, 3, (size_t)(8188620330301190675UL), (size_t)(8188620330301190676UL), (size_t)(0UL), (size_t)(0UL), "verifyData|simMatrix|0", &____must_checkpoint_verifyData_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "verifyData|seqData|0", &____must_checkpoint_verifyData_seqData_0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0, "verifyData|minScore|0", &____must_checkpoint_verifyData_minScore_0, "i32", (void *)(&minScore), (size_t)4, 0, 0, 0) ; int npCol;
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 35 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+  int minScore, int minSeparation) {const int ____chimes_did_disable0 = new_stack((void *)(&verifyData), "verifyData", &____must_manage_verifyData, 4, 3, (size_t)(17934975424406224844UL), (size_t)(17934975424406224845UL), (size_t)(0UL), (size_t)(0UL), "verifyData|simMatrix|0", &____must_checkpoint_verifyData_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "verifyData|seqData|0", &____must_checkpoint_verifyData_seqData_0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0, "verifyData|minScore|0", &____must_checkpoint_verifyData_minScore_0, "i32", (void *)(&minScore), (size_t)4, 0, 0, 0) ; int npCol;
+# 35 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 int npRow;
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 35 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 int myCol;
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 35 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 int myRow;
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 35 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 int matchLimit;
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 35 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
  if (____must_checkpoint_verifyData_npCol_0 || ____must_checkpoint_verifyData_npRow_0 || ____must_checkpoint_verifyData_myCol_0 || ____must_checkpoint_verifyData_myRow_0 || ____must_checkpoint_verifyData_matchLimit_0) { register_stack_vars(5, "verifyData|npCol|0", &____must_checkpoint_verifyData_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "verifyData|npRow|0", &____must_checkpoint_verifyData_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "verifyData|myCol|0", &____must_checkpoint_verifyData_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "verifyData|myRow|0", &____must_checkpoint_verifyData_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "verifyData|matchLimit|0", &____must_checkpoint_verifyData_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0); } ; ;
-# 36 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 37 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 36 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 37 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   int myTaskID; int globalNpRow; int globalNpCol; ;
-# 38 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 38 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   int iBeg; int iEnd; int jBeg; int jEnd; int n; int m; ;
-# 39 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 39 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   unsigned long long comparisons; unsigned long long reduced_comparisons; ;
-# 40 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 41 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 40 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 41 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   myTaskID = 0;
-# 42 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 42 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   comparisons = 0L;
-# 43 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 43 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   matchLimit = simMatrix->matchLimit;
-# 44 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 45 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 44 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 45 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 46 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 46 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 46 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 { call_lbl_1: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(1, &____chimes_region_id0, 11, &iBeg, &iEnd, &jBeg, &jEnd, &m, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow);
-# 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 46 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 #pragma omp parallel reduction(+:comparisons) private(iBeg, iEnd, jBeg, jEnd, myRow, myCol, npRow, npCol, n, m, myTaskID)
-# 47 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 48 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 49 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 50 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 47 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 48 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 49 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 50 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 11, &iBeg, &iEnd, &jBeg, &jEnd, &m, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } {
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 52 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 53 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 54 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 55 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 56 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 57 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-     call_lbl_0: ({ calling((void*)gridInfo, 0, ____alias_loc_id_0, 0UL, 4, (size_t)(8188620330301190502UL), (size_t)(8188620330301190503UL), (size_t)(8188620330301190500UL), (size_t)(8188620330301190501UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) ;
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 52 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 53 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 54 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 55 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 56 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 57 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+     call_lbl_0: ({ calling((void*)gridInfo, 0, ____alias_loc_id_0, 0UL, 4, (size_t)(17934975424406224671UL), (size_t)(17934975424406224672UL), (size_t)(17934975424406224669UL), (size_t)(17934975424406224670UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) ;
+# 68 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 68 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     myTaskID = omp_get_thread_num();
-# 69 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 70 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 69 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 70 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 71 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     if (myTaskID == 0) {
-# 72 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 72 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
       globalNpRow = npRow;
-# 73 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 73 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
       globalNpCol = npCol;
-# 74 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 74 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     }
-# 83 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 83 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 83 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 83 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     n = seqData->mainLen;
-# 84 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 84 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     m = seqData->matchLen;
-# 85 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 86 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 85 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 86 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     iBeg = 1 + (n*myRow)/npRow;
-# 87 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 87 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     jBeg = 1 + (m*myCol)/npCol;
-# 88 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 89 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 88 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 89 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     iEnd = ( (n < (n*(myRow+1))/npRow + (matchLimit-1)) ? n : (n*(myRow+1))/npRow + (matchLimit-1) );
-# 90 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 90 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     jEnd = ( (m < (m*(myCol+1))/npCol + (matchLimit-1)) ? m : (m*(myCol+1))/npCol + (matchLimit-1) );
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 92 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 93 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 94 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 92 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 93 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 94 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     comparisons =
-# 95 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 95 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
       ((unsigned long long)(iEnd - iBeg + 1)) *
-# 96 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 96 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
       ((unsigned long long)(jEnd - jBeg + 1));
-# 110 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 110 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 110 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 110 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
    } thread_leaving(); } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
-# 111 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 112 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 111 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 112 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   if (myTaskID == 0) {
-# 113 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 113 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("\n");
-# 114 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 114 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("         Length of main sequence in codons: %d\n",
-# 115 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 115 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     seqData->mainLen);
-# 116 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 117 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 116 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 117 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("        Length of match sequence in codons: %d\n",
-# 118 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 118 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     seqData->matchLen);
-# 119 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 120 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 119 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 120 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("        Weight for exactly matching codons: %d\n",
-# 121 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 121 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     simMatrix->exact);
-# 122 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 123 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 122 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 123 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("                 Weight for similar codons: %d\n",
-# 124 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 124 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     simMatrix->similar);
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 126 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 126 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("              Weight for dissimilar codons: %d\n",
-# 127 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 127 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     simMatrix->dissimilar);
-# 128 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 129 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 128 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 129 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("                    Penalty to start a gap: %d\n",
-# 130 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 130 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     simMatrix->gapStart);
-# 131 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 132 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 131 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 132 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("           Penalty for each codon in a gap: %d\n",
-# 133 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 133 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     simMatrix->gapExtend);
-# 134 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 135 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 134 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 135 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("   Maximum length of a biological sequence: %d\n",
-# 136 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 136 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     simMatrix->matchLimit);
-# 137 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 138 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 137 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 138 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("   Minimum cumulative score for a sequence: %d\n",
-# 139 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 139 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     minScore);
-# 149 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 149 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 149 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 149 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   }
-# 150 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 150 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 rm_stack(false, 0UL, "verifyData", &____must_manage_verifyData, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
 void verifyData(SIMMATRIX_T *simMatrix, SEQDATA_T *seqData,
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 35 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   int minScore, int minSeparation) { (____chimes_replaying ? verifyData_resumable(simMatrix, seqData, minScore, minSeparation) : verifyData_quick(simMatrix, seqData, minScore, minSeparation)); }
-# 34 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 34 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 void verifyData_npm(SIMMATRIX_T *simMatrix, SEQDATA_T *seqData,
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 35 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   int minScore, int minSeparation) {
-# 36 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 37 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 36 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 37 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   int myTaskID, matchLimit, globalNpRow, globalNpCol;
-# 38 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 38 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   int iBeg, iEnd, jBeg, jEnd, myRow, myCol, npRow, npCol, n, m;
-# 39 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 39 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   unsigned long long comparisons, reduced_comparisons;
-# 40 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 41 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 40 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 41 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   myTaskID = 0;
-# 42 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 42 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   comparisons = 0L;
-# 43 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 43 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   matchLimit = simMatrix->matchLimit;
-# 44 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 45 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 44 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 45 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 46 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 46 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 46 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 #pragma omp parallel reduction(+:comparisons) private(iBeg, iEnd, jBeg, jEnd, myRow, myCol, npRow, npCol, n, m, myTaskID)
-# 47 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 48 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 49 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 50 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 47 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 48 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 49 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 50 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   {
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 52 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 53 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 54 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 55 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 56 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 57 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 52 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 53 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 54 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 55 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 56 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 57 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     (*____chimes_extern_func_gridInfo)(&npRow, &npCol, &myRow, &myCol);
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 68 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 68 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     myTaskID = omp_get_thread_num();
-# 69 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 70 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 69 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 70 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 71 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     if (myTaskID == 0) {
-# 72 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 72 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
       globalNpRow = npRow;
-# 73 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 73 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
       globalNpCol = npCol;
-# 74 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 74 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     }
-# 83 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 83 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 83 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 83 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     n = seqData->mainLen;
-# 84 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 84 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     m = seqData->matchLen;
-# 85 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 86 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 85 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 86 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     iBeg = 1 + (n*myRow)/npRow;
-# 87 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 87 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     jBeg = 1 + (m*myCol)/npCol;
-# 88 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 89 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 88 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 89 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     iEnd = ( (n < (n*(myRow+1))/npRow + (matchLimit-1)) ? n : (n*(myRow+1))/npRow + (matchLimit-1) );
-# 90 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 90 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     jEnd = ( (m < (m*(myCol+1))/npCol + (matchLimit-1)) ? m : (m*(myCol+1))/npCol + (matchLimit-1) );
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 92 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 93 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 94 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 92 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 93 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 94 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     comparisons =
-# 95 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 95 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
       ((unsigned long long)(iEnd - iBeg + 1)) *
-# 96 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 96 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
       ((unsigned long long)(jEnd - jBeg + 1));
-# 110 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 110 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 110 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 110 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   }
-# 111 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 112 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 111 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 112 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   if (myTaskID == 0) {
-# 113 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 113 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("\n");
-# 114 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 114 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("         Length of main sequence in codons: %d\n",
-# 115 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 115 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     seqData->mainLen);
-# 116 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 117 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 116 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 117 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("        Length of match sequence in codons: %d\n",
-# 118 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 118 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     seqData->matchLen);
-# 119 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 120 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 119 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 120 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("        Weight for exactly matching codons: %d\n",
-# 121 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 121 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     simMatrix->exact);
-# 122 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 123 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 122 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 123 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("                 Weight for similar codons: %d\n",
-# 124 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 124 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     simMatrix->similar);
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 126 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 126 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("              Weight for dissimilar codons: %d\n",
-# 127 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 127 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     simMatrix->dissimilar);
-# 128 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 129 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 128 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 129 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("                    Penalty to start a gap: %d\n",
-# 130 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 130 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     simMatrix->gapStart);
-# 131 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 132 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 131 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 132 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("           Penalty for each codon in a gap: %d\n",
-# 133 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 133 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     simMatrix->gapExtend);
-# 134 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 135 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 134 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 135 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("   Maximum length of a biological sequence: %d\n",
-# 136 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 136 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     simMatrix->matchLimit);
-# 137 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 138 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 137 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 138 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     printf("   Minimum cumulative score for a sequence: %d\n",
-# 139 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 139 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
     minScore);
-# 149 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-# 149 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 149 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 149 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   }
-# 150 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+# 150 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 }
 
 
@@ -2838,15 +2838,15 @@ void verifyData_npm(SIMMATRIX_T *simMatrix, SEQDATA_T *seqData,
 
 
 static int module_init() {
-    init_module(8188620330301190487UL, 2, 1, 8, 2, 1, 1, 2, 0, 0, 2,
-                           &____alias_loc_id_0, (unsigned)7, (unsigned)0, (unsigned)1, (8188620330301190487UL + 1UL), (8188620330301190487UL + 2UL), (8188620330301190487UL + 3UL), (8188620330301190487UL + 4UL), (8188620330301190487UL + 5UL), (8188620330301190487UL + 6UL), (8188620330301190487UL + 19UL), "gridInfo", (unsigned)4, (8188620330301190487UL + 13UL), (8188620330301190487UL + 14UL), (8188620330301190487UL + 15UL), (8188620330301190487UL + 16UL),
-                           &____alias_loc_id_1, (unsigned)10, (unsigned)0, (unsigned)0, (8188620330301190487UL + 5UL), (8188620330301190487UL + 7UL), (8188620330301190487UL + 8UL), (8188620330301190487UL + 9UL), (8188620330301190487UL + 10UL), (8188620330301190487UL + 11UL), (8188620330301190487UL + 12UL), (8188620330301190487UL + 17UL), (8188620330301190487UL + 18UL), (8188620330301190487UL + 19UL),
-                            "verifyData", 0, "_Z10verifyDataP6simmatP6seqdatii", "_Z14verifyData_npmP6simmatP6seqdatii", 1, &____alias_loc_id_0, 4, (8188620330301190487UL + 188UL), (8188620330301190487UL + 189UL), 0UL, 0UL, 0UL, 12, "gridInfo", 4, (8188620330301190487UL + 15UL), (8188620330301190487UL + 16UL), (8188620330301190487UL + 13UL), (8188620330301190487UL + 14UL), 0UL, "omp_get_thread_num", 0, 0UL, "printf", 1, (8188620330301190487UL + 199UL), 0UL, "printf", 2, (8188620330301190487UL + 200UL), 0UL, 0UL, "printf", 2, (8188620330301190487UL + 200UL), 0UL, 0UL, "printf", 2, (8188620330301190487UL + 200UL), 0UL, 0UL, "printf", 2, (8188620330301190487UL + 200UL), 0UL, 0UL, "printf", 2, (8188620330301190487UL + 200UL), 0UL, 0UL, "printf", 2, (8188620330301190487UL + 200UL), 0UL, 0UL, "printf", 2, (8188620330301190487UL + 200UL), 0UL, 0UL, "printf", 2, (8188620330301190487UL + 200UL), 0UL, 0UL, "printf", 2, (8188620330301190487UL + 200UL), 0UL, 0UL,
+    init_module(17934975424406224656UL, 2, 1, 8, 2, 1, 1, 2, 0, 0, 2,
+                           &____alias_loc_id_0, (unsigned)7, (unsigned)0, (unsigned)1, (17934975424406224656UL + 1UL), (17934975424406224656UL + 2UL), (17934975424406224656UL + 3UL), (17934975424406224656UL + 4UL), (17934975424406224656UL + 5UL), (17934975424406224656UL + 6UL), (17934975424406224656UL + 19UL), "gridInfo", (unsigned)4, (17934975424406224656UL + 13UL), (17934975424406224656UL + 14UL), (17934975424406224656UL + 15UL), (17934975424406224656UL + 16UL),
+                           &____alias_loc_id_1, (unsigned)10, (unsigned)0, (unsigned)0, (17934975424406224656UL + 5UL), (17934975424406224656UL + 7UL), (17934975424406224656UL + 8UL), (17934975424406224656UL + 9UL), (17934975424406224656UL + 10UL), (17934975424406224656UL + 11UL), (17934975424406224656UL + 12UL), (17934975424406224656UL + 17UL), (17934975424406224656UL + 18UL), (17934975424406224656UL + 19UL),
+                            "verifyData", 0, "_Z10verifyDataP6simmatP6seqdatii", "_Z14verifyData_npmP6simmatP6seqdatii", 1, &____alias_loc_id_0, 4, (17934975424406224656UL + 188UL), (17934975424406224656UL + 189UL), 0UL, 0UL, 0UL, 12, "gridInfo", 4, (17934975424406224656UL + 15UL), (17934975424406224656UL + 16UL), (17934975424406224656UL + 13UL), (17934975424406224656UL + 14UL), 0UL, "omp_get_thread_num", 0, 0UL, "printf", 1, (17934975424406224656UL + 199UL), 0UL, "printf", 2, (17934975424406224656UL + 200UL), 0UL, 0UL, "printf", 2, (17934975424406224656UL + 200UL), 0UL, 0UL, "printf", 2, (17934975424406224656UL + 200UL), 0UL, 0UL, "printf", 2, (17934975424406224656UL + 200UL), 0UL, 0UL, "printf", 2, (17934975424406224656UL + 200UL), 0UL, 0UL, "printf", 2, (17934975424406224656UL + 200UL), 0UL, 0UL, "printf", 2, (17934975424406224656UL + 200UL), 0UL, 0UL, "printf", 2, (17934975424406224656UL + 200UL), 0UL, 0UL, "printf", 2, (17934975424406224656UL + 200UL), 0UL, 0UL,
                                "gridInfo", (void **)&(____chimes_extern_func_gridInfo),
                            "verifyData", &(____chimes_does_checkpoint_verifyData_npm),
                            "gridInfo", &(____chimes_does_checkpoint_gridInfo_npm),
-                             (8188620330301190487UL + 1UL), (8188620330301190487UL + 188UL),
-                             (8188620330301190487UL + 2UL), (8188620330301190487UL + 189UL),
+                             (17934975424406224656UL + 1UL), (17934975424406224656UL + 188UL),
+                             (17934975424406224656UL + 2UL), (17934975424406224656UL + 189UL),
                      "seqdat", 256UL, 5, "unsigned char*", (int)__builtin_offsetof (struct seqdat, main), "unsigned char*", (int)__builtin_offsetof (struct seqdat, match), "int", (int)__builtin_offsetof (struct seqdat, mainLen), "int", (int)__builtin_offsetof (struct seqdat, matchLen), "int", (int)__builtin_offsetof (struct seqdat, maxValidation),
                      "simmat", 40960UL, 14, "[ 4225 x char ]", (int)__builtin_offsetof (struct simmat, similarity), "[ 66 x char ]", (int)__builtin_offsetof (struct simmat, aminoAcid), "char*", (int)__builtin_offsetof (struct simmat, bases), "[ 66 x char* ]", (int)__builtin_offsetof (struct simmat, codon), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode_first), "char", (int)__builtin_offsetof (struct simmat, hyphen), "char", (int)__builtin_offsetof (struct simmat, star), "int", (int)__builtin_offsetof (struct simmat, exact), "int", (int)__builtin_offsetof (struct simmat, similar), "int", (int)__builtin_offsetof (struct simmat, dissimilar), "int", (int)__builtin_offsetof (struct simmat, gapStart), "int", (int)__builtin_offsetof (struct simmat, gapExtend), "int", (int)__builtin_offsetof (struct simmat, matchLimit),
                              "verifyData", "_Z10verifyDataP6simmatP6seqdatii", 0, 1, "gridInfo",

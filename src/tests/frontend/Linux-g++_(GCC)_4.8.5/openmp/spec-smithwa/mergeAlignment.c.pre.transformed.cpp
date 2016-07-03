@@ -52,11 +52,11 @@ static unsigned ____alias_loc_id_2;
 static unsigned ____alias_loc_id_3;
 static unsigned ____alias_loc_id_4;
 static unsigned ____alias_loc_id_5;
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -65,7 +65,7 @@ static unsigned ____alias_loc_id_5;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -121,7 +121,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 69 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 69 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -135,8 +135,8 @@ inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 12 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 12 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 28 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1081,7 +1081,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 13 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c" 2
+# 13 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 1 3 4
@@ -2257,7 +2257,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 14 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c" 2
+# 14 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 29 "/usr/include/string.h" 3 4
 extern "C" {
@@ -2733,11 +2733,11 @@ extern "C++" __const char *basename (__const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 # 646 "/usr/include/string.h" 3 4
 }
-# 15 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c" 2
-# 15 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 15 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c" 2
+# 15 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h" 1
-# 22 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h" 1
+# 22 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 1 3 4
 # 34 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 3 4
 typedef struct
@@ -2811,8 +2811,8 @@ int omp_in_final (void) throw ();
 
 
 }
-# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h" 2
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
+# 23 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h" 2
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
 typedef struct simmat {
   char similarity[((64) + 1)][((64) + 1)];
   char aminoAcid[(((64) + 1) + 1)];
@@ -2873,7 +2873,7 @@ typedef struct cstr {
   int *finalStartsI, *finalStartsJ, *finalEndsI, *finalEndsJ;
   unsigned char **finalSeqsI, **finalSeqsJ;
 } CSTR_T;
-# 207 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
+# 207 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
 void getUserParameters(void);
 
 SEQDATA_T *genScalData(unsigned int, SIMMATRIX_T*, int, int, int);
@@ -2911,4070 +2911,4070 @@ void verifyMergeAlignment(SIMMATRIX_T*, CSTR_T*, int);
 double getSeconds(void);
 
 void dispElapsedTime(double);
-# 17 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c" 2
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 17 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c" 2
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation);static double (*____chimes_extern_func_getSeconds)(void) = getSeconds;static int (*____chimes_extern_func_gridInfo)(int *, int *, int *, int *) = gridInfo;static void (*____chimes_extern_func_qSort_both)(long long *, int *, const long long *, int) = qSort_both;
 CSTR_T *mergeAlignment_quick(BSTR_T *B, int maxReports, int minSeparation); CSTR_T *mergeAlignment(BSTR_T *B, int maxReports, int minSeparation);
-CSTR_T *mergeAlignment_resumable(BSTR_T *B, int maxReports, int minSeparation) {const int ____chimes_did_disable0 = new_stack((void *)(&mergeAlignment), "mergeAlignment", &____must_manage_mergeAlignment, 3, 3, (size_t)(10402924002521287076UL), (size_t)(0UL), (size_t)(0UL), "mergeAlignment|B|0", &____must_checkpoint_mergeAlignment_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "mergeAlignment|maxReports|0", &____must_checkpoint_mergeAlignment_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "mergeAlignment|minSeparation|0", &____must_checkpoint_mergeAlignment_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0) ; BSTR_T *P;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+CSTR_T *mergeAlignment_resumable(BSTR_T *B, int maxReports, int minSeparation) {const int ____chimes_did_disable0 = new_stack((void *)(&mergeAlignment), "mergeAlignment", &____must_manage_mergeAlignment, 3, 3, (size_t)(3659288930664079821UL), (size_t)(0UL), (size_t)(0UL), "mergeAlignment|B|0", &____must_checkpoint_mergeAlignment_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "mergeAlignment|maxReports|0", &____must_checkpoint_mergeAlignment_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "mergeAlignment|minSeparation|0", &____must_checkpoint_mergeAlignment_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0) ; BSTR_T *P;
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *reqack;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 double beginTime;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int npCol;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int npRow;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int myCol;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int myRow;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *index;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int totalReports;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int producer;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int consumer;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int mask;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int iter;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 CSTR_T *C;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 unsigned char **sequences;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 unsigned char **tempSeqsJ;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 unsigned char **tempSeqsI;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *tempEndsJ;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *tempEndsI;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *tempStartsJ;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *tempStartsI;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int threadNum;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int numReports;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 long long *scores;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 long long *tempScores;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (____must_checkpoint_mergeAlignment_P_0 || ____must_checkpoint_mergeAlignment_reqack_0 || ____must_checkpoint_mergeAlignment_beginTime_0 || ____must_checkpoint_mergeAlignment_npCol_0 || ____must_checkpoint_mergeAlignment_npRow_0 || ____must_checkpoint_mergeAlignment_myCol_0 || ____must_checkpoint_mergeAlignment_myRow_0 || ____must_checkpoint_mergeAlignment_index_0 || ____must_checkpoint_mergeAlignment_totalReports_0 || ____must_checkpoint_mergeAlignment_producer_0 || ____must_checkpoint_mergeAlignment_consumer_0 || ____must_checkpoint_mergeAlignment_mask_0 || ____must_checkpoint_mergeAlignment_iter_0 || ____must_checkpoint_mergeAlignment_C_0 || ____must_checkpoint_mergeAlignment_sequences_0 || ____must_checkpoint_mergeAlignment_tempSeqsJ_0 || ____must_checkpoint_mergeAlignment_tempSeqsI_0 || ____must_checkpoint_mergeAlignment_tempEndsJ_0 || ____must_checkpoint_mergeAlignment_tempEndsI_0 || ____must_checkpoint_mergeAlignment_tempStartsJ_0 || ____must_checkpoint_mergeAlignment_tempStartsI_0 || ____must_checkpoint_mergeAlignment_threadNum_0 || ____must_checkpoint_mergeAlignment_numReports_0 || ____must_checkpoint_mergeAlignment_scores_0 || ____must_checkpoint_mergeAlignment_tempScores_0) { register_stack_vars(25, "mergeAlignment|P|0", &____must_checkpoint_mergeAlignment_P_0, "%struct.bstr*", (void *)(&P), (size_t)8, 1, 0, 0, "mergeAlignment|reqack|0", &____must_checkpoint_mergeAlignment_reqack_0, "i32*", (void *)(&reqack), (size_t)8, 1, 0, 0, "mergeAlignment|beginTime|0", &____must_checkpoint_mergeAlignment_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "mergeAlignment|npCol|0", &____must_checkpoint_mergeAlignment_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "mergeAlignment|npRow|0", &____must_checkpoint_mergeAlignment_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "mergeAlignment|myCol|0", &____must_checkpoint_mergeAlignment_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "mergeAlignment|myRow|0", &____must_checkpoint_mergeAlignment_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "mergeAlignment|index|0", &____must_checkpoint_mergeAlignment_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "mergeAlignment|totalReports|0", &____must_checkpoint_mergeAlignment_totalReports_0, "i32", (void *)(&totalReports), (size_t)4, 0, 0, 0, "mergeAlignment|producer|0", &____must_checkpoint_mergeAlignment_producer_0, "i32", (void *)(&producer), (size_t)4, 0, 0, 0, "mergeAlignment|consumer|0", &____must_checkpoint_mergeAlignment_consumer_0, "i32", (void *)(&consumer), (size_t)4, 0, 0, 0, "mergeAlignment|mask|0", &____must_checkpoint_mergeAlignment_mask_0, "i32", (void *)(&mask), (size_t)4, 0, 0, 0, "mergeAlignment|iter|0", &____must_checkpoint_mergeAlignment_iter_0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "mergeAlignment|C|0", &____must_checkpoint_mergeAlignment_C_0, "%struct.cstr*", (void *)(&C), (size_t)8, 1, 0, 0, "mergeAlignment|sequences|0", &____must_checkpoint_mergeAlignment_sequences_0, "i8**", (void *)(&sequences), (size_t)8, 1, 0, 0, "mergeAlignment|tempSeqsJ|0", &____must_checkpoint_mergeAlignment_tempSeqsJ_0, "i8**", (void *)(&tempSeqsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempSeqsI|0", &____must_checkpoint_mergeAlignment_tempSeqsI_0, "i8**", (void *)(&tempSeqsI), (size_t)8, 1, 0, 0, "mergeAlignment|tempEndsJ|0", &____must_checkpoint_mergeAlignment_tempEndsJ_0, "i32*", (void *)(&tempEndsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempEndsI|0", &____must_checkpoint_mergeAlignment_tempEndsI_0, "i32*", (void *)(&tempEndsI), (size_t)8, 1, 0, 0, "mergeAlignment|tempStartsJ|0", &____must_checkpoint_mergeAlignment_tempStartsJ_0, "i32*", (void *)(&tempStartsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempStartsI|0", &____must_checkpoint_mergeAlignment_tempStartsI_0, "i32*", (void *)(&tempStartsI), (size_t)8, 1, 0, 0, "mergeAlignment|threadNum|0", &____must_checkpoint_mergeAlignment_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "mergeAlignment|numReports|0", &____must_checkpoint_mergeAlignment_numReports_0, "i32", (void *)(&numReports), (size_t)4, 0, 0, 0, "mergeAlignment|scores|0", &____must_checkpoint_mergeAlignment_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "mergeAlignment|tempScores|0", &____must_checkpoint_mergeAlignment_tempScores_0, "i64*", (void *)(&tempScores), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
-# 52 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 53 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 52 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 53 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempScores = (__null) ;
-# 54 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 54 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    int newReports; int numThreads; int maxThreads; ;
-# 55 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 55 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        tempStartsI = (__null) ; tempStartsJ = (__null) ;
-# 56 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 56 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        tempEndsI = (__null) ; tempEndsJ = (__null) ;
-# 57 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 57 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        unsigned char *ptr; tempSeqsI = (__null) ; tempSeqsJ = (__null) ;
-# 58 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 58 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      C = (__null) ;
-# 59 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 59 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   int i; int j; ;
-# 60 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 60 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   int flag; int length; int count; int indexB; ;
-# 61 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 61 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       ;
-# 62 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 62 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    double endTime; ;
-# 63 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 64 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 65 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 63 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 64 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 65 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    ;
-# 66 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 67 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 69 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 70 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 66 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 67 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 68 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 69 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 70 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 71 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    ;
-# 72 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 73 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 74 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 75 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 76 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 72 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 73 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 74 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 75 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 76 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   maxThreads = B->numThreads;
-# 89 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 89 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P = (BSTR_T*) ({ void *____chimes_tmp_ptr = malloc((sizeof(BSTR_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(BSTR_T), 10402924002521285990UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 90 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 89 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 89 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( (P = (BSTR_T*) ({ void *____chimes_tmp_ptr = malloc((sizeof(BSTR_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(BSTR_T), 3659288930664078735UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 90 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P\n");
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 92 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 92 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 93 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 94 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int), 10402924002521285992UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 95 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 93 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 94 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( (P->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int), 3659288930664078737UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 95 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->numReports\n");
-# 96 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 96 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 97 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 97 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 98 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 99 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestScores = (long long**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(long long *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(long long*), 10402924002521285992UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 100 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 98 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 99 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( (P->bestScores = (long long**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(long long *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(long long*), 3659288930664078737UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 100 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        == __null ) {
-# 101 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 101 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestScores\n");
-# 102 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 102 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 103 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 103 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 104 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 105 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestStartsI = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 10402924002521285992UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 106 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 104 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 105 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( (P->bestStartsI = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 3659288930664078737UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 106 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestStartsI\n");
-# 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 107 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 108 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 108 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 109 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 110 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestStartsJ = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 10402924002521285992UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 111 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 109 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 110 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( (P->bestStartsJ = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 3659288930664078737UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 111 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestStartsJ\n");
-# 112 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 112 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 113 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 113 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 114 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 115 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 10402924002521285992UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 116 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 114 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 115 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( (P->bestEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 3659288930664078737UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 116 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestEndsI\n");
-# 117 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 117 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 118 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 118 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 119 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 120 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 10402924002521285992UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 121 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 119 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 120 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( (P->bestEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 3659288930664078737UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 121 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestEndsJ\n");
-# 122 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 122 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 123 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 123 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 124 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 124 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   if ( (P->bestSeqsI =
-# 126 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
- (unsigned char***) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(unsigned char **)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 10402924002521285992UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 127 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 126 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+ (unsigned char***) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(unsigned char **)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 3659288930664078737UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 127 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        == __null ) {
-# 128 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 128 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestSeqsI\n");
-# 129 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 129 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 130 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 130 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 131 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 132 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 131 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 132 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   if ( (P->bestSeqsJ =
-# 133 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
- (unsigned char***) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(unsigned char **)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 10402924002521285992UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 134 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 133 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+ (unsigned char***) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(unsigned char **)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 3659288930664078737UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 134 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        == __null ) {
-# 135 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 135 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestSeqsJ\n");
-# 136 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 136 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 137 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 137 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 148 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 148 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( ( reqack = (int*) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 10402924002521285553UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 149 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 148 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 148 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( ( reqack = (int*) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 3659288930664078298UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 149 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: can't allocate reqack\n");
-# 150 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 150 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 151 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 151 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 152 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 152 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   for (i = 0; i < maxThreads; i++) {
-# 153 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 153 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     reqack[i] = 0;
-# 154 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 154 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 155 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 156 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 157 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 158 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 159 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 160 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 160 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 160 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 155 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 156 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 157 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 158 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 159 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 160 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 160 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 160 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 { call_lbl_4: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 32, &beginTime, &consumer, &count, &endTime, &flag, &i, &index, &indexB, &iter, &j, &length, &mask, &maxReports, &minSeparation, &myCol, &myRow, &npCol, &npRow, &numReports, &numThreads, &producer, &scores, &sequences, &tempEndsI, &tempEndsJ, &tempScores, &tempSeqsI, &tempSeqsJ, &tempStartsI, &tempStartsJ, &threadNum, &totalReports);
-# 160 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 160 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp parallel firstprivate(maxReports, minSeparation) private(tempScores, tempStartsI, tempStartsJ, tempEndsI, tempEndsJ, tempSeqsI, tempSeqsJ, sequences, threadNum, numThreads, numReports, i, j, iter, mask, consumer, producer, totalReports, flag, indexB, scores, index, myRow, myCol, npRow, npCol, beginTime, endTime, length, count)
-# 161 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 162 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 163 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 164 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 165 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 166 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 167 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 168 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 161 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 162 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 163 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 164 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 165 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 166 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 167 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 168 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 32, &beginTime, &consumer, &count, &endTime, &flag, &i, &index, &indexB, &iter, &j, &length, &mask, &maxReports, &minSeparation, &myCol, &myRow, &npCol, &npRow, &numReports, &numThreads, &producer, &scores, &sequences, &tempEndsI, &tempEndsJ, &tempScores, &tempSeqsI, &tempSeqsJ, &tempStartsI, &tempStartsJ, &threadNum, &totalReports); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } {
-# 169 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 170 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 171 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 172 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     call_lbl_0: ({ calling((void*)gridInfo, 0, ____alias_loc_id_3, 0UL, 4, (size_t)(10402924002521284825UL), (size_t)(10402924002521284826UL), (size_t)(10402924002521284823UL), (size_t)(10402924002521284824UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) ;
-# 173 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 177 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 169 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 170 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 171 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 172 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     call_lbl_0: ({ calling((void*)gridInfo, 0, ____alias_loc_id_3, 0UL, 4, (size_t)(3659288930664077570UL), (size_t)(3659288930664077571UL), (size_t)(3659288930664077568UL), (size_t)(3659288930664077569UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) ;
+# 173 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 174 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 175 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 176 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 177 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     threadNum = omp_get_thread_num();
-# 195 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 195 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 195 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 195 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempScores =
-# 196 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (long long*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 196 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   (long long*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 197 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   == __null ) {
-# 198 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 198 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempScores for thread %d\n",
-# 199 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 199 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       threadNum);
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 202 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 203 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 200 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 201 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 202 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 203 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       exit (1);
-# 204 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 204 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 205 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 206 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 205 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 206 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempStartsI =
-# 207 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 208 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 207 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 208 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempStartsI for thread %d\n",
-# 209 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 209 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       threadNum);
-# 210 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 211 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 212 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 213 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 210 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 211 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 212 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 213 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       exit (1);
-# 214 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 214 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 215 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 216 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 215 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 216 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempStartsJ =
-# 217 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 218 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 217 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 218 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempStartsJ for thread %d\n",
-# 219 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 219 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       threadNum);
-# 220 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 221 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 223 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 220 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 221 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 222 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 223 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       exit (1);
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 224 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 226 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 225 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 226 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempEndsI =
-# 227 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 228 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 227 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 228 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempEndsI for thread %d\n",
-# 229 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 229 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       threadNum);
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 231 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 232 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 233 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 230 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 231 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 232 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 233 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       exit (1);
-# 234 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 234 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 235 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 235 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 236 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempEndsJ =
-# 237 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 238 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 237 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 238 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempEndsJ for thread %d\n",
-# 239 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 239 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       threadNum);
-# 240 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 242 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 243 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 240 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 241 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 242 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 243 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       exit (1);
-# 244 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 244 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 245 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 246 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 245 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 246 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempSeqsI =
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 10402924002521287193UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 248 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 247 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 3659288930664079938UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 248 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   == __null ) {
-# 249 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 249 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempSeqsI for thread %d\n",
-# 250 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 250 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       threadNum);
-# 251 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 252 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 253 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 254 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 251 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 252 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 253 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 254 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       exit (1);
-# 255 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 255 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 256 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 257 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 256 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 257 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempSeqsJ =
-# 258 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 10402924002521287193UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 259 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 258 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 3659288930664079938UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 259 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   == __null ) {
-# 260 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 260 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempSeqsJ for thread %d\n",
-# 261 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 261 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       threadNum);
-# 262 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 263 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 264 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 265 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 262 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 263 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 264 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 265 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       exit (1);
-# 266 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 266 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 267 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 268 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 267 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 268 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     for (i = 0; i <= 2*maxReports; i++) {
-# 269 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 269 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsI[i] = tempSeqsJ[i] = __null;
-# 270 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 270 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 279 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 279 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 279 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 279 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     P->bestScores[threadNum] = tempScores;
-# 280 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 280 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     P->bestStartsI[threadNum] = tempStartsI;
-# 281 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 281 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     P->bestStartsJ[threadNum] = tempStartsJ;
-# 282 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 282 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     P->bestEndsI[threadNum] = tempEndsI;
-# 283 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 283 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     P->bestEndsJ[threadNum] = tempEndsJ;
-# 284 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 284 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     P->bestSeqsI[threadNum] = tempSeqsI;
-# 285 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 285 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     P->bestSeqsJ[threadNum] = tempSeqsJ;
-# 286 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 287 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 288 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 289 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 290 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 291 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 292 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 293 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 286 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 287 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 288 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 289 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 290 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 291 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 292 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 293 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (threadNum & 1) == 0 ) {
-# 294 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 294 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (sequences =
-# 295 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 10402924002521286350UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 296 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 295 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 3659288930664079095UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 296 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
-# 297 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 297 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate sequences for thread %d\n",
-# 298 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 298 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
         threadNum);
-# 299 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 300 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 301 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 302 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 299 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 300 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 301 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 302 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 303 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 303 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 304 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 305 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      if ( (scores = (long long*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 10402924002521286022UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 306 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 304 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 305 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+      if ( (scores = (long long*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 3659288930664078767UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 306 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
-# 307 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 307 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate scores for thread %d\n",
-# 308 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 308 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
         threadNum);
-# 309 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 310 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 311 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 312 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 309 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 310 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 311 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 312 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 313 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 313 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 314 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 315 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      if ( (index = (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 10402924002521286013UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 316 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 314 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 315 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+      if ( (index = (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 3659288930664078758UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 316 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate index for thread %d\n",
-# 317 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 317 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
         threadNum);
-# 318 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 319 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 320 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 321 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 318 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 319 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 320 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 321 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 322 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 322 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 323 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 323 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     } else {
-# 338 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 338 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 338 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 338 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 339 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 340 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 341 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 342 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 343 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 339 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 340 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 341 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 342 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 343 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      call_lbl_1: beginTime = ({ calling((void*)getSeconds, 1, ____alias_loc_id_1, 0UL, 0); (getSeconds)(); }) ;
-# 359 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 359 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 359 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 359 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (myRow < 0 || myCol < 0) {
-# 360 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 360 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       P->numReports[threadNum] = numReports = 0;
-# 361 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 361 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     } else {
-# 362 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 362 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       P->numReports[threadNum] = numReports = B->numReports[threadNum];
-# 363 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 363 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 383 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 383 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 383 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 383 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     indexB = threadNum;
-# 384 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 385 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 386 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 387 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 388 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 384 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 385 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 386 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 387 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 388 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     for (i = 1; i <= numReports; i++) {
-# 389 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 389 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempScores[i] = B->bestScores[indexB][i];
-# 390 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 390 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsI[i] = B->bestStartsI[indexB][i];
-# 391 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 391 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsJ[i] = B->bestStartsJ[indexB][i];
-# 392 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 392 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsI[i] = B->bestEndsI[indexB][i];
-# 393 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 393 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsJ[i] = B->bestEndsJ[indexB][i];
-# 394 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 395 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 394 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 395 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       length = strlen((char*)(B->bestSeqsI[indexB][i]));
-# 396 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 396 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if (length < 1) {
-# 397 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 397 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: strlen(B->bestSeqsI[%d] = %d for thread %d\n",
-# 398 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 398 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
         i, length, indexB);
-# 399 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 399 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 400 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 400 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 401 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 401 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       length++;
-# 402 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 402 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (tempSeqsI[i] =
-# 403 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 10402924002521287195UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 404 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 403 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 3659288930664079940UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 404 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
-# 405 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 405 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate tempSeqsI[%d] for thread %d",
-# 406 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 406 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
         i, indexB);
-# 407 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 407 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 408 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 408 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 409 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 409 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsI[i] =
-# 410 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 410 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  (unsigned char*)strcpy((char*)(tempSeqsI[i]),
-# 411 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 411 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
           (char*)(B->bestSeqsI[indexB][i]));
-# 412 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 413 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 412 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 413 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       length = strlen((char*)(B->bestSeqsJ[indexB][i]));
-# 414 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 414 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if (length < 1) {
-# 415 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 415 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: strlen(B->bestSeqsJ[%d] = %d for thread %d\n",
-# 416 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 416 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
         i, length, indexB);
-# 417 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 417 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 418 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 418 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 419 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 419 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       length++;
-# 420 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 420 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (tempSeqsJ[i] =
-# 421 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 10402924002521287195UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 422 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 421 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 3659288930664079940UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 422 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
-# 423 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 423 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate tempSeqsJ[%d] for thread %d",
-# 424 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 424 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
         i, indexB);
-# 425 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 425 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 426 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 426 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 427 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 427 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsJ[i] =
-# 428 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 428 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  (unsigned char*)strcpy((char*)(tempSeqsJ[i]),
-# 429 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 429 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
           (char*)(B->bestSeqsJ[indexB][i]));
-# 430 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 430 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 448 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 448 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 448 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 448 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 448 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 448 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 448 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 448 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 448 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 462 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 462 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 448 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 462 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 462 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     iter = npRow*npCol - 1;
-# 463 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 463 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     mask = 1;
-# 464 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 464 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     while (iter > 0) {
-# 465 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 465 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       consumer = threadNum & (~mask);
-# 466 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 466 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       producer = consumer | ((mask + 1) >> 1);
-# 509 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 509 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 509 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 509 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( ( threadNum == consumer ) && ( producer < npRow*npCol ) &&
-# 510 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 510 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     ( myRow >= 0 ) && ( myCol >= 0) ) {
-# 532 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 532 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 532 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 532 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  reqack[consumer] = iter;
-# 533 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 533 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 533 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 533 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 533 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 533 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 533 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 533 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 534 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 533 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 533 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 534 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  do {
-# 535 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 535 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 535 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 535 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 535 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 535 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 535 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 535 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 536 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 535 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 535 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 536 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  } while (reqack[producer] != iter);
-# 537 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 538 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 539 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 540 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 541 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 537 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 538 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 539 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 540 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 541 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  totalReports = numReports;
-# 552 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 552 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 552 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 552 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= P->numReports[producer]; i++) {
-# 565 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 565 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 565 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 565 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    flag = 0;
-# 566 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 566 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    for (j = 1; j <= numReports; j++) {
-# 567 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 567 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if ( ( ( (abs(tempStartsI[j] - P->bestStartsI[producer][i]) > abs(tempStartsJ[j] - P->bestStartsJ[producer][i])) ? abs(tempStartsI[j] - P->bestStartsI[producer][i]) : abs(tempStartsJ[j] - P->bestStartsJ[producer][i]) )
-# 568 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 569 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 568 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 569 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      < minSeparation ) ||
-# 570 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 570 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    ( ( (abs(tempEndsI[j] - P->bestEndsI[producer][i]) > abs(tempEndsJ[j] - P->bestEndsJ[producer][i])) ? abs(tempEndsI[j] - P->bestEndsI[producer][i]) : abs(tempEndsJ[j] - P->bestEndsJ[producer][i]) )
-# 571 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 572 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 571 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 572 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      < minSeparation ) ) {
-# 573 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 573 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        flag = 1;
-# 574 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 574 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        break;
-# 575 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 575 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      }
-# 576 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 576 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    }
-# 577 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 578 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 577 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 578 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    if (flag == 0) {
-# 579 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 579 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      totalReports++;
-# 580 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 580 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempScores[totalReports] = P->bestScores[producer][i];
-# 581 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 581 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempStartsI[totalReports] = P->bestStartsI[producer][i];
-# 582 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 582 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempStartsJ[totalReports] = P->bestStartsJ[producer][i];
-# 583 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 583 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempEndsI[totalReports] = P->bestEndsI[producer][i];
-# 584 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 584 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempEndsJ[totalReports] = P->bestEndsJ[producer][i];
-# 585 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 585 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsI[totalReports] = P->bestSeqsI[producer][i];
-# 586 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 586 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsJ[totalReports] = P->bestSeqsJ[producer][i];
-# 587 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 587 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      P->bestSeqsI[producer][i] = P->bestSeqsJ[producer][i] = __null;
-# 588 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 588 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    } else {
-# 589 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 589 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if (P->bestSeqsI[producer][i]) {
-# 590 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-        ({ free_helper((((unsigned char *)P->bestSeqsI[producer][i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)P->bestSeqsI[producer][i]) - sizeof(void *))); }) ;
-# 591 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 590 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+        ({ free_helper((((unsigned char *)P->bestSeqsI[producer][i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)P->bestSeqsI[producer][i]) - sizeof(void *))); }) ;
+# 591 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        P->bestSeqsI[producer][i] = __null;
-# 592 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 592 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      }
-# 593 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 593 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if (P->bestSeqsJ[producer][i]) {
-# 594 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-        ({ free_helper((((unsigned char *)P->bestSeqsJ[producer][i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)P->bestSeqsJ[producer][i]) - sizeof(void *))); }) ;
-# 595 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 594 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+        ({ free_helper((((unsigned char *)P->bestSeqsJ[producer][i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)P->bestSeqsJ[producer][i]) - sizeof(void *))); }) ;
+# 595 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        P->bestSeqsJ[producer][i] = __null;
-# 596 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 596 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      }
-# 597 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 597 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      printf("\tmergeAlignment() thread %d found redundant report %d from thread %d\n",
-# 598 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 598 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      threadNum, i, producer);
-# 599 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 599 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    }
-# 600 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 600 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 849 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 849 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  call_lbl_2: ({ calling((void*)qSort_both, 2, ____alias_loc_id_2, 0UL, 4, (size_t)(10402924002521286022UL), (size_t)(10402924002521286013UL), (size_t)(10402924002521287193UL), (size_t)(0UL)); (qSort_both)(scores, index, tempScores, totalReports); }) ;
-# 850 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 849 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 849 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  call_lbl_2: ({ calling((void*)qSort_both, 2, ____alias_loc_id_2, 0UL, 4, (size_t)(3659288930664078767UL), (size_t)(3659288930664078758UL), (size_t)(3659288930664079938UL), (size_t)(0UL)); (qSort_both)(scores, index, tempScores, totalReports); }) ;
+# 850 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  numReports = ( (maxReports < totalReports) ? maxReports : totalReports );
-# 851 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 852 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 853 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 851 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 852 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 853 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  P->numReports[consumer] = numReports;
-# 854 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 854 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  P->numReports[producer] = 0;
-# 855 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 856 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 857 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 855 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 856 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 857 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 858 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 858 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    scores[i] = tempScores[ index[totalReports - i + 1] ];
-# 859 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 859 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 860 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 860 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 861 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 861 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempScores[i] = scores[i];
-# 862 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 862 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 863 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 864 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 863 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 864 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 865 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 865 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    scores[i] = tempStartsI[ index[totalReports - i + 1] ];
-# 866 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 866 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 867 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 867 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 868 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 868 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempStartsI[i] = scores[i];
-# 869 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 869 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 870 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 871 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 870 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 871 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 872 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 872 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    scores[i] = tempStartsJ[ index[totalReports - i + 1] ];
-# 873 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 873 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 874 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 874 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 875 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 875 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempStartsJ[i] = scores[i];
-# 876 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 876 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 877 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 878 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 877 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 878 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 879 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 879 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    scores[i] = tempEndsI[ index[totalReports - i + 1] ];
-# 880 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 880 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 881 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 881 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 882 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 882 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempEndsI[i] = scores[i];
-# 883 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 883 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 884 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 885 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 884 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 885 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 886 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 886 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    scores[i] = tempEndsJ[ index[totalReports - i + 1] ];
-# 887 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 887 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 888 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 888 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 889 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 889 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempEndsJ[i] = scores[i];
-# 890 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 890 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 899 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 899 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 899 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 899 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= totalReports - numReports; i++) {
-# 900 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 900 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    if (tempSeqsI[ index[i] ]) {
-# 901 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      ({ free_helper((((unsigned char *)tempSeqsI[index[i]]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)tempSeqsI[index[i]]) - sizeof(void *))); }) ;
-# 902 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 901 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+      ({ free_helper((((unsigned char *)tempSeqsI[index[i]]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)tempSeqsI[index[i]]) - sizeof(void *))); }) ;
+# 902 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsI[ index[i] ] = __null;
-# 903 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 903 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    }
-# 904 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 904 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    if (tempSeqsJ[ index[i] ]) {
-# 905 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      ({ free_helper((((unsigned char *)tempSeqsJ[index[i]]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)tempSeqsJ[index[i]]) - sizeof(void *))); }) ;
-# 906 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 905 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+      ({ free_helper((((unsigned char *)tempSeqsJ[index[i]]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)tempSeqsJ[index[i]]) - sizeof(void *))); }) ;
+# 906 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsJ[ index[i] ] = __null;
-# 907 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 907 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    }
-# 908 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 908 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 909 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 910 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 911 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 912 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 913 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 914 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 915 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 909 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 910 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 911 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 912 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 913 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 914 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 915 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 916 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 916 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    sequences[i] = tempSeqsI[ index[totalReports - i + 1] ];
-# 917 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 917 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 918 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 918 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 919 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 919 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsI[i] = sequences[i];
-# 920 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 920 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 921 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 922 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 921 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 922 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 923 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 923 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    sequences[i] = tempSeqsJ[ index[totalReports - i + 1] ];
-# 924 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 924 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 925 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 925 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 926 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 926 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsJ[i] = sequences[i];
-# 927 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 927 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 938 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 938 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 938 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 938 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = numReports+1; i <= totalReports; i++) {
-# 939 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 939 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsI[i] = tempSeqsJ[i] = __null;
-# 940 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 940 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 949 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 949 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 949 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 949 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  reqack[consumer] = 0;
-# 950 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 950 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 950 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 950 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 950 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 950 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 950 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 950 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 951 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 950 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 950 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 951 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  do {
-# 952 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 952 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 952 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 952 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 952 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 952 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 952 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 952 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 953 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 952 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 952 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 953 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  } while (reqack[producer] == iter);
-# 954 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 955 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 956 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 954 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 955 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 956 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 971 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 971 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 971 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 971 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( ( threadNum == producer ) && ( myRow >= 0 ) && ( myCol >= 0) ) {
-# 986 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 986 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 986 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 986 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  do {
-# 987 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 987 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 987 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 987 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 987 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 987 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 987 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 987 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 988 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 987 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 987 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 988 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  } while (reqack[consumer] != iter);
-# 989 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 989 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  reqack[producer] = iter;
-# 990 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 990 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 990 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 990 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 990 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 990 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 990 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 990 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 991 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 992 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 990 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 990 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 991 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 992 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  do {
-# 993 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 993 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 993 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 993 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 993 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 993 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 993 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 993 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 994 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 993 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 993 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 994 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  } while (reqack[consumer] == iter);
-# 995 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 995 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  reqack[producer] = 0;
-# 996 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 996 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 996 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 996 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 996 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 996 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 996 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1161 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1161 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 996 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1161 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1161 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1176 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1176 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       mask = (mask << 1) + 1;
-# 1177 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1177 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       iter >>= 1;
-# 1178 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1178 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1179 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1180 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1181 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1182 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1183 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1179 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1180 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1181 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1182 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1183 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      call_lbl_3: endTime = ({ calling((void*)getSeconds, 3, ____alias_loc_id_0, 0UL, 0); (getSeconds)(); }) ;
-# 1184 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1184 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (threadNum == 0) {
-# 1185 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1185 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("\n        Merge time = %10.5f seconds\n",
-# 1186 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1186 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       endTime - beginTime);
-# 1187 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1187 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1197 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1197 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (threadNum == 0) {
-# 1198 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1199 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      if ( (C = (CSTR_T*) ({ void *____chimes_tmp_ptr = malloc((sizeof(CSTR_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(CSTR_T), 10402924002521287332UL, 0, 1, (int)sizeof(struct cstr), 7, (int)__builtin_offsetof(struct cstr, finalScores), (int)__builtin_offsetof(struct cstr, finalStartsI), (int)__builtin_offsetof(struct cstr, finalStartsJ), (int)__builtin_offsetof(struct cstr, finalEndsI), (int)__builtin_offsetof(struct cstr, finalEndsJ), (int)__builtin_offsetof(struct cstr, finalSeqsI), (int)__builtin_offsetof(struct cstr, finalSeqsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 1200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1198 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1199 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+      if ( (C = (CSTR_T*) ({ void *____chimes_tmp_ptr = malloc((sizeof(CSTR_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(CSTR_T), 3659288930664080077UL, 0, 1, (int)sizeof(struct cstr), 7, (int)__builtin_offsetof(struct cstr, finalScores), (int)__builtin_offsetof(struct cstr, finalStartsI), (int)__builtin_offsetof(struct cstr, finalStartsJ), (int)__builtin_offsetof(struct cstr, finalEndsI), (int)__builtin_offsetof(struct cstr, finalEndsJ), (int)__builtin_offsetof(struct cstr, finalSeqsI), (int)__builtin_offsetof(struct cstr, finalSeqsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 1200 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C\n");
-# 1201 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1202 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1203 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1204 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1201 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1202 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1203 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1204 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1205 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1205 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1206 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1206 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->numReports = 0;
-# 1207 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1207 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalScores = __null;
-# 1208 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1208 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalStartsI = C->finalStartsJ = __null;
-# 1209 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1209 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalEndsI = C->finalEndsJ = __null;
-# 1210 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1210 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalSeqsI = C->finalSeqsJ = __null;
-# 1211 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1212 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1211 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1212 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->numReports = numReports;
-# 1213 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1214 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1213 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1214 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalScores =
-# 1215 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (long long*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(long long), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 1216 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1215 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (long long*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(long long), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 1216 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalScores\n");
-# 1217 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1218 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1219 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1220 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1217 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1218 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1219 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1220 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1221 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1221 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1222 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1223 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1222 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1223 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalStartsI =
-# 1224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
-# 1225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1224 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
+# 1225 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalStartsI\n");
-# 1226 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1227 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1228 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1229 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1226 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1227 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1228 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1229 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1230 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1230 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1231 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1232 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1231 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1232 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalStartsJ =
-# 1233 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
-# 1234 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1233 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
+# 1234 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalStartsJ\n");
-# 1235 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1236 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1237 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1238 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1235 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1236 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1237 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1238 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1239 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1239 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1240 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1241 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1240 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1241 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalEndsI =
-# 1242 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
-# 1243 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1242 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
+# 1243 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalEndsI\n");
-# 1244 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1245 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1246 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1247 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1244 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1245 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1246 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1247 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1248 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1248 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1249 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1250 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1249 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1250 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalEndsJ =
-# 1251 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
-# 1252 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1251 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
+# 1252 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalEndsJ\n");
-# 1253 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1254 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1255 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1256 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1253 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1254 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1255 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1256 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1257 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1257 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1258 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1259 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1258 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1259 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if ( (C->finalSeqsI =
-# 1260 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 10402924002521287193UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 1261 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1260 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 3659288930664079938UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 1261 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    == __null ) {
-# 1262 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1262 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        printf("mergeAlignment: cannot allocate C->finalSeqsI\n");
-# 1263 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1264 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1265 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1266 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1263 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1264 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1265 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1266 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1267 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1267 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1268 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1269 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1268 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1269 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if ( (C->finalSeqsJ =
-# 1270 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 10402924002521287193UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 1271 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1270 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 3659288930664079938UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 1271 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    == __null ) {
-# 1272 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1272 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        printf("mergeAlignment: cannot allocate C->finalSeqsJ\n");
-# 1273 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1274 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1275 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1276 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1273 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1274 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1275 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1276 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1277 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1277 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1279 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1278 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1279 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       for (i = 1; i <= numReports; i++) {
-# 1280 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1280 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  C->finalScores[i] = tempScores[i];
-# 1281 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1281 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  C->finalStartsI[i] = tempStartsI[i];
-# 1282 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1282 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  C->finalStartsJ[i] = tempStartsJ[i];
-# 1283 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1283 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  C->finalEndsI[i] = tempEndsI[i];
-# 1284 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1284 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  C->finalEndsJ[i] = tempEndsJ[i];
-# 1285 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1285 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if ( ( length = strlen( (char*)tempSeqsI[i] ) ) < 1 ) {
-# 1286 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1286 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    printf("mergeAlignment: strlen(tempSeqsI[%d]) = %d for process %d\n",
-# 1287 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1287 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    i, length, threadNum);
-# 1288 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1289 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1290 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1291 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1288 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1289 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1290 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1291 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    exit (1);
-# 1292 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1292 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1293 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1293 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  length++;
-# 1294 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1294 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if ( (C->finalSeqsI[i] =
-# 1295 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 10402924002521287195UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 1296 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1295 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 3659288930664079940UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 1296 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       == __null ) {
-# 1297 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1297 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    printf("mergeAlignment: cannot allocate C->finalSeqsI[%d]\n", i);
-# 1298 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1299 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1300 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1301 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1298 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1299 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1300 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1301 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    exit (1);
-# 1302 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1302 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1303 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1303 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  C->finalSeqsI[i] =
-# 1304 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1304 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    (unsigned char*)strcpy((char*)C->finalSeqsI[i], (char*)tempSeqsI[i]);
-# 1305 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  ({ free_helper((((unsigned char *)tempSeqsI[i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)tempSeqsI[i]) - sizeof(void *))); }) ;
-# 1306 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1305 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  ({ free_helper((((unsigned char *)tempSeqsI[i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)tempSeqsI[i]) - sizeof(void *))); }) ;
+# 1306 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  tempSeqsI[i] = __null;
-# 1307 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1308 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1307 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1308 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if ( ( length = strlen( (char*)tempSeqsJ[i] ) ) < 1 ) {
-# 1309 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1309 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    printf("mergeAlignment: strlen(tempSeqsJ[%d]) = %d for process %d\n",
-# 1310 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1310 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    i, length, threadNum);
-# 1311 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1312 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1313 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1314 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1311 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1312 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1313 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1314 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    exit (1);
-# 1315 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1315 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1316 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1316 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  length++;
-# 1317 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1317 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if ( (C->finalSeqsJ[i] =
-# 1318 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 10402924002521287195UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 1319 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1318 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 3659288930664079940UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 1319 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       == __null ) {
-# 1320 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1320 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    printf("mergeAlignment: cannot allocate C->finalSeqsJ[%d]\n", i);
-# 1321 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1322 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1323 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1324 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1321 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1322 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1323 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1324 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    exit (1);
-# 1325 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1325 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1326 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1326 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  C->finalSeqsJ[i] =
-# 1327 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1327 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    (unsigned char*)strcpy((char*)C->finalSeqsJ[i], (char*)tempSeqsJ[i]);
-# 1328 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  ({ free_helper((((unsigned char *)tempSeqsJ[i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)tempSeqsJ[i]) - sizeof(void *))); }) ;
-# 1329 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1328 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  ({ free_helper((((unsigned char *)tempSeqsJ[i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)tempSeqsJ[i]) - sizeof(void *))); }) ;
+# 1329 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  tempSeqsJ[i] = __null;
-# 1330 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1330 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1331 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1331 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1332 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1333 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1334 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1335 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1332 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1333 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1334 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1335 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempScores) {
-# 1336 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)tempScores) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)tempScores) - sizeof(void *))); }) ;
-# 1337 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1336 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)tempScores) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)tempScores) - sizeof(void *))); }) ;
+# 1337 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempScores = __null;
-# 1338 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1338 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1339 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1339 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempStartsI) {
-# 1340 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)tempStartsI) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)tempStartsI) - sizeof(void *))); }) ;
-# 1341 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1340 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)tempStartsI) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)tempStartsI) - sizeof(void *))); }) ;
+# 1341 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsI = __null;
-# 1342 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1342 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1343 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1343 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempStartsJ) {
-# 1344 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)tempStartsJ) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)tempStartsJ) - sizeof(void *))); }) ;
-# 1345 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1344 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)tempStartsJ) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)tempStartsJ) - sizeof(void *))); }) ;
+# 1345 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsJ = __null;
-# 1346 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1346 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1347 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1347 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempEndsI) {
-# 1348 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)tempEndsI) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)tempEndsI) - sizeof(void *))); }) ;
-# 1349 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1348 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)tempEndsI) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)tempEndsI) - sizeof(void *))); }) ;
+# 1349 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsI = __null;
-# 1350 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1350 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1351 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1351 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempEndsJ) {
-# 1352 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)tempEndsJ) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)tempEndsJ) - sizeof(void *))); }) ;
-# 1353 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1352 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)tempEndsJ) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)tempEndsJ) - sizeof(void *))); }) ;
+# 1353 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsJ = __null;
-# 1354 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1354 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1355 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1356 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1357 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1358 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1359 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1360 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1361 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1362 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1355 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1356 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1357 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1358 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1359 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1360 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1361 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1362 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     count = 0;
-# 1363 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1363 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempSeqsI) {
-# 1364 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1364 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       for (i = 0; i <= 2*maxReports; i++) {
-# 1365 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1365 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (tempSeqsI[i]) {
-# 1366 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper((((unsigned char *)tempSeqsI[i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)tempSeqsI[i]) - sizeof(void *))); }) ;
-# 1367 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1366 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+    ({ free_helper((((unsigned char *)tempSeqsI[i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)tempSeqsI[i]) - sizeof(void *))); }) ;
+# 1367 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsI[i] = __null;
-# 1368 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1368 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    count++;
-# 1369 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1369 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1370 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1370 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1371 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)tempSeqsI) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)tempSeqsI) - sizeof(void *))); }) ;
-# 1372 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1371 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)tempSeqsI) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)tempSeqsI) - sizeof(void *))); }) ;
+# 1372 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsI = __null;
-# 1373 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1373 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1374 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1374 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (count != 0) {
-# 1375 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1375 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: freed %d tempSeqsI strings for thread %d\n",
-# 1376 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1376 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       count, threadNum);
-# 1377 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1377 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1378 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1379 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1378 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1379 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     count = 0;
-# 1380 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1380 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempSeqsJ) {
-# 1381 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1381 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       for (i = 0; i <= 2*maxReports; i++) {
-# 1382 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1382 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (tempSeqsJ[i]) {
-# 1383 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper((((unsigned char *)tempSeqsJ[i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)tempSeqsJ[i]) - sizeof(void *))); }) ;
-# 1384 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1383 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+    ({ free_helper((((unsigned char *)tempSeqsJ[i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)tempSeqsJ[i]) - sizeof(void *))); }) ;
+# 1384 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsJ[i] = __null;
-# 1385 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1385 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    count++;
-# 1386 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1386 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1387 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1387 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1388 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)tempSeqsJ) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)tempSeqsJ) - sizeof(void *))); }) ;
-# 1389 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1388 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)tempSeqsJ) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)tempSeqsJ) - sizeof(void *))); }) ;
+# 1389 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsJ = __null;
-# 1390 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1390 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1391 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1391 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (count != 0) {
-# 1392 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1392 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: freed %d tempSeqsJ strings for thread %d\n",
-# 1393 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1393 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       count, threadNum);
-# 1394 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1394 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1395 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1396 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1397 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1398 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1399 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1400 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1401 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1395 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1396 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1397 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1398 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1399 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1400 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1401 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (threadNum & 1) == 0 ) {
-# 1402 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)sequences) - sizeof(void *)), 10402924002521286350UL);free((((unsigned char *)sequences) - sizeof(void *))); }) ;
-# 1403 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)scores) - sizeof(void *)), 10402924002521286022UL);free((((unsigned char *)scores) - sizeof(void *))); }) ;
-# 1404 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)index) - sizeof(void *)), 10402924002521286013UL);free((((unsigned char *)index) - sizeof(void *))); }) ;
-# 1405 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1402 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)sequences) - sizeof(void *)), 3659288930664079095UL);free((((unsigned char *)sequences) - sizeof(void *))); }) ;
+# 1403 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)scores) - sizeof(void *)), 3659288930664078767UL);free((((unsigned char *)scores) - sizeof(void *))); }) ;
+# 1404 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)index) - sizeof(void *)), 3659288930664078758UL);free((((unsigned char *)index) - sizeof(void *))); }) ;
+# 1405 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     } else {
-# 1406 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1407 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1408 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1409 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1406 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1407 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1408 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1409 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1410 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1410 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    } thread_leaving(); } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
-# 1411 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1412 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1413 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1414 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1415 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)reqack) - sizeof(void *)), 10402924002521285553UL);free((((unsigned char *)reqack) - sizeof(void *))); }) ;
-# 1425 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1425 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->numReports) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->numReports) - sizeof(void *))); }) ;
-# 1426 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->bestScores) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->bestScores) - sizeof(void *))); }) ;
-# 1427 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->bestStartsI) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->bestStartsI) - sizeof(void *))); }) ;
-# 1428 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->bestStartsJ) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->bestStartsJ) - sizeof(void *))); }) ;
-# 1429 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->bestEndsI) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->bestEndsI) - sizeof(void *))); }) ;
-# 1430 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->bestEndsJ) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->bestEndsJ) - sizeof(void *))); }) ;
-# 1431 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->bestSeqsI) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->bestSeqsI) - sizeof(void *))); }) ;
-# 1432 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->bestSeqsJ) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->bestSeqsJ) - sizeof(void *))); }) ;
-# 1433 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P) - sizeof(void *)), 10402924002521285990UL);free((((unsigned char *)P) - sizeof(void *))); }) ;
-# 1434 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1435 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1436 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   CSTR_T *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((C)); rm_stack(true, 10402924002521287332UL, "mergeAlignment", &____must_manage_mergeAlignment, ____alias_loc_id_4, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 1437 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-rm_stack(true, 10402924002521287332UL, "mergeAlignment", &____must_manage_mergeAlignment, ____alias_loc_id_4, ____chimes_did_disable0, false); }
-# 1438 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1439 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1440 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1441 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1411 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1412 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1413 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1414 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1415 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)reqack) - sizeof(void *)), 3659288930664078298UL);free((((unsigned char *)reqack) - sizeof(void *))); }) ;
+# 1425 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1425 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->numReports) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->numReports) - sizeof(void *))); }) ;
+# 1426 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->bestScores) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->bestScores) - sizeof(void *))); }) ;
+# 1427 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->bestStartsI) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->bestStartsI) - sizeof(void *))); }) ;
+# 1428 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->bestStartsJ) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->bestStartsJ) - sizeof(void *))); }) ;
+# 1429 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->bestEndsI) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->bestEndsI) - sizeof(void *))); }) ;
+# 1430 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->bestEndsJ) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->bestEndsJ) - sizeof(void *))); }) ;
+# 1431 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->bestSeqsI) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->bestSeqsI) - sizeof(void *))); }) ;
+# 1432 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->bestSeqsJ) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->bestSeqsJ) - sizeof(void *))); }) ;
+# 1433 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P) - sizeof(void *)), 3659288930664078735UL);free((((unsigned char *)P) - sizeof(void *))); }) ;
+# 1434 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1435 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1436 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   CSTR_T *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((C)); rm_stack(true, 3659288930664080077UL, "mergeAlignment", &____must_manage_mergeAlignment, ____alias_loc_id_4, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
+# 1437 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+rm_stack(true, 3659288930664080077UL, "mergeAlignment", &____must_manage_mergeAlignment, ____alias_loc_id_4, ____chimes_did_disable0, false); }
+# 1438 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1439 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1440 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1441 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 CSTR_T *freeC_npm(CSTR_T *C);
 CSTR_T *freeC_quick(CSTR_T *C); CSTR_T *freeC(CSTR_T *C);
-CSTR_T *freeC_resumable(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((void *)(&freeC), "freeC", &____must_manage_freeC, 1, 0, (size_t)(10402924002521287288UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 1442 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1443 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+CSTR_T *freeC_resumable(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((void *)(&freeC), "freeC", &____must_manage_freeC, 1, 0, (size_t)(3659288930664080033UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 1442 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1443 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   int i; ;
-# 1444 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1445 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1444 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1445 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   if (C) {
-# 1446 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1446 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalScores) {
-# 1447 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)C->finalScores) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)C->finalScores) - sizeof(void *))); }) ;
-# 1448 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1447 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)C->finalScores) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)C->finalScores) - sizeof(void *))); }) ;
+# 1448 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalScores = __null;
-# 1449 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1449 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1450 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1450 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalStartsI) {
-# 1451 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)C->finalStartsI) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)C->finalStartsI) - sizeof(void *))); }) ;
-# 1452 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1451 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)C->finalStartsI) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)C->finalStartsI) - sizeof(void *))); }) ;
+# 1452 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalStartsI = __null;
-# 1453 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1453 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1454 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1454 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalStartsJ) {
-# 1455 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)C->finalStartsJ) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)C->finalStartsJ) - sizeof(void *))); }) ;
-# 1456 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1455 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)C->finalStartsJ) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)C->finalStartsJ) - sizeof(void *))); }) ;
+# 1456 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalStartsJ = __null;
-# 1457 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1457 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1458 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1458 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalEndsI) {
-# 1459 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)C->finalEndsI) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)C->finalEndsI) - sizeof(void *))); }) ;
-# 1460 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1459 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)C->finalEndsI) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)C->finalEndsI) - sizeof(void *))); }) ;
+# 1460 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalEndsI = __null;
-# 1461 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1461 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1462 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1462 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalEndsJ) {
-# 1463 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)C->finalEndsJ) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)C->finalEndsJ) - sizeof(void *))); }) ;
-# 1464 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1463 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)C->finalEndsJ) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)C->finalEndsJ) - sizeof(void *))); }) ;
+# 1464 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalEndsJ = __null;
-# 1465 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1465 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1466 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1466 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalSeqsI) {
-# 1467 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1467 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       for (i = 1; i <= C->numReports; i++) {
-# 1468 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1468 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (C->finalSeqsI[i]) {
-# 1469 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper((((unsigned char *)C->finalSeqsI[i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)C->finalSeqsI[i]) - sizeof(void *))); }) ;
-# 1470 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1469 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+    ({ free_helper((((unsigned char *)C->finalSeqsI[i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)C->finalSeqsI[i]) - sizeof(void *))); }) ;
+# 1470 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    C->finalSeqsI[i] = __null;
-# 1471 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1471 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1472 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1472 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1473 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)C->finalSeqsI) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)C->finalSeqsI) - sizeof(void *))); }) ;
-# 1474 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1473 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)C->finalSeqsI) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)C->finalSeqsI) - sizeof(void *))); }) ;
+# 1474 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalSeqsI = __null;
-# 1475 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1475 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1476 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1476 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalSeqsJ) {
-# 1477 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1477 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       for (i = 1; i <= C->numReports; i++) {
-# 1478 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1478 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (C->finalSeqsJ[i]) {
-# 1479 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper((((unsigned char *)C->finalSeqsJ[i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)C->finalSeqsJ[i]) - sizeof(void *))); }) ;
-# 1480 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1479 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+    ({ free_helper((((unsigned char *)C->finalSeqsJ[i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)C->finalSeqsJ[i]) - sizeof(void *))); }) ;
+# 1480 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    C->finalSeqsJ[i] = __null;
-# 1481 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1481 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1482 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1482 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1483 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)C->finalSeqsJ) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)C->finalSeqsJ) - sizeof(void *))); }) ;
-# 1484 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1483 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)C->finalSeqsJ) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)C->finalSeqsJ) - sizeof(void *))); }) ;
+# 1484 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalSeqsJ = __null;
-# 1485 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1485 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1486 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     ({ free_helper((((unsigned char *)C) - sizeof(void *)), 10402924002521287288UL);free((((unsigned char *)C) - sizeof(void *))); }) ;
-# 1487 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1486 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     ({ free_helper((((unsigned char *)C) - sizeof(void *)), 3659288930664080033UL);free((((unsigned char *)C) - sizeof(void *))); }) ;
+# 1487 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 1488 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   CSTR_T *____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((__null)); rm_stack(true, 10402924002521287332UL, "freeC", &____must_manage_freeC, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 1489 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-rm_stack(true, 10402924002521287332UL, "freeC", &____must_manage_freeC, ____alias_loc_id_5, ____chimes_did_disable1, false); }
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-CSTR_T *mergeAlignment_quick(BSTR_T *B, int maxReports, int minSeparation) {const int ____chimes_did_disable0 = new_stack((void *)(&mergeAlignment), "mergeAlignment", &____must_manage_mergeAlignment, 3, 3, (size_t)(10402924002521287076UL), (size_t)(0UL), (size_t)(0UL), "mergeAlignment|B|0", &____must_checkpoint_mergeAlignment_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "mergeAlignment|maxReports|0", &____must_checkpoint_mergeAlignment_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "mergeAlignment|minSeparation|0", &____must_checkpoint_mergeAlignment_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0) ; BSTR_T *P;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1488 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   CSTR_T *____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((__null)); rm_stack(true, 3659288930664080077UL, "freeC", &____must_manage_freeC, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
+# 1489 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+rm_stack(true, 3659288930664080077UL, "freeC", &____must_manage_freeC, ____alias_loc_id_5, ____chimes_did_disable1, false); }
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+CSTR_T *mergeAlignment_quick(BSTR_T *B, int maxReports, int minSeparation) {const int ____chimes_did_disable0 = new_stack((void *)(&mergeAlignment), "mergeAlignment", &____must_manage_mergeAlignment, 3, 3, (size_t)(3659288930664079821UL), (size_t)(0UL), (size_t)(0UL), "mergeAlignment|B|0", &____must_checkpoint_mergeAlignment_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "mergeAlignment|maxReports|0", &____must_checkpoint_mergeAlignment_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "mergeAlignment|minSeparation|0", &____must_checkpoint_mergeAlignment_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0) ; BSTR_T *P;
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *reqack;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 double beginTime;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int npCol;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int npRow;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int myCol;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int myRow;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *index;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int totalReports;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int producer;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int consumer;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int mask;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int iter;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 CSTR_T *C;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 unsigned char **sequences;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 unsigned char **tempSeqsJ;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 unsigned char **tempSeqsI;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *tempEndsJ;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *tempEndsI;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *tempStartsJ;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *tempStartsI;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int threadNum;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int numReports;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 long long *scores;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 long long *tempScores;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (____must_checkpoint_mergeAlignment_P_0 || ____must_checkpoint_mergeAlignment_reqack_0 || ____must_checkpoint_mergeAlignment_beginTime_0 || ____must_checkpoint_mergeAlignment_npCol_0 || ____must_checkpoint_mergeAlignment_npRow_0 || ____must_checkpoint_mergeAlignment_myCol_0 || ____must_checkpoint_mergeAlignment_myRow_0 || ____must_checkpoint_mergeAlignment_index_0 || ____must_checkpoint_mergeAlignment_totalReports_0 || ____must_checkpoint_mergeAlignment_producer_0 || ____must_checkpoint_mergeAlignment_consumer_0 || ____must_checkpoint_mergeAlignment_mask_0 || ____must_checkpoint_mergeAlignment_iter_0 || ____must_checkpoint_mergeAlignment_C_0 || ____must_checkpoint_mergeAlignment_sequences_0 || ____must_checkpoint_mergeAlignment_tempSeqsJ_0 || ____must_checkpoint_mergeAlignment_tempSeqsI_0 || ____must_checkpoint_mergeAlignment_tempEndsJ_0 || ____must_checkpoint_mergeAlignment_tempEndsI_0 || ____must_checkpoint_mergeAlignment_tempStartsJ_0 || ____must_checkpoint_mergeAlignment_tempStartsI_0 || ____must_checkpoint_mergeAlignment_threadNum_0 || ____must_checkpoint_mergeAlignment_numReports_0 || ____must_checkpoint_mergeAlignment_scores_0 || ____must_checkpoint_mergeAlignment_tempScores_0) { register_stack_vars(25, "mergeAlignment|P|0", &____must_checkpoint_mergeAlignment_P_0, "%struct.bstr*", (void *)(&P), (size_t)8, 1, 0, 0, "mergeAlignment|reqack|0", &____must_checkpoint_mergeAlignment_reqack_0, "i32*", (void *)(&reqack), (size_t)8, 1, 0, 0, "mergeAlignment|beginTime|0", &____must_checkpoint_mergeAlignment_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "mergeAlignment|npCol|0", &____must_checkpoint_mergeAlignment_npCol_0, "i32", (void *)(&npCol), (size_t)4, 0, 0, 0, "mergeAlignment|npRow|0", &____must_checkpoint_mergeAlignment_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "mergeAlignment|myCol|0", &____must_checkpoint_mergeAlignment_myCol_0, "i32", (void *)(&myCol), (size_t)4, 0, 0, 0, "mergeAlignment|myRow|0", &____must_checkpoint_mergeAlignment_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "mergeAlignment|index|0", &____must_checkpoint_mergeAlignment_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "mergeAlignment|totalReports|0", &____must_checkpoint_mergeAlignment_totalReports_0, "i32", (void *)(&totalReports), (size_t)4, 0, 0, 0, "mergeAlignment|producer|0", &____must_checkpoint_mergeAlignment_producer_0, "i32", (void *)(&producer), (size_t)4, 0, 0, 0, "mergeAlignment|consumer|0", &____must_checkpoint_mergeAlignment_consumer_0, "i32", (void *)(&consumer), (size_t)4, 0, 0, 0, "mergeAlignment|mask|0", &____must_checkpoint_mergeAlignment_mask_0, "i32", (void *)(&mask), (size_t)4, 0, 0, 0, "mergeAlignment|iter|0", &____must_checkpoint_mergeAlignment_iter_0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "mergeAlignment|C|0", &____must_checkpoint_mergeAlignment_C_0, "%struct.cstr*", (void *)(&C), (size_t)8, 1, 0, 0, "mergeAlignment|sequences|0", &____must_checkpoint_mergeAlignment_sequences_0, "i8**", (void *)(&sequences), (size_t)8, 1, 0, 0, "mergeAlignment|tempSeqsJ|0", &____must_checkpoint_mergeAlignment_tempSeqsJ_0, "i8**", (void *)(&tempSeqsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempSeqsI|0", &____must_checkpoint_mergeAlignment_tempSeqsI_0, "i8**", (void *)(&tempSeqsI), (size_t)8, 1, 0, 0, "mergeAlignment|tempEndsJ|0", &____must_checkpoint_mergeAlignment_tempEndsJ_0, "i32*", (void *)(&tempEndsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempEndsI|0", &____must_checkpoint_mergeAlignment_tempEndsI_0, "i32*", (void *)(&tempEndsI), (size_t)8, 1, 0, 0, "mergeAlignment|tempStartsJ|0", &____must_checkpoint_mergeAlignment_tempStartsJ_0, "i32*", (void *)(&tempStartsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempStartsI|0", &____must_checkpoint_mergeAlignment_tempStartsI_0, "i32*", (void *)(&tempStartsI), (size_t)8, 1, 0, 0, "mergeAlignment|threadNum|0", &____must_checkpoint_mergeAlignment_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "mergeAlignment|numReports|0", &____must_checkpoint_mergeAlignment_numReports_0, "i32", (void *)(&numReports), (size_t)4, 0, 0, 0, "mergeAlignment|scores|0", &____must_checkpoint_mergeAlignment_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "mergeAlignment|tempScores|0", &____must_checkpoint_mergeAlignment_tempScores_0, "i64*", (void *)(&tempScores), (size_t)8, 1, 0, 0); } ; ;
-# 52 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 53 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 52 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 53 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempScores = (__null) ;
-# 54 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 54 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    int newReports; int numThreads; int maxThreads; ;
-# 55 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 55 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        tempStartsI = (__null) ; tempStartsJ = (__null) ;
-# 56 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 56 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        tempEndsI = (__null) ; tempEndsJ = (__null) ;
-# 57 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 57 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        unsigned char *ptr; tempSeqsI = (__null) ; tempSeqsJ = (__null) ;
-# 58 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 58 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      C = (__null) ;
-# 59 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 59 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   int i; int j; ;
-# 60 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 60 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   int flag; int length; int count; int indexB; ;
-# 61 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 61 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       ;
-# 62 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 62 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    double endTime; ;
-# 63 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 64 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 65 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 63 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 64 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 65 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    ;
-# 66 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 67 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 69 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 70 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 66 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 67 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 68 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 69 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 70 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 71 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    ;
-# 72 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 73 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 74 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 75 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 76 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 72 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 73 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 74 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 75 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 76 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   maxThreads = B->numThreads;
-# 89 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 89 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P = (BSTR_T*) ({ void *____chimes_tmp_ptr = malloc((sizeof(BSTR_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(BSTR_T), 10402924002521285990UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 90 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 89 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 89 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( (P = (BSTR_T*) ({ void *____chimes_tmp_ptr = malloc((sizeof(BSTR_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(BSTR_T), 3659288930664078735UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 90 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P\n");
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 92 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 92 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 93 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 94 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int), 10402924002521285992UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 95 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 93 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 94 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( (P->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int), 3659288930664078737UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 95 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->numReports\n");
-# 96 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 96 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 97 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 97 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 98 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 99 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestScores = (long long**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(long long *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(long long*), 10402924002521285992UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 100 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 98 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 99 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( (P->bestScores = (long long**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(long long *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(long long*), 3659288930664078737UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 100 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        == __null ) {
-# 101 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 101 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestScores\n");
-# 102 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 102 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 103 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 103 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 104 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 105 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestStartsI = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 10402924002521285992UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 106 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 104 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 105 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( (P->bestStartsI = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 3659288930664078737UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 106 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestStartsI\n");
-# 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 107 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 108 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 108 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 109 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 110 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestStartsJ = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 10402924002521285992UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 111 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 109 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 110 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( (P->bestStartsJ = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 3659288930664078737UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 111 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestStartsJ\n");
-# 112 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 112 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 113 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 113 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 114 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 115 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 10402924002521285992UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 116 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 114 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 115 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( (P->bestEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 3659288930664078737UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 116 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestEndsI\n");
-# 117 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 117 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 118 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 118 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 119 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 120 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 10402924002521285992UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 121 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 119 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 120 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( (P->bestEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 3659288930664078737UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 121 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestEndsJ\n");
-# 122 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 122 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 123 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 123 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 124 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 124 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   if ( (P->bestSeqsI =
-# 126 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
- (unsigned char***) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(unsigned char **)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 10402924002521285992UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 127 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 126 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+ (unsigned char***) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(unsigned char **)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 3659288930664078737UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 127 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        == __null ) {
-# 128 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 128 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestSeqsI\n");
-# 129 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 129 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 130 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 130 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 131 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 132 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 131 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 132 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   if ( (P->bestSeqsJ =
-# 133 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
- (unsigned char***) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(unsigned char **)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 10402924002521285992UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 134 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 133 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+ (unsigned char***) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(unsigned char **)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 3659288930664078737UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 134 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        == __null ) {
-# 135 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 135 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestSeqsJ\n");
-# 136 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 136 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 137 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 137 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 148 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 148 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( ( reqack = (int*) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 10402924002521285553UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 149 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 148 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 148 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( ( reqack = (int*) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 3659288930664078298UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 149 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: can't allocate reqack\n");
-# 150 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 150 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 151 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 151 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 152 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 152 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   for (i = 0; i < maxThreads; i++) {
-# 153 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 153 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     reqack[i] = 0;
-# 154 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 154 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 155 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 156 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 157 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 158 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 159 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 160 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 160 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 160 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 155 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 156 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 157 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 158 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 159 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 160 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 160 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 160 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 { call_lbl_4: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 32, &beginTime, &consumer, &count, &endTime, &flag, &i, &index, &indexB, &iter, &j, &length, &mask, &maxReports, &minSeparation, &myCol, &myRow, &npCol, &npRow, &numReports, &numThreads, &producer, &scores, &sequences, &tempEndsI, &tempEndsJ, &tempScores, &tempSeqsI, &tempSeqsJ, &tempStartsI, &tempStartsJ, &threadNum, &totalReports);
-# 160 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 160 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp parallel firstprivate(maxReports, minSeparation) private(tempScores, tempStartsI, tempStartsJ, tempEndsI, tempEndsJ, tempSeqsI, tempSeqsJ, sequences, threadNum, numThreads, numReports, i, j, iter, mask, consumer, producer, totalReports, flag, indexB, scores, index, myRow, myCol, npRow, npCol, beginTime, endTime, length, count)
-# 161 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 162 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 163 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 164 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 165 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 166 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 167 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 168 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 161 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 162 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 163 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 164 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 165 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 166 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 167 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 168 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 32, &beginTime, &consumer, &count, &endTime, &flag, &i, &index, &indexB, &iter, &j, &length, &mask, &maxReports, &minSeparation, &myCol, &myRow, &npCol, &npRow, &numReports, &numThreads, &producer, &scores, &sequences, &tempEndsI, &tempEndsJ, &tempScores, &tempSeqsI, &tempSeqsJ, &tempStartsI, &tempStartsJ, &threadNum, &totalReports); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } {
-# 169 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 170 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 171 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 172 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     call_lbl_0: ({ calling((void*)gridInfo, 0, ____alias_loc_id_3, 0UL, 4, (size_t)(10402924002521284825UL), (size_t)(10402924002521284826UL), (size_t)(10402924002521284823UL), (size_t)(10402924002521284824UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) ;
-# 173 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 177 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 169 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 170 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 171 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 172 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     call_lbl_0: ({ calling((void*)gridInfo, 0, ____alias_loc_id_3, 0UL, 4, (size_t)(3659288930664077570UL), (size_t)(3659288930664077571UL), (size_t)(3659288930664077568UL), (size_t)(3659288930664077569UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) ;
+# 173 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 174 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 175 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 176 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 177 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     threadNum = omp_get_thread_num();
-# 195 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 195 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 195 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 195 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempScores =
-# 196 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (long long*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 196 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   (long long*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 197 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   == __null ) {
-# 198 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 198 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempScores for thread %d\n",
-# 199 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 199 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       threadNum);
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 202 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 203 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 200 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 201 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 202 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 203 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       exit (1);
-# 204 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 204 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 205 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 206 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 205 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 206 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempStartsI =
-# 207 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 208 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 207 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 208 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempStartsI for thread %d\n",
-# 209 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 209 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       threadNum);
-# 210 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 211 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 212 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 213 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 210 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 211 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 212 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 213 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       exit (1);
-# 214 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 214 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 215 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 216 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 215 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 216 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempStartsJ =
-# 217 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 218 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 217 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 218 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempStartsJ for thread %d\n",
-# 219 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 219 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       threadNum);
-# 220 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 221 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 223 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 220 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 221 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 222 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 223 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       exit (1);
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 224 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 226 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 225 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 226 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempEndsI =
-# 227 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 228 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 227 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 228 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempEndsI for thread %d\n",
-# 229 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 229 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       threadNum);
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 231 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 232 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 233 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 230 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 231 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 232 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 233 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       exit (1);
-# 234 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 234 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 235 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 235 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 236 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempEndsJ =
-# 237 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 238 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 237 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 238 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempEndsJ for thread %d\n",
-# 239 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 239 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       threadNum);
-# 240 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 242 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 243 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 240 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 241 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 242 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 243 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       exit (1);
-# 244 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 244 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 245 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 246 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 245 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 246 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempSeqsI =
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 10402924002521287193UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 248 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 247 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 3659288930664079938UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 248 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   == __null ) {
-# 249 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 249 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempSeqsI for thread %d\n",
-# 250 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 250 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       threadNum);
-# 251 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 252 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 253 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 254 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 251 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 252 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 253 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 254 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       exit (1);
-# 255 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 255 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 256 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 257 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 256 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 257 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempSeqsJ =
-# 258 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 10402924002521287193UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 259 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 258 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 3659288930664079938UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 259 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   == __null ) {
-# 260 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 260 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempSeqsJ for thread %d\n",
-# 261 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 261 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       threadNum);
-# 262 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 263 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 264 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 265 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 262 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 263 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 264 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 265 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       exit (1);
-# 266 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 266 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 267 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 268 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 267 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 268 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     for (i = 0; i <= 2*maxReports; i++) {
-# 269 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 269 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsI[i] = tempSeqsJ[i] = __null;
-# 270 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 270 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 279 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 279 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 279 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 279 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     P->bestScores[threadNum] = tempScores;
-# 280 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 280 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     P->bestStartsI[threadNum] = tempStartsI;
-# 281 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 281 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     P->bestStartsJ[threadNum] = tempStartsJ;
-# 282 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 282 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     P->bestEndsI[threadNum] = tempEndsI;
-# 283 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 283 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     P->bestEndsJ[threadNum] = tempEndsJ;
-# 284 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 284 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     P->bestSeqsI[threadNum] = tempSeqsI;
-# 285 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 285 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     P->bestSeqsJ[threadNum] = tempSeqsJ;
-# 286 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 287 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 288 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 289 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 290 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 291 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 292 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 293 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 286 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 287 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 288 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 289 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 290 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 291 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 292 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 293 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (threadNum & 1) == 0 ) {
-# 294 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 294 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (sequences =
-# 295 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 10402924002521286350UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 296 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 295 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 3659288930664079095UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 296 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
-# 297 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 297 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate sequences for thread %d\n",
-# 298 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 298 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
         threadNum);
-# 299 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 300 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 301 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 302 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 299 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 300 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 301 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 302 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 303 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 303 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 304 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 305 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      if ( (scores = (long long*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 10402924002521286022UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 306 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 304 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 305 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+      if ( (scores = (long long*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 3659288930664078767UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 306 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
-# 307 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 307 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate scores for thread %d\n",
-# 308 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 308 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
         threadNum);
-# 309 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 310 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 311 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 312 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 309 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 310 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 311 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 312 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 313 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 313 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 314 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 315 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      if ( (index = (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 10402924002521286013UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 316 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 314 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 315 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+      if ( (index = (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 3659288930664078758UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 316 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate index for thread %d\n",
-# 317 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 317 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
         threadNum);
-# 318 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 319 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 320 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 321 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 318 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 319 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 320 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 321 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 322 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 322 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 323 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 323 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     } else {
-# 338 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 338 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 338 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 338 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 339 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 340 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 341 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 342 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 343 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 339 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 340 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 341 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 342 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 343 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      call_lbl_1: beginTime = ({ calling((void*)getSeconds, 1, ____alias_loc_id_1, 0UL, 0); (getSeconds)(); }) ;
-# 359 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 359 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 359 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 359 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (myRow < 0 || myCol < 0) {
-# 360 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 360 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       P->numReports[threadNum] = numReports = 0;
-# 361 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 361 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     } else {
-# 362 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 362 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       P->numReports[threadNum] = numReports = B->numReports[threadNum];
-# 363 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 363 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 383 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 383 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 383 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 383 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     indexB = threadNum;
-# 384 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 385 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 386 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 387 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 388 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 384 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 385 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 386 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 387 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 388 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     for (i = 1; i <= numReports; i++) {
-# 389 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 389 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempScores[i] = B->bestScores[indexB][i];
-# 390 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 390 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsI[i] = B->bestStartsI[indexB][i];
-# 391 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 391 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsJ[i] = B->bestStartsJ[indexB][i];
-# 392 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 392 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsI[i] = B->bestEndsI[indexB][i];
-# 393 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 393 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsJ[i] = B->bestEndsJ[indexB][i];
-# 394 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 395 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 394 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 395 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       length = strlen((char*)(B->bestSeqsI[indexB][i]));
-# 396 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 396 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if (length < 1) {
-# 397 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 397 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: strlen(B->bestSeqsI[%d] = %d for thread %d\n",
-# 398 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 398 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
         i, length, indexB);
-# 399 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 399 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 400 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 400 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 401 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 401 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       length++;
-# 402 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 402 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (tempSeqsI[i] =
-# 403 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 10402924002521287195UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 404 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 403 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 3659288930664079940UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 404 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
-# 405 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 405 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate tempSeqsI[%d] for thread %d",
-# 406 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 406 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
         i, indexB);
-# 407 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 407 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 408 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 408 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 409 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 409 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsI[i] =
-# 410 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 410 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  (unsigned char*)strcpy((char*)(tempSeqsI[i]),
-# 411 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 411 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
           (char*)(B->bestSeqsI[indexB][i]));
-# 412 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 413 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 412 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 413 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       length = strlen((char*)(B->bestSeqsJ[indexB][i]));
-# 414 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 414 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if (length < 1) {
-# 415 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 415 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: strlen(B->bestSeqsJ[%d] = %d for thread %d\n",
-# 416 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 416 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
         i, length, indexB);
-# 417 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 417 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 418 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 418 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 419 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 419 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       length++;
-# 420 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 420 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (tempSeqsJ[i] =
-# 421 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 10402924002521287195UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 422 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 421 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 3659288930664079940UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 422 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
-# 423 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 423 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate tempSeqsJ[%d] for thread %d",
-# 424 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 424 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
         i, indexB);
-# 425 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 425 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 426 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 426 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 427 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 427 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsJ[i] =
-# 428 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 428 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  (unsigned char*)strcpy((char*)(tempSeqsJ[i]),
-# 429 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 429 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
           (char*)(B->bestSeqsJ[indexB][i]));
-# 430 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 430 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 448 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 448 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 448 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 448 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 448 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 448 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 448 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 448 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 448 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 462 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 462 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 448 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 462 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 462 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     iter = npRow*npCol - 1;
-# 463 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 463 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     mask = 1;
-# 464 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 464 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     while (iter > 0) {
-# 465 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 465 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       consumer = threadNum & (~mask);
-# 466 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 466 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       producer = consumer | ((mask + 1) >> 1);
-# 509 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 509 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 509 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 509 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( ( threadNum == consumer ) && ( producer < npRow*npCol ) &&
-# 510 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 510 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     ( myRow >= 0 ) && ( myCol >= 0) ) {
-# 532 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 532 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 532 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 532 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  reqack[consumer] = iter;
-# 533 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 533 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 533 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 533 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 533 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 533 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 533 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 533 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 534 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 533 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 533 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 534 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  do {
-# 535 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 535 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 535 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 535 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 535 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 535 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 535 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 535 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 536 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 535 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 535 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 536 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  } while (reqack[producer] != iter);
-# 537 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 538 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 539 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 540 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 541 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 537 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 538 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 539 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 540 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 541 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  totalReports = numReports;
-# 552 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 552 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 552 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 552 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= P->numReports[producer]; i++) {
-# 565 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 565 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 565 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 565 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    flag = 0;
-# 566 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 566 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    for (j = 1; j <= numReports; j++) {
-# 567 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 567 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if ( ( ( (abs(tempStartsI[j] - P->bestStartsI[producer][i]) > abs(tempStartsJ[j] - P->bestStartsJ[producer][i])) ? abs(tempStartsI[j] - P->bestStartsI[producer][i]) : abs(tempStartsJ[j] - P->bestStartsJ[producer][i]) )
-# 568 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 569 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 568 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 569 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      < minSeparation ) ||
-# 570 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 570 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    ( ( (abs(tempEndsI[j] - P->bestEndsI[producer][i]) > abs(tempEndsJ[j] - P->bestEndsJ[producer][i])) ? abs(tempEndsI[j] - P->bestEndsI[producer][i]) : abs(tempEndsJ[j] - P->bestEndsJ[producer][i]) )
-# 571 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 572 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 571 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 572 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      < minSeparation ) ) {
-# 573 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 573 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        flag = 1;
-# 574 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 574 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        break;
-# 575 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 575 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      }
-# 576 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 576 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    }
-# 577 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 578 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 577 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 578 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    if (flag == 0) {
-# 579 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 579 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      totalReports++;
-# 580 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 580 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempScores[totalReports] = P->bestScores[producer][i];
-# 581 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 581 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempStartsI[totalReports] = P->bestStartsI[producer][i];
-# 582 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 582 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempStartsJ[totalReports] = P->bestStartsJ[producer][i];
-# 583 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 583 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempEndsI[totalReports] = P->bestEndsI[producer][i];
-# 584 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 584 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempEndsJ[totalReports] = P->bestEndsJ[producer][i];
-# 585 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 585 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsI[totalReports] = P->bestSeqsI[producer][i];
-# 586 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 586 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsJ[totalReports] = P->bestSeqsJ[producer][i];
-# 587 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 587 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      P->bestSeqsI[producer][i] = P->bestSeqsJ[producer][i] = __null;
-# 588 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 588 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    } else {
-# 589 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 589 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if (P->bestSeqsI[producer][i]) {
-# 590 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-        ({ free_helper((((unsigned char *)P->bestSeqsI[producer][i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)P->bestSeqsI[producer][i]) - sizeof(void *))); }) ;
-# 591 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 590 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+        ({ free_helper((((unsigned char *)P->bestSeqsI[producer][i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)P->bestSeqsI[producer][i]) - sizeof(void *))); }) ;
+# 591 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        P->bestSeqsI[producer][i] = __null;
-# 592 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 592 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      }
-# 593 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 593 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if (P->bestSeqsJ[producer][i]) {
-# 594 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-        ({ free_helper((((unsigned char *)P->bestSeqsJ[producer][i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)P->bestSeqsJ[producer][i]) - sizeof(void *))); }) ;
-# 595 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 594 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+        ({ free_helper((((unsigned char *)P->bestSeqsJ[producer][i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)P->bestSeqsJ[producer][i]) - sizeof(void *))); }) ;
+# 595 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        P->bestSeqsJ[producer][i] = __null;
-# 596 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 596 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      }
-# 597 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 597 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      printf("\tmergeAlignment() thread %d found redundant report %d from thread %d\n",
-# 598 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 598 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      threadNum, i, producer);
-# 599 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 599 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    }
-# 600 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 600 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 849 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 849 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  call_lbl_2: ({ calling((void*)qSort_both, 2, ____alias_loc_id_2, 0UL, 4, (size_t)(10402924002521286022UL), (size_t)(10402924002521286013UL), (size_t)(10402924002521287193UL), (size_t)(0UL)); (qSort_both)(scores, index, tempScores, totalReports); }) ;
-# 850 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 849 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 849 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  call_lbl_2: ({ calling((void*)qSort_both, 2, ____alias_loc_id_2, 0UL, 4, (size_t)(3659288930664078767UL), (size_t)(3659288930664078758UL), (size_t)(3659288930664079938UL), (size_t)(0UL)); (qSort_both)(scores, index, tempScores, totalReports); }) ;
+# 850 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  numReports = ( (maxReports < totalReports) ? maxReports : totalReports );
-# 851 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 852 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 853 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 851 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 852 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 853 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  P->numReports[consumer] = numReports;
-# 854 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 854 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  P->numReports[producer] = 0;
-# 855 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 856 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 857 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 855 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 856 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 857 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 858 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 858 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    scores[i] = tempScores[ index[totalReports - i + 1] ];
-# 859 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 859 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 860 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 860 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 861 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 861 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempScores[i] = scores[i];
-# 862 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 862 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 863 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 864 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 863 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 864 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 865 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 865 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    scores[i] = tempStartsI[ index[totalReports - i + 1] ];
-# 866 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 866 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 867 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 867 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 868 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 868 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempStartsI[i] = scores[i];
-# 869 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 869 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 870 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 871 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 870 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 871 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 872 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 872 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    scores[i] = tempStartsJ[ index[totalReports - i + 1] ];
-# 873 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 873 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 874 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 874 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 875 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 875 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempStartsJ[i] = scores[i];
-# 876 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 876 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 877 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 878 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 877 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 878 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 879 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 879 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    scores[i] = tempEndsI[ index[totalReports - i + 1] ];
-# 880 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 880 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 881 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 881 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 882 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 882 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempEndsI[i] = scores[i];
-# 883 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 883 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 884 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 885 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 884 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 885 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 886 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 886 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    scores[i] = tempEndsJ[ index[totalReports - i + 1] ];
-# 887 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 887 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 888 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 888 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 889 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 889 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempEndsJ[i] = scores[i];
-# 890 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 890 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 899 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 899 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 899 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 899 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= totalReports - numReports; i++) {
-# 900 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 900 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    if (tempSeqsI[ index[i] ]) {
-# 901 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      ({ free_helper((((unsigned char *)tempSeqsI[index[i]]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)tempSeqsI[index[i]]) - sizeof(void *))); }) ;
-# 902 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 901 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+      ({ free_helper((((unsigned char *)tempSeqsI[index[i]]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)tempSeqsI[index[i]]) - sizeof(void *))); }) ;
+# 902 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsI[ index[i] ] = __null;
-# 903 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 903 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    }
-# 904 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 904 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    if (tempSeqsJ[ index[i] ]) {
-# 905 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      ({ free_helper((((unsigned char *)tempSeqsJ[index[i]]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)tempSeqsJ[index[i]]) - sizeof(void *))); }) ;
-# 906 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 905 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+      ({ free_helper((((unsigned char *)tempSeqsJ[index[i]]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)tempSeqsJ[index[i]]) - sizeof(void *))); }) ;
+# 906 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsJ[ index[i] ] = __null;
-# 907 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 907 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    }
-# 908 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 908 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 909 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 910 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 911 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 912 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 913 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 914 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 915 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 909 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 910 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 911 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 912 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 913 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 914 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 915 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 916 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 916 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    sequences[i] = tempSeqsI[ index[totalReports - i + 1] ];
-# 917 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 917 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 918 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 918 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 919 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 919 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsI[i] = sequences[i];
-# 920 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 920 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 921 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 922 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 921 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 922 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 923 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 923 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    sequences[i] = tempSeqsJ[ index[totalReports - i + 1] ];
-# 924 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 924 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 925 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 925 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 926 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 926 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsJ[i] = sequences[i];
-# 927 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 927 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 938 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 938 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 938 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 938 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = numReports+1; i <= totalReports; i++) {
-# 939 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 939 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsI[i] = tempSeqsJ[i] = __null;
-# 940 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 940 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 949 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 949 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 949 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 949 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  reqack[consumer] = 0;
-# 950 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 950 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 950 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 950 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 950 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 950 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 950 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 950 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 951 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 950 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 950 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 951 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  do {
-# 952 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 952 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 952 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 952 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 952 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 952 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 952 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 952 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 953 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 952 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 952 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 953 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  } while (reqack[producer] == iter);
-# 954 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 955 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 956 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 954 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 955 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 956 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 971 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 971 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 971 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 971 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( ( threadNum == producer ) && ( myRow >= 0 ) && ( myCol >= 0) ) {
-# 986 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 986 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 986 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 986 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  do {
-# 987 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 987 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 987 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 987 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 987 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 987 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 987 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 987 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 988 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 987 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 987 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 988 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  } while (reqack[consumer] != iter);
-# 989 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 989 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  reqack[producer] = iter;
-# 990 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 990 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 990 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 990 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 990 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 990 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 990 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 990 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 991 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 992 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 990 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 990 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 991 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 992 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  do {
-# 993 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 993 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 993 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 993 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 993 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 993 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 993 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 993 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 994 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 993 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 993 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 994 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  } while (reqack[consumer] == iter);
-# 995 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 995 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  reqack[producer] = 0;
-# 996 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 996 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 996 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 996 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 996 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 996 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 996 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1161 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1161 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 996 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1161 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1161 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1176 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1176 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       mask = (mask << 1) + 1;
-# 1177 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1177 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       iter >>= 1;
-# 1178 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1178 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1179 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1180 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1181 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1182 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1183 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1179 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1180 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1181 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1182 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1183 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      call_lbl_3: endTime = ({ calling((void*)getSeconds, 3, ____alias_loc_id_0, 0UL, 0); (getSeconds)(); }) ;
-# 1184 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1184 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (threadNum == 0) {
-# 1185 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1185 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("\n        Merge time = %10.5f seconds\n",
-# 1186 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1186 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       endTime - beginTime);
-# 1187 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1187 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1197 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1197 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (threadNum == 0) {
-# 1198 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1199 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      if ( (C = (CSTR_T*) ({ void *____chimes_tmp_ptr = malloc((sizeof(CSTR_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(CSTR_T), 10402924002521287332UL, 0, 1, (int)sizeof(struct cstr), 7, (int)__builtin_offsetof(struct cstr, finalScores), (int)__builtin_offsetof(struct cstr, finalStartsI), (int)__builtin_offsetof(struct cstr, finalStartsJ), (int)__builtin_offsetof(struct cstr, finalEndsI), (int)__builtin_offsetof(struct cstr, finalEndsJ), (int)__builtin_offsetof(struct cstr, finalSeqsI), (int)__builtin_offsetof(struct cstr, finalSeqsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 1200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1198 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1199 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+      if ( (C = (CSTR_T*) ({ void *____chimes_tmp_ptr = malloc((sizeof(CSTR_T)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(CSTR_T), 3659288930664080077UL, 0, 1, (int)sizeof(struct cstr), 7, (int)__builtin_offsetof(struct cstr, finalScores), (int)__builtin_offsetof(struct cstr, finalStartsI), (int)__builtin_offsetof(struct cstr, finalStartsJ), (int)__builtin_offsetof(struct cstr, finalEndsI), (int)__builtin_offsetof(struct cstr, finalEndsJ), (int)__builtin_offsetof(struct cstr, finalSeqsI), (int)__builtin_offsetof(struct cstr, finalSeqsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 1200 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C\n");
-# 1201 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1202 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1203 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1204 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1201 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1202 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1203 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1204 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1205 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1205 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1206 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1206 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->numReports = 0;
-# 1207 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1207 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalScores = __null;
-# 1208 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1208 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalStartsI = C->finalStartsJ = __null;
-# 1209 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1209 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalEndsI = C->finalEndsJ = __null;
-# 1210 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1210 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalSeqsI = C->finalSeqsJ = __null;
-# 1211 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1212 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1211 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1212 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->numReports = numReports;
-# 1213 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1214 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1213 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1214 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalScores =
-# 1215 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (long long*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(long long), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 1216 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1215 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (long long*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(long long)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(long long), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 1216 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalScores\n");
-# 1217 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1218 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1219 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1220 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1217 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1218 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1219 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1220 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1221 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1221 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1222 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1223 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1222 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1223 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalStartsI =
-# 1224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
-# 1225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1224 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
+# 1225 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalStartsI\n");
-# 1226 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1227 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1228 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1229 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1226 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1227 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1228 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1229 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1230 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1230 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1231 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1232 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1231 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1232 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalStartsJ =
-# 1233 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
-# 1234 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1233 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
+# 1234 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalStartsJ\n");
-# 1235 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1236 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1237 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1238 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1235 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1236 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1237 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1238 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1239 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1239 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1240 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1241 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1240 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1241 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalEndsI =
-# 1242 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
-# 1243 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1242 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
+# 1243 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalEndsI\n");
-# 1244 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1245 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1246 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1247 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1244 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1245 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1246 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1247 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1248 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1248 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1249 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1250 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1249 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1250 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalEndsJ =
-# 1251 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
-# 1252 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1251 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
+# 1252 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalEndsJ\n");
-# 1253 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1254 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1255 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1256 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1253 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1254 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1255 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1256 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1257 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1257 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1258 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1259 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1258 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1259 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if ( (C->finalSeqsI =
-# 1260 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 10402924002521287193UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 1261 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1260 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 3659288930664079938UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 1261 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    == __null ) {
-# 1262 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1262 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        printf("mergeAlignment: cannot allocate C->finalSeqsI\n");
-# 1263 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1264 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1265 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1266 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1263 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1264 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1265 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1266 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1267 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1267 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1268 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1269 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1268 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1269 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if ( (C->finalSeqsJ =
-# 1270 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 10402924002521287193UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 1271 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1270 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 3659288930664079938UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 1271 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    == __null ) {
-# 1272 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1272 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        printf("mergeAlignment: cannot allocate C->finalSeqsJ\n");
-# 1273 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1274 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1275 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1276 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1273 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1274 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1275 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1276 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1277 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1277 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1279 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1278 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1279 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       for (i = 1; i <= numReports; i++) {
-# 1280 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1280 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  C->finalScores[i] = tempScores[i];
-# 1281 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1281 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  C->finalStartsI[i] = tempStartsI[i];
-# 1282 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1282 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  C->finalStartsJ[i] = tempStartsJ[i];
-# 1283 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1283 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  C->finalEndsI[i] = tempEndsI[i];
-# 1284 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1284 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  C->finalEndsJ[i] = tempEndsJ[i];
-# 1285 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1285 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if ( ( length = strlen( (char*)tempSeqsI[i] ) ) < 1 ) {
-# 1286 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1286 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    printf("mergeAlignment: strlen(tempSeqsI[%d]) = %d for process %d\n",
-# 1287 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1287 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    i, length, threadNum);
-# 1288 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1289 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1290 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1291 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1288 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1289 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1290 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1291 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    exit (1);
-# 1292 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1292 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1293 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1293 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  length++;
-# 1294 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1294 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if ( (C->finalSeqsI[i] =
-# 1295 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 10402924002521287195UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 1296 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1295 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 3659288930664079940UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 1296 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       == __null ) {
-# 1297 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1297 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    printf("mergeAlignment: cannot allocate C->finalSeqsI[%d]\n", i);
-# 1298 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1299 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1300 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1301 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1298 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1299 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1300 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1301 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    exit (1);
-# 1302 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1302 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1303 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1303 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  C->finalSeqsI[i] =
-# 1304 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1304 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    (unsigned char*)strcpy((char*)C->finalSeqsI[i], (char*)tempSeqsI[i]);
-# 1305 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  ({ free_helper((((unsigned char *)tempSeqsI[i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)tempSeqsI[i]) - sizeof(void *))); }) ;
-# 1306 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1305 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  ({ free_helper((((unsigned char *)tempSeqsI[i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)tempSeqsI[i]) - sizeof(void *))); }) ;
+# 1306 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  tempSeqsI[i] = __null;
-# 1307 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1308 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1307 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1308 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if ( ( length = strlen( (char*)tempSeqsJ[i] ) ) < 1 ) {
-# 1309 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1309 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    printf("mergeAlignment: strlen(tempSeqsJ[%d]) = %d for process %d\n",
-# 1310 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1310 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    i, length, threadNum);
-# 1311 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1312 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1313 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1314 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1311 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1312 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1313 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1314 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    exit (1);
-# 1315 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1315 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1316 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1316 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  length++;
-# 1317 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1317 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if ( (C->finalSeqsJ[i] =
-# 1318 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 10402924002521287195UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 1319 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1318 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 3659288930664079940UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 1319 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       == __null ) {
-# 1320 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1320 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    printf("mergeAlignment: cannot allocate C->finalSeqsJ[%d]\n", i);
-# 1321 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1322 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1323 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1324 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1321 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1322 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1323 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1324 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    exit (1);
-# 1325 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1325 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1326 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1326 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  C->finalSeqsJ[i] =
-# 1327 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1327 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    (unsigned char*)strcpy((char*)C->finalSeqsJ[i], (char*)tempSeqsJ[i]);
-# 1328 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  ({ free_helper((((unsigned char *)tempSeqsJ[i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)tempSeqsJ[i]) - sizeof(void *))); }) ;
-# 1329 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1328 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  ({ free_helper((((unsigned char *)tempSeqsJ[i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)tempSeqsJ[i]) - sizeof(void *))); }) ;
+# 1329 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  tempSeqsJ[i] = __null;
-# 1330 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1330 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1331 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1331 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1332 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1333 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1334 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1335 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1332 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1333 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1334 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1335 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempScores) {
-# 1336 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)tempScores) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)tempScores) - sizeof(void *))); }) ;
-# 1337 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1336 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)tempScores) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)tempScores) - sizeof(void *))); }) ;
+# 1337 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempScores = __null;
-# 1338 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1338 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1339 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1339 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempStartsI) {
-# 1340 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)tempStartsI) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)tempStartsI) - sizeof(void *))); }) ;
-# 1341 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1340 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)tempStartsI) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)tempStartsI) - sizeof(void *))); }) ;
+# 1341 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsI = __null;
-# 1342 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1342 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1343 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1343 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempStartsJ) {
-# 1344 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)tempStartsJ) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)tempStartsJ) - sizeof(void *))); }) ;
-# 1345 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1344 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)tempStartsJ) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)tempStartsJ) - sizeof(void *))); }) ;
+# 1345 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsJ = __null;
-# 1346 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1346 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1347 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1347 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempEndsI) {
-# 1348 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)tempEndsI) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)tempEndsI) - sizeof(void *))); }) ;
-# 1349 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1348 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)tempEndsI) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)tempEndsI) - sizeof(void *))); }) ;
+# 1349 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsI = __null;
-# 1350 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1350 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1351 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1351 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempEndsJ) {
-# 1352 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)tempEndsJ) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)tempEndsJ) - sizeof(void *))); }) ;
-# 1353 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1352 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)tempEndsJ) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)tempEndsJ) - sizeof(void *))); }) ;
+# 1353 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsJ = __null;
-# 1354 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1354 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1355 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1356 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1357 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1358 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1359 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1360 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1361 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1362 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1355 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1356 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1357 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1358 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1359 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1360 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1361 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1362 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     count = 0;
-# 1363 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1363 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempSeqsI) {
-# 1364 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1364 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       for (i = 0; i <= 2*maxReports; i++) {
-# 1365 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1365 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (tempSeqsI[i]) {
-# 1366 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper((((unsigned char *)tempSeqsI[i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)tempSeqsI[i]) - sizeof(void *))); }) ;
-# 1367 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1366 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+    ({ free_helper((((unsigned char *)tempSeqsI[i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)tempSeqsI[i]) - sizeof(void *))); }) ;
+# 1367 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsI[i] = __null;
-# 1368 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1368 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    count++;
-# 1369 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1369 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1370 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1370 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1371 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)tempSeqsI) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)tempSeqsI) - sizeof(void *))); }) ;
-# 1372 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1371 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)tempSeqsI) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)tempSeqsI) - sizeof(void *))); }) ;
+# 1372 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsI = __null;
-# 1373 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1373 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1374 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1374 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (count != 0) {
-# 1375 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1375 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: freed %d tempSeqsI strings for thread %d\n",
-# 1376 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1376 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       count, threadNum);
-# 1377 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1377 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1378 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1379 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1378 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1379 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     count = 0;
-# 1380 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1380 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempSeqsJ) {
-# 1381 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1381 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       for (i = 0; i <= 2*maxReports; i++) {
-# 1382 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1382 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (tempSeqsJ[i]) {
-# 1383 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper((((unsigned char *)tempSeqsJ[i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)tempSeqsJ[i]) - sizeof(void *))); }) ;
-# 1384 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1383 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+    ({ free_helper((((unsigned char *)tempSeqsJ[i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)tempSeqsJ[i]) - sizeof(void *))); }) ;
+# 1384 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsJ[i] = __null;
-# 1385 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1385 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    count++;
-# 1386 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1386 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1387 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1387 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1388 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)tempSeqsJ) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)tempSeqsJ) - sizeof(void *))); }) ;
-# 1389 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1388 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)tempSeqsJ) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)tempSeqsJ) - sizeof(void *))); }) ;
+# 1389 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsJ = __null;
-# 1390 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1390 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1391 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1391 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (count != 0) {
-# 1392 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1392 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: freed %d tempSeqsJ strings for thread %d\n",
-# 1393 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1393 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       count, threadNum);
-# 1394 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1394 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1395 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1396 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1397 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1398 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1399 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1400 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1401 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1395 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1396 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1397 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1398 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1399 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1400 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1401 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (threadNum & 1) == 0 ) {
-# 1402 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)sequences) - sizeof(void *)), 10402924002521286350UL);free((((unsigned char *)sequences) - sizeof(void *))); }) ;
-# 1403 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)scores) - sizeof(void *)), 10402924002521286022UL);free((((unsigned char *)scores) - sizeof(void *))); }) ;
-# 1404 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)index) - sizeof(void *)), 10402924002521286013UL);free((((unsigned char *)index) - sizeof(void *))); }) ;
-# 1405 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1402 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)sequences) - sizeof(void *)), 3659288930664079095UL);free((((unsigned char *)sequences) - sizeof(void *))); }) ;
+# 1403 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)scores) - sizeof(void *)), 3659288930664078767UL);free((((unsigned char *)scores) - sizeof(void *))); }) ;
+# 1404 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)index) - sizeof(void *)), 3659288930664078758UL);free((((unsigned char *)index) - sizeof(void *))); }) ;
+# 1405 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     } else {
-# 1406 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1407 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1408 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1409 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1406 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1407 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1408 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1409 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1410 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1410 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    } thread_leaving(); } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
-# 1411 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1412 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1413 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1414 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1415 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)reqack) - sizeof(void *)), 10402924002521285553UL);free((((unsigned char *)reqack) - sizeof(void *))); }) ;
-# 1425 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1425 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->numReports) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->numReports) - sizeof(void *))); }) ;
-# 1426 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->bestScores) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->bestScores) - sizeof(void *))); }) ;
-# 1427 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->bestStartsI) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->bestStartsI) - sizeof(void *))); }) ;
-# 1428 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->bestStartsJ) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->bestStartsJ) - sizeof(void *))); }) ;
-# 1429 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->bestEndsI) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->bestEndsI) - sizeof(void *))); }) ;
-# 1430 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->bestEndsJ) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->bestEndsJ) - sizeof(void *))); }) ;
-# 1431 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->bestSeqsI) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->bestSeqsI) - sizeof(void *))); }) ;
-# 1432 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->bestSeqsJ) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->bestSeqsJ) - sizeof(void *))); }) ;
-# 1433 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P) - sizeof(void *)), 10402924002521285990UL);free((((unsigned char *)P) - sizeof(void *))); }) ;
-# 1434 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1435 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1436 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   CSTR_T *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((C)); rm_stack(true, 10402924002521287332UL, "mergeAlignment", &____must_manage_mergeAlignment, ____alias_loc_id_4, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 1437 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-rm_stack(true, 10402924002521287332UL, "mergeAlignment", &____must_manage_mergeAlignment, ____alias_loc_id_4, ____chimes_did_disable0, false); }
+# 1411 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1412 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1413 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1414 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1415 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)reqack) - sizeof(void *)), 3659288930664078298UL);free((((unsigned char *)reqack) - sizeof(void *))); }) ;
+# 1425 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1425 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->numReports) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->numReports) - sizeof(void *))); }) ;
+# 1426 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->bestScores) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->bestScores) - sizeof(void *))); }) ;
+# 1427 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->bestStartsI) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->bestStartsI) - sizeof(void *))); }) ;
+# 1428 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->bestStartsJ) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->bestStartsJ) - sizeof(void *))); }) ;
+# 1429 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->bestEndsI) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->bestEndsI) - sizeof(void *))); }) ;
+# 1430 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->bestEndsJ) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->bestEndsJ) - sizeof(void *))); }) ;
+# 1431 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->bestSeqsI) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->bestSeqsI) - sizeof(void *))); }) ;
+# 1432 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->bestSeqsJ) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->bestSeqsJ) - sizeof(void *))); }) ;
+# 1433 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P) - sizeof(void *)), 3659288930664078735UL);free((((unsigned char *)P) - sizeof(void *))); }) ;
+# 1434 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1435 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1436 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   CSTR_T *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((C)); rm_stack(true, 3659288930664080077UL, "mergeAlignment", &____must_manage_mergeAlignment, ____alias_loc_id_4, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
+# 1437 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+rm_stack(true, 3659288930664080077UL, "mergeAlignment", &____must_manage_mergeAlignment, ____alias_loc_id_4, ____chimes_did_disable0, false); }
 
 CSTR_T *mergeAlignment(BSTR_T *B, int maxReports, int minSeparation) { return (____chimes_replaying ? mergeAlignment_resumable(B, maxReports, minSeparation) : mergeAlignment_quick(B, maxReports, minSeparation)); }
-# 1441 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((void *)(&freeC), "freeC", &____must_manage_freeC, 1, 0, (size_t)(10402924002521287288UL)) ; ; ;
-# 1442 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1443 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1441 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((void *)(&freeC), "freeC", &____must_manage_freeC, 1, 0, (size_t)(3659288930664080033UL)) ; ; ;
+# 1442 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1443 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   int i; ;
-# 1444 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1445 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1444 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1445 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   if (C) {
-# 1446 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1446 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalScores) {
-# 1447 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)C->finalScores) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)C->finalScores) - sizeof(void *))); }) ;
-# 1448 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1447 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)C->finalScores) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)C->finalScores) - sizeof(void *))); }) ;
+# 1448 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalScores = __null;
-# 1449 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1449 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1450 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1450 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalStartsI) {
-# 1451 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)C->finalStartsI) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)C->finalStartsI) - sizeof(void *))); }) ;
-# 1452 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1451 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)C->finalStartsI) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)C->finalStartsI) - sizeof(void *))); }) ;
+# 1452 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalStartsI = __null;
-# 1453 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1453 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1454 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1454 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalStartsJ) {
-# 1455 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)C->finalStartsJ) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)C->finalStartsJ) - sizeof(void *))); }) ;
-# 1456 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1455 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)C->finalStartsJ) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)C->finalStartsJ) - sizeof(void *))); }) ;
+# 1456 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalStartsJ = __null;
-# 1457 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1457 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1458 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1458 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalEndsI) {
-# 1459 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)C->finalEndsI) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)C->finalEndsI) - sizeof(void *))); }) ;
-# 1460 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1459 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)C->finalEndsI) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)C->finalEndsI) - sizeof(void *))); }) ;
+# 1460 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalEndsI = __null;
-# 1461 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1461 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1462 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1462 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalEndsJ) {
-# 1463 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)C->finalEndsJ) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)C->finalEndsJ) - sizeof(void *))); }) ;
-# 1464 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1463 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)C->finalEndsJ) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)C->finalEndsJ) - sizeof(void *))); }) ;
+# 1464 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalEndsJ = __null;
-# 1465 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1465 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1466 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1466 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalSeqsI) {
-# 1467 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1467 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       for (i = 1; i <= C->numReports; i++) {
-# 1468 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1468 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (C->finalSeqsI[i]) {
-# 1469 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper((((unsigned char *)C->finalSeqsI[i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)C->finalSeqsI[i]) - sizeof(void *))); }) ;
-# 1470 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1469 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+    ({ free_helper((((unsigned char *)C->finalSeqsI[i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)C->finalSeqsI[i]) - sizeof(void *))); }) ;
+# 1470 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    C->finalSeqsI[i] = __null;
-# 1471 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1471 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1472 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1472 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1473 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)C->finalSeqsI) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)C->finalSeqsI) - sizeof(void *))); }) ;
-# 1474 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1473 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)C->finalSeqsI) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)C->finalSeqsI) - sizeof(void *))); }) ;
+# 1474 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalSeqsI = __null;
-# 1475 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1475 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1476 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1476 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalSeqsJ) {
-# 1477 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1477 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       for (i = 1; i <= C->numReports; i++) {
-# 1478 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1478 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (C->finalSeqsJ[i]) {
-# 1479 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper((((unsigned char *)C->finalSeqsJ[i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)C->finalSeqsJ[i]) - sizeof(void *))); }) ;
-# 1480 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1479 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+    ({ free_helper((((unsigned char *)C->finalSeqsJ[i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)C->finalSeqsJ[i]) - sizeof(void *))); }) ;
+# 1480 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    C->finalSeqsJ[i] = __null;
-# 1481 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1481 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1482 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1482 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1483 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)C->finalSeqsJ) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)C->finalSeqsJ) - sizeof(void *))); }) ;
-# 1484 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1483 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)C->finalSeqsJ) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)C->finalSeqsJ) - sizeof(void *))); }) ;
+# 1484 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalSeqsJ = __null;
-# 1485 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1485 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1486 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     ({ free_helper((((unsigned char *)C) - sizeof(void *)), 10402924002521287288UL);free((((unsigned char *)C) - sizeof(void *))); }) ;
-# 1487 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1486 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     ({ free_helper((((unsigned char *)C) - sizeof(void *)), 3659288930664080033UL);free((((unsigned char *)C) - sizeof(void *))); }) ;
+# 1487 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 1488 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   CSTR_T *____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((__null)); rm_stack(true, 10402924002521287332UL, "freeC", &____must_manage_freeC, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 1489 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-rm_stack(true, 10402924002521287332UL, "freeC", &____must_manage_freeC, ____alias_loc_id_5, ____chimes_did_disable1, false); }
+# 1488 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   CSTR_T *____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((__null)); rm_stack(true, 3659288930664080077UL, "freeC", &____must_manage_freeC, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
+# 1489 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+rm_stack(true, 3659288930664080077UL, "freeC", &____must_manage_freeC, ____alias_loc_id_5, ____chimes_did_disable1, false); }
 
 CSTR_T *freeC(CSTR_T *C) { return (____chimes_replaying ? freeC_resumable(C) : freeC_quick(C)); }
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
-# 52 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 53 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 52 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 53 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   long long *tempScores=__null, *scores;
-# 54 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 54 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   int numReports, newReports, threadNum, numThreads, maxThreads;
-# 55 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 55 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   int *tempStartsI=__null, *tempStartsJ=__null;
-# 56 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 56 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   int *tempEndsI=__null, *tempEndsJ=__null;
-# 57 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 57 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   unsigned char **tempSeqsI=__null, **tempSeqsJ=__null, **sequences, *ptr;
-# 58 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 58 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   CSTR_T *C=__null;
-# 59 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 59 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   int i, j, iter, mask, consumer, producer, totalReports;
-# 60 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 60 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   int flag, length, count, *index, indexB;
-# 61 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 61 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   int myRow, myCol, npRow, npCol;
-# 62 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 62 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   double beginTime, endTime;
-# 63 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 64 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 65 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 63 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 64 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 65 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   int *reqack;
-# 66 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 67 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 69 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 70 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 66 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 67 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 68 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 69 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 70 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 71 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   BSTR_T *P;
-# 72 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 73 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 74 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 75 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 76 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 72 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 73 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 74 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 75 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 76 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   maxThreads = B->numThreads;
-# 89 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 89 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P = (BSTR_T*) ({ void *____chimes_tmp_ptr = malloc((sizeof(BSTR_T)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(BSTR_T), 10402924002521285990UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 90 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 89 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 89 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( (P = (BSTR_T*) ({ void *____chimes_tmp_ptr = malloc((sizeof(BSTR_T)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(BSTR_T), 3659288930664078735UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 90 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P\n");
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 92 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 92 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 93 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 94 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int), 10402924002521285992UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 95 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 93 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 94 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( (P->numReports = (int*) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int), 3659288930664078737UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 95 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->numReports\n");
-# 96 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 96 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 97 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 97 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 98 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 99 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestScores = (long long**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(long long *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(long long*), 10402924002521285992UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 100 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 98 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 99 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( (P->bestScores = (long long**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(long long *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(long long*), 3659288930664078737UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 100 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        == __null ) {
-# 101 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 101 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestScores\n");
-# 102 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 102 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 103 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 103 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 104 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 105 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestStartsI = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 10402924002521285992UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 106 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 104 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 105 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( (P->bestStartsI = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 3659288930664078737UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 106 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestStartsI\n");
-# 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 107 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 108 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 108 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 109 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 110 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestStartsJ = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 10402924002521285992UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 111 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 109 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 110 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( (P->bestStartsJ = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 3659288930664078737UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 111 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestStartsJ\n");
-# 112 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 112 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 113 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 113 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 114 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 115 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 10402924002521285992UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 116 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 114 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 115 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( (P->bestEndsI = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 3659288930664078737UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 116 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestEndsI\n");
-# 117 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 117 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 118 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 118 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 119 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 120 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( (P->bestEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 10402924002521285992UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 121 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 119 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 120 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( (P->bestEndsJ = (int**) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(int*), 3659288930664078737UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 121 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestEndsJ\n");
-# 122 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 122 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 123 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 123 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 124 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 124 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 125 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   if ( (P->bestSeqsI =
-# 126 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
- (unsigned char***) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(unsigned char **)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 10402924002521285992UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 127 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 126 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+ (unsigned char***) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(unsigned char **)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 3659288930664078737UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 127 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        == __null ) {
-# 128 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 128 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestSeqsI\n");
-# 129 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 129 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 130 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 130 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 131 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 132 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 131 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 132 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   if ( (P->bestSeqsJ =
-# 133 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
- (unsigned char***) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(unsigned char **)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 10402924002521285992UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 134 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 133 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+ (unsigned char***) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(unsigned char **)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads*sizeof(unsigned char**), 3659288930664078737UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 134 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        == __null ) {
-# 135 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 135 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: cannot allocate P->bestSeqsJ\n");
-# 136 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 136 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 137 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 137 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 148 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 148 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  if ( ( reqack = (int*) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 10402924002521285553UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 149 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 148 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 148 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  if ( ( reqack = (int*) ({ void *____chimes_tmp_ptr = malloc((maxThreads * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, maxThreads * sizeof(int), 3659288930664078298UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 149 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     printf("mergeAlignment: can't allocate reqack\n");
-# 150 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 150 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     exit (1);
-# 151 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 151 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 152 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 152 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   for (i = 0; i < maxThreads; i++) {
-# 153 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 153 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     reqack[i] = 0;
-# 154 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 154 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 155 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 156 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 157 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 158 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 159 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 160 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 160 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 160 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 155 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 156 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 157 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 158 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 159 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 160 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 160 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 160 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp parallel firstprivate(maxReports, minSeparation) private(tempScores, tempStartsI, tempStartsJ, tempEndsI, tempEndsJ, tempSeqsI, tempSeqsJ, sequences, threadNum, numThreads, numReports, i, j, iter, mask, consumer, producer, totalReports, flag, indexB, scores, index, myRow, myCol, npRow, npCol, beginTime, endTime, length, count)
-# 161 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 162 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 163 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 164 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 165 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 166 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 167 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 168 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 161 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 162 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 163 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 164 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 165 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 166 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 167 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 168 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   {
-# 169 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 170 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 171 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 172 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 169 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 170 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 171 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 172 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     (*____chimes_extern_func_gridInfo)(&npRow, &npCol, &myRow, &myCol);
-# 173 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 177 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 173 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 174 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 175 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 176 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 177 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     threadNum = omp_get_thread_num();
-# 195 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 195 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 195 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 195 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempScores =
-# 196 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (long long*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 196 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   (long long*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 197 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   == __null ) {
-# 198 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 198 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempScores for thread %d\n",
-# 199 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 199 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       threadNum);
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 202 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 203 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 200 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 201 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 202 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 203 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       exit (1);
-# 204 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 204 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 205 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 206 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 205 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 206 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempStartsI =
-# 207 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 208 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 207 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 208 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempStartsI for thread %d\n",
-# 209 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 209 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       threadNum);
-# 210 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 211 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 212 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 213 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 210 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 211 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 212 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 213 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       exit (1);
-# 214 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 214 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 215 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 216 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 215 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 216 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempStartsJ =
-# 217 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 218 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 217 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 218 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempStartsJ for thread %d\n",
-# 219 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 219 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       threadNum);
-# 220 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 221 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 223 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 220 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 221 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 222 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 223 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       exit (1);
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 224 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 226 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 225 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 226 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempEndsI =
-# 227 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 228 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 227 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 228 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempEndsI for thread %d\n",
-# 229 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 229 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       threadNum);
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 231 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 232 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 233 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 230 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 231 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 232 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 233 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       exit (1);
-# 234 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 234 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 235 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 235 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 236 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempEndsJ =
-# 237 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 238 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 237 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 238 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempEndsJ for thread %d\n",
-# 239 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 239 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       threadNum);
-# 240 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 242 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 243 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 240 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 241 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 242 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 243 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       exit (1);
-# 244 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 244 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 245 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 246 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 245 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 246 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempSeqsI =
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 10402924002521287193UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 248 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 247 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 3659288930664079938UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 248 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   == __null ) {
-# 249 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 249 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempSeqsI for thread %d\n",
-# 250 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 250 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       threadNum);
-# 251 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 252 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 253 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 254 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 251 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 252 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 253 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 254 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       exit (1);
-# 255 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 255 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 256 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 257 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 256 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 257 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (tempSeqsJ =
-# 258 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 10402924002521287193UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 259 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 258 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 3659288930664079938UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 259 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   == __null ) {
-# 260 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 260 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: cannot allocate tempSeqsJ for thread %d\n",
-# 261 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 261 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       threadNum);
-# 262 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 263 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 264 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 265 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 262 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 263 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 264 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 265 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       exit (1);
-# 266 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 266 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 267 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 268 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 267 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 268 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     for (i = 0; i <= 2*maxReports; i++) {
-# 269 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 269 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsI[i] = tempSeqsJ[i] = __null;
-# 270 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 270 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 279 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 279 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 279 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 279 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     P->bestScores[threadNum] = tempScores;
-# 280 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 280 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     P->bestStartsI[threadNum] = tempStartsI;
-# 281 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 281 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     P->bestStartsJ[threadNum] = tempStartsJ;
-# 282 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 282 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     P->bestEndsI[threadNum] = tempEndsI;
-# 283 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 283 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     P->bestEndsJ[threadNum] = tempEndsJ;
-# 284 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 284 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     P->bestSeqsI[threadNum] = tempSeqsI;
-# 285 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 285 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     P->bestSeqsJ[threadNum] = tempSeqsJ;
-# 286 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 287 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 288 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 289 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 290 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 291 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 292 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 293 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 286 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 287 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 288 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 289 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 290 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 291 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 292 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 293 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (threadNum & 1) == 0 ) {
-# 294 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 294 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (sequences =
-# 295 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 10402924002521286350UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 296 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 295 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(unsigned char*), 3659288930664079095UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 296 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
-# 297 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 297 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate sequences for thread %d\n",
-# 298 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 298 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
         threadNum);
-# 299 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 300 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 301 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 302 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 299 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 300 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 301 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 302 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 303 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 303 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 304 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 305 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      if ( (scores = (long long*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 10402924002521286022UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 306 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 304 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 305 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+      if ( (scores = (long long*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(long long), 3659288930664078767UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 306 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
-# 307 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 307 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate scores for thread %d\n",
-# 308 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 308 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
         threadNum);
-# 309 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 310 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 311 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 312 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 309 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 310 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 311 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 312 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 313 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 313 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 314 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 315 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      if ( (index = (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 10402924002521286013UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 316 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 314 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 315 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+      if ( (index = (int*) ({ void *____chimes_tmp_ptr = malloc(((2 * maxReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (2*maxReports+1)*sizeof(int), 3659288930664078758UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 316 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate index for thread %d\n",
-# 317 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 317 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
         threadNum);
-# 318 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 319 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 320 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 321 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 318 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 319 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 320 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 321 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 322 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 322 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 323 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 323 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     } else {
-# 338 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 338 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 338 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 338 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 339 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 340 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 341 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 342 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 343 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 339 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 340 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 341 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 342 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 343 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     beginTime = (*____chimes_extern_func_getSeconds)();
-# 359 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 359 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 359 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 359 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (myRow < 0 || myCol < 0) {
-# 360 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 360 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       P->numReports[threadNum] = numReports = 0;
-# 361 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 361 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     } else {
-# 362 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 362 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       P->numReports[threadNum] = numReports = B->numReports[threadNum];
-# 363 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 363 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 383 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 383 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 383 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 383 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     indexB = threadNum;
-# 384 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 385 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 386 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 387 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 388 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 384 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 385 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 386 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 387 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 388 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     for (i = 1; i <= numReports; i++) {
-# 389 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 389 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempScores[i] = B->bestScores[indexB][i];
-# 390 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 390 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsI[i] = B->bestStartsI[indexB][i];
-# 391 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 391 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsJ[i] = B->bestStartsJ[indexB][i];
-# 392 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 392 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsI[i] = B->bestEndsI[indexB][i];
-# 393 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 393 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsJ[i] = B->bestEndsJ[indexB][i];
-# 394 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 395 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 394 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 395 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       length = strlen((char*)(B->bestSeqsI[indexB][i]));
-# 396 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 396 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if (length < 1) {
-# 397 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 397 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: strlen(B->bestSeqsI[%d] = %d for thread %d\n",
-# 398 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 398 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
         i, length, indexB);
-# 399 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 399 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 400 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 400 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 401 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 401 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       length++;
-# 402 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 402 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (tempSeqsI[i] =
-# 403 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 10402924002521287195UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 404 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 403 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 3659288930664079940UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 404 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
-# 405 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 405 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate tempSeqsI[%d] for thread %d",
-# 406 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 406 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
         i, indexB);
-# 407 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 407 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 408 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 408 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 409 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 409 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsI[i] =
-# 410 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 410 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  (unsigned char*)strcpy((char*)(tempSeqsI[i]),
-# 411 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 411 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
           (char*)(B->bestSeqsI[indexB][i]));
-# 412 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 413 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 412 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 413 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       length = strlen((char*)(B->bestSeqsJ[indexB][i]));
-# 414 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 414 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if (length < 1) {
-# 415 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 415 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: strlen(B->bestSeqsJ[%d] = %d for thread %d\n",
-# 416 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 416 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
         i, length, indexB);
-# 417 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 417 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 418 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 418 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 419 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 419 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       length++;
-# 420 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 420 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (tempSeqsJ[i] =
-# 421 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 10402924002521287195UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 422 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 421 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 3659288930664079940UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 422 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     == __null ) {
-# 423 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 423 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate tempSeqsJ[%d] for thread %d",
-# 424 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 424 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
         i, indexB);
-# 425 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 425 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 426 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 426 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 427 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 427 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsJ[i] =
-# 428 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 428 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  (unsigned char*)strcpy((char*)(tempSeqsJ[i]),
-# 429 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 429 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
           (char*)(B->bestSeqsJ[indexB][i]));
-# 430 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 430 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 448 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 448 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 448 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 448 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 448 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 448 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 448 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 448 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 448 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 462 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 462 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 448 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 462 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 462 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     iter = npRow*npCol - 1;
-# 463 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 463 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     mask = 1;
-# 464 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 464 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     while (iter > 0) {
-# 465 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 465 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       consumer = threadNum & (~mask);
-# 466 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 466 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       producer = consumer | ((mask + 1) >> 1);
-# 509 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 509 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 509 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 509 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( ( threadNum == consumer ) && ( producer < npRow*npCol ) &&
-# 510 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 510 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     ( myRow >= 0 ) && ( myCol >= 0) ) {
-# 532 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 532 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 532 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 532 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  reqack[consumer] = iter;
-# 533 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 533 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 533 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 533 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 533 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 533 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 533 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 533 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 534 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 533 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 533 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 534 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  do {
-# 535 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 535 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 535 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 535 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 535 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 535 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 535 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 535 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 536 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 535 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 535 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 536 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  } while (reqack[producer] != iter);
-# 537 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 538 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 539 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 540 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 541 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 537 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 538 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 539 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 540 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 541 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  totalReports = numReports;
-# 552 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 552 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 552 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 552 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= P->numReports[producer]; i++) {
-# 565 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 565 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 565 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 565 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    flag = 0;
-# 566 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 566 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    for (j = 1; j <= numReports; j++) {
-# 567 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 567 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if ( ( ( (abs(tempStartsI[j] - P->bestStartsI[producer][i]) > abs(tempStartsJ[j] - P->bestStartsJ[producer][i])) ? abs(tempStartsI[j] - P->bestStartsI[producer][i]) : abs(tempStartsJ[j] - P->bestStartsJ[producer][i]) )
-# 568 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 569 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 568 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 569 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      < minSeparation ) ||
-# 570 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 570 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    ( ( (abs(tempEndsI[j] - P->bestEndsI[producer][i]) > abs(tempEndsJ[j] - P->bestEndsJ[producer][i])) ? abs(tempEndsI[j] - P->bestEndsI[producer][i]) : abs(tempEndsJ[j] - P->bestEndsJ[producer][i]) )
-# 571 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 572 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 571 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 572 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      < minSeparation ) ) {
-# 573 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 573 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        flag = 1;
-# 574 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 574 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        break;
-# 575 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 575 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      }
-# 576 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 576 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    }
-# 577 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 578 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 577 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 578 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    if (flag == 0) {
-# 579 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 579 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      totalReports++;
-# 580 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 580 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempScores[totalReports] = P->bestScores[producer][i];
-# 581 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 581 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempStartsI[totalReports] = P->bestStartsI[producer][i];
-# 582 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 582 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempStartsJ[totalReports] = P->bestStartsJ[producer][i];
-# 583 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 583 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempEndsI[totalReports] = P->bestEndsI[producer][i];
-# 584 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 584 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempEndsJ[totalReports] = P->bestEndsJ[producer][i];
-# 585 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 585 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsI[totalReports] = P->bestSeqsI[producer][i];
-# 586 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 586 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsJ[totalReports] = P->bestSeqsJ[producer][i];
-# 587 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 587 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      P->bestSeqsI[producer][i] = P->bestSeqsJ[producer][i] = __null;
-# 588 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 588 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    } else {
-# 589 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 589 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if (P->bestSeqsI[producer][i]) {
-# 590 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-        ({ free_helper((((unsigned char *)P->bestSeqsI[producer][i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)P->bestSeqsI[producer][i]) - sizeof(void *))); }) ;
-# 591 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 590 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+        ({ free_helper((((unsigned char *)P->bestSeqsI[producer][i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)P->bestSeqsI[producer][i]) - sizeof(void *))); }) ;
+# 591 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        P->bestSeqsI[producer][i] = __null;
-# 592 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 592 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      }
-# 593 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 593 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if (P->bestSeqsJ[producer][i]) {
-# 594 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-        ({ free_helper((((unsigned char *)P->bestSeqsJ[producer][i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)P->bestSeqsJ[producer][i]) - sizeof(void *))); }) ;
-# 595 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 594 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+        ({ free_helper((((unsigned char *)P->bestSeqsJ[producer][i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)P->bestSeqsJ[producer][i]) - sizeof(void *))); }) ;
+# 595 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        P->bestSeqsJ[producer][i] = __null;
-# 596 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 596 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      }
-# 597 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 597 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      printf("\tmergeAlignment() thread %d found redundant report %d from thread %d\n",
-# 598 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 598 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      threadNum, i, producer);
-# 599 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 599 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    }
-# 600 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 600 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 849 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 849 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 849 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 849 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  (*____chimes_extern_func_qSort_both)(scores, index, tempScores, totalReports);
-# 850 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 850 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  numReports = ( (maxReports < totalReports) ? maxReports : totalReports );
-# 851 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 852 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 853 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 851 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 852 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 853 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  P->numReports[consumer] = numReports;
-# 854 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 854 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  P->numReports[producer] = 0;
-# 855 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 856 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 857 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 855 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 856 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 857 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 858 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 858 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    scores[i] = tempScores[ index[totalReports - i + 1] ];
-# 859 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 859 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 860 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 860 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 861 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 861 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempScores[i] = scores[i];
-# 862 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 862 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 863 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 864 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 863 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 864 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 865 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 865 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    scores[i] = tempStartsI[ index[totalReports - i + 1] ];
-# 866 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 866 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 867 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 867 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 868 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 868 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempStartsI[i] = scores[i];
-# 869 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 869 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 870 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 871 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 870 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 871 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 872 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 872 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    scores[i] = tempStartsJ[ index[totalReports - i + 1] ];
-# 873 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 873 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 874 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 874 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 875 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 875 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempStartsJ[i] = scores[i];
-# 876 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 876 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 877 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 878 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 877 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 878 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 879 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 879 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    scores[i] = tempEndsI[ index[totalReports - i + 1] ];
-# 880 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 880 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 881 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 881 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 882 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 882 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempEndsI[i] = scores[i];
-# 883 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 883 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 884 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 885 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 884 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 885 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 886 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 886 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    scores[i] = tempEndsJ[ index[totalReports - i + 1] ];
-# 887 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 887 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 888 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 888 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 889 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 889 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempEndsJ[i] = scores[i];
-# 890 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 890 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 899 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 899 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 899 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 899 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= totalReports - numReports; i++) {
-# 900 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 900 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    if (tempSeqsI[ index[i] ]) {
-# 901 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      ({ free_helper((((unsigned char *)tempSeqsI[index[i]]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)tempSeqsI[index[i]]) - sizeof(void *))); }) ;
-# 902 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 901 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+      ({ free_helper((((unsigned char *)tempSeqsI[index[i]]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)tempSeqsI[index[i]]) - sizeof(void *))); }) ;
+# 902 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsI[ index[i] ] = __null;
-# 903 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 903 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    }
-# 904 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 904 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    if (tempSeqsJ[ index[i] ]) {
-# 905 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      ({ free_helper((((unsigned char *)tempSeqsJ[index[i]]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)tempSeqsJ[index[i]]) - sizeof(void *))); }) ;
-# 906 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 905 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+      ({ free_helper((((unsigned char *)tempSeqsJ[index[i]]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)tempSeqsJ[index[i]]) - sizeof(void *))); }) ;
+# 906 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      tempSeqsJ[ index[i] ] = __null;
-# 907 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 907 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    }
-# 908 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 908 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 909 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 910 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 911 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 912 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 913 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 914 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 915 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 909 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 910 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 911 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 912 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 913 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 914 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 915 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 916 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 916 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    sequences[i] = tempSeqsI[ index[totalReports - i + 1] ];
-# 917 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 917 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 918 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 918 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 919 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 919 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsI[i] = sequences[i];
-# 920 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 920 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 921 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 922 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 921 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 922 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 923 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 923 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    sequences[i] = tempSeqsJ[ index[totalReports - i + 1] ];
-# 924 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 924 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 925 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 925 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = 1; i <= numReports; i++) {
-# 926 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 926 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsJ[i] = sequences[i];
-# 927 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 927 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 938 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 938 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 938 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 938 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  for (i = numReports+1; i <= totalReports; i++) {
-# 939 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 939 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsI[i] = tempSeqsJ[i] = __null;
-# 940 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 940 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 949 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 949 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 949 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 949 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  reqack[consumer] = 0;
-# 950 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 950 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 950 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 950 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 950 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 950 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 950 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 950 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 951 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 950 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 950 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 951 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  do {
-# 952 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 952 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 952 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 952 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 952 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 952 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 952 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 952 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 953 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 952 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 952 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 953 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  } while (reqack[producer] == iter);
-# 954 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 955 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 956 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 954 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 955 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 956 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 971 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 971 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 971 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 971 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( ( threadNum == producer ) && ( myRow >= 0 ) && ( myCol >= 0) ) {
-# 986 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 986 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 986 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 986 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  do {
-# 987 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 987 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 987 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 987 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 987 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 987 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 987 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 987 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 988 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 987 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 987 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 988 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  } while (reqack[consumer] != iter);
-# 989 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 989 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  reqack[producer] = iter;
-# 990 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 990 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 990 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 990 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 990 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 990 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 990 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 990 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 991 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 992 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 990 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 990 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 991 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 992 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  do {
-# 993 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 993 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 993 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 993 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 993 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 993 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 993 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 993 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 994 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 993 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 993 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 994 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  } while (reqack[consumer] == iter);
-# 995 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 995 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  reqack[producer] = 0;
-# 996 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 996 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 996 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 996 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 996 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 996 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 #pragma omp flush
-# 996 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1161 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1161 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 996 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1161 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1161 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1176 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1176 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       mask = (mask << 1) + 1;
-# 1177 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1177 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       iter >>= 1;
-# 1178 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1178 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1179 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1180 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1181 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1182 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1183 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1179 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1180 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1181 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1182 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1183 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     endTime = (*____chimes_extern_func_getSeconds)();
-# 1184 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1184 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (threadNum == 0) {
-# 1185 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1185 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("\n        Merge time = %10.5f seconds\n",
-# 1186 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1186 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       endTime - beginTime);
-# 1187 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1187 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1197 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1197 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (threadNum == 0) {
-# 1198 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1199 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-      if ( (C = (CSTR_T*) ({ void *____chimes_tmp_ptr = malloc((sizeof(CSTR_T)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(CSTR_T), 10402924002521287332UL, 0, 1, (int)sizeof(struct cstr), 7, (int)__builtin_offsetof(struct cstr, finalScores), (int)__builtin_offsetof(struct cstr, finalStartsI), (int)__builtin_offsetof(struct cstr, finalStartsJ), (int)__builtin_offsetof(struct cstr, finalEndsI), (int)__builtin_offsetof(struct cstr, finalEndsJ), (int)__builtin_offsetof(struct cstr, finalSeqsI), (int)__builtin_offsetof(struct cstr, finalSeqsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 1200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1198 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1199 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+      if ( (C = (CSTR_T*) ({ void *____chimes_tmp_ptr = malloc((sizeof(CSTR_T)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(CSTR_T), 3659288930664080077UL, 0, 1, (int)sizeof(struct cstr), 7, (int)__builtin_offsetof(struct cstr, finalScores), (int)__builtin_offsetof(struct cstr, finalStartsI), (int)__builtin_offsetof(struct cstr, finalStartsJ), (int)__builtin_offsetof(struct cstr, finalEndsI), (int)__builtin_offsetof(struct cstr, finalEndsJ), (int)__builtin_offsetof(struct cstr, finalSeqsI), (int)__builtin_offsetof(struct cstr, finalSeqsJ)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 1200 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C\n");
-# 1201 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1202 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1203 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1204 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1201 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1202 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1203 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1204 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1205 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1205 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1206 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1206 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->numReports = 0;
-# 1207 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1207 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalScores = __null;
-# 1208 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1208 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalStartsI = C->finalStartsJ = __null;
-# 1209 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1209 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalEndsI = C->finalEndsJ = __null;
-# 1210 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1210 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalSeqsI = C->finalSeqsJ = __null;
-# 1211 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1212 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1211 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1212 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->numReports = numReports;
-# 1213 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1214 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1213 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1214 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalScores =
-# 1215 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (long long*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(long long), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
-# 1216 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1215 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (long long*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(long long)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(long long), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null ) {
+# 1216 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalScores\n");
-# 1217 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1218 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1219 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1220 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1217 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1218 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1219 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1220 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1221 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1221 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1222 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1223 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1222 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1223 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalStartsI =
-# 1224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
-# 1225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1224 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
+# 1225 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalStartsI\n");
-# 1226 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1227 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1228 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1229 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1226 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1227 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1228 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1229 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1230 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1230 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1231 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1232 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1231 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1232 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalStartsJ =
-# 1233 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
-# 1234 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1233 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
+# 1234 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalStartsJ\n");
-# 1235 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1236 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1237 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1238 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1235 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1236 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1237 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1238 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1239 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1239 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1240 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1241 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1240 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1241 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalEndsI =
-# 1242 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
-# 1243 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1242 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
+# 1243 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalEndsI\n");
-# 1244 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1245 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1246 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1247 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1244 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1245 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1246 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1247 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1248 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1248 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1249 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1250 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1249 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1250 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       if ( (C->finalEndsJ =
-# 1251 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 10402924002521287193UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
-# 1252 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1251 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     (int*) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(int), 3659288930664079938UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ) == __null) {
+# 1252 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  printf("mergeAlignment: cannot allocate C->finalEndsJ\n");
-# 1253 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1254 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1255 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1256 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1253 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1254 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1255 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1256 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1257 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1257 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1258 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1259 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1258 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1259 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if ( (C->finalSeqsI =
-# 1260 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 10402924002521287193UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 1261 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1260 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 3659288930664079938UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 1261 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    == __null ) {
-# 1262 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1262 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        printf("mergeAlignment: cannot allocate C->finalSeqsI\n");
-# 1263 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1264 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1265 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1266 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1263 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1264 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1265 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1266 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1267 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1267 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1268 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1269 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1268 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1269 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
      if ( (C->finalSeqsJ =
-# 1270 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 10402924002521287193UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 1271 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1270 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+    (unsigned char**) ({ void *____chimes_tmp_ptr = malloc(((numReports + 1) * sizeof(unsigned char *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, (numReports+1)*sizeof(unsigned char*), 3659288930664079938UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 1271 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    == __null ) {
-# 1272 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1272 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
        printf("mergeAlignment: cannot allocate C->finalSeqsJ\n");
-# 1273 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1274 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1275 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1276 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1273 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1274 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1275 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1276 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  exit (1);
-# 1277 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1277 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1278 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1279 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1278 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1279 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       for (i = 1; i <= numReports; i++) {
-# 1280 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1280 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  C->finalScores[i] = tempScores[i];
-# 1281 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1281 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  C->finalStartsI[i] = tempStartsI[i];
-# 1282 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1282 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  C->finalStartsJ[i] = tempStartsJ[i];
-# 1283 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1283 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  C->finalEndsI[i] = tempEndsI[i];
-# 1284 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1284 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  C->finalEndsJ[i] = tempEndsJ[i];
-# 1285 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1285 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if ( ( length = strlen( (char*)tempSeqsI[i] ) ) < 1 ) {
-# 1286 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1286 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    printf("mergeAlignment: strlen(tempSeqsI[%d]) = %d for process %d\n",
-# 1287 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1287 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    i, length, threadNum);
-# 1288 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1289 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1290 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1291 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1288 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1289 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1290 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1291 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    exit (1);
-# 1292 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1292 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1293 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1293 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  length++;
-# 1294 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1294 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if ( (C->finalSeqsI[i] =
-# 1295 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 10402924002521287195UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 1296 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1295 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 3659288930664079940UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 1296 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       == __null ) {
-# 1297 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1297 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    printf("mergeAlignment: cannot allocate C->finalSeqsI[%d]\n", i);
-# 1298 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1299 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1300 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1301 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1298 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1299 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1300 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1301 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    exit (1);
-# 1302 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1302 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1303 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1303 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  C->finalSeqsI[i] =
-# 1304 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1304 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    (unsigned char*)strcpy((char*)C->finalSeqsI[i], (char*)tempSeqsI[i]);
-# 1305 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  ({ free_helper((((unsigned char *)tempSeqsI[i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)tempSeqsI[i]) - sizeof(void *))); }) ;
-# 1306 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1305 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  ({ free_helper((((unsigned char *)tempSeqsI[i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)tempSeqsI[i]) - sizeof(void *))); }) ;
+# 1306 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  tempSeqsI[i] = __null;
-# 1307 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1308 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1307 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1308 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if ( ( length = strlen( (char*)tempSeqsJ[i] ) ) < 1 ) {
-# 1309 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1309 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    printf("mergeAlignment: strlen(tempSeqsJ[%d]) = %d for process %d\n",
-# 1310 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1310 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    i, length, threadNum);
-# 1311 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1312 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1313 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1314 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1311 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1312 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1313 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1314 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    exit (1);
-# 1315 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1315 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1316 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1316 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  length++;
-# 1317 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1317 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if ( (C->finalSeqsJ[i] =
-# 1318 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 10402924002521287195UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
-# 1319 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1318 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       (unsigned char*) ({ void *____chimes_tmp_ptr = malloc((length * sizeof(unsigned char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, length * sizeof(unsigned char), 3659288930664079940UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) )
+# 1319 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       == __null ) {
-# 1320 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1320 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    printf("mergeAlignment: cannot allocate C->finalSeqsJ[%d]\n", i);
-# 1321 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1322 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1323 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1324 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1321 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1322 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1323 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1324 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    exit (1);
-# 1325 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1325 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1326 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1326 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  C->finalSeqsJ[i] =
-# 1327 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1327 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    (unsigned char*)strcpy((char*)C->finalSeqsJ[i], (char*)tempSeqsJ[i]);
-# 1328 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-  ({ free_helper((((unsigned char *)tempSeqsJ[i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)tempSeqsJ[i]) - sizeof(void *))); }) ;
-# 1329 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1328 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+  ({ free_helper((((unsigned char *)tempSeqsJ[i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)tempSeqsJ[i]) - sizeof(void *))); }) ;
+# 1329 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  tempSeqsJ[i] = __null;
-# 1330 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1330 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1331 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1331 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1332 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1333 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1334 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1335 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1332 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1333 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1334 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1335 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempScores) {
-# 1336 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)tempScores) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)tempScores) - sizeof(void *))); }) ;
-# 1337 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1336 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)tempScores) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)tempScores) - sizeof(void *))); }) ;
+# 1337 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempScores = __null;
-# 1338 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1338 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1339 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1339 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempStartsI) {
-# 1340 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)tempStartsI) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)tempStartsI) - sizeof(void *))); }) ;
-# 1341 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1340 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)tempStartsI) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)tempStartsI) - sizeof(void *))); }) ;
+# 1341 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsI = __null;
-# 1342 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1342 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1343 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1343 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempStartsJ) {
-# 1344 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)tempStartsJ) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)tempStartsJ) - sizeof(void *))); }) ;
-# 1345 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1344 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)tempStartsJ) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)tempStartsJ) - sizeof(void *))); }) ;
+# 1345 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempStartsJ = __null;
-# 1346 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1346 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1347 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1347 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempEndsI) {
-# 1348 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)tempEndsI) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)tempEndsI) - sizeof(void *))); }) ;
-# 1349 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1348 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)tempEndsI) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)tempEndsI) - sizeof(void *))); }) ;
+# 1349 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsI = __null;
-# 1350 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1350 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1351 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1351 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempEndsJ) {
-# 1352 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)tempEndsJ) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)tempEndsJ) - sizeof(void *))); }) ;
-# 1353 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1352 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)tempEndsJ) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)tempEndsJ) - sizeof(void *))); }) ;
+# 1353 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempEndsJ = __null;
-# 1354 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1354 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1355 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1356 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1357 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1358 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1359 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1360 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1361 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1362 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1355 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1356 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1357 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1358 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1359 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1360 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1361 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1362 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     count = 0;
-# 1363 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1363 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempSeqsI) {
-# 1364 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1364 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       for (i = 0; i <= 2*maxReports; i++) {
-# 1365 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1365 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (tempSeqsI[i]) {
-# 1366 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper((((unsigned char *)tempSeqsI[i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)tempSeqsI[i]) - sizeof(void *))); }) ;
-# 1367 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1366 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+    ({ free_helper((((unsigned char *)tempSeqsI[i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)tempSeqsI[i]) - sizeof(void *))); }) ;
+# 1367 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsI[i] = __null;
-# 1368 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1368 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    count++;
-# 1369 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1369 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1370 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1370 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1371 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)tempSeqsI) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)tempSeqsI) - sizeof(void *))); }) ;
-# 1372 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1371 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)tempSeqsI) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)tempSeqsI) - sizeof(void *))); }) ;
+# 1372 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsI = __null;
-# 1373 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1373 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1374 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1374 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (count != 0) {
-# 1375 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1375 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: freed %d tempSeqsI strings for thread %d\n",
-# 1376 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1376 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       count, threadNum);
-# 1377 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1377 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1378 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1379 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1378 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1379 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     count = 0;
-# 1380 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1380 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (tempSeqsJ) {
-# 1381 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1381 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       for (i = 0; i <= 2*maxReports; i++) {
-# 1382 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1382 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (tempSeqsJ[i]) {
-# 1383 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper((((unsigned char *)tempSeqsJ[i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)tempSeqsJ[i]) - sizeof(void *))); }) ;
-# 1384 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1383 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+    ({ free_helper((((unsigned char *)tempSeqsJ[i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)tempSeqsJ[i]) - sizeof(void *))); }) ;
+# 1384 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    tempSeqsJ[i] = __null;
-# 1385 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1385 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    count++;
-# 1386 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1386 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1387 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1387 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1388 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)tempSeqsJ) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)tempSeqsJ) - sizeof(void *))); }) ;
-# 1389 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1388 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)tempSeqsJ) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)tempSeqsJ) - sizeof(void *))); }) ;
+# 1389 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       tempSeqsJ = __null;
-# 1390 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1390 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1391 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1391 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (count != 0) {
-# 1392 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1392 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       printf("mergeAlignment: freed %d tempSeqsJ strings for thread %d\n",
-# 1393 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1393 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       count, threadNum);
-# 1394 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1394 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1395 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1396 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1397 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1398 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1399 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1400 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1401 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1395 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1396 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1397 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1398 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1399 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1400 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1401 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if ( (threadNum & 1) == 0 ) {
-# 1402 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)sequences) - sizeof(void *)), 10402924002521286350UL);free((((unsigned char *)sequences) - sizeof(void *))); }) ;
-# 1403 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)scores) - sizeof(void *)), 10402924002521286022UL);free((((unsigned char *)scores) - sizeof(void *))); }) ;
-# 1404 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)index) - sizeof(void *)), 10402924002521286013UL);free((((unsigned char *)index) - sizeof(void *))); }) ;
-# 1405 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1402 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)sequences) - sizeof(void *)), 3659288930664079095UL);free((((unsigned char *)sequences) - sizeof(void *))); }) ;
+# 1403 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)scores) - sizeof(void *)), 3659288930664078767UL);free((((unsigned char *)scores) - sizeof(void *))); }) ;
+# 1404 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)index) - sizeof(void *)), 3659288930664078758UL);free((((unsigned char *)index) - sizeof(void *))); }) ;
+# 1405 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     } else {
-# 1406 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1407 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1408 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1409 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1406 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1407 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1408 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1409 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1410 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1410 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 1411 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1412 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1413 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1414 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1415 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)reqack) - sizeof(void *)), 10402924002521285553UL);free((((unsigned char *)reqack) - sizeof(void *))); }) ;
-# 1425 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1425 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->numReports) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->numReports) - sizeof(void *))); }) ;
-# 1426 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->bestScores) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->bestScores) - sizeof(void *))); }) ;
-# 1427 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->bestStartsI) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->bestStartsI) - sizeof(void *))); }) ;
-# 1428 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->bestStartsJ) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->bestStartsJ) - sizeof(void *))); }) ;
-# 1429 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->bestEndsI) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->bestEndsI) - sizeof(void *))); }) ;
-# 1430 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->bestEndsJ) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->bestEndsJ) - sizeof(void *))); }) ;
-# 1431 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->bestSeqsI) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->bestSeqsI) - sizeof(void *))); }) ;
-# 1432 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P->bestSeqsJ) - sizeof(void *)), 10402924002521285992UL);free((((unsigned char *)P->bestSeqsJ) - sizeof(void *))); }) ;
-# 1433 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   ({ free_helper((((unsigned char *)P) - sizeof(void *)), 10402924002521285990UL);free((((unsigned char *)P) - sizeof(void *))); }) ;
-# 1434 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1435 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1436 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1411 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1412 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1413 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1414 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1415 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)reqack) - sizeof(void *)), 3659288930664078298UL);free((((unsigned char *)reqack) - sizeof(void *))); }) ;
+# 1425 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1425 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->numReports) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->numReports) - sizeof(void *))); }) ;
+# 1426 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->bestScores) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->bestScores) - sizeof(void *))); }) ;
+# 1427 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->bestStartsI) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->bestStartsI) - sizeof(void *))); }) ;
+# 1428 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->bestStartsJ) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->bestStartsJ) - sizeof(void *))); }) ;
+# 1429 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->bestEndsI) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->bestEndsI) - sizeof(void *))); }) ;
+# 1430 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->bestEndsJ) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->bestEndsJ) - sizeof(void *))); }) ;
+# 1431 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->bestSeqsI) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->bestSeqsI) - sizeof(void *))); }) ;
+# 1432 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P->bestSeqsJ) - sizeof(void *)), 3659288930664078737UL);free((((unsigned char *)P->bestSeqsJ) - sizeof(void *))); }) ;
+# 1433 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+   ({ free_helper((((unsigned char *)P) - sizeof(void *)), 3659288930664078735UL);free((((unsigned char *)P) - sizeof(void *))); }) ;
+# 1434 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1435 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1436 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    CSTR_T * ____chimes_ret_var_0; ____chimes_ret_var_0 = ((C)); return ____chimes_ret_var_0; ;
-# 1437 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1437 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 }
-# 1441 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1441 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 CSTR_T *freeC_npm(CSTR_T *C) {
-# 1442 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1443 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1442 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1443 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   int i;
-# 1444 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-# 1445 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1444 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1445 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   if (C) {
-# 1446 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1446 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalScores) {
-# 1447 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)C->finalScores) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)C->finalScores) - sizeof(void *))); }) ;
-# 1448 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1447 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)C->finalScores) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)C->finalScores) - sizeof(void *))); }) ;
+# 1448 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalScores = __null;
-# 1449 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1449 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1450 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1450 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalStartsI) {
-# 1451 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)C->finalStartsI) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)C->finalStartsI) - sizeof(void *))); }) ;
-# 1452 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1451 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)C->finalStartsI) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)C->finalStartsI) - sizeof(void *))); }) ;
+# 1452 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalStartsI = __null;
-# 1453 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1453 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1454 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1454 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalStartsJ) {
-# 1455 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)C->finalStartsJ) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)C->finalStartsJ) - sizeof(void *))); }) ;
-# 1456 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1455 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)C->finalStartsJ) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)C->finalStartsJ) - sizeof(void *))); }) ;
+# 1456 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalStartsJ = __null;
-# 1457 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1457 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1458 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1458 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalEndsI) {
-# 1459 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)C->finalEndsI) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)C->finalEndsI) - sizeof(void *))); }) ;
-# 1460 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1459 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)C->finalEndsI) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)C->finalEndsI) - sizeof(void *))); }) ;
+# 1460 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalEndsI = __null;
-# 1461 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1461 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1462 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1462 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalEndsJ) {
-# 1463 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)C->finalEndsJ) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)C->finalEndsJ) - sizeof(void *))); }) ;
-# 1464 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1463 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)C->finalEndsJ) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)C->finalEndsJ) - sizeof(void *))); }) ;
+# 1464 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalEndsJ = __null;
-# 1465 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1465 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1466 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1466 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalSeqsI) {
-# 1467 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1467 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       for (i = 1; i <= C->numReports; i++) {
-# 1468 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1468 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (C->finalSeqsI[i]) {
-# 1469 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper((((unsigned char *)C->finalSeqsI[i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)C->finalSeqsI[i]) - sizeof(void *))); }) ;
-# 1470 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1469 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+    ({ free_helper((((unsigned char *)C->finalSeqsI[i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)C->finalSeqsI[i]) - sizeof(void *))); }) ;
+# 1470 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    C->finalSeqsI[i] = __null;
-# 1471 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1471 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1472 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1472 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1473 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)C->finalSeqsI) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)C->finalSeqsI) - sizeof(void *))); }) ;
-# 1474 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1473 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)C->finalSeqsI) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)C->finalSeqsI) - sizeof(void *))); }) ;
+# 1474 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalSeqsI = __null;
-# 1475 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1475 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1476 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1476 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     if (C->finalSeqsJ) {
-# 1477 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1477 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       for (i = 1; i <= C->numReports; i++) {
-# 1478 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1478 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (C->finalSeqsJ[i]) {
-# 1479 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-    ({ free_helper((((unsigned char *)C->finalSeqsJ[i]) - sizeof(void *)), 10402924002521287195UL);free((((unsigned char *)C->finalSeqsJ[i]) - sizeof(void *))); }) ;
-# 1480 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1479 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+    ({ free_helper((((unsigned char *)C->finalSeqsJ[i]) - sizeof(void *)), 3659288930664079940UL);free((((unsigned char *)C->finalSeqsJ[i]) - sizeof(void *))); }) ;
+# 1480 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    C->finalSeqsJ[i] = __null;
-# 1481 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1481 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  }
-# 1482 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1482 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       }
-# 1483 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-       ({ free_helper((((unsigned char *)C->finalSeqsJ) - sizeof(void *)), 10402924002521287193UL);free((((unsigned char *)C->finalSeqsJ) - sizeof(void *))); }) ;
-# 1484 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1483 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+       ({ free_helper((((unsigned char *)C->finalSeqsJ) - sizeof(void *)), 3659288930664079938UL);free((((unsigned char *)C->finalSeqsJ) - sizeof(void *))); }) ;
+# 1484 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
       C->finalSeqsJ = __null;
-# 1485 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1485 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
     }
-# 1486 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-     ({ free_helper((((unsigned char *)C) - sizeof(void *)), 10402924002521287288UL);free((((unsigned char *)C) - sizeof(void *))); }) ;
-# 1487 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1486 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+     ({ free_helper((((unsigned char *)C) - sizeof(void *)), 3659288930664080033UL);free((((unsigned char *)C) - sizeof(void *))); }) ;
+# 1487 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
-# 1488 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1488 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
    CSTR_T * ____chimes_ret_var_1; ____chimes_ret_var_1 = ((__null)); return ____chimes_ret_var_1; ;
-# 1489 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
+# 1489 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 }
 
 
@@ -6982,15 +6982,15 @@ CSTR_T *freeC_npm(CSTR_T *C) {
 
 
 static int module_init() {
-    init_module(10402924002521284791UL, 26, 2, 28, 6, 2, 3, 5, 0, 0, 2,
-                           &____alias_loc_id_0, (unsigned)15, (unsigned)0, (unsigned)0, (10402924002521284791UL + 6UL), (10402924002521284791UL + 20UL), (10402924002521284791UL + 22UL), (10402924002521284791UL + 23UL), (10402924002521284791UL + 24UL), (10402924002521284791UL + 25UL), (10402924002521284791UL + 28UL), (10402924002521284791UL + 31UL), (10402924002521284791UL + 36UL), (10402924002521284791UL + 762UL), (10402924002521284791UL + 1201UL), (10402924002521284791UL + 1231UL), (10402924002521284791UL + 1559UL), (10402924002521284791UL + 2402UL), (10402924002521284791UL + 2404UL),
-                           &____alias_loc_id_1, (unsigned)14, (unsigned)0, (unsigned)0, (10402924002521284791UL + 4UL), (10402924002521284791UL + 5UL), (10402924002521284791UL + 8UL), (10402924002521284791UL + 11UL), (10402924002521284791UL + 12UL), (10402924002521284791UL + 13UL), (10402924002521284791UL + 14UL), (10402924002521284791UL + 15UL), (10402924002521284791UL + 16UL), (10402924002521284791UL + 17UL), (10402924002521284791UL + 20UL), (10402924002521284791UL + 30UL), (10402924002521284791UL + 1201UL), (10402924002521284791UL + 2402UL),
-                           &____alias_loc_id_2, (unsigned)6, (unsigned)0, (unsigned)1, (10402924002521284791UL + 20UL), (10402924002521284791UL + 21UL), (10402924002521284791UL + 26UL), (10402924002521284791UL + 27UL), (10402924002521284791UL + 762UL), (10402924002521284791UL + 2402UL), "qSort_both", (unsigned)3, (10402924002521284791UL + 1222UL), (10402924002521284791UL + 1231UL), (10402924002521284791UL + 2402UL),
-                           &____alias_loc_id_3, (unsigned)17, (unsigned)0, (unsigned)1, (10402924002521284791UL + 1UL), (10402924002521284791UL + 2UL), (10402924002521284791UL + 3UL), (10402924002521284791UL + 4UL), (10402924002521284791UL + 10UL), (10402924002521284791UL + 11UL), (10402924002521284791UL + 12UL), (10402924002521284791UL + 13UL), (10402924002521284791UL + 14UL), (10402924002521284791UL + 15UL), (10402924002521284791UL + 16UL), (10402924002521284791UL + 19UL), (10402924002521284791UL + 20UL), (10402924002521284791UL + 38UL), (10402924002521284791UL + 39UL), (10402924002521284791UL + 762UL), (10402924002521284791UL + 1199UL), "gridInfo", (unsigned)4, (10402924002521284791UL + 32UL), (10402924002521284791UL + 33UL), (10402924002521284791UL + 34UL), (10402924002521284791UL + 35UL),
-                           &____alias_loc_id_4, (unsigned)16, (unsigned)0, (unsigned)0, (10402924002521284791UL + 4UL), (10402924002521284791UL + 11UL), (10402924002521284791UL + 12UL), (10402924002521284791UL + 13UL), (10402924002521284791UL + 14UL), (10402924002521284791UL + 15UL), (10402924002521284791UL + 16UL), (10402924002521284791UL + 19UL), (10402924002521284791UL + 20UL), (10402924002521284791UL + 28UL), (10402924002521284791UL + 29UL), (10402924002521284791UL + 37UL), (10402924002521284791UL + 40UL), (10402924002521284791UL + 2402UL), (10402924002521284791UL + 2404UL), (10402924002521284791UL + 2541UL),
-                           &____alias_loc_id_5, (unsigned)5, (unsigned)0, (unsigned)0, (10402924002521284791UL + 2306UL), (10402924002521284791UL + 2307UL), (10402924002521284791UL + 2308UL), (10402924002521284791UL + 2402UL), (10402924002521284791UL + 2497UL),
-                            "freeC", 0, "_Z5freeCP4cstr", "_Z9freeC_npmP4cstr", 0, 1, (10402924002521284791UL + 2497UL), (10402924002521284791UL + 2541UL), 10, "free", 1, (10402924002521284791UL + 2402UL), 0UL, "free", 1, (10402924002521284791UL + 2402UL), 0UL, "free", 1, (10402924002521284791UL + 2402UL), 0UL, "free", 1, (10402924002521284791UL + 2402UL), 0UL, "free", 1, (10402924002521284791UL + 2402UL), 0UL, "free", 1, (10402924002521284791UL + 2404UL), 0UL, "free", 1, (10402924002521284791UL + 2402UL), 0UL, "free", 1, (10402924002521284791UL + 2404UL), 0UL, "free", 1, (10402924002521284791UL + 2402UL), 0UL, "free", 1, (10402924002521284791UL + 2497UL), 0UL,
-                            "mergeAlignment", 0, "_Z14mergeAlignmentP4bstrii", "_Z18mergeAlignment_npmP4bstrii", 4, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, &____alias_loc_id_3, 3, (10402924002521284791UL + 2285UL), 0UL, 0UL, (10402924002521284791UL + 2541UL), 157, "malloc", 1, 0UL, (10402924002521284791UL + 1199UL), "printf", 1, (10402924002521284791UL + 2498UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 1201UL), "printf", 1, (10402924002521284791UL + 2499UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 1201UL), "printf", 1, (10402924002521284791UL + 2499UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 1201UL), "printf", 1, (10402924002521284791UL + 2501UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 1201UL), "printf", 1, (10402924002521284791UL + 2501UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 1201UL), "printf", 1, (10402924002521284791UL + 2503UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 1201UL), "printf", 1, (10402924002521284791UL + 2503UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 1201UL), "printf", 1, (10402924002521284791UL + 2503UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 1201UL), "printf", 1, (10402924002521284791UL + 2503UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 762UL), "printf", 1, (10402924002521284791UL + 2507UL), 0UL, "exit", 1, 0UL, 0UL, "gridInfo", 4, (10402924002521284791UL + 34UL), (10402924002521284791UL + 35UL), (10402924002521284791UL + 32UL), (10402924002521284791UL + 33UL), 0UL, "omp_get_thread_num", 0, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 2402UL), "printf", 2, (10402924002521284791UL + 2508UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 2402UL), "printf", 2, (10402924002521284791UL + 2509UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 2402UL), "printf", 2, (10402924002521284791UL + 2509UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 2402UL), "printf", 2, (10402924002521284791UL + 2511UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 2402UL), "printf", 2, (10402924002521284791UL + 2511UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 2402UL), "printf", 2, (10402924002521284791UL + 2511UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 2402UL), "printf", 2, (10402924002521284791UL + 2511UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 1559UL), "printf", 2, (10402924002521284791UL + 2511UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 1231UL), "printf", 2, (10402924002521284791UL + 2516UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 1222UL), "printf", 2, (10402924002521284791UL + 2517UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "getSeconds", 0, 0UL, "strlen", 1, (10402924002521284791UL + 592UL), 0UL, "printf", 4, (10402924002521284791UL + 2518UL), 0UL, 0UL, 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 2404UL), "printf", 3, (10402924002521284791UL + 2518UL), 0UL, 0UL, 0UL, "exit", 1, 0UL, 0UL, "strcpy", 2, (10402924002521284791UL + 2404UL), (10402924002521284791UL + 592UL), (10402924002521284791UL + 2404UL), "strlen", 1, (10402924002521284791UL + 592UL), 0UL, "printf", 4, (10402924002521284791UL + 2518UL), 0UL, 0UL, 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 2404UL), "printf", 3, (10402924002521284791UL + 2518UL), 0UL, 0UL, 0UL, "exit", 1, 0UL, 0UL, "strcpy", 2, (10402924002521284791UL + 2404UL), (10402924002521284791UL + 592UL), (10402924002521284791UL + 2404UL), "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "free", 1, (10402924002521284791UL + 2404UL), 0UL, "free", 1, (10402924002521284791UL + 2404UL), 0UL, "printf", 4, (10402924002521284791UL + 2522UL), 0UL, 0UL, 0UL, 0UL, "qSort_both", 4, (10402924002521284791UL + 1231UL), (10402924002521284791UL + 1222UL), (10402924002521284791UL + 2402UL), 0UL, 0UL, "free", 1, (10402924002521284791UL + 2404UL), 0UL, "free", 1, (10402924002521284791UL + 2404UL), 0UL, "getSeconds", 0, 0UL, "printf", 2, (10402924002521284791UL + 2523UL), 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 2541UL), "printf", 1, (10402924002521284791UL + 2498UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 2402UL), "printf", 1, (10402924002521284791UL + 2501UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 2402UL), "printf", 1, (10402924002521284791UL + 2526UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 2402UL), "printf", 1, (10402924002521284791UL + 2526UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 2402UL), "printf", 1, (10402924002521284791UL + 2499UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 2402UL), "printf", 1, (10402924002521284791UL + 2499UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 2402UL), "printf", 1, (10402924002521284791UL + 2499UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 2402UL), "printf", 1, (10402924002521284791UL + 2499UL), 0UL, "exit", 1, 0UL, 0UL, "strlen", 1, (10402924002521284791UL + 2404UL), 0UL, "printf", 4, (10402924002521284791UL + 2509UL), 0UL, 0UL, 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 2404UL), "printf", 2, (10402924002521284791UL + 2533UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "strcpy", 2, (10402924002521284791UL + 2404UL), (10402924002521284791UL + 2404UL), (10402924002521284791UL + 2404UL), "free", 1, (10402924002521284791UL + 2404UL), 0UL, "strlen", 1, (10402924002521284791UL + 2404UL), 0UL, "printf", 4, (10402924002521284791UL + 2509UL), 0UL, 0UL, 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10402924002521284791UL + 2404UL), "printf", 2, (10402924002521284791UL + 2533UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "strcpy", 2, (10402924002521284791UL + 2404UL), (10402924002521284791UL + 2404UL), (10402924002521284791UL + 2404UL), "free", 1, (10402924002521284791UL + 2404UL), 0UL, "free", 1, (10402924002521284791UL + 2402UL), 0UL, "free", 1, (10402924002521284791UL + 2402UL), 0UL, "free", 1, (10402924002521284791UL + 2402UL), 0UL, "free", 1, (10402924002521284791UL + 2402UL), 0UL, "free", 1, (10402924002521284791UL + 2402UL), 0UL, "free", 1, (10402924002521284791UL + 2404UL), 0UL, "free", 1, (10402924002521284791UL + 2402UL), 0UL, "printf", 3, (10402924002521284791UL + 2508UL), 0UL, 0UL, 0UL, "free", 1, (10402924002521284791UL + 2404UL), 0UL, "free", 1, (10402924002521284791UL + 2402UL), 0UL, "printf", 3, (10402924002521284791UL + 2508UL), 0UL, 0UL, 0UL, "free", 1, (10402924002521284791UL + 1559UL), 0UL, "free", 1, (10402924002521284791UL + 1231UL), 0UL, "free", 1, (10402924002521284791UL + 1222UL), 0UL, "free", 1, (10402924002521284791UL + 762UL), 0UL, "free", 1, (10402924002521284791UL + 1201UL), 0UL, "free", 1, (10402924002521284791UL + 1201UL), 0UL, "free", 1, (10402924002521284791UL + 1201UL), 0UL, "free", 1, (10402924002521284791UL + 1201UL), 0UL, "free", 1, (10402924002521284791UL + 1201UL), 0UL, "free", 1, (10402924002521284791UL + 1201UL), 0UL, "free", 1, (10402924002521284791UL + 1201UL), 0UL, "free", 1, (10402924002521284791UL + 1201UL), 0UL, "free", 1, (10402924002521284791UL + 1199UL), 0UL,
+    init_module(3659288930664077536UL, 26, 2, 28, 6, 2, 3, 5, 0, 0, 2,
+                           &____alias_loc_id_0, (unsigned)15, (unsigned)0, (unsigned)0, (3659288930664077536UL + 6UL), (3659288930664077536UL + 20UL), (3659288930664077536UL + 22UL), (3659288930664077536UL + 23UL), (3659288930664077536UL + 24UL), (3659288930664077536UL + 25UL), (3659288930664077536UL + 28UL), (3659288930664077536UL + 31UL), (3659288930664077536UL + 36UL), (3659288930664077536UL + 762UL), (3659288930664077536UL + 1201UL), (3659288930664077536UL + 1231UL), (3659288930664077536UL + 1559UL), (3659288930664077536UL + 2402UL), (3659288930664077536UL + 2404UL),
+                           &____alias_loc_id_1, (unsigned)14, (unsigned)0, (unsigned)0, (3659288930664077536UL + 4UL), (3659288930664077536UL + 5UL), (3659288930664077536UL + 8UL), (3659288930664077536UL + 11UL), (3659288930664077536UL + 12UL), (3659288930664077536UL + 13UL), (3659288930664077536UL + 14UL), (3659288930664077536UL + 15UL), (3659288930664077536UL + 16UL), (3659288930664077536UL + 17UL), (3659288930664077536UL + 20UL), (3659288930664077536UL + 30UL), (3659288930664077536UL + 1201UL), (3659288930664077536UL + 2402UL),
+                           &____alias_loc_id_2, (unsigned)6, (unsigned)0, (unsigned)1, (3659288930664077536UL + 20UL), (3659288930664077536UL + 21UL), (3659288930664077536UL + 26UL), (3659288930664077536UL + 27UL), (3659288930664077536UL + 762UL), (3659288930664077536UL + 2402UL), "qSort_both", (unsigned)3, (3659288930664077536UL + 1222UL), (3659288930664077536UL + 1231UL), (3659288930664077536UL + 2402UL),
+                           &____alias_loc_id_3, (unsigned)17, (unsigned)0, (unsigned)1, (3659288930664077536UL + 1UL), (3659288930664077536UL + 2UL), (3659288930664077536UL + 3UL), (3659288930664077536UL + 4UL), (3659288930664077536UL + 10UL), (3659288930664077536UL + 11UL), (3659288930664077536UL + 12UL), (3659288930664077536UL + 13UL), (3659288930664077536UL + 14UL), (3659288930664077536UL + 15UL), (3659288930664077536UL + 16UL), (3659288930664077536UL + 19UL), (3659288930664077536UL + 20UL), (3659288930664077536UL + 38UL), (3659288930664077536UL + 39UL), (3659288930664077536UL + 762UL), (3659288930664077536UL + 1199UL), "gridInfo", (unsigned)4, (3659288930664077536UL + 32UL), (3659288930664077536UL + 33UL), (3659288930664077536UL + 34UL), (3659288930664077536UL + 35UL),
+                           &____alias_loc_id_4, (unsigned)16, (unsigned)0, (unsigned)0, (3659288930664077536UL + 4UL), (3659288930664077536UL + 11UL), (3659288930664077536UL + 12UL), (3659288930664077536UL + 13UL), (3659288930664077536UL + 14UL), (3659288930664077536UL + 15UL), (3659288930664077536UL + 16UL), (3659288930664077536UL + 19UL), (3659288930664077536UL + 20UL), (3659288930664077536UL + 28UL), (3659288930664077536UL + 29UL), (3659288930664077536UL + 37UL), (3659288930664077536UL + 40UL), (3659288930664077536UL + 2402UL), (3659288930664077536UL + 2404UL), (3659288930664077536UL + 2541UL),
+                           &____alias_loc_id_5, (unsigned)5, (unsigned)0, (unsigned)0, (3659288930664077536UL + 2306UL), (3659288930664077536UL + 2307UL), (3659288930664077536UL + 2308UL), (3659288930664077536UL + 2402UL), (3659288930664077536UL + 2497UL),
+                            "freeC", 0, "_Z5freeCP4cstr", "_Z9freeC_npmP4cstr", 0, 1, (3659288930664077536UL + 2497UL), (3659288930664077536UL + 2541UL), 10, "free", 1, (3659288930664077536UL + 2402UL), 0UL, "free", 1, (3659288930664077536UL + 2402UL), 0UL, "free", 1, (3659288930664077536UL + 2402UL), 0UL, "free", 1, (3659288930664077536UL + 2402UL), 0UL, "free", 1, (3659288930664077536UL + 2402UL), 0UL, "free", 1, (3659288930664077536UL + 2404UL), 0UL, "free", 1, (3659288930664077536UL + 2402UL), 0UL, "free", 1, (3659288930664077536UL + 2404UL), 0UL, "free", 1, (3659288930664077536UL + 2402UL), 0UL, "free", 1, (3659288930664077536UL + 2497UL), 0UL,
+                            "mergeAlignment", 0, "_Z14mergeAlignmentP4bstrii", "_Z18mergeAlignment_npmP4bstrii", 4, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, &____alias_loc_id_3, 3, (3659288930664077536UL + 2285UL), 0UL, 0UL, (3659288930664077536UL + 2541UL), 157, "malloc", 1, 0UL, (3659288930664077536UL + 1199UL), "printf", 1, (3659288930664077536UL + 2498UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 1201UL), "printf", 1, (3659288930664077536UL + 2499UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 1201UL), "printf", 1, (3659288930664077536UL + 2499UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 1201UL), "printf", 1, (3659288930664077536UL + 2501UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 1201UL), "printf", 1, (3659288930664077536UL + 2501UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 1201UL), "printf", 1, (3659288930664077536UL + 2503UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 1201UL), "printf", 1, (3659288930664077536UL + 2503UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 1201UL), "printf", 1, (3659288930664077536UL + 2503UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 1201UL), "printf", 1, (3659288930664077536UL + 2503UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 762UL), "printf", 1, (3659288930664077536UL + 2507UL), 0UL, "exit", 1, 0UL, 0UL, "gridInfo", 4, (3659288930664077536UL + 34UL), (3659288930664077536UL + 35UL), (3659288930664077536UL + 32UL), (3659288930664077536UL + 33UL), 0UL, "omp_get_thread_num", 0, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 2402UL), "printf", 2, (3659288930664077536UL + 2508UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 2402UL), "printf", 2, (3659288930664077536UL + 2509UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 2402UL), "printf", 2, (3659288930664077536UL + 2509UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 2402UL), "printf", 2, (3659288930664077536UL + 2511UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 2402UL), "printf", 2, (3659288930664077536UL + 2511UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 2402UL), "printf", 2, (3659288930664077536UL + 2511UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 2402UL), "printf", 2, (3659288930664077536UL + 2511UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 1559UL), "printf", 2, (3659288930664077536UL + 2511UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 1231UL), "printf", 2, (3659288930664077536UL + 2516UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 1222UL), "printf", 2, (3659288930664077536UL + 2517UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "getSeconds", 0, 0UL, "strlen", 1, (3659288930664077536UL + 592UL), 0UL, "printf", 4, (3659288930664077536UL + 2518UL), 0UL, 0UL, 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 2404UL), "printf", 3, (3659288930664077536UL + 2518UL), 0UL, 0UL, 0UL, "exit", 1, 0UL, 0UL, "strcpy", 2, (3659288930664077536UL + 2404UL), (3659288930664077536UL + 592UL), (3659288930664077536UL + 2404UL), "strlen", 1, (3659288930664077536UL + 592UL), 0UL, "printf", 4, (3659288930664077536UL + 2518UL), 0UL, 0UL, 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 2404UL), "printf", 3, (3659288930664077536UL + 2518UL), 0UL, 0UL, 0UL, "exit", 1, 0UL, 0UL, "strcpy", 2, (3659288930664077536UL + 2404UL), (3659288930664077536UL + 592UL), (3659288930664077536UL + 2404UL), "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "free", 1, (3659288930664077536UL + 2404UL), 0UL, "free", 1, (3659288930664077536UL + 2404UL), 0UL, "printf", 4, (3659288930664077536UL + 2522UL), 0UL, 0UL, 0UL, 0UL, "qSort_both", 4, (3659288930664077536UL + 1231UL), (3659288930664077536UL + 1222UL), (3659288930664077536UL + 2402UL), 0UL, 0UL, "free", 1, (3659288930664077536UL + 2404UL), 0UL, "free", 1, (3659288930664077536UL + 2404UL), 0UL, "getSeconds", 0, 0UL, "printf", 2, (3659288930664077536UL + 2523UL), 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 2541UL), "printf", 1, (3659288930664077536UL + 2498UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 2402UL), "printf", 1, (3659288930664077536UL + 2501UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 2402UL), "printf", 1, (3659288930664077536UL + 2526UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 2402UL), "printf", 1, (3659288930664077536UL + 2526UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 2402UL), "printf", 1, (3659288930664077536UL + 2499UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 2402UL), "printf", 1, (3659288930664077536UL + 2499UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 2402UL), "printf", 1, (3659288930664077536UL + 2499UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 2402UL), "printf", 1, (3659288930664077536UL + 2499UL), 0UL, "exit", 1, 0UL, 0UL, "strlen", 1, (3659288930664077536UL + 2404UL), 0UL, "printf", 4, (3659288930664077536UL + 2509UL), 0UL, 0UL, 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 2404UL), "printf", 2, (3659288930664077536UL + 2533UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "strcpy", 2, (3659288930664077536UL + 2404UL), (3659288930664077536UL + 2404UL), (3659288930664077536UL + 2404UL), "free", 1, (3659288930664077536UL + 2404UL), 0UL, "strlen", 1, (3659288930664077536UL + 2404UL), 0UL, "printf", 4, (3659288930664077536UL + 2509UL), 0UL, 0UL, 0UL, 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (3659288930664077536UL + 2404UL), "printf", 2, (3659288930664077536UL + 2533UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "strcpy", 2, (3659288930664077536UL + 2404UL), (3659288930664077536UL + 2404UL), (3659288930664077536UL + 2404UL), "free", 1, (3659288930664077536UL + 2404UL), 0UL, "free", 1, (3659288930664077536UL + 2402UL), 0UL, "free", 1, (3659288930664077536UL + 2402UL), 0UL, "free", 1, (3659288930664077536UL + 2402UL), 0UL, "free", 1, (3659288930664077536UL + 2402UL), 0UL, "free", 1, (3659288930664077536UL + 2402UL), 0UL, "free", 1, (3659288930664077536UL + 2404UL), 0UL, "free", 1, (3659288930664077536UL + 2402UL), 0UL, "printf", 3, (3659288930664077536UL + 2508UL), 0UL, 0UL, 0UL, "free", 1, (3659288930664077536UL + 2404UL), 0UL, "free", 1, (3659288930664077536UL + 2402UL), 0UL, "printf", 3, (3659288930664077536UL + 2508UL), 0UL, 0UL, 0UL, "free", 1, (3659288930664077536UL + 1559UL), 0UL, "free", 1, (3659288930664077536UL + 1231UL), 0UL, "free", 1, (3659288930664077536UL + 1222UL), 0UL, "free", 1, (3659288930664077536UL + 762UL), 0UL, "free", 1, (3659288930664077536UL + 1201UL), 0UL, "free", 1, (3659288930664077536UL + 1201UL), 0UL, "free", 1, (3659288930664077536UL + 1201UL), 0UL, "free", 1, (3659288930664077536UL + 1201UL), 0UL, "free", 1, (3659288930664077536UL + 1201UL), 0UL, "free", 1, (3659288930664077536UL + 1201UL), 0UL, "free", 1, (3659288930664077536UL + 1201UL), 0UL, "free", 1, (3659288930664077536UL + 1201UL), 0UL, "free", 1, (3659288930664077536UL + 1199UL), 0UL,
                                "getSeconds", (void **)&(____chimes_extern_func_getSeconds),
                                "gridInfo", (void **)&(____chimes_extern_func_gridInfo),
                                "qSort_both", (void **)&(____chimes_extern_func_qSort_both),
@@ -6999,32 +6999,32 @@ static int module_init() {
                            "getSeconds", &(____chimes_does_checkpoint_getSeconds_npm),
                            "gridInfo", &(____chimes_does_checkpoint_gridInfo_npm),
                            "qSort_both", &(____chimes_does_checkpoint_qSort_both_npm),
-                             (10402924002521284791UL + 1201UL), (10402924002521284791UL + 2402UL),
-                             (10402924002521284791UL + 1199UL), (10402924002521284791UL + 1201UL),
-                             (10402924002521284791UL + 2308UL), (10402924002521284791UL + 2541UL),
-                             (10402924002521284791UL + 2541UL), (10402924002521284791UL + 2402UL),
-                             (10402924002521284791UL + 40UL), (10402924002521284791UL + 2541UL),
-                             (10402924002521284791UL + 2306UL), (10402924002521284791UL + 2497UL),
-                             (10402924002521284791UL + 1UL), (10402924002521284791UL + 2285UL),
-                             (10402924002521284791UL + 5UL), (10402924002521284791UL + 1231UL),
-                             (10402924002521284791UL + 4UL), (10402924002521284791UL + 2402UL),
-                             (10402924002521284791UL + 508UL), (10402924002521284791UL + 510UL),
-                             (10402924002521284791UL + 2402UL), (10402924002521284791UL + 2404UL),
-                             (10402924002521284791UL + 39UL), (10402924002521284791UL + 1199UL),
-                             (10402924002521284791UL + 2285UL), (10402924002521284791UL + 508UL),
-                             (10402924002521284791UL + 38UL), (10402924002521284791UL + 762UL),
-                             (10402924002521284791UL + 11UL), (10402924002521284791UL + 2402UL),
-                             (10402924002521284791UL + 13UL), (10402924002521284791UL + 2402UL),
-                             (10402924002521284791UL + 12UL), (10402924002521284791UL + 2402UL),
-                             (10402924002521284791UL + 15UL), (10402924002521284791UL + 2402UL),
-                             (10402924002521284791UL + 14UL), (10402924002521284791UL + 2402UL),
-                             (10402924002521284791UL + 17UL), (10402924002521284791UL + 1559UL),
-                             (10402924002521284791UL + 16UL), (10402924002521284791UL + 2402UL),
-                             (10402924002521284791UL + 19UL), (10402924002521284791UL + 2541UL),
-                             (10402924002521284791UL + 30UL), (10402924002521284791UL + 1222UL),
-                             (10402924002521284791UL + 2497UL), (10402924002521284791UL + 2402UL),
-                             (10402924002521284791UL + 1559UL), (10402924002521284791UL + 2404UL),
-                             (10402924002521284791UL + 510UL), (10402924002521284791UL + 592UL),
+                             (3659288930664077536UL + 1201UL), (3659288930664077536UL + 2402UL),
+                             (3659288930664077536UL + 1199UL), (3659288930664077536UL + 1201UL),
+                             (3659288930664077536UL + 2308UL), (3659288930664077536UL + 2541UL),
+                             (3659288930664077536UL + 2541UL), (3659288930664077536UL + 2402UL),
+                             (3659288930664077536UL + 40UL), (3659288930664077536UL + 2541UL),
+                             (3659288930664077536UL + 2306UL), (3659288930664077536UL + 2497UL),
+                             (3659288930664077536UL + 1UL), (3659288930664077536UL + 2285UL),
+                             (3659288930664077536UL + 5UL), (3659288930664077536UL + 1231UL),
+                             (3659288930664077536UL + 4UL), (3659288930664077536UL + 2402UL),
+                             (3659288930664077536UL + 508UL), (3659288930664077536UL + 510UL),
+                             (3659288930664077536UL + 2402UL), (3659288930664077536UL + 2404UL),
+                             (3659288930664077536UL + 39UL), (3659288930664077536UL + 1199UL),
+                             (3659288930664077536UL + 2285UL), (3659288930664077536UL + 508UL),
+                             (3659288930664077536UL + 38UL), (3659288930664077536UL + 762UL),
+                             (3659288930664077536UL + 11UL), (3659288930664077536UL + 2402UL),
+                             (3659288930664077536UL + 13UL), (3659288930664077536UL + 2402UL),
+                             (3659288930664077536UL + 12UL), (3659288930664077536UL + 2402UL),
+                             (3659288930664077536UL + 15UL), (3659288930664077536UL + 2402UL),
+                             (3659288930664077536UL + 14UL), (3659288930664077536UL + 2402UL),
+                             (3659288930664077536UL + 17UL), (3659288930664077536UL + 1559UL),
+                             (3659288930664077536UL + 16UL), (3659288930664077536UL + 2402UL),
+                             (3659288930664077536UL + 19UL), (3659288930664077536UL + 2541UL),
+                             (3659288930664077536UL + 30UL), (3659288930664077536UL + 1222UL),
+                             (3659288930664077536UL + 2497UL), (3659288930664077536UL + 2402UL),
+                             (3659288930664077536UL + 1559UL), (3659288930664077536UL + 2404UL),
+                             (3659288930664077536UL + 510UL), (3659288930664077536UL + 592UL),
                      "bstr", 576UL, 9, "long long int**", (int)__builtin_offsetof (struct bstr, bestScores), "int", (int)__builtin_offsetof (struct bstr, numThreads), "int*", (int)__builtin_offsetof (struct bstr, numReports), "int**", (int)__builtin_offsetof (struct bstr, bestStartsI), "int**", (int)__builtin_offsetof (struct bstr, bestStartsJ), "int**", (int)__builtin_offsetof (struct bstr, bestEndsI), "int**", (int)__builtin_offsetof (struct bstr, bestEndsJ), "unsigned char***", (int)__builtin_offsetof (struct bstr, bestSeqsI), "unsigned char***", (int)__builtin_offsetof (struct bstr, bestSeqsJ),
                      "cstr", 512UL, 8, "long long int*", (int)__builtin_offsetof (struct cstr, finalScores), "int", (int)__builtin_offsetof (struct cstr, numReports), "int*", (int)__builtin_offsetof (struct cstr, finalStartsI), "int*", (int)__builtin_offsetof (struct cstr, finalStartsJ), "int*", (int)__builtin_offsetof (struct cstr, finalEndsI), "int*", (int)__builtin_offsetof (struct cstr, finalEndsJ), "unsigned char**", (int)__builtin_offsetof (struct cstr, finalSeqsI), "unsigned char**", (int)__builtin_offsetof (struct cstr, finalSeqsJ),
                              "freeC", "_Z5freeCP4cstr", 0, 0,

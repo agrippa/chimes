@@ -38,11 +38,11 @@ static unsigned ____alias_loc_id_5;
 static unsigned ____alias_loc_id_6;
 static unsigned ____alias_loc_id_7;
 static unsigned ____alias_loc_id_8;
-# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -51,7 +51,7 @@ static unsigned ____alias_loc_id_8;
 typedef long int ptrdiff_t;
 # 211 "/usr/lib/gcc/x86_64-redhat-linux/4.4.4/include/stddef.h"
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -107,7 +107,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 69 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 69 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -121,10 +121,10 @@ inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 10 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.h" 1
-# 28 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.h"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 10 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.h" 1
+# 28 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.h"
 int addArg(const char *longOption, const char shortOption,
            int has_arg, const char type, void *dataPtr, int dataSize,
            const char *help);
@@ -136,8 +136,8 @@ void processArgs(int argc, char **argv);
 void printArgs(void);
 
 void freeArgs(void);
-# 11 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c" 2
-# 11 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 11 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c" 2
+# 11 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 25 "/usr/include/stdlib.h" 3 4
@@ -1462,7 +1462,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 13 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c" 2
+# 13 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 30 "/usr/include/stdio.h" 3 4
 extern "C" {
@@ -2270,7 +2270,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 14 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c" 2
+# 14 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c" 2
 # 1 "/usr/include/getopt.h" 1 3 4
 # 50 "/usr/include/getopt.h" 3 4
 extern "C" {
@@ -2314,7 +2314,7 @@ extern int getopt_long_only (int ___argc, char *const *___argv,
 
 
 }
-# 15 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c" 2
+# 15 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 29 "/usr/include/string.h" 3 4
 extern "C" {
@@ -2790,11 +2790,11 @@ extern "C++" __const char *basename (__const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 # 646 "/usr/include/string.h" 3 4
 }
-# 16 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c" 2
-# 16 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 16 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c" 2
+# 16 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 
-# 1 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mytype.h" 1
-# 13 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mytype.h"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mytype.h" 1
+# 13 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mytype.h"
 typedef double real_t;
 
 
@@ -2808,1136 +2808,1136 @@ static void zeroReal3(real3 a)
    a[1] = 0.0;
    a[2] = 0.0;
 }
-# 18 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c" 2
-# 18 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 19 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 20 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 21 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 18 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c" 2
+# 18 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 19 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 20 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 21 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 typedef struct MyOptionSt
-# 22 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 22 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 {
-# 23 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 23 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    char* help;
-# 24 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 24 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    char* longArg;
-# 25 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 25 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    unsigned char shortArg[2];
-# 26 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 26 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    int argFlag;
-# 27 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 27 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    char type;
-# 28 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 28 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    int sz;
-# 29 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 29 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    void* ptr;
-# 30 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 30 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    void* next;
-# 31 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 31 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 } MyOption;
-# 32 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 33 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 32 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 33 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 static int longest = 1;
-# 34 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 34 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 static MyOption* myargs=__null;
-# 35 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 36 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 35 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 36 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 static char* dupString_npm(const char* s);
 static char* dupString_quick(const char* s); static char* dupString(const char* s);
 static char* dupString_resumable(const char* s)
-# 37 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&dupString), "dupString", &____must_manage_dupString, 1, 0, (size_t)(4461972309412152495UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 38 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 37 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&dupString), "dupString", &____must_manage_dupString, 1, 0, (size_t)(1638881369108208767UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 38 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    char *d; ;
-# 39 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 39 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (! s) {s = ""; };
-# 40 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   d = (char*) ({ void *____chimes_tmp_ptr = calloc(((strlen(s) + 1)) + ((sizeof(void *) + sizeof(char) - 1) / sizeof(char)), sizeof(char)); ; calloc_helper(____chimes_tmp_ptr, (strlen(s)+1), sizeof(char), 4461972309412152485UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 41 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 40 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+   d = (char*) ({ void *____chimes_tmp_ptr = calloc(((strlen(s) + 1)) + ((sizeof(void *) + sizeof(char) - 1) / sizeof(char)), sizeof(char)); ; calloc_helper(____chimes_tmp_ptr, (strlen(s)+1), sizeof(char), 1638881369108208757UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 41 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    strcpy(d, s);
-# 42 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    char *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (d); rm_stack(true, 4461972309412152485UL, "dupString", &____must_manage_dupString, ____alias_loc_id_8, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 43 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-rm_stack(true, 4461972309412152485UL, "dupString", &____must_manage_dupString, ____alias_loc_id_8, ____chimes_did_disable0, false); }
-# 44 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 45 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 42 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+    char *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (d); rm_stack(true, 1638881369108208757UL, "dupString", &____must_manage_dupString, ____alias_loc_id_8, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
+# 43 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+rm_stack(true, 1638881369108208757UL, "dupString", &____must_manage_dupString, ____alias_loc_id_8, ____chimes_did_disable0, false); }
+# 44 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 45 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 static MyOption* myOptionAlloc_npm( const char* longOption, const char shortOption, int has_arg, const char type, void* dataPtr, int dataSize, const char* help);
 static MyOption* myOptionAlloc_quick( const char* longOption, const char shortOption, int has_arg, const char type, void* dataPtr, int dataSize, const char* help); static MyOption* myOptionAlloc( const char* longOption, const char shortOption, int has_arg, const char type, void* dataPtr, int dataSize, const char* help);
 static MyOption* myOptionAlloc_resumable(
-# 46 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 46 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    const char* longOption, const char shortOption,
-# 47 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 47 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    int has_arg, const char type, void* dataPtr, int dataSize, const char* help)
-# 48 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&myOptionAlloc), "myOptionAlloc", &____must_manage_myOptionAlloc, 7, 0, (size_t)(4461972309412152005UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(4461972309412151949UL), (size_t)(0UL), (size_t)(4461972309412152023UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 49 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 48 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+{const int ____chimes_did_disable1 = new_stack((void *)(&myOptionAlloc), "myOptionAlloc", &____must_manage_myOptionAlloc, 7, 0, (size_t)(1638881369108208277UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1638881369108208221UL), (size_t)(0UL), (size_t)(1638881369108208295UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 49 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     static int iBase; iBase = (129) ;
-# 50 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    MyOption *o; o = ((MyOption*) ({ void *____chimes_tmp_ptr = calloc((1) + ((sizeof(void *) + sizeof(MyOption) - 1) / sizeof(MyOption)), sizeof(MyOption)); calloc_helper(____chimes_tmp_ptr, 1, sizeof(MyOption), 4461972309412151945UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 51 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 50 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+    MyOption *o; o = ((MyOption*) ({ void *____chimes_tmp_ptr = calloc((1) + ((sizeof(void *) + sizeof(MyOption) - 1) / sizeof(MyOption)), sizeof(MyOption)); calloc_helper(____chimes_tmp_ptr, 1, sizeof(MyOption), 1638881369108208217UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 51 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     call_lbl_0: o->help = ({ calling_npm("dupString", 0); dupString_npm(help); });
-# 52 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 52 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     call_lbl_1: o->longArg = ({ calling_npm("dupString", 0); dupString_npm(longOption); });
-# 53 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 53 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (shortOption) {o->shortArg[0] = (unsigned char)shortOption; } else {{
-# 56 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 56 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       o->shortArg[0] = iBase;
-# 57 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 57 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       iBase++;
-# 58 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 58 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }; }
-# 59 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 59 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o->argFlag = has_arg;
-# 60 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 60 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o->type = type;
-# 61 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 61 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o->ptr = dataPtr;
-# 62 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 62 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o->sz = dataSize;
-# 63 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 63 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (longOption) {longest = (longest>strlen(longOption)?longest:strlen(longOption)); };
-# 64 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    MyOption *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (o); rm_stack(true, 4461972309412151945UL, "myOptionAlloc", &____must_manage_myOptionAlloc, ____alias_loc_id_1, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 65 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-rm_stack(true, 4461972309412151945UL, "myOptionAlloc", &____must_manage_myOptionAlloc, ____alias_loc_id_1, ____chimes_did_disable1, false); }
-# 66 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 67 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 64 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+    MyOption *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (o); rm_stack(true, 1638881369108208217UL, "myOptionAlloc", &____must_manage_myOptionAlloc, ____alias_loc_id_1, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
+# 65 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+rm_stack(true, 1638881369108208217UL, "myOptionAlloc", &____must_manage_myOptionAlloc, ____alias_loc_id_1, ____chimes_did_disable1, false); }
+# 66 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 67 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 static MyOption* myOptionFree_npm(MyOption* o);
 static MyOption* myOptionFree_quick(MyOption* o); static MyOption* myOptionFree(MyOption* o);
 static MyOption* myOptionFree_resumable(MyOption* o)
-# 68 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&myOptionFree), "myOptionFree", &____must_manage_myOptionFree, 1, 0, (size_t)(4461972309412152122UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 69 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 68 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+{const int ____chimes_did_disable2 = new_stack((void *)(&myOptionFree), "myOptionFree", &____must_manage_myOptionFree, 1, 0, (size_t)(1638881369108208394UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 69 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    MyOption *r; ;
-# 70 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   if (!o) { MyOption *____chimes_ret_var_2; ; ____chimes_ret_var_2 = (__null); rm_stack(true, 4461972309412152088UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ; };
-# 71 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 70 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+   if (!o) { MyOption *____chimes_ret_var_2; ; ____chimes_ret_var_2 = (__null); rm_stack(true, 1638881369108208360UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ; };
+# 71 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    r = ((MyOption*) o->next);
-# 72 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   if (o->longArg) { ({ free_helper((((unsigned char *)o->longArg) - sizeof(void *)), 4461972309412152088UL);free((((unsigned char *)o->longArg) - sizeof(void *))); }) ; };
-# 73 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   if (o->help) { ({ free_helper((((unsigned char *)o->help) - sizeof(void *)), 4461972309412152088UL);free((((unsigned char *)o->help) - sizeof(void *))); }) ; };
-# 74 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    ({ free_helper((((unsigned char *)o) - sizeof(void *)), 4461972309412152122UL);free((((unsigned char *)o) - sizeof(void *))); }) ;
-# 75 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    MyOption *____chimes_ret_var_3; ; ____chimes_ret_var_3 = (r); rm_stack(true, 4461972309412152088UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2, false); return ____chimes_ret_var_3; ;
-# 76 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-rm_stack(true, 4461972309412152088UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2, false); }
-# 77 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 78 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 72 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+   if (o->longArg) { ({ free_helper((((unsigned char *)o->longArg) - sizeof(void *)), 1638881369108208360UL);free((((unsigned char *)o->longArg) - sizeof(void *))); }) ; };
+# 73 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+   if (o->help) { ({ free_helper((((unsigned char *)o->help) - sizeof(void *)), 1638881369108208360UL);free((((unsigned char *)o->help) - sizeof(void *))); }) ; };
+# 74 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+    ({ free_helper((((unsigned char *)o) - sizeof(void *)), 1638881369108208394UL);free((((unsigned char *)o) - sizeof(void *))); }) ;
+# 75 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+    MyOption *____chimes_ret_var_3; ; ____chimes_ret_var_3 = (r); rm_stack(true, 1638881369108208360UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2, false); return ____chimes_ret_var_3; ;
+# 76 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+rm_stack(true, 1638881369108208360UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2, false); }
+# 77 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 78 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 static MyOption* lastOption_npm(MyOption* o);
 static MyOption* lastOption_quick(MyOption* o); static MyOption* lastOption(MyOption* o);
 static MyOption* lastOption_resumable(MyOption* o)
-# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&lastOption), "lastOption", &____must_manage_lastOption, 1, 0, (size_t)(4461972309412152060UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 80 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   if (! o) { MyOption *____chimes_ret_var_4; ; ____chimes_ret_var_4 = (o); rm_stack(true, 4461972309412152060UL, "lastOption", &____must_manage_lastOption, ____alias_loc_id_2, ____chimes_did_disable3, false); return ____chimes_ret_var_4; ; };
-# 81 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 79 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+{const int ____chimes_did_disable3 = new_stack((void *)(&lastOption), "lastOption", &____must_manage_lastOption, 1, 0, (size_t)(1638881369108208332UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 80 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+   if (! o) { MyOption *____chimes_ret_var_4; ; ____chimes_ret_var_4 = (o); rm_stack(true, 1638881369108208332UL, "lastOption", &____must_manage_lastOption, ____alias_loc_id_2, ____chimes_did_disable3, false); return ____chimes_ret_var_4; ; };
+# 81 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    while(((MyOption*) o->next)) o = ((MyOption*) o->next);
-# 82 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    MyOption *____chimes_ret_var_5; ; ____chimes_ret_var_5 = (o); rm_stack(true, 4461972309412152060UL, "lastOption", &____must_manage_lastOption, ____alias_loc_id_2, ____chimes_did_disable3, false); return ____chimes_ret_var_5; ;
-# 83 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-rm_stack(true, 4461972309412152060UL, "lastOption", &____must_manage_lastOption, ____alias_loc_id_2, ____chimes_did_disable3, false); }
-# 84 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 85 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 82 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+    MyOption *____chimes_ret_var_5; ; ____chimes_ret_var_5 = (o); rm_stack(true, 1638881369108208332UL, "lastOption", &____must_manage_lastOption, ____alias_loc_id_2, ____chimes_did_disable3, false); return ____chimes_ret_var_5; ;
+# 83 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+rm_stack(true, 1638881369108208332UL, "lastOption", &____must_manage_lastOption, ____alias_loc_id_2, ____chimes_did_disable3, false); }
+# 84 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 85 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 static MyOption* findOption_npm(MyOption* o, unsigned char shortArg);
 static MyOption* findOption_quick(MyOption* o, unsigned char shortArg); static MyOption* findOption(MyOption* o, unsigned char shortArg);
 static MyOption* findOption_resumable(MyOption* o, unsigned char shortArg)
-# 86 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&findOption), "findOption", &____must_manage_findOption, 2, 0, (size_t)(4461972309412152463UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 87 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 86 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+{const int ____chimes_did_disable4 = new_stack((void *)(&findOption), "findOption", &____must_manage_findOption, 2, 0, (size_t)(1638881369108208735UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 87 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    while(o)
-# 88 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 88 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    {
-# 89 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-      if (o->shortArg[0] == shortArg) { MyOption *____chimes_ret_var_6; ; ____chimes_ret_var_6 = (o); rm_stack(true, 4461972309412152463UL, "findOption", &____must_manage_findOption, ____alias_loc_id_7, ____chimes_did_disable4, false); return ____chimes_ret_var_6; ; };
-# 90 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 89 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+      if (o->shortArg[0] == shortArg) { MyOption *____chimes_ret_var_6; ; ____chimes_ret_var_6 = (o); rm_stack(true, 1638881369108208735UL, "findOption", &____must_manage_findOption, ____alias_loc_id_7, ____chimes_did_disable4, false); return ____chimes_ret_var_6; ; };
+# 90 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       o = ((MyOption*) o->next);
-# 91 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 91 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }
-# 92 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    MyOption *____chimes_ret_var_7; ; ____chimes_ret_var_7 = (o); rm_stack(true, 4461972309412152463UL, "findOption", &____must_manage_findOption, ____alias_loc_id_7, ____chimes_did_disable4, false); return ____chimes_ret_var_7; ;
-# 93 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-rm_stack(true, 4461972309412152463UL, "findOption", &____must_manage_findOption, ____alias_loc_id_7, ____chimes_did_disable4, false); }
-# 94 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 95 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 96 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 92 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+    MyOption *____chimes_ret_var_7; ; ____chimes_ret_var_7 = (o); rm_stack(true, 1638881369108208735UL, "findOption", &____must_manage_findOption, ____alias_loc_id_7, ____chimes_did_disable4, false); return ____chimes_ret_var_7; ;
+# 93 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+rm_stack(true, 1638881369108208735UL, "findOption", &____must_manage_findOption, ____alias_loc_id_7, ____chimes_did_disable4, false); }
+# 94 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 95 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 96 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 int addArg_npm(const char* longOption, const char shortOption, int has_arg, const char type, void* dataPtr, int dataSize, const char* help);
 int addArg_quick(const char* longOption, const char shortOption, int has_arg, const char type, void* dataPtr, int dataSize, const char* help); int addArg(const char* longOption, const char shortOption, int has_arg, const char type, void* dataPtr, int dataSize, const char* help);
 int addArg_resumable(const char* longOption, const char shortOption,
-# 97 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 97 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
            int has_arg, const char type, void* dataPtr, int dataSize,
-# 98 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 98 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
            const char* help)
-# 99 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&addArg), "addArg", &____must_manage_addArg, 7, 0, (size_t)(4461972309412151912UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(4461972309412151916UL), (size_t)(0UL), (size_t)(4461972309412151918UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 100 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 99 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+{const int ____chimes_did_disable5 = new_stack((void *)(&addArg), "addArg", &____must_manage_addArg, 7, 0, (size_t)(1638881369108208184UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1638881369108208188UL), (size_t)(0UL), (size_t)(1638881369108208190UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 100 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    MyOption *o; ;
-# 101 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 101 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    MyOption *p; ;
-# 102 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 102 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     call_lbl_0: o = ({ calling_npm("myOptionAlloc", 0); myOptionAlloc_npm(longOption, shortOption, has_arg, type, dataPtr, dataSize, help); });
-# 103 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 103 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (! o) { int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (1); rm_stack(false, 0UL, "addArg", &____must_manage_addArg, ____alias_loc_id_0, ____chimes_did_disable5, false); return ____chimes_ret_var_8; ; };
-# 104 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 104 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (! myargs) {myargs = o; } else {{
-# 107 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 107 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
        call_lbl_1: p = ({ calling_npm("lastOption", 0); lastOption_npm(myargs); });
-# 108 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 108 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       p->next = (void *)o;
-# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 109 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }; }
-# 110 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 110 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = (0); rm_stack(false, 0UL, "addArg", &____must_manage_addArg, ____alias_loc_id_0, ____chimes_did_disable5, false); return ____chimes_ret_var_9; ;
-# 111 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 111 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 rm_stack(false, 0UL, "addArg", &____must_manage_addArg, ____alias_loc_id_0, ____chimes_did_disable5, false); }
-# 112 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 113 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 114 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 112 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 113 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 114 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 void freeArgs_npm();
 void freeArgs_quick(); void freeArgs();
 void freeArgs_resumable()
-# 115 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 115 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 {const int ____chimes_did_disable6 = new_stack((void *)(&freeArgs), "freeArgs", &____must_manage_freeArgs, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 116 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 116 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    while(myargs)
-# 117 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 117 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    {
-# 118 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 118 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
        call_lbl_0: myargs = ({ calling_npm("myOptionFree", 0); myOptionFree_npm(myargs); });
-# 119 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 119 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }
-# 120 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 120 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    rm_stack(false, 0UL, "freeArgs", &____must_manage_freeArgs, ____alias_loc_id_3, ____chimes_did_disable6, false); return;
-# 121 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 121 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 }
-# 122 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 123 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 122 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 123 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 void printArgs_npm();
 void printArgs_quick(); void printArgs();
 void printArgs_resumable()
-# 124 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 124 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 {const int ____chimes_did_disable7 = new_stack((void *)(&printArgs), "printArgs", &____must_manage_printArgs, 0, 0) ; char s[4096];
-# 124 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 124 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
  if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 125 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 125 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     MyOption *o; o = (myargs) ;
-# 126 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 126 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     ;
-# 127 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 127 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    unsigned char *shortArg; ;
-# 128 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 128 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    fprintf(stdout,"\n"
-# 129 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 129 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       "  Arguments are: \n");
-# 130 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 130 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    sprintf(s,"   --%%-%ds",longest);
-# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 131 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    while(o)
-# 132 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 132 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    {
-# 133 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 133 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if (o->shortArg[0]<0xFF) {shortArg = o->shortArg; } else {shortArg = (unsigned char *) "---"; } ;
-# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 135 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       fprintf(stdout,s,o->longArg);
-# 136 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 136 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       fprintf(stdout," -%c  arg=%1d type=%c  %s\n",shortArg[0],o->argFlag,o->type,o->help);
-# 137 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 137 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       o = ((MyOption*) o->next);
-# 138 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 139 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 138 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 139 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }
-# 140 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 140 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    fprintf(stdout,"\n\n");
-# 141 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 141 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    rm_stack(false, 0UL, "printArgs", &____must_manage_printArgs, ____alias_loc_id_5, ____chimes_did_disable7, false); return;
-# 142 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 142 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 }
-# 143 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 144 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 143 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 144 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 void processArgs_npm(int argc, char** argv);
 void processArgs_quick(int argc, char** argv); void processArgs(int argc, char** argv);
 void processArgs_resumable(int argc, char** argv)
-# 145 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&processArgs), "processArgs", &____must_manage_processArgs, 2, 0, (size_t)(0UL), (size_t)(4461972309412152411UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 146 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 145 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+{const int ____chimes_did_disable8 = new_stack((void *)(&processArgs), "processArgs", &____must_manage_processArgs, 2, 0, (size_t)(0UL), (size_t)(1638881369108208683UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 146 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    MyOption *o; ;
-# 147 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 147 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     int n; n = (0) ;
-# 148 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 148 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    int i; ;
-# 149 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 149 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    struct option *opts; ;
-# 150 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 150 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    char *sArgs; ;
-# 151 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 151 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    int c; ;
-# 152 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 153 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 152 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 153 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (! myargs) {rm_stack(false, 0UL, "processArgs", &____must_manage_processArgs, ____alias_loc_id_6, ____chimes_did_disable8, false); return; };
-# 154 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 154 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o = myargs;
-# 155 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 155 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    while(o)
-# 156 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 156 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    {n++,o=((MyOption*) o->next);}
-# 157 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 158 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 157 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 158 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o = myargs;
-# 159 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   sArgs= (char*) ({ void *____chimes_tmp_ptr = calloc((2 * (n + 2)) + ((sizeof(void *) + sizeof(char) - 1) / sizeof(char)), sizeof(char)); ; calloc_helper(____chimes_tmp_ptr, 2*(n+2), sizeof(char), 4461972309412152283UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 160 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   opts = (struct option*) ({ void *____chimes_tmp_ptr = calloc((n) + ((sizeof(void *) + sizeof(struct option) - 1) / sizeof(struct option)), sizeof(struct option)); ; calloc_helper(____chimes_tmp_ptr, n, sizeof(struct option), 4461972309412152253UL, 0, 1, (int)sizeof(struct option), 2, (int)__builtin_offsetof(struct option, name), (int)__builtin_offsetof(struct option, flag)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 161 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 159 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+   sArgs= (char*) ({ void *____chimes_tmp_ptr = calloc((2 * (n + 2)) + ((sizeof(void *) + sizeof(char) - 1) / sizeof(char)), sizeof(char)); ; calloc_helper(____chimes_tmp_ptr, 2*(n+2), sizeof(char), 1638881369108208555UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 160 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+   opts = (struct option*) ({ void *____chimes_tmp_ptr = calloc((n) + ((sizeof(void *) + sizeof(struct option) - 1) / sizeof(struct option)), sizeof(struct option)); ; calloc_helper(____chimes_tmp_ptr, n, sizeof(struct option), 1638881369108208525UL, 0, 1, (int)sizeof(struct option), 2, (int)__builtin_offsetof(struct option, name), (int)__builtin_offsetof(struct option, flag)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 161 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    for (i=0; i<n; i++)
-# 162 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 162 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    {
-# 163 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 163 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       opts[i].name = o->longArg;
-# 164 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 164 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       opts[i].has_arg = o->argFlag;
-# 165 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 165 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       opts[i].flag = 0;
-# 166 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 166 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       opts[i].val = o->shortArg[0];
-# 167 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 168 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 167 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 168 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       strcat(sArgs,(char*) o->shortArg);
-# 169 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 169 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if (o->argFlag) {strcat(sArgs,":"); };
-# 170 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 170 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       o = ((MyOption*) o->next);
-# 171 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 171 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }
-# 172 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 173 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 172 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 173 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    while(1)
-# 174 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 174 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    {
-# 175 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 175 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 176 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
        int option_index; option_index = (0) ;
-# 177 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 178 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 177 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 178 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       c = getopt_long (argc, argv, sArgs, opts, &option_index);
-# 179 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 179 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if (c == -1) {break; };
-# 180 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 180 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
        call_lbl_0: o = ({ calling_npm("findOption", 0); findOption_npm(myargs, c); });
-# 181 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 181 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if ( ! o )
-# 182 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 182 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       {
-# 183 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 183 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
          fprintf(stdout,"\n\n"
-# 184 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 184 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             "    invalid switch : -%c in getopt()\n"
-# 185 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 185 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             "\n\n",
-# 186 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 186 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             c);
-# 187 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 187 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
          break;
-# 188 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 188 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       }
-# 189 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 189 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if(! o->argFlag)
-# 190 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 190 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       {
-# 191 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 191 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
           int *i; i = ((int*)o->ptr) ;
-# 192 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 192 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
          *i = 1;
-# 193 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 193 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       }
-# 194 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 194 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       else
-# 195 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 195 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       {
-# 196 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 196 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
          switch(o->type)
-# 197 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 197 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
          {
-# 198 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 198 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             case 'i':
-# 199 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 199 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                sscanf(optarg,"%d",(int*)o->ptr);
-# 200 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 200 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                break;
-# 201 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 201 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             case 'f':
-# 202 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 202 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                sscanf(optarg,"%f",(float*)o->ptr);
-# 203 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 203 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                break;
-# 204 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 204 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             case 'd':
-# 205 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 205 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                sscanf(optarg,"%lf",(double*)o->ptr);
-# 206 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 206 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                break;
-# 207 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 207 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             case 's':
-# 208 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 208 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                strncpy((char*)o->ptr,(char*)optarg,o->sz);
-# 209 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 209 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                ((char*)o->ptr)[o->sz-1] = '\0';
-# 210 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 210 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                break;
-# 211 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 211 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             case 'c':
-# 212 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 212 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                sscanf(optarg,"%c",(char*)o->ptr);
-# 213 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 213 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                break;
-# 214 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 214 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             default:
-# 215 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 215 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                fprintf(stdout,"\n\n"
-# 216 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 216 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                   "    invalid type : %c in getopt()\n"
-# 217 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 217 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                   "    valid values are 'e', 'z'. 'i','d','f','s', and 'c'\n"
-# 218 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 218 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                   "\n\n",
-# 219 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 219 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                   c);
-# 220 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 220 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
          }
-# 221 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 221 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       }
-# 222 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 222 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }
-# 223 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 224 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    ({ free_helper((((unsigned char *)opts) - sizeof(void *)), 4461972309412152253UL);free((((unsigned char *)opts) - sizeof(void *))); }) ;
-# 225 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    ({ free_helper((((unsigned char *)sArgs) - sizeof(void *)), 4461972309412152283UL);free((((unsigned char *)sArgs) - sizeof(void *))); }) ;
-# 226 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 227 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 223 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 224 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+    ({ free_helper((((unsigned char *)opts) - sizeof(void *)), 1638881369108208525UL);free((((unsigned char *)opts) - sizeof(void *))); }) ;
+# 225 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+    ({ free_helper((((unsigned char *)sArgs) - sizeof(void *)), 1638881369108208555UL);free((((unsigned char *)sArgs) - sizeof(void *))); }) ;
+# 226 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 227 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    rm_stack(false, 0UL, "processArgs", &____must_manage_processArgs, ____alias_loc_id_6, ____chimes_did_disable8, false); return;
-# 228 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 228 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 }
-# 36 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 36 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 static char* dupString_quick(const char* s)
-# 37 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&dupString), "dupString", &____must_manage_dupString, 1, 0, (size_t)(4461972309412152495UL)) ; ; ;
-# 38 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 37 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&dupString), "dupString", &____must_manage_dupString, 1, 0, (size_t)(1638881369108208767UL)) ; ; ;
+# 38 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    char *d; ;
-# 39 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 39 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (! s) {s = ""; };
-# 40 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   d = (char*) ({ void *____chimes_tmp_ptr = calloc(((strlen(s) + 1)) + ((sizeof(void *) + sizeof(char) - 1) / sizeof(char)), sizeof(char)); ; calloc_helper(____chimes_tmp_ptr, (strlen(s)+1), sizeof(char), 4461972309412152485UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 41 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 40 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+   d = (char*) ({ void *____chimes_tmp_ptr = calloc(((strlen(s) + 1)) + ((sizeof(void *) + sizeof(char) - 1) / sizeof(char)), sizeof(char)); ; calloc_helper(____chimes_tmp_ptr, (strlen(s)+1), sizeof(char), 1638881369108208757UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 41 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    strcpy(d, s);
-# 42 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    char *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (d); rm_stack(true, 4461972309412152485UL, "dupString", &____must_manage_dupString, ____alias_loc_id_8, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 43 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-rm_stack(true, 4461972309412152485UL, "dupString", &____must_manage_dupString, ____alias_loc_id_8, ____chimes_did_disable0, false); }
+# 42 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+    char *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (d); rm_stack(true, 1638881369108208757UL, "dupString", &____must_manage_dupString, ____alias_loc_id_8, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
+# 43 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+rm_stack(true, 1638881369108208757UL, "dupString", &____must_manage_dupString, ____alias_loc_id_8, ____chimes_did_disable0, false); }
 
 static char* dupString(const char* s) { return (____chimes_replaying ? dupString_resumable(s) : dupString_quick(s)); }
-# 45 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 45 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 static MyOption* myOptionAlloc_quick(
-# 46 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 46 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    const char* longOption, const char shortOption,
-# 47 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 47 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    int has_arg, const char type, void* dataPtr, int dataSize, const char* help)
-# 48 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&myOptionAlloc), "myOptionAlloc", &____must_manage_myOptionAlloc, 7, 0, (size_t)(4461972309412152005UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(4461972309412151949UL), (size_t)(0UL), (size_t)(4461972309412152023UL)) ; ; ;
-# 49 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 48 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+{const int ____chimes_did_disable1 = new_stack((void *)(&myOptionAlloc), "myOptionAlloc", &____must_manage_myOptionAlloc, 7, 0, (size_t)(1638881369108208277UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1638881369108208221UL), (size_t)(0UL), (size_t)(1638881369108208295UL)) ; ; ;
+# 49 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     static int iBase; iBase = (129) ;
-# 50 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    MyOption *o; o = ((MyOption*) ({ void *____chimes_tmp_ptr = calloc((1) + ((sizeof(void *) + sizeof(MyOption) - 1) / sizeof(MyOption)), sizeof(MyOption)); calloc_helper(____chimes_tmp_ptr, 1, sizeof(MyOption), 4461972309412151945UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 51 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 50 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+    MyOption *o; o = ((MyOption*) ({ void *____chimes_tmp_ptr = calloc((1) + ((sizeof(void *) + sizeof(MyOption) - 1) / sizeof(MyOption)), sizeof(MyOption)); calloc_helper(____chimes_tmp_ptr, 1, sizeof(MyOption), 1638881369108208217UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 51 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     call_lbl_0: o->help = ({ calling_npm("dupString", 0); dupString_npm(help); });
-# 52 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 52 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     call_lbl_1: o->longArg = ({ calling_npm("dupString", 0); dupString_npm(longOption); });
-# 53 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 53 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (shortOption) {o->shortArg[0] = (unsigned char)shortOption; } else {{
-# 56 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 56 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       o->shortArg[0] = iBase;
-# 57 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 57 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       iBase++;
-# 58 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 58 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }; }
-# 59 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 59 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o->argFlag = has_arg;
-# 60 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 60 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o->type = type;
-# 61 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 61 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o->ptr = dataPtr;
-# 62 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 62 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o->sz = dataSize;
-# 63 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 63 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (longOption) {longest = (longest>strlen(longOption)?longest:strlen(longOption)); };
-# 64 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    MyOption *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (o); rm_stack(true, 4461972309412151945UL, "myOptionAlloc", &____must_manage_myOptionAlloc, ____alias_loc_id_1, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 65 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-rm_stack(true, 4461972309412151945UL, "myOptionAlloc", &____must_manage_myOptionAlloc, ____alias_loc_id_1, ____chimes_did_disable1, false); }
+# 64 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+    MyOption *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (o); rm_stack(true, 1638881369108208217UL, "myOptionAlloc", &____must_manage_myOptionAlloc, ____alias_loc_id_1, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
+# 65 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+rm_stack(true, 1638881369108208217UL, "myOptionAlloc", &____must_manage_myOptionAlloc, ____alias_loc_id_1, ____chimes_did_disable1, false); }
 
 static MyOption* myOptionAlloc(
-# 46 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 46 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    const char* longOption, const char shortOption,
-# 47 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 47 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    int has_arg, const char type, void* dataPtr, int dataSize, const char* help) { return (____chimes_replaying ? myOptionAlloc_resumable(longOption, shortOption, has_arg, type, dataPtr, dataSize, help) : myOptionAlloc_quick(longOption, shortOption, has_arg, type, dataPtr, dataSize, help)); }
-# 67 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 67 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 static MyOption* myOptionFree_quick(MyOption* o)
-# 68 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&myOptionFree), "myOptionFree", &____must_manage_myOptionFree, 1, 0, (size_t)(4461972309412152122UL)) ; ; ;
-# 69 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 68 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+{const int ____chimes_did_disable2 = new_stack((void *)(&myOptionFree), "myOptionFree", &____must_manage_myOptionFree, 1, 0, (size_t)(1638881369108208394UL)) ; ; ;
+# 69 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    MyOption *r; ;
-# 70 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   if (!o) { MyOption *____chimes_ret_var_2; ; ____chimes_ret_var_2 = (__null); rm_stack(true, 4461972309412152088UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ; };
-# 71 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 70 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+   if (!o) { MyOption *____chimes_ret_var_2; ; ____chimes_ret_var_2 = (__null); rm_stack(true, 1638881369108208360UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ; };
+# 71 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    r = ((MyOption*) o->next);
-# 72 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   if (o->longArg) { ({ free_helper((((unsigned char *)o->longArg) - sizeof(void *)), 4461972309412152088UL);free((((unsigned char *)o->longArg) - sizeof(void *))); }) ; };
-# 73 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   if (o->help) { ({ free_helper((((unsigned char *)o->help) - sizeof(void *)), 4461972309412152088UL);free((((unsigned char *)o->help) - sizeof(void *))); }) ; };
-# 74 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    ({ free_helper((((unsigned char *)o) - sizeof(void *)), 4461972309412152122UL);free((((unsigned char *)o) - sizeof(void *))); }) ;
-# 75 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    MyOption *____chimes_ret_var_3; ; ____chimes_ret_var_3 = (r); rm_stack(true, 4461972309412152088UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2, false); return ____chimes_ret_var_3; ;
-# 76 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-rm_stack(true, 4461972309412152088UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2, false); }
+# 72 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+   if (o->longArg) { ({ free_helper((((unsigned char *)o->longArg) - sizeof(void *)), 1638881369108208360UL);free((((unsigned char *)o->longArg) - sizeof(void *))); }) ; };
+# 73 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+   if (o->help) { ({ free_helper((((unsigned char *)o->help) - sizeof(void *)), 1638881369108208360UL);free((((unsigned char *)o->help) - sizeof(void *))); }) ; };
+# 74 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+    ({ free_helper((((unsigned char *)o) - sizeof(void *)), 1638881369108208394UL);free((((unsigned char *)o) - sizeof(void *))); }) ;
+# 75 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+    MyOption *____chimes_ret_var_3; ; ____chimes_ret_var_3 = (r); rm_stack(true, 1638881369108208360UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2, false); return ____chimes_ret_var_3; ;
+# 76 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+rm_stack(true, 1638881369108208360UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2, false); }
 
 static MyOption* myOptionFree(MyOption* o) { return (____chimes_replaying ? myOptionFree_resumable(o) : myOptionFree_quick(o)); }
-# 78 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 78 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 static MyOption* lastOption_quick(MyOption* o)
-# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&lastOption), "lastOption", &____must_manage_lastOption, 1, 0, (size_t)(4461972309412152060UL)) ; ; ;
-# 80 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   if (! o) { MyOption *____chimes_ret_var_4; ; ____chimes_ret_var_4 = (o); rm_stack(true, 4461972309412152060UL, "lastOption", &____must_manage_lastOption, ____alias_loc_id_2, ____chimes_did_disable3, false); return ____chimes_ret_var_4; ; };
-# 81 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 79 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+{const int ____chimes_did_disable3 = new_stack((void *)(&lastOption), "lastOption", &____must_manage_lastOption, 1, 0, (size_t)(1638881369108208332UL)) ; ; ;
+# 80 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+   if (! o) { MyOption *____chimes_ret_var_4; ; ____chimes_ret_var_4 = (o); rm_stack(true, 1638881369108208332UL, "lastOption", &____must_manage_lastOption, ____alias_loc_id_2, ____chimes_did_disable3, false); return ____chimes_ret_var_4; ; };
+# 81 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    while(((MyOption*) o->next)) o = ((MyOption*) o->next);
-# 82 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    MyOption *____chimes_ret_var_5; ; ____chimes_ret_var_5 = (o); rm_stack(true, 4461972309412152060UL, "lastOption", &____must_manage_lastOption, ____alias_loc_id_2, ____chimes_did_disable3, false); return ____chimes_ret_var_5; ;
-# 83 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-rm_stack(true, 4461972309412152060UL, "lastOption", &____must_manage_lastOption, ____alias_loc_id_2, ____chimes_did_disable3, false); }
+# 82 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+    MyOption *____chimes_ret_var_5; ; ____chimes_ret_var_5 = (o); rm_stack(true, 1638881369108208332UL, "lastOption", &____must_manage_lastOption, ____alias_loc_id_2, ____chimes_did_disable3, false); return ____chimes_ret_var_5; ;
+# 83 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+rm_stack(true, 1638881369108208332UL, "lastOption", &____must_manage_lastOption, ____alias_loc_id_2, ____chimes_did_disable3, false); }
 
 static MyOption* lastOption(MyOption* o) { return (____chimes_replaying ? lastOption_resumable(o) : lastOption_quick(o)); }
-# 85 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 85 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 static MyOption* findOption_quick(MyOption* o, unsigned char shortArg)
-# 86 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&findOption), "findOption", &____must_manage_findOption, 2, 0, (size_t)(4461972309412152463UL), (size_t)(0UL)) ; ; ;
-# 87 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 86 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+{const int ____chimes_did_disable4 = new_stack((void *)(&findOption), "findOption", &____must_manage_findOption, 2, 0, (size_t)(1638881369108208735UL), (size_t)(0UL)) ; ; ;
+# 87 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    while(o)
-# 88 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 88 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    {
-# 89 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-      if (o->shortArg[0] == shortArg) { MyOption *____chimes_ret_var_6; ; ____chimes_ret_var_6 = (o); rm_stack(true, 4461972309412152463UL, "findOption", &____must_manage_findOption, ____alias_loc_id_7, ____chimes_did_disable4, false); return ____chimes_ret_var_6; ; };
-# 90 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 89 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+      if (o->shortArg[0] == shortArg) { MyOption *____chimes_ret_var_6; ; ____chimes_ret_var_6 = (o); rm_stack(true, 1638881369108208735UL, "findOption", &____must_manage_findOption, ____alias_loc_id_7, ____chimes_did_disable4, false); return ____chimes_ret_var_6; ; };
+# 90 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       o = ((MyOption*) o->next);
-# 91 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 91 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }
-# 92 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    MyOption *____chimes_ret_var_7; ; ____chimes_ret_var_7 = (o); rm_stack(true, 4461972309412152463UL, "findOption", &____must_manage_findOption, ____alias_loc_id_7, ____chimes_did_disable4, false); return ____chimes_ret_var_7; ;
-# 93 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-rm_stack(true, 4461972309412152463UL, "findOption", &____must_manage_findOption, ____alias_loc_id_7, ____chimes_did_disable4, false); }
+# 92 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+    MyOption *____chimes_ret_var_7; ; ____chimes_ret_var_7 = (o); rm_stack(true, 1638881369108208735UL, "findOption", &____must_manage_findOption, ____alias_loc_id_7, ____chimes_did_disable4, false); return ____chimes_ret_var_7; ;
+# 93 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+rm_stack(true, 1638881369108208735UL, "findOption", &____must_manage_findOption, ____alias_loc_id_7, ____chimes_did_disable4, false); }
 
 static MyOption* findOption(MyOption* o, unsigned char shortArg) { return (____chimes_replaying ? findOption_resumable(o, shortArg) : findOption_quick(o, shortArg)); }
-# 96 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 96 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 int addArg_quick(const char* longOption, const char shortOption,
-# 97 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 97 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
            int has_arg, const char type, void* dataPtr, int dataSize,
-# 98 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 98 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
            const char* help)
-# 99 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&addArg), "addArg", &____must_manage_addArg, 7, 0, (size_t)(4461972309412151912UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(4461972309412151916UL), (size_t)(0UL), (size_t)(4461972309412151918UL)) ; ; ;
-# 100 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 99 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+{const int ____chimes_did_disable5 = new_stack((void *)(&addArg), "addArg", &____must_manage_addArg, 7, 0, (size_t)(1638881369108208184UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1638881369108208188UL), (size_t)(0UL), (size_t)(1638881369108208190UL)) ; ; ;
+# 100 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    MyOption *o; ;
-# 101 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 101 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    MyOption *p; ;
-# 102 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 102 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     call_lbl_0: o = ({ calling_npm("myOptionAlloc", 0); myOptionAlloc_npm(longOption, shortOption, has_arg, type, dataPtr, dataSize, help); });
-# 103 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 103 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (! o) { int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (1); rm_stack(false, 0UL, "addArg", &____must_manage_addArg, ____alias_loc_id_0, ____chimes_did_disable5, false); return ____chimes_ret_var_8; ; };
-# 104 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 104 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (! myargs) {myargs = o; } else {{
-# 107 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 107 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
        call_lbl_1: p = ({ calling_npm("lastOption", 0); lastOption_npm(myargs); });
-# 108 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 108 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       p->next = (void *)o;
-# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 109 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }; }
-# 110 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 110 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = (0); rm_stack(false, 0UL, "addArg", &____must_manage_addArg, ____alias_loc_id_0, ____chimes_did_disable5, false); return ____chimes_ret_var_9; ;
-# 111 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 111 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 rm_stack(false, 0UL, "addArg", &____must_manage_addArg, ____alias_loc_id_0, ____chimes_did_disable5, false); }
 
 int addArg(const char* longOption, const char shortOption,
-# 97 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 97 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
            int has_arg, const char type, void* dataPtr, int dataSize,
-# 98 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 98 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
            const char* help) { return (____chimes_replaying ? addArg_resumable(longOption, shortOption, has_arg, type, dataPtr, dataSize, help) : addArg_quick(longOption, shortOption, has_arg, type, dataPtr, dataSize, help)); }
-# 114 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 114 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 void freeArgs_quick()
-# 115 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 115 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 {const int ____chimes_did_disable6 = new_stack((void *)(&freeArgs), "freeArgs", &____must_manage_freeArgs, 0, 0) ; ; ;
-# 116 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 116 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    while(myargs)
-# 117 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 117 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    {
-# 118 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 118 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
        call_lbl_0: myargs = ({ calling_npm("myOptionFree", 0); myOptionFree_npm(myargs); });
-# 119 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 119 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }
-# 120 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 120 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    rm_stack(false, 0UL, "freeArgs", &____must_manage_freeArgs, ____alias_loc_id_3, ____chimes_did_disable6, false); return;
-# 121 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 121 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 }
 
 void freeArgs() { (____chimes_replaying ? freeArgs_resumable() : freeArgs_quick()); }
-# 123 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 123 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 void printArgs_quick()
-# 124 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 124 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 {const int ____chimes_did_disable7 = new_stack((void *)(&printArgs), "printArgs", &____must_manage_printArgs, 0, 0) ; char s[4096];
-# 124 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 124 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
  ; ;
-# 125 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 125 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     MyOption *o; o = (myargs) ;
-# 126 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 126 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     ;
-# 127 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 127 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    unsigned char *shortArg; ;
-# 128 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 128 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    fprintf(stdout,"\n"
-# 129 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 129 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       "  Arguments are: \n");
-# 130 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 130 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    sprintf(s,"   --%%-%ds",longest);
-# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 131 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    while(o)
-# 132 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 132 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    {
-# 133 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 133 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if (o->shortArg[0]<0xFF) {shortArg = o->shortArg; } else {shortArg = (unsigned char *) "---"; } ;
-# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 135 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       fprintf(stdout,s,o->longArg);
-# 136 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 136 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       fprintf(stdout," -%c  arg=%1d type=%c  %s\n",shortArg[0],o->argFlag,o->type,o->help);
-# 137 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 137 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       o = ((MyOption*) o->next);
-# 138 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 139 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 138 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 139 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }
-# 140 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 140 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    fprintf(stdout,"\n\n");
-# 141 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 141 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    rm_stack(false, 0UL, "printArgs", &____must_manage_printArgs, ____alias_loc_id_5, ____chimes_did_disable7, false); return;
-# 142 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 142 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 }
 
 void printArgs() { (____chimes_replaying ? printArgs_resumable() : printArgs_quick()); }
-# 144 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 144 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 void processArgs_quick(int argc, char** argv)
-# 145 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&processArgs), "processArgs", &____must_manage_processArgs, 2, 0, (size_t)(0UL), (size_t)(4461972309412152411UL)) ; ; ;
-# 146 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 145 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+{const int ____chimes_did_disable8 = new_stack((void *)(&processArgs), "processArgs", &____must_manage_processArgs, 2, 0, (size_t)(0UL), (size_t)(1638881369108208683UL)) ; ; ;
+# 146 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    MyOption *o; ;
-# 147 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 147 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     int n; n = (0) ;
-# 148 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 148 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    int i; ;
-# 149 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 149 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    struct option *opts; ;
-# 150 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 150 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    char *sArgs; ;
-# 151 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 151 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    int c; ;
-# 152 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 153 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 152 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 153 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (! myargs) {rm_stack(false, 0UL, "processArgs", &____must_manage_processArgs, ____alias_loc_id_6, ____chimes_did_disable8, false); return; };
-# 154 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 154 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o = myargs;
-# 155 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 155 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    while(o)
-# 156 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 156 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    {n++,o=((MyOption*) o->next);}
-# 157 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 158 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 157 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 158 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o = myargs;
-# 159 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   sArgs= (char*) ({ void *____chimes_tmp_ptr = calloc((2 * (n + 2)) + ((sizeof(void *) + sizeof(char) - 1) / sizeof(char)), sizeof(char)); ; calloc_helper(____chimes_tmp_ptr, 2*(n+2), sizeof(char), 4461972309412152283UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 160 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   opts = (struct option*) ({ void *____chimes_tmp_ptr = calloc((n) + ((sizeof(void *) + sizeof(struct option) - 1) / sizeof(struct option)), sizeof(struct option)); ; calloc_helper(____chimes_tmp_ptr, n, sizeof(struct option), 4461972309412152253UL, 0, 1, (int)sizeof(struct option), 2, (int)__builtin_offsetof(struct option, name), (int)__builtin_offsetof(struct option, flag)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 161 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 159 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+   sArgs= (char*) ({ void *____chimes_tmp_ptr = calloc((2 * (n + 2)) + ((sizeof(void *) + sizeof(char) - 1) / sizeof(char)), sizeof(char)); ; calloc_helper(____chimes_tmp_ptr, 2*(n+2), sizeof(char), 1638881369108208555UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 160 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+   opts = (struct option*) ({ void *____chimes_tmp_ptr = calloc((n) + ((sizeof(void *) + sizeof(struct option) - 1) / sizeof(struct option)), sizeof(struct option)); ; calloc_helper(____chimes_tmp_ptr, n, sizeof(struct option), 1638881369108208525UL, 0, 1, (int)sizeof(struct option), 2, (int)__builtin_offsetof(struct option, name), (int)__builtin_offsetof(struct option, flag)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 161 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    for (i=0; i<n; i++)
-# 162 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 162 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    {
-# 163 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 163 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       opts[i].name = o->longArg;
-# 164 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 164 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       opts[i].has_arg = o->argFlag;
-# 165 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 165 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       opts[i].flag = 0;
-# 166 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 166 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       opts[i].val = o->shortArg[0];
-# 167 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 168 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 167 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 168 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       strcat(sArgs,(char*) o->shortArg);
-# 169 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 169 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if (o->argFlag) {strcat(sArgs,":"); };
-# 170 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 170 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       o = ((MyOption*) o->next);
-# 171 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 171 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }
-# 172 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 173 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 172 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 173 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    while(1)
-# 174 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 174 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    {
-# 175 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 175 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 176 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
        int option_index; option_index = (0) ;
-# 177 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 178 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 177 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 178 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       c = getopt_long (argc, argv, sArgs, opts, &option_index);
-# 179 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 179 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if (c == -1) {break; };
-# 180 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 180 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
        call_lbl_0: o = ({ calling_npm("findOption", 0); findOption_npm(myargs, c); });
-# 181 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 181 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if ( ! o )
-# 182 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 182 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       {
-# 183 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 183 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
          fprintf(stdout,"\n\n"
-# 184 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 184 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             "    invalid switch : -%c in getopt()\n"
-# 185 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 185 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             "\n\n",
-# 186 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 186 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             c);
-# 187 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 187 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
          break;
-# 188 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 188 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       }
-# 189 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 189 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if(! o->argFlag)
-# 190 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 190 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       {
-# 191 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 191 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
           int *i; i = ((int*)o->ptr) ;
-# 192 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 192 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
          *i = 1;
-# 193 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 193 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       }
-# 194 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 194 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       else
-# 195 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 195 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       {
-# 196 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 196 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
          switch(o->type)
-# 197 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 197 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
          {
-# 198 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 198 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             case 'i':
-# 199 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 199 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                sscanf(optarg,"%d",(int*)o->ptr);
-# 200 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 200 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                break;
-# 201 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 201 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             case 'f':
-# 202 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 202 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                sscanf(optarg,"%f",(float*)o->ptr);
-# 203 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 203 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                break;
-# 204 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 204 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             case 'd':
-# 205 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 205 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                sscanf(optarg,"%lf",(double*)o->ptr);
-# 206 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 206 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                break;
-# 207 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 207 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             case 's':
-# 208 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 208 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                strncpy((char*)o->ptr,(char*)optarg,o->sz);
-# 209 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 209 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                ((char*)o->ptr)[o->sz-1] = '\0';
-# 210 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 210 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                break;
-# 211 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 211 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             case 'c':
-# 212 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 212 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                sscanf(optarg,"%c",(char*)o->ptr);
-# 213 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 213 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                break;
-# 214 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 214 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             default:
-# 215 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 215 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                fprintf(stdout,"\n\n"
-# 216 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 216 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                   "    invalid type : %c in getopt()\n"
-# 217 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 217 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                   "    valid values are 'e', 'z'. 'i','d','f','s', and 'c'\n"
-# 218 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 218 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                   "\n\n",
-# 219 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 219 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                   c);
-# 220 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 220 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
          }
-# 221 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 221 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       }
-# 222 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 222 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }
-# 223 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 224 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    ({ free_helper((((unsigned char *)opts) - sizeof(void *)), 4461972309412152253UL);free((((unsigned char *)opts) - sizeof(void *))); }) ;
-# 225 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    ({ free_helper((((unsigned char *)sArgs) - sizeof(void *)), 4461972309412152283UL);free((((unsigned char *)sArgs) - sizeof(void *))); }) ;
-# 226 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 227 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 223 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 224 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+    ({ free_helper((((unsigned char *)opts) - sizeof(void *)), 1638881369108208525UL);free((((unsigned char *)opts) - sizeof(void *))); }) ;
+# 225 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+    ({ free_helper((((unsigned char *)sArgs) - sizeof(void *)), 1638881369108208555UL);free((((unsigned char *)sArgs) - sizeof(void *))); }) ;
+# 226 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 227 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    rm_stack(false, 0UL, "processArgs", &____must_manage_processArgs, ____alias_loc_id_6, ____chimes_did_disable8, false); return;
-# 228 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 228 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 }
 
 void processArgs(int argc, char** argv) { (____chimes_replaying ? processArgs_resumable(argc, argv) : processArgs_quick(argc, argv)); }
-# 36 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 36 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 static char* dupString_npm(const char* s)
-# 37 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 37 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 {
-# 38 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 38 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    char* d;
-# 39 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 39 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (! s) {s = ""; };
-# 40 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   d = (char*) ({ void *____chimes_tmp_ptr = calloc(((strlen(s) + 1)) + ((sizeof(void *) + sizeof(char) - 1) / sizeof(char)), sizeof(char)); calloc_helper(____chimes_tmp_ptr, (strlen(s)+1), sizeof(char), 4461972309412152485UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 41 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 40 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+   d = (char*) ({ void *____chimes_tmp_ptr = calloc(((strlen(s) + 1)) + ((sizeof(void *) + sizeof(char) - 1) / sizeof(char)), sizeof(char)); calloc_helper(____chimes_tmp_ptr, (strlen(s)+1), sizeof(char), 1638881369108208757UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 41 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    strcpy(d, s);
-# 42 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 42 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     char * ____chimes_ret_var_0; ____chimes_ret_var_0 = (d); return ____chimes_ret_var_0; ;
-# 43 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 43 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 }
-# 45 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 45 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 static MyOption* myOptionAlloc_npm(
-# 46 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 46 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    const char* longOption, const char shortOption,
-# 47 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 47 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    int has_arg, const char type, void* dataPtr, int dataSize, const char* help)
-# 48 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 48 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 {
-# 49 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 49 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    static int iBase=129;
-# 50 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   MyOption* o = (MyOption*) ({ void *____chimes_tmp_ptr = calloc((1) + ((sizeof(void *) + sizeof(MyOption) - 1) / sizeof(MyOption)), sizeof(MyOption)); calloc_helper(____chimes_tmp_ptr, 1, sizeof(MyOption), 4461972309412151945UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 51 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 50 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+   MyOption* o = (MyOption*) ({ void *____chimes_tmp_ptr = calloc((1) + ((sizeof(void *) + sizeof(MyOption) - 1) / sizeof(MyOption)), sizeof(MyOption)); calloc_helper(____chimes_tmp_ptr, 1, sizeof(MyOption), 1638881369108208217UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 51 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o->help = dupString_npm(help);
-# 52 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 52 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o->longArg = dupString_npm(longOption);
-# 53 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 53 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (shortOption) {o->shortArg[0] = (unsigned char)shortOption; } else {{
-# 56 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 56 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       o->shortArg[0] = iBase;
-# 57 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 57 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       iBase++;
-# 58 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 58 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }; }
-# 59 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 59 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o->argFlag = has_arg;
-# 60 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 60 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o->type = type;
-# 61 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 61 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o->ptr = dataPtr;
-# 62 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 62 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o->sz = dataSize;
-# 63 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 63 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (longOption) {longest = (longest>strlen(longOption)?longest:strlen(longOption)); };
-# 64 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 64 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     MyOption * ____chimes_ret_var_1; ____chimes_ret_var_1 = (o); return ____chimes_ret_var_1; ;
-# 65 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 65 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 }
-# 67 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 67 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 static MyOption* myOptionFree_npm(MyOption* o)
-# 68 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 68 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 {
-# 69 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 69 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    MyOption* r;
-# 70 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 70 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (!o) { MyOption * ____chimes_ret_var_2; ____chimes_ret_var_2 = (__null); return ____chimes_ret_var_2; ; };
-# 71 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 71 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    r = ((MyOption*) o->next);
-# 72 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   if (o->longArg) { ({ free_helper((((unsigned char *)o->longArg) - sizeof(void *)), 4461972309412152088UL);free((((unsigned char *)o->longArg) - sizeof(void *))); }) ; };
-# 73 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   if (o->help) { ({ free_helper((((unsigned char *)o->help) - sizeof(void *)), 4461972309412152088UL);free((((unsigned char *)o->help) - sizeof(void *))); }) ; };
-# 74 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    ({ free_helper((((unsigned char *)o) - sizeof(void *)), 4461972309412152122UL);free((((unsigned char *)o) - sizeof(void *))); }) ;
-# 75 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 72 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+   if (o->longArg) { ({ free_helper((((unsigned char *)o->longArg) - sizeof(void *)), 1638881369108208360UL);free((((unsigned char *)o->longArg) - sizeof(void *))); }) ; };
+# 73 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+   if (o->help) { ({ free_helper((((unsigned char *)o->help) - sizeof(void *)), 1638881369108208360UL);free((((unsigned char *)o->help) - sizeof(void *))); }) ; };
+# 74 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+    ({ free_helper((((unsigned char *)o) - sizeof(void *)), 1638881369108208394UL);free((((unsigned char *)o) - sizeof(void *))); }) ;
+# 75 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     MyOption * ____chimes_ret_var_3; ____chimes_ret_var_3 = (r); return ____chimes_ret_var_3; ;
-# 76 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 76 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 }
-# 78 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 78 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 static MyOption* lastOption_npm(MyOption* o)
-# 79 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 79 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 {
-# 80 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 80 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (! o) { MyOption * ____chimes_ret_var_4; ____chimes_ret_var_4 = (o); return ____chimes_ret_var_4; ; };
-# 81 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 81 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    while(((MyOption*) o->next)) o = ((MyOption*) o->next);
-# 82 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 82 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     MyOption * ____chimes_ret_var_5; ____chimes_ret_var_5 = (o); return ____chimes_ret_var_5; ;
-# 83 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 83 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 }
-# 85 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 85 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 static MyOption* findOption_npm(MyOption* o, unsigned char shortArg)
-# 86 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 86 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 {
-# 87 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 87 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    while(o)
-# 88 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 88 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    {
-# 89 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 89 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if (o->shortArg[0] == shortArg) { MyOption * ____chimes_ret_var_6; ____chimes_ret_var_6 = (o); return ____chimes_ret_var_6; ; };
-# 90 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 90 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       o = ((MyOption*) o->next);
-# 91 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 91 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }
-# 92 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 92 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     MyOption * ____chimes_ret_var_7; ____chimes_ret_var_7 = (o); return ____chimes_ret_var_7; ;
-# 93 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 93 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 }
-# 96 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 96 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 int addArg_npm(const char* longOption, const char shortOption,
-# 97 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 97 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
            int has_arg, const char type, void* dataPtr, int dataSize,
-# 98 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 98 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
            const char* help)
-# 99 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 99 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 {
-# 100 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 100 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    MyOption* o;
-# 101 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 101 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    MyOption* p;
-# 102 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 102 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o = myOptionAlloc_npm(longOption, shortOption, has_arg, type, dataPtr, dataSize, help);
-# 103 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 103 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (! o) { int ____chimes_ret_var_8; ____chimes_ret_var_8 = (1); return ____chimes_ret_var_8; ; };
-# 104 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 104 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (! myargs) {myargs = o; } else {{
-# 107 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 107 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       p = lastOption_npm(myargs);
-# 108 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 108 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       p->next = (void *)o;
-# 109 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 109 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }; }
-# 110 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 110 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     int ____chimes_ret_var_9; ____chimes_ret_var_9 = (0); return ____chimes_ret_var_9; ;
-# 111 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 111 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 }
-# 114 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 114 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 void freeArgs_npm()
-# 115 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 115 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 {
-# 116 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 116 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    while(myargs)
-# 117 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 117 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    {
-# 118 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 118 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       myargs = myOptionFree_npm(myargs);
-# 119 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 119 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }
-# 120 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 120 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    return;
-# 121 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 121 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 }
-# 123 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 123 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 void printArgs_npm()
-# 124 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 124 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 {
-# 125 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 125 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    MyOption* o = myargs;
-# 126 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 126 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    char s[4096];
-# 127 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 127 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    unsigned char *shortArg;
-# 128 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 128 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    fprintf(stdout,"\n"
-# 129 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 129 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       "  Arguments are: \n");
-# 130 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 130 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    sprintf(s,"   --%%-%ds",longest);
-# 131 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 131 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    while(o)
-# 132 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 132 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    {
-# 133 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 133 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if (o->shortArg[0]<0xFF) {shortArg = o->shortArg; } else {shortArg = (unsigned char *) "---"; } ;
-# 135 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 135 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       fprintf(stdout,s,o->longArg);
-# 136 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 136 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       fprintf(stdout," -%c  arg=%1d type=%c  %s\n",shortArg[0],o->argFlag,o->type,o->help);
-# 137 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 137 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       o = ((MyOption*) o->next);
-# 138 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 139 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 138 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 139 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }
-# 140 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 140 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    fprintf(stdout,"\n\n");
-# 141 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 141 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    return;
-# 142 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 142 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 }
-# 144 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 144 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 void processArgs_npm(int argc, char** argv)
-# 145 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 145 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 {
-# 146 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 146 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    MyOption* o;
-# 147 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 147 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    int n=0;
-# 148 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 148 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    int i;
-# 149 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 149 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    struct option* opts;
-# 150 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 150 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    char* sArgs;
-# 151 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 151 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    int c;
-# 152 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 153 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 152 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 153 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (! myargs) {return; };
-# 154 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 154 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o = myargs;
-# 155 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 155 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    while(o)
-# 156 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 156 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    {n++,o=((MyOption*) o->next);}
-# 157 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 158 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 157 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 158 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o = myargs;
-# 159 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   sArgs= (char*) ({ void *____chimes_tmp_ptr = calloc((2 * (n + 2)) + ((sizeof(void *) + sizeof(char) - 1) / sizeof(char)), sizeof(char)); calloc_helper(____chimes_tmp_ptr, 2*(n+2), sizeof(char), 4461972309412152283UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 160 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   opts = (struct option*) ({ void *____chimes_tmp_ptr = calloc((n) + ((sizeof(void *) + sizeof(struct option) - 1) / sizeof(struct option)), sizeof(struct option)); calloc_helper(____chimes_tmp_ptr, n, sizeof(struct option), 4461972309412152253UL, 0, 1, (int)sizeof(struct option), 2, (int)__builtin_offsetof(struct option, name), (int)__builtin_offsetof(struct option, flag)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 161 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 159 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+   sArgs= (char*) ({ void *____chimes_tmp_ptr = calloc((2 * (n + 2)) + ((sizeof(void *) + sizeof(char) - 1) / sizeof(char)), sizeof(char)); calloc_helper(____chimes_tmp_ptr, 2*(n+2), sizeof(char), 1638881369108208555UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 160 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+   opts = (struct option*) ({ void *____chimes_tmp_ptr = calloc((n) + ((sizeof(void *) + sizeof(struct option) - 1) / sizeof(struct option)), sizeof(struct option)); calloc_helper(____chimes_tmp_ptr, n, sizeof(struct option), 1638881369108208525UL, 0, 1, (int)sizeof(struct option), 2, (int)__builtin_offsetof(struct option, name), (int)__builtin_offsetof(struct option, flag)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 161 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    for (i=0; i<n; i++)
-# 162 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 162 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    {
-# 163 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 163 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       opts[i].name = o->longArg;
-# 164 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 164 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       opts[i].has_arg = o->argFlag;
-# 165 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 165 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       opts[i].flag = 0;
-# 166 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 166 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       opts[i].val = o->shortArg[0];
-# 167 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 168 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 167 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 168 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       strcat(sArgs,(char*) o->shortArg);
-# 169 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 169 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if (o->argFlag) {strcat(sArgs,":"); };
-# 170 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 170 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       o = ((MyOption*) o->next);
-# 171 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 171 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }
-# 172 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 173 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 172 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 173 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    while(1)
-# 174 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 174 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    {
-# 175 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 176 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 175 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 176 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       int option_index = 0;
-# 177 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 178 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 177 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 178 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       c = getopt_long (argc, argv, sArgs, opts, &option_index);
-# 179 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 179 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if (c == -1) {break; };
-# 180 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 180 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       o = findOption_npm(myargs, c);
-# 181 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 181 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if ( ! o )
-# 182 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 182 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       {
-# 183 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 183 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
          fprintf(stdout,"\n\n"
-# 184 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 184 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             "    invalid switch : -%c in getopt()\n"
-# 185 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 185 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             "\n\n",
-# 186 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 186 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             c);
-# 187 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 187 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
          break;
-# 188 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 188 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       }
-# 189 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 189 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if(! o->argFlag)
-# 190 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 190 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       {
-# 191 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 191 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
          int* i = (int*)o->ptr;
-# 192 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 192 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
          *i = 1;
-# 193 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 193 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       }
-# 194 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 194 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       else
-# 195 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 195 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       {
-# 196 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 196 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
          switch(o->type)
-# 197 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 197 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
          {
-# 198 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 198 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             case 'i':
-# 199 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 199 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                sscanf(optarg,"%d",(int*)o->ptr);
-# 200 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 200 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                break;
-# 201 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 201 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             case 'f':
-# 202 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 202 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                sscanf(optarg,"%f",(float*)o->ptr);
-# 203 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 203 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                break;
-# 204 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 204 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             case 'd':
-# 205 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 205 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                sscanf(optarg,"%lf",(double*)o->ptr);
-# 206 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 206 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                break;
-# 207 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 207 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             case 's':
-# 208 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 208 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                strncpy((char*)o->ptr,(char*)optarg,o->sz);
-# 209 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 209 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                ((char*)o->ptr)[o->sz-1] = '\0';
-# 210 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 210 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                break;
-# 211 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 211 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             case 'c':
-# 212 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 212 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                sscanf(optarg,"%c",(char*)o->ptr);
-# 213 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 213 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                break;
-# 214 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 214 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             default:
-# 215 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 215 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                fprintf(stdout,"\n\n"
-# 216 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 216 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                   "    invalid type : %c in getopt()\n"
-# 217 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 217 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                   "    valid values are 'e', 'z'. 'i','d','f','s', and 'c'\n"
-# 218 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 218 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                   "\n\n",
-# 219 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 219 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                   c);
-# 220 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 220 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
          }
-# 221 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 221 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       }
-# 222 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 222 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }
-# 223 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 224 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    ({ free_helper((((unsigned char *)opts) - sizeof(void *)), 4461972309412152253UL);free((((unsigned char *)opts) - sizeof(void *))); }) ;
-# 225 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    ({ free_helper((((unsigned char *)sArgs) - sizeof(void *)), 4461972309412152283UL);free((((unsigned char *)sArgs) - sizeof(void *))); }) ;
-# 226 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 227 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 223 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 224 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+    ({ free_helper((((unsigned char *)opts) - sizeof(void *)), 1638881369108208525UL);free((((unsigned char *)opts) - sizeof(void *))); }) ;
+# 225 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+    ({ free_helper((((unsigned char *)sArgs) - sizeof(void *)), 1638881369108208555UL);free((((unsigned char *)sArgs) - sizeof(void *))); }) ;
+# 226 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 227 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    return;
-# 228 "/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 228 "/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 }
 
 
@@ -3945,25 +3945,25 @@ void processArgs_npm(int argc, char** argv)
 
 
 static int module_init() {
-    init_module(4461972309412151844UL, 43, 9, 0, 9, 9, 0, 9, 6, 0, 2,
-                           &____alias_loc_id_0, (unsigned)14, (unsigned)0, (unsigned)0, (4461972309412151844UL + 1UL), (4461972309412151844UL + 2UL), (4461972309412151844UL + 3UL), (4461972309412151844UL + 4UL), (4461972309412151844UL + 5UL), (4461972309412151844UL + 6UL), (4461972309412151844UL + 7UL), (4461972309412151844UL + 8UL), (4461972309412151844UL + 9UL), (4461972309412151844UL + 10UL), (4461972309412151844UL + 11UL), (4461972309412151844UL + 12UL), (4461972309412151844UL + 53UL), (4461972309412151844UL + 655UL),
-                           &____alias_loc_id_1, (unsigned)11, (unsigned)0, (unsigned)0, (4461972309412151844UL + 77UL), (4461972309412151844UL + 78UL), (4461972309412151844UL + 79UL), (4461972309412151844UL + 80UL), (4461972309412151844UL + 81UL), (4461972309412151844UL + 82UL), (4461972309412151844UL + 83UL), (4461972309412151844UL + 84UL), (4461972309412151844UL + 85UL), (4461972309412151844UL + 101UL), (4461972309412151844UL + 659UL),
-                           &____alias_loc_id_2, (unsigned)4, (unsigned)0, (unsigned)0, (4461972309412151844UL + 180UL), (4461972309412151844UL + 181UL), (4461972309412151844UL + 182UL), (4461972309412151844UL + 183UL),
-                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (4461972309412151844UL + 655UL),
-                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (unsigned)0, (4461972309412151844UL + 226UL), (4461972309412151844UL + 227UL), (4461972309412151844UL + 228UL), (4461972309412151844UL + 229UL), (4461972309412151844UL + 230UL),
-                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (unsigned)0, (4461972309412151844UL + 279UL), (4461972309412151844UL + 281UL),
-                           &____alias_loc_id_6, (unsigned)13, (unsigned)0, (unsigned)0, (4461972309412151844UL + 345UL), (4461972309412151844UL + 346UL), (4461972309412151844UL + 347UL), (4461972309412151844UL + 348UL), (4461972309412151844UL + 349UL), (4461972309412151844UL + 350UL), (4461972309412151844UL + 351UL), (4461972309412151844UL + 352UL), (4461972309412151844UL + 353UL), (4461972309412151844UL + 354UL), (4461972309412151844UL + 409UL), (4461972309412151844UL + 439UL), (4461972309412151844UL + 660UL),
-                           &____alias_loc_id_7, (unsigned)5, (unsigned)0, (unsigned)0, (4461972309412151844UL + 577UL), (4461972309412151844UL + 578UL), (4461972309412151844UL + 579UL), (4461972309412151844UL + 580UL), (4461972309412151844UL + 581UL),
-                           &____alias_loc_id_8, (unsigned)4, (unsigned)0, (unsigned)0, (4461972309412151844UL + 627UL), (4461972309412151844UL + 628UL), (4461972309412151844UL + 629UL), (4461972309412151844UL + 641UL),
-                            "myOptionAlloc", 1, (void *)(&myOptionAlloc_npm), (void *)__null, 0, 7, (4461972309412151844UL + 161UL), 0UL, 0UL, 0UL, (4461972309412151844UL + 105UL), 0UL, (4461972309412151844UL + 179UL), (4461972309412151844UL + 101UL), 5, "calloc", 2, 0UL, 0UL, (4461972309412151844UL + 101UL), "dupString", 1, (4461972309412151844UL + 179UL), (4461972309412151844UL + 105UL), "dupString", 1, (4461972309412151844UL + 161UL), (4461972309412151844UL + 105UL), "strlen", 1, (4461972309412151844UL + 161UL), 0UL, "strlen", 1, (4461972309412151844UL + 161UL), 0UL,
-                            "myOptionFree", 1, (void *)(&myOptionFree_npm), (void *)__null, 0, 1, (4461972309412151844UL + 278UL), (4461972309412151844UL + 244UL), 3, "free", 1, (4461972309412151844UL + 244UL), 0UL, "free", 1, (4461972309412151844UL + 244UL), 0UL, "free", 1, (4461972309412151844UL + 278UL), 0UL,
-                            "freeArgs", 0, "_Z8freeArgsv", "_Z12freeArgs_npmv", 0, 0, 0UL, 1, "myOptionFree", 1, (4461972309412151844UL + 660UL), (4461972309412151844UL + 660UL),
-                            "lastOption", 1, (void *)(&lastOption_npm), (void *)__null, 0, 1, (4461972309412151844UL + 216UL), (4461972309412151844UL + 216UL), 0,
-                            "dupString", 1, (void *)(&dupString_npm), (void *)__null, 0, 1, (4461972309412151844UL + 651UL), (4461972309412151844UL + 641UL), 3, "strlen", 1, (4461972309412151844UL + 651UL), 0UL, "calloc", 2, 0UL, 0UL, (4461972309412151844UL + 641UL), "strcpy", 2, (4461972309412151844UL + 641UL), (4461972309412151844UL + 651UL), (4461972309412151844UL + 645UL),
-                            "addArg", 0, "_Z6addArgPKccicPviS0_", "_Z10addArg_npmPKccicPviS0_", 0, 7, (4461972309412151844UL + 68UL), 0UL, 0UL, 0UL, (4461972309412151844UL + 72UL), 0UL, (4461972309412151844UL + 74UL), 0UL, 2, "myOptionAlloc", 7, (4461972309412151844UL + 68UL), 0UL, 0UL, 0UL, (4461972309412151844UL + 72UL), 0UL, (4461972309412151844UL + 74UL), (4461972309412151844UL + 660UL), "lastOption", 1, (4461972309412151844UL + 660UL), (4461972309412151844UL + 53UL),
-                            "processArgs", 0, "_Z11processArgsiPPc", "_Z15processArgs_npmiPPc", 0, 2, 0UL, (4461972309412151844UL + 567UL), 0UL, 15, "calloc", 2, 0UL, 0UL, (4461972309412151844UL + 439UL), "calloc", 2, 0UL, 0UL, (4461972309412151844UL + 409UL), "strcat", 2, (4461972309412151844UL + 439UL), (4461972309412151844UL + 660UL), (4461972309412151844UL + 443UL), "strcat", 2, (4461972309412151844UL + 439UL), (4461972309412151844UL + 663UL), (4461972309412151844UL + 450UL), "getopt_long", 5, 0UL, (4461972309412151844UL + 567UL), (4461972309412151844UL + 439UL), (4461972309412151844UL + 409UL), (4461972309412151844UL + 353UL), 0UL, "findOption", 2, (4461972309412151844UL + 660UL), 0UL, (4461972309412151844UL + 660UL), "fprintf", 3, (4461972309412151844UL + 483UL), (4461972309412151844UL + 664UL), 0UL, 0UL, "sscanf", 3, (4461972309412151844UL + 506UL), (4461972309412151844UL + 662UL), (4461972309412151844UL + 660UL), 0UL, "sscanf", 3, (4461972309412151844UL + 506UL), (4461972309412151844UL + 662UL), (4461972309412151844UL + 660UL), 0UL, "sscanf", 3, (4461972309412151844UL + 506UL), (4461972309412151844UL + 660UL), (4461972309412151844UL + 660UL), 0UL, "strncpy", 3, (4461972309412151844UL + 660UL), (4461972309412151844UL + 506UL), 0UL, (4461972309412151844UL + 535UL), "sscanf", 3, (4461972309412151844UL + 506UL), (4461972309412151844UL + 662UL), (4461972309412151844UL + 660UL), 0UL, "fprintf", 3, (4461972309412151844UL + 483UL), (4461972309412151844UL + 670UL), 0UL, 0UL, "free", 1, (4461972309412151844UL + 409UL), 0UL, "free", 1, (4461972309412151844UL + 439UL), 0UL,
-                            "findOption", 1, (void *)(&findOption_npm), (void *)__null, 0, 2, (4461972309412151844UL + 619UL), 0UL, (4461972309412151844UL + 619UL), 0,
-                            "printArgs", 0, "_Z9printArgsv", "_Z13printArgs_npmv", 0, 0, 0UL, 5, "fprintf", 2, (4461972309412151844UL + 483UL), (4461972309412151844UL + 657UL), 0UL, "sprintf", 3, (4461972309412151844UL + 280UL), (4461972309412151844UL + 658UL), 0UL, 0UL, "fprintf", 3, (4461972309412151844UL + 483UL), (4461972309412151844UL + 280UL), (4461972309412151844UL + 660UL), 0UL, "fprintf", 6, (4461972309412151844UL + 483UL), (4461972309412151844UL + 661UL), 0UL, 0UL, 0UL, (4461972309412151844UL + 660UL), 0UL, "fprintf", 2, (4461972309412151844UL + 483UL), (4461972309412151844UL + 662UL), 0UL,
+    init_module(1638881369108208116UL, 43, 9, 0, 9, 9, 0, 9, 6, 0, 2,
+                           &____alias_loc_id_0, (unsigned)14, (unsigned)0, (unsigned)0, (1638881369108208116UL + 1UL), (1638881369108208116UL + 2UL), (1638881369108208116UL + 3UL), (1638881369108208116UL + 4UL), (1638881369108208116UL + 5UL), (1638881369108208116UL + 6UL), (1638881369108208116UL + 7UL), (1638881369108208116UL + 8UL), (1638881369108208116UL + 9UL), (1638881369108208116UL + 10UL), (1638881369108208116UL + 11UL), (1638881369108208116UL + 12UL), (1638881369108208116UL + 53UL), (1638881369108208116UL + 655UL),
+                           &____alias_loc_id_1, (unsigned)11, (unsigned)0, (unsigned)0, (1638881369108208116UL + 77UL), (1638881369108208116UL + 78UL), (1638881369108208116UL + 79UL), (1638881369108208116UL + 80UL), (1638881369108208116UL + 81UL), (1638881369108208116UL + 82UL), (1638881369108208116UL + 83UL), (1638881369108208116UL + 84UL), (1638881369108208116UL + 85UL), (1638881369108208116UL + 101UL), (1638881369108208116UL + 659UL),
+                           &____alias_loc_id_2, (unsigned)4, (unsigned)0, (unsigned)0, (1638881369108208116UL + 180UL), (1638881369108208116UL + 181UL), (1638881369108208116UL + 182UL), (1638881369108208116UL + 183UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (1638881369108208116UL + 655UL),
+                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (unsigned)0, (1638881369108208116UL + 226UL), (1638881369108208116UL + 227UL), (1638881369108208116UL + 228UL), (1638881369108208116UL + 229UL), (1638881369108208116UL + 230UL),
+                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (unsigned)0, (1638881369108208116UL + 279UL), (1638881369108208116UL + 281UL),
+                           &____alias_loc_id_6, (unsigned)13, (unsigned)0, (unsigned)0, (1638881369108208116UL + 345UL), (1638881369108208116UL + 346UL), (1638881369108208116UL + 347UL), (1638881369108208116UL + 348UL), (1638881369108208116UL + 349UL), (1638881369108208116UL + 350UL), (1638881369108208116UL + 351UL), (1638881369108208116UL + 352UL), (1638881369108208116UL + 353UL), (1638881369108208116UL + 354UL), (1638881369108208116UL + 409UL), (1638881369108208116UL + 439UL), (1638881369108208116UL + 660UL),
+                           &____alias_loc_id_7, (unsigned)5, (unsigned)0, (unsigned)0, (1638881369108208116UL + 577UL), (1638881369108208116UL + 578UL), (1638881369108208116UL + 579UL), (1638881369108208116UL + 580UL), (1638881369108208116UL + 581UL),
+                           &____alias_loc_id_8, (unsigned)4, (unsigned)0, (unsigned)0, (1638881369108208116UL + 627UL), (1638881369108208116UL + 628UL), (1638881369108208116UL + 629UL), (1638881369108208116UL + 641UL),
+                            "myOptionAlloc", 1, (void *)(&myOptionAlloc_npm), (void *)__null, 0, 7, (1638881369108208116UL + 161UL), 0UL, 0UL, 0UL, (1638881369108208116UL + 105UL), 0UL, (1638881369108208116UL + 179UL), (1638881369108208116UL + 101UL), 5, "calloc", 2, 0UL, 0UL, (1638881369108208116UL + 101UL), "dupString", 1, (1638881369108208116UL + 179UL), (1638881369108208116UL + 105UL), "dupString", 1, (1638881369108208116UL + 161UL), (1638881369108208116UL + 105UL), "strlen", 1, (1638881369108208116UL + 161UL), 0UL, "strlen", 1, (1638881369108208116UL + 161UL), 0UL,
+                            "myOptionFree", 1, (void *)(&myOptionFree_npm), (void *)__null, 0, 1, (1638881369108208116UL + 278UL), (1638881369108208116UL + 244UL), 3, "free", 1, (1638881369108208116UL + 244UL), 0UL, "free", 1, (1638881369108208116UL + 244UL), 0UL, "free", 1, (1638881369108208116UL + 278UL), 0UL,
+                            "freeArgs", 0, "_Z8freeArgsv", "_Z12freeArgs_npmv", 0, 0, 0UL, 1, "myOptionFree", 1, (1638881369108208116UL + 660UL), (1638881369108208116UL + 660UL),
+                            "lastOption", 1, (void *)(&lastOption_npm), (void *)__null, 0, 1, (1638881369108208116UL + 216UL), (1638881369108208116UL + 216UL), 0,
+                            "dupString", 1, (void *)(&dupString_npm), (void *)__null, 0, 1, (1638881369108208116UL + 651UL), (1638881369108208116UL + 641UL), 3, "strlen", 1, (1638881369108208116UL + 651UL), 0UL, "calloc", 2, 0UL, 0UL, (1638881369108208116UL + 641UL), "strcpy", 2, (1638881369108208116UL + 641UL), (1638881369108208116UL + 651UL), (1638881369108208116UL + 645UL),
+                            "addArg", 0, "_Z6addArgPKccicPviS0_", "_Z10addArg_npmPKccicPviS0_", 0, 7, (1638881369108208116UL + 68UL), 0UL, 0UL, 0UL, (1638881369108208116UL + 72UL), 0UL, (1638881369108208116UL + 74UL), 0UL, 2, "myOptionAlloc", 7, (1638881369108208116UL + 68UL), 0UL, 0UL, 0UL, (1638881369108208116UL + 72UL), 0UL, (1638881369108208116UL + 74UL), (1638881369108208116UL + 660UL), "lastOption", 1, (1638881369108208116UL + 660UL), (1638881369108208116UL + 53UL),
+                            "processArgs", 0, "_Z11processArgsiPPc", "_Z15processArgs_npmiPPc", 0, 2, 0UL, (1638881369108208116UL + 567UL), 0UL, 15, "calloc", 2, 0UL, 0UL, (1638881369108208116UL + 439UL), "calloc", 2, 0UL, 0UL, (1638881369108208116UL + 409UL), "strcat", 2, (1638881369108208116UL + 439UL), (1638881369108208116UL + 660UL), (1638881369108208116UL + 443UL), "strcat", 2, (1638881369108208116UL + 439UL), (1638881369108208116UL + 663UL), (1638881369108208116UL + 450UL), "getopt_long", 5, 0UL, (1638881369108208116UL + 567UL), (1638881369108208116UL + 439UL), (1638881369108208116UL + 409UL), (1638881369108208116UL + 353UL), 0UL, "findOption", 2, (1638881369108208116UL + 660UL), 0UL, (1638881369108208116UL + 660UL), "fprintf", 3, (1638881369108208116UL + 483UL), (1638881369108208116UL + 664UL), 0UL, 0UL, "sscanf", 3, (1638881369108208116UL + 506UL), (1638881369108208116UL + 662UL), (1638881369108208116UL + 660UL), 0UL, "sscanf", 3, (1638881369108208116UL + 506UL), (1638881369108208116UL + 662UL), (1638881369108208116UL + 660UL), 0UL, "sscanf", 3, (1638881369108208116UL + 506UL), (1638881369108208116UL + 660UL), (1638881369108208116UL + 660UL), 0UL, "strncpy", 3, (1638881369108208116UL + 660UL), (1638881369108208116UL + 506UL), 0UL, (1638881369108208116UL + 535UL), "sscanf", 3, (1638881369108208116UL + 506UL), (1638881369108208116UL + 662UL), (1638881369108208116UL + 660UL), 0UL, "fprintf", 3, (1638881369108208116UL + 483UL), (1638881369108208116UL + 670UL), 0UL, 0UL, "free", 1, (1638881369108208116UL + 409UL), 0UL, "free", 1, (1638881369108208116UL + 439UL), 0UL,
+                            "findOption", 1, (void *)(&findOption_npm), (void *)__null, 0, 2, (1638881369108208116UL + 619UL), 0UL, (1638881369108208116UL + 619UL), 0,
+                            "printArgs", 0, "_Z9printArgsv", "_Z13printArgs_npmv", 0, 0, 0UL, 5, "fprintf", 2, (1638881369108208116UL + 483UL), (1638881369108208116UL + 657UL), 0UL, "sprintf", 3, (1638881369108208116UL + 280UL), (1638881369108208116UL + 658UL), 0UL, 0UL, "fprintf", 3, (1638881369108208116UL + 483UL), (1638881369108208116UL + 280UL), (1638881369108208116UL + 660UL), 0UL, "fprintf", 6, (1638881369108208116UL + 483UL), (1638881369108208116UL + 661UL), 0UL, 0UL, 0UL, (1638881369108208116UL + 660UL), 0UL, "fprintf", 2, (1638881369108208116UL + 483UL), (1638881369108208116UL + 662UL), 0UL,
                            "myOptionAlloc", &(____chimes_does_checkpoint_myOptionAlloc_npm),
                            "myOptionFree", &(____chimes_does_checkpoint_myOptionFree_npm),
                            "freeArgs", &(____chimes_does_checkpoint_freeArgs_npm),
@@ -3973,49 +3973,49 @@ static int module_init() {
                            "processArgs", &(____chimes_does_checkpoint_processArgs_npm),
                            "findOption", &(____chimes_does_checkpoint_findOption_npm),
                            "printArgs", &(____chimes_does_checkpoint_printArgs_npm),
-                             (4461972309412151844UL + 216UL), (4461972309412151844UL + 216UL),
-                             (4461972309412151844UL + 347UL), (4461972309412151844UL + 660UL),
-                             (4461972309412151844UL + 578UL), (4461972309412151844UL + 619UL),
-                             (4461972309412151844UL + 627UL), (4461972309412151844UL + 651UL),
-                             (4461972309412151844UL + 629UL), (4461972309412151844UL + 641UL),
-                             (4461972309412151844UL + 628UL), (4461972309412151844UL + 641UL),
-                             (4461972309412151844UL + 577UL), (4461972309412151844UL + 619UL),
-                             (4461972309412151844UL + 660UL), (4461972309412151844UL + 660UL),
-                             (4461972309412151844UL + 279UL), (4461972309412151844UL + 660UL),
-                             (4461972309412151844UL + 278UL), (4461972309412151844UL + 244UL),
-                             (4461972309412151844UL + 83UL), (4461972309412151844UL + 179UL),
-                             (4461972309412151844UL + 81UL), (4461972309412151844UL + 105UL),
-                             (4461972309412151844UL + 230UL), (4461972309412151844UL + 244UL),
-                             (4461972309412151844UL + 84UL), (4461972309412151844UL + 101UL),
-                             (4461972309412151844UL + 85UL), (4461972309412151844UL + 101UL),
-                             (4461972309412151844UL + 656UL), (4461972309412151844UL + 483UL),
-                             (4461972309412151844UL + 346UL), (4461972309412151844UL + 567UL),
-                             (4461972309412151844UL + 182UL), (4461972309412151844UL + 216UL),
-                             (4461972309412151844UL + 183UL), (4461972309412151844UL + 216UL),
-                             (4461972309412151844UL + 180UL), (4461972309412151844UL + 216UL),
-                             (4461972309412151844UL + 181UL), (4461972309412151844UL + 216UL),
-                             (4461972309412151844UL + 6UL), (4461972309412151844UL + 72UL),
-                             (4461972309412151844UL + 9UL), (4461972309412151844UL + 660UL),
-                             (4461972309412151844UL + 8UL), (4461972309412151844UL + 74UL),
-                             (4461972309412151844UL + 665UL), (4461972309412151844UL + 506UL),
-                             (4461972309412151844UL + 409UL), (4461972309412151844UL + 660UL),
-                             (4461972309412151844UL + 619UL), (4461972309412151844UL + 619UL),
-                             (4461972309412151844UL + 580UL), (4461972309412151844UL + 619UL),
-                             (4461972309412151844UL + 581UL), (4461972309412151844UL + 619UL),
-                             (4461972309412151844UL + 77UL), (4461972309412151844UL + 161UL),
-                             (4461972309412151844UL + 281UL), (4461972309412151844UL + 660UL),
-                             (4461972309412151844UL + 229UL), (4461972309412151844UL + 244UL),
-                             (4461972309412151844UL + 228UL), (4461972309412151844UL + 244UL),
-                             (4461972309412151844UL + 227UL), (4461972309412151844UL + 278UL),
-                             (4461972309412151844UL + 226UL), (4461972309412151844UL + 244UL),
-                             (4461972309412151844UL + 101UL), (4461972309412151844UL + 105UL),
-                             (4461972309412151844UL + 655UL), (4461972309412151844UL + 660UL),
-                             (4461972309412151844UL + 2UL), (4461972309412151844UL + 68UL),
-                             (4461972309412151844UL + 10UL), (4461972309412151844UL + 53UL),
-                             (4461972309412151844UL + 53UL), (4461972309412151844UL + 660UL),
-                             (4461972309412151844UL + 354UL), (4461972309412151844UL + 660UL),
-                             (4461972309412151844UL + 351UL), (4461972309412151844UL + 439UL),
-                             (4461972309412151844UL + 350UL), (4461972309412151844UL + 409UL),
+                             (1638881369108208116UL + 216UL), (1638881369108208116UL + 216UL),
+                             (1638881369108208116UL + 347UL), (1638881369108208116UL + 660UL),
+                             (1638881369108208116UL + 578UL), (1638881369108208116UL + 619UL),
+                             (1638881369108208116UL + 627UL), (1638881369108208116UL + 651UL),
+                             (1638881369108208116UL + 629UL), (1638881369108208116UL + 641UL),
+                             (1638881369108208116UL + 628UL), (1638881369108208116UL + 641UL),
+                             (1638881369108208116UL + 577UL), (1638881369108208116UL + 619UL),
+                             (1638881369108208116UL + 660UL), (1638881369108208116UL + 660UL),
+                             (1638881369108208116UL + 279UL), (1638881369108208116UL + 660UL),
+                             (1638881369108208116UL + 278UL), (1638881369108208116UL + 244UL),
+                             (1638881369108208116UL + 83UL), (1638881369108208116UL + 179UL),
+                             (1638881369108208116UL + 81UL), (1638881369108208116UL + 105UL),
+                             (1638881369108208116UL + 230UL), (1638881369108208116UL + 244UL),
+                             (1638881369108208116UL + 84UL), (1638881369108208116UL + 101UL),
+                             (1638881369108208116UL + 85UL), (1638881369108208116UL + 101UL),
+                             (1638881369108208116UL + 656UL), (1638881369108208116UL + 483UL),
+                             (1638881369108208116UL + 346UL), (1638881369108208116UL + 567UL),
+                             (1638881369108208116UL + 182UL), (1638881369108208116UL + 216UL),
+                             (1638881369108208116UL + 183UL), (1638881369108208116UL + 216UL),
+                             (1638881369108208116UL + 180UL), (1638881369108208116UL + 216UL),
+                             (1638881369108208116UL + 181UL), (1638881369108208116UL + 216UL),
+                             (1638881369108208116UL + 6UL), (1638881369108208116UL + 72UL),
+                             (1638881369108208116UL + 9UL), (1638881369108208116UL + 660UL),
+                             (1638881369108208116UL + 8UL), (1638881369108208116UL + 74UL),
+                             (1638881369108208116UL + 665UL), (1638881369108208116UL + 506UL),
+                             (1638881369108208116UL + 409UL), (1638881369108208116UL + 660UL),
+                             (1638881369108208116UL + 619UL), (1638881369108208116UL + 619UL),
+                             (1638881369108208116UL + 580UL), (1638881369108208116UL + 619UL),
+                             (1638881369108208116UL + 581UL), (1638881369108208116UL + 619UL),
+                             (1638881369108208116UL + 77UL), (1638881369108208116UL + 161UL),
+                             (1638881369108208116UL + 281UL), (1638881369108208116UL + 660UL),
+                             (1638881369108208116UL + 229UL), (1638881369108208116UL + 244UL),
+                             (1638881369108208116UL + 228UL), (1638881369108208116UL + 244UL),
+                             (1638881369108208116UL + 227UL), (1638881369108208116UL + 278UL),
+                             (1638881369108208116UL + 226UL), (1638881369108208116UL + 244UL),
+                             (1638881369108208116UL + 101UL), (1638881369108208116UL + 105UL),
+                             (1638881369108208116UL + 655UL), (1638881369108208116UL + 660UL),
+                             (1638881369108208116UL + 2UL), (1638881369108208116UL + 68UL),
+                             (1638881369108208116UL + 10UL), (1638881369108208116UL + 53UL),
+                             (1638881369108208116UL + 53UL), (1638881369108208116UL + 660UL),
+                             (1638881369108208116UL + 354UL), (1638881369108208116UL + 660UL),
+                             (1638881369108208116UL + 351UL), (1638881369108208116UL + 439UL),
+                             (1638881369108208116UL + 350UL), (1638881369108208116UL + 409UL),
                      "MyOptionSt", 384UL, 8, "char*", (int)__builtin_offsetof (struct MyOptionSt, help), "char*", (int)__builtin_offsetof (struct MyOptionSt, longArg), "[ 2 x unsigned char ]", (int)__builtin_offsetof (struct MyOptionSt, shortArg), "int", (int)__builtin_offsetof (struct MyOptionSt, argFlag), "char", (int)__builtin_offsetof (struct MyOptionSt, type), "int", (int)__builtin_offsetof (struct MyOptionSt, sz), "void*", (int)__builtin_offsetof (struct MyOptionSt, ptr), "void*", (int)__builtin_offsetof (struct MyOptionSt, next),
                      "option", 256UL, 4, "char*", (int)__builtin_offsetof (struct option, name), "int", (int)__builtin_offsetof (struct option, has_arg), "int*", (int)__builtin_offsetof (struct option, flag), "int", (int)__builtin_offsetof (struct option, val),
                              "myOptionAlloc", "_ZL13myOptionAllocPKccicPviS0_", 0, 2, "dupString", "dupString",
@@ -4027,13 +4027,13 @@ static int module_init() {
                              "processArgs", "_Z11processArgsiPPc", 0, 1, "findOption",
                              "findOption", "_ZL10findOptionP10MyOptionSth", 0, 0,
                              "printArgs", "_Z9printArgsv", 0, 0,
-        "dupString", 4461972309412151949UL, (int)1, 4461972309412152023UL,
-        "dupString", 4461972309412151949UL, (int)1, 4461972309412152005UL,
-        "myOptionAlloc", 4461972309412152504UL, (int)7, 4461972309412151912UL, 0UL, 0UL, 0UL, 4461972309412151916UL, 0UL, 4461972309412151918UL,
-        "lastOption", 4461972309412151897UL, (int)1, 4461972309412152504UL,
-        "myOptionFree", 4461972309412152504UL, (int)1, 4461972309412152504UL,
-        "findOption", 4461972309412152504UL, (int)2, 4461972309412152504UL, 0UL);
-    register_global_var("global|myargs", "%struct.MyOptionSt*", (void *)(&myargs), 8, 1, 0, (4461972309412151844UL + 655UL), 0);
+        "dupString", 1638881369108208221UL, (int)1, 1638881369108208295UL,
+        "dupString", 1638881369108208221UL, (int)1, 1638881369108208277UL,
+        "myOptionAlloc", 1638881369108208776UL, (int)7, 1638881369108208184UL, 0UL, 0UL, 0UL, 1638881369108208188UL, 0UL, 1638881369108208190UL,
+        "lastOption", 1638881369108208169UL, (int)1, 1638881369108208776UL,
+        "myOptionFree", 1638881369108208776UL, (int)1, 1638881369108208776UL,
+        "findOption", 1638881369108208776UL, (int)2, 1638881369108208776UL, 0UL);
+    register_global_var("global|myargs", "%struct.MyOptionSt*", (void *)(&myargs), 8, 1, 0, (1638881369108208116UL + 655UL), 0);
     register_global_var("global|longest", "i32", (void *)(&longest), 4, 0, 0, 0UL, 0);
     return 0;
 }

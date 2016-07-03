@@ -20,11 +20,11 @@ static int ____must_manage_kmeans_clustering = 2;
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
 static unsigned ____alias_loc_id_2;
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -33,7 +33,7 @@ static unsigned ____alias_loc_id_2;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -89,15 +89,15 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 28 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1042,7 +1042,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c" 2
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 1 3 4
@@ -2218,9 +2218,9 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c" 2
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c" 2
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/float.h" 1 3 4
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c" 2
+# 65 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c" 2
 # 1 "/usr/include/math.h" 1 3 4
 # 30 "/usr/include/math.h" 3 4
 extern "C" {
@@ -3225,16 +3225,16 @@ __signbitl (long double __x) throw ()
 # 417 "/usr/include/math.h" 2 3 4
 # 472 "/usr/include/math.h" 3 4
 }
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c" 2
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.h" 1
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.h"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c" 2
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans.h" 1
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans.h"
 int cluster(int, int, float**, int, float, float***);
 
 
 float **kmeans_clustering(float**, int, int, int, float, int*);
 float euclid_dist_2 (float*, float*, int);
 int find_nearest_point (float* , int, float**, int);
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c" 2
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c" 2
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 1 3 4
 # 34 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 3 4
 typedef struct
@@ -3308,807 +3308,819 @@ int omp_in_final (void) throw ();
 
 
 }
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c" 2
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c" 2
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 74 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 extern double wtime(void);
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 extern int num_omp_threads;
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 77 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 int find_nearest_point_npm(float *pt, int nfeatures, float **pts, int npts);float euclid_dist_2_npm(float *pt1, float *pt2, int numdims);
 int find_nearest_point_quick(float *pt, int nfeatures, float **pts, int npts); int find_nearest_point(float *pt, int nfeatures, float **pts, int npts);float euclid_dist_2_quick(float *pt1, float *pt2, int numdims); float euclid_dist_2(float *pt1, float *pt2, int numdims);
 int find_nearest_point_resumable(float *pt,
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                        int nfeatures,
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                        float **pts,
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                        int npts)
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&find_nearest_point), "find_nearest_point", &____must_manage_find_nearest_point, 4, 0, (size_t)(15337938033427923719UL), (size_t)(0UL), (size_t)(15337938033427923721UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&find_nearest_point), "find_nearest_point", &____must_manage_find_nearest_point, 4, 0, (size_t)(783774206182855871UL), (size_t)(0UL), (size_t)(783774206182855873UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     int index; int i; ;
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
      float min_dist; min_dist = (3.40282346638528859812e+38F) ;
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=0; i<npts; i++) {
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         float dist; ;
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
          call_lbl_0: dist = ({ calling_npm("euclid_dist_2", 0); euclid_dist_2_npm(pt, pts[i], nfeatures); });
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         if (dist < min_dist) {
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             min_dist = dist;
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             index = i;
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         }
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     }
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((index)); rm_stack(false, 0UL, "find_nearest_point", &____must_manage_find_nearest_point, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 rm_stack(false, 0UL, "find_nearest_point", &____must_manage_find_nearest_point, ____alias_loc_id_0, ____chimes_did_disable0, false); }
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 float euclid_dist_2_resumable(float *pt1,
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                     float *pt2,
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                     int numdims)
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&euclid_dist_2), "euclid_dist_2", &____must_manage_euclid_dist_2, 3, 0, (size_t)(15337938033427923782UL), (size_t)(15337938033427923783UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+{const int ____chimes_did_disable1 = new_stack((void *)(&euclid_dist_2), "euclid_dist_2", &____must_manage_euclid_dist_2, 3, 0, (size_t)(783774206182855934UL), (size_t)(783774206182855935UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     int i; ;
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
      float ans; ans = (0.0) ;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=0; i<numdims; i++) { ans += (pt1[i]-pt2[i]) * (pt1[i]-pt2[i]); };
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
      float ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((ans)); rm_stack(false, 0UL, "euclid_dist_2", &____must_manage_euclid_dist_2, ____alias_loc_id_1, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 rm_stack(false, 0UL, "euclid_dist_2", &____must_manage_euclid_dist_2, ____alias_loc_id_1, ____chimes_did_disable1, false); }
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 float** kmeans_clustering_npm(float **feature, int nfeatures, int npoints, int nclusters, float threshold, int *membership);
 float** kmeans_clustering_quick(float **feature, int nfeatures, int npoints, int nclusters, float threshold, int *membership); float** kmeans_clustering(float **feature, int nfeatures, int npoints, int nclusters, float threshold, int *membership);
 float** kmeans_clustering_resumable(float **feature,
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                           int nfeatures,
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                           int npoints,
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                           int nclusters,
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                           float threshold,
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                           int *membership)
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&kmeans_clustering), "kmeans_clustering", &____must_manage_kmeans_clustering, 6, 0, (size_t)(15337938033427924381UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(15337938033427924386UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+{const int ____chimes_did_disable2 = new_stack((void *)(&kmeans_clustering), "kmeans_clustering", &____must_manage_kmeans_clustering, 6, 0, (size_t)(783774206182856535UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(783774206182856540UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     int i; int j; int k; int n; int index; int loop; n = (0) ; loop = (0) ;
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     int *new_centers_len; ;
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  float **new_centers; ;
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  float **clusters; ;
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     float delta; ;
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     double timing; ;
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  int nthreads; ;
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     int **partial_new_centers_len; ;
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     float ***partial_new_centers; ;
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 135 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     nthreads = num_omp_threads;
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    clusters = (float**) ({ void *____chimes_tmp_ptr = malloc((nclusters * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 15337938033427924377UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    clusters[0] = (float*) ({ void *____chimes_tmp_ptr = malloc((nclusters * nfeatures * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * nfeatures * sizeof(float), 15337938033427923848UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    clusters = (float**) ({ void *____chimes_tmp_ptr = malloc((nclusters * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 783774206182856531UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 139 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    clusters[0] = (float*) ({ void *____chimes_tmp_ptr = malloc((nclusters * nfeatures * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * nfeatures * sizeof(float), 783774206182856000UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 140 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nclusters; i++) { clusters[i] = clusters[i-1] + nfeatures; };
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 142 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 143 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=0; i<nclusters; i++) {
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 146 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 146 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         for (j=0; j<nfeatures; j++) { clusters[i][j] = feature[n][j]; };
-# 148 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 148 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
   n++;
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 149 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     }
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 151 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=0; i<npoints; i++) { membership[i] = -1; };
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    new_centers_len = (int*) ({ void *____chimes_tmp_ptr = calloc((nclusters) + ((sizeof(void *) + sizeof(int) - 1) / sizeof(int)), sizeof(int)); ; calloc_helper(____chimes_tmp_ptr, nclusters, sizeof(int), 15337938033427924373UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 157 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    new_centers = (float**) ({ void *____chimes_tmp_ptr = malloc((nclusters * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 15337938033427924365UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 158 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    new_centers[0] = (float*) ({ void *____chimes_tmp_ptr = calloc((nclusters * nfeatures) + ((sizeof(void *) + sizeof(float) - 1) / sizeof(float)), sizeof(float)); ; calloc_helper(____chimes_tmp_ptr, nclusters * nfeatures, sizeof(float), 15337938033427924367UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 153 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 154 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 155 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    new_centers_len = (int*) ({ void *____chimes_tmp_ptr = calloc((nclusters) + ((sizeof(void *) + sizeof(int) - 1) / sizeof(int)), sizeof(int)); ; calloc_helper(____chimes_tmp_ptr, nclusters, sizeof(int), 783774206182856527UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 156 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 157 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    new_centers = (float**) ({ void *____chimes_tmp_ptr = malloc((nclusters * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 783774206182856519UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 158 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    new_centers[0] = (float*) ({ void *____chimes_tmp_ptr = calloc((nclusters * nfeatures) + ((sizeof(void *) + sizeof(float) - 1) / sizeof(float)), sizeof(float)); ; calloc_helper(____chimes_tmp_ptr, nclusters * nfeatures, sizeof(float), 783774206182856521UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 159 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nclusters; i++) { new_centers[i] = new_centers[i-1] + nfeatures; };
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 162 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 163 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    partial_new_centers_len = (int**) ({ void *____chimes_tmp_ptr = malloc((nthreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(int*), 15337938033427924205UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 164 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    partial_new_centers_len[0] = (int*) ({ void *____chimes_tmp_ptr = calloc((nthreads * nclusters) + ((sizeof(void *) + sizeof(int) - 1) / sizeof(int)), sizeof(int)); ; calloc_helper(____chimes_tmp_ptr, nthreads*nclusters, sizeof(int), 15337938033427924207UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 165 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 161 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 162 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 163 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    partial_new_centers_len = (int**) ({ void *____chimes_tmp_ptr = malloc((nthreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(int*), 783774206182856359UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 164 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    partial_new_centers_len[0] = (int*) ({ void *____chimes_tmp_ptr = calloc((nthreads * nclusters) + ((sizeof(void *) + sizeof(int) - 1) / sizeof(int)), sizeof(int)); ; calloc_helper(____chimes_tmp_ptr, nthreads*nclusters, sizeof(int), 783774206182856361UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 165 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nthreads; i++) { partial_new_centers_len[i] = partial_new_centers_len[i-1]+nclusters; };
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
- partial_new_centers =(float***) ({ void *____chimes_tmp_ptr = malloc((nthreads * sizeof(float **)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(float**), 15337938033427924083UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 169 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    partial_new_centers[0] =(float**) ({ void *____chimes_tmp_ptr = malloc((nthreads * nclusters * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nthreads*nclusters * sizeof(float*), 15337938033427924085UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 170 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 167 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 168 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+ partial_new_centers =(float***) ({ void *____chimes_tmp_ptr = malloc((nthreads * sizeof(float **)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(float**), 783774206182856235UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 169 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    partial_new_centers[0] =(float**) ({ void *____chimes_tmp_ptr = malloc((nthreads * nclusters * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nthreads*nclusters * sizeof(float*), 783774206182856237UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 170 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nthreads; i++) { partial_new_centers[i] = partial_new_centers[i-1] + nclusters; };
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 173 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 172 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 173 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  for (i=0; i<nthreads; i++)
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 174 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  {
-# 175 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-        for (j=0; j<nclusters; j++) { partial_new_centers[i][j] = (float*) ({ void *____chimes_tmp_ptr = calloc((nfeatures) + ((sizeof(void *) + sizeof(float) - 1) / sizeof(float)), sizeof(float)); ; calloc_helper(____chimes_tmp_ptr, nfeatures, sizeof(float), 15337938033427924077UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ; };
-# 177 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 175 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+        for (j=0; j<nclusters; j++) { partial_new_centers[i][j] = (float*) ({ void *____chimes_tmp_ptr = calloc((nfeatures) + ((sizeof(void *) + sizeof(float) - 1) / sizeof(float)), sizeof(float)); ; calloc_helper(____chimes_tmp_ptr, nfeatures, sizeof(float), 783774206182856229UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ; };
+# 177 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  }
-# 178 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 178 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     do {
-# 179 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 179 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         delta = 0.0;
-# 180 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 181 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 182 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 183 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 184 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 185 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 180 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 181 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 182 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 183 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+  omp_set_num_threads(num_omp_threads);
+# 184 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+#pragma omp parallel shared(feature,clusters,membership,partial_new_centers,partial_new_centers_len)
+# 185 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 186 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 187 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         {
-# 186 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 187 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 188 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 189 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 188 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 189 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 190 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 191 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
              int tid; tid = (0) ;
-# 190 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 191 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 192 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 193 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 #pragma omp for private(i,j,index) firstprivate(npoints,nclusters,nfeatures) schedule(static) reduction(+:delta)
-# 192 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 193 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 194 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 195 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 196 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 194 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 195 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 196 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 197 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 198 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             for (i=0; i<npoints; i++) {
-# 197 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 198 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 199 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 200 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
           call_lbl_0: index = ({ calling_npm("find_nearest_point", 0); find_nearest_point_npm(feature[i], nfeatures, clusters, nclusters); });
-# 202 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 203 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 204 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 205 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
          if (membership[i] != index) {delta += 1.0; };
-# 204 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 205 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 206 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 207 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 208 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
          membership[i] = index;
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 208 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 209 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 210 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 209 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 210 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 211 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 212 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
          partial_new_centers_len[tid][index]++;
-# 211 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 213 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
          for (j=0; j<nfeatures; j++) { partial_new_centers[tid][index][j] += feature[i][j]; };
-# 213 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 215 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             }
-# 214 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 216 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         }
-# 215 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 216 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 217 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 218 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 219 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         for (i=0; i<nclusters; i++) {
-# 218 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 220 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             for (j=0; j<nthreads; j++) {
-# 219 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 221 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                 new_centers_len[i] += partial_new_centers_len[j][i];
-# 220 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 222 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                 partial_new_centers_len[j][i] = 0.0;
-# 221 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 223 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                 for (k=0; k<nfeatures; k++) {
-# 222 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 224 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                     new_centers[i][k] += partial_new_centers[j][i][k];
-# 223 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 225 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                     partial_new_centers[j][i][k] = 0.0;
-# 224 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 226 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                 }
-# 225 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 227 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             }
-# 226 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 228 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         }
-# 227 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 228 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 229 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 229 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 230 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 231 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
   for (i=0; i<nclusters; i++) {
-# 230 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 232 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             for (j=0; j<nfeatures; j++) {
-# 231 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 233 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                 if (new_centers_len[i] > 0) {clusters[i][j] = new_centers[i][j] / new_centers_len[i]; };
-# 233 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 235 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     new_centers[i][j] = 0.0;
-# 234 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 236 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
    }
-# 235 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 237 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
    new_centers_len[i] = 0;
-# 236 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 238 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
   }
-# 237 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 238 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 239 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 240 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     } while (delta > threshold && loop++ < 500);
-# 239 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 240 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 241 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free_helper((((unsigned char *)new_centers[0]) - sizeof(void *)), 15337938033427924367UL);free((((unsigned char *)new_centers[0]) - sizeof(void *))); }) ;
-# 242 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free_helper((((unsigned char *)new_centers) - sizeof(void *)), 15337938033427924365UL);free((((unsigned char *)new_centers) - sizeof(void *))); }) ;
-# 243 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free_helper((((unsigned char *)new_centers_len) - sizeof(void *)), 15337938033427924373UL);free((((unsigned char *)new_centers_len) - sizeof(void *))); }) ;
-# 244 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 245 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     float **____chimes_ret_var_2; ; ____chimes_ret_var_2 = (clusters); rm_stack(true, 15337938033427924377UL, "kmeans_clustering", &____must_manage_kmeans_clustering, ____alias_loc_id_2, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ;
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-rm_stack(true, 15337938033427924377UL, "kmeans_clustering", &____must_manage_kmeans_clustering, ____alias_loc_id_2, ____chimes_did_disable2, false); }
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 241 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 242 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 243 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+     ({ free_helper((((unsigned char *)new_centers[0]) - sizeof(void *)), 783774206182856521UL);free((((unsigned char *)new_centers[0]) - sizeof(void *))); }) ;
+# 244 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+     ({ free_helper((((unsigned char *)new_centers) - sizeof(void *)), 783774206182856519UL);free((((unsigned char *)new_centers) - sizeof(void *))); }) ;
+# 245 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+     ({ free_helper((((unsigned char *)new_centers_len) - sizeof(void *)), 783774206182856527UL);free((((unsigned char *)new_centers_len) - sizeof(void *))); }) ;
+# 246 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 247 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+     float **____chimes_ret_var_2; ; ____chimes_ret_var_2 = (clusters); rm_stack(true, 783774206182856531UL, "kmeans_clustering", &____must_manage_kmeans_clustering, ____alias_loc_id_2, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ;
+# 248 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+rm_stack(true, 783774206182856531UL, "kmeans_clustering", &____must_manage_kmeans_clustering, ____alias_loc_id_2, ____chimes_did_disable2, false); }
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 int find_nearest_point_quick(float *pt,
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                        int nfeatures,
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                        float **pts,
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                        int npts)
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&find_nearest_point), "find_nearest_point", &____must_manage_find_nearest_point, 4, 0, (size_t)(15337938033427923719UL), (size_t)(0UL), (size_t)(15337938033427923721UL), (size_t)(0UL)) ; ; ;
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&find_nearest_point), "find_nearest_point", &____must_manage_find_nearest_point, 4, 0, (size_t)(783774206182855871UL), (size_t)(0UL), (size_t)(783774206182855873UL), (size_t)(0UL)) ; ; ;
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     int index; int i; ;
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
      float min_dist; min_dist = (3.40282346638528859812e+38F) ;
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=0; i<npts; i++) {
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         float dist; ;
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
          call_lbl_0: dist = ({ calling_npm("euclid_dist_2", 0); euclid_dist_2_npm(pt, pts[i], nfeatures); });
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         if (dist < min_dist) {
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             min_dist = dist;
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             index = i;
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         }
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     }
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((index)); rm_stack(false, 0UL, "find_nearest_point", &____must_manage_find_nearest_point, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 rm_stack(false, 0UL, "find_nearest_point", &____must_manage_find_nearest_point, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 
 int find_nearest_point(float *pt,
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                        int nfeatures,
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                        float **pts,
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                        int npts) { return (____chimes_replaying ? find_nearest_point_resumable(pt, nfeatures, pts, npts) : find_nearest_point_quick(pt, nfeatures, pts, npts)); }
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 float euclid_dist_2_quick(float *pt1,
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                     float *pt2,
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                     int numdims)
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&euclid_dist_2), "euclid_dist_2", &____must_manage_euclid_dist_2, 3, 0, (size_t)(15337938033427923782UL), (size_t)(15337938033427923783UL), (size_t)(0UL)) ; ; ;
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+{const int ____chimes_did_disable1 = new_stack((void *)(&euclid_dist_2), "euclid_dist_2", &____must_manage_euclid_dist_2, 3, 0, (size_t)(783774206182855934UL), (size_t)(783774206182855935UL), (size_t)(0UL)) ; ; ;
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     int i; ;
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
      float ans; ans = (0.0) ;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=0; i<numdims; i++) { ans += (pt1[i]-pt2[i]) * (pt1[i]-pt2[i]); };
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
      float ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((ans)); rm_stack(false, 0UL, "euclid_dist_2", &____must_manage_euclid_dist_2, ____alias_loc_id_1, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 rm_stack(false, 0UL, "euclid_dist_2", &____must_manage_euclid_dist_2, ____alias_loc_id_1, ____chimes_did_disable1, false); }
 
 float euclid_dist_2(float *pt1,
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                     float *pt2,
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                     int numdims) { return (____chimes_replaying ? euclid_dist_2_resumable(pt1, pt2, numdims) : euclid_dist_2_quick(pt1, pt2, numdims)); }
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 float** kmeans_clustering_quick(float **feature,
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                           int nfeatures,
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                           int npoints,
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                           int nclusters,
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                           float threshold,
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                           int *membership)
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&kmeans_clustering), "kmeans_clustering", &____must_manage_kmeans_clustering, 6, 0, (size_t)(15337938033427924381UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(15337938033427924386UL)) ; ; ;
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+{const int ____chimes_did_disable2 = new_stack((void *)(&kmeans_clustering), "kmeans_clustering", &____must_manage_kmeans_clustering, 6, 0, (size_t)(783774206182856535UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(783774206182856540UL)) ; ; ;
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     int i; int j; int k; int n; int index; int loop; n = (0) ; loop = (0) ;
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     int *new_centers_len; ;
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  float **new_centers; ;
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  float **clusters; ;
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     float delta; ;
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     double timing; ;
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  int nthreads; ;
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     int **partial_new_centers_len; ;
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     float ***partial_new_centers; ;
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 135 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     nthreads = num_omp_threads;
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    clusters = (float**) ({ void *____chimes_tmp_ptr = malloc((nclusters * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 15337938033427924377UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    clusters[0] = (float*) ({ void *____chimes_tmp_ptr = malloc((nclusters * nfeatures * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * nfeatures * sizeof(float), 15337938033427923848UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    clusters = (float**) ({ void *____chimes_tmp_ptr = malloc((nclusters * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 783774206182856531UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 139 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    clusters[0] = (float*) ({ void *____chimes_tmp_ptr = malloc((nclusters * nfeatures * sizeof(float)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * nfeatures * sizeof(float), 783774206182856000UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 140 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nclusters; i++) { clusters[i] = clusters[i-1] + nfeatures; };
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 142 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 143 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=0; i<nclusters; i++) {
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 146 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 146 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         for (j=0; j<nfeatures; j++) { clusters[i][j] = feature[n][j]; };
-# 148 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 148 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
   n++;
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 149 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     }
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 151 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=0; i<npoints; i++) { membership[i] = -1; };
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    new_centers_len = (int*) ({ void *____chimes_tmp_ptr = calloc((nclusters) + ((sizeof(void *) + sizeof(int) - 1) / sizeof(int)), sizeof(int)); ; calloc_helper(____chimes_tmp_ptr, nclusters, sizeof(int), 15337938033427924373UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 157 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    new_centers = (float**) ({ void *____chimes_tmp_ptr = malloc((nclusters * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 15337938033427924365UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 158 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    new_centers[0] = (float*) ({ void *____chimes_tmp_ptr = calloc((nclusters * nfeatures) + ((sizeof(void *) + sizeof(float) - 1) / sizeof(float)), sizeof(float)); ; calloc_helper(____chimes_tmp_ptr, nclusters * nfeatures, sizeof(float), 15337938033427924367UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 153 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 154 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 155 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    new_centers_len = (int*) ({ void *____chimes_tmp_ptr = calloc((nclusters) + ((sizeof(void *) + sizeof(int) - 1) / sizeof(int)), sizeof(int)); ; calloc_helper(____chimes_tmp_ptr, nclusters, sizeof(int), 783774206182856527UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 156 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 157 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    new_centers = (float**) ({ void *____chimes_tmp_ptr = malloc((nclusters * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 783774206182856519UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 158 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    new_centers[0] = (float*) ({ void *____chimes_tmp_ptr = calloc((nclusters * nfeatures) + ((sizeof(void *) + sizeof(float) - 1) / sizeof(float)), sizeof(float)); ; calloc_helper(____chimes_tmp_ptr, nclusters * nfeatures, sizeof(float), 783774206182856521UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 159 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nclusters; i++) { new_centers[i] = new_centers[i-1] + nfeatures; };
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 162 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 163 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    partial_new_centers_len = (int**) ({ void *____chimes_tmp_ptr = malloc((nthreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(int*), 15337938033427924205UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 164 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    partial_new_centers_len[0] = (int*) ({ void *____chimes_tmp_ptr = calloc((nthreads * nclusters) + ((sizeof(void *) + sizeof(int) - 1) / sizeof(int)), sizeof(int)); ; calloc_helper(____chimes_tmp_ptr, nthreads*nclusters, sizeof(int), 15337938033427924207UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 165 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 161 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 162 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 163 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    partial_new_centers_len = (int**) ({ void *____chimes_tmp_ptr = malloc((nthreads * sizeof(int *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(int*), 783774206182856359UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 164 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    partial_new_centers_len[0] = (int*) ({ void *____chimes_tmp_ptr = calloc((nthreads * nclusters) + ((sizeof(void *) + sizeof(int) - 1) / sizeof(int)), sizeof(int)); ; calloc_helper(____chimes_tmp_ptr, nthreads*nclusters, sizeof(int), 783774206182856361UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 165 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nthreads; i++) { partial_new_centers_len[i] = partial_new_centers_len[i-1]+nclusters; };
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
- partial_new_centers =(float***) ({ void *____chimes_tmp_ptr = malloc((nthreads * sizeof(float **)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(float**), 15337938033427924083UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 169 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    partial_new_centers[0] =(float**) ({ void *____chimes_tmp_ptr = malloc((nthreads * nclusters * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nthreads*nclusters * sizeof(float*), 15337938033427924085UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 170 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 167 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 168 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+ partial_new_centers =(float***) ({ void *____chimes_tmp_ptr = malloc((nthreads * sizeof(float **)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(float**), 783774206182856235UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 169 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    partial_new_centers[0] =(float**) ({ void *____chimes_tmp_ptr = malloc((nthreads * nclusters * sizeof(float *)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nthreads*nclusters * sizeof(float*), 783774206182856237UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 170 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nthreads; i++) { partial_new_centers[i] = partial_new_centers[i-1] + nclusters; };
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 173 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 172 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 173 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  for (i=0; i<nthreads; i++)
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 174 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  {
-# 175 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-        for (j=0; j<nclusters; j++) { partial_new_centers[i][j] = (float*) ({ void *____chimes_tmp_ptr = calloc((nfeatures) + ((sizeof(void *) + sizeof(float) - 1) / sizeof(float)), sizeof(float)); ; calloc_helper(____chimes_tmp_ptr, nfeatures, sizeof(float), 15337938033427924077UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ; };
-# 177 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 175 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+        for (j=0; j<nclusters; j++) { partial_new_centers[i][j] = (float*) ({ void *____chimes_tmp_ptr = calloc((nfeatures) + ((sizeof(void *) + sizeof(float) - 1) / sizeof(float)), sizeof(float)); ; calloc_helper(____chimes_tmp_ptr, nfeatures, sizeof(float), 783774206182856229UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ; };
+# 177 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  }
-# 178 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 178 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     do {
-# 179 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 179 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         delta = 0.0;
-# 180 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 181 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 182 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 183 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 184 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 185 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 180 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 181 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 182 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 183 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+  omp_set_num_threads(num_omp_threads);
+# 184 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+#pragma omp parallel shared(feature,clusters,membership,partial_new_centers,partial_new_centers_len)
+# 185 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 186 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 187 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         {
-# 186 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 187 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 188 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 189 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 188 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 189 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 190 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 191 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
              int tid; tid = (0) ;
-# 190 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 191 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 192 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 193 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 #pragma omp for private(i,j,index) firstprivate(npoints,nclusters,nfeatures) schedule(static) reduction(+:delta)
-# 192 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 193 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 194 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 195 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 196 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 194 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 195 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 196 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 197 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 198 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             for (i=0; i<npoints; i++) {
-# 197 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 198 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 199 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 200 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
           call_lbl_0: index = ({ calling_npm("find_nearest_point", 0); find_nearest_point_npm(feature[i], nfeatures, clusters, nclusters); });
-# 202 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 203 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 204 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 205 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
          if (membership[i] != index) {delta += 1.0; };
-# 204 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 205 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 206 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 207 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 208 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
          membership[i] = index;
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 208 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 209 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 210 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 209 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 210 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 211 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 212 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
          partial_new_centers_len[tid][index]++;
-# 211 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 213 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
          for (j=0; j<nfeatures; j++) { partial_new_centers[tid][index][j] += feature[i][j]; };
-# 213 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 215 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             }
-# 214 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 216 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         }
-# 215 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 216 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 217 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 218 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 219 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         for (i=0; i<nclusters; i++) {
-# 218 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 220 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             for (j=0; j<nthreads; j++) {
-# 219 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 221 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                 new_centers_len[i] += partial_new_centers_len[j][i];
-# 220 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 222 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                 partial_new_centers_len[j][i] = 0.0;
-# 221 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 223 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                 for (k=0; k<nfeatures; k++) {
-# 222 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 224 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                     new_centers[i][k] += partial_new_centers[j][i][k];
-# 223 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 225 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                     partial_new_centers[j][i][k] = 0.0;
-# 224 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 226 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                 }
-# 225 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 227 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             }
-# 226 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 228 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         }
-# 227 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 228 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 229 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 229 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 230 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 231 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
   for (i=0; i<nclusters; i++) {
-# 230 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 232 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             for (j=0; j<nfeatures; j++) {
-# 231 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 233 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                 if (new_centers_len[i] > 0) {clusters[i][j] = new_centers[i][j] / new_centers_len[i]; };
-# 233 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 235 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     new_centers[i][j] = 0.0;
-# 234 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 236 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
    }
-# 235 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 237 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
    new_centers_len[i] = 0;
-# 236 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 238 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
   }
-# 237 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 238 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 239 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 240 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     } while (delta > threshold && loop++ < 500);
-# 239 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 240 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 241 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free_helper((((unsigned char *)new_centers[0]) - sizeof(void *)), 15337938033427924367UL);free((((unsigned char *)new_centers[0]) - sizeof(void *))); }) ;
-# 242 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free_helper((((unsigned char *)new_centers) - sizeof(void *)), 15337938033427924365UL);free((((unsigned char *)new_centers) - sizeof(void *))); }) ;
-# 243 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free_helper((((unsigned char *)new_centers_len) - sizeof(void *)), 15337938033427924373UL);free((((unsigned char *)new_centers_len) - sizeof(void *))); }) ;
-# 244 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 245 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     float **____chimes_ret_var_2; ; ____chimes_ret_var_2 = (clusters); rm_stack(true, 15337938033427924377UL, "kmeans_clustering", &____must_manage_kmeans_clustering, ____alias_loc_id_2, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ;
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-rm_stack(true, 15337938033427924377UL, "kmeans_clustering", &____must_manage_kmeans_clustering, ____alias_loc_id_2, ____chimes_did_disable2, false); }
+# 241 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 242 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 243 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+     ({ free_helper((((unsigned char *)new_centers[0]) - sizeof(void *)), 783774206182856521UL);free((((unsigned char *)new_centers[0]) - sizeof(void *))); }) ;
+# 244 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+     ({ free_helper((((unsigned char *)new_centers) - sizeof(void *)), 783774206182856519UL);free((((unsigned char *)new_centers) - sizeof(void *))); }) ;
+# 245 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+     ({ free_helper((((unsigned char *)new_centers_len) - sizeof(void *)), 783774206182856527UL);free((((unsigned char *)new_centers_len) - sizeof(void *))); }) ;
+# 246 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 247 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+     float **____chimes_ret_var_2; ; ____chimes_ret_var_2 = (clusters); rm_stack(true, 783774206182856531UL, "kmeans_clustering", &____must_manage_kmeans_clustering, ____alias_loc_id_2, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ;
+# 248 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+rm_stack(true, 783774206182856531UL, "kmeans_clustering", &____must_manage_kmeans_clustering, ____alias_loc_id_2, ____chimes_did_disable2, false); }
 
 float** kmeans_clustering(float **feature,
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                           int nfeatures,
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                           int npoints,
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                           int nclusters,
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                           float threshold,
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                           int *membership) { return (____chimes_replaying ? kmeans_clustering_resumable(feature, nfeatures, npoints, nclusters, threshold, membership) : kmeans_clustering_quick(feature, nfeatures, npoints, nclusters, threshold, membership)); }
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 int find_nearest_point_npm(float *pt,
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                        int nfeatures,
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                        float **pts,
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                        int npts)
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 {
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     int index, i;
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     float min_dist=3.40282346638528859812e+38F;
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=0; i<npts; i++) {
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         float dist;
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         dist = euclid_dist_2_npm(pt, pts[i], nfeatures);
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         if (dist < min_dist) {
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             min_dist = dist;
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             index = i;
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         }
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     }
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
      int ____chimes_ret_var_0; ____chimes_ret_var_0 = ((index)); return ____chimes_ret_var_0; ;
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 }
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 float euclid_dist_2_npm(float *pt1,
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                     float *pt2,
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                     int numdims)
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 {
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     int i;
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     float ans=0.0;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=0; i<numdims; i++) { ans += (pt1[i]-pt2[i]) * (pt1[i]-pt2[i]); };
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
      float ____chimes_ret_var_1; ____chimes_ret_var_1 = ((ans)); return ____chimes_ret_var_1; ;
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 }
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 float** kmeans_clustering_npm(float **feature,
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                           int nfeatures,
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                           int npoints,
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                           int nclusters,
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                           float threshold,
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                           int *membership)
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 {
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     int i, j, k, n=0, index, loop=0;
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     int *new_centers_len;
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  float **new_centers;
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  float **clusters;
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     float delta;
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     double timing;
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  int nthreads;
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     int **partial_new_centers_len;
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     float ***partial_new_centers;
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 135 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     nthreads = num_omp_threads;
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    clusters = (float**) ({ void *____chimes_tmp_ptr = malloc((nclusters * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 15337938033427924377UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    clusters[0] = (float*) ({ void *____chimes_tmp_ptr = malloc((nclusters * nfeatures * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nclusters * nfeatures * sizeof(float), 15337938033427923848UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    clusters = (float**) ({ void *____chimes_tmp_ptr = malloc((nclusters * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 783774206182856531UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 139 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    clusters[0] = (float*) ({ void *____chimes_tmp_ptr = malloc((nclusters * nfeatures * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nclusters * nfeatures * sizeof(float), 783774206182856000UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 140 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nclusters; i++) { clusters[i] = clusters[i-1] + nfeatures; };
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 142 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 143 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=0; i<nclusters; i++) {
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 146 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 146 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         for (j=0; j<nfeatures; j++) { clusters[i][j] = feature[n][j]; };
-# 148 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 148 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
   n++;
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 149 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     }
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 151 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=0; i<npoints; i++) { membership[i] = -1; };
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    new_centers_len = (int*) ({ void *____chimes_tmp_ptr = calloc((nclusters) + ((sizeof(void *) + sizeof(int) - 1) / sizeof(int)), sizeof(int)); calloc_helper(____chimes_tmp_ptr, nclusters, sizeof(int), 15337938033427924373UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 157 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    new_centers = (float**) ({ void *____chimes_tmp_ptr = malloc((nclusters * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 15337938033427924365UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 158 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    new_centers[0] = (float*) ({ void *____chimes_tmp_ptr = calloc((nclusters * nfeatures) + ((sizeof(void *) + sizeof(float) - 1) / sizeof(float)), sizeof(float)); calloc_helper(____chimes_tmp_ptr, nclusters * nfeatures, sizeof(float), 15337938033427924367UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 153 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 154 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 155 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    new_centers_len = (int*) ({ void *____chimes_tmp_ptr = calloc((nclusters) + ((sizeof(void *) + sizeof(int) - 1) / sizeof(int)), sizeof(int)); calloc_helper(____chimes_tmp_ptr, nclusters, sizeof(int), 783774206182856527UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 156 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 157 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    new_centers = (float**) ({ void *____chimes_tmp_ptr = malloc((nclusters * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nclusters * sizeof(float*), 783774206182856519UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 158 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    new_centers[0] = (float*) ({ void *____chimes_tmp_ptr = calloc((nclusters * nfeatures) + ((sizeof(void *) + sizeof(float) - 1) / sizeof(float)), sizeof(float)); calloc_helper(____chimes_tmp_ptr, nclusters * nfeatures, sizeof(float), 783774206182856521UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 159 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nclusters; i++) { new_centers[i] = new_centers[i-1] + nfeatures; };
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 162 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 163 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    partial_new_centers_len = (int**) ({ void *____chimes_tmp_ptr = malloc((nthreads * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(int*), 15337938033427924205UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 164 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    partial_new_centers_len[0] = (int*) ({ void *____chimes_tmp_ptr = calloc((nthreads * nclusters) + ((sizeof(void *) + sizeof(int) - 1) / sizeof(int)), sizeof(int)); calloc_helper(____chimes_tmp_ptr, nthreads*nclusters, sizeof(int), 15337938033427924207UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 165 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 161 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 162 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 163 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    partial_new_centers_len = (int**) ({ void *____chimes_tmp_ptr = malloc((nthreads * sizeof(int *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(int*), 783774206182856359UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 164 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    partial_new_centers_len[0] = (int*) ({ void *____chimes_tmp_ptr = calloc((nthreads * nclusters) + ((sizeof(void *) + sizeof(int) - 1) / sizeof(int)), sizeof(int)); calloc_helper(____chimes_tmp_ptr, nthreads*nclusters, sizeof(int), 783774206182856361UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 165 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nthreads; i++) { partial_new_centers_len[i] = partial_new_centers_len[i-1]+nclusters; };
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
- partial_new_centers =(float***) ({ void *____chimes_tmp_ptr = malloc((nthreads * sizeof(float **)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(float**), 15337938033427924083UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 169 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-    partial_new_centers[0] =(float**) ({ void *____chimes_tmp_ptr = malloc((nthreads * nclusters * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nthreads*nclusters * sizeof(float*), 15337938033427924085UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 170 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 167 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 168 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+ partial_new_centers =(float***) ({ void *____chimes_tmp_ptr = malloc((nthreads * sizeof(float **)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nthreads * sizeof(float**), 783774206182856235UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 169 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+    partial_new_centers[0] =(float**) ({ void *____chimes_tmp_ptr = malloc((nthreads * nclusters * sizeof(float *)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nthreads*nclusters * sizeof(float*), 783774206182856237UL, 1, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 170 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     for (i=1; i<nthreads; i++) { partial_new_centers[i] = partial_new_centers[i-1] + nclusters; };
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 173 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 172 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 173 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  for (i=0; i<nthreads; i++)
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 174 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  {
-# 175 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-        for (j=0; j<nclusters; j++) { partial_new_centers[i][j] = (float*) ({ void *____chimes_tmp_ptr = calloc((nfeatures) + ((sizeof(void *) + sizeof(float) - 1) / sizeof(float)), sizeof(float)); calloc_helper(____chimes_tmp_ptr, nfeatures, sizeof(float), 15337938033427924077UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ; };
-# 177 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 175 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+        for (j=0; j<nclusters; j++) { partial_new_centers[i][j] = (float*) ({ void *____chimes_tmp_ptr = calloc((nfeatures) + ((sizeof(void *) + sizeof(float) - 1) / sizeof(float)), sizeof(float)); calloc_helper(____chimes_tmp_ptr, nfeatures, sizeof(float), 783774206182856229UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ; };
+# 177 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
  }
-# 178 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 178 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     do {
-# 179 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 179 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         delta = 0.0;
-# 180 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 181 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 182 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 183 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 184 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 185 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 180 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 181 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 182 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 183 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+  omp_set_num_threads(num_omp_threads);
+# 184 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+#pragma omp parallel shared(feature,clusters,membership,partial_new_centers,partial_new_centers_len)
+# 185 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 186 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 187 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         {
-# 186 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 187 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 188 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 189 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 188 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 189 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 190 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 191 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             int tid = 0;
-# 190 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 191 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 192 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 193 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 #pragma omp for private(i,j,index) firstprivate(npoints,nclusters,nfeatures) schedule(static) reduction(+:delta)
-# 192 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 193 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 194 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 195 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 196 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 194 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 195 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 196 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 197 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 198 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             for (i=0; i<npoints; i++) {
-# 197 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 198 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 199 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 200 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
          index = find_nearest_point_npm(feature[i], nfeatures, clusters, nclusters);
-# 202 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 203 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 204 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 205 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
          if (membership[i] != index) {delta += 1.0; };
-# 204 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 205 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 206 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 207 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 208 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
          membership[i] = index;
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 208 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 209 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 210 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 209 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 210 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 211 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 212 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
          partial_new_centers_len[tid][index]++;
-# 211 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 213 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
          for (j=0; j<nfeatures; j++) { partial_new_centers[tid][index][j] += feature[i][j]; };
-# 213 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 215 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             }
-# 214 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 216 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         }
-# 215 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 216 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 217 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 218 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 219 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         for (i=0; i<nclusters; i++) {
-# 218 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 220 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             for (j=0; j<nthreads; j++) {
-# 219 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 221 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                 new_centers_len[i] += partial_new_centers_len[j][i];
-# 220 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 222 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                 partial_new_centers_len[j][i] = 0.0;
-# 221 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 223 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                 for (k=0; k<nfeatures; k++) {
-# 222 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 224 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                     new_centers[i][k] += partial_new_centers[j][i][k];
-# 223 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 225 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                     partial_new_centers[j][i][k] = 0.0;
-# 224 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 226 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                 }
-# 225 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 227 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             }
-# 226 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 228 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
         }
-# 227 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 228 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 229 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 229 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 230 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 231 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
   for (i=0; i<nclusters; i++) {
-# 230 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 232 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
             for (j=0; j<nfeatures; j++) {
-# 231 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 233 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
                 if (new_centers_len[i] > 0) {clusters[i][j] = new_centers[i][j] / new_centers_len[i]; };
-# 233 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 235 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     new_centers[i][j] = 0.0;
-# 234 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 236 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
    }
-# 235 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 237 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
    new_centers_len[i] = 0;
-# 236 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 238 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
   }
-# 237 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 238 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 239 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 240 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
     } while (delta > threshold && loop++ < 500);
-# 239 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 240 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 241 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free_helper((((unsigned char *)new_centers[0]) - sizeof(void *)), 15337938033427924367UL);free((((unsigned char *)new_centers[0]) - sizeof(void *))); }) ;
-# 242 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free_helper((((unsigned char *)new_centers) - sizeof(void *)), 15337938033427924365UL);free((((unsigned char *)new_centers) - sizeof(void *))); }) ;
-# 243 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-     ({ free_helper((((unsigned char *)new_centers_len) - sizeof(void *)), 15337938033427924373UL);free((((unsigned char *)new_centers_len) - sizeof(void *))); }) ;
-# 244 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
-# 245 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 241 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 242 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 243 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+     ({ free_helper((((unsigned char *)new_centers[0]) - sizeof(void *)), 783774206182856521UL);free((((unsigned char *)new_centers[0]) - sizeof(void *))); }) ;
+# 244 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+     ({ free_helper((((unsigned char *)new_centers) - sizeof(void *)), 783774206182856519UL);free((((unsigned char *)new_centers) - sizeof(void *))); }) ;
+# 245 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+     ({ free_helper((((unsigned char *)new_centers_len) - sizeof(void *)), 783774206182856527UL);free((((unsigned char *)new_centers_len) - sizeof(void *))); }) ;
+# 246 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 247 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
      float ** ____chimes_ret_var_2; ____chimes_ret_var_2 = (clusters); return ____chimes_ret_var_2; ;
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
+# 248 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c"
 }
 
 
@@ -4116,40 +4128,40 @@ float** kmeans_clustering_npm(float **feature,
 
 
 static int module_init() {
-    init_module(15337938033427923662UL, 19, 3, 0, 3, 3, 0, 3, 2, 0, 0,
-                           &____alias_loc_id_0, (unsigned)9, (unsigned)0, (unsigned)0, (15337938033427923662UL + 1UL), (15337938033427923662UL + 2UL), (15337938033427923662UL + 3UL), (15337938033427923662UL + 4UL), (15337938033427923662UL + 5UL), (15337938033427923662UL + 6UL), (15337938033427923662UL + 7UL), (15337938033427923662UL + 8UL), (15337938033427923662UL + 9UL),
-                           &____alias_loc_id_1, (unsigned)6, (unsigned)0, (unsigned)0, (15337938033427923662UL + 63UL), (15337938033427923662UL + 64UL), (15337938033427923662UL + 65UL), (15337938033427923662UL + 66UL), (15337938033427923662UL + 67UL), (15337938033427923662UL + 68UL),
-                           &____alias_loc_id_2, (unsigned)32, (unsigned)0, (unsigned)0, (15337938033427923662UL + 123UL), (15337938033427923662UL + 124UL), (15337938033427923662UL + 125UL), (15337938033427923662UL + 126UL), (15337938033427923662UL + 127UL), (15337938033427923662UL + 128UL), (15337938033427923662UL + 129UL), (15337938033427923662UL + 130UL), (15337938033427923662UL + 131UL), (15337938033427923662UL + 132UL), (15337938033427923662UL + 133UL), (15337938033427923662UL + 134UL), (15337938033427923662UL + 135UL), (15337938033427923662UL + 136UL), (15337938033427923662UL + 137UL), (15337938033427923662UL + 138UL), (15337938033427923662UL + 140UL), (15337938033427923662UL + 141UL), (15337938033427923662UL + 142UL), (15337938033427923662UL + 143UL), (15337938033427923662UL + 144UL), (15337938033427923662UL + 186UL), (15337938033427923662UL + 415UL), (15337938033427923662UL + 421UL), (15337938033427923662UL + 423UL), (15337938033427923662UL + 543UL), (15337938033427923662UL + 545UL), (15337938033427923662UL + 703UL), (15337938033427923662UL + 705UL), (15337938033427923662UL + 711UL), (15337938033427923662UL + 715UL), (15337938033427923662UL + 724UL),
-                            "euclid_dist_2", 0, "_Z13euclid_dist_2PfS_i", "_Z17euclid_dist_2_npmPfS_i", 0, 3, (15337938033427923662UL + 120UL), (15337938033427923662UL + 121UL), 0UL, 0UL, 0,
-                            "find_nearest_point", 0, "_Z18find_nearest_pointPfiPS_i", "_Z22find_nearest_point_npmPfiPS_i", 0, 4, (15337938033427923662UL + 57UL), 0UL, (15337938033427923662UL + 59UL), 0UL, 0UL, 1, "euclid_dist_2", 3, (15337938033427923662UL + 57UL), (15337938033427923662UL + 34UL), 0UL, 0UL,
-                            "kmeans_clustering", 0, "_Z17kmeans_clusteringPPfiiifPi", "_Z21kmeans_clustering_npmPPfiiifPi", 0, 6, (15337938033427923662UL + 719UL), 0UL, 0UL, 0UL, 0UL, (15337938033427923662UL + 724UL), (15337938033427923662UL + 715UL), 14, "malloc", 1, 0UL, (15337938033427923662UL + 715UL), "malloc", 1, 0UL, (15337938033427923662UL + 186UL), "calloc", 2, 0UL, 0UL, (15337938033427923662UL + 711UL), "malloc", 1, 0UL, (15337938033427923662UL + 703UL), "calloc", 2, 0UL, 0UL, (15337938033427923662UL + 705UL), "malloc", 1, 0UL, (15337938033427923662UL + 543UL), "calloc", 2, 0UL, 0UL, (15337938033427923662UL + 545UL), "malloc", 1, 0UL, (15337938033427923662UL + 421UL), "malloc", 1, 0UL, (15337938033427923662UL + 423UL), "calloc", 2, 0UL, 0UL, (15337938033427923662UL + 415UL), "find_nearest_point", 4, (15337938033427923662UL + 450UL), 0UL, (15337938033427923662UL + 715UL), 0UL, 0UL, "free", 1, (15337938033427923662UL + 705UL), 0UL, "free", 1, (15337938033427923662UL + 703UL), 0UL, "free", 1, (15337938033427923662UL + 711UL), 0UL,
+    init_module(783774206182855814UL, 19, 3, 0, 3, 3, 0, 3, 2, 0, 0,
+                           &____alias_loc_id_0, (unsigned)9, (unsigned)0, (unsigned)0, (783774206182855814UL + 1UL), (783774206182855814UL + 2UL), (783774206182855814UL + 3UL), (783774206182855814UL + 4UL), (783774206182855814UL + 5UL), (783774206182855814UL + 6UL), (783774206182855814UL + 7UL), (783774206182855814UL + 8UL), (783774206182855814UL + 9UL),
+                           &____alias_loc_id_1, (unsigned)6, (unsigned)0, (unsigned)0, (783774206182855814UL + 63UL), (783774206182855814UL + 64UL), (783774206182855814UL + 65UL), (783774206182855814UL + 66UL), (783774206182855814UL + 67UL), (783774206182855814UL + 68UL),
+                           &____alias_loc_id_2, (unsigned)32, (unsigned)0, (unsigned)0, (783774206182855814UL + 123UL), (783774206182855814UL + 124UL), (783774206182855814UL + 125UL), (783774206182855814UL + 126UL), (783774206182855814UL + 127UL), (783774206182855814UL + 128UL), (783774206182855814UL + 129UL), (783774206182855814UL + 130UL), (783774206182855814UL + 131UL), (783774206182855814UL + 132UL), (783774206182855814UL + 133UL), (783774206182855814UL + 134UL), (783774206182855814UL + 135UL), (783774206182855814UL + 136UL), (783774206182855814UL + 137UL), (783774206182855814UL + 138UL), (783774206182855814UL + 140UL), (783774206182855814UL + 141UL), (783774206182855814UL + 142UL), (783774206182855814UL + 143UL), (783774206182855814UL + 144UL), (783774206182855814UL + 186UL), (783774206182855814UL + 415UL), (783774206182855814UL + 421UL), (783774206182855814UL + 423UL), (783774206182855814UL + 545UL), (783774206182855814UL + 547UL), (783774206182855814UL + 705UL), (783774206182855814UL + 707UL), (783774206182855814UL + 713UL), (783774206182855814UL + 717UL), (783774206182855814UL + 726UL),
+                            "euclid_dist_2", 0, "_Z13euclid_dist_2PfS_i", "_Z17euclid_dist_2_npmPfS_i", 0, 3, (783774206182855814UL + 120UL), (783774206182855814UL + 121UL), 0UL, 0UL, 0,
+                            "find_nearest_point", 0, "_Z18find_nearest_pointPfiPS_i", "_Z22find_nearest_point_npmPfiPS_i", 0, 4, (783774206182855814UL + 57UL), 0UL, (783774206182855814UL + 59UL), 0UL, 0UL, 1, "euclid_dist_2", 3, (783774206182855814UL + 57UL), (783774206182855814UL + 34UL), 0UL, 0UL,
+                            "kmeans_clustering", 0, "_Z17kmeans_clusteringPPfiiifPi", "_Z21kmeans_clustering_npmPPfiiifPi", 0, 6, (783774206182855814UL + 721UL), 0UL, 0UL, 0UL, 0UL, (783774206182855814UL + 726UL), (783774206182855814UL + 717UL), 15, "malloc", 1, 0UL, (783774206182855814UL + 717UL), "malloc", 1, 0UL, (783774206182855814UL + 186UL), "calloc", 2, 0UL, 0UL, (783774206182855814UL + 713UL), "malloc", 1, 0UL, (783774206182855814UL + 705UL), "calloc", 2, 0UL, 0UL, (783774206182855814UL + 707UL), "malloc", 1, 0UL, (783774206182855814UL + 545UL), "calloc", 2, 0UL, 0UL, (783774206182855814UL + 547UL), "malloc", 1, 0UL, (783774206182855814UL + 421UL), "malloc", 1, 0UL, (783774206182855814UL + 423UL), "calloc", 2, 0UL, 0UL, (783774206182855814UL + 415UL), "omp_set_num_threads", 1, 0UL, 0UL, "find_nearest_point", 4, (783774206182855814UL + 452UL), 0UL, (783774206182855814UL + 717UL), 0UL, 0UL, "free", 1, (783774206182855814UL + 707UL), 0UL, "free", 1, (783774206182855814UL + 705UL), 0UL, "free", 1, (783774206182855814UL + 713UL), 0UL,
                            "euclid_dist_2", &(____chimes_does_checkpoint_euclid_dist_2_npm),
                            "find_nearest_point", &(____chimes_does_checkpoint_find_nearest_point_npm),
                            "kmeans_clustering", &(____chimes_does_checkpoint_kmeans_clustering_npm),
-                             (15337938033427923662UL + 123UL), (15337938033427923662UL + 719UL),
-                             (15337938033427923662UL + 59UL), (15337938033427923662UL + 34UL),
-                             (15337938033427923662UL + 543UL), (15337938033427923662UL + 545UL),
-                             (15337938033427923662UL + 719UL), (15337938033427923662UL + 450UL),
-                             (15337938033427923662UL + 141UL), (15337938033427923662UL + 543UL),
-                             (15337938033427923662UL + 715UL), (15337938033427923662UL + 186UL),
-                             (15337938033427923662UL + 142UL), (15337938033427923662UL + 421UL),
-                             (15337938033427923662UL + 144UL), (15337938033427923662UL + 715UL),
-                             (15337938033427923662UL + 703UL), (15337938033427923662UL + 705UL),
-                             (15337938033427923662UL + 1UL), (15337938033427923662UL + 57UL),
-                             (15337938033427923662UL + 421UL), (15337938033427923662UL + 423UL),
-                             (15337938033427923662UL + 3UL), (15337938033427923662UL + 59UL),
-                             (15337938033427923662UL + 63UL), (15337938033427923662UL + 120UL),
-                             (15337938033427923662UL + 64UL), (15337938033427923662UL + 121UL),
-                             (15337938033427923662UL + 136UL), (15337938033427923662UL + 703UL),
-                             (15337938033427923662UL + 135UL), (15337938033427923662UL + 711UL),
-                             (15337938033427923662UL + 128UL), (15337938033427923662UL + 724UL),
-                             (15337938033427923662UL + 137UL), (15337938033427923662UL + 715UL),
-                             (15337938033427923662UL + 423UL), (15337938033427923662UL + 415UL),
+                             (783774206182855814UL + 123UL), (783774206182855814UL + 721UL),
+                             (783774206182855814UL + 59UL), (783774206182855814UL + 34UL),
+                             (783774206182855814UL + 141UL), (783774206182855814UL + 545UL),
+                             (783774206182855814UL + 717UL), (783774206182855814UL + 186UL),
+                             (783774206182855814UL + 705UL), (783774206182855814UL + 707UL),
+                             (783774206182855814UL + 721UL), (783774206182855814UL + 452UL),
+                             (783774206182855814UL + 142UL), (783774206182855814UL + 421UL),
+                             (783774206182855814UL + 144UL), (783774206182855814UL + 717UL),
+                             (783774206182855814UL + 1UL), (783774206182855814UL + 57UL),
+                             (783774206182855814UL + 421UL), (783774206182855814UL + 423UL),
+                             (783774206182855814UL + 3UL), (783774206182855814UL + 59UL),
+                             (783774206182855814UL + 63UL), (783774206182855814UL + 120UL),
+                             (783774206182855814UL + 64UL), (783774206182855814UL + 121UL),
+                             (783774206182855814UL + 136UL), (783774206182855814UL + 705UL),
+                             (783774206182855814UL + 135UL), (783774206182855814UL + 713UL),
+                             (783774206182855814UL + 545UL), (783774206182855814UL + 547UL),
+                             (783774206182855814UL + 128UL), (783774206182855814UL + 726UL),
+                             (783774206182855814UL + 137UL), (783774206182855814UL + 717UL),
+                             (783774206182855814UL + 423UL), (783774206182855814UL + 415UL),
                              "euclid_dist_2", "_Z13euclid_dist_2PfS_i", 0, 0,
                              "find_nearest_point", "_Z18find_nearest_pointPfiPS_i", 0, 1, "euclid_dist_2",
                              "kmeans_clustering", "_Z17kmeans_clusteringPPfiiifPi", 0, 1, "find_nearest_point",
-        "euclid_dist_2", 0UL, (int)3, 15337938033427923719UL, 15337938033427923696UL, 0UL,
-        "find_nearest_point", 0UL, (int)4, 15337938033427924112UL, 0UL, 15337938033427924377UL, 0UL);
+        "euclid_dist_2", 0UL, (int)3, 783774206182855871UL, 783774206182855848UL, 0UL,
+        "find_nearest_point", 0UL, (int)4, 783774206182856266UL, 0UL, 783774206182856531UL, 0UL);
     return 0;
 }
 

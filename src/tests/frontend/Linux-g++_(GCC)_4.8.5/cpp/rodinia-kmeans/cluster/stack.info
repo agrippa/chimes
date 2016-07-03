@@ -1,9 +1,9 @@
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c cluster|numObjects|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c cluster|numAttributes|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c cluster|attributes|0 " float** " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c cluster|nclusters|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c cluster|threshold|0 " float " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c cluster|cluster_centres|0 " float*** " 64 1 0 1 kmeans_clustering
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c cluster|membership|0 " i32* " 64 1 0 1 kmeans_clustering
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c cluster|tmp_cluster_centres|0 " float** " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c cluster|____chimes_ret_var_0|0 " i32 " 32 0 0 0
+/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c cluster|numObjects|0 " i32 " 32 0 0 0
+/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c cluster|numAttributes|0 " i32 " 32 0 0 0
+/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c cluster|attributes|0 " float** " 64 1 0 0
+/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c cluster|nclusters|0 " i32 " 32 0 0 0
+/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c cluster|threshold|0 " float " 32 0 0 0
+/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c cluster|cluster_centres|0 " float*** " 64 1 0 1 kmeans_clustering
+/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c cluster|membership|0 " i32* " 64 1 0 1 kmeans_clustering
+/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c cluster|tmp_cluster_centres|0 " float** " 64 1 0 0
+/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/cluster.c cluster|____chimes_ret_var_0|0 " i32 " 32 0 0 0

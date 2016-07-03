@@ -17,11 +17,11 @@ static int ____must_manage_myocyte_read = 2;
 
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -30,7 +30,7 @@ static unsigned ____alias_loc_id_1;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -86,15 +86,15 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/define.h" 1
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/define.h" 1
 
 
 
@@ -1423,7 +1423,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/define.h" 2
+# 7 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/define.h" 2
 # 1 "/usr/include/math.h" 1 3 4
 # 30 "/usr/include/math.h" 3 4
 extern "C" {
@@ -2428,7 +2428,7 @@ __signbitl (long double __x) throw ()
 # 417 "/usr/include/math.h" 2 3 4
 # 472 "/usr/include/math.h" 3 4
 }
-# 8 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/define.h" 2
+# 8 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/define.h" 2
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 1 3 4
 # 34 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 3 4
 typedef struct
@@ -2502,8 +2502,8 @@ int omp_in_final (void) throw ();
 
 
 }
-# 9 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/define.h" 2
-# 18 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/define.h"
+# 9 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/define.h" 2
+# 18 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/define.h"
 extern float embedded_fehlberg_7_8( float timeinst,
                float h,
                float* initvalu,
@@ -2561,14 +2561,14 @@ extern void myocyte_write( char* filename,
      int data_range);
 
 extern long long get_time();
-# 2 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c" 2
-# 2 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 3 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 4 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 5 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 6 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 8 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 2 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c" 2
+# 2 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 3 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 4 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 5 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 6 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 7 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 8 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
 
 # 1 "/usr/include/stdio.h" 1 3 4
 # 30 "/usr/include/stdio.h" 3 4
@@ -3377,548 +3377,548 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c" 2
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c" 2
+# 20 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 20 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
 void myocyte_write_npm( char* filename, float* input, int data_rows, int data_cols, int major, int data_range);
 void myocyte_write_quick( char* filename, float* input, int data_rows, int data_cols, int major, int data_range); void myocyte_write( char* filename, float* input, int data_rows, int data_cols, int major, int data_range);
 void myocyte_write_resumable( char* filename,
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 21 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      float* input,
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int data_rows,
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int data_cols,
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int major,
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-     int data_range){const int ____chimes_did_disable0 = new_stack((void *)(&myocyte_write), "myocyte_write", &____must_manage_myocyte_write, 6, 0, (size_t)(3544992386570270565UL), (size_t)(3544992386570270566UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+     int data_range){const int ____chimes_did_disable0 = new_stack((void *)(&myocyte_write), "myocyte_write", &____must_manage_myocyte_write, 6, 0, (size_t)(4420220543778136285UL), (size_t)(4420220543778136286UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  FILE *fid; ;
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  int i; int j; ;
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  fid = fopen(filename, "w");
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  if( fid == __null ){
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   printf( "The file was not created/opened for writing\n" );
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   rm_stack(false, 0UL, "myocyte_write", &____must_manage_myocyte_write, ____alias_loc_id_0, ____chimes_did_disable0, false); return;
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  }
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  if(major==0){
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   for(i=0; i<data_rows; i++){
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    for(j=0; j<data_cols; j++){
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
     fprintf(fid, "%f ", (float)input[i*data_cols+j]);
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    }
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    fprintf(fid, "\n");
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   }
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  }
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  else{
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   for(i=0; i<data_rows; i++){
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    for(j=0; j<data_cols; j++){
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
     fprintf(fid, "%f ", (float)input[j*data_rows+i]);
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    }
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    fprintf(fid, "\n");
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   }
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 65 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  }
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  fclose(fid);
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
 rm_stack(false, 0UL, "myocyte_write", &____must_manage_myocyte_write, ____alias_loc_id_0, ____chimes_did_disable0, false); }
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 74 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 77 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
 void myocyte_read_npm( char* filename, float* input, int data_rows, int data_cols, int major);
 void myocyte_read_quick( char* filename, float* input, int data_rows, int data_cols, int major); void myocyte_read( char* filename, float* input, int data_rows, int data_cols, int major);
 void myocyte_read_resumable( char* filename,
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      float* input,
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int data_rows,
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int data_cols,
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-     int major){const int ____chimes_did_disable1 = new_stack((void *)(&myocyte_read), "myocyte_read", &____must_manage_myocyte_read, 5, 0, (size_t)(3544992386570270689UL), (size_t)(3544992386570270690UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+     int major){const int ____chimes_did_disable1 = new_stack((void *)(&myocyte_read), "myocyte_read", &____must_manage_myocyte_read, 5, 0, (size_t)(4420220543778136409UL), (size_t)(4420220543778136410UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  FILE *fid; ;
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  int i; int j; ;
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  char c; ;
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  float temp; ;
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  fid = fopen(filename, "r");
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  if( fid == __null ){
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   printf( "The file was not opened for reading\n" );
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   rm_stack(false, 0UL, "myocyte_read", &____must_manage_myocyte_read, ____alias_loc_id_1, ____chimes_did_disable1, false); return;
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  }
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  if(major==0){
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   for(i=0; i<data_rows; i++){
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    for(j=0; j<data_cols; j++){
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
     fscanf(fid, "%f", &temp);
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
     input[i*data_cols+j] = (float)temp;
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    }
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   }
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  }
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  else{
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   for(i=0; i<data_rows; i++){
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    for(j=0; j<data_cols; j++){
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
     fscanf(fid, "%f", &temp);
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
     input[j*data_rows+i] = (float)temp;
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    }
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   }
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  }
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  fclose(fid);
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
 rm_stack(false, 0UL, "myocyte_read", &____must_manage_myocyte_read, ____alias_loc_id_1, ____chimes_did_disable1, false); }
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 20 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
 void myocyte_write_quick( char* filename,
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 21 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      float* input,
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int data_rows,
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int data_cols,
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int major,
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-     int data_range){const int ____chimes_did_disable0 = new_stack((void *)(&myocyte_write), "myocyte_write", &____must_manage_myocyte_write, 6, 0, (size_t)(3544992386570270565UL), (size_t)(3544992386570270566UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+     int data_range){const int ____chimes_did_disable0 = new_stack((void *)(&myocyte_write), "myocyte_write", &____must_manage_myocyte_write, 6, 0, (size_t)(4420220543778136285UL), (size_t)(4420220543778136286UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  FILE *fid; ;
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  int i; int j; ;
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  fid = fopen(filename, "w");
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  if( fid == __null ){
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   printf( "The file was not created/opened for writing\n" );
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   rm_stack(false, 0UL, "myocyte_write", &____must_manage_myocyte_write, ____alias_loc_id_0, ____chimes_did_disable0, false); return;
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  }
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  if(major==0){
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   for(i=0; i<data_rows; i++){
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    for(j=0; j<data_cols; j++){
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
     fprintf(fid, "%f ", (float)input[i*data_cols+j]);
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    }
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    fprintf(fid, "\n");
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   }
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  }
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  else{
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   for(i=0; i<data_rows; i++){
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    for(j=0; j<data_cols; j++){
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
     fprintf(fid, "%f ", (float)input[j*data_rows+i]);
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    }
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    fprintf(fid, "\n");
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   }
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 65 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  }
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  fclose(fid);
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
 rm_stack(false, 0UL, "myocyte_write", &____must_manage_myocyte_write, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 
 void myocyte_write( char* filename,
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 21 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      float* input,
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int data_rows,
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int data_cols,
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int major,
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int data_range) { (____chimes_replaying ? myocyte_write_resumable(filename, input, data_rows, data_cols, major, data_range) : myocyte_write_quick(filename, input, data_rows, data_cols, major, data_range)); }
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
 void myocyte_read_quick( char* filename,
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      float* input,
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int data_rows,
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int data_cols,
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-     int major){const int ____chimes_did_disable1 = new_stack((void *)(&myocyte_read), "myocyte_read", &____must_manage_myocyte_read, 5, 0, (size_t)(3544992386570270689UL), (size_t)(3544992386570270690UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+     int major){const int ____chimes_did_disable1 = new_stack((void *)(&myocyte_read), "myocyte_read", &____must_manage_myocyte_read, 5, 0, (size_t)(4420220543778136409UL), (size_t)(4420220543778136410UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  FILE *fid; ;
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  int i; int j; ;
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  char c; ;
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  float temp; ;
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  fid = fopen(filename, "r");
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  if( fid == __null ){
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   printf( "The file was not opened for reading\n" );
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   rm_stack(false, 0UL, "myocyte_read", &____must_manage_myocyte_read, ____alias_loc_id_1, ____chimes_did_disable1, false); return;
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  }
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  if(major==0){
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   for(i=0; i<data_rows; i++){
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    for(j=0; j<data_cols; j++){
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
     fscanf(fid, "%f", &temp);
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
     input[i*data_cols+j] = (float)temp;
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    }
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   }
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  }
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  else{
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   for(i=0; i<data_rows; i++){
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    for(j=0; j<data_cols; j++){
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
     fscanf(fid, "%f", &temp);
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
     input[j*data_rows+i] = (float)temp;
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    }
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   }
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  }
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  fclose(fid);
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
 rm_stack(false, 0UL, "myocyte_read", &____must_manage_myocyte_read, ____alias_loc_id_1, ____chimes_did_disable1, false); }
 
 void myocyte_read( char* filename,
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      float* input,
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int data_rows,
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int data_cols,
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int major) { (____chimes_replaying ? myocyte_read_resumable(filename, input, data_rows, data_cols, major) : myocyte_read_quick(filename, input, data_rows, data_cols, major)); }
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 20 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
 void myocyte_write_npm( char* filename,
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 21 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      float* input,
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int data_rows,
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int data_cols,
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int major,
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int data_range){
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  FILE* fid;
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  int i, j;
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  fid = fopen(filename, "w");
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  if( fid == __null ){
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   printf( "The file was not created/opened for writing\n" );
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   return;
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  }
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  if(major==0){
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   for(i=0; i<data_rows; i++){
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    for(j=0; j<data_cols; j++){
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
     fprintf(fid, "%f ", (float)input[i*data_cols+j]);
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    }
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    fprintf(fid, "\n");
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   }
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  }
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  else{
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   for(i=0; i<data_rows; i++){
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    for(j=0; j<data_cols; j++){
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
     fprintf(fid, "%f ", (float)input[j*data_rows+i]);
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    }
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    fprintf(fid, "\n");
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   }
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 65 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  }
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  fclose(fid);
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
 }
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
 void myocyte_read_npm( char* filename,
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      float* input,
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int data_rows,
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int data_cols,
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
      int major){
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  FILE* fid;
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  int i, j;
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  char c;
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  float temp;
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  fid = fopen(filename, "r");
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  if( fid == __null ){
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   printf( "The file was not opened for reading\n" );
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   return;
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  }
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  if(major==0){
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   for(i=0; i<data_rows; i++){
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    for(j=0; j<data_cols; j++){
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
     fscanf(fid, "%f", &temp);
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
     input[i*data_cols+j] = (float)temp;
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    }
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   }
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  }
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  else{
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   for(i=0; i<data_rows; i++){
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    for(j=0; j<data_cols; j++){
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
     fscanf(fid, "%f", &temp);
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
     input[j*data_rows+i] = (float)temp;
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
    }
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
   }
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  }
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
  fclose(fid);
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/myocyte/file.c"
 }
 
 
@@ -3926,19 +3926,19 @@ void myocyte_read_npm( char* filename,
 
 
 static int module_init() {
-    init_module(3544992386570270451UL, 6, 2, 0, 2, 2, 0, 2, 0, 0, 2,
-                           &____alias_loc_id_0, (unsigned)10, (unsigned)0, (unsigned)0, (3544992386570270451UL + 1UL), (3544992386570270451UL + 2UL), (3544992386570270451UL + 3UL), (3544992386570270451UL + 4UL), (3544992386570270451UL + 5UL), (3544992386570270451UL + 6UL), (3544992386570270451UL + 7UL), (3544992386570270451UL + 8UL), (3544992386570270451UL + 9UL), (3544992386570270451UL + 26UL),
-                           &____alias_loc_id_1, (unsigned)10, (unsigned)0, (unsigned)0, (3544992386570270451UL + 128UL), (3544992386570270451UL + 129UL), (3544992386570270451UL + 130UL), (3544992386570270451UL + 131UL), (3544992386570270451UL + 132UL), (3544992386570270451UL + 133UL), (3544992386570270451UL + 134UL), (3544992386570270451UL + 135UL), (3544992386570270451UL + 154UL), (3544992386570270451UL + 239UL),
-                            "myocyte_write", 0, "_Z13myocyte_writePcPfiiii", "_Z17myocyte_write_npmPcPfiiii", 0, 6, (3544992386570270451UL + 114UL), (3544992386570270451UL + 115UL), 0UL, 0UL, 0UL, 0UL, 0UL, 7, "fopen", 2, (3544992386570270451UL + 114UL), (3544992386570270451UL + 245UL), (3544992386570270451UL + 26UL), "printf", 1, (3544992386570270451UL + 246UL), 0UL, "fprintf", 3, (3544992386570270451UL + 26UL), (3544992386570270451UL + 247UL), 0UL, 0UL, "fprintf", 2, (3544992386570270451UL + 26UL), (3544992386570270451UL + 245UL), 0UL, "fprintf", 3, (3544992386570270451UL + 26UL), (3544992386570270451UL + 247UL), 0UL, 0UL, "fprintf", 2, (3544992386570270451UL + 26UL), (3544992386570270451UL + 245UL), 0UL, "fclose", 1, (3544992386570270451UL + 26UL), 0UL,
-                            "myocyte_read", 0, "_Z12myocyte_readPcPfiii", "_Z16myocyte_read_npmPcPfiii", 0, 5, (3544992386570270451UL + 238UL), (3544992386570270451UL + 239UL), 0UL, 0UL, 0UL, 0UL, 5, "fopen", 2, (3544992386570270451UL + 238UL), (3544992386570270451UL + 245UL), (3544992386570270451UL + 154UL), "printf", 1, (3544992386570270451UL + 250UL), 0UL, "fscanf", 3, (3544992386570270451UL + 154UL), (3544992386570270451UL + 251UL), (3544992386570270451UL + 137UL), 0UL, "fscanf", 3, (3544992386570270451UL + 154UL), (3544992386570270451UL + 251UL), (3544992386570270451UL + 137UL), 0UL, "fclose", 1, (3544992386570270451UL + 154UL), 0UL,
+    init_module(4420220543778136171UL, 6, 2, 0, 2, 2, 0, 2, 0, 0, 2,
+                           &____alias_loc_id_0, (unsigned)10, (unsigned)0, (unsigned)0, (4420220543778136171UL + 1UL), (4420220543778136171UL + 2UL), (4420220543778136171UL + 3UL), (4420220543778136171UL + 4UL), (4420220543778136171UL + 5UL), (4420220543778136171UL + 6UL), (4420220543778136171UL + 7UL), (4420220543778136171UL + 8UL), (4420220543778136171UL + 9UL), (4420220543778136171UL + 26UL),
+                           &____alias_loc_id_1, (unsigned)10, (unsigned)0, (unsigned)0, (4420220543778136171UL + 128UL), (4420220543778136171UL + 129UL), (4420220543778136171UL + 130UL), (4420220543778136171UL + 131UL), (4420220543778136171UL + 132UL), (4420220543778136171UL + 133UL), (4420220543778136171UL + 134UL), (4420220543778136171UL + 135UL), (4420220543778136171UL + 154UL), (4420220543778136171UL + 239UL),
+                            "myocyte_write", 0, "_Z13myocyte_writePcPfiiii", "_Z17myocyte_write_npmPcPfiiii", 0, 6, (4420220543778136171UL + 114UL), (4420220543778136171UL + 115UL), 0UL, 0UL, 0UL, 0UL, 0UL, 7, "fopen", 2, (4420220543778136171UL + 114UL), (4420220543778136171UL + 245UL), (4420220543778136171UL + 26UL), "printf", 1, (4420220543778136171UL + 246UL), 0UL, "fprintf", 3, (4420220543778136171UL + 26UL), (4420220543778136171UL + 247UL), 0UL, 0UL, "fprintf", 2, (4420220543778136171UL + 26UL), (4420220543778136171UL + 245UL), 0UL, "fprintf", 3, (4420220543778136171UL + 26UL), (4420220543778136171UL + 247UL), 0UL, 0UL, "fprintf", 2, (4420220543778136171UL + 26UL), (4420220543778136171UL + 245UL), 0UL, "fclose", 1, (4420220543778136171UL + 26UL), 0UL,
+                            "myocyte_read", 0, "_Z12myocyte_readPcPfiii", "_Z16myocyte_read_npmPcPfiii", 0, 5, (4420220543778136171UL + 238UL), (4420220543778136171UL + 239UL), 0UL, 0UL, 0UL, 0UL, 5, "fopen", 2, (4420220543778136171UL + 238UL), (4420220543778136171UL + 245UL), (4420220543778136171UL + 154UL), "printf", 1, (4420220543778136171UL + 250UL), 0UL, "fscanf", 3, (4420220543778136171UL + 154UL), (4420220543778136171UL + 251UL), (4420220543778136171UL + 137UL), 0UL, "fscanf", 3, (4420220543778136171UL + 154UL), (4420220543778136171UL + 251UL), (4420220543778136171UL + 137UL), 0UL, "fclose", 1, (4420220543778136171UL + 154UL), 0UL,
                            "myocyte_write", &(____chimes_does_checkpoint_myocyte_write_npm),
                            "myocyte_read", &(____chimes_does_checkpoint_myocyte_read_npm),
-                             (3544992386570270451UL + 133UL), (3544992386570270451UL + 154UL),
-                             (3544992386570270451UL + 1UL), (3544992386570270451UL + 114UL),
-                             (3544992386570270451UL + 2UL), (3544992386570270451UL + 115UL),
-                             (3544992386570270451UL + 7UL), (3544992386570270451UL + 26UL),
-                             (3544992386570270451UL + 128UL), (3544992386570270451UL + 238UL),
-                             (3544992386570270451UL + 129UL), (3544992386570270451UL + 239UL),
+                             (4420220543778136171UL + 133UL), (4420220543778136171UL + 154UL),
+                             (4420220543778136171UL + 1UL), (4420220543778136171UL + 114UL),
+                             (4420220543778136171UL + 2UL), (4420220543778136171UL + 115UL),
+                             (4420220543778136171UL + 7UL), (4420220543778136171UL + 26UL),
+                             (4420220543778136171UL + 128UL), (4420220543778136171UL + 238UL),
+                             (4420220543778136171UL + 129UL), (4420220543778136171UL + 239UL),
                      "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
                      "_IO_marker", 0UL, 0,
                              "myocyte_write", "_Z13myocyte_writePcPfiiii", 0, 0,

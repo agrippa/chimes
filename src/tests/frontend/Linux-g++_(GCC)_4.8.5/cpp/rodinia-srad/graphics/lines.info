@@ -1,1 +1,1 @@
-/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 123 7 : { 143, 145 } {  } call:fgetc { fgetc { 163 } }
+/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/srad/srad_v1/graphics.c 123 7 : { 143, 145 } {  } call:fgetc { fgetc { 163 } }

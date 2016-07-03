@@ -8,11 +8,11 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "getopt.c.pre.transformed.cpp"
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/getopt.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/getopt.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -21,7 +21,7 @@ typedef long unsigned int size_t;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -77,15 +77,15 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/getopt.c"
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/getopt.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/getopt.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/getopt.c"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 28 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1030,10 +1030,10 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/getopt.c" 2
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/getopt.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/getopt.c" 2
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/getopt.c"
 # 1 "/usr/include/gnu-versions.h" 1 3 4
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/getopt.c" 2
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/kmeans/kmeans_openmp/getopt.c" 2
 
 
 
@@ -1041,7 +1041,7 @@ ferror_unlocked (FILE *__stream) throw ()
 
 
 static int module_init() {
-    init_module(10963175413253779247UL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    init_module(796440435017931079UL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
     return 0;
 }
 

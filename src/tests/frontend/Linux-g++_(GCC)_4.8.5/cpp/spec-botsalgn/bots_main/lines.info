@@ -1,10 +1,10 @@
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 292 4 : { 52, 53, 357 } {  } call:bots_get_date { bots_get_date { 357 } }
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 451 4 : { 261, 262 } {  } call:bots_get_params_common {  }
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 542 4 : { 351 } {  } call:bots_print_results {  }
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 532 4 : { 291, 371 } {  } call:align_end {  }
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 527 4 : { 290 } {  } call:align {  }
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 522 4 : { 291, 371 } {  } call:align_init {  }
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 498 4 : {  } {  } call:pairalign_init { pairalign_init { 374 } }
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 514 7 : { 290 } {  } call:align_seq {  }
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 497 4 : { 287, 288, 289 } {  } call:bots_get_params {  }
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 509 7 : { 351 } {  } call:align_seq_init {  }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 292 4 : { 52, 53, 357 } {  } call:bots_get_date { bots_get_date { 357 } }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 451 4 : { 261, 262 } {  } call:bots_get_params_common {  }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 542 4 : { 351 } {  } call:bots_print_results {  }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 532 4 : { 291, 371 } {  } call:align_end {  }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 527 4 : { 290 } {  } call:align {  }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 522 4 : { 291, 371 } {  } call:align_init {  }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 498 4 : {  } {  } call:pairalign_init { pairalign_init { 374 } }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 514 7 : { 290 } {  } call:align_seq {  }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 497 4 : { 287, 288, 289 } {  } call:bots_get_params {  }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 509 7 : { 351 } {  } call:align_seq_init {  }

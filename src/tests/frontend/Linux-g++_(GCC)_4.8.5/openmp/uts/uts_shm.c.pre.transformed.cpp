@@ -175,11 +175,11 @@ static unsigned ____alias_loc_id_47;
 static unsigned ____alias_loc_id_48;
 static unsigned ____alias_loc_id_49;
 static unsigned ____alias_loc_id_50;
-# 1 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -188,7 +188,7 @@ static unsigned ____alias_loc_id_50;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -244,7 +244,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 69 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 69 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -258,8 +258,8 @@ inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 15 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 15 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 25 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1583,7 +1583,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 16 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c" 2
+# 16 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 30 "/usr/include/stdio.h" 3 4
 extern "C" {
@@ -2391,7 +2391,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 17 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c" 2
+# 17 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 29 "/usr/include/string.h" 3 4
 extern "C" {
@@ -2867,7 +2867,7 @@ extern "C++" __const char *basename (__const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 # 646 "/usr/include/string.h" 3 4
 }
-# 18 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c" 2
+# 18 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c" 2
 # 1 "/usr/include/math.h" 1 3 4
 # 30 "/usr/include/math.h" 3 4
 extern "C" {
@@ -3872,7 +3872,7 @@ __signbitl (long double __x) throw ()
 # 417 "/usr/include/math.h" 2 3 4
 # 472 "/usr/include/math.h" 3 4
 }
-# 19 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c" 2
+# 19 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c" 2
 # 1 "/usr/include/unistd.h" 1 3 4
 # 28 "/usr/include/unistd.h" 3 4
 extern "C" {
@@ -5204,17 +5204,17 @@ extern void swab (__const void *__restrict __from, void *__restrict __to,
 extern char *ctermid (char *__s) throw ();
 # 1160 "/usr/include/unistd.h" 3 4
 }
-# 20 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c" 2
-# 20 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 20 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c" 2
+# 20 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 
-# 1 "/home/jmg3/chimes/src/examples/openmp/uts/uts.h" 1
-# 18 "/home/jmg3/chimes/src/examples/openmp/uts/uts.h"
-# 1 "/home/jmg3/chimes/src/examples/openmp/uts/rng/rng.h" 1
-# 16 "/home/jmg3/chimes/src/examples/openmp/uts/rng/rng.h"
-# 1 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h" 1
-# 37 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h"
-# 1 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h" 1
-# 48 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.h" 1
+# 18 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.h"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/rng.h" 1
+# 16 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/rng.h"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h" 1
+# 37 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h" 1
+# 48 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
 extern "C" {
 
 
@@ -5255,18 +5255,18 @@ extern "C" {
 # 169 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 2 3 4
 # 8 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/syslimits.h" 2 3 4
 # 35 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 2 3 4
-# 52 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h" 2
-# 70 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
+# 52 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h" 2
+# 70 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
      typedef unsigned char uint_8t;
-# 79 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
+# 79 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
      typedef unsigned short uint_16t;
-# 89 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
+# 89 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
      typedef unsigned int uint_32t;
-# 123 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
+# 123 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
        typedef unsigned long uint_64t;
-# 197 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
+# 197 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_types.h"
 }
-# 38 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h" 2
+# 38 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h" 2
 
 
 
@@ -5274,7 +5274,7 @@ extern "C" {
 
 extern "C"
 {
-# 54 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h"
+# 54 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h"
 typedef u_int8_t RNG_state;
 typedef u_int8_t uint8;
 typedef u_int32_t uint32;
@@ -5308,7 +5308,7 @@ struct sha1_ctx_s
 };
 
 typedef struct sha1_ctx_s sha1_ctx;
-# 95 "/home/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h"
+# 95 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/brg_sha1.h"
 void sha1_compile(sha1_ctx ctx[1]);
 
 void sha1_begin(sha1_ctx ctx[1]);
@@ -5318,19 +5318,19 @@ void sha1(unsigned char hval[], const unsigned char data[], unsigned long len);
 
 
 }
-# 17 "/home/jmg3/chimes/src/examples/openmp/uts/rng/rng.h" 2
-# 19 "/home/jmg3/chimes/src/examples/openmp/uts/uts.h" 2
-# 28 "/home/jmg3/chimes/src/examples/openmp/uts/uts.h"
+# 17 "/scratch/jmg3/chimes/src/examples/openmp/uts/rng/rng.h" 2
+# 19 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.h" 2
+# 28 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.h"
 struct node_t {
   int type;
   int height;
   int numChildren;
-# 44 "/home/jmg3/chimes/src/examples/openmp/uts/uts.h"
+# 44 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.h"
   struct state_t state;
 };
 
 typedef struct node_t Node;
-# 59 "/home/jmg3/chimes/src/examples/openmp/uts/uts.h"
+# 59 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts.h"
 enum uts_trees_e { BIN = 0, GEO, HYBRID };
 enum uts_geoshape_e { LINEAR = 0, EXPDEC, CYCLIC, FIXED };
 
@@ -5386,18 +5386,18 @@ int impl_paramsToStr(char *strBuf, int ind);
 int impl_parseParam(char *param, char *value);
 void impl_helpMessage();
 void impl_abort(int err);
-# 22 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c" 2
-# 22 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 22 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c" 2
+# 22 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 
-# 1 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 1
-# 11 "/home/jmg3/chimes/src/libchimes/checkpoint.h"
+# 1 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 11 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h"
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*____chimes_fp)(void *));
-# 24 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c" 2
-# 39 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 24 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c" 2
+# 39 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 1 3 4
 # 34 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 3 4
 typedef struct
@@ -5471,3765 +5471,3765 @@ int omp_in_final (void) throw ();
 
 
 }
-# 40 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c" 2
-# 57 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 57 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 40 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c" 2
+# 57 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 57 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 omp_lock_t * omp_global_lock_alloc_npm();
 omp_lock_t * omp_global_lock_alloc_quick(); omp_lock_t * omp_global_lock_alloc();
 omp_lock_t * omp_global_lock_alloc_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&omp_global_lock_alloc), "omp_global_lock_alloc", &____must_manage_omp_global_lock_alloc, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 58 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-   omp_lock_t *lock; lock = ((omp_lock_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(omp_lock_t) + 128) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(omp_lock_t) + 128, 12146000192742677284UL, 0, 1, (int)sizeof(omp_lock_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 59 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 58 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+   omp_lock_t *lock; lock = ((omp_lock_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(omp_lock_t) + 128) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(omp_lock_t) + 128, 12090941540209070964UL, 0, 1, (int)sizeof(omp_lock_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 59 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_init_lock(lock);
-# 60 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-   omp_lock_t *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (lock); rm_stack(true, 12146000192742677284UL, "omp_global_lock_alloc", &____must_manage_omp_global_lock_alloc, ____alias_loc_id_25, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 61 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-rm_stack(true, 12146000192742677284UL, "omp_global_lock_alloc", &____must_manage_omp_global_lock_alloc, ____alias_loc_id_25, ____chimes_did_disable0, false); }
-# 153 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 153 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 60 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+   omp_lock_t *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (lock); rm_stack(true, 12090941540209070964UL, "omp_global_lock_alloc", &____must_manage_omp_global_lock_alloc, ____alias_loc_id_25, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
+# 61 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+rm_stack(true, 12090941540209070964UL, "omp_global_lock_alloc", &____must_manage_omp_global_lock_alloc, ____alias_loc_id_25, ____chimes_did_disable0, false); }
+# 153 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 153 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int doSteal = 1;
-# 154 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 154 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int chunkSize = 20;
-# 155 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 155 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int cbint = 1;
-# 156 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 156 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int pollint = 1;
-# 199 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 199 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 199 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 199 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int stats = 0;
-# 200 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 200 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int unbType = -1;
-# 216 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 216 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 216 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 216 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 struct sessionRecord_t {
-# 217 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 217 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   double startTime, endTime;
-# 218 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 218 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 };
-# 219 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 219 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 typedef struct sessionRecord_t SessionRecord;
-# 220 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 221 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 222 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 220 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 221 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 222 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 struct stealRecord_t {
-# 223 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 223 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   long int nodeCount;
-# 224 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 224 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int victimThread;
-# 225 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 225 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 };
-# 226 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 226 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 typedef struct stealRecord_t StealRecord;
-# 227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 228 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 229 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 228 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 229 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 struct metaData_t {
-# 230 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 230 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   SessionRecord sessionRecords[5][20000];
-# 231 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 231 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   StealRecord stealRecords[20000];
-# 232 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 232 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 };
-# 233 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 233 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 typedef struct metaData_t MetaData;
-# 234 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 235 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 236 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 234 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 235 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 236 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 char debug_str[1000];
-# 246 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 246 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 246 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 246 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 struct stealStack_t
-# 247 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 247 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 {
-# 248 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 248 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int stackSize;
-# 249 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 249 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int workAvail;
-# 250 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 250 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int sharedStart;
-# 251 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 251 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int local;
-# 252 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 252 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int top;
-# 253 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 253 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int maxStackDepth;
-# 254 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 254 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int nNodes, maxTreeDepth;
-# 255 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 255 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int nLeaves;
-# 256 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 256 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int nAcquire, nRelease, nSteal, nFail;
-# 257 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 257 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int wakeups, falseWakeups, nNodes_last;
-# 258 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 258 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   double time[5], timeLast;
-# 259 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 259 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int entries[5], curState;
-# 260 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 260 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_lock_t * stackLock;
-# 261 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 261 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   Node * stack;
-# 262 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 262 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   Node * stack_g;
-# 263 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 264 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 265 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 266 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 263 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 264 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 265 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 266 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 };
-# 267 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 267 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 typedef struct stealStack_t StealStack;
-# 268 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 269 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 268 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 269 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 typedef StealStack * SharedStealStackPtr;
-# 270 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 271 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 272 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 273 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 274 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 275 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 276 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 277 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 270 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 271 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 272 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 273 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 274 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 275 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 276 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 277 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  SharedStealStackPtr stealStack[32];
-# 278 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 279 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 280 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 278 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 279 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 280 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 volatile int cb_cancel;
-# 281 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 281 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 volatile int cb_count;
-# 282 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 282 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 volatile int cb_done;
-# 283 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 283 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 omp_lock_t * cb_lock;
-# 284 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 285 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 284 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 285 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  double startTime[32];
-# 286 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 287 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 288 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 289 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 290 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 291 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 292 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 293 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 286 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 287 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 288 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 289 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 290 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 291 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 292 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 293 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 char * impl_getName_npm();
 char * impl_getName_quick(); char * impl_getName();
 char * impl_getName_resumable() {const int ____chimes_did_disable1 = new_stack((void *)(&impl_getName), "impl_getName", &____must_manage_impl_getName, 0, 0) ; char *name[] = { "Sequential C", "C/OpenMP", "UPC", "SHMEM", "PThreads" };
-# 293 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 293 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  if (____must_checkpoint_impl_getName_name_0) { register_stack_vars(1, "impl_getName|name|0", &____must_checkpoint_impl_getName_name_0, "[5 x i8*]", (void *)(name), (size_t)40, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 294 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 294 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    ;
-# 295 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-   char *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (name[1]); rm_stack(true, 12146000192742679368UL, "impl_getName", &____must_manage_impl_getName, ____alias_loc_id_26, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 296 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-rm_stack(true, 12146000192742679368UL, "impl_getName", &____must_manage_impl_getName, ____alias_loc_id_26, ____chimes_did_disable1, false); }
-# 297 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 298 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 299 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 300 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 295 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+   char *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (name[1]); rm_stack(true, 12090941540209073048UL, "impl_getName", &____must_manage_impl_getName, ____alias_loc_id_26, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
+# 296 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+rm_stack(true, 12090941540209073048UL, "impl_getName", &____must_manage_impl_getName, ____alias_loc_id_26, ____chimes_did_disable1, false); }
+# 297 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 298 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 299 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 300 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int impl_paramsToStr_npm(char *strBuf, int ind);
 int impl_paramsToStr_quick(char *strBuf, int ind); int impl_paramsToStr(char *strBuf, int ind);
-int impl_paramsToStr_resumable(char *strBuf, int ind) {const int ____chimes_did_disable2 = new_stack((void *)(&impl_paramsToStr), "impl_paramsToStr", &____must_manage_impl_paramsToStr, 2, 0, (size_t)(12146000192742677394UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 301 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+int impl_paramsToStr_resumable(char *strBuf, int ind) {const int ____chimes_did_disable2 = new_stack((void *)(&impl_paramsToStr), "impl_paramsToStr", &____must_manage_impl_paramsToStr, 2, 0, (size_t)(12090941540209071074UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 301 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   ind += sprintf(strBuf+ind, "Execution strategy:  ");
-# 302 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 302 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (1) {{
-# 303 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 303 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     ind += sprintf(strBuf+ind, "Parallel search using %d threads\n", omp_get_num_threads());
-# 304 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 304 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (doSteal) {{
-# 305 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 305 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       ind += sprintf(strBuf+ind, "   Load balance by work stealing, chunk size = %d nodes\n",chunkSize);
-# 306 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 306 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       ind += sprintf(strBuf+ind, "  CBarrier Interval: %d\n", cbint);
-# 307 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 307 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       ind += sprintf(strBuf+ind, "   Polling Interval: %d\n", pollint);
-# 308 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 308 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }; } else {ind += sprintf(strBuf+ind, "   No load balancing.\n"); } ;
-# 311 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 311 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }; } else {ind += sprintf(strBuf+ind, "Iterative sequential search\n"); } ;
-# 314 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 315 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 314 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 315 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (ind); rm_stack(false, 0UL, "impl_paramsToStr", &____must_manage_impl_paramsToStr, ____alias_loc_id_27, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ;
-# 316 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 316 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "impl_paramsToStr", &____must_manage_impl_paramsToStr, ____alias_loc_id_27, ____chimes_did_disable2, false); }
-# 317 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 318 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 319 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 317 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 318 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 319 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int impl_parseParam_npm(char *param, char *value);
 int impl_parseParam_quick(char *param, char *value); int impl_parseParam(char *param, char *value);
-int impl_parseParam_resumable(char *param, char *value) {const int ____chimes_did_disable3 = new_stack((void *)(&impl_parseParam), "impl_parseParam", &____must_manage_impl_parseParam, 2, 0, (size_t)(12146000192742677440UL), (size_t)(12146000192742677441UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 320 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+int impl_parseParam_resumable(char *param, char *value) {const int ____chimes_did_disable3 = new_stack((void *)(&impl_parseParam), "impl_parseParam", &____must_manage_impl_parseParam, 2, 0, (size_t)(12090941540209071120UL), (size_t)(12090941540209071121UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 320 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int err; err = (0) ;
-# 321 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 322 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 321 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 322 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   switch (param[1]) {
-# 323 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 324 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 323 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 324 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     case 'c':
-# 325 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 325 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       chunkSize = atoi(value); break;
-# 326 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 326 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     case 's':
-# 327 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 327 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       doSteal = atoi(value);
-# 328 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 328 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       if (doSteal != 1 && doSteal != 0) {err = 1; };
-# 330 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 330 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       break;
-# 331 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 331 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     case 'i':
-# 332 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 332 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       cbint = atoi(value); break;
-# 352 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 352 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 352 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 352 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     default:
-# 353 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 353 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       err = 1;
-# 354 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 354 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       break;
-# 355 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 355 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 356 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 357 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 356 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 357 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (err); rm_stack(false, 0UL, "impl_parseParam", &____must_manage_impl_parseParam, ____alias_loc_id_28, ____chimes_did_disable3, false); return ____chimes_ret_var_3; ;
-# 358 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 358 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "impl_parseParam", &____must_manage_impl_parseParam, ____alias_loc_id_28, ____chimes_did_disable3, false); }
-# 359 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 360 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 359 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 360 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void impl_helpMessage_npm();
 void impl_helpMessage_quick(); void impl_helpMessage();
 void impl_helpMessage_resumable() {const int ____chimes_did_disable4 = new_stack((void *)(&impl_helpMessage), "impl_helpMessage", &____must_manage_impl_helpMessage, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 361 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 361 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (1) {
-# 362 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 362 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("   -s  int   zero/nonzero to disable/enable work stealing\n");
-# 363 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 363 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("   -c  int   chunksize for work stealing\n");
-# 364 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 364 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("   -i  int   set cancellable barrier polling interval\n");
-# 365 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 366 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 367 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 368 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 365 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 366 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 367 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 368 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   } else {
-# 369 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 370 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 371 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 372 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 369 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 370 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 371 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 372 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("   none.\n");
-# 373 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 374 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 373 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 374 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 375 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 375 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "impl_helpMessage", &____must_manage_impl_helpMessage, 0, ____chimes_did_disable4, false); }
-# 376 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 377 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 376 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 377 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void impl_abort_npm(int err);
 void impl_abort_quick(int err); void impl_abort(int err);
 void impl_abort_resumable(int err) {const int ____chimes_did_disable5 = new_stack((void *)(&impl_abort), "impl_abort", &____must_manage_impl_abort, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 378 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 379 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 380 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 381 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 378 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 379 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 380 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 381 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   exit(err);
-# 382 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 383 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 384 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 385 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 386 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 387 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 382 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 383 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 384 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 385 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 386 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 387 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "impl_abort", &____must_manage_impl_abort, 0, ____chimes_did_disable5, false); }
-# 422 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 422 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 422 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 422 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void ss_mkEmpty_npm(StealStack *s);
 void ss_mkEmpty_quick(StealStack *s); void ss_mkEmpty(StealStack *s);
-void ss_mkEmpty_resumable(StealStack *s) {const int ____chimes_did_disable6 = new_stack((void *)(&ss_mkEmpty), "ss_mkEmpty", &____must_manage_ss_mkEmpty, 1, 0, (size_t)(12146000192742677481UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 423 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void ss_mkEmpty_resumable(StealStack *s) {const int ____chimes_did_disable6 = new_stack((void *)(&ss_mkEmpty), "ss_mkEmpty", &____must_manage_ss_mkEmpty, 1, 0, (size_t)(12090941540209071161UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 423 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_set_lock(s->stackLock);
-# 424 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 424 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->sharedStart = 0;
-# 425 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 425 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->local = 0;
-# 426 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 426 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->top = 0;
-# 427 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 427 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->workAvail = 0;
-# 428 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 428 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_unset_lock(s->stackLock);
-# 429 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 429 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_mkEmpty", &____must_manage_ss_mkEmpty, ____alias_loc_id_29, ____chimes_did_disable6, false); }
-# 430 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 431 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 432 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 430 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 431 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 432 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void ss_error_npm(char *str);
 void ss_error_quick(char *str); void ss_error(char *str);
-void ss_error_resumable(char *str) {const int ____chimes_did_disable7 = new_stack((void *)(&ss_error), "ss_error", &____must_manage_ss_error, 1, 0, (size_t)(12146000192742677493UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 433 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void ss_error_resumable(char *str) {const int ____chimes_did_disable7 = new_stack((void *)(&ss_error), "ss_error", &____must_manage_ss_error, 1, 0, (size_t)(12090941540209071173UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 433 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   printf("*** [Thread %i] %s\n",omp_get_thread_num(), str);
-# 434 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 434 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   exit(4);
-# 435 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 435 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_error", &____must_manage_ss_error, 0, ____chimes_did_disable7, false); }
-# 436 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 437 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 438 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 436 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 437 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 438 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void ss_init_npm(StealStack *s, int nelts);
 void ss_init_quick(StealStack *s, int nelts); void ss_init(StealStack *s, int nelts);
-void ss_init_resumable(StealStack *s, int nelts) {const int ____chimes_did_disable8 = new_stack((void *)(&ss_init), "ss_init", &____must_manage_ss_init, 2, 0, (size_t)(12146000192742677593UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 439 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void ss_init_resumable(StealStack *s, int nelts) {const int ____chimes_did_disable8 = new_stack((void *)(&ss_init), "ss_init", &____must_manage_ss_init, 2, 0, (size_t)(12090941540209071273UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 439 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int nbytes; nbytes = (nelts * sizeof(Node)) ;
-# 440 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 441 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 440 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 441 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 1) {printf("Thread %d intializing stealStack %p, sizeof(Node) = %X\n",
-# 443 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 443 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), s, (int)(sizeof(Node))); };
-# 444 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 445 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 446 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 447 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-  s->stack_g = ( Node *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nbytes, 12146000192742677517UL, 0, 1, (int)sizeof(struct node_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 448 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 444 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 445 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 446 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 447 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+  s->stack_g = ( Node *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nbytes, 12090941540209071197UL, 0, 1, (int)sizeof(struct node_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 448 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->stack = (Node *) s->stack_g;
-# 449 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 450 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 451 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 452 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 453 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 454 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 449 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 450 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 451 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 452 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 453 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 454 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->stack == __null) {
-# 455 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 455 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("Request for %d bytes for stealStack on thread %d failed\n",
-# 456 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 456 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            nbytes, omp_get_thread_num());
-# 457 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 457 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      call_lbl_0: ({ calling_npm("ss_error", 0); ss_error_npm("ss_init: unable to allocate space for stealstack"); });
-# 458 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 458 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 459 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 459 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    call_lbl_1: s->stackLock=({ calling_npm("omp_global_lock_alloc", 0); omp_global_lock_alloc_npm(); });
-# 460 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 460 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 1) {printf("Thread %d init stackLock %p\n", omp_get_thread_num(), (void *) s->stackLock); };
-# 462 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 462 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->stackSize = nelts;
-# 463 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 463 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nNodes = 0;
-# 464 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 464 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->maxStackDepth = 0;
-# 465 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 465 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->maxTreeDepth = 0;
-# 466 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 466 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nLeaves = 0;
-# 467 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 467 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nAcquire = 0;
-# 468 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 468 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nRelease = 0;
-# 469 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 469 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nSteal = 0;
-# 470 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 470 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nFail = 0;
-# 471 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 471 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->wakeups = 0;
-# 472 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 472 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->falseWakeups = 0;
-# 473 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 473 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nNodes_last = 0;
-# 474 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 474 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    call_lbl_2: ({ calling_npm("ss_mkEmpty", 0); ss_mkEmpty_npm(s); });
-# 475 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 475 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_init", &____must_manage_ss_init, ____alias_loc_id_30, ____chimes_did_disable8, false); }
-# 476 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 477 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 478 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 479 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 476 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 477 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 478 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 479 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void ss_push_npm(StealStack *s, Node *c);static char *(*____chimes_extern_func_rng_showstate)(unsigned char *, char *) = rng_showstate;
 void ss_push_quick(StealStack *s, Node *c); void ss_push(StealStack *s, Node *c);
-void ss_push_resumable(StealStack *s, Node *c) {const int ____chimes_did_disable9 = new_stack((void *)(&ss_push), "ss_push", &____must_manage_ss_push, 2, 2, (size_t)(12146000192742677672UL), (size_t)(12146000192742677678UL), "ss_push|s|0", &____must_checkpoint_ss_push_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_push|c|0", &____must_checkpoint_ss_push_c_0, "%struct.node_t*", (void *)(&c), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
-# 480 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void ss_push_resumable(StealStack *s, Node *c) {const int ____chimes_did_disable9 = new_stack((void *)(&ss_push), "ss_push", &____must_manage_ss_push, 2, 2, (size_t)(12090941540209071352UL), (size_t)(12090941540209071358UL), "ss_push|s|0", &____must_checkpoint_ss_push_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_push|c|0", &____must_checkpoint_ss_push_c_0, "%struct.node_t*", (void *)(&c), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+# 480 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->top >= s->stackSize) { call_lbl_0: ({ calling_npm("ss_error", 0); ss_error_npm("ss_push: overflow"); }); };
-# 482 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-  if (debug & 1) { char *____chimes_unroll_var_0; call_lbl_1: ____chimes_unroll_var_0 = ((____chimes_does_checkpoint_rng_showstate_npm ? ( ({ uint8 * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (c->state.state); } calling((void*)rng_showstate, 1, ____alias_loc_id_0, 12146000192742677621UL, 2, (size_t)(12146000192742677678UL), (size_t)(12146000192742679361UL)); (rng_showstate)(____chimes_arg0, debug_str); }) ) : (({ calling_npm("rng_showstate", ____alias_loc_id_0); (*____chimes_extern_func_rng_showstate)(c->state.state, debug_str); })))) ; printf("ss_push: Thread %d, posn %d: node %s [%d]\n",
-# 484 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 482 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+  if (debug & 1) { char *____chimes_unroll_var_0; call_lbl_1: ____chimes_unroll_var_0 = ((____chimes_does_checkpoint_rng_showstate_npm ? ( ({ uint8 * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (c->state.state); } calling((void*)rng_showstate, 1, ____alias_loc_id_0, 12090941540209071301UL, 2, (size_t)(12090941540209071358UL), (size_t)(12090941540209073041UL)); (rng_showstate)(____chimes_arg0, debug_str); }) ) : (({ calling_npm("rng_showstate", ____alias_loc_id_0); (*____chimes_extern_func_rng_showstate)(c->state.state, debug_str); })))) ; printf("ss_push: Thread %d, posn %d: node %s [%d]\n",
+# 484 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), s->top, ____chimes_unroll_var_0, c->height); };
-# 485 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 485 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   memcpy(&(s->stack[s->top]), c, sizeof(Node));
-# 486 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 486 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->top++;
-# 487 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 487 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nNodes++;
-# 488 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 488 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->maxStackDepth = (((s->top) > (s->maxStackDepth)) ? (s->top) : (s->maxStackDepth));
-# 489 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 489 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->maxTreeDepth = (((s->maxTreeDepth) > (c->height)) ? (s->maxTreeDepth) : (c->height));
-# 490 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 490 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_push", &____must_manage_ss_push, ____alias_loc_id_31, ____chimes_did_disable9, false); }
-# 491 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 492 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 493 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 491 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 492 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 493 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 Node * ss_top_npm(StealStack *s);
 Node * ss_top_quick(StealStack *s); Node * ss_top(StealStack *s);
-Node * ss_top_resumable(StealStack *s) {const int ____chimes_did_disable10 = new_stack((void *)(&ss_top), "ss_top", &____must_manage_ss_top, 1, 1, (size_t)(12146000192742677762UL), "ss_top|s|0", &____must_checkpoint_ss_top_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0) ; Node *r;
-# 493 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+Node * ss_top_resumable(StealStack *s) {const int ____chimes_did_disable10 = new_stack((void *)(&ss_top), "ss_top", &____must_manage_ss_top, 1, 1, (size_t)(12090941540209071442UL), "ss_top|s|0", &____must_checkpoint_ss_top_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0) ; Node *r;
+# 493 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  if (____must_checkpoint_ss_top_r_0) { register_stack_vars(1, "ss_top|r|0", &____must_checkpoint_ss_top_r_0, "%struct.node_t*", (void *)(&r), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
-# 494 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 494 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    ;
-# 495 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 495 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->top <= s->local) { call_lbl_0: ({ calling_npm("ss_error", 0); ss_error_npm("ss_top: empty local stack"); }); };
-# 497 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 497 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   r = &(s->stack[(s->top) - 1]);
-# 498 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-  if (debug & 1) { char *____chimes_unroll_var_1; call_lbl_1: ____chimes_unroll_var_1 = ( ({ uint8 * ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (r->state.state); } calling((void*)rng_showstate, 1, ____alias_loc_id_1, 12146000192742677741UL, 2, (size_t)(12146000192742677729UL), (size_t)(12146000192742679361UL)); (rng_showstate)(____chimes_arg2, debug_str); }) ) ; printf("ss_top: Thread %d, posn %d: node %s [%d] nchild = %d\n",
-# 500 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 498 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+  if (debug & 1) { char *____chimes_unroll_var_1; call_lbl_1: ____chimes_unroll_var_1 = ( ({ uint8 * ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (r->state.state); } calling((void*)rng_showstate, 1, ____alias_loc_id_1, 12090941540209071421UL, 2, (size_t)(12090941540209071409UL), (size_t)(12090941540209073041UL)); (rng_showstate)(____chimes_arg2, debug_str); }) ) ; printf("ss_top: Thread %d, posn %d: node %s [%d] nchild = %d\n",
+# 500 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), s->top - 1, ____chimes_unroll_var_1,
-# 501 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 501 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            r->height, r->numChildren); };
-# 502 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-   Node *____chimes_ret_var_4; ; ____chimes_ret_var_4 = (r); rm_stack(true, 12146000192742677729UL, "ss_top", &____must_manage_ss_top, ____alias_loc_id_32, ____chimes_did_disable10, false); return ____chimes_ret_var_4; ;
-# 503 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-rm_stack(true, 12146000192742677729UL, "ss_top", &____must_manage_ss_top, ____alias_loc_id_32, ____chimes_did_disable10, false); }
-# 504 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 505 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 506 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 502 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+   Node *____chimes_ret_var_4; ; ____chimes_ret_var_4 = (r); rm_stack(true, 12090941540209071409UL, "ss_top", &____must_manage_ss_top, ____alias_loc_id_32, ____chimes_did_disable10, false); return ____chimes_ret_var_4; ;
+# 503 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+rm_stack(true, 12090941540209071409UL, "ss_top", &____must_manage_ss_top, ____alias_loc_id_32, ____chimes_did_disable10, false); }
+# 504 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 505 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 506 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void ss_pop_npm(StealStack *s);
 void ss_pop_quick(StealStack *s); void ss_pop(StealStack *s);
-void ss_pop_resumable(StealStack *s) {const int ____chimes_did_disable11 = new_stack((void *)(&ss_pop), "ss_pop", &____must_manage_ss_pop, 1, 1, (size_t)(12146000192742677818UL), "ss_pop|s|0", &____must_checkpoint_ss_pop_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0) ; Node *r;
-# 506 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void ss_pop_resumable(StealStack *s) {const int ____chimes_did_disable11 = new_stack((void *)(&ss_pop), "ss_pop", &____must_manage_ss_pop, 1, 1, (size_t)(12090941540209071498UL), "ss_pop|s|0", &____must_checkpoint_ss_pop_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0) ; Node *r;
+# 506 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  if (____must_checkpoint_ss_pop_r_0) { register_stack_vars(1, "ss_pop|r|0", &____must_checkpoint_ss_pop_r_0, "%struct.node_t*", (void *)(&r), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
-# 507 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 507 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    ;
-# 508 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 508 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->top <= s->local) { call_lbl_0: ({ calling_npm("ss_error", 0); ss_error_npm("ss_pop: empty local stack"); }); };
-# 510 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 510 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->top--;
-# 511 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 511 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   r = &(s->stack[s->top]);
-# 512 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-  if (debug & 1) { char *____chimes_unroll_var_2; call_lbl_1: ____chimes_unroll_var_2 = ( ({ uint8 * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg4 = (r->state.state); } calling((void*)rng_showstate, 1, ____alias_loc_id_2, 12146000192742677802UL, 2, (size_t)(12146000192742677790UL), (size_t)(12146000192742679361UL)); (rng_showstate)(____chimes_arg4, debug_str); }) ) ; printf("ss_pop: Thread %d, posn %d: node %s [%d] nchild = %d\n",
-# 514 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 512 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+  if (debug & 1) { char *____chimes_unroll_var_2; call_lbl_1: ____chimes_unroll_var_2 = ( ({ uint8 * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg4 = (r->state.state); } calling((void*)rng_showstate, 1, ____alias_loc_id_2, 12090941540209071482UL, 2, (size_t)(12090941540209071470UL), (size_t)(12090941540209073041UL)); (rng_showstate)(____chimes_arg4, debug_str); }) ) ; printf("ss_pop: Thread %d, posn %d: node %s [%d] nchild = %d\n",
+# 514 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), s->top, ____chimes_unroll_var_2,
-# 515 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 515 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            r->height, r->numChildren); };
-# 516 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 516 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_pop", &____must_manage_ss_pop, ____alias_loc_id_33, ____chimes_did_disable11, false); }
-# 517 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 518 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 519 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 517 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 518 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 519 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int ss_topPosn_npm(StealStack *s);
 int ss_topPosn_quick(StealStack *s); int ss_topPosn(StealStack *s);
 int ss_topPosn_resumable(StealStack *s)
-# 520 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-{const int ____chimes_did_disable12 = new_stack((void *)(&ss_topPosn), "ss_topPosn", &____must_manage_ss_topPosn, 1, 0, (size_t)(12146000192742677841UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 521 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 520 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+{const int ____chimes_did_disable12 = new_stack((void *)(&ss_topPosn), "ss_topPosn", &____must_manage_ss_topPosn, 1, 0, (size_t)(12090941540209071521UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 521 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->top <= s->local) { call_lbl_0: ({ calling_npm("ss_error", 0); ss_error_npm("ss_topPosn: empty local stack"); }); };
-# 523 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 523 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (s->top - 1); rm_stack(false, 0UL, "ss_topPosn", &____must_manage_ss_topPosn, ____alias_loc_id_34, ____chimes_did_disable12, false); return ____chimes_ret_var_5; ;
-# 524 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 524 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_topPosn", &____must_manage_ss_topPosn, ____alias_loc_id_34, ____chimes_did_disable12, false); }
-# 525 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 526 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 527 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 525 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 526 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 527 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int ss_localDepth_npm(StealStack *s);
 int ss_localDepth_quick(StealStack *s); int ss_localDepth(StealStack *s);
-int ss_localDepth_resumable(StealStack *s) {const int ____chimes_did_disable13 = new_stack((void *)(&ss_localDepth), "ss_localDepth", &____must_manage_ss_localDepth, 1, 0, (size_t)(12146000192742677857UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 528 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+int ss_localDepth_resumable(StealStack *s) {const int ____chimes_did_disable13 = new_stack((void *)(&ss_localDepth), "ss_localDepth", &____must_manage_ss_localDepth, 1, 0, (size_t)(12090941540209071537UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 528 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = ((s->top - s->local)); rm_stack(false, 0UL, "ss_localDepth", &____must_manage_ss_localDepth, ____alias_loc_id_35, ____chimes_did_disable13, false); return ____chimes_ret_var_6; ;
-# 529 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 529 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_localDepth", &____must_manage_ss_localDepth, ____alias_loc_id_35, ____chimes_did_disable13, false); }
-# 530 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 531 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 532 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 530 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 531 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 532 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void ss_release_npm(StealStack *s, int k);
 void ss_release_quick(StealStack *s, int k); void ss_release(StealStack *s, int k);
-void ss_release_resumable(StealStack *s, int k) {const int ____chimes_did_disable14 = new_stack((void *)(&ss_release), "ss_release", &____must_manage_ss_release, 2, 0, (size_t)(12146000192742677903UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 533 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void ss_release_resumable(StealStack *s, int k) {const int ____chimes_did_disable14 = new_stack((void *)(&ss_release), "ss_release", &____must_manage_ss_release, 2, 0, (size_t)(12090941540209071583UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 533 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_set_lock(s->stackLock);
-# 534 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 534 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->top - s->local >= k) {{
-# 535 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 535 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->local += k;
-# 536 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 536 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->workAvail += k;
-# 537 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 537 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->nRelease++;
-# 538 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 538 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }; } else { call_lbl_0: ({ calling_npm("ss_error", 0); ss_error_npm("ss_release:  do not have k vals to release"); }); } ;
-# 541 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 541 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_unset_lock(s->stackLock);
-# 542 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 542 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_release", &____must_manage_ss_release, ____alias_loc_id_36, ____chimes_did_disable14, false); }
-# 543 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 544 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 545 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 546 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 547 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 543 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 544 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 545 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 546 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 547 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int ss_acquire_npm(StealStack *s, int k);
 int ss_acquire_quick(StealStack *s, int k); int ss_acquire(StealStack *s, int k);
-int ss_acquire_resumable(StealStack *s, int k) {const int ____chimes_did_disable15 = new_stack((void *)(&ss_acquire), "ss_acquire", &____must_manage_ss_acquire, 2, 0, (size_t)(12146000192742677960UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 548 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+int ss_acquire_resumable(StealStack *s, int k) {const int ____chimes_did_disable15 = new_stack((void *)(&ss_acquire), "ss_acquire", &____must_manage_ss_acquire, 2, 0, (size_t)(12090941540209071640UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 548 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int avail; ;
-# 549 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 549 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_set_lock(s->stackLock);
-# 550 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 550 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   avail = s->local - s->sharedStart;
-# 551 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 551 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (avail >= k) {
-# 552 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 552 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->local -= k;
-# 553 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 553 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->workAvail -= k;
-# 554 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 554 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->nAcquire++;
-# 555 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 555 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 556 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 556 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_unset_lock(s->stackLock);
-# 557 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 557 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = ((avail >= k)); rm_stack(false, 0UL, "ss_acquire", &____must_manage_ss_acquire, ____alias_loc_id_37, ____chimes_did_disable15, false); return ____chimes_ret_var_7; ;
-# 558 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 558 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_acquire", &____must_manage_ss_acquire, ____alias_loc_id_37, ____chimes_did_disable15, false); }
-# 559 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 560 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 561 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 562 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 563 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 564 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 559 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 560 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 561 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 562 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 563 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 564 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int ss_steal_npm(StealStack *s, int victim, int k);
 int ss_steal_quick(StealStack *s, int victim, int k); int ss_steal(StealStack *s, int victim, int k);
-int ss_steal_resumable(StealStack *s, int victim, int k) {const int ____chimes_did_disable16 = new_stack((void *)(&ss_steal), "ss_steal", &____must_manage_ss_steal, 3, 3, (size_t)(12146000192742678224UL), (size_t)(0UL), (size_t)(0UL), "ss_steal|s|0", &____must_checkpoint_ss_steal_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_steal|victim|0", &____must_checkpoint_ss_steal_victim_0, "i32", (void *)(&victim), (size_t)4, 0, 0, 0, "ss_steal|k|0", &____must_checkpoint_ss_steal_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0) ; Node *r;
-# 564 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+int ss_steal_resumable(StealStack *s, int victim, int k) {const int ____chimes_did_disable16 = new_stack((void *)(&ss_steal), "ss_steal", &____must_manage_ss_steal, 3, 3, (size_t)(12090941540209071904UL), (size_t)(0UL), (size_t)(0UL), "ss_steal|s|0", &____must_checkpoint_ss_steal_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_steal|victim|0", &____must_checkpoint_ss_steal_victim_0, "i32", (void *)(&victim), (size_t)4, 0, 0, 0, "ss_steal|k|0", &____must_checkpoint_ss_steal_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0) ; Node *r;
+# 564 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int i;
-# 564 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 564 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 Node *victimSharedStart;
-# 564 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 564 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int ok;
-# 564 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 564 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int victimShared;
-# 564 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 564 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  if (____must_checkpoint_ss_steal_r_0 || ____must_checkpoint_ss_steal_i_0 || ____must_checkpoint_ss_steal_victimSharedStart_0 || ____must_checkpoint_ss_steal_ok_0 || ____must_checkpoint_ss_steal_victimShared_0) { register_stack_vars(5, "ss_steal|r|0", &____must_checkpoint_ss_steal_r_0, "%struct.node_t*", (void *)(&r), (size_t)8, 1, 0, 0, "ss_steal|i|0", &____must_checkpoint_ss_steal_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "ss_steal|victimSharedStart|0", &____must_checkpoint_ss_steal_victimSharedStart_0, "%struct.node_t*", (void *)(&victimSharedStart), (size_t)8, 1, 0, 0, "ss_steal|ok|0", &____must_checkpoint_ss_steal_ok_0, "i32", (void *)(&ok), (size_t)4, 0, 0, 0, "ss_steal|victimShared|0", &____must_checkpoint_ss_steal_victimShared_0, "i32", (void *)(&victimShared), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
-# 565 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 565 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int victimLocal; int victimWorkAvail; ;
-# 566 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 566 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    ;
-# 567 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 568 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 567 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 568 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->sharedStart != s->top) { call_lbl_0: ({ calling_npm("ss_error", 0); ss_error_npm("ss_steal: thief attempts to steal onto non-empty stack"); }); };
-# 570 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 571 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 570 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 571 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->top + k >= s->stackSize) { call_lbl_1: ({ calling_npm("ss_error", 0); ss_error_npm("ss_steal: steal will overflow thief's stack"); }); };
-# 573 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 574 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 575 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 573 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 574 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 575 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 32) {printf("Thread %d wants    SS %d\n", omp_get_thread_num(), victim); };
-# 577 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 578 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 577 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 578 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_set_lock(stealStack[victim]->stackLock);
-# 579 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 580 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 581 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 582 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 583 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 584 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 585 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 579 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 580 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 581 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 582 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 583 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 584 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 585 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 32) {printf("Thread %d acquires SS %d\n", omp_get_thread_num(), victim); };
-# 587 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 588 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 587 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 588 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   victimLocal = stealStack[victim]->local;
-# 589 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 589 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   victimShared = stealStack[victim]->sharedStart;
-# 590 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 590 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   victimWorkAvail = stealStack[victim]->workAvail;
-# 591 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 592 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 591 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 592 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (victimLocal - victimShared != victimWorkAvail) { call_lbl_2: ({ calling_npm("ss_error", 0); ss_error_npm("ss_steal: stealStack invariant violated"); }); };
-# 594 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 595 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 594 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 595 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   ok = victimWorkAvail >= k;
-# 596 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 596 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (ok) {
-# 597 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 598 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 597 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 598 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     stealStack[victim]->sharedStart = victimShared + k;
-# 599 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 599 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     stealStack[victim]->workAvail = victimWorkAvail - k;
-# 608 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 608 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 608 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 608 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 609 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 609 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_unset_lock(stealStack[victim]->stackLock);
-# 610 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 611 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 610 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 611 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 32) {printf("Thread %d releases SS %d\n", omp_get_thread_num(), victim); };
-# 613 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 614 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 615 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 613 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 614 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 615 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (ok) {
-# 616 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 616 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      Node *victimStackBase; victimStackBase = (stealStack[victim]->stack_g) ;
-# 617 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 617 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
        victimSharedStart = (victimStackBase + victimShared) ;
-# 618 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 619 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 620 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 621 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 622 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 618 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 619 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 620 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 621 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 622 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     memcpy(&(s->stack[s->top]), victimSharedStart, k * sizeof(Node));
-# 623 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 624 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 625 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 623 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 624 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 625 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->nSteal++;
-# 626 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 626 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (debug & 4) {
-# 627 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 627 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
        ;
-# 628 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 628 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       for (i = 0; i < k; i ++) {
-# 629 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 629 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            r = (&(s->stack[s->top + i])) ;
-# 630 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-          char *____chimes_unroll_var_3; call_lbl_3: ____chimes_unroll_var_3 = ( ({ uint8 * ____chimes_arg6; if (!____chimes_replaying) { ____chimes_arg6 = (r->state.state); } calling((void*)rng_showstate, 3, ____alias_loc_id_3, 12146000192742678166UL, 2, (size_t)(12146000192742678158UL), (size_t)(12146000192742679361UL)); (rng_showstate)(____chimes_arg6, debug_str); }) ) ; printf("ss_steal:  Thread %2d posn %d (steal #%d) receives %s [%d] from thread %d posn %d (%p)\n",
-# 631 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 630 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+          char *____chimes_unroll_var_3; call_lbl_3: ____chimes_unroll_var_3 = ( ({ uint8 * ____chimes_arg6; if (!____chimes_replaying) { ____chimes_arg6 = (r->state.state); } calling((void*)rng_showstate, 3, ____alias_loc_id_3, 12090941540209071846UL, 2, (size_t)(12090941540209071838UL), (size_t)(12090941540209073041UL)); (rng_showstate)(____chimes_arg6, debug_str); }) ) ; printf("ss_steal:  Thread %2d posn %d (steal #%d) receives %s [%d] from thread %d posn %d (%p)\n",
+# 631 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
                omp_get_thread_num(), s->top + i, s->nSteal,
-# 632 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 632 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
                ____chimes_unroll_var_3,
-# 633 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 633 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
                r->height, victim, victimShared + i,
-# 634 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 634 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
                (void *) victimSharedStart);
-# 635 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 635 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       }
-# 636 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 636 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 637 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 637 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->top += k;
-# 638 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 639 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 640 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 641 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 642 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 643 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 638 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 639 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 640 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 641 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 642 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 643 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 644 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 644 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   else {
-# 645 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 645 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->nFail++;
-# 646 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 646 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (debug & 4) {
-# 647 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 647 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("Thread %d failed to steal %d nodes from thread %d, ActAv = %d, sh = %d, loc =%d\n",
-# 648 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 648 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       omp_get_thread_num(), k, victim, victimWorkAvail, victimShared, victimLocal);
-# 649 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 649 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 650 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 650 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 651 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 651 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = ((ok)); rm_stack(false, 0UL, "ss_steal", &____must_manage_ss_steal, ____alias_loc_id_38, ____chimes_did_disable16, false); return ____chimes_ret_var_8; ;
-# 652 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 652 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_steal", &____must_manage_ss_steal, ____alias_loc_id_38, ____chimes_did_disable16, false); }
-# 653 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 654 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 655 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 653 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 654 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 655 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int findwork_npm(int k);
 int findwork_quick(int k); int findwork(int k);
 int findwork_resumable(int k) {const int ____chimes_did_disable17 = new_stack((void *)(&findwork), "findwork", &____must_manage_findwork, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 656 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 656 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int i; int v; ;
-# 657 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 657 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   for (i = 1; i < omp_get_num_threads(); i++) {
-# 658 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 658 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     v = (omp_get_thread_num() + i) % omp_get_num_threads();
-# 659 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 660 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 661 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 662 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 659 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 660 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 661 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 662 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (stealStack[v]->workAvail >= k) { int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = (v); rm_stack(false, 0UL, "findwork", &____must_manage_findwork, ____alias_loc_id_39, ____chimes_did_disable17, false); return ____chimes_ret_var_9; ; };
-# 664 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 664 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 665 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 665 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = (-1); rm_stack(false, 0UL, "findwork", &____must_manage_findwork, ____alias_loc_id_39, ____chimes_did_disable17, false); return ____chimes_ret_var_10; ;
-# 666 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 666 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "findwork", &____must_manage_findwork, ____alias_loc_id_39, ____chimes_did_disable17, false); }
-# 667 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 668 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 669 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 670 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 671 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 672 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 673 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 667 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 668 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 669 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 670 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 671 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 672 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 673 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void ss_initState_npm(StealStack *s);static double (*____chimes_extern_func_uts_wctime)(void) = uts_wctime;
 void ss_initState_quick(StealStack *s); void ss_initState(StealStack *s);
-void ss_initState_resumable(StealStack *s) {const int ____chimes_did_disable18 = new_stack((void *)(&ss_initState), "ss_initState", &____must_manage_ss_initState, 1, 1, (size_t)(12146000192742678325UL), "ss_initState|s|0", &____must_checkpoint_ss_initState_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
-# 674 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void ss_initState_resumable(StealStack *s) {const int ____chimes_did_disable18 = new_stack((void *)(&ss_initState), "ss_initState", &____must_manage_ss_initState, 1, 1, (size_t)(12090941540209072005UL), "ss_initState|s|0", &____must_checkpoint_ss_initState_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
+# 674 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int i; ;
-# 675 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 675 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    call_lbl_0: s->timeLast = (____chimes_does_checkpoint_uts_wctime_npm ? ( ({ calling((void*)uts_wctime, 0, ____alias_loc_id_4, 0UL, 0); (uts_wctime)(); }) ) : (({ calling_npm("uts_wctime", ____alias_loc_id_4); (*____chimes_extern_func_uts_wctime)(); })));
-# 676 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 676 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   for (i = 0; i < 5; i++) {
-# 677 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 677 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->time[i] = 0.0;
-# 678 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 678 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->entries[i] = 0;
-# 679 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 679 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 680 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 680 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->curState = 2;
-# 681 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 681 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 8) {printf("Thread %d start state %d (t = %f)\n",
-# 683 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 683 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), s->curState, s->timeLast); };
-# 684 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 684 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_initState", &____must_manage_ss_initState, ____alias_loc_id_40, ____chimes_did_disable18, false); }
-# 685 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 686 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 685 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 686 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void ss_setState_npm(StealStack *s, int state);
 void ss_setState_quick(StealStack *s, int state); void ss_setState(StealStack *s, int state);
-void ss_setState_resumable(StealStack *s, int state){const int ____chimes_did_disable19 = new_stack((void *)(&ss_setState), "ss_setState", &____must_manage_ss_setState, 2, 2, (size_t)(12146000192742678398UL), (size_t)(0UL), "ss_setState|s|0", &____must_checkpoint_ss_setState_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_setState|state|0", &____must_checkpoint_ss_setState_state_0, "i32", (void *)(&state), (size_t)4, 0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
-# 687 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void ss_setState_resumable(StealStack *s, int state){const int ____chimes_did_disable19 = new_stack((void *)(&ss_setState), "ss_setState", &____must_manage_ss_setState, 2, 2, (size_t)(12090941540209072078UL), (size_t)(0UL), "ss_setState|s|0", &____must_checkpoint_ss_setState_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_setState|state|0", &____must_checkpoint_ss_setState_state_0, "i32", (void *)(&state), (size_t)4, 0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+# 687 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   double time; ;
-# 688 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 688 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (state < 0 || state >= 5) { call_lbl_0: ({ calling_npm("ss_error", 0); ss_error_npm("ss_setState: thread state out of range"); }); };
-# 690 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 690 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (state == s->curState) {rm_stack(false, 0UL, "ss_setState", &____must_manage_ss_setState, ____alias_loc_id_41, ____chimes_did_disable19, false); return; };
-# 692 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 692 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    call_lbl_1: time = ({ calling((void*)uts_wctime, 1, ____alias_loc_id_5, 0UL, 0); (uts_wctime)(); }) ;
-# 693 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 693 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->time[s->curState] += time - s->timeLast;
-# 712 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 712 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 712 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 712 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->entries[state]++;
-# 713 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 713 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->timeLast = time;
-# 714 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 714 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->curState = state;
-# 715 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 716 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 715 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 716 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 8) {printf("Thread %d enter state %d [#%d] (t = %f)\n",
-# 718 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 718 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), state, s->entries[state], time); };
-# 719 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 719 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_setState", &____must_manage_ss_setState, ____alias_loc_id_41, ____chimes_did_disable19, false); }
-# 889 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 889 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 889 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 889 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void initNode_npm(Node * child);
 void initNode_quick(Node * child); void initNode(Node * child);
 void initNode_resumable(Node * child)
-# 890 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-{const int ____chimes_did_disable20 = new_stack((void *)(&initNode), "initNode", &____must_manage_initNode, 1, 0, (size_t)(12146000192742678413UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 891 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 890 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+{const int ____chimes_did_disable20 = new_stack((void *)(&initNode), "initNode", &____must_manage_initNode, 1, 0, (size_t)(12090941540209072093UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 891 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   child->type = -1;
-# 892 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 892 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   child->height = -1;
-# 893 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 893 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   child->numChildren = -1;
-# 908 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 908 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 908 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 908 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "initNode", &____must_manage_initNode, ____alias_loc_id_42, ____chimes_did_disable20, false); }
-# 909 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 910 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 911 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 909 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 910 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 911 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void initRootNode_npm(Node * root, int type);static void (*____chimes_extern_func_uts_initRoot)(struct node_t *, int) = uts_initRoot;
 void initRootNode_quick(Node * root, int type); void initRootNode(Node * root, int type);
 void initRootNode_resumable(Node * root, int type)
-# 912 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-{const int ____chimes_did_disable21 = new_stack((void *)(&initRootNode), "initRootNode", &____must_manage_initRootNode, 2, 0, (size_t)(12146000192742678424UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
-# 913 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-   call_lbl_0: (____chimes_does_checkpoint_uts_initRoot_npm ? ( ({ calling((void*)uts_initRoot, 0, ____alias_loc_id_6, 0UL, 2, (size_t)(12146000192742678424UL), (size_t)(0UL)); (uts_initRoot)(root, type); }) ) : (({ calling_npm("uts_initRoot", ____alias_loc_id_6); (*____chimes_extern_func_uts_initRoot)(root, type); })));
-# 944 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 944 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 912 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+{const int ____chimes_did_disable21 = new_stack((void *)(&initRootNode), "initRootNode", &____must_manage_initRootNode, 2, 0, (size_t)(12090941540209072104UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
+# 913 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+   call_lbl_0: (____chimes_does_checkpoint_uts_initRoot_npm ? ( ({ calling((void*)uts_initRoot, 0, ____alias_loc_id_6, 0UL, 2, (size_t)(12090941540209072104UL), (size_t)(0UL)); (uts_initRoot)(root, type); }) ) : (({ calling_npm("uts_initRoot", ____alias_loc_id_6); (*____chimes_extern_func_uts_initRoot)(root, type); })));
+# 944 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 944 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "initRootNode", &____must_manage_initRootNode, 0, ____chimes_did_disable21, false); }
-# 945 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 946 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 947 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 948 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 945 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 946 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 947 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 948 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void releaseNodes(StealStack *ss);
-# 949 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 950 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 951 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 952 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 953 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 954 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 955 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 956 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 949 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 950 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 951 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 952 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 953 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 954 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 955 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 956 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void genChildren_npm(Node * parent, Node * child, StealStack * ss);void releaseNodes_npm(StealStack *ss);static void (*____chimes_extern_func_rng_spawn)(unsigned char *, unsigned char *, int) = rng_spawn;static int (*____chimes_extern_func_uts_childType)(struct node_t *) = uts_childType;static int (*____chimes_extern_func_uts_numChildren)(struct node_t *) = uts_numChildren;
 void genChildren_quick(Node * parent, Node * child, StealStack * ss); void genChildren(Node * parent, Node * child, StealStack * ss);void releaseNodes_quick(StealStack *ss); void releaseNodes(StealStack *ss);
-void genChildren_resumable(Node * parent, Node * child, StealStack * ss) {const int ____chimes_did_disable22 = new_stack((void *)(&genChildren), "genChildren", &____must_manage_genChildren, 3, 3, (size_t)(12146000192742678542UL), (size_t)(12146000192742678543UL), (size_t)(12146000192742678544UL), "genChildren|parent|0", &____must_checkpoint_genChildren_parent_0, "%struct.node_t*", (void *)(&parent), (size_t)8, 1, 0, 0, "genChildren|child|0", &____must_checkpoint_genChildren_child_0, "%struct.node_t*", (void *)(&child), (size_t)8, 1, 0, 0, "genChildren|ss|0", &____must_checkpoint_genChildren_ss_0, "%struct.stealStack_t*", (void *)(&ss), (size_t)8, 1, 0, 0) ; int j;
-# 956 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void genChildren_resumable(Node * parent, Node * child, StealStack * ss) {const int ____chimes_did_disable22 = new_stack((void *)(&genChildren), "genChildren", &____must_manage_genChildren, 3, 3, (size_t)(12090941540209072222UL), (size_t)(12090941540209072223UL), (size_t)(12090941540209072224UL), "genChildren|parent|0", &____must_checkpoint_genChildren_parent_0, "%struct.node_t*", (void *)(&parent), (size_t)8, 1, 0, 0, "genChildren|child|0", &____must_checkpoint_genChildren_child_0, "%struct.node_t*", (void *)(&child), (size_t)8, 1, 0, 0, "genChildren|ss|0", &____must_checkpoint_genChildren_ss_0, "%struct.stealStack_t*", (void *)(&ss), (size_t)8, 1, 0, 0) ; int j;
+# 956 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int i;
-# 956 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 956 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int ____chimes_unroll_var_4;
-# 956 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 956 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int childType;
-# 956 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 956 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int numChildren;
-# 956 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 956 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int parentHeight;
-# 956 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 956 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  if (____must_checkpoint_genChildren_j_0 || ____must_checkpoint_genChildren_i_0 || ____must_checkpoint_genChildren_____chimes_unroll_var_4_0 || ____must_checkpoint_genChildren_childType_0 || ____must_checkpoint_genChildren_numChildren_0 || ____must_checkpoint_genChildren_parentHeight_0) { register_stack_vars(6, "genChildren|j|0", &____must_checkpoint_genChildren_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "genChildren|i|0", &____must_checkpoint_genChildren_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "genChildren|____chimes_unroll_var_4|0", &____must_checkpoint_genChildren_____chimes_unroll_var_4_0, "i32", (void *)(&____chimes_unroll_var_4), (size_t)4, 0, 0, 0, "genChildren|childType|0", &____must_checkpoint_genChildren_childType_0, "i32", (void *)(&childType), (size_t)4, 0, 0, 0, "genChildren|numChildren|0", &____must_checkpoint_genChildren_numChildren_0, "i32", (void *)(&numChildren), (size_t)4, 0, 0, 0, "genChildren|parentHeight|0", &____must_checkpoint_genChildren_parentHeight_0, "i32", (void *)(&parentHeight), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ; ;
-# 957 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 957 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      parentHeight = (parent->height) ;
-# 958 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 958 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     ;
-# 959 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 960 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-   call_lbl_0: numChildren = ({ calling((void*)uts_numChildren, 0, ____alias_loc_id_9, 0UL, 1, (size_t)(12146000192742678542UL)); (uts_numChildren)(parent); }) ;
-# 961 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-   call_lbl_1: childType = ({ calling((void*)uts_childType, 1, ____alias_loc_id_7, 0UL, 1, (size_t)(12146000192742678542UL)); (uts_childType)(parent); }) ;
-# 962 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 963 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 964 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 959 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 960 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+   call_lbl_0: numChildren = ({ calling((void*)uts_numChildren, 0, ____alias_loc_id_9, 0UL, 1, (size_t)(12090941540209072222UL)); (uts_numChildren)(parent); }) ;
+# 961 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+   call_lbl_1: childType = ({ calling((void*)uts_childType, 1, ____alias_loc_id_7, 0UL, 1, (size_t)(12090941540209072222UL)); (uts_childType)(parent); }) ;
+# 962 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 963 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 964 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   parent->numChildren = numChildren;
-# 965 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 965 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 2) {
-# 966 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-         call_lbl_2: ____chimes_unroll_var_4 = (({ calling_npm("ss_topPosn", 0); ss_topPosn_npm(ss); })) ; char *____chimes_unroll_var_5; call_lbl_3: ____chimes_unroll_var_5 = ( ({ uint8 * ____chimes_arg12; if (!____chimes_replaying) { ____chimes_arg12 = (parent->state.state); } calling((void*)rng_showstate, 3, ____alias_loc_id_8, 12146000192742678474UL, 2, (size_t)(12146000192742678542UL), (size_t)(12146000192742679361UL)); (rng_showstate)(____chimes_arg12, debug_str); }) ) ; printf("Gen:  Thread %d, posn %2d: node %s [%d] has %2d children\n",
-# 967 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 966 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+         call_lbl_2: ____chimes_unroll_var_4 = (({ calling_npm("ss_topPosn", 0); ss_topPosn_npm(ss); })) ; char *____chimes_unroll_var_5; call_lbl_3: ____chimes_unroll_var_5 = ( ({ uint8 * ____chimes_arg12; if (!____chimes_replaying) { ____chimes_arg12 = (parent->state.state); } calling((void*)rng_showstate, 3, ____alias_loc_id_8, 12090941540209072154UL, 2, (size_t)(12090941540209072222UL), (size_t)(12090941540209073041UL)); (rng_showstate)(____chimes_arg12, debug_str); }) ) ; printf("Gen:  Thread %d, posn %2d: node %s [%d] has %2d children\n",
+# 967 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), ____chimes_unroll_var_4,
-# 968 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 968 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            ____chimes_unroll_var_5,
-# 969 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 969 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            parentHeight, numChildren);
-# 970 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 970 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 971 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 972 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 973 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 971 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 972 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 973 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (numChildren > 0) {
-# 974 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 974 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       ;
-# 975 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 975 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     child->type = childType;
-# 976 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 976 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     child->height = parentHeight + 1;
-# 977 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 978 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 979 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 980 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 981 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 982 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 983 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 977 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 978 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 979 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 980 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 981 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 982 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 983 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     for (i = 0; i < numChildren; i++) {
-# 984 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 984 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       for (j = 0; j < computeGranularity; j++) {
-# 985 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 986 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 987 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-         call_lbl_4: ({ uint8 * ____chimes_arg14; uint8 * ____chimes_arg15; if (!____chimes_replaying) { ____chimes_arg14 = (parent->state.state); ____chimes_arg15 = (child->state.state); } calling((void*)rng_spawn, 4, ____alias_loc_id_11, 0UL, 3, (size_t)(12146000192742678542UL), (size_t)(12146000192742678543UL), (size_t)(0UL)); (rng_spawn)(____chimes_arg14, ____chimes_arg15, i); }) ;
-# 988 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 985 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 986 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 987 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+         call_lbl_4: ({ uint8 * ____chimes_arg14; uint8 * ____chimes_arg15; if (!____chimes_replaying) { ____chimes_arg14 = (parent->state.state); ____chimes_arg15 = (child->state.state); } calling((void*)rng_spawn, 4, ____alias_loc_id_11, 0UL, 3, (size_t)(12090941540209072222UL), (size_t)(12090941540209072223UL), (size_t)(0UL)); (rng_spawn)(____chimes_arg14, ____chimes_arg15, i); }) ;
+# 988 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       }
-# 989 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-       call_lbl_5: ({ calling((void*)ss_push, 5, ____alias_loc_id_10, 0UL, 2, (size_t)(12146000192742678544UL), (size_t)(12146000192742678543UL)); (ss_push)(ss, child); }) ;
-# 990 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-       call_lbl_6: ({ calling((void*)releaseNodes, 6, 0, 0UL, 1, (size_t)(12146000192742678544UL)); (releaseNodes)(ss); }) ;
-# 991 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 989 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+       call_lbl_5: ({ calling((void*)ss_push, 5, ____alias_loc_id_10, 0UL, 2, (size_t)(12090941540209072224UL), (size_t)(12090941540209072223UL)); (ss_push)(ss, child); }) ;
+# 990 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+       call_lbl_6: ({ calling((void*)releaseNodes, 6, 0, 0UL, 1, (size_t)(12090941540209072224UL)); (releaseNodes)(ss); }) ;
+# 991 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 992 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 992 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   } else {
-# 993 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 993 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     ss->nLeaves++;
-# 994 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 994 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 995 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 995 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "genChildren", &____must_manage_genChildren, ____alias_loc_id_43, ____chimes_did_disable22, false); }
-# 1007 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1007 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1007 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1007 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void cb_init_npm();
 void cb_init_quick(); void cb_init();
 void cb_init_resumable(){const int ____chimes_did_disable23 = new_stack((void *)(&cb_init), "cb_init", &____must_manage_cb_init, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 1008 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1008 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    call_lbl_0: cb_lock=({ calling_npm("omp_global_lock_alloc", 0); omp_global_lock_alloc_npm(); });
-# 1009 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1009 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 4) {printf("Thread %d, cb lock at %p\n", omp_get_thread_num(), (void *) cb_lock); };
-# 1011 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1012 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1013 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1011 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1012 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1013 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_set_lock(cb_lock);
-# 1014 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1014 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_count = 0;
-# 1015 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1015 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_cancel = 0;
-# 1016 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1016 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_done = 0;
-# 1017 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1017 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_unset_lock(cb_lock);
-# 1018 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1018 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "cb_init", &____must_manage_cb_init, ____alias_loc_id_45, ____chimes_did_disable23, false); }
-# 1019 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1020 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1021 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1022 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1019 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1020 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1021 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1022 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int cbarrier_wait_npm();
 int cbarrier_wait_quick(); int cbarrier_wait();
 int cbarrier_wait_resumable() {const int ____chimes_did_disable24 = new_stack((void *)(&cbarrier_wait), "cbarrier_wait", &____must_manage_cbarrier_wait, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 1023 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1023 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int l_count; int l_done; int l_cancel; ;
-# 1024 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1024 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int pe; pe = (omp_get_thread_num()) ;
-# 1025 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1026 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1025 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1026 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_set_lock(cb_lock);
-# 1027 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1027 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_count++;
-# 1028 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1029 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1030 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1031 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1028 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1029 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1030 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1031 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (cb_count == omp_get_num_threads()) {
-# 1032 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1032 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     cb_done = 1;
-# 1033 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1034 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1035 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1036 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1033 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1034 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1035 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1036 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1037 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1037 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   l_count = cb_count;
-# 1038 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1038 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   l_done = cb_done;
-# 1039 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1039 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (stealStack[pe]->nNodes_last == stealStack[pe]->nNodes) {
-# 1040 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1040 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     ++stealStack[pe]->falseWakeups;
-# 1041 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1041 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1042 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1042 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   stealStack[omp_get_thread_num()]->nNodes_last = stealStack[pe]->nNodes;
-# 1043 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1043 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_unset_lock(cb_lock);
-# 1044 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1045 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1044 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1045 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 16) {printf("Thread %d enter spin-wait, count = %d, done = %d\n",
-# 1047 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1047 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), l_count, l_done); };
-# 1048 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1049 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1050 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1048 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1049 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1050 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   do {
-# 1051 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1052 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1053 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1054 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1051 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1052 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1053 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1054 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     l_count = cb_count;
-# 1055 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1055 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     l_cancel = cb_cancel;
-# 1056 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1056 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     l_done = cb_done;
-# 1057 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1057 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1058 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1058 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   while (!l_cancel && !l_done);
-# 1059 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1060 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1059 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1060 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 16) {printf("Thread %d exit  spin-wait, count = %d, done = %d, cancel = %d\n",
-# 1062 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1062 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), l_count, l_done, l_cancel); };
-# 1063 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1064 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1065 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1063 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1064 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1065 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_set_lock(cb_lock);
-# 1066 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1066 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_count--;
-# 1067 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1067 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   l_count = cb_count;
-# 1068 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1069 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1070 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1071 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1068 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1069 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1070 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1071 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_cancel = 0;
-# 1072 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1072 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   l_done = cb_done;
-# 1073 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1073 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   ++stealStack[omp_get_thread_num()]->wakeups;
-# 1074 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1074 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_unset_lock(cb_lock);
-# 1075 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1076 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1075 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1076 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 16) {printf("Thread %d exit idle state, count = %d, done = %d\n",
-# 1078 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1078 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), l_count, cb_done); };
-# 1079 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1080 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1079 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1080 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_11; ; ____chimes_ret_var_11 = (cb_done); rm_stack(false, 0UL, "cbarrier_wait", &____must_manage_cbarrier_wait, ____alias_loc_id_46, ____chimes_did_disable24, false); return ____chimes_ret_var_11; ;
-# 1081 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1081 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "cbarrier_wait", &____must_manage_cbarrier_wait, ____alias_loc_id_46, ____chimes_did_disable24, false); }
-# 1082 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1083 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1084 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1085 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1082 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1083 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1084 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1085 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void cbarrier_cancel_npm();
 void cbarrier_cancel_quick(); void cbarrier_cancel();
 void cbarrier_cancel_resumable() {const int ____chimes_did_disable25 = new_stack((void *)(&cbarrier_cancel), "cbarrier_cancel", &____must_manage_cbarrier_cancel, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 1086 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1087 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1088 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1089 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1090 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1091 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1092 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1093 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1086 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1087 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1088 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1089 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1090 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1091 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1092 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1093 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_cancel = 1;
-# 1094 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1095 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1094 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1095 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "cbarrier_cancel", &____must_manage_cbarrier_cancel, ____alias_loc_id_47, ____chimes_did_disable25, false); }
-# 1096 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1097 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-void releaseNodes_resumable(StealStack *ss){const int ____chimes_did_disable26 = new_stack((void *)(&releaseNodes), "releaseNodes", &____must_manage_releaseNodes, 1, 1, (size_t)(12146000192742678583UL), "releaseNodes|ss|0", &____must_checkpoint_releaseNodes_ss_0, "%struct.stealStack_t*", (void *)(&ss), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
-# 1098 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1096 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1097 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void releaseNodes_resumable(StealStack *ss){const int ____chimes_did_disable26 = new_stack((void *)(&releaseNodes), "releaseNodes", &____must_manage_releaseNodes, 1, 1, (size_t)(12090941540209072263UL), "releaseNodes|ss|0", &____must_checkpoint_releaseNodes_ss_0, "%struct.stealStack_t*", (void *)(&ss), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
+# 1098 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (doSteal) {
-# 1099 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1099 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      call_lbl_0: if (({ calling_npm("ss_localDepth", 0); ss_localDepth_npm(ss); }) > 2 * chunkSize) {
-# 1100 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1101 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-       call_lbl_1: ({ calling((void*)ss_setState, 1, 0, 0UL, 2, (size_t)(12146000192742678583UL), (size_t)(0UL)); (ss_setState)(ss, 3); }) ;
-# 1102 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1100 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1101 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+       call_lbl_1: ({ calling((void*)ss_setState, 1, 0, 0UL, 2, (size_t)(12090941540209072263UL), (size_t)(0UL)); (ss_setState)(ss, 3); }) ;
+# 1102 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
        call_lbl_2: ({ calling_npm("ss_release", 0); ss_release_npm(ss, chunkSize); });
-# 1103 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1104 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1103 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1104 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       if (ss->nNodes % cbint == 0) {
-# 1105 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-         call_lbl_3: ({ calling((void*)ss_setState, 3, 0, 0UL, 2, (size_t)(12146000192742678583UL), (size_t)(0UL)); (ss_setState)(ss, 4); }) ;
-# 1106 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1105 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+         call_lbl_3: ({ calling((void*)ss_setState, 3, 0, 0UL, 2, (size_t)(12090941540209072263UL), (size_t)(0UL)); (ss_setState)(ss, 4); }) ;
+# 1106 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
          call_lbl_4: ({ calling_npm("cbarrier_cancel", 0); cbarrier_cancel_npm(); });
-# 1107 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1107 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       }
-# 1108 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1109 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1110 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1111 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1112 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1113 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1114 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1115 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-       call_lbl_5: ({ calling((void*)ss_setState, 5, 0, 0UL, 2, (size_t)(12146000192742678583UL), (size_t)(0UL)); (ss_setState)(ss, 0); }) ;
-# 1116 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1108 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1109 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1110 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1111 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1112 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1113 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1114 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1115 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+       call_lbl_5: ({ calling((void*)ss_setState, 5, 0, 0UL, 2, (size_t)(12090941540209072263UL), (size_t)(0UL)); (ss_setState)(ss, 0); }) ;
+# 1116 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 1117 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1117 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1118 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1118 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "releaseNodes", &____must_manage_releaseNodes, ____alias_loc_id_44, ____chimes_did_disable26, false); }
-# 1119 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1120 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1121 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1122 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1123 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1124 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1125 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1126 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1119 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1120 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1121 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1122 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1123 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1124 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1125 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1126 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void parTreeSearch_npm(StealStack *ss);
 void parTreeSearch_quick(StealStack *ss); void parTreeSearch(StealStack *ss);
-void parTreeSearch_resumable(StealStack *ss) {const int ____chimes_did_disable27 = new_stack((void *)(&parTreeSearch), "parTreeSearch", &____must_manage_parTreeSearch, 1, 1, (size_t)(12146000192742678838UL), "parTreeSearch|ss|0", &____must_checkpoint_parTreeSearch_ss_0, "%struct.stealStack_t*", (void *)(&ss), (size_t)8, 1, 0, 0) ; int victimId;
-# 1126 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void parTreeSearch_resumable(StealStack *ss) {const int ____chimes_did_disable27 = new_stack((void *)(&parTreeSearch), "parTreeSearch", &____must_manage_parTreeSearch, 1, 1, (size_t)(12090941540209072518UL), "parTreeSearch|ss|0", &____must_checkpoint_parTreeSearch_ss_0, "%struct.stealStack_t*", (void *)(&ss), (size_t)8, 1, 0, 0) ; int victimId;
+# 1126 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int goodSteal;
-# 1126 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1126 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 Node child;
-# 1126 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1126 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int done;
-# 1126 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1126 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  if (____must_checkpoint_parTreeSearch_victimId_0 || ____must_checkpoint_parTreeSearch_goodSteal_0 || ____must_checkpoint_parTreeSearch_child_0 || ____must_checkpoint_parTreeSearch_done_0) { register_stack_vars(4, "parTreeSearch|victimId|0", &____must_checkpoint_parTreeSearch_victimId_0, "i32", (void *)(&victimId), (size_t)4, 0, 0, 0, "parTreeSearch|goodSteal|0", &____must_checkpoint_parTreeSearch_goodSteal_0, "i32", (void *)(&goodSteal), (size_t)4, 0, 0, 0, "parTreeSearch|child|0", &____must_checkpoint_parTreeSearch_child_0, "%struct.node_t = type { i32, i32, i32, %struct.state_t }", (void *)(&child), (size_t)32, 0, 1, 0, "parTreeSearch|done|0", &____must_checkpoint_parTreeSearch_done_0, "i32", (void *)(&done), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(9): { goto call_lbl_9; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } default: { chimes_error(); } } } ; ;
-# 1127 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1127 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      done = (0) ;
-# 1128 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1128 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   Node *parent; ;
-# 1129 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1129 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     ;
-# 1130 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1131 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1132 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1130 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1131 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1132 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    call_lbl_0: ({ calling_npm("initNode", 0); initNode_npm(&child); });
-# 1133 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1134 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1135 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1133 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1134 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1135 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   while (done == 0) {
-# 1136 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1137 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1136 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1137 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      int localDepth; call_lbl_1: localDepth = (({ calling_npm("ss_localDepth", 0); ss_localDepth_npm(ss); })) ;
-# 1138 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1139 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1138 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1139 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     while (localDepth > 0) {
-# 1140 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1141 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-       call_lbl_2: (____chimes_does_checkpoint_ss_setState_npm ? ( ({ calling((void*)ss_setState, 2, ____alias_loc_id_17, 0UL, 2, (size_t)(12146000192742678838UL), (size_t)(0UL)); (ss_setState)(ss, 0); }) ) : (({ calling_npm("ss_setState", ____alias_loc_id_17); ss_setState_npm(ss, 0); })));
-# 1142 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1143 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1144 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-       call_lbl_3: parent = (____chimes_does_checkpoint_ss_top_npm ? ( ({ calling((void*)ss_top, 3, 0, 12146000192742678774UL, 1, (size_t)(12146000192742678838UL)); (ss_top)(ss); }) ) : (({ calling_npm("ss_top", 0); ss_top_npm(ss); })));
-# 1145 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1140 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1141 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+       call_lbl_2: (____chimes_does_checkpoint_ss_setState_npm ? ( ({ calling((void*)ss_setState, 2, ____alias_loc_id_17, 0UL, 2, (size_t)(12090941540209072518UL), (size_t)(0UL)); (ss_setState)(ss, 0); }) ) : (({ calling_npm("ss_setState", ____alias_loc_id_17); ss_setState_npm(ss, 0); })));
+# 1142 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1143 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1144 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+       call_lbl_3: parent = (____chimes_does_checkpoint_ss_top_npm ? ( ({ calling((void*)ss_top, 3, 0, 12090941540209072454UL, 1, (size_t)(12090941540209072518UL)); (ss_top)(ss); }) ) : (({ calling_npm("ss_top", 0); ss_top_npm(ss); })));
+# 1145 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       if (parent->numChildren < 0){
-# 1146 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1147 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-  call_lbl_4: (____chimes_does_checkpoint_genChildren_npm ? ( ({ calling((void*)genChildren, 4, ____alias_loc_id_15, 0UL, 3, (size_t)(12146000192742678774UL), (size_t)(12146000192742678741UL), (size_t)(12146000192742678838UL)); (genChildren)(parent, &child, ss); }) ) : (({ calling_npm("genChildren", ____alias_loc_id_15); genChildren_npm(parent, &child, ss); })));
-# 1148 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1149 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1146 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1147 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+  call_lbl_4: (____chimes_does_checkpoint_genChildren_npm ? ( ({ calling((void*)genChildren, 4, ____alias_loc_id_15, 0UL, 3, (size_t)(12090941540209072454UL), (size_t)(12090941540209072421UL), (size_t)(12090941540209072518UL)); (genChildren)(parent, &child, ss); }) ) : (({ calling_npm("genChildren", ____alias_loc_id_15); genChildren_npm(parent, &child, ss); })));
+# 1148 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1149 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       }
-# 1150 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1150 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       else {
-# 1151 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1152 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1153 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1154 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1155 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1156 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-         call_lbl_5: (____chimes_does_checkpoint_ss_pop_npm ? ( ({ calling((void*)ss_pop, 5, ____alias_loc_id_16, 0UL, 1, (size_t)(12146000192742678838UL)); (ss_pop)(ss); }) ) : (({ calling_npm("ss_pop", ____alias_loc_id_16); ss_pop_npm(ss); })));
-# 1157 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1151 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1152 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1153 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1154 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1155 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1156 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+         call_lbl_5: (____chimes_does_checkpoint_ss_pop_npm ? ( ({ calling((void*)ss_pop, 5, ____alias_loc_id_16, 0UL, 1, (size_t)(12090941540209072518UL)); (ss_pop)(ss); }) ) : (({ calling_npm("ss_pop", ____alias_loc_id_16); ss_pop_npm(ss); })));
+# 1157 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       }
-# 1158 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1159 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1160 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1161 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-       call_lbl_6: (____chimes_does_checkpoint_releaseNodes_npm ? ( ({ calling((void*)releaseNodes, 6, 0, 0UL, 1, (size_t)(12146000192742678838UL)); (releaseNodes)(ss); }) ) : (({ calling_npm("releaseNodes", 0); releaseNodes_npm(ss); })));
-# 1162 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1158 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1159 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1160 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1161 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+       call_lbl_6: (____chimes_does_checkpoint_releaseNodes_npm ? ( ({ calling((void*)releaseNodes, 6, 0, 0UL, 1, (size_t)(12090941540209072518UL)); (releaseNodes)(ss); }) ) : (({ calling_npm("releaseNodes", 0); releaseNodes_npm(ss); })));
+# 1162 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
        call_lbl_7: localDepth = ({ calling_npm("ss_localDepth", 0); ss_localDepth_npm(ss); });
-# 1163 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1163 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 1164 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1165 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1166 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1167 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1168 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1164 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1165 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1166 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1167 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1168 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      call_lbl_8: if (({ calling_npm("ss_acquire", 0); ss_acquire_npm(ss, chunkSize); })) {continue; };
-# 1170 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1171 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1172 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1173 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1170 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1171 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1172 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1173 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (doSteal) {
-# 1174 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1174 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
          goodSteal = (0) ;
-# 1175 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1175 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
        ;
-# 1176 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1177 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-       call_lbl_9: (____chimes_does_checkpoint_ss_setState_npm ? ( ({ calling((void*)ss_setState, 9, ____alias_loc_id_13, 0UL, 2, (size_t)(12146000192742678838UL), (size_t)(0UL)); (ss_setState)(ss, 1); }) ) : (({ calling_npm("ss_setState", ____alias_loc_id_13); ss_setState_npm(ss, 1); })));
-# 1178 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1176 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1177 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+       call_lbl_9: (____chimes_does_checkpoint_ss_setState_npm ? ( ({ calling((void*)ss_setState, 9, ____alias_loc_id_13, 0UL, 2, (size_t)(12090941540209072518UL), (size_t)(0UL)); (ss_setState)(ss, 1); }) ) : (({ calling_npm("ss_setState", ____alias_loc_id_13); ss_setState_npm(ss, 1); })));
+# 1178 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
        call_lbl_10: victimId = ({ calling_npm("findwork", 0); findwork_npm(chunkSize); });
-# 1179 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1179 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       while (victimId != -1 && !goodSteal) {
-# 1180 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1181 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-  call_lbl_11: goodSteal = (____chimes_does_checkpoint_ss_steal_npm ? ( ({ calling((void*)ss_steal, 11, ____alias_loc_id_14, 0UL, 3, (size_t)(12146000192742678838UL), (size_t)(0UL), (size_t)(0UL)); (ss_steal)(ss, victimId, chunkSize); }) ) : (({ calling_npm("ss_steal", ____alias_loc_id_14); ss_steal_npm(ss, victimId, chunkSize); })));
-# 1182 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1180 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1181 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+  call_lbl_11: goodSteal = (____chimes_does_checkpoint_ss_steal_npm ? ( ({ calling((void*)ss_steal, 11, ____alias_loc_id_14, 0UL, 3, (size_t)(12090941540209072518UL), (size_t)(0UL), (size_t)(0UL)); (ss_steal)(ss, victimId, chunkSize); }) ) : (({ calling_npm("ss_steal", ____alias_loc_id_14); ss_steal_npm(ss, victimId, chunkSize); })));
+# 1182 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  if (!goodSteal) { call_lbl_12: victimId = ({ calling_npm("findwork", 0); findwork_npm(chunkSize); }); };
-# 1184 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1184 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       }
-# 1185 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1185 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       if (goodSteal) {continue; };
-# 1187 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1187 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 1188 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1189 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1190 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1191 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1192 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1193 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1194 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-     call_lbl_13: (____chimes_does_checkpoint_ss_setState_npm ? ( ({ calling((void*)ss_setState, 13, ____alias_loc_id_12, 0UL, 2, (size_t)(12146000192742678838UL), (size_t)(0UL)); (ss_setState)(ss, 2); }) ) : (({ calling_npm("ss_setState", ____alias_loc_id_12); ss_setState_npm(ss, 2); })));
-# 1195 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1188 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1189 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1190 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1191 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1192 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1193 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1194 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+     call_lbl_13: (____chimes_does_checkpoint_ss_setState_npm ? ( ({ calling((void*)ss_setState, 13, ____alias_loc_id_12, 0UL, 2, (size_t)(12090941540209072518UL), (size_t)(0UL)); (ss_setState)(ss, 2); }) ) : (({ calling_npm("ss_setState", ____alias_loc_id_12); ss_setState_npm(ss, 2); })));
+# 1195 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      call_lbl_14: done = ({ calling_npm("cbarrier_wait", 0); cbarrier_wait_npm(); });
-# 1196 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1196 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1197 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1198 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1199 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1197 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1198 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1199 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "parTreeSearch", &____must_manage_parTreeSearch, ____alias_loc_id_48, ____chimes_did_disable27, false); }
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void showStats_npm(double elapsedSecs);static void (*____chimes_extern_func_uts_showStats)(int, int, double, int, int, int) = uts_showStats;
 void showStats_quick(double elapsedSecs); void showStats(double elapsedSecs);
 void showStats_resumable(double elapsedSecs) {const int ____chimes_did_disable28 = new_stack((void *)(&showStats), "showStats", &____must_manage_showStats, 1, 0, (size_t)(0UL)) ; int nthreads;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 double tcbovh;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 double tovh;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 double tidle;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 double tsearch;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 double twork;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int mdepth;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int tfail;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int tsteal;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int tacq;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int trel;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  if (____must_checkpoint_showStats_nthreads_0 || ____must_checkpoint_showStats_tcbovh_0 || ____must_checkpoint_showStats_tovh_0 || ____must_checkpoint_showStats_tidle_0 || ____must_checkpoint_showStats_tsearch_0 || ____must_checkpoint_showStats_twork_0 || ____must_checkpoint_showStats_mdepth_0 || ____must_checkpoint_showStats_tfail_0 || ____must_checkpoint_showStats_tsteal_0 || ____must_checkpoint_showStats_tacq_0 || ____must_checkpoint_showStats_trel_0) { register_stack_vars(11, "showStats|nthreads|0", &____must_checkpoint_showStats_nthreads_0, "i32", (void *)(&nthreads), (size_t)4, 0, 0, 0, "showStats|tcbovh|0", &____must_checkpoint_showStats_tcbovh_0, "double", (void *)(&tcbovh), (size_t)8, 0, 0, 0, "showStats|tovh|0", &____must_checkpoint_showStats_tovh_0, "double", (void *)(&tovh), (size_t)8, 0, 0, 0, "showStats|tidle|0", &____must_checkpoint_showStats_tidle_0, "double", (void *)(&tidle), (size_t)8, 0, 0, 0, "showStats|tsearch|0", &____must_checkpoint_showStats_tsearch_0, "double", (void *)(&tsearch), (size_t)8, 0, 0, 0, "showStats|twork|0", &____must_checkpoint_showStats_twork_0, "double", (void *)(&twork), (size_t)8, 0, 0, 0, "showStats|mdepth|0", &____must_checkpoint_showStats_mdepth_0, "i32", (void *)(&mdepth), (size_t)4, 0, 0, 0, "showStats|tfail|0", &____must_checkpoint_showStats_tfail_0, "i32", (void *)(&tfail), (size_t)4, 0, 0, 0, "showStats|tsteal|0", &____must_checkpoint_showStats_tsteal_0, "i32", (void *)(&tsteal), (size_t)4, 0, 0, 0, "showStats|tacq|0", &____must_checkpoint_showStats_tacq_0, "i32", (void *)(&tacq), (size_t)4, 0, 0, 0, "showStats|trel|0", &____must_checkpoint_showStats_trel_0, "i32", (void *)(&trel), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
-# 1228 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1228 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int i; ;
-# 1229 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1229 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int tnodes; int tleaves; tnodes = (0) ; tleaves = (0) ; trel = (0) ; tacq = (0) ; tsteal = (0) ; tfail = (0) ;
-# 1230 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1230 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      int mheight; mdepth = (0) ; mheight = (0) ;
-# 1231 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1231 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
              twork = (0.0) ; tsearch = (0.0) ; tidle = (0.0) ; tovh = (0.0) ; tcbovh = (0.0) ;
-# 1232 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1232 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      nthreads = (omp_get_num_threads()) ;
-# 1251 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1251 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1251 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1251 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   for (i = 0; i < nthreads; i++) {
-# 1252 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1252 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tnodes += stealStack[i]->nNodes;
-# 1253 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1253 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tleaves += stealStack[i]->nLeaves;
-# 1254 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1254 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     trel += stealStack[i]->nRelease;
-# 1255 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1255 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tacq += stealStack[i]->nAcquire;
-# 1256 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1256 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tsteal += stealStack[i]->nSteal;
-# 1257 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1257 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tfail += stealStack[i]->nFail;
-# 1258 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1258 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     twork += stealStack[i]->time[0];
-# 1259 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1259 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tsearch += stealStack[i]->time[1];
-# 1260 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1260 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tidle += stealStack[i]->time[2];
-# 1261 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1261 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tovh += stealStack[i]->time[3];
-# 1262 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1262 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tcbovh += stealStack[i]->time[4];
-# 1263 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1263 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     mdepth = (((mdepth) > (stealStack[i]->maxStackDepth)) ? (mdepth) : (stealStack[i]->maxStackDepth));
-# 1264 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1264 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     mheight = (((mheight) > (stealStack[i]->maxTreeDepth)) ? (mheight) : (stealStack[i]->maxTreeDepth));
-# 1265 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1265 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1266 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1266 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (trel != tacq + tsteal) {
-# 1267 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1267 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("*** error! total released != total acquired + total stolen\n");
-# 1268 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1268 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1269 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1270 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1269 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1270 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    call_lbl_0: (____chimes_does_checkpoint_uts_showStats_npm ? ( ({ calling((void*)uts_showStats, 0, ____alias_loc_id_18, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (uts_showStats)(nthreads, chunkSize, elapsedSecs, tnodes, tleaves, mheight); }) ) : (({ calling_npm("uts_showStats", ____alias_loc_id_18); (*____chimes_extern_func_uts_showStats)(nthreads, chunkSize, elapsedSecs, tnodes, tleaves, mheight); })));
-# 1271 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1272 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1271 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1272 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (verbose > 1) {
-# 1273 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1273 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (doSteal) {
-# 1274 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1274 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("Total chunks released = %d, of which %d reacquired and %d stolen\n",
-# 1275 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1275 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
           trel, tacq, tsteal);
-# 1276 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1276 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("Failed steal operations = %d, ", tfail);
-# 1277 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1277 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 1278 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1279 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1278 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1279 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("Max stealStack size = %d\n", mdepth);
-# 1280 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1280 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("Avg time per thread: Work = %.6f, Search = %.6f, Idle = %.6f\n", (twork / nthreads),
-# 1281 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1281 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
         (tsearch / nthreads), (tidle / nthreads));
-# 1282 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1282 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("                     Overhead = %6f, CB_Overhead = %6f\n\n", (tovh / nthreads),
-# 1283 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1283 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
         (tcbovh/nthreads));
-# 1284 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1284 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1285 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1286 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1287 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1285 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1286 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1287 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (verbose > 2) {
-# 1288 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1288 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     for (i = 0; i < nthreads; i++) {
-# 1289 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1289 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("** Thread %d\n", i);
-# 1290 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1290 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  # nodes explored    = %d\n", stealStack[i]->nNodes);
-# 1291 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1291 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  # chunks released   = %d\n", stealStack[i]->nRelease);
-# 1292 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1292 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  # chunks reacquired = %d\n", stealStack[i]->nAcquire);
-# 1293 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1293 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  # chunks stolen     = %d\n", stealStack[i]->nSteal);
-# 1294 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1294 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  # failed steals     = %d\n", stealStack[i]->nFail);
-# 1295 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1295 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  maximum stack depth = %d\n", stealStack[i]->maxStackDepth);
-# 1296 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1296 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  work time           = %.6f secs (%d sessions)\n",
-# 1297 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1297 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
              stealStack[i]->time[0], stealStack[i]->entries[0]);
-# 1298 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1298 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  overhead time       = %.6f secs (%d sessions)\n",
-# 1299 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1299 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
              stealStack[i]->time[3], stealStack[i]->entries[3]);
-# 1300 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1300 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  search time         = %.6f secs (%d sessions)\n",
-# 1301 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1301 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
              stealStack[i]->time[1], stealStack[i]->entries[1]);
-# 1302 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1302 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  idle time           = %.6f secs (%d sessions)\n",
-# 1303 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1303 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
              stealStack[i]->time[2], stealStack[i]->entries[2]);
-# 1304 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1304 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  wakeups             = %d, false wakeups = %d (%.2f%%)",
-# 1305 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1305 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
              stealStack[i]->wakeups, stealStack[i]->falseWakeups,
-# 1306 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1306 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
              (stealStack[i]->wakeups == 0) ? 0.00 : ((((double)stealStack[i]->falseWakeups)/stealStack[i]->wakeups)*100.0));
-# 1307 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1307 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("\n");
-# 1308 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1308 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 1309 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1309 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1349 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1349 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1349 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1349 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "showStats", &____must_manage_showStats, ____alias_loc_id_49, ____chimes_did_disable28, false); }
-# 1359 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1359 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1359 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1359 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 static void (*____chimes_extern_func_uts_parseParams)(int, char **) = uts_parseParams;static void (*____chimes_extern_func_uts_printParams)(void) = uts_printParams;
 int main_quick(int argc, char *argv[]); int main(int argc, char *argv[]);
-int main_resumable(int argc, char *argv[]) {const int ____chimes_did_disable29 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(12146000192742679349UL)) ; StealStack *ss;
-# 1359 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+int main_resumable(int argc, char *argv[]) {const int ____chimes_did_disable29 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(12090941540209073029UL)) ; StealStack *ss;
+# 1359 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 double et;
-# 1359 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1359 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 double t1;
-# 1359 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1359 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 Node root;
-# 1359 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1359 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  register_stack_vars(4, "main|ss|0", (int *)0x0, "%struct.stealStack_t*", (void *)(&ss), (size_t)8, 1, 0, 0, "main|et|0", (int *)0x0, "double", (void *)(&et), (size_t)8, 0, 0, 0, "main|t1|0", &____must_checkpoint_main_t1_0, "double", (void *)(&t1), (size_t)8, 0, 0, 0, "main|root|0", (int *)0x0, "%struct.node_t = type { i32, i32, i32, %struct.state_t }", (void *)(&root), (size_t)32, 0, 1, 0); if (____chimes_replaying) { switch(get_next_call()) { case(13): { goto call_lbl_13; } case(15): { goto call_lbl_15; } case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
-# 1360 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1360 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     ;
-# 1361 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1362 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1363 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1364 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1365 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1366 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1367 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-   call_lbl_0: (____chimes_does_checkpoint_uts_parseParams_npm ? ( ({ calling((void*)uts_parseParams, 0, ____alias_loc_id_22, 0UL, 2, (size_t)(0UL), (size_t)(12146000192742679349UL)); (uts_parseParams)(argc, argv); }) ) : (({ calling_npm("uts_parseParams", ____alias_loc_id_22); (*____chimes_extern_func_uts_parseParams)(argc, argv); })));
-# 1368 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1369 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1370 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1371 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1372 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1373 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1374 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1361 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1362 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1363 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1364 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1365 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1366 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1367 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+   call_lbl_0: (____chimes_does_checkpoint_uts_parseParams_npm ? ( ({ calling((void*)uts_parseParams, 0, ____alias_loc_id_22, 0UL, 2, (size_t)(0UL), (size_t)(12090941540209073029UL)); (uts_parseParams)(argc, argv); }) ) : (({ calling_npm("uts_parseParams", ____alias_loc_id_22); (*____chimes_extern_func_uts_parseParams)(argc, argv); })));
+# 1368 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1369 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1370 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1371 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1372 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1373 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1374 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int n_omp_threads; ;
-# 1375 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1375 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1375 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1375 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1375 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1375 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 { call_lbl_13: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(13, &____chimes_region_id0, 3, &et, &ss, &t1);
-# 1375 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1375 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 #pragma omp parallel
-# 1375 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1375 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1376 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1375 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1375 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1376 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &et, &ss, &t1); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } {
-# 1377 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1377 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1377 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1377 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1377 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1377 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1377 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1377 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 #pragma omp single
-# 1377 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1377 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1378 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1377 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1377 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1378 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       { bool ____chimes_disable1; ____chimes_disable1 = disable_current_thread(); {
-# 1379 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1379 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
           n_omp_threads = omp_get_num_threads();
-# 1380 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1380 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
        } reenable_current_thread(____chimes_disable1); }
-# 1381 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1381 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    } thread_leaving(); } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
-# 1382 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1383 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1382 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1383 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (n_omp_threads > 32) {
-# 1384 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1384 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     fprintf(stderr, "Resetting # OMP threads from %d to %d\n",
-# 1385 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1385 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
             n_omp_threads, 32);
-# 1386 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1386 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     omp_set_num_threads(32);
-# 1387 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1387 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1388 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1389 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1390 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1388 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1389 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1390 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    call_lbl_1: ({ calling_npm("cb_init", 0); cb_init_npm(); });
-# 1391 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1392 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1393 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1393 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1393 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1391 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1392 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1393 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1393 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1393 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 { call_lbl_15: void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(15, &____chimes_region_id1, 3, &et, &ss, &t1);
-# 1393 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1393 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 #pragma omp parallel firstprivate(t1) firstprivate(et) firstprivate(ss)
-# 1393 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1393 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1394 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1393 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1393 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1394 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 3, &et, &ss, &t1); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } default: { chimes_error(); } } } {
-# 1395 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1395 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      double t2; ;
-# 1396 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1396 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      ;
-# 1397 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1398 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1399 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1397 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1398 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1399 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (omp_get_thread_num() == 0) {
-# 1400 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1400 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
        call_lbl_2: (____chimes_does_checkpoint_uts_printParams_npm ? ( ({ calling((void*)uts_printParams, 2, ____alias_loc_id_23, 0UL, 0); (uts_printParams)(); }) ) : (({ calling_npm("uts_printParams", ____alias_loc_id_23); (*____chimes_extern_func_uts_printParams)(); })));
-# 1401 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1401 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 1423 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1423 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-    stealStack[omp_get_thread_num()] = ( StealStack *) ({ void *____chimes_tmp_ptr = malloc((sizeof(StealStack)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(StealStack), 12146000192742679325UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 1424 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1423 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1423 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+    stealStack[omp_get_thread_num()] = ( StealStack *) ({ void *____chimes_tmp_ptr = malloc((sizeof(StealStack)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(StealStack), 12090941540209073005UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 1424 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     ss = (StealStack *) stealStack[omp_get_thread_num()];
-# 1425 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1425 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      call_lbl_3: ({ calling_npm("ss_init", 0); ss_init_npm(ss, 500000); });
-# 1426 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1427 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1428 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1429 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1426 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1427 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1428 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1429 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (omp_get_thread_num() == 0) {
-# 1430 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-       call_lbl_4: (____chimes_does_checkpoint_initRootNode_npm ? ( ({ calling((void*)initRootNode, 4, ____alias_loc_id_24, 0UL, 2, (size_t)(12146000192742679266UL), (size_t)(0UL)); (initRootNode)(&root, type); }) ) : (({ calling_npm("initRootNode", ____alias_loc_id_24); initRootNode_npm(&root, type); })));
-# 1431 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-       call_lbl_5: (____chimes_does_checkpoint_ss_push_npm ? ( ({ calling((void*)ss_push, 5, 0, 0UL, 2, (size_t)(12146000192742679325UL), (size_t)(12146000192742679266UL)); (ss_push)(ss, &root); }) ) : (({ calling_npm("ss_push", 0); ss_push_npm(ss, &root); })));
-# 1432 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1430 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+       call_lbl_4: (____chimes_does_checkpoint_initRootNode_npm ? ( ({ calling((void*)initRootNode, 4, ____alias_loc_id_24, 0UL, 2, (size_t)(12090941540209072946UL), (size_t)(0UL)); (initRootNode)(&root, type); }) ) : (({ calling_npm("initRootNode", ____alias_loc_id_24); initRootNode_npm(&root, type); })));
+# 1431 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+       call_lbl_5: (____chimes_does_checkpoint_ss_push_npm ? ( ({ calling((void*)ss_push, 5, 0, 0UL, 2, (size_t)(12090941540209073005UL), (size_t)(12090941540209072946UL)); (ss_push)(ss, &root); }) ) : (({ calling_npm("ss_push", 0); ss_push_npm(ss, &root); })));
+# 1432 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 1433 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1434 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1435 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1435 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1435 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1433 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1434 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1435 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1435 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1435 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 #pragma omp barrier
-# 1435 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1435 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1436 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1437 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1438 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1439 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1435 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1435 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1436 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1437 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1438 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1439 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      call_lbl_6: checkpoint_transformed(6, ____alias_loc_id_21);
-# 1440 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1441 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1442 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1443 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-     call_lbl_7: (____chimes_does_checkpoint_ss_initState_npm ? ( ({ calling((void*)ss_initState, 7, 0, 0UL, 1, (size_t)(12146000192742679325UL)); (ss_initState)(ss); }) ) : (({ calling_npm("ss_initState", 0); ss_initState_npm(ss); }))); call_lbl_8: t1 = (____chimes_does_checkpoint_uts_wctime_npm ? ( ({ calling((void*)uts_wctime, 8, 0, 0UL, 0); (uts_wctime)(); }) ) : (({ calling_npm("uts_wctime", 0); (*____chimes_extern_func_uts_wctime)(); })));
-# 1444 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-     call_lbl_9: (____chimes_does_checkpoint_parTreeSearch_npm ? ( ({ calling((void*)parTreeSearch, 9, ____alias_loc_id_20, 0UL, 1, (size_t)(12146000192742679325UL)); (parTreeSearch)(ss); }) ) : (({ calling_npm("parTreeSearch", ____alias_loc_id_20); parTreeSearch_npm(ss); })));
-# 1445 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1440 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1441 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1442 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1443 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+     call_lbl_7: (____chimes_does_checkpoint_ss_initState_npm ? ( ({ calling((void*)ss_initState, 7, 0, 0UL, 1, (size_t)(12090941540209073005UL)); (ss_initState)(ss); }) ) : (({ calling_npm("ss_initState", 0); ss_initState_npm(ss); }))); call_lbl_8: t1 = (____chimes_does_checkpoint_uts_wctime_npm ? ( ({ calling((void*)uts_wctime, 8, 0, 0UL, 0); (uts_wctime)(); }) ) : (({ calling_npm("uts_wctime", 0); (*____chimes_extern_func_uts_wctime)(); })));
+# 1444 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+     call_lbl_9: (____chimes_does_checkpoint_parTreeSearch_npm ? ( ({ calling((void*)parTreeSearch, 9, ____alias_loc_id_20, 0UL, 1, (size_t)(12090941540209073005UL)); (parTreeSearch)(ss); }) ) : (({ calling_npm("parTreeSearch", ____alias_loc_id_20); parTreeSearch_npm(ss); })));
+# 1445 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      call_lbl_10: t2 = (____chimes_does_checkpoint_uts_wctime_npm ? ( ({ calling((void*)uts_wctime, 10, 0, 0UL, 0); (uts_wctime)(); }) ) : (({ calling_npm("uts_wctime", 0); (*____chimes_extern_func_uts_wctime)(); })));
-# 1446 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1446 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     et = t2 - t1;
-# 1447 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1448 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1449 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1450 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1451 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1452 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1453 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1453 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1453 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1447 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1448 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1449 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1450 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1451 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1452 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1453 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1453 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1453 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 #pragma omp barrier
-# 1453 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1453 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1454 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1455 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1456 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1457 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1453 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1453 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1454 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1455 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1456 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1457 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      call_lbl_11: checkpoint_transformed(11, ____alias_loc_id_19);
-# 1458 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1459 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1460 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1461 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1458 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1459 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1460 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1461 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (omp_get_thread_num() == 0) {
-# 1462 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1462 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
        call_lbl_12: (____chimes_does_checkpoint_showStats_npm ? ( ({ calling((void*)showStats, 12, 0, 0UL, 1, (size_t)(0UL)); (showStats)(et); }) ) : (({ calling_npm("showStats", 0); showStats_npm(et); })));
-# 1463 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1463 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 1464 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1464 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    } thread_leaving(); } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 0); }
-# 1465 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1466 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1467 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1465 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1466 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1467 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_12; ; ____chimes_ret_var_12 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_50, ____chimes_did_disable29, false); return ____chimes_ret_var_12; ;
-# 1468 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1468 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_50, ____chimes_did_disable29, false); }
-# 57 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 57 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 omp_lock_t * omp_global_lock_alloc_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&omp_global_lock_alloc), "omp_global_lock_alloc", &____must_manage_omp_global_lock_alloc, 0, 0) ; ; ;
-# 58 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-   omp_lock_t *lock; lock = ((omp_lock_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(omp_lock_t) + 128) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(omp_lock_t) + 128, 12146000192742677284UL, 0, 1, (int)sizeof(omp_lock_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 59 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 58 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+   omp_lock_t *lock; lock = ((omp_lock_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(omp_lock_t) + 128) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(omp_lock_t) + 128, 12090941540209070964UL, 0, 1, (int)sizeof(omp_lock_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 59 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_init_lock(lock);
-# 60 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-   omp_lock_t *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (lock); rm_stack(true, 12146000192742677284UL, "omp_global_lock_alloc", &____must_manage_omp_global_lock_alloc, ____alias_loc_id_25, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 61 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-rm_stack(true, 12146000192742677284UL, "omp_global_lock_alloc", &____must_manage_omp_global_lock_alloc, ____alias_loc_id_25, ____chimes_did_disable0, false); }
+# 60 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+   omp_lock_t *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (lock); rm_stack(true, 12090941540209070964UL, "omp_global_lock_alloc", &____must_manage_omp_global_lock_alloc, ____alias_loc_id_25, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
+# 61 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+rm_stack(true, 12090941540209070964UL, "omp_global_lock_alloc", &____must_manage_omp_global_lock_alloc, ____alias_loc_id_25, ____chimes_did_disable0, false); }
 
 omp_lock_t * omp_global_lock_alloc() { return (____chimes_replaying ? omp_global_lock_alloc_resumable() : omp_global_lock_alloc_quick()); }
-# 293 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 293 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 char * impl_getName_quick() {const int ____chimes_did_disable1 = new_stack((void *)(&impl_getName), "impl_getName", &____must_manage_impl_getName, 0, 0) ; char *name[] = { "Sequential C", "C/OpenMP", "UPC", "SHMEM", "PThreads" };
-# 293 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 293 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  if (____must_checkpoint_impl_getName_name_0) { register_stack_vars(1, "impl_getName|name|0", &____must_checkpoint_impl_getName_name_0, "[5 x i8*]", (void *)(name), (size_t)40, 0, 0, 0); } ; ;
-# 294 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 294 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    ;
-# 295 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-   char *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (name[1]); rm_stack(true, 12146000192742679368UL, "impl_getName", &____must_manage_impl_getName, ____alias_loc_id_26, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 296 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-rm_stack(true, 12146000192742679368UL, "impl_getName", &____must_manage_impl_getName, ____alias_loc_id_26, ____chimes_did_disable1, false); }
+# 295 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+   char *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (name[1]); rm_stack(true, 12090941540209073048UL, "impl_getName", &____must_manage_impl_getName, ____alias_loc_id_26, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
+# 296 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+rm_stack(true, 12090941540209073048UL, "impl_getName", &____must_manage_impl_getName, ____alias_loc_id_26, ____chimes_did_disable1, false); }
 
 char * impl_getName() { return (____chimes_replaying ? impl_getName_resumable() : impl_getName_quick()); }
-# 300 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-int impl_paramsToStr_quick(char *strBuf, int ind) {const int ____chimes_did_disable2 = new_stack((void *)(&impl_paramsToStr), "impl_paramsToStr", &____must_manage_impl_paramsToStr, 2, 0, (size_t)(12146000192742677394UL), (size_t)(0UL)) ; ; ;
-# 301 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 300 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+int impl_paramsToStr_quick(char *strBuf, int ind) {const int ____chimes_did_disable2 = new_stack((void *)(&impl_paramsToStr), "impl_paramsToStr", &____must_manage_impl_paramsToStr, 2, 0, (size_t)(12090941540209071074UL), (size_t)(0UL)) ; ; ;
+# 301 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   ind += sprintf(strBuf+ind, "Execution strategy:  ");
-# 302 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 302 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (1) {{
-# 303 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 303 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     ind += sprintf(strBuf+ind, "Parallel search using %d threads\n", omp_get_num_threads());
-# 304 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 304 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (doSteal) {{
-# 305 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 305 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       ind += sprintf(strBuf+ind, "   Load balance by work stealing, chunk size = %d nodes\n",chunkSize);
-# 306 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 306 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       ind += sprintf(strBuf+ind, "  CBarrier Interval: %d\n", cbint);
-# 307 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 307 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       ind += sprintf(strBuf+ind, "   Polling Interval: %d\n", pollint);
-# 308 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 308 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }; } else {ind += sprintf(strBuf+ind, "   No load balancing.\n"); } ;
-# 311 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 311 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }; } else {ind += sprintf(strBuf+ind, "Iterative sequential search\n"); } ;
-# 314 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 315 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 314 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 315 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (ind); rm_stack(false, 0UL, "impl_paramsToStr", &____must_manage_impl_paramsToStr, ____alias_loc_id_27, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ;
-# 316 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 316 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "impl_paramsToStr", &____must_manage_impl_paramsToStr, ____alias_loc_id_27, ____chimes_did_disable2, false); }
 
 int impl_paramsToStr(char *strBuf, int ind) { return (____chimes_replaying ? impl_paramsToStr_resumable(strBuf, ind) : impl_paramsToStr_quick(strBuf, ind)); }
-# 319 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-int impl_parseParam_quick(char *param, char *value) {const int ____chimes_did_disable3 = new_stack((void *)(&impl_parseParam), "impl_parseParam", &____must_manage_impl_parseParam, 2, 0, (size_t)(12146000192742677440UL), (size_t)(12146000192742677441UL)) ; ; ;
-# 320 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 319 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+int impl_parseParam_quick(char *param, char *value) {const int ____chimes_did_disable3 = new_stack((void *)(&impl_parseParam), "impl_parseParam", &____must_manage_impl_parseParam, 2, 0, (size_t)(12090941540209071120UL), (size_t)(12090941540209071121UL)) ; ; ;
+# 320 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int err; err = (0) ;
-# 321 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 322 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 321 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 322 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   switch (param[1]) {
-# 323 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 324 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 323 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 324 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     case 'c':
-# 325 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 325 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       chunkSize = atoi(value); break;
-# 326 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 326 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     case 's':
-# 327 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 327 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       doSteal = atoi(value);
-# 328 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 328 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       if (doSteal != 1 && doSteal != 0) {err = 1; };
-# 330 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 330 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       break;
-# 331 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 331 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     case 'i':
-# 332 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 332 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       cbint = atoi(value); break;
-# 352 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 352 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 352 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 352 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     default:
-# 353 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 353 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       err = 1;
-# 354 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 354 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       break;
-# 355 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 355 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 356 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 357 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 356 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 357 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (err); rm_stack(false, 0UL, "impl_parseParam", &____must_manage_impl_parseParam, ____alias_loc_id_28, ____chimes_did_disable3, false); return ____chimes_ret_var_3; ;
-# 358 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 358 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "impl_parseParam", &____must_manage_impl_parseParam, ____alias_loc_id_28, ____chimes_did_disable3, false); }
 
 int impl_parseParam(char *param, char *value) { return (____chimes_replaying ? impl_parseParam_resumable(param, value) : impl_parseParam_quick(param, value)); }
-# 360 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 360 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void impl_helpMessage_quick() {const int ____chimes_did_disable4 = new_stack((void *)(&impl_helpMessage), "impl_helpMessage", &____must_manage_impl_helpMessage, 0, 0) ; ; ;
-# 361 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 361 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (1) {
-# 362 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 362 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("   -s  int   zero/nonzero to disable/enable work stealing\n");
-# 363 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 363 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("   -c  int   chunksize for work stealing\n");
-# 364 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 364 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("   -i  int   set cancellable barrier polling interval\n");
-# 365 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 366 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 367 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 368 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 365 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 366 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 367 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 368 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   } else {
-# 369 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 370 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 371 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 372 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 369 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 370 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 371 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 372 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("   none.\n");
-# 373 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 374 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 373 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 374 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 375 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 375 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "impl_helpMessage", &____must_manage_impl_helpMessage, 0, ____chimes_did_disable4, false); }
 
 void impl_helpMessage() { (____chimes_replaying ? impl_helpMessage_resumable() : impl_helpMessage_quick()); }
-# 377 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 377 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void impl_abort_quick(int err) {const int ____chimes_did_disable5 = new_stack((void *)(&impl_abort), "impl_abort", &____must_manage_impl_abort, 1, 0, (size_t)(0UL)) ; ; ;
-# 378 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 379 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 380 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 381 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 378 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 379 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 380 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 381 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   exit(err);
-# 382 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 383 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 384 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 385 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 386 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 387 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 382 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 383 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 384 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 385 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 386 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 387 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "impl_abort", &____must_manage_impl_abort, 0, ____chimes_did_disable5, false); }
 
 void impl_abort(int err) { (____chimes_replaying ? impl_abort_resumable(err) : impl_abort_quick(err)); }
-# 422 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-void ss_mkEmpty_quick(StealStack *s) {const int ____chimes_did_disable6 = new_stack((void *)(&ss_mkEmpty), "ss_mkEmpty", &____must_manage_ss_mkEmpty, 1, 0, (size_t)(12146000192742677481UL)) ; ; ;
-# 423 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 422 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void ss_mkEmpty_quick(StealStack *s) {const int ____chimes_did_disable6 = new_stack((void *)(&ss_mkEmpty), "ss_mkEmpty", &____must_manage_ss_mkEmpty, 1, 0, (size_t)(12090941540209071161UL)) ; ; ;
+# 423 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_set_lock(s->stackLock);
-# 424 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 424 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->sharedStart = 0;
-# 425 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 425 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->local = 0;
-# 426 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 426 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->top = 0;
-# 427 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 427 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->workAvail = 0;
-# 428 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 428 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_unset_lock(s->stackLock);
-# 429 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 429 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_mkEmpty", &____must_manage_ss_mkEmpty, ____alias_loc_id_29, ____chimes_did_disable6, false); }
 
 void ss_mkEmpty(StealStack *s) { (____chimes_replaying ? ss_mkEmpty_resumable(s) : ss_mkEmpty_quick(s)); }
-# 432 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-void ss_error_quick(char *str) {const int ____chimes_did_disable7 = new_stack((void *)(&ss_error), "ss_error", &____must_manage_ss_error, 1, 0, (size_t)(12146000192742677493UL)) ; ; ;
-# 433 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 432 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void ss_error_quick(char *str) {const int ____chimes_did_disable7 = new_stack((void *)(&ss_error), "ss_error", &____must_manage_ss_error, 1, 0, (size_t)(12090941540209071173UL)) ; ; ;
+# 433 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   printf("*** [Thread %i] %s\n",omp_get_thread_num(), str);
-# 434 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 434 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   exit(4);
-# 435 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 435 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_error", &____must_manage_ss_error, 0, ____chimes_did_disable7, false); }
 
 void ss_error(char *str) { (____chimes_replaying ? ss_error_resumable(str) : ss_error_quick(str)); }
-# 438 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-void ss_init_quick(StealStack *s, int nelts) {const int ____chimes_did_disable8 = new_stack((void *)(&ss_init), "ss_init", &____must_manage_ss_init, 2, 0, (size_t)(12146000192742677593UL), (size_t)(0UL)) ; ; ;
-# 439 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 438 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void ss_init_quick(StealStack *s, int nelts) {const int ____chimes_did_disable8 = new_stack((void *)(&ss_init), "ss_init", &____must_manage_ss_init, 2, 0, (size_t)(12090941540209071273UL), (size_t)(0UL)) ; ; ;
+# 439 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int nbytes; nbytes = (nelts * sizeof(Node)) ;
-# 440 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 441 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 440 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 441 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 1) {printf("Thread %d intializing stealStack %p, sizeof(Node) = %X\n",
-# 443 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 443 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), s, (int)(sizeof(Node))); };
-# 444 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 445 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 446 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 447 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-  s->stack_g = ( Node *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nbytes, 12146000192742677517UL, 0, 1, (int)sizeof(struct node_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 448 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 444 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 445 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 446 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 447 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+  s->stack_g = ( Node *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, nbytes, 12090941540209071197UL, 0, 1, (int)sizeof(struct node_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 448 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->stack = (Node *) s->stack_g;
-# 449 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 450 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 451 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 452 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 453 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 454 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 449 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 450 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 451 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 452 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 453 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 454 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->stack == __null) {
-# 455 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 455 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("Request for %d bytes for stealStack on thread %d failed\n",
-# 456 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 456 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            nbytes, omp_get_thread_num());
-# 457 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 457 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      call_lbl_0: ({ calling_npm("ss_error", 0); ss_error_npm("ss_init: unable to allocate space for stealstack"); });
-# 458 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 458 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 459 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 459 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    call_lbl_1: s->stackLock=({ calling_npm("omp_global_lock_alloc", 0); omp_global_lock_alloc_npm(); });
-# 460 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 460 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 1) {printf("Thread %d init stackLock %p\n", omp_get_thread_num(), (void *) s->stackLock); };
-# 462 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 462 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->stackSize = nelts;
-# 463 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 463 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nNodes = 0;
-# 464 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 464 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->maxStackDepth = 0;
-# 465 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 465 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->maxTreeDepth = 0;
-# 466 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 466 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nLeaves = 0;
-# 467 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 467 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nAcquire = 0;
-# 468 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 468 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nRelease = 0;
-# 469 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 469 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nSteal = 0;
-# 470 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 470 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nFail = 0;
-# 471 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 471 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->wakeups = 0;
-# 472 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 472 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->falseWakeups = 0;
-# 473 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 473 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nNodes_last = 0;
-# 474 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 474 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    call_lbl_2: ({ calling_npm("ss_mkEmpty", 0); ss_mkEmpty_npm(s); });
-# 475 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 475 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_init", &____must_manage_ss_init, ____alias_loc_id_30, ____chimes_did_disable8, false); }
 
 void ss_init(StealStack *s, int nelts) { (____chimes_replaying ? ss_init_resumable(s, nelts) : ss_init_quick(s, nelts)); }
-# 479 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-void ss_push_quick(StealStack *s, Node *c) {const int ____chimes_did_disable9 = new_stack((void *)(&ss_push), "ss_push", &____must_manage_ss_push, 2, 2, (size_t)(12146000192742677672UL), (size_t)(12146000192742677678UL), "ss_push|s|0", &____must_checkpoint_ss_push_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_push|c|0", &____must_checkpoint_ss_push_c_0, "%struct.node_t*", (void *)(&c), (size_t)8, 1, 0, 0) ; ; ;
-# 480 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 479 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void ss_push_quick(StealStack *s, Node *c) {const int ____chimes_did_disable9 = new_stack((void *)(&ss_push), "ss_push", &____must_manage_ss_push, 2, 2, (size_t)(12090941540209071352UL), (size_t)(12090941540209071358UL), "ss_push|s|0", &____must_checkpoint_ss_push_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_push|c|0", &____must_checkpoint_ss_push_c_0, "%struct.node_t*", (void *)(&c), (size_t)8, 1, 0, 0) ; ; ;
+# 480 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->top >= s->stackSize) { call_lbl_0: ({ calling_npm("ss_error", 0); ss_error_npm("ss_push: overflow"); }); };
-# 482 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-  if (debug & 1) { char *____chimes_unroll_var_0; call_lbl_1: ____chimes_unroll_var_0 = ((____chimes_does_checkpoint_rng_showstate_npm ? ( ({ calling((void*)rng_showstate, 1, ____alias_loc_id_0, 12146000192742677621UL, 2, (size_t)(12146000192742677678UL), (size_t)(12146000192742679361UL)); (rng_showstate)(c->state.state, debug_str); }) ) : (({ calling_npm("rng_showstate", ____alias_loc_id_0); (*____chimes_extern_func_rng_showstate)(c->state.state, debug_str); })))) ; printf("ss_push: Thread %d, posn %d: node %s [%d]\n",
-# 484 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 482 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+  if (debug & 1) { char *____chimes_unroll_var_0; call_lbl_1: ____chimes_unroll_var_0 = ((____chimes_does_checkpoint_rng_showstate_npm ? ( ({ calling((void*)rng_showstate, 1, ____alias_loc_id_0, 12090941540209071301UL, 2, (size_t)(12090941540209071358UL), (size_t)(12090941540209073041UL)); (rng_showstate)(c->state.state, debug_str); }) ) : (({ calling_npm("rng_showstate", ____alias_loc_id_0); (*____chimes_extern_func_rng_showstate)(c->state.state, debug_str); })))) ; printf("ss_push: Thread %d, posn %d: node %s [%d]\n",
+# 484 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), s->top, ____chimes_unroll_var_0, c->height); };
-# 485 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 485 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   memcpy(&(s->stack[s->top]), c, sizeof(Node));
-# 486 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 486 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->top++;
-# 487 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 487 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nNodes++;
-# 488 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 488 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->maxStackDepth = (((s->top) > (s->maxStackDepth)) ? (s->top) : (s->maxStackDepth));
-# 489 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 489 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->maxTreeDepth = (((s->maxTreeDepth) > (c->height)) ? (s->maxTreeDepth) : (c->height));
-# 490 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 490 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_push", &____must_manage_ss_push, ____alias_loc_id_31, ____chimes_did_disable9, false); }
 
 void ss_push(StealStack *s, Node *c) { (____chimes_replaying ? ss_push_resumable(s, c) : ss_push_quick(s, c)); }
-# 493 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-Node * ss_top_quick(StealStack *s) {const int ____chimes_did_disable10 = new_stack((void *)(&ss_top), "ss_top", &____must_manage_ss_top, 1, 1, (size_t)(12146000192742677762UL), "ss_top|s|0", &____must_checkpoint_ss_top_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0) ; Node *r;
-# 493 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 493 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+Node * ss_top_quick(StealStack *s) {const int ____chimes_did_disable10 = new_stack((void *)(&ss_top), "ss_top", &____must_manage_ss_top, 1, 1, (size_t)(12090941540209071442UL), "ss_top|s|0", &____must_checkpoint_ss_top_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0) ; Node *r;
+# 493 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  if (____must_checkpoint_ss_top_r_0) { register_stack_vars(1, "ss_top|r|0", &____must_checkpoint_ss_top_r_0, "%struct.node_t*", (void *)(&r), (size_t)8, 1, 0, 0); } ; ;
-# 494 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 494 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    ;
-# 495 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 495 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->top <= s->local) { call_lbl_0: ({ calling_npm("ss_error", 0); ss_error_npm("ss_top: empty local stack"); }); };
-# 497 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 497 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   r = &(s->stack[(s->top) - 1]);
-# 498 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-  if (debug & 1) { char *____chimes_unroll_var_1; call_lbl_1: ____chimes_unroll_var_1 = ( ({ calling((void*)rng_showstate, 1, ____alias_loc_id_1, 12146000192742677741UL, 2, (size_t)(12146000192742677729UL), (size_t)(12146000192742679361UL)); (rng_showstate)(r->state.state, debug_str); }) ) ; printf("ss_top: Thread %d, posn %d: node %s [%d] nchild = %d\n",
-# 500 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 498 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+  if (debug & 1) { char *____chimes_unroll_var_1; call_lbl_1: ____chimes_unroll_var_1 = ( ({ calling((void*)rng_showstate, 1, ____alias_loc_id_1, 12090941540209071421UL, 2, (size_t)(12090941540209071409UL), (size_t)(12090941540209073041UL)); (rng_showstate)(r->state.state, debug_str); }) ) ; printf("ss_top: Thread %d, posn %d: node %s [%d] nchild = %d\n",
+# 500 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), s->top - 1, ____chimes_unroll_var_1,
-# 501 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 501 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            r->height, r->numChildren); };
-# 502 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-   Node *____chimes_ret_var_4; ; ____chimes_ret_var_4 = (r); rm_stack(true, 12146000192742677729UL, "ss_top", &____must_manage_ss_top, ____alias_loc_id_32, ____chimes_did_disable10, false); return ____chimes_ret_var_4; ;
-# 503 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-rm_stack(true, 12146000192742677729UL, "ss_top", &____must_manage_ss_top, ____alias_loc_id_32, ____chimes_did_disable10, false); }
+# 502 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+   Node *____chimes_ret_var_4; ; ____chimes_ret_var_4 = (r); rm_stack(true, 12090941540209071409UL, "ss_top", &____must_manage_ss_top, ____alias_loc_id_32, ____chimes_did_disable10, false); return ____chimes_ret_var_4; ;
+# 503 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+rm_stack(true, 12090941540209071409UL, "ss_top", &____must_manage_ss_top, ____alias_loc_id_32, ____chimes_did_disable10, false); }
 
 Node * ss_top(StealStack *s) { return (____chimes_replaying ? ss_top_resumable(s) : ss_top_quick(s)); }
-# 506 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-void ss_pop_quick(StealStack *s) {const int ____chimes_did_disable11 = new_stack((void *)(&ss_pop), "ss_pop", &____must_manage_ss_pop, 1, 1, (size_t)(12146000192742677818UL), "ss_pop|s|0", &____must_checkpoint_ss_pop_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0) ; Node *r;
-# 506 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 506 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void ss_pop_quick(StealStack *s) {const int ____chimes_did_disable11 = new_stack((void *)(&ss_pop), "ss_pop", &____must_manage_ss_pop, 1, 1, (size_t)(12090941540209071498UL), "ss_pop|s|0", &____must_checkpoint_ss_pop_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0) ; Node *r;
+# 506 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  if (____must_checkpoint_ss_pop_r_0) { register_stack_vars(1, "ss_pop|r|0", &____must_checkpoint_ss_pop_r_0, "%struct.node_t*", (void *)(&r), (size_t)8, 1, 0, 0); } ; ;
-# 507 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 507 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    ;
-# 508 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 508 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->top <= s->local) { call_lbl_0: ({ calling_npm("ss_error", 0); ss_error_npm("ss_pop: empty local stack"); }); };
-# 510 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 510 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->top--;
-# 511 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 511 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   r = &(s->stack[s->top]);
-# 512 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-  if (debug & 1) { char *____chimes_unroll_var_2; call_lbl_1: ____chimes_unroll_var_2 = ( ({ calling((void*)rng_showstate, 1, ____alias_loc_id_2, 12146000192742677802UL, 2, (size_t)(12146000192742677790UL), (size_t)(12146000192742679361UL)); (rng_showstate)(r->state.state, debug_str); }) ) ; printf("ss_pop: Thread %d, posn %d: node %s [%d] nchild = %d\n",
-# 514 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 512 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+  if (debug & 1) { char *____chimes_unroll_var_2; call_lbl_1: ____chimes_unroll_var_2 = ( ({ calling((void*)rng_showstate, 1, ____alias_loc_id_2, 12090941540209071482UL, 2, (size_t)(12090941540209071470UL), (size_t)(12090941540209073041UL)); (rng_showstate)(r->state.state, debug_str); }) ) ; printf("ss_pop: Thread %d, posn %d: node %s [%d] nchild = %d\n",
+# 514 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), s->top, ____chimes_unroll_var_2,
-# 515 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 515 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            r->height, r->numChildren); };
-# 516 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 516 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_pop", &____must_manage_ss_pop, ____alias_loc_id_33, ____chimes_did_disable11, false); }
 
 void ss_pop(StealStack *s) { (____chimes_replaying ? ss_pop_resumable(s) : ss_pop_quick(s)); }
-# 519 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 519 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int ss_topPosn_quick(StealStack *s)
-# 520 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-{const int ____chimes_did_disable12 = new_stack((void *)(&ss_topPosn), "ss_topPosn", &____must_manage_ss_topPosn, 1, 0, (size_t)(12146000192742677841UL)) ; ; ;
-# 521 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 520 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+{const int ____chimes_did_disable12 = new_stack((void *)(&ss_topPosn), "ss_topPosn", &____must_manage_ss_topPosn, 1, 0, (size_t)(12090941540209071521UL)) ; ; ;
+# 521 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->top <= s->local) { call_lbl_0: ({ calling_npm("ss_error", 0); ss_error_npm("ss_topPosn: empty local stack"); }); };
-# 523 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 523 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (s->top - 1); rm_stack(false, 0UL, "ss_topPosn", &____must_manage_ss_topPosn, ____alias_loc_id_34, ____chimes_did_disable12, false); return ____chimes_ret_var_5; ;
-# 524 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 524 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_topPosn", &____must_manage_ss_topPosn, ____alias_loc_id_34, ____chimes_did_disable12, false); }
 
 int ss_topPosn(StealStack *s) { return (____chimes_replaying ? ss_topPosn_resumable(s) : ss_topPosn_quick(s)); }
-# 527 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-int ss_localDepth_quick(StealStack *s) {const int ____chimes_did_disable13 = new_stack((void *)(&ss_localDepth), "ss_localDepth", &____must_manage_ss_localDepth, 1, 0, (size_t)(12146000192742677857UL)) ; ; ;
-# 528 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 527 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+int ss_localDepth_quick(StealStack *s) {const int ____chimes_did_disable13 = new_stack((void *)(&ss_localDepth), "ss_localDepth", &____must_manage_ss_localDepth, 1, 0, (size_t)(12090941540209071537UL)) ; ; ;
+# 528 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = ((s->top - s->local)); rm_stack(false, 0UL, "ss_localDepth", &____must_manage_ss_localDepth, ____alias_loc_id_35, ____chimes_did_disable13, false); return ____chimes_ret_var_6; ;
-# 529 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 529 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_localDepth", &____must_manage_ss_localDepth, ____alias_loc_id_35, ____chimes_did_disable13, false); }
 
 int ss_localDepth(StealStack *s) { return (____chimes_replaying ? ss_localDepth_resumable(s) : ss_localDepth_quick(s)); }
-# 532 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-void ss_release_quick(StealStack *s, int k) {const int ____chimes_did_disable14 = new_stack((void *)(&ss_release), "ss_release", &____must_manage_ss_release, 2, 0, (size_t)(12146000192742677903UL), (size_t)(0UL)) ; ; ;
-# 533 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 532 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void ss_release_quick(StealStack *s, int k) {const int ____chimes_did_disable14 = new_stack((void *)(&ss_release), "ss_release", &____must_manage_ss_release, 2, 0, (size_t)(12090941540209071583UL), (size_t)(0UL)) ; ; ;
+# 533 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_set_lock(s->stackLock);
-# 534 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 534 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->top - s->local >= k) {{
-# 535 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 535 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->local += k;
-# 536 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 536 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->workAvail += k;
-# 537 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 537 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->nRelease++;
-# 538 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 538 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }; } else { call_lbl_0: ({ calling_npm("ss_error", 0); ss_error_npm("ss_release:  do not have k vals to release"); }); } ;
-# 541 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 541 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_unset_lock(s->stackLock);
-# 542 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 542 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_release", &____must_manage_ss_release, ____alias_loc_id_36, ____chimes_did_disable14, false); }
 
 void ss_release(StealStack *s, int k) { (____chimes_replaying ? ss_release_resumable(s, k) : ss_release_quick(s, k)); }
-# 547 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-int ss_acquire_quick(StealStack *s, int k) {const int ____chimes_did_disable15 = new_stack((void *)(&ss_acquire), "ss_acquire", &____must_manage_ss_acquire, 2, 0, (size_t)(12146000192742677960UL), (size_t)(0UL)) ; ; ;
-# 548 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 547 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+int ss_acquire_quick(StealStack *s, int k) {const int ____chimes_did_disable15 = new_stack((void *)(&ss_acquire), "ss_acquire", &____must_manage_ss_acquire, 2, 0, (size_t)(12090941540209071640UL), (size_t)(0UL)) ; ; ;
+# 548 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int avail; ;
-# 549 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 549 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_set_lock(s->stackLock);
-# 550 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 550 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   avail = s->local - s->sharedStart;
-# 551 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 551 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (avail >= k) {
-# 552 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 552 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->local -= k;
-# 553 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 553 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->workAvail -= k;
-# 554 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 554 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->nAcquire++;
-# 555 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 555 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 556 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 556 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_unset_lock(s->stackLock);
-# 557 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 557 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = ((avail >= k)); rm_stack(false, 0UL, "ss_acquire", &____must_manage_ss_acquire, ____alias_loc_id_37, ____chimes_did_disable15, false); return ____chimes_ret_var_7; ;
-# 558 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 558 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_acquire", &____must_manage_ss_acquire, ____alias_loc_id_37, ____chimes_did_disable15, false); }
 
 int ss_acquire(StealStack *s, int k) { return (____chimes_replaying ? ss_acquire_resumable(s, k) : ss_acquire_quick(s, k)); }
-# 564 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-int ss_steal_quick(StealStack *s, int victim, int k) {const int ____chimes_did_disable16 = new_stack((void *)(&ss_steal), "ss_steal", &____must_manage_ss_steal, 3, 3, (size_t)(12146000192742678224UL), (size_t)(0UL), (size_t)(0UL), "ss_steal|s|0", &____must_checkpoint_ss_steal_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_steal|victim|0", &____must_checkpoint_ss_steal_victim_0, "i32", (void *)(&victim), (size_t)4, 0, 0, 0, "ss_steal|k|0", &____must_checkpoint_ss_steal_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0) ; Node *r;
-# 564 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 564 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+int ss_steal_quick(StealStack *s, int victim, int k) {const int ____chimes_did_disable16 = new_stack((void *)(&ss_steal), "ss_steal", &____must_manage_ss_steal, 3, 3, (size_t)(12090941540209071904UL), (size_t)(0UL), (size_t)(0UL), "ss_steal|s|0", &____must_checkpoint_ss_steal_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_steal|victim|0", &____must_checkpoint_ss_steal_victim_0, "i32", (void *)(&victim), (size_t)4, 0, 0, 0, "ss_steal|k|0", &____must_checkpoint_ss_steal_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0) ; Node *r;
+# 564 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int i;
-# 564 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 564 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 Node *victimSharedStart;
-# 564 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 564 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int ok;
-# 564 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 564 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int victimShared;
-# 564 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 564 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  if (____must_checkpoint_ss_steal_r_0 || ____must_checkpoint_ss_steal_i_0 || ____must_checkpoint_ss_steal_victimSharedStart_0 || ____must_checkpoint_ss_steal_ok_0 || ____must_checkpoint_ss_steal_victimShared_0) { register_stack_vars(5, "ss_steal|r|0", &____must_checkpoint_ss_steal_r_0, "%struct.node_t*", (void *)(&r), (size_t)8, 1, 0, 0, "ss_steal|i|0", &____must_checkpoint_ss_steal_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "ss_steal|victimSharedStart|0", &____must_checkpoint_ss_steal_victimSharedStart_0, "%struct.node_t*", (void *)(&victimSharedStart), (size_t)8, 1, 0, 0, "ss_steal|ok|0", &____must_checkpoint_ss_steal_ok_0, "i32", (void *)(&ok), (size_t)4, 0, 0, 0, "ss_steal|victimShared|0", &____must_checkpoint_ss_steal_victimShared_0, "i32", (void *)(&victimShared), (size_t)4, 0, 0, 0); } ; ;
-# 565 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 565 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int victimLocal; int victimWorkAvail; ;
-# 566 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 566 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    ;
-# 567 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 568 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 567 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 568 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->sharedStart != s->top) { call_lbl_0: ({ calling_npm("ss_error", 0); ss_error_npm("ss_steal: thief attempts to steal onto non-empty stack"); }); };
-# 570 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 571 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 570 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 571 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->top + k >= s->stackSize) { call_lbl_1: ({ calling_npm("ss_error", 0); ss_error_npm("ss_steal: steal will overflow thief's stack"); }); };
-# 573 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 574 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 575 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 573 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 574 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 575 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 32) {printf("Thread %d wants    SS %d\n", omp_get_thread_num(), victim); };
-# 577 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 578 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 577 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 578 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_set_lock(stealStack[victim]->stackLock);
-# 579 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 580 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 581 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 582 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 583 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 584 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 585 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 579 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 580 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 581 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 582 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 583 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 584 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 585 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 32) {printf("Thread %d acquires SS %d\n", omp_get_thread_num(), victim); };
-# 587 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 588 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 587 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 588 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   victimLocal = stealStack[victim]->local;
-# 589 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 589 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   victimShared = stealStack[victim]->sharedStart;
-# 590 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 590 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   victimWorkAvail = stealStack[victim]->workAvail;
-# 591 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 592 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 591 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 592 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (victimLocal - victimShared != victimWorkAvail) { call_lbl_2: ({ calling_npm("ss_error", 0); ss_error_npm("ss_steal: stealStack invariant violated"); }); };
-# 594 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 595 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 594 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 595 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   ok = victimWorkAvail >= k;
-# 596 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 596 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (ok) {
-# 597 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 598 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 597 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 598 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     stealStack[victim]->sharedStart = victimShared + k;
-# 599 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 599 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     stealStack[victim]->workAvail = victimWorkAvail - k;
-# 608 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 608 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 608 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 608 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 609 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 609 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_unset_lock(stealStack[victim]->stackLock);
-# 610 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 611 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 610 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 611 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 32) {printf("Thread %d releases SS %d\n", omp_get_thread_num(), victim); };
-# 613 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 614 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 615 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 613 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 614 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 615 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (ok) {
-# 616 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 616 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      Node *victimStackBase; victimStackBase = (stealStack[victim]->stack_g) ;
-# 617 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 617 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
        victimSharedStart = (victimStackBase + victimShared) ;
-# 618 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 619 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 620 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 621 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 622 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 618 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 619 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 620 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 621 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 622 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     memcpy(&(s->stack[s->top]), victimSharedStart, k * sizeof(Node));
-# 623 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 624 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 625 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 623 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 624 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 625 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->nSteal++;
-# 626 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 626 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (debug & 4) {
-# 627 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 627 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
        ;
-# 628 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 628 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       for (i = 0; i < k; i ++) {
-# 629 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 629 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            r = (&(s->stack[s->top + i])) ;
-# 630 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-          char *____chimes_unroll_var_3; call_lbl_3: ____chimes_unroll_var_3 = ( ({ calling((void*)rng_showstate, 3, ____alias_loc_id_3, 12146000192742678166UL, 2, (size_t)(12146000192742678158UL), (size_t)(12146000192742679361UL)); (rng_showstate)(r->state.state, debug_str); }) ) ; printf("ss_steal:  Thread %2d posn %d (steal #%d) receives %s [%d] from thread %d posn %d (%p)\n",
-# 631 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 630 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+          char *____chimes_unroll_var_3; call_lbl_3: ____chimes_unroll_var_3 = ( ({ calling((void*)rng_showstate, 3, ____alias_loc_id_3, 12090941540209071846UL, 2, (size_t)(12090941540209071838UL), (size_t)(12090941540209073041UL)); (rng_showstate)(r->state.state, debug_str); }) ) ; printf("ss_steal:  Thread %2d posn %d (steal #%d) receives %s [%d] from thread %d posn %d (%p)\n",
+# 631 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
                omp_get_thread_num(), s->top + i, s->nSteal,
-# 632 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 632 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
                ____chimes_unroll_var_3,
-# 633 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 633 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
                r->height, victim, victimShared + i,
-# 634 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 634 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
                (void *) victimSharedStart);
-# 635 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 635 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       }
-# 636 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 636 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 637 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 637 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->top += k;
-# 638 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 639 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 640 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 641 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 642 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 643 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 638 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 639 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 640 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 641 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 642 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 643 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 644 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 644 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   else {
-# 645 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 645 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->nFail++;
-# 646 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 646 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (debug & 4) {
-# 647 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 647 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("Thread %d failed to steal %d nodes from thread %d, ActAv = %d, sh = %d, loc =%d\n",
-# 648 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 648 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       omp_get_thread_num(), k, victim, victimWorkAvail, victimShared, victimLocal);
-# 649 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 649 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 650 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 650 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 651 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 651 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = ((ok)); rm_stack(false, 0UL, "ss_steal", &____must_manage_ss_steal, ____alias_loc_id_38, ____chimes_did_disable16, false); return ____chimes_ret_var_8; ;
-# 652 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 652 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_steal", &____must_manage_ss_steal, ____alias_loc_id_38, ____chimes_did_disable16, false); }
 
 int ss_steal(StealStack *s, int victim, int k) { return (____chimes_replaying ? ss_steal_resumable(s, victim, k) : ss_steal_quick(s, victim, k)); }
-# 655 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 655 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int findwork_quick(int k) {const int ____chimes_did_disable17 = new_stack((void *)(&findwork), "findwork", &____must_manage_findwork, 1, 0, (size_t)(0UL)) ; ; ;
-# 656 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 656 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int i; int v; ;
-# 657 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 657 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   for (i = 1; i < omp_get_num_threads(); i++) {
-# 658 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 658 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     v = (omp_get_thread_num() + i) % omp_get_num_threads();
-# 659 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 660 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 661 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 662 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 659 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 660 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 661 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 662 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (stealStack[v]->workAvail >= k) { int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = (v); rm_stack(false, 0UL, "findwork", &____must_manage_findwork, ____alias_loc_id_39, ____chimes_did_disable17, false); return ____chimes_ret_var_9; ; };
-# 664 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 664 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 665 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 665 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = (-1); rm_stack(false, 0UL, "findwork", &____must_manage_findwork, ____alias_loc_id_39, ____chimes_did_disable17, false); return ____chimes_ret_var_10; ;
-# 666 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 666 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "findwork", &____must_manage_findwork, ____alias_loc_id_39, ____chimes_did_disable17, false); }
 
 int findwork(int k) { return (____chimes_replaying ? findwork_resumable(k) : findwork_quick(k)); }
-# 673 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-void ss_initState_quick(StealStack *s) {const int ____chimes_did_disable18 = new_stack((void *)(&ss_initState), "ss_initState", &____must_manage_ss_initState, 1, 1, (size_t)(12146000192742678325UL), "ss_initState|s|0", &____must_checkpoint_ss_initState_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0) ; ; ;
-# 674 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 673 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void ss_initState_quick(StealStack *s) {const int ____chimes_did_disable18 = new_stack((void *)(&ss_initState), "ss_initState", &____must_manage_ss_initState, 1, 1, (size_t)(12090941540209072005UL), "ss_initState|s|0", &____must_checkpoint_ss_initState_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0) ; ; ;
+# 674 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int i; ;
-# 675 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 675 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    call_lbl_0: s->timeLast = (____chimes_does_checkpoint_uts_wctime_npm ? ( ({ calling((void*)uts_wctime, 0, ____alias_loc_id_4, 0UL, 0); (uts_wctime)(); }) ) : (({ calling_npm("uts_wctime", ____alias_loc_id_4); (*____chimes_extern_func_uts_wctime)(); })));
-# 676 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 676 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   for (i = 0; i < 5; i++) {
-# 677 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 677 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->time[i] = 0.0;
-# 678 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 678 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->entries[i] = 0;
-# 679 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 679 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 680 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 680 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->curState = 2;
-# 681 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 681 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 8) {printf("Thread %d start state %d (t = %f)\n",
-# 683 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 683 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), s->curState, s->timeLast); };
-# 684 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 684 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_initState", &____must_manage_ss_initState, ____alias_loc_id_40, ____chimes_did_disable18, false); }
 
 void ss_initState(StealStack *s) { (____chimes_replaying ? ss_initState_resumable(s) : ss_initState_quick(s)); }
-# 686 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-void ss_setState_quick(StealStack *s, int state){const int ____chimes_did_disable19 = new_stack((void *)(&ss_setState), "ss_setState", &____must_manage_ss_setState, 2, 2, (size_t)(12146000192742678398UL), (size_t)(0UL), "ss_setState|s|0", &____must_checkpoint_ss_setState_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_setState|state|0", &____must_checkpoint_ss_setState_state_0, "i32", (void *)(&state), (size_t)4, 0, 0, 0) ; ; ;
-# 687 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 686 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void ss_setState_quick(StealStack *s, int state){const int ____chimes_did_disable19 = new_stack((void *)(&ss_setState), "ss_setState", &____must_manage_ss_setState, 2, 2, (size_t)(12090941540209072078UL), (size_t)(0UL), "ss_setState|s|0", &____must_checkpoint_ss_setState_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_setState|state|0", &____must_checkpoint_ss_setState_state_0, "i32", (void *)(&state), (size_t)4, 0, 0, 0) ; ; ;
+# 687 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   double time; ;
-# 688 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 688 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (state < 0 || state >= 5) { call_lbl_0: ({ calling_npm("ss_error", 0); ss_error_npm("ss_setState: thread state out of range"); }); };
-# 690 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 690 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (state == s->curState) {rm_stack(false, 0UL, "ss_setState", &____must_manage_ss_setState, ____alias_loc_id_41, ____chimes_did_disable19, false); return; };
-# 692 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 692 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    call_lbl_1: time = ({ calling((void*)uts_wctime, 1, ____alias_loc_id_5, 0UL, 0); (uts_wctime)(); }) ;
-# 693 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 693 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->time[s->curState] += time - s->timeLast;
-# 712 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 712 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 712 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 712 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->entries[state]++;
-# 713 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 713 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->timeLast = time;
-# 714 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 714 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->curState = state;
-# 715 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 716 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 715 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 716 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 8) {printf("Thread %d enter state %d [#%d] (t = %f)\n",
-# 718 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 718 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), state, s->entries[state], time); };
-# 719 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 719 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_setState", &____must_manage_ss_setState, ____alias_loc_id_41, ____chimes_did_disable19, false); }
 
 void ss_setState(StealStack *s, int state) { (____chimes_replaying ? ss_setState_resumable(s, state) : ss_setState_quick(s, state)); }
-# 889 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 889 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void initNode_quick(Node * child)
-# 890 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-{const int ____chimes_did_disable20 = new_stack((void *)(&initNode), "initNode", &____must_manage_initNode, 1, 0, (size_t)(12146000192742678413UL)) ; ; ;
-# 891 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 890 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+{const int ____chimes_did_disable20 = new_stack((void *)(&initNode), "initNode", &____must_manage_initNode, 1, 0, (size_t)(12090941540209072093UL)) ; ; ;
+# 891 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   child->type = -1;
-# 892 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 892 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   child->height = -1;
-# 893 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 893 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   child->numChildren = -1;
-# 908 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 908 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 908 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 908 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "initNode", &____must_manage_initNode, ____alias_loc_id_42, ____chimes_did_disable20, false); }
 
 void initNode(Node * child) { (____chimes_replaying ? initNode_resumable(child) : initNode_quick(child)); }
-# 911 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 911 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void initRootNode_quick(Node * root, int type)
-# 912 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-{const int ____chimes_did_disable21 = new_stack((void *)(&initRootNode), "initRootNode", &____must_manage_initRootNode, 2, 0, (size_t)(12146000192742678424UL), (size_t)(0UL)) ; ; ;
-# 913 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-   call_lbl_0: (____chimes_does_checkpoint_uts_initRoot_npm ? ( ({ calling((void*)uts_initRoot, 0, ____alias_loc_id_6, 0UL, 2, (size_t)(12146000192742678424UL), (size_t)(0UL)); (uts_initRoot)(root, type); }) ) : (({ calling_npm("uts_initRoot", ____alias_loc_id_6); (*____chimes_extern_func_uts_initRoot)(root, type); })));
-# 944 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 944 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 912 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+{const int ____chimes_did_disable21 = new_stack((void *)(&initRootNode), "initRootNode", &____must_manage_initRootNode, 2, 0, (size_t)(12090941540209072104UL), (size_t)(0UL)) ; ; ;
+# 913 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+   call_lbl_0: (____chimes_does_checkpoint_uts_initRoot_npm ? ( ({ calling((void*)uts_initRoot, 0, ____alias_loc_id_6, 0UL, 2, (size_t)(12090941540209072104UL), (size_t)(0UL)); (uts_initRoot)(root, type); }) ) : (({ calling_npm("uts_initRoot", ____alias_loc_id_6); (*____chimes_extern_func_uts_initRoot)(root, type); })));
+# 944 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 944 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "initRootNode", &____must_manage_initRootNode, 0, ____chimes_did_disable21, false); }
 
 void initRootNode(Node * root, int type) { (____chimes_replaying ? initRootNode_resumable(root, type) : initRootNode_quick(root, type)); }
-# 956 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-void genChildren_quick(Node * parent, Node * child, StealStack * ss) {const int ____chimes_did_disable22 = new_stack((void *)(&genChildren), "genChildren", &____must_manage_genChildren, 3, 3, (size_t)(12146000192742678542UL), (size_t)(12146000192742678543UL), (size_t)(12146000192742678544UL), "genChildren|parent|0", &____must_checkpoint_genChildren_parent_0, "%struct.node_t*", (void *)(&parent), (size_t)8, 1, 0, 0, "genChildren|child|0", &____must_checkpoint_genChildren_child_0, "%struct.node_t*", (void *)(&child), (size_t)8, 1, 0, 0, "genChildren|ss|0", &____must_checkpoint_genChildren_ss_0, "%struct.stealStack_t*", (void *)(&ss), (size_t)8, 1, 0, 0) ; int j;
-# 956 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 956 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void genChildren_quick(Node * parent, Node * child, StealStack * ss) {const int ____chimes_did_disable22 = new_stack((void *)(&genChildren), "genChildren", &____must_manage_genChildren, 3, 3, (size_t)(12090941540209072222UL), (size_t)(12090941540209072223UL), (size_t)(12090941540209072224UL), "genChildren|parent|0", &____must_checkpoint_genChildren_parent_0, "%struct.node_t*", (void *)(&parent), (size_t)8, 1, 0, 0, "genChildren|child|0", &____must_checkpoint_genChildren_child_0, "%struct.node_t*", (void *)(&child), (size_t)8, 1, 0, 0, "genChildren|ss|0", &____must_checkpoint_genChildren_ss_0, "%struct.stealStack_t*", (void *)(&ss), (size_t)8, 1, 0, 0) ; int j;
+# 956 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int i;
-# 956 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 956 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int ____chimes_unroll_var_4;
-# 956 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 956 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int childType;
-# 956 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 956 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int numChildren;
-# 956 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 956 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int parentHeight;
-# 956 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 956 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  if (____must_checkpoint_genChildren_j_0 || ____must_checkpoint_genChildren_i_0 || ____must_checkpoint_genChildren_____chimes_unroll_var_4_0 || ____must_checkpoint_genChildren_childType_0 || ____must_checkpoint_genChildren_numChildren_0 || ____must_checkpoint_genChildren_parentHeight_0) { register_stack_vars(6, "genChildren|j|0", &____must_checkpoint_genChildren_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "genChildren|i|0", &____must_checkpoint_genChildren_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "genChildren|____chimes_unroll_var_4|0", &____must_checkpoint_genChildren_____chimes_unroll_var_4_0, "i32", (void *)(&____chimes_unroll_var_4), (size_t)4, 0, 0, 0, "genChildren|childType|0", &____must_checkpoint_genChildren_childType_0, "i32", (void *)(&childType), (size_t)4, 0, 0, 0, "genChildren|numChildren|0", &____must_checkpoint_genChildren_numChildren_0, "i32", (void *)(&numChildren), (size_t)4, 0, 0, 0, "genChildren|parentHeight|0", &____must_checkpoint_genChildren_parentHeight_0, "i32", (void *)(&parentHeight), (size_t)4, 0, 0, 0); } ; ;
-# 957 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 957 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      parentHeight = (parent->height) ;
-# 958 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 958 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     ;
-# 959 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 960 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-   call_lbl_0: numChildren = ({ calling((void*)uts_numChildren, 0, ____alias_loc_id_9, 0UL, 1, (size_t)(12146000192742678542UL)); (uts_numChildren)(parent); }) ;
-# 961 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-   call_lbl_1: childType = ({ calling((void*)uts_childType, 1, ____alias_loc_id_7, 0UL, 1, (size_t)(12146000192742678542UL)); (uts_childType)(parent); }) ;
-# 962 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 963 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 964 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 959 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 960 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+   call_lbl_0: numChildren = ({ calling((void*)uts_numChildren, 0, ____alias_loc_id_9, 0UL, 1, (size_t)(12090941540209072222UL)); (uts_numChildren)(parent); }) ;
+# 961 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+   call_lbl_1: childType = ({ calling((void*)uts_childType, 1, ____alias_loc_id_7, 0UL, 1, (size_t)(12090941540209072222UL)); (uts_childType)(parent); }) ;
+# 962 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 963 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 964 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   parent->numChildren = numChildren;
-# 965 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 965 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 2) {
-# 966 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-         call_lbl_2: ____chimes_unroll_var_4 = (({ calling_npm("ss_topPosn", 0); ss_topPosn_npm(ss); })) ; char *____chimes_unroll_var_5; call_lbl_3: ____chimes_unroll_var_5 = ( ({ calling((void*)rng_showstate, 3, ____alias_loc_id_8, 12146000192742678474UL, 2, (size_t)(12146000192742678542UL), (size_t)(12146000192742679361UL)); (rng_showstate)(parent->state.state, debug_str); }) ) ; printf("Gen:  Thread %d, posn %2d: node %s [%d] has %2d children\n",
-# 967 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 966 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+         call_lbl_2: ____chimes_unroll_var_4 = (({ calling_npm("ss_topPosn", 0); ss_topPosn_npm(ss); })) ; char *____chimes_unroll_var_5; call_lbl_3: ____chimes_unroll_var_5 = ( ({ calling((void*)rng_showstate, 3, ____alias_loc_id_8, 12090941540209072154UL, 2, (size_t)(12090941540209072222UL), (size_t)(12090941540209073041UL)); (rng_showstate)(parent->state.state, debug_str); }) ) ; printf("Gen:  Thread %d, posn %2d: node %s [%d] has %2d children\n",
+# 967 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), ____chimes_unroll_var_4,
-# 968 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 968 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            ____chimes_unroll_var_5,
-# 969 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 969 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            parentHeight, numChildren);
-# 970 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 970 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 971 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 972 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 973 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 971 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 972 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 973 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (numChildren > 0) {
-# 974 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 974 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       ;
-# 975 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 975 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     child->type = childType;
-# 976 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 976 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     child->height = parentHeight + 1;
-# 977 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 978 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 979 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 980 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 981 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 982 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 983 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 977 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 978 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 979 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 980 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 981 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 982 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 983 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     for (i = 0; i < numChildren; i++) {
-# 984 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 984 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       for (j = 0; j < computeGranularity; j++) {
-# 985 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 986 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 987 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-         call_lbl_4: ({ calling((void*)rng_spawn, 4, ____alias_loc_id_11, 0UL, 3, (size_t)(12146000192742678542UL), (size_t)(12146000192742678543UL), (size_t)(0UL)); (rng_spawn)(parent->state.state, child->state.state, i); }) ;
-# 988 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 985 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 986 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 987 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+         call_lbl_4: ({ calling((void*)rng_spawn, 4, ____alias_loc_id_11, 0UL, 3, (size_t)(12090941540209072222UL), (size_t)(12090941540209072223UL), (size_t)(0UL)); (rng_spawn)(parent->state.state, child->state.state, i); }) ;
+# 988 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       }
-# 989 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-       call_lbl_5: ({ calling((void*)ss_push, 5, ____alias_loc_id_10, 0UL, 2, (size_t)(12146000192742678544UL), (size_t)(12146000192742678543UL)); ss_push_quick(ss, child); }) ;
-# 990 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-       call_lbl_6: ({ calling((void*)releaseNodes, 6, 0, 0UL, 1, (size_t)(12146000192742678544UL)); releaseNodes_quick(ss); }) ;
-# 991 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 989 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+       call_lbl_5: ({ calling((void*)ss_push, 5, ____alias_loc_id_10, 0UL, 2, (size_t)(12090941540209072224UL), (size_t)(12090941540209072223UL)); ss_push_quick(ss, child); }) ;
+# 990 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+       call_lbl_6: ({ calling((void*)releaseNodes, 6, 0, 0UL, 1, (size_t)(12090941540209072224UL)); releaseNodes_quick(ss); }) ;
+# 991 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 992 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 992 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   } else {
-# 993 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 993 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     ss->nLeaves++;
-# 994 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 994 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 995 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 995 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "genChildren", &____must_manage_genChildren, ____alias_loc_id_43, ____chimes_did_disable22, false); }
 
 void genChildren(Node * parent, Node * child, StealStack * ss) { (____chimes_replaying ? genChildren_resumable(parent, child, ss) : genChildren_quick(parent, child, ss)); }
-# 1007 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1007 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void cb_init_quick(){const int ____chimes_did_disable23 = new_stack((void *)(&cb_init), "cb_init", &____must_manage_cb_init, 0, 0) ; ; ;
-# 1008 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1008 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    call_lbl_0: cb_lock=({ calling_npm("omp_global_lock_alloc", 0); omp_global_lock_alloc_npm(); });
-# 1009 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1009 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 4) {printf("Thread %d, cb lock at %p\n", omp_get_thread_num(), (void *) cb_lock); };
-# 1011 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1012 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1013 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1011 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1012 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1013 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_set_lock(cb_lock);
-# 1014 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1014 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_count = 0;
-# 1015 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1015 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_cancel = 0;
-# 1016 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1016 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_done = 0;
-# 1017 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1017 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_unset_lock(cb_lock);
-# 1018 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1018 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "cb_init", &____must_manage_cb_init, ____alias_loc_id_45, ____chimes_did_disable23, false); }
 
 void cb_init() { (____chimes_replaying ? cb_init_resumable() : cb_init_quick()); }
-# 1022 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1022 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int cbarrier_wait_quick() {const int ____chimes_did_disable24 = new_stack((void *)(&cbarrier_wait), "cbarrier_wait", &____must_manage_cbarrier_wait, 0, 0) ; ; ;
-# 1023 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1023 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int l_count; int l_done; int l_cancel; ;
-# 1024 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1024 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int pe; pe = (omp_get_thread_num()) ;
-# 1025 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1026 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1025 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1026 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_set_lock(cb_lock);
-# 1027 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1027 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_count++;
-# 1028 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1029 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1030 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1031 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1028 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1029 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1030 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1031 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (cb_count == omp_get_num_threads()) {
-# 1032 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1032 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     cb_done = 1;
-# 1033 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1034 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1035 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1036 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1033 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1034 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1035 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1036 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1037 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1037 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   l_count = cb_count;
-# 1038 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1038 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   l_done = cb_done;
-# 1039 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1039 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (stealStack[pe]->nNodes_last == stealStack[pe]->nNodes) {
-# 1040 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1040 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     ++stealStack[pe]->falseWakeups;
-# 1041 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1041 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1042 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1042 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   stealStack[omp_get_thread_num()]->nNodes_last = stealStack[pe]->nNodes;
-# 1043 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1043 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_unset_lock(cb_lock);
-# 1044 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1045 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1044 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1045 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 16) {printf("Thread %d enter spin-wait, count = %d, done = %d\n",
-# 1047 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1047 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), l_count, l_done); };
-# 1048 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1049 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1050 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1048 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1049 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1050 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   do {
-# 1051 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1052 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1053 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1054 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1051 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1052 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1053 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1054 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     l_count = cb_count;
-# 1055 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1055 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     l_cancel = cb_cancel;
-# 1056 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1056 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     l_done = cb_done;
-# 1057 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1057 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1058 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1058 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   while (!l_cancel && !l_done);
-# 1059 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1060 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1059 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1060 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 16) {printf("Thread %d exit  spin-wait, count = %d, done = %d, cancel = %d\n",
-# 1062 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1062 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), l_count, l_done, l_cancel); };
-# 1063 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1064 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1065 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1063 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1064 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1065 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_set_lock(cb_lock);
-# 1066 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1066 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_count--;
-# 1067 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1067 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   l_count = cb_count;
-# 1068 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1069 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1070 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1071 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1068 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1069 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1070 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1071 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_cancel = 0;
-# 1072 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1072 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   l_done = cb_done;
-# 1073 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1073 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   ++stealStack[omp_get_thread_num()]->wakeups;
-# 1074 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1074 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_unset_lock(cb_lock);
-# 1075 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1076 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1075 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1076 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 16) {printf("Thread %d exit idle state, count = %d, done = %d\n",
-# 1078 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1078 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), l_count, cb_done); };
-# 1079 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1080 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1079 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1080 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_11; ; ____chimes_ret_var_11 = (cb_done); rm_stack(false, 0UL, "cbarrier_wait", &____must_manage_cbarrier_wait, ____alias_loc_id_46, ____chimes_did_disable24, false); return ____chimes_ret_var_11; ;
-# 1081 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1081 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "cbarrier_wait", &____must_manage_cbarrier_wait, ____alias_loc_id_46, ____chimes_did_disable24, false); }
 
 int cbarrier_wait() { return (____chimes_replaying ? cbarrier_wait_resumable() : cbarrier_wait_quick()); }
-# 1085 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1085 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void cbarrier_cancel_quick() {const int ____chimes_did_disable25 = new_stack((void *)(&cbarrier_cancel), "cbarrier_cancel", &____must_manage_cbarrier_cancel, 0, 0) ; ; ;
-# 1086 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1087 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1088 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1089 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1090 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1091 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1092 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1093 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1086 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1087 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1088 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1089 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1090 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1091 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1092 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1093 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_cancel = 1;
-# 1094 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1095 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1094 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1095 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "cbarrier_cancel", &____must_manage_cbarrier_cancel, ____alias_loc_id_47, ____chimes_did_disable25, false); }
 
 void cbarrier_cancel() { (____chimes_replaying ? cbarrier_cancel_resumable() : cbarrier_cancel_quick()); }
-# 1097 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-void releaseNodes_quick(StealStack *ss){const int ____chimes_did_disable26 = new_stack((void *)(&releaseNodes), "releaseNodes", &____must_manage_releaseNodes, 1, 1, (size_t)(12146000192742678583UL), "releaseNodes|ss|0", &____must_checkpoint_releaseNodes_ss_0, "%struct.stealStack_t*", (void *)(&ss), (size_t)8, 1, 0, 0) ; ; ;
-# 1098 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1097 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void releaseNodes_quick(StealStack *ss){const int ____chimes_did_disable26 = new_stack((void *)(&releaseNodes), "releaseNodes", &____must_manage_releaseNodes, 1, 1, (size_t)(12090941540209072263UL), "releaseNodes|ss|0", &____must_checkpoint_releaseNodes_ss_0, "%struct.stealStack_t*", (void *)(&ss), (size_t)8, 1, 0, 0) ; ; ;
+# 1098 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (doSteal) {
-# 1099 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1099 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      call_lbl_0: if (({ calling_npm("ss_localDepth", 0); ss_localDepth_npm(ss); }) > 2 * chunkSize) {
-# 1100 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1101 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-       call_lbl_1: ({ calling((void*)ss_setState, 1, 0, 0UL, 2, (size_t)(12146000192742678583UL), (size_t)(0UL)); ss_setState_quick(ss, 3); }) ;
-# 1102 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1100 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1101 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+       call_lbl_1: ({ calling((void*)ss_setState, 1, 0, 0UL, 2, (size_t)(12090941540209072263UL), (size_t)(0UL)); ss_setState_quick(ss, 3); }) ;
+# 1102 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
        call_lbl_2: ({ calling_npm("ss_release", 0); ss_release_npm(ss, chunkSize); });
-# 1103 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1104 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1103 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1104 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       if (ss->nNodes % cbint == 0) {
-# 1105 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-         call_lbl_3: ({ calling((void*)ss_setState, 3, 0, 0UL, 2, (size_t)(12146000192742678583UL), (size_t)(0UL)); ss_setState_quick(ss, 4); }) ;
-# 1106 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1105 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+         call_lbl_3: ({ calling((void*)ss_setState, 3, 0, 0UL, 2, (size_t)(12090941540209072263UL), (size_t)(0UL)); ss_setState_quick(ss, 4); }) ;
+# 1106 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
          call_lbl_4: ({ calling_npm("cbarrier_cancel", 0); cbarrier_cancel_npm(); });
-# 1107 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1107 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       }
-# 1108 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1109 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1110 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1111 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1112 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1113 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1114 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1115 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-       call_lbl_5: ({ calling((void*)ss_setState, 5, 0, 0UL, 2, (size_t)(12146000192742678583UL), (size_t)(0UL)); ss_setState_quick(ss, 0); }) ;
-# 1116 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1108 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1109 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1110 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1111 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1112 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1113 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1114 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1115 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+       call_lbl_5: ({ calling((void*)ss_setState, 5, 0, 0UL, 2, (size_t)(12090941540209072263UL), (size_t)(0UL)); ss_setState_quick(ss, 0); }) ;
+# 1116 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 1117 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1117 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1118 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1118 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "releaseNodes", &____must_manage_releaseNodes, ____alias_loc_id_44, ____chimes_did_disable26, false); }
 
 void releaseNodes(StealStack *ss) { (____chimes_replaying ? releaseNodes_resumable(ss) : releaseNodes_quick(ss)); }
-# 1126 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-void parTreeSearch_quick(StealStack *ss) {const int ____chimes_did_disable27 = new_stack((void *)(&parTreeSearch), "parTreeSearch", &____must_manage_parTreeSearch, 1, 1, (size_t)(12146000192742678838UL), "parTreeSearch|ss|0", &____must_checkpoint_parTreeSearch_ss_0, "%struct.stealStack_t*", (void *)(&ss), (size_t)8, 1, 0, 0) ; int victimId;
-# 1126 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1126 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+void parTreeSearch_quick(StealStack *ss) {const int ____chimes_did_disable27 = new_stack((void *)(&parTreeSearch), "parTreeSearch", &____must_manage_parTreeSearch, 1, 1, (size_t)(12090941540209072518UL), "parTreeSearch|ss|0", &____must_checkpoint_parTreeSearch_ss_0, "%struct.stealStack_t*", (void *)(&ss), (size_t)8, 1, 0, 0) ; int victimId;
+# 1126 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int goodSteal;
-# 1126 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1126 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 Node child;
-# 1126 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1126 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int done;
-# 1126 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1126 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  if (____must_checkpoint_parTreeSearch_victimId_0 || ____must_checkpoint_parTreeSearch_goodSteal_0 || ____must_checkpoint_parTreeSearch_child_0 || ____must_checkpoint_parTreeSearch_done_0) { register_stack_vars(4, "parTreeSearch|victimId|0", &____must_checkpoint_parTreeSearch_victimId_0, "i32", (void *)(&victimId), (size_t)4, 0, 0, 0, "parTreeSearch|goodSteal|0", &____must_checkpoint_parTreeSearch_goodSteal_0, "i32", (void *)(&goodSteal), (size_t)4, 0, 0, 0, "parTreeSearch|child|0", &____must_checkpoint_parTreeSearch_child_0, "%struct.node_t = type { i32, i32, i32, %struct.state_t }", (void *)(&child), (size_t)32, 0, 1, 0, "parTreeSearch|done|0", &____must_checkpoint_parTreeSearch_done_0, "i32", (void *)(&done), (size_t)4, 0, 0, 0); } ; ;
-# 1127 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1127 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      done = (0) ;
-# 1128 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1128 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   Node *parent; ;
-# 1129 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1129 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     ;
-# 1130 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1131 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1132 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1130 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1131 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1132 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    call_lbl_0: ({ calling_npm("initNode", 0); initNode_npm(&child); });
-# 1133 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1134 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1135 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1133 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1134 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1135 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   while (done == 0) {
-# 1136 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1137 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1136 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1137 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      int localDepth; call_lbl_1: localDepth = (({ calling_npm("ss_localDepth", 0); ss_localDepth_npm(ss); })) ;
-# 1138 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1139 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1138 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1139 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     while (localDepth > 0) {
-# 1140 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1141 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-       call_lbl_2: (____chimes_does_checkpoint_ss_setState_npm ? ( ({ calling((void*)ss_setState, 2, ____alias_loc_id_17, 0UL, 2, (size_t)(12146000192742678838UL), (size_t)(0UL)); ss_setState_quick(ss, 0); }) ) : (({ calling_npm("ss_setState", ____alias_loc_id_17); ss_setState_npm(ss, 0); })));
-# 1142 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1143 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1144 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-       call_lbl_3: parent = (____chimes_does_checkpoint_ss_top_npm ? ( ({ calling((void*)ss_top, 3, 0, 12146000192742678774UL, 1, (size_t)(12146000192742678838UL)); ss_top_quick(ss); }) ) : (({ calling_npm("ss_top", 0); ss_top_npm(ss); })));
-# 1145 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1140 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1141 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+       call_lbl_2: (____chimes_does_checkpoint_ss_setState_npm ? ( ({ calling((void*)ss_setState, 2, ____alias_loc_id_17, 0UL, 2, (size_t)(12090941540209072518UL), (size_t)(0UL)); ss_setState_quick(ss, 0); }) ) : (({ calling_npm("ss_setState", ____alias_loc_id_17); ss_setState_npm(ss, 0); })));
+# 1142 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1143 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1144 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+       call_lbl_3: parent = (____chimes_does_checkpoint_ss_top_npm ? ( ({ calling((void*)ss_top, 3, 0, 12090941540209072454UL, 1, (size_t)(12090941540209072518UL)); ss_top_quick(ss); }) ) : (({ calling_npm("ss_top", 0); ss_top_npm(ss); })));
+# 1145 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       if (parent->numChildren < 0){
-# 1146 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1147 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-  call_lbl_4: (____chimes_does_checkpoint_genChildren_npm ? ( ({ calling((void*)genChildren, 4, ____alias_loc_id_15, 0UL, 3, (size_t)(12146000192742678774UL), (size_t)(12146000192742678741UL), (size_t)(12146000192742678838UL)); genChildren_quick(parent, &child, ss); }) ) : (({ calling_npm("genChildren", ____alias_loc_id_15); genChildren_npm(parent, &child, ss); })));
-# 1148 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1149 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1146 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1147 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+  call_lbl_4: (____chimes_does_checkpoint_genChildren_npm ? ( ({ calling((void*)genChildren, 4, ____alias_loc_id_15, 0UL, 3, (size_t)(12090941540209072454UL), (size_t)(12090941540209072421UL), (size_t)(12090941540209072518UL)); genChildren_quick(parent, &child, ss); }) ) : (({ calling_npm("genChildren", ____alias_loc_id_15); genChildren_npm(parent, &child, ss); })));
+# 1148 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1149 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       }
-# 1150 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1150 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       else {
-# 1151 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1152 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1153 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1154 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1155 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1156 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-         call_lbl_5: (____chimes_does_checkpoint_ss_pop_npm ? ( ({ calling((void*)ss_pop, 5, ____alias_loc_id_16, 0UL, 1, (size_t)(12146000192742678838UL)); ss_pop_quick(ss); }) ) : (({ calling_npm("ss_pop", ____alias_loc_id_16); ss_pop_npm(ss); })));
-# 1157 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1151 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1152 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1153 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1154 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1155 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1156 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+         call_lbl_5: (____chimes_does_checkpoint_ss_pop_npm ? ( ({ calling((void*)ss_pop, 5, ____alias_loc_id_16, 0UL, 1, (size_t)(12090941540209072518UL)); ss_pop_quick(ss); }) ) : (({ calling_npm("ss_pop", ____alias_loc_id_16); ss_pop_npm(ss); })));
+# 1157 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       }
-# 1158 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1159 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1160 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1161 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-       call_lbl_6: (____chimes_does_checkpoint_releaseNodes_npm ? ( ({ calling((void*)releaseNodes, 6, 0, 0UL, 1, (size_t)(12146000192742678838UL)); releaseNodes_quick(ss); }) ) : (({ calling_npm("releaseNodes", 0); releaseNodes_npm(ss); })));
-# 1162 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1158 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1159 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1160 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1161 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+       call_lbl_6: (____chimes_does_checkpoint_releaseNodes_npm ? ( ({ calling((void*)releaseNodes, 6, 0, 0UL, 1, (size_t)(12090941540209072518UL)); releaseNodes_quick(ss); }) ) : (({ calling_npm("releaseNodes", 0); releaseNodes_npm(ss); })));
+# 1162 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
        call_lbl_7: localDepth = ({ calling_npm("ss_localDepth", 0); ss_localDepth_npm(ss); });
-# 1163 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1163 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 1164 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1165 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1166 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1167 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1168 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1164 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1165 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1166 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1167 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1168 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      call_lbl_8: if (({ calling_npm("ss_acquire", 0); ss_acquire_npm(ss, chunkSize); })) {continue; };
-# 1170 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1171 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1172 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1173 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1170 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1171 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1172 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1173 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (doSteal) {
-# 1174 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1174 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
          goodSteal = (0) ;
-# 1175 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1175 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
        ;
-# 1176 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1177 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-       call_lbl_9: (____chimes_does_checkpoint_ss_setState_npm ? ( ({ calling((void*)ss_setState, 9, ____alias_loc_id_13, 0UL, 2, (size_t)(12146000192742678838UL), (size_t)(0UL)); ss_setState_quick(ss, 1); }) ) : (({ calling_npm("ss_setState", ____alias_loc_id_13); ss_setState_npm(ss, 1); })));
-# 1178 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1176 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1177 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+       call_lbl_9: (____chimes_does_checkpoint_ss_setState_npm ? ( ({ calling((void*)ss_setState, 9, ____alias_loc_id_13, 0UL, 2, (size_t)(12090941540209072518UL), (size_t)(0UL)); ss_setState_quick(ss, 1); }) ) : (({ calling_npm("ss_setState", ____alias_loc_id_13); ss_setState_npm(ss, 1); })));
+# 1178 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
        call_lbl_10: victimId = ({ calling_npm("findwork", 0); findwork_npm(chunkSize); });
-# 1179 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1179 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       while (victimId != -1 && !goodSteal) {
-# 1180 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1181 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-  call_lbl_11: goodSteal = (____chimes_does_checkpoint_ss_steal_npm ? ( ({ calling((void*)ss_steal, 11, ____alias_loc_id_14, 0UL, 3, (size_t)(12146000192742678838UL), (size_t)(0UL), (size_t)(0UL)); ss_steal_quick(ss, victimId, chunkSize); }) ) : (({ calling_npm("ss_steal", ____alias_loc_id_14); ss_steal_npm(ss, victimId, chunkSize); })));
-# 1182 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1180 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1181 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+  call_lbl_11: goodSteal = (____chimes_does_checkpoint_ss_steal_npm ? ( ({ calling((void*)ss_steal, 11, ____alias_loc_id_14, 0UL, 3, (size_t)(12090941540209072518UL), (size_t)(0UL), (size_t)(0UL)); ss_steal_quick(ss, victimId, chunkSize); }) ) : (({ calling_npm("ss_steal", ____alias_loc_id_14); ss_steal_npm(ss, victimId, chunkSize); })));
+# 1182 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  if (!goodSteal) { call_lbl_12: victimId = ({ calling_npm("findwork", 0); findwork_npm(chunkSize); }); };
-# 1184 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1184 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       }
-# 1185 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1185 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       if (goodSteal) {continue; };
-# 1187 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1187 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 1188 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1189 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1190 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1191 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1192 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1193 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1194 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-     call_lbl_13: (____chimes_does_checkpoint_ss_setState_npm ? ( ({ calling((void*)ss_setState, 13, ____alias_loc_id_12, 0UL, 2, (size_t)(12146000192742678838UL), (size_t)(0UL)); ss_setState_quick(ss, 2); }) ) : (({ calling_npm("ss_setState", ____alias_loc_id_12); ss_setState_npm(ss, 2); })));
-# 1195 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1188 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1189 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1190 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1191 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1192 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1193 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1194 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+     call_lbl_13: (____chimes_does_checkpoint_ss_setState_npm ? ( ({ calling((void*)ss_setState, 13, ____alias_loc_id_12, 0UL, 2, (size_t)(12090941540209072518UL), (size_t)(0UL)); ss_setState_quick(ss, 2); }) ) : (({ calling_npm("ss_setState", ____alias_loc_id_12); ss_setState_npm(ss, 2); })));
+# 1195 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      call_lbl_14: done = ({ calling_npm("cbarrier_wait", 0); cbarrier_wait_npm(); });
-# 1196 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1196 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1197 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1198 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1199 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1197 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1198 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1199 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "parTreeSearch", &____must_manage_parTreeSearch, ____alias_loc_id_48, ____chimes_did_disable27, false); }
 
 void parTreeSearch(StealStack *ss) { (____chimes_replaying ? parTreeSearch_resumable(ss) : parTreeSearch_quick(ss)); }
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void showStats_quick(double elapsedSecs) {const int ____chimes_did_disable28 = new_stack((void *)(&showStats), "showStats", &____must_manage_showStats, 1, 0, (size_t)(0UL)) ; int nthreads;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 double tcbovh;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 double tovh;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 double tidle;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 double tsearch;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 double twork;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int mdepth;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int tfail;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int tsteal;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int tacq;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int trel;
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  if (____must_checkpoint_showStats_nthreads_0 || ____must_checkpoint_showStats_tcbovh_0 || ____must_checkpoint_showStats_tovh_0 || ____must_checkpoint_showStats_tidle_0 || ____must_checkpoint_showStats_tsearch_0 || ____must_checkpoint_showStats_twork_0 || ____must_checkpoint_showStats_mdepth_0 || ____must_checkpoint_showStats_tfail_0 || ____must_checkpoint_showStats_tsteal_0 || ____must_checkpoint_showStats_tacq_0 || ____must_checkpoint_showStats_trel_0) { register_stack_vars(11, "showStats|nthreads|0", &____must_checkpoint_showStats_nthreads_0, "i32", (void *)(&nthreads), (size_t)4, 0, 0, 0, "showStats|tcbovh|0", &____must_checkpoint_showStats_tcbovh_0, "double", (void *)(&tcbovh), (size_t)8, 0, 0, 0, "showStats|tovh|0", &____must_checkpoint_showStats_tovh_0, "double", (void *)(&tovh), (size_t)8, 0, 0, 0, "showStats|tidle|0", &____must_checkpoint_showStats_tidle_0, "double", (void *)(&tidle), (size_t)8, 0, 0, 0, "showStats|tsearch|0", &____must_checkpoint_showStats_tsearch_0, "double", (void *)(&tsearch), (size_t)8, 0, 0, 0, "showStats|twork|0", &____must_checkpoint_showStats_twork_0, "double", (void *)(&twork), (size_t)8, 0, 0, 0, "showStats|mdepth|0", &____must_checkpoint_showStats_mdepth_0, "i32", (void *)(&mdepth), (size_t)4, 0, 0, 0, "showStats|tfail|0", &____must_checkpoint_showStats_tfail_0, "i32", (void *)(&tfail), (size_t)4, 0, 0, 0, "showStats|tsteal|0", &____must_checkpoint_showStats_tsteal_0, "i32", (void *)(&tsteal), (size_t)4, 0, 0, 0, "showStats|tacq|0", &____must_checkpoint_showStats_tacq_0, "i32", (void *)(&tacq), (size_t)4, 0, 0, 0, "showStats|trel|0", &____must_checkpoint_showStats_trel_0, "i32", (void *)(&trel), (size_t)4, 0, 0, 0); } ; ;
-# 1228 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1228 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int i; ;
-# 1229 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1229 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int tnodes; int tleaves; tnodes = (0) ; tleaves = (0) ; trel = (0) ; tacq = (0) ; tsteal = (0) ; tfail = (0) ;
-# 1230 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1230 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      int mheight; mdepth = (0) ; mheight = (0) ;
-# 1231 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1231 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
              twork = (0.0) ; tsearch = (0.0) ; tidle = (0.0) ; tovh = (0.0) ; tcbovh = (0.0) ;
-# 1232 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1232 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      nthreads = (omp_get_num_threads()) ;
-# 1251 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1251 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1251 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1251 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   for (i = 0; i < nthreads; i++) {
-# 1252 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1252 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tnodes += stealStack[i]->nNodes;
-# 1253 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1253 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tleaves += stealStack[i]->nLeaves;
-# 1254 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1254 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     trel += stealStack[i]->nRelease;
-# 1255 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1255 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tacq += stealStack[i]->nAcquire;
-# 1256 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1256 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tsteal += stealStack[i]->nSteal;
-# 1257 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1257 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tfail += stealStack[i]->nFail;
-# 1258 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1258 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     twork += stealStack[i]->time[0];
-# 1259 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1259 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tsearch += stealStack[i]->time[1];
-# 1260 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1260 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tidle += stealStack[i]->time[2];
-# 1261 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1261 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tovh += stealStack[i]->time[3];
-# 1262 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1262 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tcbovh += stealStack[i]->time[4];
-# 1263 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1263 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     mdepth = (((mdepth) > (stealStack[i]->maxStackDepth)) ? (mdepth) : (stealStack[i]->maxStackDepth));
-# 1264 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1264 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     mheight = (((mheight) > (stealStack[i]->maxTreeDepth)) ? (mheight) : (stealStack[i]->maxTreeDepth));
-# 1265 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1265 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1266 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1266 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (trel != tacq + tsteal) {
-# 1267 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1267 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("*** error! total released != total acquired + total stolen\n");
-# 1268 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1268 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1269 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1270 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1269 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1270 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    call_lbl_0: (____chimes_does_checkpoint_uts_showStats_npm ? ( ({ calling((void*)uts_showStats, 0, ____alias_loc_id_18, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (uts_showStats)(nthreads, chunkSize, elapsedSecs, tnodes, tleaves, mheight); }) ) : (({ calling_npm("uts_showStats", ____alias_loc_id_18); (*____chimes_extern_func_uts_showStats)(nthreads, chunkSize, elapsedSecs, tnodes, tleaves, mheight); })));
-# 1271 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1272 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1271 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1272 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (verbose > 1) {
-# 1273 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1273 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (doSteal) {
-# 1274 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1274 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("Total chunks released = %d, of which %d reacquired and %d stolen\n",
-# 1275 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1275 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
           trel, tacq, tsteal);
-# 1276 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1276 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("Failed steal operations = %d, ", tfail);
-# 1277 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1277 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 1278 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1279 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1278 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1279 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("Max stealStack size = %d\n", mdepth);
-# 1280 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1280 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("Avg time per thread: Work = %.6f, Search = %.6f, Idle = %.6f\n", (twork / nthreads),
-# 1281 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1281 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
         (tsearch / nthreads), (tidle / nthreads));
-# 1282 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1282 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("                     Overhead = %6f, CB_Overhead = %6f\n\n", (tovh / nthreads),
-# 1283 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1283 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
         (tcbovh/nthreads));
-# 1284 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1284 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1285 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1286 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1287 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1285 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1286 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1287 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (verbose > 2) {
-# 1288 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1288 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     for (i = 0; i < nthreads; i++) {
-# 1289 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1289 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("** Thread %d\n", i);
-# 1290 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1290 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  # nodes explored    = %d\n", stealStack[i]->nNodes);
-# 1291 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1291 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  # chunks released   = %d\n", stealStack[i]->nRelease);
-# 1292 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1292 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  # chunks reacquired = %d\n", stealStack[i]->nAcquire);
-# 1293 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1293 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  # chunks stolen     = %d\n", stealStack[i]->nSteal);
-# 1294 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1294 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  # failed steals     = %d\n", stealStack[i]->nFail);
-# 1295 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1295 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  maximum stack depth = %d\n", stealStack[i]->maxStackDepth);
-# 1296 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1296 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  work time           = %.6f secs (%d sessions)\n",
-# 1297 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1297 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
              stealStack[i]->time[0], stealStack[i]->entries[0]);
-# 1298 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1298 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  overhead time       = %.6f secs (%d sessions)\n",
-# 1299 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1299 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
              stealStack[i]->time[3], stealStack[i]->entries[3]);
-# 1300 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1300 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  search time         = %.6f secs (%d sessions)\n",
-# 1301 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1301 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
              stealStack[i]->time[1], stealStack[i]->entries[1]);
-# 1302 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1302 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  idle time           = %.6f secs (%d sessions)\n",
-# 1303 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1303 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
              stealStack[i]->time[2], stealStack[i]->entries[2]);
-# 1304 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1304 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  wakeups             = %d, false wakeups = %d (%.2f%%)",
-# 1305 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1305 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
              stealStack[i]->wakeups, stealStack[i]->falseWakeups,
-# 1306 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1306 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
              (stealStack[i]->wakeups == 0) ? 0.00 : ((((double)stealStack[i]->falseWakeups)/stealStack[i]->wakeups)*100.0));
-# 1307 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1307 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("\n");
-# 1308 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1308 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 1309 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1309 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1349 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1349 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1349 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1349 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "showStats", &____must_manage_showStats, ____alias_loc_id_49, ____chimes_did_disable28, false); }
 
 void showStats(double elapsedSecs) { (____chimes_replaying ? showStats_resumable(elapsedSecs) : showStats_quick(elapsedSecs)); }
-# 1359 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-int main_quick(int argc, char *argv[]) {const int ____chimes_did_disable29 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(12146000192742679349UL)) ; StealStack *ss;
-# 1359 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1359 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+int main_quick(int argc, char *argv[]) {const int ____chimes_did_disable29 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(12090941540209073029UL)) ; StealStack *ss;
+# 1359 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 double et;
-# 1359 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1359 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 double t1;
-# 1359 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1359 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 Node root;
-# 1359 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1359 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  register_stack_vars(4, "main|ss|0", (int *)0x0, "%struct.stealStack_t*", (void *)(&ss), (size_t)8, 1, 0, 0, "main|et|0", (int *)0x0, "double", (void *)(&et), (size_t)8, 0, 0, 0, "main|t1|0", &____must_checkpoint_main_t1_0, "double", (void *)(&t1), (size_t)8, 0, 0, 0, "main|root|0", (int *)0x0, "%struct.node_t = type { i32, i32, i32, %struct.state_t }", (void *)(&root), (size_t)32, 0, 1, 0); ; ;
-# 1360 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1360 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     ;
-# 1361 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1362 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1363 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1364 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1365 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1366 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1367 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-   call_lbl_0: (____chimes_does_checkpoint_uts_parseParams_npm ? ( ({ calling((void*)uts_parseParams, 0, ____alias_loc_id_22, 0UL, 2, (size_t)(0UL), (size_t)(12146000192742679349UL)); (uts_parseParams)(argc, argv); }) ) : (({ calling_npm("uts_parseParams", ____alias_loc_id_22); (*____chimes_extern_func_uts_parseParams)(argc, argv); })));
-# 1368 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1369 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1370 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1371 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1372 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1373 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1374 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1361 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1362 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1363 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1364 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1365 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1366 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1367 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+   call_lbl_0: (____chimes_does_checkpoint_uts_parseParams_npm ? ( ({ calling((void*)uts_parseParams, 0, ____alias_loc_id_22, 0UL, 2, (size_t)(0UL), (size_t)(12090941540209073029UL)); (uts_parseParams)(argc, argv); }) ) : (({ calling_npm("uts_parseParams", ____alias_loc_id_22); (*____chimes_extern_func_uts_parseParams)(argc, argv); })));
+# 1368 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1369 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1370 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1371 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1372 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1373 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1374 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int n_omp_threads; ;
-# 1375 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1375 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1375 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1375 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1375 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1375 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 { call_lbl_13: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(13, &____chimes_region_id0, 3, &et, &ss, &t1);
-# 1375 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1375 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 #pragma omp parallel
-# 1375 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1375 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1376 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1375 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1375 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1376 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &et, &ss, &t1); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } {
-# 1377 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1377 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1377 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1377 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1377 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1377 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1377 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1377 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 #pragma omp single
-# 1377 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1377 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1378 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1377 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1377 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1378 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       { bool ____chimes_disable1; ____chimes_disable1 = disable_current_thread(); {
-# 1379 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1379 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
           n_omp_threads = omp_get_num_threads();
-# 1380 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1380 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
        } reenable_current_thread(____chimes_disable1); }
-# 1381 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1381 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    } thread_leaving(); } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
-# 1382 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1383 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1382 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1383 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (n_omp_threads > 32) {
-# 1384 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1384 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     fprintf(stderr, "Resetting # OMP threads from %d to %d\n",
-# 1385 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1385 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
             n_omp_threads, 32);
-# 1386 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1386 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     omp_set_num_threads(32);
-# 1387 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1387 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1388 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1389 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1390 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1388 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1389 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1390 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    call_lbl_1: ({ calling_npm("cb_init", 0); cb_init_npm(); });
-# 1391 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1392 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1393 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1393 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1393 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1391 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1392 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1393 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1393 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1393 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 { call_lbl_15: void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(15, &____chimes_region_id1, 3, &et, &ss, &t1);
-# 1393 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1393 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 #pragma omp parallel firstprivate(t1) firstprivate(et) firstprivate(ss)
-# 1393 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1393 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1394 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1393 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1393 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1394 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 3, &et, &ss, &t1); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } default: { chimes_error(); } } } {
-# 1395 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1395 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      double t2; ;
-# 1396 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1396 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      ;
-# 1397 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1398 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1399 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1397 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1398 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1399 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (omp_get_thread_num() == 0) {
-# 1400 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1400 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
        call_lbl_2: (____chimes_does_checkpoint_uts_printParams_npm ? ( ({ calling((void*)uts_printParams, 2, ____alias_loc_id_23, 0UL, 0); (uts_printParams)(); }) ) : (({ calling_npm("uts_printParams", ____alias_loc_id_23); (*____chimes_extern_func_uts_printParams)(); })));
-# 1401 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1401 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 1423 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1423 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-    stealStack[omp_get_thread_num()] = ( StealStack *) ({ void *____chimes_tmp_ptr = malloc((sizeof(StealStack)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(StealStack), 12146000192742679325UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 1424 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1423 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1423 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+    stealStack[omp_get_thread_num()] = ( StealStack *) ({ void *____chimes_tmp_ptr = malloc((sizeof(StealStack)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(StealStack), 12090941540209073005UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 1424 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     ss = (StealStack *) stealStack[omp_get_thread_num()];
-# 1425 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1425 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      call_lbl_3: ({ calling_npm("ss_init", 0); ss_init_npm(ss, 500000); });
-# 1426 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1427 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1428 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1429 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1426 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1427 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1428 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1429 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (omp_get_thread_num() == 0) {
-# 1430 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-       call_lbl_4: (____chimes_does_checkpoint_initRootNode_npm ? ( ({ calling((void*)initRootNode, 4, ____alias_loc_id_24, 0UL, 2, (size_t)(12146000192742679266UL), (size_t)(0UL)); initRootNode_quick(&root, type); }) ) : (({ calling_npm("initRootNode", ____alias_loc_id_24); initRootNode_npm(&root, type); })));
-# 1431 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-       call_lbl_5: (____chimes_does_checkpoint_ss_push_npm ? ( ({ calling((void*)ss_push, 5, 0, 0UL, 2, (size_t)(12146000192742679325UL), (size_t)(12146000192742679266UL)); ss_push_quick(ss, &root); }) ) : (({ calling_npm("ss_push", 0); ss_push_npm(ss, &root); })));
-# 1432 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1430 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+       call_lbl_4: (____chimes_does_checkpoint_initRootNode_npm ? ( ({ calling((void*)initRootNode, 4, ____alias_loc_id_24, 0UL, 2, (size_t)(12090941540209072946UL), (size_t)(0UL)); initRootNode_quick(&root, type); }) ) : (({ calling_npm("initRootNode", ____alias_loc_id_24); initRootNode_npm(&root, type); })));
+# 1431 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+       call_lbl_5: (____chimes_does_checkpoint_ss_push_npm ? ( ({ calling((void*)ss_push, 5, 0, 0UL, 2, (size_t)(12090941540209073005UL), (size_t)(12090941540209072946UL)); ss_push_quick(ss, &root); }) ) : (({ calling_npm("ss_push", 0); ss_push_npm(ss, &root); })));
+# 1432 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 1433 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1434 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1435 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1435 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1435 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1433 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1434 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1435 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1435 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1435 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 #pragma omp barrier
-# 1435 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1435 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1436 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1437 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1438 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1439 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1435 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1435 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1436 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1437 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1438 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1439 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      call_lbl_6: checkpoint_transformed(6, ____alias_loc_id_21);
-# 1440 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1441 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1442 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1443 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-     call_lbl_7: (____chimes_does_checkpoint_ss_initState_npm ? ( ({ calling((void*)ss_initState, 7, 0, 0UL, 1, (size_t)(12146000192742679325UL)); ss_initState_quick(ss); }) ) : (({ calling_npm("ss_initState", 0); ss_initState_npm(ss); }))); call_lbl_8: t1 = (____chimes_does_checkpoint_uts_wctime_npm ? ( ({ calling((void*)uts_wctime, 8, 0, 0UL, 0); (uts_wctime)(); }) ) : (({ calling_npm("uts_wctime", 0); (*____chimes_extern_func_uts_wctime)(); })));
-# 1444 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-     call_lbl_9: (____chimes_does_checkpoint_parTreeSearch_npm ? ( ({ calling((void*)parTreeSearch, 9, ____alias_loc_id_20, 0UL, 1, (size_t)(12146000192742679325UL)); parTreeSearch_quick(ss); }) ) : (({ calling_npm("parTreeSearch", ____alias_loc_id_20); parTreeSearch_npm(ss); })));
-# 1445 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1440 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1441 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1442 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1443 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+     call_lbl_7: (____chimes_does_checkpoint_ss_initState_npm ? ( ({ calling((void*)ss_initState, 7, 0, 0UL, 1, (size_t)(12090941540209073005UL)); ss_initState_quick(ss); }) ) : (({ calling_npm("ss_initState", 0); ss_initState_npm(ss); }))); call_lbl_8: t1 = (____chimes_does_checkpoint_uts_wctime_npm ? ( ({ calling((void*)uts_wctime, 8, 0, 0UL, 0); (uts_wctime)(); }) ) : (({ calling_npm("uts_wctime", 0); (*____chimes_extern_func_uts_wctime)(); })));
+# 1444 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+     call_lbl_9: (____chimes_does_checkpoint_parTreeSearch_npm ? ( ({ calling((void*)parTreeSearch, 9, ____alias_loc_id_20, 0UL, 1, (size_t)(12090941540209073005UL)); parTreeSearch_quick(ss); }) ) : (({ calling_npm("parTreeSearch", ____alias_loc_id_20); parTreeSearch_npm(ss); })));
+# 1445 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      call_lbl_10: t2 = (____chimes_does_checkpoint_uts_wctime_npm ? ( ({ calling((void*)uts_wctime, 10, 0, 0UL, 0); (uts_wctime)(); }) ) : (({ calling_npm("uts_wctime", 0); (*____chimes_extern_func_uts_wctime)(); })));
-# 1446 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1446 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     et = t2 - t1;
-# 1447 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1448 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1449 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1450 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1451 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1452 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1453 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1453 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1453 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1447 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1448 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1449 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1450 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1451 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1452 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1453 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1453 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1453 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 #pragma omp barrier
-# 1453 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1453 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1454 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1455 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1456 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1457 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1453 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1453 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1454 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1455 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1456 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1457 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      call_lbl_11: checkpoint_transformed(11, ____alias_loc_id_19);
-# 1458 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1459 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1460 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1461 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1458 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1459 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1460 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1461 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (omp_get_thread_num() == 0) {
-# 1462 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1462 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
        call_lbl_12: (____chimes_does_checkpoint_showStats_npm ? ( ({ calling((void*)showStats, 12, 0, 0UL, 1, (size_t)(0UL)); showStats_quick(et); }) ) : (({ calling_npm("showStats", 0); showStats_npm(et); })));
-# 1463 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1463 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 1464 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1464 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    } thread_leaving(); } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 0); }
-# 1465 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1466 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1467 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1465 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1466 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1467 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_12; ; ____chimes_ret_var_12 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_50, ____chimes_did_disable29, false); return ____chimes_ret_var_12; ;
-# 1468 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1468 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_50, ____chimes_did_disable29, false); }
 
 int main(int argc, char *argv[]) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
-# 57 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 57 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 omp_lock_t * omp_global_lock_alloc_npm() {
-# 58 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-  omp_lock_t *lock = (omp_lock_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(omp_lock_t) + 128) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(omp_lock_t) + 128, 12146000192742677284UL, 0, 1, (int)sizeof(omp_lock_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 59 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 58 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+  omp_lock_t *lock = (omp_lock_t *) ({ void *____chimes_tmp_ptr = malloc((sizeof(omp_lock_t) + 128) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(omp_lock_t) + 128, 12090941540209070964UL, 0, 1, (int)sizeof(omp_lock_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 59 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_init_lock(lock);
-# 60 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 60 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    omp_lock_t * ____chimes_ret_var_0; ____chimes_ret_var_0 = (lock); return ____chimes_ret_var_0; ;
-# 61 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 61 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 293 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 293 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 char * impl_getName_npm() {
-# 294 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 294 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   char * name[] = {"Sequential C", "C/OpenMP", "UPC", "SHMEM", "PThreads"};
-# 295 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 295 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    char * ____chimes_ret_var_1; ____chimes_ret_var_1 = (name[1]); return ____chimes_ret_var_1; ;
-# 296 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 296 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 300 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 300 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int impl_paramsToStr_npm(char *strBuf, int ind) {
-# 301 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 301 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   ind += sprintf(strBuf+ind, "Execution strategy:  ");
-# 302 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 302 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (1) {{
-# 303 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 303 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     ind += sprintf(strBuf+ind, "Parallel search using %d threads\n", omp_get_num_threads());
-# 304 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 304 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (doSteal) {{
-# 305 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 305 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       ind += sprintf(strBuf+ind, "   Load balance by work stealing, chunk size = %d nodes\n",chunkSize);
-# 306 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 306 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       ind += sprintf(strBuf+ind, "  CBarrier Interval: %d\n", cbint);
-# 307 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 307 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       ind += sprintf(strBuf+ind, "   Polling Interval: %d\n", pollint);
-# 308 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 308 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }; } else {ind += sprintf(strBuf+ind, "   No load balancing.\n"); } ;
-# 311 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 311 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }; } else {ind += sprintf(strBuf+ind, "Iterative sequential search\n"); } ;
-# 314 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 315 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 314 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 315 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_2; ____chimes_ret_var_2 = (ind); return ____chimes_ret_var_2; ;
-# 316 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 316 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 319 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 319 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int impl_parseParam_npm(char *param, char *value) {
-# 320 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 320 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int err = 0;
-# 321 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 322 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 321 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 322 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   switch (param[1]) {
-# 323 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 324 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 323 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 324 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     case 'c':
-# 325 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 325 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       chunkSize = atoi(value); break;
-# 326 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 326 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     case 's':
-# 327 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 327 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       doSteal = atoi(value);
-# 328 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 328 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       if (doSteal != 1 && doSteal != 0) {err = 1; };
-# 330 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 330 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       break;
-# 331 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 331 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     case 'i':
-# 332 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 332 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       cbint = atoi(value); break;
-# 352 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 352 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 352 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 352 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     default:
-# 353 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 353 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       err = 1;
-# 354 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 354 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       break;
-# 355 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 355 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 356 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 357 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 356 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 357 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_3; ____chimes_ret_var_3 = (err); return ____chimes_ret_var_3; ;
-# 358 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 358 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 360 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 360 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void impl_helpMessage_npm() {
-# 361 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 361 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (1) {
-# 362 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 362 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("   -s  int   zero/nonzero to disable/enable work stealing\n");
-# 363 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 363 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("   -c  int   chunksize for work stealing\n");
-# 364 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 364 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("   -i  int   set cancellable barrier polling interval\n");
-# 365 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 366 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 367 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 368 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 365 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 366 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 367 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 368 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   } else {
-# 369 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 370 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 371 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 372 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 369 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 370 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 371 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 372 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("   none.\n");
-# 373 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 374 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 373 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 374 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 375 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 375 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 377 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 377 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void impl_abort_npm(int err) {
-# 378 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 379 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 380 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 381 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 378 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 379 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 380 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 381 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   exit(err);
-# 382 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 383 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 384 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 385 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 386 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 387 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 382 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 383 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 384 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 385 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 386 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 387 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 422 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 422 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void ss_mkEmpty_npm(StealStack *s) {
-# 423 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 423 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_set_lock(s->stackLock);
-# 424 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 424 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->sharedStart = 0;
-# 425 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 425 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->local = 0;
-# 426 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 426 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->top = 0;
-# 427 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 427 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->workAvail = 0;
-# 428 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 428 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_unset_lock(s->stackLock);
-# 429 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 429 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 432 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 432 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void ss_error_npm(char *str) {
-# 433 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 433 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   printf("*** [Thread %i] %s\n",omp_get_thread_num(), str);
-# 434 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 434 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   exit(4);
-# 435 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 435 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 438 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 438 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void ss_init_npm(StealStack *s, int nelts) {
-# 439 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 439 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int nbytes = nelts * sizeof(Node);
-# 440 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 441 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 440 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 441 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 1) {printf("Thread %d intializing stealStack %p, sizeof(Node) = %X\n",
-# 443 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 443 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), s, (int)(sizeof(Node))); };
-# 444 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 445 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 446 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 447 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-  s->stack_g = ( Node *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 12146000192742677517UL, 0, 1, (int)sizeof(struct node_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 448 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 444 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 445 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 446 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 447 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+  s->stack_g = ( Node *) ({ void *____chimes_tmp_ptr = malloc((nbytes) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, nbytes, 12090941540209071197UL, 0, 1, (int)sizeof(struct node_t), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 448 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->stack = (Node *) s->stack_g;
-# 449 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 450 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 451 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 452 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 453 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 454 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 449 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 450 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 451 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 452 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 453 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 454 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->stack == __null) {
-# 455 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 455 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("Request for %d bytes for stealStack on thread %d failed\n",
-# 456 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 456 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            nbytes, omp_get_thread_num());
-# 457 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 457 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     ss_error_npm("ss_init: unable to allocate space for stealstack");
-# 458 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 458 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 459 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 459 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->stackLock=omp_global_lock_alloc_npm();
-# 460 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 460 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 1) {printf("Thread %d init stackLock %p\n", omp_get_thread_num(), (void *) s->stackLock); };
-# 462 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 462 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->stackSize = nelts;
-# 463 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 463 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nNodes = 0;
-# 464 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 464 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->maxStackDepth = 0;
-# 465 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 465 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->maxTreeDepth = 0;
-# 466 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 466 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nLeaves = 0;
-# 467 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 467 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nAcquire = 0;
-# 468 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 468 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nRelease = 0;
-# 469 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 469 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nSteal = 0;
-# 470 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 470 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nFail = 0;
-# 471 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 471 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->wakeups = 0;
-# 472 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 472 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->falseWakeups = 0;
-# 473 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 473 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nNodes_last = 0;
-# 474 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 474 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   ss_mkEmpty_npm(s);
-# 475 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 475 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 479 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 479 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void ss_push_npm(StealStack *s, Node *c) {
-# 480 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 480 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->top >= s->stackSize) {ss_error_npm("ss_push: overflow"); };
-# 482 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 482 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 1) { char * ____chimes_unroll_var_0 = (*____chimes_extern_func_rng_showstate)(c->state.state, debug_str); printf("ss_push: Thread %d, posn %d: node %s [%d]\n",
-# 484 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 484 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), s->top, ____chimes_unroll_var_0, c->height); };
-# 485 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 485 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   memcpy(&(s->stack[s->top]), c, sizeof(Node));
-# 486 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 486 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->top++;
-# 487 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 487 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->nNodes++;
-# 488 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 488 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->maxStackDepth = (((s->top) > (s->maxStackDepth)) ? (s->top) : (s->maxStackDepth));
-# 489 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 489 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->maxTreeDepth = (((s->maxTreeDepth) > (c->height)) ? (s->maxTreeDepth) : (c->height));
-# 490 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 490 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 493 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 493 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 Node * ss_top_npm(StealStack *s) {
-# 494 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 494 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   Node *r;
-# 495 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 495 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->top <= s->local) {ss_error_npm("ss_top: empty local stack"); };
-# 497 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 497 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   r = &(s->stack[(s->top) - 1]);
-# 498 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 498 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 1) { char * ____chimes_unroll_var_1 = (*____chimes_extern_func_rng_showstate)(r->state.state, debug_str); printf("ss_top: Thread %d, posn %d: node %s [%d] nchild = %d\n",
-# 500 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 500 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), s->top - 1, ____chimes_unroll_var_1,
-# 501 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 501 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            r->height, r->numChildren); };
-# 502 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 502 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    Node * ____chimes_ret_var_4; ____chimes_ret_var_4 = (r); return ____chimes_ret_var_4; ;
-# 503 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 503 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 506 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 506 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void ss_pop_npm(StealStack *s) {
-# 507 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 507 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   Node *r;
-# 508 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 508 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->top <= s->local) {ss_error_npm("ss_pop: empty local stack"); };
-# 510 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 510 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->top--;
-# 511 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 511 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   r = &(s->stack[s->top]);
-# 512 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 512 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 1) { char * ____chimes_unroll_var_2 = (*____chimes_extern_func_rng_showstate)(r->state.state, debug_str); printf("ss_pop: Thread %d, posn %d: node %s [%d] nchild = %d\n",
-# 514 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 514 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), s->top, ____chimes_unroll_var_2,
-# 515 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 515 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            r->height, r->numChildren); };
-# 516 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 516 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 519 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 519 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int ss_topPosn_npm(StealStack *s)
-# 520 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 520 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 {
-# 521 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 521 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->top <= s->local) {ss_error_npm("ss_topPosn: empty local stack"); };
-# 523 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 523 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_5; ____chimes_ret_var_5 = (s->top - 1); return ____chimes_ret_var_5; ;
-# 524 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 524 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 527 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 527 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int ss_localDepth_npm(StealStack *s) {
-# 528 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 528 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_6; ____chimes_ret_var_6 = ((s->top - s->local)); return ____chimes_ret_var_6; ;
-# 529 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 529 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 532 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 532 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void ss_release_npm(StealStack *s, int k) {
-# 533 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 533 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_set_lock(s->stackLock);
-# 534 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 534 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->top - s->local >= k) {{
-# 535 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 535 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->local += k;
-# 536 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 536 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->workAvail += k;
-# 537 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 537 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->nRelease++;
-# 538 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 538 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }; } else {ss_error_npm("ss_release:  do not have k vals to release"); } ;
-# 541 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 541 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_unset_lock(s->stackLock);
-# 542 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 542 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 547 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 547 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int ss_acquire_npm(StealStack *s, int k) {
-# 548 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 548 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int avail;
-# 549 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 549 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_set_lock(s->stackLock);
-# 550 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 550 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   avail = s->local - s->sharedStart;
-# 551 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 551 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (avail >= k) {
-# 552 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 552 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->local -= k;
-# 553 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 553 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->workAvail -= k;
-# 554 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 554 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->nAcquire++;
-# 555 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 555 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 556 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 556 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_unset_lock(s->stackLock);
-# 557 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 557 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_7; ____chimes_ret_var_7 = ((avail >= k)); return ____chimes_ret_var_7; ;
-# 558 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 558 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 564 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 564 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int ss_steal_npm(StealStack *s, int victim, int k) {
-# 565 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 565 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int victimLocal, victimShared, victimWorkAvail;
-# 566 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 566 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int ok;
-# 567 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 568 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 567 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 568 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->sharedStart != s->top) {ss_error_npm("ss_steal: thief attempts to steal onto non-empty stack"); };
-# 570 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 571 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 570 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 571 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (s->top + k >= s->stackSize) {ss_error_npm("ss_steal: steal will overflow thief's stack"); };
-# 573 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 574 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 575 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 573 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 574 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 575 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 32) {printf("Thread %d wants    SS %d\n", omp_get_thread_num(), victim); };
-# 577 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 578 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 577 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 578 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_set_lock(stealStack[victim]->stackLock);
-# 579 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 580 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 581 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 582 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 583 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 584 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 585 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 579 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 580 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 581 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 582 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 583 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 584 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 585 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 32) {printf("Thread %d acquires SS %d\n", omp_get_thread_num(), victim); };
-# 587 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 588 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 587 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 588 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   victimLocal = stealStack[victim]->local;
-# 589 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 589 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   victimShared = stealStack[victim]->sharedStart;
-# 590 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 590 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   victimWorkAvail = stealStack[victim]->workAvail;
-# 591 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 592 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 591 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 592 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (victimLocal - victimShared != victimWorkAvail) {ss_error_npm("ss_steal: stealStack invariant violated"); };
-# 594 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 595 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 594 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 595 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   ok = victimWorkAvail >= k;
-# 596 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 596 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (ok) {
-# 597 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 598 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 597 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 598 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     stealStack[victim]->sharedStart = victimShared + k;
-# 599 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 599 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     stealStack[victim]->workAvail = victimWorkAvail - k;
-# 608 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 608 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 608 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 608 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 609 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 609 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_unset_lock(stealStack[victim]->stackLock);
-# 610 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 611 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 610 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 611 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 32) {printf("Thread %d releases SS %d\n", omp_get_thread_num(), victim); };
-# 613 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 614 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 615 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 613 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 614 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 615 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (ok) {
-# 616 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 616 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     Node * victimStackBase = stealStack[victim]->stack_g;
-# 617 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 617 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     Node * victimSharedStart = victimStackBase + victimShared;
-# 618 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 619 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 620 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 621 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 622 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 618 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 619 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 620 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 621 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 622 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     memcpy(&(s->stack[s->top]), victimSharedStart, k * sizeof(Node));
-# 623 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 624 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 625 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 623 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 624 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 625 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->nSteal++;
-# 626 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 626 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (debug & 4) {
-# 627 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 627 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       int i;
-# 628 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 628 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       for (i = 0; i < k; i ++) {
-# 629 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 629 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
         Node * r = &(s->stack[s->top + i]);
-# 630 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 630 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
          char * ____chimes_unroll_var_3 = (*____chimes_extern_func_rng_showstate)(r->state.state, debug_str); printf("ss_steal:  Thread %2d posn %d (steal #%d) receives %s [%d] from thread %d posn %d (%p)\n",
-# 631 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 631 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
                omp_get_thread_num(), s->top + i, s->nSteal,
-# 632 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 632 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
                ____chimes_unroll_var_3,
-# 633 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 633 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
                r->height, victim, victimShared + i,
-# 634 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 634 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
                (void *) victimSharedStart);
-# 635 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 635 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       }
-# 636 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 636 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 637 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 637 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->top += k;
-# 638 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 639 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 640 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 641 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 642 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 643 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 638 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 639 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 640 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 641 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 642 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 643 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 644 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 644 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   else {
-# 645 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 645 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->nFail++;
-# 646 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 646 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (debug & 4) {
-# 647 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 647 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("Thread %d failed to steal %d nodes from thread %d, ActAv = %d, sh = %d, loc =%d\n",
-# 648 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 648 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       omp_get_thread_num(), k, victim, victimWorkAvail, victimShared, victimLocal);
-# 649 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 649 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 650 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 650 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 651 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 651 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_8; ____chimes_ret_var_8 = ((ok)); return ____chimes_ret_var_8; ;
-# 652 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 652 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 655 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 655 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int findwork_npm(int k) {
-# 656 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 656 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int i,v;
-# 657 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 657 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   for (i = 1; i < omp_get_num_threads(); i++) {
-# 658 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 658 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     v = (omp_get_thread_num() + i) % omp_get_num_threads();
-# 659 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 660 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 661 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 662 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 659 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 660 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 661 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 662 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (stealStack[v]->workAvail >= k) { int ____chimes_ret_var_9; ____chimes_ret_var_9 = (v); return ____chimes_ret_var_9; ; };
-# 664 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 664 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 665 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 665 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_10; ____chimes_ret_var_10 = (-1); return ____chimes_ret_var_10; ;
-# 666 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 666 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 673 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 673 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void ss_initState_npm(StealStack *s) {
-# 674 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 674 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int i;
-# 675 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 675 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->timeLast = (*____chimes_extern_func_uts_wctime)();
-# 676 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 676 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   for (i = 0; i < 5; i++) {
-# 677 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 677 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->time[i] = 0.0;
-# 678 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 678 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     s->entries[i] = 0;
-# 679 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 679 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 680 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 680 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->curState = 2;
-# 681 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 681 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 8) {printf("Thread %d start state %d (t = %f)\n",
-# 683 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 683 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), s->curState, s->timeLast); };
-# 684 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 684 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 686 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 686 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void ss_setState_npm(StealStack *s, int state){
-# 687 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 687 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   double time;
-# 688 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 688 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (state < 0 || state >= 5) {ss_error_npm("ss_setState: thread state out of range"); };
-# 690 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 690 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (state == s->curState) {return; };
-# 692 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 692 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   time = (*____chimes_extern_func_uts_wctime)();
-# 693 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 693 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->time[s->curState] += time - s->timeLast;
-# 712 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 712 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 712 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 712 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->entries[state]++;
-# 713 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 713 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->timeLast = time;
-# 714 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 714 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   s->curState = state;
-# 715 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 716 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 715 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 716 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 8) {printf("Thread %d enter state %d [#%d] (t = %f)\n",
-# 718 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 718 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), state, s->entries[state], time); };
-# 719 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 719 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 889 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 889 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void initNode_npm(Node * child)
-# 890 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 890 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 {
-# 891 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 891 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   child->type = -1;
-# 892 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 892 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   child->height = -1;
-# 893 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 893 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   child->numChildren = -1;
-# 908 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 908 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 908 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 908 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 911 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 911 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void initRootNode_npm(Node * root, int type)
-# 912 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 912 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 {
-# 913 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 913 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   (*____chimes_extern_func_uts_initRoot)(root, type);
-# 944 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 944 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 944 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 944 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 956 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 956 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void genChildren_npm(Node * parent, Node * child, StealStack * ss) {
-# 957 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 957 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int parentHeight = parent->height;
-# 958 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 958 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int numChildren, childType;
-# 959 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 960 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 959 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 960 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   numChildren = (*____chimes_extern_func_uts_numChildren)(parent);
-# 961 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 961 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   childType = (*____chimes_extern_func_uts_childType)(parent);
-# 962 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 963 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 964 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 962 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 963 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 964 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   parent->numChildren = numChildren;
-# 965 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 965 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 2) {
-# 966 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 966 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
      int ____chimes_unroll_var_4 = ss_topPosn_npm(ss); char * ____chimes_unroll_var_5 = (*____chimes_extern_func_rng_showstate)(parent->state.state, debug_str); printf("Gen:  Thread %d, posn %2d: node %s [%d] has %2d children\n",
-# 967 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 967 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), ____chimes_unroll_var_4,
-# 968 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 968 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            ____chimes_unroll_var_5,
-# 969 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 969 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            parentHeight, numChildren);
-# 970 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 970 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 971 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 972 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 973 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 971 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 972 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 973 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (numChildren > 0) {
-# 974 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 974 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     int i, j;
-# 975 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 975 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     child->type = childType;
-# 976 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 976 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     child->height = parentHeight + 1;
-# 977 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 978 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 979 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 980 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 981 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 982 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 983 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 977 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 978 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 979 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 980 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 981 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 982 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 983 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     for (i = 0; i < numChildren; i++) {
-# 984 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 984 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       for (j = 0; j < computeGranularity; j++) {
-# 985 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 986 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 987 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 985 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 986 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 987 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
         (*____chimes_extern_func_rng_spawn)(parent->state.state, child->state.state, i);
-# 988 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 988 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       }
-# 989 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 989 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       ss_push_npm(ss, child);
-# 990 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 990 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       releaseNodes_npm(ss);
-# 991 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 991 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 992 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 992 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   } else {
-# 993 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 993 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     ss->nLeaves++;
-# 994 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 994 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 995 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 995 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 1007 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1007 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void cb_init_npm(){
-# 1008 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1008 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_lock=omp_global_lock_alloc_npm();
-# 1009 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1009 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 4) {printf("Thread %d, cb lock at %p\n", omp_get_thread_num(), (void *) cb_lock); };
-# 1011 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1012 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1013 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1011 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1012 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1013 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_set_lock(cb_lock);
-# 1014 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1014 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_count = 0;
-# 1015 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1015 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_cancel = 0;
-# 1016 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1016 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_done = 0;
-# 1017 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1017 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_unset_lock(cb_lock);
-# 1018 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1018 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 1022 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1022 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 int cbarrier_wait_npm() {
-# 1023 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1023 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int l_count, l_done, l_cancel;
-# 1024 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1024 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int pe = omp_get_thread_num();
-# 1025 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1026 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1025 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1026 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_set_lock(cb_lock);
-# 1027 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1027 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_count++;
-# 1028 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1029 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1030 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1031 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1028 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1029 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1030 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1031 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (cb_count == omp_get_num_threads()) {
-# 1032 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1032 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     cb_done = 1;
-# 1033 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1034 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1035 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1036 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1033 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1034 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1035 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1036 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1037 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1037 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   l_count = cb_count;
-# 1038 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1038 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   l_done = cb_done;
-# 1039 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1039 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (stealStack[pe]->nNodes_last == stealStack[pe]->nNodes) {
-# 1040 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1040 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     ++stealStack[pe]->falseWakeups;
-# 1041 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1041 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1042 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1042 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   stealStack[omp_get_thread_num()]->nNodes_last = stealStack[pe]->nNodes;
-# 1043 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1043 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_unset_lock(cb_lock);
-# 1044 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1045 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1044 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1045 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 16) {printf("Thread %d enter spin-wait, count = %d, done = %d\n",
-# 1047 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1047 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), l_count, l_done); };
-# 1048 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1049 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1050 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1048 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1049 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1050 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   do {
-# 1051 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1052 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1053 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1054 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1051 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1052 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1053 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1054 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     l_count = cb_count;
-# 1055 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1055 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     l_cancel = cb_cancel;
-# 1056 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1056 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     l_done = cb_done;
-# 1057 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1057 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1058 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1058 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   while (!l_cancel && !l_done);
-# 1059 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1060 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1059 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1060 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 16) {printf("Thread %d exit  spin-wait, count = %d, done = %d, cancel = %d\n",
-# 1062 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1062 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), l_count, l_done, l_cancel); };
-# 1063 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1064 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1065 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1063 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1064 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1065 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_set_lock(cb_lock);
-# 1066 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1066 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_count--;
-# 1067 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1067 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   l_count = cb_count;
-# 1068 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1069 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1070 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1071 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1068 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1069 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1070 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1071 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_cancel = 0;
-# 1072 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1072 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   l_done = cb_done;
-# 1073 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1073 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   ++stealStack[omp_get_thread_num()]->wakeups;
-# 1074 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1074 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   omp_unset_lock(cb_lock);
-# 1075 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1076 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1075 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1076 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (debug & 16) {printf("Thread %d exit idle state, count = %d, done = %d\n",
-# 1078 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1078 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), l_count, cb_done); };
-# 1079 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1080 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1079 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1080 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
    int ____chimes_ret_var_11; ____chimes_ret_var_11 = (cb_done); return ____chimes_ret_var_11; ;
-# 1081 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1081 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 1085 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1085 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void cbarrier_cancel_npm() {
-# 1086 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1087 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1088 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1089 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1090 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1091 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1092 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1093 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1086 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1087 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1088 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1089 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1090 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1091 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1092 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1093 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   cb_cancel = 1;
-# 1094 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1095 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1094 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1095 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 1097 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1097 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void releaseNodes_npm(StealStack *ss){
-# 1098 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1098 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (doSteal) {
-# 1099 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1099 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (ss_localDepth_npm(ss) > 2 * chunkSize) {
-# 1100 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1101 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1100 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1101 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       ss_setState_npm(ss, 3);
-# 1102 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1102 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       ss_release_npm(ss, chunkSize);
-# 1103 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1104 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1103 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1104 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       if (ss->nNodes % cbint == 0) {
-# 1105 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1105 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
         ss_setState_npm(ss, 4);
-# 1106 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1106 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
         cbarrier_cancel_npm();
-# 1107 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1107 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       }
-# 1108 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1109 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1110 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1111 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1112 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1113 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1114 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1115 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1108 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1109 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1110 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1111 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1112 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1113 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1114 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1115 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       ss_setState_npm(ss, 0);
-# 1116 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1116 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 1117 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1117 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1118 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1118 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 1126 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1126 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void parTreeSearch_npm(StealStack *ss) {
-# 1127 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1127 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int done = 0;
-# 1128 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1128 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   Node * parent;
-# 1129 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1129 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   Node child;
-# 1130 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1131 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1132 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1130 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1131 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1132 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   initNode_npm(&child);
-# 1133 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1134 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1135 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1133 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1134 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1135 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   while (done == 0) {
-# 1136 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1137 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1136 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1137 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     int localDepth = ss_localDepth_npm(ss);
-# 1138 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1139 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1138 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1139 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     while (localDepth > 0) {
-# 1140 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1141 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1140 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1141 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       ss_setState_npm(ss, 0);
-# 1142 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1143 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1144 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1142 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1143 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1144 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       parent = ss_top_npm(ss);
-# 1145 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1145 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       if (parent->numChildren < 0){
-# 1146 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1147 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1146 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1147 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  genChildren_npm(parent, &child, ss);
-# 1148 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1149 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1148 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1149 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       }
-# 1150 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1150 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       else {
-# 1151 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1152 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1153 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1154 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1155 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1156 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1151 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1152 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1153 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1154 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1155 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1156 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
         ss_pop_npm(ss);
-# 1157 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1157 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       }
-# 1158 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1159 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1160 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1161 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1158 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1159 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1160 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1161 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       releaseNodes_npm(ss);
-# 1162 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1162 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       localDepth = ss_localDepth_npm(ss);
-# 1163 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1163 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 1164 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1165 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1166 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1167 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1168 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1164 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1165 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1166 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1167 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1168 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (ss_acquire_npm(ss, chunkSize)) {continue; };
-# 1170 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1171 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1172 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1173 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1170 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1171 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1172 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1173 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (doSteal) {
-# 1174 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1174 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       int goodSteal = 0;
-# 1175 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1175 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       int victimId;
-# 1176 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1177 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1176 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1177 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       ss_setState_npm(ss, 1);
-# 1178 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1178 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       victimId = findwork_npm(chunkSize);
-# 1179 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1179 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       while (victimId != -1 && !goodSteal) {
-# 1180 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1181 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1180 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1181 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  goodSteal = ss_steal_npm(ss, victimId, chunkSize);
-# 1182 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1182 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
  if (!goodSteal) {victimId = findwork_npm(chunkSize); };
-# 1184 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1184 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       }
-# 1185 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1185 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       if (goodSteal) {continue; };
-# 1187 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1187 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 1188 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1189 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1190 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1191 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1192 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1193 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1194 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1188 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1189 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1190 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1191 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1192 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1193 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1194 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     ss_setState_npm(ss, 2);
-# 1195 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1195 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     done = cbarrier_wait_npm();
-# 1196 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1196 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1197 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1198 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1199 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1197 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1198 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1199 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
-# 1227 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1227 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 void showStats_npm(double elapsedSecs) {
-# 1228 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1228 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int i;
-# 1229 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1229 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int tnodes = 0, tleaves = 0, trel = 0, tacq = 0, tsteal = 0, tfail= 0;
-# 1230 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1230 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int mdepth = 0, mheight = 0;
-# 1231 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1231 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   double twork = 0.0, tsearch = 0.0, tidle = 0.0, tovh = 0.0, tcbovh = 0.0;
-# 1232 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1232 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   int nthreads = omp_get_num_threads();
-# 1251 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1251 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1251 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1251 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   for (i = 0; i < nthreads; i++) {
-# 1252 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1252 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tnodes += stealStack[i]->nNodes;
-# 1253 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1253 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tleaves += stealStack[i]->nLeaves;
-# 1254 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1254 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     trel += stealStack[i]->nRelease;
-# 1255 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1255 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tacq += stealStack[i]->nAcquire;
-# 1256 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1256 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tsteal += stealStack[i]->nSteal;
-# 1257 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1257 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tfail += stealStack[i]->nFail;
-# 1258 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1258 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     twork += stealStack[i]->time[0];
-# 1259 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1259 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tsearch += stealStack[i]->time[1];
-# 1260 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1260 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tidle += stealStack[i]->time[2];
-# 1261 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1261 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tovh += stealStack[i]->time[3];
-# 1262 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1262 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     tcbovh += stealStack[i]->time[4];
-# 1263 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1263 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     mdepth = (((mdepth) > (stealStack[i]->maxStackDepth)) ? (mdepth) : (stealStack[i]->maxStackDepth));
-# 1264 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1264 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     mheight = (((mheight) > (stealStack[i]->maxTreeDepth)) ? (mheight) : (stealStack[i]->maxTreeDepth));
-# 1265 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1265 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1266 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1266 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (trel != tacq + tsteal) {
-# 1267 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1267 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("*** error! total released != total acquired + total stolen\n");
-# 1268 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1268 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1269 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1270 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1269 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1270 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   (*____chimes_extern_func_uts_showStats)(nthreads, chunkSize, elapsedSecs, tnodes, tleaves, mheight);
-# 1271 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1272 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1271 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1272 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (verbose > 1) {
-# 1273 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1273 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     if (doSteal) {
-# 1274 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1274 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("Total chunks released = %d, of which %d reacquired and %d stolen\n",
-# 1275 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1275 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
           trel, tacq, tsteal);
-# 1276 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1276 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("Failed steal operations = %d, ", tfail);
-# 1277 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1277 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 1278 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1279 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1278 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1279 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("Max stealStack size = %d\n", mdepth);
-# 1280 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1280 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("Avg time per thread: Work = %.6f, Search = %.6f, Idle = %.6f\n", (twork / nthreads),
-# 1281 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1281 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
         (tsearch / nthreads), (tidle / nthreads));
-# 1282 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1282 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     printf("                     Overhead = %6f, CB_Overhead = %6f\n\n", (tovh / nthreads),
-# 1283 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1283 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
         (tcbovh/nthreads));
-# 1284 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1284 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1285 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1286 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1287 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1285 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1286 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1287 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   if (verbose > 2) {
-# 1288 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1288 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     for (i = 0; i < nthreads; i++) {
-# 1289 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1289 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("** Thread %d\n", i);
-# 1290 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1290 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  # nodes explored    = %d\n", stealStack[i]->nNodes);
-# 1291 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1291 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  # chunks released   = %d\n", stealStack[i]->nRelease);
-# 1292 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1292 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  # chunks reacquired = %d\n", stealStack[i]->nAcquire);
-# 1293 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1293 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  # chunks stolen     = %d\n", stealStack[i]->nSteal);
-# 1294 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1294 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  # failed steals     = %d\n", stealStack[i]->nFail);
-# 1295 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1295 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  maximum stack depth = %d\n", stealStack[i]->maxStackDepth);
-# 1296 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1296 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  work time           = %.6f secs (%d sessions)\n",
-# 1297 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1297 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
              stealStack[i]->time[0], stealStack[i]->entries[0]);
-# 1298 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1298 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  overhead time       = %.6f secs (%d sessions)\n",
-# 1299 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1299 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
              stealStack[i]->time[3], stealStack[i]->entries[3]);
-# 1300 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1300 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  search time         = %.6f secs (%d sessions)\n",
-# 1301 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1301 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
              stealStack[i]->time[1], stealStack[i]->entries[1]);
-# 1302 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1302 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  idle time           = %.6f secs (%d sessions)\n",
-# 1303 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1303 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
              stealStack[i]->time[2], stealStack[i]->entries[2]);
-# 1304 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1304 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("  wakeups             = %d, false wakeups = %d (%.2f%%)",
-# 1305 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1305 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
              stealStack[i]->wakeups, stealStack[i]->falseWakeups,
-# 1306 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1306 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
              (stealStack[i]->wakeups == 0) ? 0.00 : ((((double)stealStack[i]->falseWakeups)/stealStack[i]->wakeups)*100.0));
-# 1307 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1307 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
       printf("\n");
-# 1308 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1308 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
     }
-# 1309 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1309 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
   }
-# 1349 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
-# 1349 "/home/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1349 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
+# 1349 "/scratch/jmg3/chimes/src/examples/openmp/uts/uts_shm.c"
 }
 
 
@@ -9237,87 +9237,87 @@ void showStats_npm(double elapsedSecs) {
 
 
 static int module_init() {
-    init_module(12146000192742677280UL, 54, 30, 46, 51, 29, 9, 38, 26, 21, 4,
-                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)1, (12146000192742677280UL + 315UL), (12146000192742677280UL + 316UL), "rng_showstate", (unsigned)3, (12146000192742677280UL + 341UL), (12146000192742677280UL + 398UL), (12146000192742677280UL + 2081UL),
-                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)1, (12146000192742677280UL + 425UL), (12146000192742677280UL + 426UL), "rng_showstate", (unsigned)3, (12146000192742677280UL + 449UL), (12146000192742677280UL + 461UL), (12146000192742677280UL + 2081UL),
-                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)1, (12146000192742677280UL + 483UL), (12146000192742677280UL + 484UL), (12146000192742677280UL + 538UL), "rng_showstate", (unsigned)3, (12146000192742677280UL + 510UL), (12146000192742677280UL + 522UL), (12146000192742677280UL + 2081UL),
-                           &____alias_loc_id_3, (unsigned)3, (unsigned)0, (unsigned)1, (12146000192742677280UL + 691UL), (12146000192742677280UL + 692UL), (12146000192742677280UL + 693UL), "rng_showstate", (unsigned)3, (12146000192742677280UL + 878UL), (12146000192742677280UL + 886UL), (12146000192742677280UL + 2081UL),
-                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (unsigned)0, (12146000192742677280UL + 997UL),
-                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1046UL), (12146000192742677280UL + 1047UL),
-                           &____alias_loc_id_6, (unsigned)2, (unsigned)0, (unsigned)1, (12146000192742677280UL + 1134UL), (12146000192742677280UL + 1135UL), "uts_initRoot", (unsigned)1, (12146000192742677280UL + 1144UL),
-                           &____alias_loc_id_7, (unsigned)1, (unsigned)0, (unsigned)1, (12146000192742677280UL + 1152UL), "uts_childType", (unsigned)1, (12146000192742677280UL + 1262UL),
-                           &____alias_loc_id_8, (unsigned)3, (unsigned)0, (unsigned)1, (12146000192742677280UL + 1153UL), (12146000192742677280UL + 1154UL), (12146000192742677280UL + 1262UL), "rng_showstate", (unsigned)3, (12146000192742677280UL + 1194UL), (12146000192742677280UL + 1262UL), (12146000192742677280UL + 2081UL),
-                           &____alias_loc_id_9, (unsigned)4, (unsigned)0, (unsigned)1, (12146000192742677280UL + 1148UL), (12146000192742677280UL + 1149UL), (12146000192742677280UL + 1150UL), (12146000192742677280UL + 1151UL), "uts_numChildren", (unsigned)1, (12146000192742677280UL + 1262UL),
-                            &____alias_loc_id_10, (unsigned)3, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1156UL), (12146000192742677280UL + 1157UL), (12146000192742677280UL + 1263UL),
-                            &____alias_loc_id_11, (unsigned)3, (unsigned)0, (unsigned)1, (12146000192742677280UL + 1156UL), (12146000192742677280UL + 1157UL), (12146000192742677280UL + 1263UL), "rng_spawn", (unsigned)2, (12146000192742677280UL + 1262UL), (12146000192742677280UL + 1263UL),
-                            &____alias_loc_id_12, (unsigned)3, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1462UL), (12146000192742677280UL + 1463UL), (12146000192742677280UL + 1464UL),
-                            &____alias_loc_id_13, (unsigned)2, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1462UL), (12146000192742677280UL + 1463UL),
-                            &____alias_loc_id_14, (unsigned)2, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1463UL), (12146000192742677280UL + 1464UL),
-                            &____alias_loc_id_15, (unsigned)1, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1460UL),
-                            &____alias_loc_id_16, (unsigned)1, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1460UL),
-                            &____alias_loc_id_17, (unsigned)1, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1462UL),
-                            &____alias_loc_id_18, (unsigned)16, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1559UL), (12146000192742677280UL + 1560UL), (12146000192742677280UL + 1561UL), (12146000192742677280UL + 1562UL), (12146000192742677280UL + 1563UL), (12146000192742677280UL + 1564UL), (12146000192742677280UL + 1565UL), (12146000192742677280UL + 1566UL), (12146000192742677280UL + 1567UL), (12146000192742677280UL + 1568UL), (12146000192742677280UL + 1569UL), (12146000192742677280UL + 1570UL), (12146000192742677280UL + 1571UL), (12146000192742677280UL + 1572UL), (12146000192742677280UL + 1573UL), (12146000192742677280UL + 1574UL),
-                            &____alias_loc_id_19, (unsigned)2, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1989UL), (12146000192742677280UL + 1990UL),
-                            &____alias_loc_id_20, (unsigned)1, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1988UL),
-                            &____alias_loc_id_21, (unsigned)3, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1987UL), (12146000192742677280UL + 1991UL), (12146000192742677280UL + 2082UL),
-                            &____alias_loc_id_22, (unsigned)3, (unsigned)0, (unsigned)1, (12146000192742677280UL + 1983UL), (12146000192742677280UL + 1984UL), (12146000192742677280UL + 1985UL), "uts_parseParams", (unsigned)1, (12146000192742677280UL + 2069UL),
-                            &____alias_loc_id_23, (unsigned)1, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1987UL),
-                            &____alias_loc_id_24, (unsigned)3, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1987UL), (12146000192742677280UL + 1991UL), (12146000192742677280UL + 2082UL),
-                            &____alias_loc_id_25, (unsigned)2, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1UL), (12146000192742677280UL + 2UL),
-                            &____alias_loc_id_26, (unsigned)2, (unsigned)0, (unsigned)0, (12146000192742677280UL + 18UL), (12146000192742677280UL + 19UL),
-                            &____alias_loc_id_27, (unsigned)3, (unsigned)0, (unsigned)0, (12146000192742677280UL + 45UL), (12146000192742677280UL + 46UL), (12146000192742677280UL + 47UL),
-                            &____alias_loc_id_28, (unsigned)5, (unsigned)0, (unsigned)0, (12146000192742677280UL + 118UL), (12146000192742677280UL + 119UL), (12146000192742677280UL + 120UL), (12146000192742677280UL + 121UL), (12146000192742677280UL + 2075UL),
-                            &____alias_loc_id_29, (unsigned)2, (unsigned)0, (unsigned)0, (12146000192742677280UL + 177UL), (12146000192742677280UL + 201UL),
-                            &____alias_loc_id_30, (unsigned)4, (unsigned)0, (unsigned)0, (12146000192742677280UL + 214UL), (12146000192742677280UL + 215UL), (12146000192742677280UL + 216UL), (12146000192742677280UL + 313UL),
-                            &____alias_loc_id_31, (unsigned)4, (unsigned)0, (unsigned)0, (12146000192742677280UL + 315UL), (12146000192742677280UL + 316UL), (12146000192742677280UL + 317UL), (12146000192742677280UL + 392UL),
-                            &____alias_loc_id_32, (unsigned)4, (unsigned)0, (unsigned)0, (12146000192742677280UL + 425UL), (12146000192742677280UL + 426UL), (12146000192742677280UL + 427UL), (12146000192742677280UL + 428UL),
-                            &____alias_loc_id_33, (unsigned)4, (unsigned)0, (unsigned)0, (12146000192742677280UL + 483UL), (12146000192742677280UL + 484UL), (12146000192742677280UL + 485UL), (12146000192742677280UL + 538UL),
-                            &____alias_loc_id_34, (unsigned)2, (unsigned)0, (unsigned)0, (12146000192742677280UL + 539UL), (12146000192742677280UL + 540UL),
-                            &____alias_loc_id_35, (unsigned)2, (unsigned)0, (unsigned)0, (12146000192742677280UL + 562UL), (12146000192742677280UL + 563UL),
-                            &____alias_loc_id_36, (unsigned)3, (unsigned)0, (unsigned)0, (12146000192742677280UL + 578UL), (12146000192742677280UL + 579UL), (12146000192742677280UL + 623UL),
-                            &____alias_loc_id_37, (unsigned)5, (unsigned)0, (unsigned)0, (12146000192742677280UL + 625UL), (12146000192742677280UL + 626UL), (12146000192742677280UL + 627UL), (12146000192742677280UL + 628UL), (12146000192742677280UL + 680UL),
-                            &____alias_loc_id_38, (unsigned)14, (unsigned)0, (unsigned)0, (12146000192742677280UL + 682UL), (12146000192742677280UL + 683UL), (12146000192742677280UL + 684UL), (12146000192742677280UL + 685UL), (12146000192742677280UL + 686UL), (12146000192742677280UL + 687UL), (12146000192742677280UL + 688UL), (12146000192742677280UL + 689UL), (12146000192742677280UL + 690UL), (12146000192742677280UL + 691UL), (12146000192742677280UL + 693UL), (12146000192742677280UL + 694UL), (12146000192742677280UL + 944UL), (12146000192742677280UL + 2045UL),
-                            &____alias_loc_id_39, (unsigned)6, (unsigned)0, (unsigned)0, (12146000192742677280UL + 947UL), (12146000192742677280UL + 948UL), (12146000192742677280UL + 949UL), (12146000192742677280UL + 950UL), (12146000192742677280UL + 951UL), (12146000192742677280UL + 952UL),
-                            &____alias_loc_id_40, (unsigned)2, (unsigned)0, (unsigned)0, (12146000192742677280UL + 998UL), (12146000192742677280UL + 1045UL),
-                            &____alias_loc_id_41, (unsigned)4, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1046UL), (12146000192742677280UL + 1047UL), (12146000192742677280UL + 1048UL), (12146000192742677280UL + 1118UL),
-                            &____alias_loc_id_42, (unsigned)2, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1120UL), (12146000192742677280UL + 1133UL),
-                            &____alias_loc_id_43, (unsigned)6, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1153UL), (12146000192742677280UL + 1155UL), (12146000192742677280UL + 1156UL), (12146000192742677280UL + 1262UL), (12146000192742677280UL + 1263UL), (12146000192742677280UL + 1264UL),
-                            &____alias_loc_id_44, (unsigned)1, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1270UL),
-                            &____alias_loc_id_45, (unsigned)2, (unsigned)0, (unsigned)0, (12146000192742677280UL + 2075UL), (12146000192742677280UL + 2086UL),
-                            &____alias_loc_id_46, (unsigned)7, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1323UL), (12146000192742677280UL + 1324UL), (12146000192742677280UL + 1325UL), (12146000192742677280UL + 1326UL), (12146000192742677280UL + 1327UL), (12146000192742677280UL + 2045UL), (12146000192742677280UL + 2075UL),
-                            &____alias_loc_id_47, (unsigned)1, (unsigned)0, (unsigned)0, (12146000192742677280UL + 2075UL),
-                            &____alias_loc_id_48, (unsigned)5, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1458UL), (12146000192742677280UL + 1459UL), (12146000192742677280UL + 1462UL), (12146000192742677280UL + 1463UL), (12146000192742677280UL + 1464UL),
-                            &____alias_loc_id_49, (unsigned)1, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1560UL),
-                            &____alias_loc_id_50, (unsigned)1, (unsigned)0, (unsigned)0, (12146000192742677280UL + 1992UL),
-                            "ss_mkEmpty", 0, "_Z10ss_mkEmptyP12stealStack_t", "_Z14ss_mkEmpty_npmP12stealStack_t", 0, 1, (12146000192742677280UL + 201UL), 0UL, 2, "omp_set_lock", 1, (12146000192742677280UL + 182UL), 0UL, "omp_unset_lock", 1, (12146000192742677280UL + 182UL), 0UL,
-                            "ss_init", 0, "_Z7ss_initP12stealStack_ti", "_Z11ss_init_npmP12stealStack_ti", 0, 2, (12146000192742677280UL + 313UL), 0UL, 0UL, 10, "omp_get_thread_num", 0, 0UL, "printf", 4, (12146000192742677280UL + 2104UL), 0UL, (12146000192742677280UL + 313UL), 0UL, 0UL, "malloc", 1, 0UL, (12146000192742677280UL + 237UL), "omp_get_thread_num", 0, 0UL, "printf", 3, (12146000192742677280UL + 2095UL), 0UL, 0UL, 0UL, "ss_error", 1, (12146000192742677280UL + 2106UL), 0UL, "omp_global_lock_alloc", 0, (12146000192742677280UL + 237UL), "omp_get_thread_num", 0, 0UL, "printf", 3, (12146000192742677280UL + 2107UL), 0UL, (12146000192742677280UL + 237UL), 0UL, "ss_mkEmpty", 1, (12146000192742677280UL + 313UL), 0UL,
-                            "genChildren", 0, "_Z11genChildrenP6node_tS0_P12stealStack_t", "_Z15genChildren_npmP6node_tS0_P12stealStack_t", 5, &____alias_loc_id_10, &____alias_loc_id_11, &____alias_loc_id_7, &____alias_loc_id_8, &____alias_loc_id_9, 3, (12146000192742677280UL + 1262UL), (12146000192742677280UL + 1263UL), (12146000192742677280UL + 1264UL), 0UL, 9, "uts_numChildren", 1, (12146000192742677280UL + 1262UL), 0UL, "uts_childType", 1, (12146000192742677280UL + 1262UL), 0UL, "ss_topPosn", 1, (12146000192742677280UL + 1264UL), 0UL, "rng_showstate", 2, (12146000192742677280UL + 1262UL), (12146000192742677280UL + 2081UL), (12146000192742677280UL + 1194UL), "omp_get_thread_num", 0, 0UL, "printf", 6, (12146000192742677280UL + 2127UL), 0UL, 0UL, (12146000192742677280UL + 1194UL), 0UL, 0UL, 0UL, "rng_spawn", 3, (12146000192742677280UL + 1262UL), (12146000192742677280UL + 1263UL), 0UL, 0UL, "ss_push", 2, (12146000192742677280UL + 1264UL), (12146000192742677280UL + 1263UL), 0UL, "releaseNodes", 1, (12146000192742677280UL + 1264UL), 0UL,
-                            "ss_initState", 0, "_Z12ss_initStateP12stealStack_t", "_Z16ss_initState_npmP12stealStack_t", 1, &____alias_loc_id_4, 1, (12146000192742677280UL + 1045UL), 0UL, 3, "uts_wctime", 0, 0UL, "omp_get_thread_num", 0, 0UL, "printf", 4, (12146000192742677280UL + 2124UL), 0UL, 0UL, 0UL, 0UL,
-                            "showStats", 0, "_Z9showStatsd", "_Z13showStats_npmd", 1, &____alias_loc_id_18, 1, 0UL, 0UL, 21, "omp_get_num_threads", 0, 0UL, "printf", 1, (12146000192742677280UL + 2133UL), 0UL, "uts_showStats", 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "printf", 4, (12146000192742677280UL + 2135UL), 0UL, 0UL, 0UL, 0UL, "printf", 2, (12146000192742677280UL + 2136UL), 0UL, 0UL, "printf", 2, (12146000192742677280UL + 2110UL), 0UL, 0UL, "printf", 4, (12146000192742677280UL + 2138UL), 0UL, 0UL, 0UL, 0UL, "printf", 3, (12146000192742677280UL + 2095UL), 0UL, 0UL, 0UL, "printf", 2, (12146000192742677280UL + 2140UL), 0UL, 0UL, "printf", 2, (12146000192742677280UL + 2141UL), 0UL, 0UL, "printf", 2, (12146000192742677280UL + 2141UL), 0UL, 0UL, "printf", 2, (12146000192742677280UL + 2141UL), 0UL, 0UL, "printf", 2, (12146000192742677280UL + 2141UL), 0UL, 0UL, "printf", 2, (12146000192742677280UL + 2141UL), 0UL, 0UL, "printf", 2, (12146000192742677280UL + 2141UL), 0UL, 0UL, "printf", 3, (12146000192742677280UL + 2106UL), 0UL, 0UL, 0UL, "printf", 3, (12146000192742677280UL + 2106UL), 0UL, 0UL, 0UL, "printf", 3, (12146000192742677280UL + 2106UL), 0UL, 0UL, 0UL, "printf", 3, (12146000192742677280UL + 2106UL), 0UL, 0UL, 0UL, "printf", 4, (12146000192742677280UL + 2104UL), 0UL, 0UL, 0UL, 0UL, "printf", 1, (12146000192742677280UL + 2152UL), 0UL,
-                            "ss_push", 0, "_Z7ss_pushP12stealStack_tP6node_t", "_Z11ss_push_npmP12stealStack_tP6node_t", 1, &____alias_loc_id_0, 2, (12146000192742677280UL + 392UL), (12146000192742677280UL + 398UL), 0UL, 5, "ss_error", 1, (12146000192742677280UL + 2108UL), 0UL, "rng_showstate", 2, (12146000192742677280UL + 398UL), (12146000192742677280UL + 2081UL), (12146000192742677280UL + 341UL), "omp_get_thread_num", 0, 0UL, "printf", 5, (12146000192742677280UL + 2109UL), 0UL, 0UL, (12146000192742677280UL + 341UL), 0UL, 0UL, "memcpy", 3, (12146000192742677280UL + 359UL), (12146000192742677280UL + 398UL), 0UL, 0UL,
+    init_module(12090941540209070960UL, 54, 30, 46, 51, 29, 9, 38, 26, 21, 4,
+                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)1, (12090941540209070960UL + 315UL), (12090941540209070960UL + 316UL), "rng_showstate", (unsigned)3, (12090941540209070960UL + 341UL), (12090941540209070960UL + 398UL), (12090941540209070960UL + 2081UL),
+                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)1, (12090941540209070960UL + 425UL), (12090941540209070960UL + 426UL), "rng_showstate", (unsigned)3, (12090941540209070960UL + 449UL), (12090941540209070960UL + 461UL), (12090941540209070960UL + 2081UL),
+                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)1, (12090941540209070960UL + 483UL), (12090941540209070960UL + 484UL), (12090941540209070960UL + 538UL), "rng_showstate", (unsigned)3, (12090941540209070960UL + 510UL), (12090941540209070960UL + 522UL), (12090941540209070960UL + 2081UL),
+                           &____alias_loc_id_3, (unsigned)3, (unsigned)0, (unsigned)1, (12090941540209070960UL + 691UL), (12090941540209070960UL + 692UL), (12090941540209070960UL + 693UL), "rng_showstate", (unsigned)3, (12090941540209070960UL + 878UL), (12090941540209070960UL + 886UL), (12090941540209070960UL + 2081UL),
+                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (unsigned)0, (12090941540209070960UL + 997UL),
+                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1046UL), (12090941540209070960UL + 1047UL),
+                           &____alias_loc_id_6, (unsigned)2, (unsigned)0, (unsigned)1, (12090941540209070960UL + 1134UL), (12090941540209070960UL + 1135UL), "uts_initRoot", (unsigned)1, (12090941540209070960UL + 1144UL),
+                           &____alias_loc_id_7, (unsigned)1, (unsigned)0, (unsigned)1, (12090941540209070960UL + 1152UL), "uts_childType", (unsigned)1, (12090941540209070960UL + 1262UL),
+                           &____alias_loc_id_8, (unsigned)3, (unsigned)0, (unsigned)1, (12090941540209070960UL + 1153UL), (12090941540209070960UL + 1154UL), (12090941540209070960UL + 1262UL), "rng_showstate", (unsigned)3, (12090941540209070960UL + 1194UL), (12090941540209070960UL + 1262UL), (12090941540209070960UL + 2081UL),
+                           &____alias_loc_id_9, (unsigned)4, (unsigned)0, (unsigned)1, (12090941540209070960UL + 1148UL), (12090941540209070960UL + 1149UL), (12090941540209070960UL + 1150UL), (12090941540209070960UL + 1151UL), "uts_numChildren", (unsigned)1, (12090941540209070960UL + 1262UL),
+                            &____alias_loc_id_10, (unsigned)3, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1156UL), (12090941540209070960UL + 1157UL), (12090941540209070960UL + 1263UL),
+                            &____alias_loc_id_11, (unsigned)3, (unsigned)0, (unsigned)1, (12090941540209070960UL + 1156UL), (12090941540209070960UL + 1157UL), (12090941540209070960UL + 1263UL), "rng_spawn", (unsigned)2, (12090941540209070960UL + 1262UL), (12090941540209070960UL + 1263UL),
+                            &____alias_loc_id_12, (unsigned)3, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1462UL), (12090941540209070960UL + 1463UL), (12090941540209070960UL + 1464UL),
+                            &____alias_loc_id_13, (unsigned)2, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1462UL), (12090941540209070960UL + 1463UL),
+                            &____alias_loc_id_14, (unsigned)2, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1463UL), (12090941540209070960UL + 1464UL),
+                            &____alias_loc_id_15, (unsigned)1, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1460UL),
+                            &____alias_loc_id_16, (unsigned)1, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1460UL),
+                            &____alias_loc_id_17, (unsigned)1, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1462UL),
+                            &____alias_loc_id_18, (unsigned)16, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1559UL), (12090941540209070960UL + 1560UL), (12090941540209070960UL + 1561UL), (12090941540209070960UL + 1562UL), (12090941540209070960UL + 1563UL), (12090941540209070960UL + 1564UL), (12090941540209070960UL + 1565UL), (12090941540209070960UL + 1566UL), (12090941540209070960UL + 1567UL), (12090941540209070960UL + 1568UL), (12090941540209070960UL + 1569UL), (12090941540209070960UL + 1570UL), (12090941540209070960UL + 1571UL), (12090941540209070960UL + 1572UL), (12090941540209070960UL + 1573UL), (12090941540209070960UL + 1574UL),
+                            &____alias_loc_id_19, (unsigned)2, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1989UL), (12090941540209070960UL + 1990UL),
+                            &____alias_loc_id_20, (unsigned)1, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1988UL),
+                            &____alias_loc_id_21, (unsigned)3, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1987UL), (12090941540209070960UL + 1991UL), (12090941540209070960UL + 2082UL),
+                            &____alias_loc_id_22, (unsigned)3, (unsigned)0, (unsigned)1, (12090941540209070960UL + 1983UL), (12090941540209070960UL + 1984UL), (12090941540209070960UL + 1985UL), "uts_parseParams", (unsigned)1, (12090941540209070960UL + 2069UL),
+                            &____alias_loc_id_23, (unsigned)1, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1987UL),
+                            &____alias_loc_id_24, (unsigned)3, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1987UL), (12090941540209070960UL + 1991UL), (12090941540209070960UL + 2082UL),
+                            &____alias_loc_id_25, (unsigned)2, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1UL), (12090941540209070960UL + 2UL),
+                            &____alias_loc_id_26, (unsigned)2, (unsigned)0, (unsigned)0, (12090941540209070960UL + 18UL), (12090941540209070960UL + 19UL),
+                            &____alias_loc_id_27, (unsigned)3, (unsigned)0, (unsigned)0, (12090941540209070960UL + 45UL), (12090941540209070960UL + 46UL), (12090941540209070960UL + 47UL),
+                            &____alias_loc_id_28, (unsigned)5, (unsigned)0, (unsigned)0, (12090941540209070960UL + 118UL), (12090941540209070960UL + 119UL), (12090941540209070960UL + 120UL), (12090941540209070960UL + 121UL), (12090941540209070960UL + 2075UL),
+                            &____alias_loc_id_29, (unsigned)2, (unsigned)0, (unsigned)0, (12090941540209070960UL + 177UL), (12090941540209070960UL + 201UL),
+                            &____alias_loc_id_30, (unsigned)4, (unsigned)0, (unsigned)0, (12090941540209070960UL + 214UL), (12090941540209070960UL + 215UL), (12090941540209070960UL + 216UL), (12090941540209070960UL + 313UL),
+                            &____alias_loc_id_31, (unsigned)4, (unsigned)0, (unsigned)0, (12090941540209070960UL + 315UL), (12090941540209070960UL + 316UL), (12090941540209070960UL + 317UL), (12090941540209070960UL + 392UL),
+                            &____alias_loc_id_32, (unsigned)4, (unsigned)0, (unsigned)0, (12090941540209070960UL + 425UL), (12090941540209070960UL + 426UL), (12090941540209070960UL + 427UL), (12090941540209070960UL + 428UL),
+                            &____alias_loc_id_33, (unsigned)4, (unsigned)0, (unsigned)0, (12090941540209070960UL + 483UL), (12090941540209070960UL + 484UL), (12090941540209070960UL + 485UL), (12090941540209070960UL + 538UL),
+                            &____alias_loc_id_34, (unsigned)2, (unsigned)0, (unsigned)0, (12090941540209070960UL + 539UL), (12090941540209070960UL + 540UL),
+                            &____alias_loc_id_35, (unsigned)2, (unsigned)0, (unsigned)0, (12090941540209070960UL + 562UL), (12090941540209070960UL + 563UL),
+                            &____alias_loc_id_36, (unsigned)3, (unsigned)0, (unsigned)0, (12090941540209070960UL + 578UL), (12090941540209070960UL + 579UL), (12090941540209070960UL + 623UL),
+                            &____alias_loc_id_37, (unsigned)5, (unsigned)0, (unsigned)0, (12090941540209070960UL + 625UL), (12090941540209070960UL + 626UL), (12090941540209070960UL + 627UL), (12090941540209070960UL + 628UL), (12090941540209070960UL + 680UL),
+                            &____alias_loc_id_38, (unsigned)14, (unsigned)0, (unsigned)0, (12090941540209070960UL + 682UL), (12090941540209070960UL + 683UL), (12090941540209070960UL + 684UL), (12090941540209070960UL + 685UL), (12090941540209070960UL + 686UL), (12090941540209070960UL + 687UL), (12090941540209070960UL + 688UL), (12090941540209070960UL + 689UL), (12090941540209070960UL + 690UL), (12090941540209070960UL + 691UL), (12090941540209070960UL + 693UL), (12090941540209070960UL + 694UL), (12090941540209070960UL + 944UL), (12090941540209070960UL + 2045UL),
+                            &____alias_loc_id_39, (unsigned)6, (unsigned)0, (unsigned)0, (12090941540209070960UL + 947UL), (12090941540209070960UL + 948UL), (12090941540209070960UL + 949UL), (12090941540209070960UL + 950UL), (12090941540209070960UL + 951UL), (12090941540209070960UL + 952UL),
+                            &____alias_loc_id_40, (unsigned)2, (unsigned)0, (unsigned)0, (12090941540209070960UL + 998UL), (12090941540209070960UL + 1045UL),
+                            &____alias_loc_id_41, (unsigned)4, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1046UL), (12090941540209070960UL + 1047UL), (12090941540209070960UL + 1048UL), (12090941540209070960UL + 1118UL),
+                            &____alias_loc_id_42, (unsigned)2, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1120UL), (12090941540209070960UL + 1133UL),
+                            &____alias_loc_id_43, (unsigned)6, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1153UL), (12090941540209070960UL + 1155UL), (12090941540209070960UL + 1156UL), (12090941540209070960UL + 1262UL), (12090941540209070960UL + 1263UL), (12090941540209070960UL + 1264UL),
+                            &____alias_loc_id_44, (unsigned)1, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1270UL),
+                            &____alias_loc_id_45, (unsigned)2, (unsigned)0, (unsigned)0, (12090941540209070960UL + 2075UL), (12090941540209070960UL + 2086UL),
+                            &____alias_loc_id_46, (unsigned)7, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1323UL), (12090941540209070960UL + 1324UL), (12090941540209070960UL + 1325UL), (12090941540209070960UL + 1326UL), (12090941540209070960UL + 1327UL), (12090941540209070960UL + 2045UL), (12090941540209070960UL + 2075UL),
+                            &____alias_loc_id_47, (unsigned)1, (unsigned)0, (unsigned)0, (12090941540209070960UL + 2075UL),
+                            &____alias_loc_id_48, (unsigned)5, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1458UL), (12090941540209070960UL + 1459UL), (12090941540209070960UL + 1462UL), (12090941540209070960UL + 1463UL), (12090941540209070960UL + 1464UL),
+                            &____alias_loc_id_49, (unsigned)1, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1560UL),
+                            &____alias_loc_id_50, (unsigned)1, (unsigned)0, (unsigned)0, (12090941540209070960UL + 1992UL),
+                            "ss_mkEmpty", 0, "_Z10ss_mkEmptyP12stealStack_t", "_Z14ss_mkEmpty_npmP12stealStack_t", 0, 1, (12090941540209070960UL + 201UL), 0UL, 2, "omp_set_lock", 1, (12090941540209070960UL + 182UL), 0UL, "omp_unset_lock", 1, (12090941540209070960UL + 182UL), 0UL,
+                            "ss_init", 0, "_Z7ss_initP12stealStack_ti", "_Z11ss_init_npmP12stealStack_ti", 0, 2, (12090941540209070960UL + 313UL), 0UL, 0UL, 10, "omp_get_thread_num", 0, 0UL, "printf", 4, (12090941540209070960UL + 2104UL), 0UL, (12090941540209070960UL + 313UL), 0UL, 0UL, "malloc", 1, 0UL, (12090941540209070960UL + 237UL), "omp_get_thread_num", 0, 0UL, "printf", 3, (12090941540209070960UL + 2095UL), 0UL, 0UL, 0UL, "ss_error", 1, (12090941540209070960UL + 2106UL), 0UL, "omp_global_lock_alloc", 0, (12090941540209070960UL + 237UL), "omp_get_thread_num", 0, 0UL, "printf", 3, (12090941540209070960UL + 2107UL), 0UL, (12090941540209070960UL + 237UL), 0UL, "ss_mkEmpty", 1, (12090941540209070960UL + 313UL), 0UL,
+                            "genChildren", 0, "_Z11genChildrenP6node_tS0_P12stealStack_t", "_Z15genChildren_npmP6node_tS0_P12stealStack_t", 5, &____alias_loc_id_10, &____alias_loc_id_11, &____alias_loc_id_7, &____alias_loc_id_8, &____alias_loc_id_9, 3, (12090941540209070960UL + 1262UL), (12090941540209070960UL + 1263UL), (12090941540209070960UL + 1264UL), 0UL, 9, "uts_numChildren", 1, (12090941540209070960UL + 1262UL), 0UL, "uts_childType", 1, (12090941540209070960UL + 1262UL), 0UL, "ss_topPosn", 1, (12090941540209070960UL + 1264UL), 0UL, "rng_showstate", 2, (12090941540209070960UL + 1262UL), (12090941540209070960UL + 2081UL), (12090941540209070960UL + 1194UL), "omp_get_thread_num", 0, 0UL, "printf", 6, (12090941540209070960UL + 2127UL), 0UL, 0UL, (12090941540209070960UL + 1194UL), 0UL, 0UL, 0UL, "rng_spawn", 3, (12090941540209070960UL + 1262UL), (12090941540209070960UL + 1263UL), 0UL, 0UL, "ss_push", 2, (12090941540209070960UL + 1264UL), (12090941540209070960UL + 1263UL), 0UL, "releaseNodes", 1, (12090941540209070960UL + 1264UL), 0UL,
+                            "ss_initState", 0, "_Z12ss_initStateP12stealStack_t", "_Z16ss_initState_npmP12stealStack_t", 1, &____alias_loc_id_4, 1, (12090941540209070960UL + 1045UL), 0UL, 3, "uts_wctime", 0, 0UL, "omp_get_thread_num", 0, 0UL, "printf", 4, (12090941540209070960UL + 2124UL), 0UL, 0UL, 0UL, 0UL,
+                            "showStats", 0, "_Z9showStatsd", "_Z13showStats_npmd", 1, &____alias_loc_id_18, 1, 0UL, 0UL, 21, "omp_get_num_threads", 0, 0UL, "printf", 1, (12090941540209070960UL + 2133UL), 0UL, "uts_showStats", 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "printf", 4, (12090941540209070960UL + 2135UL), 0UL, 0UL, 0UL, 0UL, "printf", 2, (12090941540209070960UL + 2136UL), 0UL, 0UL, "printf", 2, (12090941540209070960UL + 2110UL), 0UL, 0UL, "printf", 4, (12090941540209070960UL + 2138UL), 0UL, 0UL, 0UL, 0UL, "printf", 3, (12090941540209070960UL + 2095UL), 0UL, 0UL, 0UL, "printf", 2, (12090941540209070960UL + 2140UL), 0UL, 0UL, "printf", 2, (12090941540209070960UL + 2141UL), 0UL, 0UL, "printf", 2, (12090941540209070960UL + 2141UL), 0UL, 0UL, "printf", 2, (12090941540209070960UL + 2141UL), 0UL, 0UL, "printf", 2, (12090941540209070960UL + 2141UL), 0UL, 0UL, "printf", 2, (12090941540209070960UL + 2141UL), 0UL, 0UL, "printf", 2, (12090941540209070960UL + 2141UL), 0UL, 0UL, "printf", 3, (12090941540209070960UL + 2106UL), 0UL, 0UL, 0UL, "printf", 3, (12090941540209070960UL + 2106UL), 0UL, 0UL, 0UL, "printf", 3, (12090941540209070960UL + 2106UL), 0UL, 0UL, 0UL, "printf", 3, (12090941540209070960UL + 2106UL), 0UL, 0UL, 0UL, "printf", 4, (12090941540209070960UL + 2104UL), 0UL, 0UL, 0UL, 0UL, "printf", 1, (12090941540209070960UL + 2152UL), 0UL,
+                            "ss_push", 0, "_Z7ss_pushP12stealStack_tP6node_t", "_Z11ss_push_npmP12stealStack_tP6node_t", 1, &____alias_loc_id_0, 2, (12090941540209070960UL + 392UL), (12090941540209070960UL + 398UL), 0UL, 5, "ss_error", 1, (12090941540209070960UL + 2108UL), 0UL, "rng_showstate", 2, (12090941540209070960UL + 398UL), (12090941540209070960UL + 2081UL), (12090941540209070960UL + 341UL), "omp_get_thread_num", 0, 0UL, "printf", 5, (12090941540209070960UL + 2109UL), 0UL, 0UL, (12090941540209070960UL + 341UL), 0UL, 0UL, "memcpy", 3, (12090941540209070960UL + 359UL), (12090941540209070960UL + 398UL), 0UL, 0UL,
                             "cbarrier_cancel", 0, "_Z15cbarrier_cancelv", "_Z19cbarrier_cancel_npmv", 0, 0, 0UL, 0,
-                            "parTreeSearch", 0, "_Z13parTreeSearchP12stealStack_t", "_Z17parTreeSearch_npmP12stealStack_t", 6, &____alias_loc_id_12, &____alias_loc_id_13, &____alias_loc_id_14, &____alias_loc_id_15, &____alias_loc_id_16, &____alias_loc_id_17, 1, (12146000192742677280UL + 1558UL), 0UL, 15, "initNode", 1, (12146000192742677280UL + 1461UL), 0UL, "ss_localDepth", 1, (12146000192742677280UL + 1558UL), 0UL, "ss_setState", 2, (12146000192742677280UL + 1558UL), 0UL, 0UL, "ss_top", 1, (12146000192742677280UL + 1558UL), (12146000192742677280UL + 1494UL), "genChildren", 3, (12146000192742677280UL + 1494UL), (12146000192742677280UL + 1461UL), (12146000192742677280UL + 1558UL), 0UL, "ss_pop", 1, (12146000192742677280UL + 1558UL), 0UL, "releaseNodes", 1, (12146000192742677280UL + 1558UL), 0UL, "ss_localDepth", 1, (12146000192742677280UL + 1558UL), 0UL, "ss_acquire", 2, (12146000192742677280UL + 1558UL), 0UL, 0UL, "ss_setState", 2, (12146000192742677280UL + 1558UL), 0UL, 0UL, "findwork", 1, 0UL, 0UL, "ss_steal", 3, (12146000192742677280UL + 1558UL), 0UL, 0UL, 0UL, "findwork", 1, 0UL, 0UL, "ss_setState", 2, (12146000192742677280UL + 1558UL), 0UL, 0UL, "cbarrier_wait", 0, 0UL,
-                            "impl_parseParam", 0, "_Z15impl_parseParamPcS_", "_Z19impl_parseParam_npmPcS_", 0, 2, (12146000192742677280UL + 160UL), (12146000192742677280UL + 161UL), 0UL, 3, "atoi", 1, (12146000192742677280UL + 161UL), 0UL, "atoi", 1, (12146000192742677280UL + 161UL), 0UL, "atoi", 1, (12146000192742677280UL + 161UL), 0UL,
-                            "ss_pop", 0, "_Z6ss_popP12stealStack_t", "_Z10ss_pop_npmP12stealStack_t", 1, &____alias_loc_id_2, 1, (12146000192742677280UL + 538UL), 0UL, 4, "ss_error", 1, (12146000192742677280UL + 2110UL), 0UL, "rng_showstate", 2, (12146000192742677280UL + 510UL), (12146000192742677280UL + 2081UL), (12146000192742677280UL + 522UL), "omp_get_thread_num", 0, 0UL, "printf", 6, (12146000192742677280UL + 2111UL), 0UL, 0UL, (12146000192742677280UL + 522UL), 0UL, 0UL, 0UL,
-                            "ss_acquire", 0, "_Z10ss_acquireP12stealStack_ti", "_Z14ss_acquire_npmP12stealStack_ti", 0, 2, (12146000192742677280UL + 680UL), 0UL, 0UL, 2, "omp_set_lock", 1, (12146000192742677280UL + 636UL), 0UL, "omp_unset_lock", 1, (12146000192742677280UL + 636UL), 0UL,
-                            "ss_topPosn", 0, "_Z10ss_topPosnP12stealStack_t", "_Z14ss_topPosn_npmP12stealStack_t", 0, 1, (12146000192742677280UL + 561UL), 0UL, 1, "ss_error", 1, (12146000192742677280UL + 2114UL), 0UL,
+                            "parTreeSearch", 0, "_Z13parTreeSearchP12stealStack_t", "_Z17parTreeSearch_npmP12stealStack_t", 6, &____alias_loc_id_12, &____alias_loc_id_13, &____alias_loc_id_14, &____alias_loc_id_15, &____alias_loc_id_16, &____alias_loc_id_17, 1, (12090941540209070960UL + 1558UL), 0UL, 15, "initNode", 1, (12090941540209070960UL + 1461UL), 0UL, "ss_localDepth", 1, (12090941540209070960UL + 1558UL), 0UL, "ss_setState", 2, (12090941540209070960UL + 1558UL), 0UL, 0UL, "ss_top", 1, (12090941540209070960UL + 1558UL), (12090941540209070960UL + 1494UL), "genChildren", 3, (12090941540209070960UL + 1494UL), (12090941540209070960UL + 1461UL), (12090941540209070960UL + 1558UL), 0UL, "ss_pop", 1, (12090941540209070960UL + 1558UL), 0UL, "releaseNodes", 1, (12090941540209070960UL + 1558UL), 0UL, "ss_localDepth", 1, (12090941540209070960UL + 1558UL), 0UL, "ss_acquire", 2, (12090941540209070960UL + 1558UL), 0UL, 0UL, "ss_setState", 2, (12090941540209070960UL + 1558UL), 0UL, 0UL, "findwork", 1, 0UL, 0UL, "ss_steal", 3, (12090941540209070960UL + 1558UL), 0UL, 0UL, 0UL, "findwork", 1, 0UL, 0UL, "ss_setState", 2, (12090941540209070960UL + 1558UL), 0UL, 0UL, "cbarrier_wait", 0, 0UL,
+                            "impl_parseParam", 0, "_Z15impl_parseParamPcS_", "_Z19impl_parseParam_npmPcS_", 0, 2, (12090941540209070960UL + 160UL), (12090941540209070960UL + 161UL), 0UL, 3, "atoi", 1, (12090941540209070960UL + 161UL), 0UL, "atoi", 1, (12090941540209070960UL + 161UL), 0UL, "atoi", 1, (12090941540209070960UL + 161UL), 0UL,
+                            "ss_pop", 0, "_Z6ss_popP12stealStack_t", "_Z10ss_pop_npmP12stealStack_t", 1, &____alias_loc_id_2, 1, (12090941540209070960UL + 538UL), 0UL, 4, "ss_error", 1, (12090941540209070960UL + 2110UL), 0UL, "rng_showstate", 2, (12090941540209070960UL + 510UL), (12090941540209070960UL + 2081UL), (12090941540209070960UL + 522UL), "omp_get_thread_num", 0, 0UL, "printf", 6, (12090941540209070960UL + 2111UL), 0UL, 0UL, (12090941540209070960UL + 522UL), 0UL, 0UL, 0UL,
+                            "ss_acquire", 0, "_Z10ss_acquireP12stealStack_ti", "_Z14ss_acquire_npmP12stealStack_ti", 0, 2, (12090941540209070960UL + 680UL), 0UL, 0UL, 2, "omp_set_lock", 1, (12090941540209070960UL + 636UL), 0UL, "omp_unset_lock", 1, (12090941540209070960UL + 636UL), 0UL,
+                            "ss_topPosn", 0, "_Z10ss_topPosnP12stealStack_t", "_Z14ss_topPosn_npmP12stealStack_t", 0, 1, (12090941540209070960UL + 561UL), 0UL, 1, "ss_error", 1, (12090941540209070960UL + 2114UL), 0UL,
                             "findwork", 0, "_Z8findworki", "_Z12findwork_npmi", 0, 1, 0UL, 0UL, 3, "omp_get_num_threads", 0, 0UL, "omp_get_thread_num", 0, 0UL, "omp_get_num_threads", 0, 0UL,
                             "impl_abort", 0, "_Z10impl_aborti", "_Z14impl_abort_npmi", 0, 1, 0UL, 0UL, 1, "exit", 1, 0UL, 0UL,
-                            "initNode", 0, "_Z8initNodeP6node_t", "_Z12initNode_npmP6node_t", 0, 1, (12146000192742677280UL + 1133UL), 0UL, 0,
-                            "impl_getName", 0, "_Z12impl_getNamev", "_Z16impl_getName_npmv", 0, 0, (12146000192742677280UL + 2088UL), 1, "memset", 3, (12146000192742677280UL + 18UL), 0UL, 0UL, 0UL,
-                            "ss_top", 0, "_Z6ss_topP12stealStack_t", "_Z10ss_top_npmP12stealStack_t", 1, &____alias_loc_id_1, 1, (12146000192742677280UL + 482UL), (12146000192742677280UL + 449UL), 4, "ss_error", 1, (12146000192742677280UL + 2110UL), 0UL, "rng_showstate", 2, (12146000192742677280UL + 449UL), (12146000192742677280UL + 2081UL), (12146000192742677280UL + 461UL), "omp_get_thread_num", 0, 0UL, "printf", 6, (12146000192742677280UL + 2111UL), 0UL, 0UL, (12146000192742677280UL + 461UL), 0UL, 0UL, 0UL,
-                            "impl_paramsToStr", 0, "_Z16impl_paramsToStrPci", "_Z20impl_paramsToStr_npmPci", 0, 2, (12146000192742677280UL + 114UL), 0UL, 0UL, 7, "sprintf", 2, (12146000192742677280UL + 114UL), (12146000192742677280UL + 2093UL), 0UL, "omp_get_num_threads", 0, 0UL, "sprintf", 3, (12146000192742677280UL + 114UL), (12146000192742677280UL + 2094UL), 0UL, 0UL, "sprintf", 3, (12146000192742677280UL + 114UL), (12146000192742677280UL + 2095UL), 0UL, 0UL, "sprintf", 3, (12146000192742677280UL + 114UL), (12146000192742677280UL + 2096UL), 0UL, 0UL, "sprintf", 3, (12146000192742677280UL + 114UL), (12146000192742677280UL + 2096UL), 0UL, 0UL, "sprintf", 2, (12146000192742677280UL + 114UL), (12146000192742677280UL + 2098UL), 0UL,
-                            "ss_setState", 0, "_Z11ss_setStateP12stealStack_ti", "_Z15ss_setState_npmP12stealStack_ti", 1, &____alias_loc_id_5, 2, (12146000192742677280UL + 1118UL), 0UL, 0UL, 4, "ss_error", 1, (12146000192742677280UL + 2125UL), 0UL, "uts_wctime", 0, 0UL, "omp_get_thread_num", 0, 0UL, "printf", 5, (12146000192742677280UL + 2126UL), 0UL, 0UL, 0UL, 0UL, 0UL,
-                            "ss_localDepth", 0, "_Z13ss_localDepthP12stealStack_t", "_Z17ss_localDepth_npmP12stealStack_t", 0, 1, (12146000192742677280UL + 577UL), 0UL, 0,
-                            "releaseNodes", 0, "_Z12releaseNodesP12stealStack_t", "_Z16releaseNodes_npmP12stealStack_t", 0, 1, (12146000192742677280UL + 1303UL), 0UL, 6, "ss_localDepth", 1, (12146000192742677280UL + 1303UL), 0UL, "ss_setState", 2, (12146000192742677280UL + 1303UL), 0UL, 0UL, "ss_release", 2, (12146000192742677280UL + 1303UL), 0UL, 0UL, "ss_setState", 2, (12146000192742677280UL + 1303UL), 0UL, 0UL, "cbarrier_cancel", 0, 0UL, "ss_setState", 2, (12146000192742677280UL + 1303UL), 0UL, 0UL,
-                            "ss_release", 0, "_Z10ss_releaseP12stealStack_ti", "_Z14ss_release_npmP12stealStack_ti", 0, 2, (12146000192742677280UL + 623UL), 0UL, 0UL, 3, "omp_set_lock", 1, (12146000192742677280UL + 586UL), 0UL, "ss_error", 1, (12146000192742677280UL + 2109UL), 0UL, "omp_unset_lock", 1, (12146000192742677280UL + 586UL), 0UL,
-                            "omp_global_lock_alloc", 0, "_Z21omp_global_lock_allocv", "_Z25omp_global_lock_alloc_npmv", 0, 0, (12146000192742677280UL + 4UL), 2, "malloc", 1, 0UL, (12146000192742677280UL + 4UL), "omp_init_lock", 1, (12146000192742677280UL + 4UL), 0UL,
-                            "cbarrier_wait", 0, "_Z13cbarrier_waitv", "_Z17cbarrier_wait_npmv", 0, 0, 0UL, 14, "omp_get_thread_num", 0, 0UL, "omp_set_lock", 1, (12146000192742677280UL + 1334UL), 0UL, "omp_get_num_threads", 0, 0UL, "omp_get_thread_num", 0, 0UL, "omp_unset_lock", 1, (12146000192742677280UL + 1334UL), 0UL, "omp_get_thread_num", 0, 0UL, "printf", 4, (12146000192742677280UL + 2130UL), 0UL, 0UL, 0UL, 0UL, "omp_get_thread_num", 0, 0UL, "printf", 5, (12146000192742677280UL + 2131UL), 0UL, 0UL, 0UL, 0UL, 0UL, "omp_set_lock", 1, (12146000192742677280UL + 1334UL), 0UL, "omp_get_thread_num", 0, 0UL, "omp_unset_lock", 1, (12146000192742677280UL + 1334UL), 0UL, "omp_get_thread_num", 0, 0UL, "printf", 4, (12146000192742677280UL + 2130UL), 0UL, 0UL, 0UL, 0UL,
-                            "ss_steal", 0, "_Z8ss_stealP12stealStack_tii", "_Z12ss_steal_npmP12stealStack_tii", 1, &____alias_loc_id_3, 3, (12146000192742677280UL + 944UL), 0UL, 0UL, 0UL, 17, "ss_error", 1, (12146000192742677280UL + 2101UL), 0UL, "ss_error", 1, (12146000192742677280UL + 2117UL), 0UL, "omp_get_thread_num", 0, 0UL, "printf", 3, (12146000192742677280UL + 2110UL), 0UL, 0UL, 0UL, "omp_set_lock", 1, (12146000192742677280UL + 905UL), 0UL, "omp_get_thread_num", 0, 0UL, "printf", 3, (12146000192742677280UL + 2110UL), 0UL, 0UL, 0UL, "ss_error", 1, (12146000192742677280UL + 2120UL), 0UL, "omp_unset_lock", 1, (12146000192742677280UL + 905UL), 0UL, "omp_get_thread_num", 0, 0UL, "printf", 3, (12146000192742677280UL + 2110UL), 0UL, 0UL, 0UL, "memcpy", 3, (12146000192742677280UL + 878UL), (12146000192742677280UL + 905UL), 0UL, 0UL, "rng_showstate", 2, (12146000192742677280UL + 878UL), (12146000192742677280UL + 2081UL), (12146000192742677280UL + 886UL), "omp_get_thread_num", 0, 0UL, "printf", 9, (12146000192742677280UL + 2122UL), 0UL, 0UL, 0UL, (12146000192742677280UL + 886UL), 0UL, 0UL, 0UL, (12146000192742677280UL + 905UL), 0UL, "omp_get_thread_num", 0, 0UL, "printf", 7, (12146000192742677280UL + 2123UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-                            "impl_helpMessage", 0, "_Z16impl_helpMessagev", "_Z20impl_helpMessage_npmv", 0, 0, 0UL, 3, "printf", 1, (12146000192742677280UL + 2099UL), 0UL, "printf", 1, (12146000192742677280UL + 2100UL), 0UL, "printf", 1, (12146000192742677280UL + 2101UL), 0UL,
-                            "ss_error", 0, "_Z8ss_errorPc", "_Z12ss_error_npmPc", 0, 1, (12146000192742677280UL + 213UL), 0UL, 3, "omp_get_thread_num", 0, 0UL, "printf", 3, (12146000192742677280UL + 2102UL), 0UL, (12146000192742677280UL + 213UL), 0UL, "exit", 1, 0UL, 0UL,
-                            "cb_init", 0, "_Z7cb_initv", "_Z11cb_init_npmv", 0, 0, 0UL, 5, "omp_global_lock_alloc", 0, (12146000192742677280UL + 1334UL), "omp_get_thread_num", 0, 0UL, "printf", 3, (12146000192742677280UL + 2110UL), 0UL, (12146000192742677280UL + 1334UL), 0UL, "omp_set_lock", 1, (12146000192742677280UL + 1334UL), 0UL, "omp_unset_lock", 1, (12146000192742677280UL + 1334UL), 0UL,
-                            "initRootNode", 0, "_Z12initRootNodeP6node_ti", "_Z16initRootNode_npmP6node_ti", 1, &____alias_loc_id_6, 2, (12146000192742677280UL + 1144UL), 0UL, 0UL, 1, "uts_initRoot", 2, (12146000192742677280UL + 1144UL), 0UL, 0UL,
+                            "initNode", 0, "_Z8initNodeP6node_t", "_Z12initNode_npmP6node_t", 0, 1, (12090941540209070960UL + 1133UL), 0UL, 0,
+                            "impl_getName", 0, "_Z12impl_getNamev", "_Z16impl_getName_npmv", 0, 0, (12090941540209070960UL + 2088UL), 1, "memset", 3, (12090941540209070960UL + 18UL), 0UL, 0UL, 0UL,
+                            "ss_top", 0, "_Z6ss_topP12stealStack_t", "_Z10ss_top_npmP12stealStack_t", 1, &____alias_loc_id_1, 1, (12090941540209070960UL + 482UL), (12090941540209070960UL + 449UL), 4, "ss_error", 1, (12090941540209070960UL + 2110UL), 0UL, "rng_showstate", 2, (12090941540209070960UL + 449UL), (12090941540209070960UL + 2081UL), (12090941540209070960UL + 461UL), "omp_get_thread_num", 0, 0UL, "printf", 6, (12090941540209070960UL + 2111UL), 0UL, 0UL, (12090941540209070960UL + 461UL), 0UL, 0UL, 0UL,
+                            "impl_paramsToStr", 0, "_Z16impl_paramsToStrPci", "_Z20impl_paramsToStr_npmPci", 0, 2, (12090941540209070960UL + 114UL), 0UL, 0UL, 7, "sprintf", 2, (12090941540209070960UL + 114UL), (12090941540209070960UL + 2093UL), 0UL, "omp_get_num_threads", 0, 0UL, "sprintf", 3, (12090941540209070960UL + 114UL), (12090941540209070960UL + 2094UL), 0UL, 0UL, "sprintf", 3, (12090941540209070960UL + 114UL), (12090941540209070960UL + 2095UL), 0UL, 0UL, "sprintf", 3, (12090941540209070960UL + 114UL), (12090941540209070960UL + 2096UL), 0UL, 0UL, "sprintf", 3, (12090941540209070960UL + 114UL), (12090941540209070960UL + 2096UL), 0UL, 0UL, "sprintf", 2, (12090941540209070960UL + 114UL), (12090941540209070960UL + 2098UL), 0UL,
+                            "ss_setState", 0, "_Z11ss_setStateP12stealStack_ti", "_Z15ss_setState_npmP12stealStack_ti", 1, &____alias_loc_id_5, 2, (12090941540209070960UL + 1118UL), 0UL, 0UL, 4, "ss_error", 1, (12090941540209070960UL + 2125UL), 0UL, "uts_wctime", 0, 0UL, "omp_get_thread_num", 0, 0UL, "printf", 5, (12090941540209070960UL + 2126UL), 0UL, 0UL, 0UL, 0UL, 0UL,
+                            "ss_localDepth", 0, "_Z13ss_localDepthP12stealStack_t", "_Z17ss_localDepth_npmP12stealStack_t", 0, 1, (12090941540209070960UL + 577UL), 0UL, 0,
+                            "releaseNodes", 0, "_Z12releaseNodesP12stealStack_t", "_Z16releaseNodes_npmP12stealStack_t", 0, 1, (12090941540209070960UL + 1303UL), 0UL, 6, "ss_localDepth", 1, (12090941540209070960UL + 1303UL), 0UL, "ss_setState", 2, (12090941540209070960UL + 1303UL), 0UL, 0UL, "ss_release", 2, (12090941540209070960UL + 1303UL), 0UL, 0UL, "ss_setState", 2, (12090941540209070960UL + 1303UL), 0UL, 0UL, "cbarrier_cancel", 0, 0UL, "ss_setState", 2, (12090941540209070960UL + 1303UL), 0UL, 0UL,
+                            "ss_release", 0, "_Z10ss_releaseP12stealStack_ti", "_Z14ss_release_npmP12stealStack_ti", 0, 2, (12090941540209070960UL + 623UL), 0UL, 0UL, 3, "omp_set_lock", 1, (12090941540209070960UL + 586UL), 0UL, "ss_error", 1, (12090941540209070960UL + 2109UL), 0UL, "omp_unset_lock", 1, (12090941540209070960UL + 586UL), 0UL,
+                            "omp_global_lock_alloc", 0, "_Z21omp_global_lock_allocv", "_Z25omp_global_lock_alloc_npmv", 0, 0, (12090941540209070960UL + 4UL), 2, "malloc", 1, 0UL, (12090941540209070960UL + 4UL), "omp_init_lock", 1, (12090941540209070960UL + 4UL), 0UL,
+                            "cbarrier_wait", 0, "_Z13cbarrier_waitv", "_Z17cbarrier_wait_npmv", 0, 0, 0UL, 14, "omp_get_thread_num", 0, 0UL, "omp_set_lock", 1, (12090941540209070960UL + 1334UL), 0UL, "omp_get_num_threads", 0, 0UL, "omp_get_thread_num", 0, 0UL, "omp_unset_lock", 1, (12090941540209070960UL + 1334UL), 0UL, "omp_get_thread_num", 0, 0UL, "printf", 4, (12090941540209070960UL + 2130UL), 0UL, 0UL, 0UL, 0UL, "omp_get_thread_num", 0, 0UL, "printf", 5, (12090941540209070960UL + 2131UL), 0UL, 0UL, 0UL, 0UL, 0UL, "omp_set_lock", 1, (12090941540209070960UL + 1334UL), 0UL, "omp_get_thread_num", 0, 0UL, "omp_unset_lock", 1, (12090941540209070960UL + 1334UL), 0UL, "omp_get_thread_num", 0, 0UL, "printf", 4, (12090941540209070960UL + 2130UL), 0UL, 0UL, 0UL, 0UL,
+                            "ss_steal", 0, "_Z8ss_stealP12stealStack_tii", "_Z12ss_steal_npmP12stealStack_tii", 1, &____alias_loc_id_3, 3, (12090941540209070960UL + 944UL), 0UL, 0UL, 0UL, 17, "ss_error", 1, (12090941540209070960UL + 2101UL), 0UL, "ss_error", 1, (12090941540209070960UL + 2117UL), 0UL, "omp_get_thread_num", 0, 0UL, "printf", 3, (12090941540209070960UL + 2110UL), 0UL, 0UL, 0UL, "omp_set_lock", 1, (12090941540209070960UL + 905UL), 0UL, "omp_get_thread_num", 0, 0UL, "printf", 3, (12090941540209070960UL + 2110UL), 0UL, 0UL, 0UL, "ss_error", 1, (12090941540209070960UL + 2120UL), 0UL, "omp_unset_lock", 1, (12090941540209070960UL + 905UL), 0UL, "omp_get_thread_num", 0, 0UL, "printf", 3, (12090941540209070960UL + 2110UL), 0UL, 0UL, 0UL, "memcpy", 3, (12090941540209070960UL + 878UL), (12090941540209070960UL + 905UL), 0UL, 0UL, "rng_showstate", 2, (12090941540209070960UL + 878UL), (12090941540209070960UL + 2081UL), (12090941540209070960UL + 886UL), "omp_get_thread_num", 0, 0UL, "printf", 9, (12090941540209070960UL + 2122UL), 0UL, 0UL, 0UL, (12090941540209070960UL + 886UL), 0UL, 0UL, 0UL, (12090941540209070960UL + 905UL), 0UL, "omp_get_thread_num", 0, 0UL, "printf", 7, (12090941540209070960UL + 2123UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+                            "impl_helpMessage", 0, "_Z16impl_helpMessagev", "_Z20impl_helpMessage_npmv", 0, 0, 0UL, 3, "printf", 1, (12090941540209070960UL + 2099UL), 0UL, "printf", 1, (12090941540209070960UL + 2100UL), 0UL, "printf", 1, (12090941540209070960UL + 2101UL), 0UL,
+                            "ss_error", 0, "_Z8ss_errorPc", "_Z12ss_error_npmPc", 0, 1, (12090941540209070960UL + 213UL), 0UL, 3, "omp_get_thread_num", 0, 0UL, "printf", 3, (12090941540209070960UL + 2102UL), 0UL, (12090941540209070960UL + 213UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "cb_init", 0, "_Z7cb_initv", "_Z11cb_init_npmv", 0, 0, 0UL, 5, "omp_global_lock_alloc", 0, (12090941540209070960UL + 1334UL), "omp_get_thread_num", 0, 0UL, "printf", 3, (12090941540209070960UL + 2110UL), 0UL, (12090941540209070960UL + 1334UL), 0UL, "omp_set_lock", 1, (12090941540209070960UL + 1334UL), 0UL, "omp_unset_lock", 1, (12090941540209070960UL + 1334UL), 0UL,
+                            "initRootNode", 0, "_Z12initRootNodeP6node_ti", "_Z16initRootNode_npmP6node_ti", 1, &____alias_loc_id_6, 2, (12090941540209070960UL + 1144UL), 0UL, 0UL, 1, "uts_initRoot", 2, (12090941540209070960UL + 1144UL), 0UL, 0UL,
                                "rng_showstate", (void **)&(____chimes_extern_func_rng_showstate),
                                "rng_spawn", (void **)&(____chimes_extern_func_rng_spawn),
                                "uts_childType", (void **)&(____chimes_extern_func_uts_childType),
@@ -9365,60 +9365,60 @@ static int module_init() {
                            "uts_printParams", &(____chimes_does_checkpoint_uts_printParams_npm),
                            "uts_showStats", &(____chimes_does_checkpoint_uts_showStats_npm),
                            "uts_wctime", &(____chimes_does_checkpoint_uts_wctime_npm),
-                             (12146000192742677280UL + 623UL), (12146000192742677280UL + 586UL),
-                             (12146000192742677280UL + 214UL), (12146000192742677280UL + 313UL),
-                             (12146000192742677280UL + 578UL), (12146000192742677280UL + 623UL),
-                             (12146000192742677280UL + 1270UL), (12146000192742677280UL + 1303UL),
-                             (12146000192742677280UL + 625UL), (12146000192742677280UL + 680UL),
-                             (12146000192742677280UL + 313UL), (12146000192742677280UL + 237UL),
-                             (12146000192742677280UL + 1148UL), (12146000192742677280UL + 1262UL),
-                             (12146000192742677280UL + 1149UL), (12146000192742677280UL + 1263UL),
-                             (12146000192742677280UL + 317UL), (12146000192742677280UL + 341UL),
-                             (12146000192742677280UL + 316UL), (12146000192742677280UL + 398UL),
-                             (12146000192742677280UL + 315UL), (12146000192742677280UL + 392UL),
-                             (12146000192742677280UL + 392UL), (12146000192742677280UL + 359UL),
-                             (12146000192742677280UL + 177UL), (12146000192742677280UL + 201UL),
-                             (12146000192742677280UL + 119UL), (12146000192742677280UL + 161UL),
-                             (12146000192742677280UL + 118UL), (12146000192742677280UL + 160UL),
-                             (12146000192742677280UL + 692UL), (12146000192742677280UL + 878UL),
-                             (12146000192742677280UL + 693UL), (12146000192742677280UL + 886UL),
-                             (12146000192742677280UL + 690UL), (12146000192742677280UL + 905UL),
-                             (12146000192742677280UL + 1985UL), (12146000192742677280UL + 2069UL),
-                             (12146000192742677280UL + 45UL), (12146000192742677280UL + 114UL),
-                             (12146000192742677280UL + 1UL), (12146000192742677280UL + 4UL),
-                             (12146000192742677280UL + 428UL), (12146000192742677280UL + 449UL),
-                             (12146000192742677280UL + 2UL), (12146000192742677280UL + 4UL),
-                             (12146000192742677280UL + 2153UL), (12146000192742677280UL + 2008UL),
-                             (12146000192742677280UL + 1120UL), (12146000192742677280UL + 1133UL),
-                             (12146000192742677280UL + 425UL), (12146000192742677280UL + 482UL),
-                             (12146000192742677280UL + 1460UL), (12146000192742677280UL + 1494UL),
-                             (12146000192742677280UL + 427UL), (12146000192742677280UL + 461UL),
-                             (12146000192742677280UL + 426UL), (12146000192742677280UL + 449UL),
-                             (12146000192742677280UL + 201UL), (12146000192742677280UL + 182UL),
-                             (12146000192742677280UL + 997UL), (12146000192742677280UL + 1045UL),
-                             (12146000192742677280UL + 204UL), (12146000192742677280UL + 213UL),
-                             (12146000192742677280UL + 1155UL), (12146000192742677280UL + 1194UL),
-                             (12146000192742677280UL + 562UL), (12146000192742677280UL + 577UL),
-                             (12146000192742677280UL + 1150UL), (12146000192742677280UL + 1264UL),
-                             (12146000192742677280UL + 1134UL), (12146000192742677280UL + 1144UL),
-                             (12146000192742677280UL + 485UL), (12146000192742677280UL + 522UL),
-                             (12146000192742677280UL + 484UL), (12146000192742677280UL + 510UL),
-                             (12146000192742677280UL + 483UL), (12146000192742677280UL + 538UL),
-                             (12146000192742677280UL + 482UL), (12146000192742677280UL + 449UL),
-                             (12146000192742677280UL + 1991UL), (12146000192742677280UL + 2045UL),
-                             (12146000192742677280UL + 2045UL), (12146000192742677280UL + 905UL),
-                             (12146000192742677280UL + 1046UL), (12146000192742677280UL + 1118UL),
-                             (12146000192742677280UL + 19UL), (12146000192742677280UL + 2088UL),
-                             (12146000192742677280UL + 18UL), (12146000192742677280UL + 2088UL),
-                             (12146000192742677280UL + 944UL), (12146000192742677280UL + 878UL),
-                             (12146000192742677280UL + 2086UL), (12146000192742677280UL + 1334UL),
-                             (12146000192742677280UL + 2082UL), (12146000192742677280UL + 2045UL),
-                             (12146000192742677280UL + 689UL), (12146000192742677280UL + 905UL),
-                             (12146000192742677280UL + 682UL), (12146000192742677280UL + 944UL),
-                             (12146000192742677280UL + 1458UL), (12146000192742677280UL + 1558UL),
-                             (12146000192742677280UL + 680UL), (12146000192742677280UL + 636UL),
-                             (12146000192742677280UL + 539UL), (12146000192742677280UL + 561UL),
-                             (12146000192742677280UL + 538UL), (12146000192742677280UL + 510UL),
+                             (12090941540209070960UL + 623UL), (12090941540209070960UL + 586UL),
+                             (12090941540209070960UL + 214UL), (12090941540209070960UL + 313UL),
+                             (12090941540209070960UL + 578UL), (12090941540209070960UL + 623UL),
+                             (12090941540209070960UL + 1270UL), (12090941540209070960UL + 1303UL),
+                             (12090941540209070960UL + 625UL), (12090941540209070960UL + 680UL),
+                             (12090941540209070960UL + 313UL), (12090941540209070960UL + 237UL),
+                             (12090941540209070960UL + 1148UL), (12090941540209070960UL + 1262UL),
+                             (12090941540209070960UL + 1149UL), (12090941540209070960UL + 1263UL),
+                             (12090941540209070960UL + 317UL), (12090941540209070960UL + 341UL),
+                             (12090941540209070960UL + 316UL), (12090941540209070960UL + 398UL),
+                             (12090941540209070960UL + 315UL), (12090941540209070960UL + 392UL),
+                             (12090941540209070960UL + 392UL), (12090941540209070960UL + 359UL),
+                             (12090941540209070960UL + 177UL), (12090941540209070960UL + 201UL),
+                             (12090941540209070960UL + 119UL), (12090941540209070960UL + 161UL),
+                             (12090941540209070960UL + 118UL), (12090941540209070960UL + 160UL),
+                             (12090941540209070960UL + 692UL), (12090941540209070960UL + 878UL),
+                             (12090941540209070960UL + 693UL), (12090941540209070960UL + 886UL),
+                             (12090941540209070960UL + 690UL), (12090941540209070960UL + 905UL),
+                             (12090941540209070960UL + 1985UL), (12090941540209070960UL + 2069UL),
+                             (12090941540209070960UL + 45UL), (12090941540209070960UL + 114UL),
+                             (12090941540209070960UL + 1UL), (12090941540209070960UL + 4UL),
+                             (12090941540209070960UL + 428UL), (12090941540209070960UL + 449UL),
+                             (12090941540209070960UL + 2UL), (12090941540209070960UL + 4UL),
+                             (12090941540209070960UL + 2153UL), (12090941540209070960UL + 2008UL),
+                             (12090941540209070960UL + 1120UL), (12090941540209070960UL + 1133UL),
+                             (12090941540209070960UL + 425UL), (12090941540209070960UL + 482UL),
+                             (12090941540209070960UL + 1460UL), (12090941540209070960UL + 1494UL),
+                             (12090941540209070960UL + 427UL), (12090941540209070960UL + 461UL),
+                             (12090941540209070960UL + 426UL), (12090941540209070960UL + 449UL),
+                             (12090941540209070960UL + 201UL), (12090941540209070960UL + 182UL),
+                             (12090941540209070960UL + 997UL), (12090941540209070960UL + 1045UL),
+                             (12090941540209070960UL + 204UL), (12090941540209070960UL + 213UL),
+                             (12090941540209070960UL + 1155UL), (12090941540209070960UL + 1194UL),
+                             (12090941540209070960UL + 562UL), (12090941540209070960UL + 577UL),
+                             (12090941540209070960UL + 1150UL), (12090941540209070960UL + 1264UL),
+                             (12090941540209070960UL + 1134UL), (12090941540209070960UL + 1144UL),
+                             (12090941540209070960UL + 485UL), (12090941540209070960UL + 522UL),
+                             (12090941540209070960UL + 484UL), (12090941540209070960UL + 510UL),
+                             (12090941540209070960UL + 483UL), (12090941540209070960UL + 538UL),
+                             (12090941540209070960UL + 482UL), (12090941540209070960UL + 449UL),
+                             (12090941540209070960UL + 1991UL), (12090941540209070960UL + 2045UL),
+                             (12090941540209070960UL + 2045UL), (12090941540209070960UL + 905UL),
+                             (12090941540209070960UL + 1046UL), (12090941540209070960UL + 1118UL),
+                             (12090941540209070960UL + 19UL), (12090941540209070960UL + 2088UL),
+                             (12090941540209070960UL + 18UL), (12090941540209070960UL + 2088UL),
+                             (12090941540209070960UL + 944UL), (12090941540209070960UL + 878UL),
+                             (12090941540209070960UL + 2086UL), (12090941540209070960UL + 1334UL),
+                             (12090941540209070960UL + 2082UL), (12090941540209070960UL + 2045UL),
+                             (12090941540209070960UL + 689UL), (12090941540209070960UL + 905UL),
+                             (12090941540209070960UL + 682UL), (12090941540209070960UL + 944UL),
+                             (12090941540209070960UL + 1458UL), (12090941540209070960UL + 1558UL),
+                             (12090941540209070960UL + 680UL), (12090941540209070960UL + 636UL),
+                             (12090941540209070960UL + 539UL), (12090941540209070960UL + 561UL),
+                             (12090941540209070960UL + 538UL), (12090941540209070960UL + 510UL),
                      "node_t", 256UL, 4, "int", (int)__builtin_offsetof (struct node_t, type), "int", (int)__builtin_offsetof (struct node_t, height), "int", (int)__builtin_offsetof (struct node_t, numChildren), "%struct.state_t", (int)__builtin_offsetof (struct node_t, state),
                      "omp_lock_t", 32UL, 1, "[ 4 x unsigned char ]", (int)__builtin_offsetof (omp_lock_t, _x),
                      "state_t", 160UL, 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state),
@@ -9499,51 +9499,51 @@ static int module_init() {
                         "showStats|nthreads|0", 1, "uts_showStats",
                         "main|root|0", 1, "main",
                         "main|t1|0", 2, "uts_wctime", "parTreeSearch",
-        "ss_error", 0UL, (int)1, 12146000192742679386UL,
-        "omp_global_lock_alloc", 12146000192742677517UL, (int)0,
-        "ss_mkEmpty", 0UL, (int)1, 12146000192742677593UL,
-        "ss_error", 0UL, (int)1, 12146000192742679388UL,
-        "ss_error", 0UL, (int)1, 12146000192742679390UL,
-        "ss_error", 0UL, (int)1, 12146000192742679390UL,
-        "ss_error", 0UL, (int)1, 12146000192742679394UL,
-        "ss_error", 0UL, (int)1, 12146000192742679389UL,
-        "ss_error", 0UL, (int)1, 12146000192742679381UL,
-        "ss_error", 0UL, (int)1, 12146000192742679397UL,
-        "ss_error", 0UL, (int)1, 12146000192742679400UL,
-        "ss_error", 0UL, (int)1, 12146000192742679405UL,
-        "ss_topPosn", 0UL, (int)1, 12146000192742678544UL,
-        "omp_global_lock_alloc", 12146000192742678614UL, (int)0,
-        "ss_localDepth", 0UL, (int)1, 12146000192742678583UL,
-        "ss_release", 0UL, (int)2, 12146000192742678583UL, 0UL,
+        "ss_error", 0UL, (int)1, 12090941540209073066UL,
+        "omp_global_lock_alloc", 12090941540209071197UL, (int)0,
+        "ss_mkEmpty", 0UL, (int)1, 12090941540209071273UL,
+        "ss_error", 0UL, (int)1, 12090941540209073068UL,
+        "ss_error", 0UL, (int)1, 12090941540209073070UL,
+        "ss_error", 0UL, (int)1, 12090941540209073070UL,
+        "ss_error", 0UL, (int)1, 12090941540209073074UL,
+        "ss_error", 0UL, (int)1, 12090941540209073069UL,
+        "ss_error", 0UL, (int)1, 12090941540209073061UL,
+        "ss_error", 0UL, (int)1, 12090941540209073077UL,
+        "ss_error", 0UL, (int)1, 12090941540209073080UL,
+        "ss_error", 0UL, (int)1, 12090941540209073085UL,
+        "ss_topPosn", 0UL, (int)1, 12090941540209072224UL,
+        "omp_global_lock_alloc", 12090941540209072294UL, (int)0,
+        "ss_localDepth", 0UL, (int)1, 12090941540209072263UL,
+        "ss_release", 0UL, (int)2, 12090941540209072263UL, 0UL,
         "cbarrier_cancel", 0UL, (int)0,
-        "initNode", 0UL, (int)1, 12146000192742678741UL,
-        "ss_localDepth", 0UL, (int)1, 12146000192742678838UL,
-        "ss_localDepth", 0UL, (int)1, 12146000192742678838UL,
-        "ss_acquire", 0UL, (int)2, 12146000192742678838UL, 0UL,
+        "initNode", 0UL, (int)1, 12090941540209072421UL,
+        "ss_localDepth", 0UL, (int)1, 12090941540209072518UL,
+        "ss_localDepth", 0UL, (int)1, 12090941540209072518UL,
+        "ss_acquire", 0UL, (int)2, 12090941540209072518UL, 0UL,
         "findwork", 0UL, (int)1, 0UL,
         "findwork", 0UL, (int)1, 0UL,
         "cbarrier_wait", 0UL, (int)0,
         "cb_init", 0UL, (int)0,
-        "ss_init", 0UL, (int)2, 12146000192742679325UL, 0UL,
-        "rng_showstate", 12146000192742677621UL, (int)2, 12146000192742677678UL, 12146000192742679361UL,
+        "ss_init", 0UL, (int)2, 12090941540209073005UL, 0UL,
+        "rng_showstate", 12090941540209071301UL, (int)2, 12090941540209071358UL, 12090941540209073041UL,
         "uts_wctime", 0UL, (int)0,
-        "uts_initRoot", 0UL, (int)2, 12146000192742678424UL, 0UL,
-        "ss_setState", 0UL, (int)2, 12146000192742678838UL, 0UL,
-        "ss_top", 12146000192742678774UL, (int)1, 12146000192742678838UL,
-        "genChildren", 0UL, (int)3, 12146000192742678774UL, 12146000192742678741UL, 12146000192742678838UL,
-        "ss_pop", 0UL, (int)1, 12146000192742678838UL,
-        "releaseNodes", 0UL, (int)1, 12146000192742678838UL,
-        "ss_setState", 0UL, (int)2, 12146000192742678838UL, 0UL,
-        "ss_steal", 0UL, (int)3, 12146000192742678838UL, 0UL, 0UL,
-        "ss_setState", 0UL, (int)2, 12146000192742678838UL, 0UL,
+        "uts_initRoot", 0UL, (int)2, 12090941540209072104UL, 0UL,
+        "ss_setState", 0UL, (int)2, 12090941540209072518UL, 0UL,
+        "ss_top", 12090941540209072454UL, (int)1, 12090941540209072518UL,
+        "genChildren", 0UL, (int)3, 12090941540209072454UL, 12090941540209072421UL, 12090941540209072518UL,
+        "ss_pop", 0UL, (int)1, 12090941540209072518UL,
+        "releaseNodes", 0UL, (int)1, 12090941540209072518UL,
+        "ss_setState", 0UL, (int)2, 12090941540209072518UL, 0UL,
+        "ss_steal", 0UL, (int)3, 12090941540209072518UL, 0UL, 0UL,
+        "ss_setState", 0UL, (int)2, 12090941540209072518UL, 0UL,
         "uts_showStats", 0UL, (int)6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-        "uts_parseParams", 0UL, (int)2, 0UL, 12146000192742679349UL,
+        "uts_parseParams", 0UL, (int)2, 0UL, 12090941540209073029UL,
         "uts_printParams", 0UL, (int)0,
-        "initRootNode", 0UL, (int)2, 12146000192742679266UL, 0UL,
-        "ss_push", 0UL, (int)2, 12146000192742679325UL, 12146000192742679266UL,
-        "ss_initState", 0UL, (int)1, 12146000192742679325UL,
+        "initRootNode", 0UL, (int)2, 12090941540209072946UL, 0UL,
+        "ss_push", 0UL, (int)2, 12090941540209073005UL, 12090941540209072946UL,
+        "ss_initState", 0UL, (int)1, 12090941540209073005UL,
         "uts_wctime", 0UL, (int)0,
-        "parTreeSearch", 0UL, (int)1, 12146000192742679325UL,
+        "parTreeSearch", 0UL, (int)1, 12090941540209073005UL,
         "uts_wctime", 0UL, (int)0,
         "showStats", 0UL, (int)1, 0UL);
     register_global_var("global|doSteal", "i32", (void *)(&doSteal), 4, 0, 0, 0UL, 0);
@@ -9557,7 +9557,7 @@ static int module_init() {
     register_global_var("global|cb_cancel", "i32", (void *)(&cb_cancel), 4, 0, 0, 0UL, 0);
     register_global_var("global|cb_count", "i32", (void *)(&cb_count), 4, 0, 0, 0UL, 0);
     register_global_var("global|cb_done", "i32", (void *)(&cb_done), 4, 0, 0, 0UL, 0);
-    register_global_var("global|cb_lock", "%struct.omp_lock_t*", (void *)(&cb_lock), 8, 1, 0, (12146000192742677280UL + 2086UL), 0);
+    register_global_var("global|cb_lock", "%struct.omp_lock_t*", (void *)(&cb_lock), 8, 1, 0, (12090941540209070960UL + 2086UL), 0);
     register_global_var("global|startTime", "[32 x double]", (void *)(&startTime), 256, 0, 0, 0UL, 0);
     return 0;
 }

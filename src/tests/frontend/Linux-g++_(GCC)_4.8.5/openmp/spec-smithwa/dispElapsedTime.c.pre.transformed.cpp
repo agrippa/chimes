@@ -17,11 +17,11 @@ static int ____must_manage_getSeconds = 2;
 
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -30,7 +30,7 @@ static unsigned ____alias_loc_id_1;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -86,7 +86,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 69 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 69 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -100,8 +100,8 @@ inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
-# 11 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 11 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 28 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1046,7 +1046,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 12 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c" 2
+# 12 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 1 3 4
@@ -2222,7 +2222,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 13 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c" 2
+# 13 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c" 2
 # 1 "/usr/include/time.h" 1 3 4
 # 30 "/usr/include/time.h" 3 4
 extern "C" {
@@ -2458,11 +2458,11 @@ extern int getdate_r (__const char *__restrict __string,
 
 
 }
-# 14 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c" 2
-# 14 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 14 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c" 2
+# 14 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h" 1
-# 22 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h" 1
+# 22 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 1 3 4
 # 34 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 3 4
 typedef struct
@@ -2536,8 +2536,8 @@ int omp_in_final (void) throw ();
 
 
 }
-# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h" 2
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
+# 23 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h" 2
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
 typedef struct simmat {
   char similarity[((64) + 1)][((64) + 1)];
   char aminoAcid[(((64) + 1) + 1)];
@@ -2598,7 +2598,7 @@ typedef struct cstr {
   int *finalStartsI, *finalStartsJ, *finalEndsI, *finalEndsJ;
   unsigned char **finalSeqsI, **finalSeqsJ;
 } CSTR_T;
-# 207 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
+# 207 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
 void getUserParameters(void);
 
 SEQDATA_T *genScalData(unsigned int, SIMMATRIX_T*, int, int, int);
@@ -2636,55 +2636,55 @@ void verifyMergeAlignment(SIMMATRIX_T*, CSTR_T*, int);
 double getSeconds(void);
 
 void dispElapsedTime(double);
-# 16 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c" 2
-# 25 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
-# 25 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 16 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c" 2
+# 25 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 25 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 double getSeconds_npm( void );
 double getSeconds_quick( void ); double getSeconds( void );
 double getSeconds_resumable( void )
-# 26 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 26 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&getSeconds), "getSeconds", &____must_manage_getSeconds, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 48 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
-# 48 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 48 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 48 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
    double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (( ( (double) 0.0) )); rm_stack(false, 0UL, "getSeconds", &____must_manage_getSeconds, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 49 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
-# 50 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 49 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 50 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 rm_stack(false, 0UL, "getSeconds", &____must_manage_getSeconds, ____alias_loc_id_0, ____chimes_did_disable0, false); }
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
-# 52 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
-# 53 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
-# 54 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 51 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 52 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 53 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 54 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 void dispElapsedTime_npm(double startTime);
 void dispElapsedTime(double startTime) {
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 }
-# 25 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 25 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 double getSeconds_quick( void )
-# 26 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 26 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&getSeconds), "getSeconds", &____must_manage_getSeconds, 0, 0) ; ; ;
-# 48 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
-# 48 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 48 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 48 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
    double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (( ( (double) 0.0) )); rm_stack(false, 0UL, "getSeconds", &____must_manage_getSeconds, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 49 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
-# 50 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 49 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 50 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 rm_stack(false, 0UL, "getSeconds", &____must_manage_getSeconds, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 
 double getSeconds( void ) { return (____chimes_replaying ? getSeconds_resumable() : getSeconds_quick()); }
-# 25 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 25 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 double getSeconds_npm( void )
-# 26 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 26 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 {
-# 48 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
-# 48 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 48 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 48 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
    double ____chimes_ret_var_0; ____chimes_ret_var_0 = (( ( (double) 0.0) )); return ____chimes_ret_var_0; ;
-# 49 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
-# 50 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 49 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 50 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 }
-# 54 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 54 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 void dispElapsedTime_npm(double startTime) {
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 }
 
 
@@ -2692,9 +2692,9 @@ void dispElapsedTime_npm(double startTime) {
 
 
 static int module_init() {
-    init_module(1228571069279002029UL, 0, 2, 0, 2, 2, 0, 2, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (1228571069279002029UL + 1UL),
-                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (1228571069279002029UL + 8UL),
+    init_module(2650959538954479066UL, 0, 2, 0, 2, 2, 0, 2, 0, 0, 0,
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (2650959538954479066UL + 1UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (2650959538954479066UL + 8UL),
                             "dispElapsedTime", 0, "_Z15dispElapsedTimed", "_Z19dispElapsedTime_npmd", 0, 1, 0UL, 0UL, 0,
                             "getSeconds", 0, "_Z10getSecondsv", "_Z14getSeconds_npmv", 0, 0, 0UL, 0,
                            "dispElapsedTime", &(____chimes_does_checkpoint_dispElapsedTime_npm),

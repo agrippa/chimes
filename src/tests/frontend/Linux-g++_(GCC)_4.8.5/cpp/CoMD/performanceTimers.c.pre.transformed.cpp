@@ -69,11 +69,11 @@ static unsigned ____alias_loc_id_18;
 static unsigned ____alias_loc_id_19;
 static unsigned ____alias_loc_id_20;
 static unsigned ____alias_loc_id_21;
-# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -82,7 +82,7 @@ static unsigned ____alias_loc_id_21;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -138,16 +138,16 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 29 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.h" 1
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 29 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.h" 1
 
 
 
@@ -1097,7 +1097,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 7 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.h" 2
+# 7 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.h" 2
 
 
 enum TimerHandle{
@@ -1113,7 +1113,7 @@ enum TimerHandle{
    commHaloTimer,
    commReduceTimer,
    numberOfTimers};
-# 57 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.h"
+# 57 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.h"
 void profileStart(const enum TimerHandle handle);
 void profileStop(const enum TimerHandle handle);
 
@@ -1125,9 +1125,9 @@ void printPerformanceResults(int nGlobalAtoms, int printRate);
 
 
 void printPerformanceResultsYaml(FILE* file);
-# 30 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c" 2
-# 30 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 31 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 30 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c" 2
+# 30 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 31 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 
 # 1 "/usr/include/sys/time.h" 1 3 4
 # 27 "/usr/include/sys/time.h" 3 4
@@ -1338,7 +1338,7 @@ extern int futimesat (int __fd, __const char *__file,
         __const struct timeval __tvp[2]) throw ();
 # 191 "/usr/include/sys/time.h" 3 4
 }
-# 33 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c" 2
+# 33 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 29 "/usr/include/string.h" 3 4
 extern "C" {
@@ -1840,7 +1840,7 @@ extern "C++" __const char *basename (__const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 # 646 "/usr/include/string.h" 3 4
 }
-# 34 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c" 2
+# 34 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c" 2
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stdint.h" 1 3 4
 # 9 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stdint.h" 3 4
 # 1 "/usr/include/stdint.h" 1 3 4
@@ -1908,7 +1908,7 @@ typedef unsigned long int uintptr_t;
 typedef long int intmax_t;
 typedef unsigned long int uintmax_t;
 # 10 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stdint.h" 2 3 4
-# 35 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c" 2
+# 35 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c" 2
 # 1 "/usr/include/inttypes.h" 1 3 4
 # 274 "/usr/include/inttypes.h" 3 4
 extern "C" {
@@ -2002,7 +2002,7 @@ wcstoumax (__const wchar_t *__restrict nptr, wchar_t **__restrict endptr, int ba
 }
 # 442 "/usr/include/inttypes.h" 3 4
 }
-# 36 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c" 2
+# 36 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c" 2
 # 1 "/usr/include/math.h" 1 3 4
 # 30 "/usr/include/math.h" 3 4
 extern "C" {
@@ -3007,12 +3007,12 @@ __signbitl (long double __x) throw ()
 # 417 "/usr/include/math.h" 2 3 4
 # 472 "/usr/include/math.h" 3 4
 }
-# 37 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c" 2
-# 37 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 38 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 37 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c" 2
+# 37 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 38 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 
-# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mytype.h" 1
-# 13 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mytype.h"
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mytype.h" 1
+# 13 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mytype.h"
 typedef double real_t;
 
 
@@ -3026,9 +3026,9 @@ static void zeroReal3(real3 a)
    a[1] = 0.0;
    a[2] = 0.0;
 }
-# 40 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c" 2
-# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/parallel.h" 1
-# 10 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/parallel.h"
+# 40 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c" 2
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/parallel.h" 1
+# 10 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/parallel.h"
 typedef struct RankReduceDataSt
 {
    double val;
@@ -3083,1203 +3083,1203 @@ void bcastParallel(void* buf, int len, int root);
 
 
 int builtWithMpi(void);
-# 41 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c" 2
-# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/yamlOutput.h" 1
-# 12 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/yamlOutput.h"
+# 41 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c" 2
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/yamlOutput.h" 1
+# 12 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/yamlOutput.h"
 void yamlBegin(void);
 void yamlEnd(void);
 
 void yamlAppInfo(FILE* file);
 
 void printSeparator(FILE* file);
-# 42 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c" 2
-# 42 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 43 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 42 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c" 2
+# 42 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 43 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 static uint64_t getTime(void);
-# 44 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 44 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 static double getTick(void);
-# 45 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 45 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 static void timerStats(void);
-# 46 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 47 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 48 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 49 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 46 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 47 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 48 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 49 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 char* timerName[numberOfTimers] = {
-# 50 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 50 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    "total",
-# 51 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 51 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    "loop",
-# 52 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 52 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    "timestep",
-# 53 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 53 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    "  position",
-# 54 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 54 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    "  velocity",
-# 55 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 55 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    "  redistribute",
-# 56 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 56 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    "    atomHalo",
-# 57 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 57 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    "  force",
-# 58 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 58 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    "    eamHalo",
-# 59 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 59 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    "commHalo",
-# 60 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 60 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    "commReduce"
-# 61 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 61 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 };
-# 62 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 63 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 64 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 65 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 62 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 63 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 64 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 65 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 typedef struct TimersSt
-# 66 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 66 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {
-# 67 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 67 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    uint64_t start;
-# 68 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 68 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    uint64_t total;
-# 69 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 69 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    uint64_t count;
-# 70 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 70 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    uint64_t elapsed;
-# 71 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 72 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 71 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 72 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    int minRank;
-# 73 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 73 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    int maxRank;
-# 74 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 75 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 74 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 75 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    double minValue;
-# 76 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 76 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    double maxValue;
-# 77 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 77 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    double average;
-# 78 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 78 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    double stdev;
-# 79 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 79 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 } Timers;
-# 80 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 81 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 82 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 80 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 81 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 82 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 typedef struct TimerGlobalSt
-# 83 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 83 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {
-# 84 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 84 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    double atomRate;
-# 85 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 85 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    double atomAllRate;
-# 86 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 86 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    double atomsPerUSec;
-# 87 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 87 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 } TimerGlobal;
-# 88 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 89 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 88 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 89 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 static Timers perfTimer[numberOfTimers];
-# 90 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 90 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 static TimerGlobal perfGlobal;
-# 91 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 92 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 91 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 92 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 void profileStart_npm(const enum TimerHandle handle);static uint64_t getTime_npm(void);
 void profileStart_quick(const enum TimerHandle handle); void profileStart(const enum TimerHandle handle);static uint64_t getTime_quick(void); static uint64_t getTime(void);
 void profileStart_resumable(const enum TimerHandle handle)
-# 93 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 93 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&profileStart), "profileStart", &____must_manage_profileStart, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 94 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 94 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     call_lbl_0: perfTimer[handle].start = ({ calling_npm("getTime", 0); getTime_npm(); });
-# 95 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 95 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 rm_stack(false, 0UL, "profileStart", &____must_manage_profileStart, ____alias_loc_id_14, ____chimes_did_disable0, false); }
-# 96 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 97 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 96 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 97 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 void profileStop_npm(const enum TimerHandle handle);
 void profileStop_quick(const enum TimerHandle handle); void profileStop(const enum TimerHandle handle);
 void profileStop_resumable(const enum TimerHandle handle)
-# 98 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 98 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&profileStop), "profileStop", &____must_manage_profileStop, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 99 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 99 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfTimer[handle].count += 1;
-# 100 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 100 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     uint64_t delta; call_lbl_0: delta = (({ calling_npm("getTime", 0); getTime_npm(); }) - perfTimer[handle].start) ;
-# 101 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 101 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfTimer[handle].total += delta;
-# 102 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 102 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfTimer[handle].elapsed += delta;
-# 103 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 103 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 rm_stack(false, 0UL, "profileStop", &____must_manage_profileStop, ____alias_loc_id_16, ____chimes_did_disable1, false); }
-# 104 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 105 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 106 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 107 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 108 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 104 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 105 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 106 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 107 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 108 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 double getElapsedTime_npm(const enum TimerHandle handle);static double getTick_npm(void);
 double getElapsedTime_quick(const enum TimerHandle handle); double getElapsedTime(const enum TimerHandle handle);static double getTick_quick(void); static double getTick(void);
 double getElapsedTime_resumable(const enum TimerHandle handle)
-# 109 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 109 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&getElapsedTime), "getElapsedTime", &____must_manage_getElapsedTime, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 110 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 110 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     double etime; call_lbl_0: etime = (({ calling_npm("getTick", 0); getTick_npm(); }) * (double)perfTimer[handle].elapsed) ;
-# 111 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 111 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfTimer[handle].elapsed = 0;
-# 112 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 113 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 112 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 113 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (etime); rm_stack(false, 0UL, "getElapsedTime", &____must_manage_getElapsedTime, ____alias_loc_id_17, ____chimes_did_disable2, false); return ____chimes_ret_var_0; ;
-# 114 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 114 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 rm_stack(false, 0UL, "getElapsedTime", &____must_manage_getElapsedTime, ____alias_loc_id_17, ____chimes_did_disable2, false); }
-# 115 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 116 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 117 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 118 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 119 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 120 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 115 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 116 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 117 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 118 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 119 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 120 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 void printPerformanceResults_npm(int nGlobalAtoms, int printRate);void timerStats_npm(void);static int (*____chimes_extern_func_getMyRank)(void) = getMyRank;static int (*____chimes_extern_func_getNRanks)(void) = getNRanks;static int (*____chimes_extern_func_printRank)(void) = printRank;
 void printPerformanceResults_quick(int nGlobalAtoms, int printRate); void printPerformanceResults(int nGlobalAtoms, int printRate);void timerStats_quick(void); void timerStats(void);
 void printPerformanceResults_resumable(int nGlobalAtoms, int printRate)
-# 121 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 121 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&printPerformanceResults), "printPerformanceResults", &____must_manage_printPerformanceResults, 2, 2, (size_t)(0UL), (size_t)(0UL), "printPerformanceResults|nGlobalAtoms|0", &____must_checkpoint_printPerformanceResults_nGlobalAtoms_0, "i32", (void *)(&nGlobalAtoms), (size_t)4, 0, 0, 0, "printPerformanceResults|printRate|0", &____must_checkpoint_printPerformanceResults_printRate_0, "i32", (void *)(&printRate), (size_t)4, 0, 0, 0) ; double loopTime;
-# 121 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 121 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 double tick;
-# 121 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 121 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  if (____must_checkpoint_printPerformanceResults_loopTime_0 || ____must_checkpoint_printPerformanceResults_tick_0) { register_stack_vars(2, "printPerformanceResults|loopTime|0", &____must_checkpoint_printPerformanceResults_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0, "printPerformanceResults|tick|0", &____must_checkpoint_printPerformanceResults_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
-# 122 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 123 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 122 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 123 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     call_lbl_0: ({ calling((void*)timerStats, 0, ____alias_loc_id_1, 0UL, 0); (timerStats)(); }) ;
-# 124 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 125 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 124 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 125 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     call_lbl_1: if (! ({ calling((void*)printRank, 1, 0, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printPerformanceResults", &____must_manage_printPerformanceResults, ____alias_loc_id_19, ____chimes_did_disable3, false); return; };
-# 127 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 128 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 129 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 127 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 128 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 129 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
        call_lbl_2: tick = (({ calling_npm("getTick", 0); getTick_npm(); })) ;
-# 130 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 130 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       loopTime = (perfTimer[loopTimer].total*tick) ;
-# 131 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 132 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 131 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 132 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
      int ____chimes_unroll_var_0; call_lbl_3: ____chimes_unroll_var_0 = ( ({ calling((void*)getMyRank, 3, ____alias_loc_id_3, 0UL, 0); (getMyRank)(); }) ) ; fprintf(stdout, "\n\nTimings for Rank %d\n", ____chimes_unroll_var_0);
-# 133 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 133 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "        Timer        # Calls    Avg/Call (s)   Total (s)    %% Loop\n");
-# 134 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 134 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "___________________________________________________________________\n");
-# 135 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 135 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { int ii; for ( ii = (0) ; ii<numberOfTimers; ++ii)
-# 136 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 136 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 137 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 137 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
        double totalTime; totalTime = (perfTimer[ii].total*tick) ;
-# 138 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 138 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       if (perfTimer[ii].count > 0) {fprintf(stdout, "%-16s%lu     %8.4f      %8.4f    %8.2f\n",
-# 140 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 140 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
                  timerName[ii],
-# 141 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 141 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
                  perfTimer[ii].count,
-# 142 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 142 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
                  totalTime/(double)perfTimer[ii].count,
-# 143 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 143 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
                  totalTime,
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
                  totalTime/loopTime*100.0); };
-# 145 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 145 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
-# 146 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 147 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 146 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 147 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
      int ____chimes_unroll_var_1; call_lbl_4: ____chimes_unroll_var_1 = ( ({ calling((void*)getNRanks, 4, ____alias_loc_id_2, 0UL, 0); (getNRanks)(); }) ) ; fprintf(stdout, "\nTiming Statistics Across %d Ranks:\n", ____chimes_unroll_var_1);
-# 148 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 148 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "        Timer        Rank: Min(s)       Rank: Max(s)      Avg(s)    Stdev(s)\n");
-# 149 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 149 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "_____________________________________________________________________________\n");
-# 150 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 151 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 150 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 151 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { int ii; for ( ii = (0) ; ii < numberOfTimers; ++ii)
-# 152 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 152 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 153 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 153 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       if (perfTimer[ii].count > 0) {fprintf(stdout, "%-16s%6d:%10.4f  %6d:%10.4f  %10.4f  %10.4f\n",
-# 155 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 155 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
             timerName[ii],
-# 156 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 156 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
             perfTimer[ii].minRank, perfTimer[ii].minValue*tick,
-# 157 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 157 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
             perfTimer[ii].maxRank, perfTimer[ii].maxValue*tick,
-# 158 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 158 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
             perfTimer[ii].average*tick, perfTimer[ii].stdev*tick); };
-# 159 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 159 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
-# 160 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 160 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    alias_group_changed(____alias_loc_id_0); double atomsPerTask; call_lbl_5: atomsPerTask = (nGlobalAtoms/(real_t) ({ calling((void*)getNRanks, 5, ____alias_loc_id_0, 0UL, 0); (getNRanks)(); }) ) ;
-# 161 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 161 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfGlobal.atomRate = perfTimer[timestepTimer].average * tick * 1e6 /
-# 162 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 162 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       (atomsPerTask * perfTimer[timestepTimer].count * printRate);
-# 163 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 163 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfGlobal.atomAllRate = perfTimer[timestepTimer].average * tick * 1e6 /
-# 164 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 164 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       (nGlobalAtoms * perfTimer[timestepTimer].count * printRate);
-# 165 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 165 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfGlobal.atomsPerUSec = 1.0 / perfGlobal.atomAllRate;
-# 166 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 167 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 166 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 167 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "\n---------------------------------------------------\n");
-# 168 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 168 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, " Average atom update rate:     %6.2f us/atom/task\n", perfGlobal.atomRate);
-# 169 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 169 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "---------------------------------------------------\n\n");
-# 170 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 171 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 170 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 171 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "\n---------------------------------------------------\n");
-# 172 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 172 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, " Average all atom update rate: %6.2f us/atom\n", perfGlobal.atomAllRate);
-# 173 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 173 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "---------------------------------------------------\n\n");
-# 174 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 175 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 174 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 175 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "\n---------------------------------------------------\n");
-# 176 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 176 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, " Average atom rate:            %6.2f atoms/us\n", perfGlobal.atomsPerUSec);
-# 177 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 177 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "---------------------------------------------------\n\n");
-# 178 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 178 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 rm_stack(false, 0UL, "printPerformanceResults", &____must_manage_printPerformanceResults, ____alias_loc_id_19, ____chimes_did_disable3, false); }
-# 179 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 180 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 179 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 180 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 void printPerformanceResultsYaml_npm(FILE* file);
 void printPerformanceResultsYaml_quick(FILE* file); void printPerformanceResultsYaml(FILE* file);
 void printPerformanceResultsYaml_resumable(FILE* file)
-# 181 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&printPerformanceResultsYaml), "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, 1, 1, (size_t)(11198724033581183633UL), "printPerformanceResultsYaml|file|0", &____must_checkpoint_printPerformanceResultsYaml_file_0, "%struct._IO_FILE*", (void *)(&file), (size_t)8, 1, 0, 0) ; double loopTime;
-# 181 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 181 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+{const int ____chimes_did_disable4 = new_stack((void *)(&printPerformanceResultsYaml), "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, 1, 1, (size_t)(1001291142434387681UL), "printPerformanceResultsYaml|file|0", &____must_checkpoint_printPerformanceResultsYaml_file_0, "%struct._IO_FILE*", (void *)(&file), (size_t)8, 1, 0, 0) ; double loopTime;
+# 181 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 double tick;
-# 181 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 181 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  if (____must_checkpoint_printPerformanceResultsYaml_loopTime_0 || ____must_checkpoint_printPerformanceResultsYaml_tick_0) { register_stack_vars(2, "printPerformanceResultsYaml|loopTime|0", &____must_checkpoint_printPerformanceResultsYaml_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0, "printPerformanceResultsYaml|tick|0", &____must_checkpoint_printPerformanceResultsYaml_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
-# 182 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 182 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    alias_group_changed(____alias_loc_id_11); call_lbl_0: if (! ({ calling((void*)printRank, 0, ____alias_loc_id_11, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, ____alias_loc_id_21, ____chimes_did_disable4, false); return; };
-# 184 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 185 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 184 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 185 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
        call_lbl_1: tick = (({ calling_npm("getTick", 0); getTick_npm(); })) ;
-# 186 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 186 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       loopTime = (perfTimer[loopTimer].total*tick) ;
-# 187 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 188 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 187 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 188 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file,"\nPerformance Results:\n");
-# 189 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 189 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
      int ____chimes_unroll_var_2; call_lbl_2: ____chimes_unroll_var_2 = ( ({ calling((void*)getNRanks, 2, ____alias_loc_id_13, 0UL, 0); (getNRanks)(); }) ) ; fprintf(file, "  TotalRanks: %d\n", ____chimes_unroll_var_2);
-# 190 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 190 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "  ReportingTimeUnits: seconds\n");
-# 191 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 191 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
      int ____chimes_unroll_var_3; call_lbl_3: ____chimes_unroll_var_3 = ( ({ calling((void*)getMyRank, 3, ____alias_loc_id_12, 0UL, 0); (getMyRank)(); }) ) ; fprintf(file, "Performance Results For Rank %d:\n", ____chimes_unroll_var_3);
-# 192 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 192 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { int ii; for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 193 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 193 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 194 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 194 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       if (perfTimer[ii].count > 0)
-# 195 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 195 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       {
-# 196 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 196 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
           double totalTime; totalTime = (perfTimer[ii].total*tick) ;
-# 197 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 197 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "  Timer: %s\n", timerName[ii]);
-# 198 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 198 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    CallCount:  %lu\n", perfTimer[ii].count);
-# 199 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 199 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    AvgPerCall: %8.4f\n", totalTime/(double)perfTimer[ii].count);
-# 200 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 200 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    Total:      %8.4f\n", totalTime);
-# 201 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 201 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    PercentLoop: %8.2f\n", totalTime/loopTime*100);
-# 202 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 202 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       }
-# 203 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 203 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
-# 204 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 205 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 204 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 205 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "Performance Results Across Ranks:\n");
-# 206 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 206 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { int ii; for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 207 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 207 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 208 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 208 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       if (perfTimer[ii].count > 0)
-# 209 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 209 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       {
-# 210 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 210 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "  Timer: %s\n", timerName[ii]);
-# 211 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 211 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    MinRank: %d\n", perfTimer[ii].minRank);
-# 212 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 212 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    MinTime: %8.4f\n", perfTimer[ii].minValue*tick);
-# 213 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 213 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    MaxRank: %d\n", perfTimer[ii].maxRank);
-# 214 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 214 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    MaxTime: %8.4f\n", perfTimer[ii].maxValue*tick);
-# 215 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 215 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    AvgTime: %8.4f\n", perfTimer[ii].average*tick);
-# 216 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 216 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    StdevTime: %8.4f\n", perfTimer[ii].stdev*tick);
-# 217 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 217 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       }
-# 218 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 218 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
-# 219 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 220 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 219 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 220 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file,"Performance Global Update Rates:\n");
-# 221 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 221 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "  AtomUpdateRate:\n");
-# 222 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 222 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "    AverageRate: %6.2f\n", perfGlobal.atomRate);
-# 223 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 223 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "    Units: us/atom/task\n");
-# 224 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 224 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "  AllAtomUpdateRate:\n");
-# 225 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 225 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "    AverageRate: %6.2f\n", perfGlobal.atomAllRate);
-# 226 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 226 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "    Units: us/atom\n");
-# 227 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 227 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "  AtomRate:\n");
-# 228 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 228 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "    AverageRate: %6.2f\n", perfGlobal.atomsPerUSec);
-# 229 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 229 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "    Units: atoms/us\n");
-# 230 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 231 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 230 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 231 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "\n");
-# 232 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 232 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 rm_stack(false, 0UL, "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, ____alias_loc_id_21, ____chimes_did_disable4, false); }
-# 243 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 243 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 243 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 243 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 static uint64_t getTime_resumable(void)
-# 244 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 244 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {const int ____chimes_did_disable5 = new_stack((void *)(&getTime), "getTime", &____must_manage_getTime, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 245 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 245 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     struct timeval ptime; ;
-# 246 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 246 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     uint64_t t; t = (0) ;
-# 247 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 247 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    gettimeofday(&ptime, (struct timezone *)__null);
-# 248 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 248 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    t = ((uint64_t)1000000)*(uint64_t)ptime.tv_sec + (uint64_t)ptime.tv_usec;
-# 249 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 250 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 249 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 250 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     uint64_t ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (t); rm_stack(false, 0UL, "getTime", &____must_manage_getTime, ____alias_loc_id_15, ____chimes_did_disable5, false); return ____chimes_ret_var_1; ;
-# 251 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 251 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 rm_stack(false, 0UL, "getTime", &____must_manage_getTime, ____alias_loc_id_15, ____chimes_did_disable5, false); }
-# 252 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 253 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 254 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 255 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 256 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 257 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 252 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 253 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 254 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 255 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 256 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 257 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 static double getTick_resumable(void)
-# 258 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 258 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {const int ____chimes_did_disable6 = new_stack((void *)(&getTick), "getTick", &____must_manage_getTick, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 259 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 259 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     double seconds_per_cycle; seconds_per_cycle = (1.0e-6) ;
-# 260 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 260 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     double ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (seconds_per_cycle); rm_stack(false, 0UL, "getTick", &____must_manage_getTick, ____alias_loc_id_18, ____chimes_did_disable6, false); return ____chimes_ret_var_2; ;
-# 261 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 261 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 rm_stack(false, 0UL, "getTick", &____must_manage_getTick, ____alias_loc_id_18, ____chimes_did_disable6, false); }
-# 262 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 263 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 264 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 262 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 263 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 264 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 static void (*____chimes_extern_func_addDoubleParallel)(double *, double *, int) = addDoubleParallel;static void (*____chimes_extern_func_maxRankDoubleParallel)(struct RankReduceDataSt *, struct RankReduceDataSt *, int) = maxRankDoubleParallel;static void (*____chimes_extern_func_minRankDoubleParallel)(struct RankReduceDataSt *, struct RankReduceDataSt *, int) = minRankDoubleParallel;
 void timerStats_resumable(void)
-# 265 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 265 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {const int ____chimes_did_disable7 = new_stack((void *)(&timerStats), "timerStats", &____must_manage_timerStats, 0, 0) ; RankReduceData reduceRecvBuf[11];
-# 265 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 265 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 RankReduceData reduceSendBuf[11];
-# 265 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 265 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 double recvBuf[11];
-# 265 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 265 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 double sendBuf[11];
-# 265 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 265 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  if (____must_checkpoint_timerStats_reduceRecvBuf_0 || ____must_checkpoint_timerStats_reduceSendBuf_0 || ____must_checkpoint_timerStats_recvBuf_0 || ____must_checkpoint_timerStats_sendBuf_0) { register_stack_vars(4, "timerStats|reduceRecvBuf|0", &____must_checkpoint_timerStats_reduceRecvBuf_0, "[11 x %struct.RankReduceDataSt]", (void *)(reduceRecvBuf), (size_t)176, 0, 0, 0, "timerStats|reduceSendBuf|0", &____must_checkpoint_timerStats_reduceSendBuf_0, "[11 x %struct.RankReduceDataSt]", (void *)(reduceSendBuf), (size_t)176, 0, 0, 0, "timerStats|recvBuf|0", &____must_checkpoint_timerStats_recvBuf_0, "[11 x double]", (void *)(recvBuf), (size_t)88, 0, 0, 0, "timerStats|sendBuf|0", &____must_checkpoint_timerStats_sendBuf_0, "[11 x double]", (void *)(sendBuf), (size_t)88, 0, 0, 0); } if (____chimes_replaying) { goto lbl_0; } ; ;
-# 266 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 266 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
      ;
-# 267 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 268 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 269 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 267 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 268 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 269 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { int ii; for ( ii = (0) ;ii < numberOfTimers; ii++) { sendBuf[ii] = (double)perfTimer[ii].total; } };
-# 271 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-    call_lbl_0: ({ calling((void*)addDoubleParallel, 0, ____alias_loc_id_9, 0UL, 3, (size_t)(11198724033581183204UL), (size_t)(11198724033581183205UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
-# 272 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 273 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 271 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+    call_lbl_0: ({ calling((void*)addDoubleParallel, 0, ____alias_loc_id_9, 0UL, 3, (size_t)(1001291142434387252UL), (size_t)(1001291142434387253UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
+# 272 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 273 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { lbl_0: int ii; if (____must_checkpoint_timerStats_ii_1 != 0) { register_stack_var("timerStats|ii|1", &____must_checkpoint_timerStats_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } for ( ii = (0) ;ii < numberOfTimers; ii++) { alias_group_changed(____alias_loc_id_10); call_lbl_1: perfTimer[ii].average = recvBuf[ii] / (double) ({ calling((void*)getNRanks, 1, ____alias_loc_id_10, 0UL, 0); (getNRanks)(); }) ; } };
-# 275 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 276 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 277 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 278 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 275 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 276 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 277 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 278 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
        ;
-# 279 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 279 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { lbl_1: int ii; if (____must_checkpoint_timerStats_ii_2 != 0) { register_stack_var("timerStats|ii|2", &____must_checkpoint_timerStats_ii_2, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_2; } for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 280 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 280 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 281 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 281 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       reduceSendBuf[ii].val = (double)perfTimer[ii].total;
-# 282 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 282 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
        call_lbl_2: reduceSendBuf[ii].rank = ({ calling((void*)getMyRank, 2, ____alias_loc_id_8, 0UL, 0); (getMyRank)(); }) ;
-# 283 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 283 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
-# 284 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-    call_lbl_3: ({ calling((void*)minRankDoubleParallel, 3, ____alias_loc_id_7, 0UL, 3, (size_t)(11198724033581183208UL), (size_t)(11198724033581183209UL), (size_t)(0UL)); (minRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
-# 285 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 284 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+    call_lbl_3: ({ calling((void*)minRankDoubleParallel, 3, ____alias_loc_id_7, 0UL, 3, (size_t)(1001291142434387256UL), (size_t)(1001291142434387257UL), (size_t)(0UL)); (minRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
+# 285 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { int ii; for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 286 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 286 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 287 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 287 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       perfTimer[ii].minValue = reduceRecvBuf[ii].val;
-# 288 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 288 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       perfTimer[ii].minRank = reduceRecvBuf[ii].rank;
-# 289 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 289 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
-# 290 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-    call_lbl_4: ({ calling((void*)maxRankDoubleParallel, 4, ____alias_loc_id_6, 0UL, 3, (size_t)(11198724033581183208UL), (size_t)(11198724033581183209UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
-# 291 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 290 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+    call_lbl_4: ({ calling((void*)maxRankDoubleParallel, 4, ____alias_loc_id_6, 0UL, 3, (size_t)(1001291142434387256UL), (size_t)(1001291142434387257UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
+# 291 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { int ii; for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 292 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 292 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 293 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 293 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       perfTimer[ii].maxValue = reduceRecvBuf[ii].val;
-# 294 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 294 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       perfTimer[ii].maxRank = reduceRecvBuf[ii].rank;
-# 295 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 295 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
-# 296 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 297 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 298 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 296 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 297 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 298 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { int ii; for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 299 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 299 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 300 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 300 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
        double temp; temp = ((double)perfTimer[ii].total - perfTimer[ii].average) ;
-# 301 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 301 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       sendBuf[ii] = temp * temp;
-# 302 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 302 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
-# 303 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-    call_lbl_5: ({ calling((void*)addDoubleParallel, 5, ____alias_loc_id_4, 0UL, 3, (size_t)(11198724033581183204UL), (size_t)(11198724033581183205UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
-# 304 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 303 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+    call_lbl_5: ({ calling((void*)addDoubleParallel, 5, ____alias_loc_id_4, 0UL, 3, (size_t)(1001291142434387252UL), (size_t)(1001291142434387253UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
+# 304 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { lbl_2: int ii; if (____must_checkpoint_timerStats_ii_6 != 0) { register_stack_var("timerStats|ii|6", &____must_checkpoint_timerStats_ii_6, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 305 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 305 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 306 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 306 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
         int ____chimes_unroll_var_4; call_lbl_6: ____chimes_unroll_var_4 = ( ({ calling((void*)getNRanks, 6, ____alias_loc_id_5, 0UL, 0); (getNRanks)(); }) ) ; perfTimer[ii].stdev = sqrt(recvBuf[ii] / (double) ____chimes_unroll_var_4);
-# 307 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 307 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
-# 308 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 308 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 rm_stack(false, 0UL, "timerStats", &____must_manage_timerStats, ____alias_loc_id_20, ____chimes_did_disable7, false); }
-# 92 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 92 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 void profileStart_quick(const enum TimerHandle handle)
-# 93 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 93 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&profileStart), "profileStart", &____must_manage_profileStart, 1, 0, (size_t)(0UL)) ; ; ;
-# 94 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 94 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     call_lbl_0: perfTimer[handle].start = ({ calling_npm("getTime", 0); getTime_npm(); });
-# 95 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 95 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 rm_stack(false, 0UL, "profileStart", &____must_manage_profileStart, ____alias_loc_id_14, ____chimes_did_disable0, false); }
 
 void profileStart(const enum TimerHandle handle) { (____chimes_replaying ? profileStart_resumable(handle) : profileStart_quick(handle)); }
-# 97 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 97 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 void profileStop_quick(const enum TimerHandle handle)
-# 98 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 98 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&profileStop), "profileStop", &____must_manage_profileStop, 1, 0, (size_t)(0UL)) ; ; ;
-# 99 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 99 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfTimer[handle].count += 1;
-# 100 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 100 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     uint64_t delta; call_lbl_0: delta = (({ calling_npm("getTime", 0); getTime_npm(); }) - perfTimer[handle].start) ;
-# 101 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 101 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfTimer[handle].total += delta;
-# 102 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 102 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfTimer[handle].elapsed += delta;
-# 103 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 103 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 rm_stack(false, 0UL, "profileStop", &____must_manage_profileStop, ____alias_loc_id_16, ____chimes_did_disable1, false); }
 
 void profileStop(const enum TimerHandle handle) { (____chimes_replaying ? profileStop_resumable(handle) : profileStop_quick(handle)); }
-# 108 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 108 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 double getElapsedTime_quick(const enum TimerHandle handle)
-# 109 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 109 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&getElapsedTime), "getElapsedTime", &____must_manage_getElapsedTime, 1, 0, (size_t)(0UL)) ; ; ;
-# 110 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 110 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     double etime; call_lbl_0: etime = (({ calling_npm("getTick", 0); getTick_npm(); }) * (double)perfTimer[handle].elapsed) ;
-# 111 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 111 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfTimer[handle].elapsed = 0;
-# 112 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 113 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 112 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 113 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (etime); rm_stack(false, 0UL, "getElapsedTime", &____must_manage_getElapsedTime, ____alias_loc_id_17, ____chimes_did_disable2, false); return ____chimes_ret_var_0; ;
-# 114 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 114 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 rm_stack(false, 0UL, "getElapsedTime", &____must_manage_getElapsedTime, ____alias_loc_id_17, ____chimes_did_disable2, false); }
 
 double getElapsedTime(const enum TimerHandle handle) { return (____chimes_replaying ? getElapsedTime_resumable(handle) : getElapsedTime_quick(handle)); }
-# 120 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 120 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 void printPerformanceResults_quick(int nGlobalAtoms, int printRate)
-# 121 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 121 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&printPerformanceResults), "printPerformanceResults", &____must_manage_printPerformanceResults, 2, 2, (size_t)(0UL), (size_t)(0UL), "printPerformanceResults|nGlobalAtoms|0", &____must_checkpoint_printPerformanceResults_nGlobalAtoms_0, "i32", (void *)(&nGlobalAtoms), (size_t)4, 0, 0, 0, "printPerformanceResults|printRate|0", &____must_checkpoint_printPerformanceResults_printRate_0, "i32", (void *)(&printRate), (size_t)4, 0, 0, 0) ; double loopTime;
-# 121 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 121 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 double tick;
-# 121 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 121 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  if (____must_checkpoint_printPerformanceResults_loopTime_0 || ____must_checkpoint_printPerformanceResults_tick_0) { register_stack_vars(2, "printPerformanceResults|loopTime|0", &____must_checkpoint_printPerformanceResults_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0, "printPerformanceResults|tick|0", &____must_checkpoint_printPerformanceResults_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0); } ; ;
-# 122 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 123 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 122 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 123 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     call_lbl_0: ({ calling((void*)timerStats, 0, ____alias_loc_id_1, 0UL, 0); timerStats_quick(); }) ;
-# 124 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 125 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 124 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 125 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     call_lbl_1: if (! ({ calling((void*)printRank, 1, 0, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printPerformanceResults", &____must_manage_printPerformanceResults, ____alias_loc_id_19, ____chimes_did_disable3, false); return; };
-# 127 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 128 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 129 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 127 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 128 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 129 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
        call_lbl_2: tick = (({ calling_npm("getTick", 0); getTick_npm(); })) ;
-# 130 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 130 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       loopTime = (perfTimer[loopTimer].total*tick) ;
-# 131 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 132 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 131 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 132 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
      int ____chimes_unroll_var_0; call_lbl_3: ____chimes_unroll_var_0 = ( ({ calling((void*)getMyRank, 3, ____alias_loc_id_3, 0UL, 0); (getMyRank)(); }) ) ; fprintf(stdout, "\n\nTimings for Rank %d\n", ____chimes_unroll_var_0);
-# 133 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 133 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "        Timer        # Calls    Avg/Call (s)   Total (s)    %% Loop\n");
-# 134 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 134 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "___________________________________________________________________\n");
-# 135 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 135 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { int ii; for ( ii = (0) ; ii<numberOfTimers; ++ii)
-# 136 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 136 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 137 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 137 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
        double totalTime; totalTime = (perfTimer[ii].total*tick) ;
-# 138 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 138 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       if (perfTimer[ii].count > 0) {fprintf(stdout, "%-16s%lu     %8.4f      %8.4f    %8.2f\n",
-# 140 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 140 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
                  timerName[ii],
-# 141 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 141 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
                  perfTimer[ii].count,
-# 142 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 142 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
                  totalTime/(double)perfTimer[ii].count,
-# 143 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 143 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
                  totalTime,
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
                  totalTime/loopTime*100.0); };
-# 145 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 145 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
-# 146 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 147 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 146 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 147 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
      int ____chimes_unroll_var_1; call_lbl_4: ____chimes_unroll_var_1 = ( ({ calling((void*)getNRanks, 4, ____alias_loc_id_2, 0UL, 0); (getNRanks)(); }) ) ; fprintf(stdout, "\nTiming Statistics Across %d Ranks:\n", ____chimes_unroll_var_1);
-# 148 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 148 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "        Timer        Rank: Min(s)       Rank: Max(s)      Avg(s)    Stdev(s)\n");
-# 149 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 149 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "_____________________________________________________________________________\n");
-# 150 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 151 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 150 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 151 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { int ii; for ( ii = (0) ; ii < numberOfTimers; ++ii)
-# 152 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 152 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 153 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 153 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       if (perfTimer[ii].count > 0) {fprintf(stdout, "%-16s%6d:%10.4f  %6d:%10.4f  %10.4f  %10.4f\n",
-# 155 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 155 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
             timerName[ii],
-# 156 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 156 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
             perfTimer[ii].minRank, perfTimer[ii].minValue*tick,
-# 157 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 157 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
             perfTimer[ii].maxRank, perfTimer[ii].maxValue*tick,
-# 158 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 158 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
             perfTimer[ii].average*tick, perfTimer[ii].stdev*tick); };
-# 159 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 159 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
-# 160 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 160 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    alias_group_changed(____alias_loc_id_0); double atomsPerTask; call_lbl_5: atomsPerTask = (nGlobalAtoms/(real_t) ({ calling((void*)getNRanks, 5, ____alias_loc_id_0, 0UL, 0); (getNRanks)(); }) ) ;
-# 161 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 161 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfGlobal.atomRate = perfTimer[timestepTimer].average * tick * 1e6 /
-# 162 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 162 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       (atomsPerTask * perfTimer[timestepTimer].count * printRate);
-# 163 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 163 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfGlobal.atomAllRate = perfTimer[timestepTimer].average * tick * 1e6 /
-# 164 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 164 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       (nGlobalAtoms * perfTimer[timestepTimer].count * printRate);
-# 165 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 165 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfGlobal.atomsPerUSec = 1.0 / perfGlobal.atomAllRate;
-# 166 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 167 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 166 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 167 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "\n---------------------------------------------------\n");
-# 168 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 168 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, " Average atom update rate:     %6.2f us/atom/task\n", perfGlobal.atomRate);
-# 169 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 169 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "---------------------------------------------------\n\n");
-# 170 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 171 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 170 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 171 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "\n---------------------------------------------------\n");
-# 172 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 172 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, " Average all atom update rate: %6.2f us/atom\n", perfGlobal.atomAllRate);
-# 173 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 173 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "---------------------------------------------------\n\n");
-# 174 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 175 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 174 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 175 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "\n---------------------------------------------------\n");
-# 176 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 176 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, " Average atom rate:            %6.2f atoms/us\n", perfGlobal.atomsPerUSec);
-# 177 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 177 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "---------------------------------------------------\n\n");
-# 178 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 178 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 rm_stack(false, 0UL, "printPerformanceResults", &____must_manage_printPerformanceResults, ____alias_loc_id_19, ____chimes_did_disable3, false); }
 
 void printPerformanceResults(int nGlobalAtoms, int printRate) { (____chimes_replaying ? printPerformanceResults_resumable(nGlobalAtoms, printRate) : printPerformanceResults_quick(nGlobalAtoms, printRate)); }
-# 180 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 180 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 void printPerformanceResultsYaml_quick(FILE* file)
-# 181 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&printPerformanceResultsYaml), "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, 1, 1, (size_t)(11198724033581183633UL), "printPerformanceResultsYaml|file|0", &____must_checkpoint_printPerformanceResultsYaml_file_0, "%struct._IO_FILE*", (void *)(&file), (size_t)8, 1, 0, 0) ; double loopTime;
-# 181 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 181 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+{const int ____chimes_did_disable4 = new_stack((void *)(&printPerformanceResultsYaml), "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, 1, 1, (size_t)(1001291142434387681UL), "printPerformanceResultsYaml|file|0", &____must_checkpoint_printPerformanceResultsYaml_file_0, "%struct._IO_FILE*", (void *)(&file), (size_t)8, 1, 0, 0) ; double loopTime;
+# 181 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 double tick;
-# 181 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 181 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  if (____must_checkpoint_printPerformanceResultsYaml_loopTime_0 || ____must_checkpoint_printPerformanceResultsYaml_tick_0) { register_stack_vars(2, "printPerformanceResultsYaml|loopTime|0", &____must_checkpoint_printPerformanceResultsYaml_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0, "printPerformanceResultsYaml|tick|0", &____must_checkpoint_printPerformanceResultsYaml_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0); } ; ;
-# 182 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 182 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    alias_group_changed(____alias_loc_id_11); call_lbl_0: if (! ({ calling((void*)printRank, 0, ____alias_loc_id_11, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, ____alias_loc_id_21, ____chimes_did_disable4, false); return; };
-# 184 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 185 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 184 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 185 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
        call_lbl_1: tick = (({ calling_npm("getTick", 0); getTick_npm(); })) ;
-# 186 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 186 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       loopTime = (perfTimer[loopTimer].total*tick) ;
-# 187 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 188 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 187 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 188 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file,"\nPerformance Results:\n");
-# 189 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 189 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
      int ____chimes_unroll_var_2; call_lbl_2: ____chimes_unroll_var_2 = ( ({ calling((void*)getNRanks, 2, ____alias_loc_id_13, 0UL, 0); (getNRanks)(); }) ) ; fprintf(file, "  TotalRanks: %d\n", ____chimes_unroll_var_2);
-# 190 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 190 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "  ReportingTimeUnits: seconds\n");
-# 191 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 191 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
      int ____chimes_unroll_var_3; call_lbl_3: ____chimes_unroll_var_3 = ( ({ calling((void*)getMyRank, 3, ____alias_loc_id_12, 0UL, 0); (getMyRank)(); }) ) ; fprintf(file, "Performance Results For Rank %d:\n", ____chimes_unroll_var_3);
-# 192 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 192 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { int ii; for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 193 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 193 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 194 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 194 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       if (perfTimer[ii].count > 0)
-# 195 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 195 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       {
-# 196 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 196 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
           double totalTime; totalTime = (perfTimer[ii].total*tick) ;
-# 197 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 197 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "  Timer: %s\n", timerName[ii]);
-# 198 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 198 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    CallCount:  %lu\n", perfTimer[ii].count);
-# 199 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 199 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    AvgPerCall: %8.4f\n", totalTime/(double)perfTimer[ii].count);
-# 200 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 200 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    Total:      %8.4f\n", totalTime);
-# 201 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 201 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    PercentLoop: %8.2f\n", totalTime/loopTime*100);
-# 202 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 202 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       }
-# 203 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 203 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
-# 204 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 205 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 204 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 205 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "Performance Results Across Ranks:\n");
-# 206 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 206 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { int ii; for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 207 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 207 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 208 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 208 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       if (perfTimer[ii].count > 0)
-# 209 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 209 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       {
-# 210 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 210 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "  Timer: %s\n", timerName[ii]);
-# 211 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 211 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    MinRank: %d\n", perfTimer[ii].minRank);
-# 212 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 212 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    MinTime: %8.4f\n", perfTimer[ii].minValue*tick);
-# 213 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 213 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    MaxRank: %d\n", perfTimer[ii].maxRank);
-# 214 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 214 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    MaxTime: %8.4f\n", perfTimer[ii].maxValue*tick);
-# 215 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 215 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    AvgTime: %8.4f\n", perfTimer[ii].average*tick);
-# 216 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 216 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    StdevTime: %8.4f\n", perfTimer[ii].stdev*tick);
-# 217 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 217 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       }
-# 218 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 218 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
-# 219 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 220 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 219 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 220 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file,"Performance Global Update Rates:\n");
-# 221 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 221 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "  AtomUpdateRate:\n");
-# 222 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 222 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "    AverageRate: %6.2f\n", perfGlobal.atomRate);
-# 223 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 223 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "    Units: us/atom/task\n");
-# 224 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 224 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "  AllAtomUpdateRate:\n");
-# 225 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 225 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "    AverageRate: %6.2f\n", perfGlobal.atomAllRate);
-# 226 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 226 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "    Units: us/atom\n");
-# 227 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 227 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "  AtomRate:\n");
-# 228 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 228 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "    AverageRate: %6.2f\n", perfGlobal.atomsPerUSec);
-# 229 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 229 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "    Units: atoms/us\n");
-# 230 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 231 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 230 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 231 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "\n");
-# 232 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 232 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 rm_stack(false, 0UL, "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, ____alias_loc_id_21, ____chimes_did_disable4, false); }
 
 void printPerformanceResultsYaml(FILE* file) { (____chimes_replaying ? printPerformanceResultsYaml_resumable(file) : printPerformanceResultsYaml_quick(file)); }
-# 243 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 243 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 static uint64_t getTime_quick(void)
-# 244 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 244 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {const int ____chimes_did_disable5 = new_stack((void *)(&getTime), "getTime", &____must_manage_getTime, 0, 0) ; ; ;
-# 245 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 245 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     struct timeval ptime; ;
-# 246 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 246 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     uint64_t t; t = (0) ;
-# 247 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 247 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    gettimeofday(&ptime, (struct timezone *)__null);
-# 248 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 248 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    t = ((uint64_t)1000000)*(uint64_t)ptime.tv_sec + (uint64_t)ptime.tv_usec;
-# 249 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 250 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 249 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 250 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     uint64_t ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (t); rm_stack(false, 0UL, "getTime", &____must_manage_getTime, ____alias_loc_id_15, ____chimes_did_disable5, false); return ____chimes_ret_var_1; ;
-# 251 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 251 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 rm_stack(false, 0UL, "getTime", &____must_manage_getTime, ____alias_loc_id_15, ____chimes_did_disable5, false); }
 
 static uint64_t getTime(void) { return (____chimes_replaying ? getTime_resumable() : getTime_quick()); }
-# 257 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 257 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 static double getTick_quick(void)
-# 258 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 258 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {const int ____chimes_did_disable6 = new_stack((void *)(&getTick), "getTick", &____must_manage_getTick, 0, 0) ; ; ;
-# 259 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 259 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     double seconds_per_cycle; seconds_per_cycle = (1.0e-6) ;
-# 260 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 260 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     double ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (seconds_per_cycle); rm_stack(false, 0UL, "getTick", &____must_manage_getTick, ____alias_loc_id_18, ____chimes_did_disable6, false); return ____chimes_ret_var_2; ;
-# 261 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 261 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 rm_stack(false, 0UL, "getTick", &____must_manage_getTick, ____alias_loc_id_18, ____chimes_did_disable6, false); }
 
 static double getTick(void) { return (____chimes_replaying ? getTick_resumable() : getTick_quick()); }
-# 264 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 264 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 void timerStats_quick(void)
-# 265 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 265 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {const int ____chimes_did_disable7 = new_stack((void *)(&timerStats), "timerStats", &____must_manage_timerStats, 0, 0) ; RankReduceData reduceRecvBuf[11];
-# 265 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 265 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 RankReduceData reduceSendBuf[11];
-# 265 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 265 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 double recvBuf[11];
-# 265 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 265 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 double sendBuf[11];
-# 265 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 265 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  if (____must_checkpoint_timerStats_reduceRecvBuf_0 || ____must_checkpoint_timerStats_reduceSendBuf_0 || ____must_checkpoint_timerStats_recvBuf_0 || ____must_checkpoint_timerStats_sendBuf_0) { register_stack_vars(4, "timerStats|reduceRecvBuf|0", &____must_checkpoint_timerStats_reduceRecvBuf_0, "[11 x %struct.RankReduceDataSt]", (void *)(reduceRecvBuf), (size_t)176, 0, 0, 0, "timerStats|reduceSendBuf|0", &____must_checkpoint_timerStats_reduceSendBuf_0, "[11 x %struct.RankReduceDataSt]", (void *)(reduceSendBuf), (size_t)176, 0, 0, 0, "timerStats|recvBuf|0", &____must_checkpoint_timerStats_recvBuf_0, "[11 x double]", (void *)(recvBuf), (size_t)88, 0, 0, 0, "timerStats|sendBuf|0", &____must_checkpoint_timerStats_sendBuf_0, "[11 x double]", (void *)(sendBuf), (size_t)88, 0, 0, 0); } ; ;
-# 266 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 266 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
      ;
-# 267 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 268 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 269 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 267 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 268 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 269 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { int ii; for ( ii = (0) ;ii < numberOfTimers; ii++) { sendBuf[ii] = (double)perfTimer[ii].total; } };
-# 271 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-    call_lbl_0: ({ calling((void*)addDoubleParallel, 0, ____alias_loc_id_9, 0UL, 3, (size_t)(11198724033581183204UL), (size_t)(11198724033581183205UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
-# 272 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 273 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 271 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+    call_lbl_0: ({ calling((void*)addDoubleParallel, 0, ____alias_loc_id_9, 0UL, 3, (size_t)(1001291142434387252UL), (size_t)(1001291142434387253UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
+# 272 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 273 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { lbl_0: int ii; if (____must_checkpoint_timerStats_ii_1 != 0) { register_stack_var("timerStats|ii|1", &____must_checkpoint_timerStats_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( ii = (0) ;ii < numberOfTimers; ii++) { alias_group_changed(____alias_loc_id_10); call_lbl_1: perfTimer[ii].average = recvBuf[ii] / (double) ({ calling((void*)getNRanks, 1, ____alias_loc_id_10, 0UL, 0); (getNRanks)(); }) ; } };
-# 275 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 276 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 277 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 278 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 275 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 276 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 277 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 278 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
        ;
-# 279 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 279 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { lbl_1: int ii; if (____must_checkpoint_timerStats_ii_2 != 0) { register_stack_var("timerStats|ii|2", &____must_checkpoint_timerStats_ii_2, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 280 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 280 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 281 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 281 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       reduceSendBuf[ii].val = (double)perfTimer[ii].total;
-# 282 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 282 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
        call_lbl_2: reduceSendBuf[ii].rank = ({ calling((void*)getMyRank, 2, ____alias_loc_id_8, 0UL, 0); (getMyRank)(); }) ;
-# 283 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 283 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
-# 284 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-    call_lbl_3: ({ calling((void*)minRankDoubleParallel, 3, ____alias_loc_id_7, 0UL, 3, (size_t)(11198724033581183208UL), (size_t)(11198724033581183209UL), (size_t)(0UL)); (minRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
-# 285 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 284 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+    call_lbl_3: ({ calling((void*)minRankDoubleParallel, 3, ____alias_loc_id_7, 0UL, 3, (size_t)(1001291142434387256UL), (size_t)(1001291142434387257UL), (size_t)(0UL)); (minRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
+# 285 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { int ii; for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 286 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 286 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 287 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 287 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       perfTimer[ii].minValue = reduceRecvBuf[ii].val;
-# 288 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 288 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       perfTimer[ii].minRank = reduceRecvBuf[ii].rank;
-# 289 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 289 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
-# 290 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-    call_lbl_4: ({ calling((void*)maxRankDoubleParallel, 4, ____alias_loc_id_6, 0UL, 3, (size_t)(11198724033581183208UL), (size_t)(11198724033581183209UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
-# 291 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 290 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+    call_lbl_4: ({ calling((void*)maxRankDoubleParallel, 4, ____alias_loc_id_6, 0UL, 3, (size_t)(1001291142434387256UL), (size_t)(1001291142434387257UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
+# 291 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { int ii; for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 292 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 292 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 293 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 293 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       perfTimer[ii].maxValue = reduceRecvBuf[ii].val;
-# 294 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 294 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       perfTimer[ii].maxRank = reduceRecvBuf[ii].rank;
-# 295 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 295 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
-# 296 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 297 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 298 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 296 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 297 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 298 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { int ii; for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 299 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 299 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 300 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 300 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
        double temp; temp = ((double)perfTimer[ii].total - perfTimer[ii].average) ;
-# 301 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 301 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       sendBuf[ii] = temp * temp;
-# 302 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 302 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
-# 303 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-    call_lbl_5: ({ calling((void*)addDoubleParallel, 5, ____alias_loc_id_4, 0UL, 3, (size_t)(11198724033581183204UL), (size_t)(11198724033581183205UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
-# 304 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 303 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+    call_lbl_5: ({ calling((void*)addDoubleParallel, 5, ____alias_loc_id_4, 0UL, 3, (size_t)(1001291142434387252UL), (size_t)(1001291142434387253UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
+# 304 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { lbl_2: int ii; if (____must_checkpoint_timerStats_ii_6 != 0) { register_stack_var("timerStats|ii|6", &____must_checkpoint_timerStats_ii_6, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( ii = (0) ; ii < numberOfTimers; ii++)
-# 305 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 305 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 306 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 306 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
         int ____chimes_unroll_var_4; call_lbl_6: ____chimes_unroll_var_4 = ( ({ calling((void*)getNRanks, 6, ____alias_loc_id_5, 0UL, 0); (getNRanks)(); }) ) ; perfTimer[ii].stdev = sqrt(recvBuf[ii] / (double) ____chimes_unroll_var_4);
-# 307 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 307 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
-# 308 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 308 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 rm_stack(false, 0UL, "timerStats", &____must_manage_timerStats, ____alias_loc_id_20, ____chimes_did_disable7, false); }
 
 void timerStats(void) { (____chimes_replaying ? timerStats_resumable() : timerStats_quick()); }
-# 92 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 92 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 void profileStart_npm(const enum TimerHandle handle)
-# 93 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 93 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {
-# 94 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 94 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfTimer[handle].start = getTime_npm();
-# 95 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 95 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 }
-# 97 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 97 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 void profileStop_npm(const enum TimerHandle handle)
-# 98 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 98 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {
-# 99 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 99 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfTimer[handle].count += 1;
-# 100 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 100 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    uint64_t delta = getTime_npm() - perfTimer[handle].start;
-# 101 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 101 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfTimer[handle].total += delta;
-# 102 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 102 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfTimer[handle].elapsed += delta;
-# 103 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 103 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 }
-# 108 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 108 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 double getElapsedTime_npm(const enum TimerHandle handle)
-# 109 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 109 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {
-# 110 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 110 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    double etime = getTick_npm() * (double)perfTimer[handle].elapsed;
-# 111 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 111 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfTimer[handle].elapsed = 0;
-# 112 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 113 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 112 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 113 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     double ____chimes_ret_var_0; ____chimes_ret_var_0 = (etime); return ____chimes_ret_var_0; ;
-# 114 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 114 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 }
-# 120 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 120 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 void printPerformanceResults_npm(int nGlobalAtoms, int printRate)
-# 121 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 121 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {
-# 122 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 123 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 122 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 123 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    timerStats_npm();
-# 124 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 125 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 124 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 125 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    if (!(*____chimes_extern_func_printRank)()) {return; };
-# 127 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 128 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 129 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 127 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 128 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 129 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    double tick = getTick_npm();
-# 130 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 130 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    double loopTime = perfTimer[loopTimer].total*tick;
-# 131 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 132 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 131 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 132 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     int ____chimes_unroll_var_0 = (*____chimes_extern_func_getMyRank)(); fprintf(stdout, "\n\nTimings for Rank %d\n", ____chimes_unroll_var_0);
-# 133 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 133 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "        Timer        # Calls    Avg/Call (s)   Total (s)    %% Loop\n");
-# 134 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 134 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "___________________________________________________________________\n");
-# 135 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 135 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    for (int ii=0; ii<numberOfTimers; ++ii)
-# 136 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 136 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 137 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 137 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       double totalTime = perfTimer[ii].total*tick;
-# 138 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 138 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       if (perfTimer[ii].count > 0) {fprintf(stdout, "%-16s%lu     %8.4f      %8.4f    %8.2f\n",
-# 140 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 140 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
                  timerName[ii],
-# 141 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 141 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
                  perfTimer[ii].count,
-# 142 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 142 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
                  totalTime/(double)perfTimer[ii].count,
-# 143 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 143 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
                  totalTime,
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
                  totalTime/loopTime*100.0); };
-# 145 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 145 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    }
-# 146 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 147 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 146 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 147 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     int ____chimes_unroll_var_1 = (*____chimes_extern_func_getNRanks)(); fprintf(stdout, "\nTiming Statistics Across %d Ranks:\n", ____chimes_unroll_var_1);
-# 148 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 148 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "        Timer        Rank: Min(s)       Rank: Max(s)      Avg(s)    Stdev(s)\n");
-# 149 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 149 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "_____________________________________________________________________________\n");
-# 150 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 151 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 150 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 151 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    for (int ii = 0; ii < numberOfTimers; ++ii)
-# 152 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 152 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 153 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 153 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       if (perfTimer[ii].count > 0) {fprintf(stdout, "%-16s%6d:%10.4f  %6d:%10.4f  %10.4f  %10.4f\n",
-# 155 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 155 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
             timerName[ii],
-# 156 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 156 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
             perfTimer[ii].minRank, perfTimer[ii].minValue*tick,
-# 157 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 157 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
             perfTimer[ii].maxRank, perfTimer[ii].maxValue*tick,
-# 158 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 158 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
             perfTimer[ii].average*tick, perfTimer[ii].stdev*tick); };
-# 159 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 159 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    }
-# 160 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 160 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    double atomsPerTask = nGlobalAtoms/(real_t)(*____chimes_extern_func_getNRanks)();
-# 161 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 161 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfGlobal.atomRate = perfTimer[timestepTimer].average * tick * 1e6 /
-# 162 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 162 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       (atomsPerTask * perfTimer[timestepTimer].count * printRate);
-# 163 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 163 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfGlobal.atomAllRate = perfTimer[timestepTimer].average * tick * 1e6 /
-# 164 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 164 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       (nGlobalAtoms * perfTimer[timestepTimer].count * printRate);
-# 165 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 165 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    perfGlobal.atomsPerUSec = 1.0 / perfGlobal.atomAllRate;
-# 166 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 167 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 166 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 167 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "\n---------------------------------------------------\n");
-# 168 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 168 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, " Average atom update rate:     %6.2f us/atom/task\n", perfGlobal.atomRate);
-# 169 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 169 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "---------------------------------------------------\n\n");
-# 170 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 171 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 170 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 171 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "\n---------------------------------------------------\n");
-# 172 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 172 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, " Average all atom update rate: %6.2f us/atom\n", perfGlobal.atomAllRate);
-# 173 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 173 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "---------------------------------------------------\n\n");
-# 174 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 175 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 174 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 175 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "\n---------------------------------------------------\n");
-# 176 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 176 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, " Average atom rate:            %6.2f atoms/us\n", perfGlobal.atomsPerUSec);
-# 177 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 177 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(stdout, "---------------------------------------------------\n\n");
-# 178 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 178 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 }
-# 180 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 180 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 void printPerformanceResultsYaml_npm(FILE* file)
-# 181 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 181 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {
-# 182 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 182 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    if (! (*____chimes_extern_func_printRank)()) {return; };
-# 184 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 185 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 184 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 185 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    double tick = getTick_npm();
-# 186 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 186 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    double loopTime = perfTimer[loopTimer].total*tick;
-# 187 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 188 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 187 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 188 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file,"\nPerformance Results:\n");
-# 189 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 189 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     int ____chimes_unroll_var_2 = (*____chimes_extern_func_getNRanks)(); fprintf(file, "  TotalRanks: %d\n", ____chimes_unroll_var_2);
-# 190 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 190 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "  ReportingTimeUnits: seconds\n");
-# 191 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 191 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     int ____chimes_unroll_var_3 = (*____chimes_extern_func_getMyRank)(); fprintf(file, "Performance Results For Rank %d:\n", ____chimes_unroll_var_3);
-# 192 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 192 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    for (int ii = 0; ii < numberOfTimers; ii++)
-# 193 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 193 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 194 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 194 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       if (perfTimer[ii].count > 0)
-# 195 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 195 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       {
-# 196 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 196 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          double totalTime = perfTimer[ii].total*tick;
-# 197 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 197 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "  Timer: %s\n", timerName[ii]);
-# 198 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 198 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    CallCount:  %lu\n", perfTimer[ii].count);
-# 199 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 199 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    AvgPerCall: %8.4f\n", totalTime/(double)perfTimer[ii].count);
-# 200 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 200 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    Total:      %8.4f\n", totalTime);
-# 201 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 201 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    PercentLoop: %8.2f\n", totalTime/loopTime*100);
-# 202 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 202 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       }
-# 203 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 203 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    }
-# 204 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 205 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 204 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 205 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "Performance Results Across Ranks:\n");
-# 206 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 206 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    for (int ii = 0; ii < numberOfTimers; ii++)
-# 207 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 207 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 208 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 208 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       if (perfTimer[ii].count > 0)
-# 209 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 209 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       {
-# 210 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 210 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "  Timer: %s\n", timerName[ii]);
-# 211 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 211 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    MinRank: %d\n", perfTimer[ii].minRank);
-# 212 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 212 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    MinTime: %8.4f\n", perfTimer[ii].minValue*tick);
-# 213 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 213 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    MaxRank: %d\n", perfTimer[ii].maxRank);
-# 214 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 214 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    MaxTime: %8.4f\n", perfTimer[ii].maxValue*tick);
-# 215 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 215 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    AvgTime: %8.4f\n", perfTimer[ii].average*tick);
-# 216 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 216 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
          fprintf(file, "    StdevTime: %8.4f\n", perfTimer[ii].stdev*tick);
-# 217 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 217 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       }
-# 218 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 218 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    }
-# 219 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 220 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 219 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 220 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file,"Performance Global Update Rates:\n");
-# 221 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 221 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "  AtomUpdateRate:\n");
-# 222 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 222 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "    AverageRate: %6.2f\n", perfGlobal.atomRate);
-# 223 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 223 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "    Units: us/atom/task\n");
-# 224 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 224 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "  AllAtomUpdateRate:\n");
-# 225 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 225 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "    AverageRate: %6.2f\n", perfGlobal.atomAllRate);
-# 226 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 226 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "    Units: us/atom\n");
-# 227 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 227 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "  AtomRate:\n");
-# 228 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 228 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "    AverageRate: %6.2f\n", perfGlobal.atomsPerUSec);
-# 229 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 229 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "    Units: atoms/us\n");
-# 230 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 231 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 230 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 231 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    fprintf(file, "\n");
-# 232 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 232 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 }
-# 243 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 243 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 static uint64_t getTime_npm(void)
-# 244 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 244 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {
-# 245 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 245 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    struct timeval ptime;
-# 246 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 246 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    uint64_t t = 0;
-# 247 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 247 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    gettimeofday(&ptime, (struct timezone *)__null);
-# 248 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 248 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    t = ((uint64_t)1000000)*(uint64_t)ptime.tv_sec + (uint64_t)ptime.tv_usec;
-# 249 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 250 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 249 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 250 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     uint64_t ____chimes_ret_var_1; ____chimes_ret_var_1 = (t); return ____chimes_ret_var_1; ;
-# 251 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 251 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 }
-# 257 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 257 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 static double getTick_npm(void)
-# 258 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 258 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {
-# 259 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 259 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    double seconds_per_cycle = 1.0e-6;
-# 260 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 260 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     double ____chimes_ret_var_2; ____chimes_ret_var_2 = (seconds_per_cycle); return ____chimes_ret_var_2; ;
-# 261 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 261 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 }
-# 264 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 264 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 void timerStats_npm(void)
-# 265 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 265 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {
-# 266 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 266 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    double sendBuf[numberOfTimers], recvBuf[numberOfTimers];
-# 267 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 268 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 269 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 267 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 268 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 269 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    for (int ii = 0;ii < numberOfTimers; ii++) { sendBuf[ii] = (double)perfTimer[ii].total; };
-# 271 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 271 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    (*____chimes_extern_func_addDoubleParallel)(sendBuf, recvBuf, numberOfTimers);
-# 272 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 273 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 272 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 273 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    for (int ii = 0;ii < numberOfTimers; ii++) { perfTimer[ii].average = recvBuf[ii] / (double)(*____chimes_extern_func_getNRanks)(); };
-# 275 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 276 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 277 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 278 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 275 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 276 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 277 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 278 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    RankReduceData reduceSendBuf[numberOfTimers], reduceRecvBuf[numberOfTimers];
-# 279 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 279 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    for (int ii = 0; ii < numberOfTimers; ii++)
-# 280 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 280 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 281 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 281 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       reduceSendBuf[ii].val = (double)perfTimer[ii].total;
-# 282 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 282 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       reduceSendBuf[ii].rank = (*____chimes_extern_func_getMyRank)();
-# 283 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 283 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    }
-# 284 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 284 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    (*____chimes_extern_func_minRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers);
-# 285 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 285 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    for (int ii = 0; ii < numberOfTimers; ii++)
-# 286 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 286 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 287 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 287 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       perfTimer[ii].minValue = reduceRecvBuf[ii].val;
-# 288 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 288 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       perfTimer[ii].minRank = reduceRecvBuf[ii].rank;
-# 289 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 289 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    }
-# 290 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 290 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    (*____chimes_extern_func_maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers);
-# 291 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 291 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    for (int ii = 0; ii < numberOfTimers; ii++)
-# 292 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 292 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 293 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 293 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       perfTimer[ii].maxValue = reduceRecvBuf[ii].val;
-# 294 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 294 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       perfTimer[ii].maxRank = reduceRecvBuf[ii].rank;
-# 295 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 295 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    }
-# 296 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 297 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-# 298 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 296 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 297 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 298 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    for (int ii = 0; ii < numberOfTimers; ii++)
-# 299 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 299 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 300 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 300 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       double temp = (double)perfTimer[ii].total - perfTimer[ii].average;
-# 301 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 301 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
       sendBuf[ii] = temp * temp;
-# 302 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 302 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    }
-# 303 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 303 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    (*____chimes_extern_func_addDoubleParallel)(sendBuf, recvBuf, numberOfTimers);
-# 304 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 304 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    for (int ii = 0; ii < numberOfTimers; ii++)
-# 305 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 305 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    {
-# 306 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 306 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
        int ____chimes_unroll_var_4 = (*____chimes_extern_func_getNRanks)(); perfTimer[ii].stdev = sqrt(recvBuf[ii] / (double) ____chimes_unroll_var_4);
-# 307 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 307 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    }
-# 308 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
+# 308 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 }
 
 
@@ -4287,37 +4287,37 @@ void timerStats_npm(void)
 
 
 static int module_init() {
-    init_module(11198724033581182872UL, 3, 8, 14, 22, 8, 6, 14, 5, 0, 7,
-                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 113UL), (11198724033581182872UL + 114UL),
-                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 106UL), (11198724033581182872UL + 107UL),
-                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (11198724033581182872UL + 110UL), (11198724033581182872UL + 111UL), (11198724033581182872UL + 112UL),
-                           &____alias_loc_id_3, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 108UL), (11198724033581182872UL + 109UL),
-                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (unsigned)1, (11198724033581182872UL + 332UL), (11198724033581182872UL + 340UL), (11198724033581182872UL + 341UL), (11198724033581182872UL + 342UL), (11198724033581182872UL + 786UL), "addDoubleParallel", (unsigned)2, (11198724033581182872UL + 332UL), (11198724033581182872UL + 333UL),
-                           &____alias_loc_id_5, (unsigned)3, (unsigned)0, (unsigned)0, (11198724033581182872UL + 343UL), (11198724033581182872UL + 344UL), (11198724033581182872UL + 786UL),
-                           &____alias_loc_id_6, (unsigned)2, (unsigned)0, (unsigned)1, (11198724033581182872UL + 339UL), (11198724033581182872UL + 786UL), "maxRankDoubleParallel", (unsigned)2, (11198724033581182872UL + 336UL), (11198724033581182872UL + 337UL),
-                           &____alias_loc_id_7, (unsigned)4, (unsigned)0, (unsigned)1, (11198724033581182872UL + 335UL), (11198724033581182872UL + 336UL), (11198724033581182872UL + 338UL), (11198724033581182872UL + 786UL), "minRankDoubleParallel", (unsigned)2, (11198724033581182872UL + 336UL), (11198724033581182872UL + 337UL),
-                           &____alias_loc_id_8, (unsigned)4, (unsigned)0, (unsigned)0, (11198724033581182872UL + 335UL), (11198724033581182872UL + 336UL), (11198724033581182872UL + 338UL), (11198724033581182872UL + 786UL),
-                           &____alias_loc_id_9, (unsigned)2, (unsigned)0, (unsigned)1, (11198724033581182872UL + 332UL), (11198724033581182872UL + 334UL), "addDoubleParallel", (unsigned)2, (11198724033581182872UL + 332UL), (11198724033581182872UL + 333UL),
-                            &____alias_loc_id_10, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 335UL), (11198724033581182872UL + 786UL),
-                            &____alias_loc_id_11, (unsigned)1, (unsigned)0, (unsigned)0, (11198724033581182872UL + 557UL),
-                            &____alias_loc_id_12, (unsigned)1, (unsigned)0, (unsigned)0, (11198724033581182872UL + 560UL),
-                            &____alias_loc_id_13, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 558UL), (11198724033581182872UL + 559UL),
-                            &____alias_loc_id_14, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 1UL), (11198724033581182872UL + 786UL),
-                            &____alias_loc_id_15, (unsigned)3, (unsigned)0, (unsigned)0, (11198724033581182872UL + 14UL), (11198724033581182872UL + 15UL), (11198724033581182872UL + 16UL),
-                            &____alias_loc_id_16, (unsigned)3, (unsigned)0, (unsigned)0, (11198724033581182872UL + 33UL), (11198724033581182872UL + 34UL), (11198724033581182872UL + 786UL),
-                            &____alias_loc_id_17, (unsigned)4, (unsigned)0, (unsigned)0, (11198724033581182872UL + 71UL), (11198724033581182872UL + 72UL), (11198724033581182872UL + 73UL), (11198724033581182872UL + 786UL),
-                            &____alias_loc_id_18, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 97UL), (11198724033581182872UL + 98UL),
-                            &____alias_loc_id_19, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 115UL), (11198724033581182872UL + 796UL),
-                            &____alias_loc_id_20, (unsigned)3, (unsigned)0, (unsigned)0, (11198724033581182872UL + 343UL), (11198724033581182872UL + 344UL), (11198724033581182872UL + 786UL),
-                            &____alias_loc_id_21, (unsigned)4, (unsigned)0, (unsigned)0, (11198724033581182872UL + 561UL), (11198724033581182872UL + 562UL), (11198724033581182872UL + 563UL), (11198724033581182872UL + 564UL),
-                            "printPerformanceResults", 0, "_Z23printPerformanceResultsii", "_Z27printPerformanceResults_npmii", 4, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, &____alias_loc_id_3, 2, 0UL, 0UL, 0UL, 23, "timerStats", 0, 0UL, "printRank", 0, 0UL, "getTick", 0, 0UL, "getMyRank", 0, 0UL, "fprintf", 3, (11198724033581182872UL + 200UL), (11198724033581182872UL + 788UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 200UL), (11198724033581182872UL + 789UL), 0UL, "fprintf", 2, (11198724033581182872UL + 200UL), (11198724033581182872UL + 789UL), 0UL, "fprintf", 7, (11198724033581182872UL + 200UL), (11198724033581182872UL + 791UL), (11198724033581182872UL + 171UL), 0UL, 0UL, 0UL, 0UL, 0UL, "getNRanks", 0, 0UL, "fprintf", 3, (11198724033581182872UL + 200UL), (11198724033581182872UL + 792UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 200UL), (11198724033581182872UL + 793UL), 0UL, "fprintf", 2, (11198724033581182872UL + 200UL), (11198724033581182872UL + 794UL), 0UL, "fprintf", 9, (11198724033581182872UL + 200UL), (11198724033581182872UL + 795UL), (11198724033581182872UL + 171UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "getNRanks", 0, 0UL, "fprintf", 2, (11198724033581182872UL + 200UL), (11198724033581182872UL + 797UL), 0UL, "fprintf", 3, (11198724033581182872UL + 200UL), (11198724033581182872UL + 798UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 200UL), (11198724033581182872UL + 797UL), 0UL, "fprintf", 2, (11198724033581182872UL + 200UL), (11198724033581182872UL + 797UL), 0UL, "fprintf", 3, (11198724033581182872UL + 200UL), (11198724033581182872UL + 800UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 200UL), (11198724033581182872UL + 797UL), 0UL, "fprintf", 2, (11198724033581182872UL + 200UL), (11198724033581182872UL + 797UL), 0UL, "fprintf", 3, (11198724033581182872UL + 200UL), (11198724033581182872UL + 801UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 200UL), (11198724033581182872UL + 797UL), 0UL,
-                            "printPerformanceResultsYaml", 0, "_Z27printPerformanceResultsYamlP8_IO_FILE", "_Z31printPerformanceResultsYaml_npmP8_IO_FILE", 3, &____alias_loc_id_11, &____alias_loc_id_12, &____alias_loc_id_13, 1, (11198724033581182872UL + 761UL), 0UL, 32, "printRank", 0, 0UL, "getTick", 0, 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 788UL), 0UL, "getNRanks", 0, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 803UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 804UL), 0UL, "getMyRank", 0, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 805UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 780UL), (11198724033581182872UL + 171UL), 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 807UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 788UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 788UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 810UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 811UL), 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 780UL), (11198724033581182872UL + 171UL), 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 812UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 813UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 812UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 813UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 813UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 817UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 805UL), 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 819UL), 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 810UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 821UL), 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 817UL), 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 810UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 813UL), 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 780UL), 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 810UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 807UL), 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 826UL), 0UL,
-                            "getTime", 1, (void *)(&getTime_npm), (void *)__null, 0, 0, 0UL, 1, "gettimeofday", 2, (11198724033581182872UL + 14UL), (11198724033581182872UL + 827UL), 0UL,
+    init_module(1001291142434386920UL, 3, 8, 14, 22, 8, 6, 14, 5, 0, 7,
+                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)0, (1001291142434386920UL + 113UL), (1001291142434386920UL + 114UL),
+                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (1001291142434386920UL + 106UL), (1001291142434386920UL + 107UL),
+                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (1001291142434386920UL + 110UL), (1001291142434386920UL + 111UL), (1001291142434386920UL + 112UL),
+                           &____alias_loc_id_3, (unsigned)2, (unsigned)0, (unsigned)0, (1001291142434386920UL + 108UL), (1001291142434386920UL + 109UL),
+                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (unsigned)1, (1001291142434386920UL + 332UL), (1001291142434386920UL + 340UL), (1001291142434386920UL + 341UL), (1001291142434386920UL + 342UL), (1001291142434386920UL + 786UL), "addDoubleParallel", (unsigned)2, (1001291142434386920UL + 332UL), (1001291142434386920UL + 333UL),
+                           &____alias_loc_id_5, (unsigned)3, (unsigned)0, (unsigned)0, (1001291142434386920UL + 343UL), (1001291142434386920UL + 344UL), (1001291142434386920UL + 786UL),
+                           &____alias_loc_id_6, (unsigned)2, (unsigned)0, (unsigned)1, (1001291142434386920UL + 339UL), (1001291142434386920UL + 786UL), "maxRankDoubleParallel", (unsigned)2, (1001291142434386920UL + 336UL), (1001291142434386920UL + 337UL),
+                           &____alias_loc_id_7, (unsigned)4, (unsigned)0, (unsigned)1, (1001291142434386920UL + 335UL), (1001291142434386920UL + 336UL), (1001291142434386920UL + 338UL), (1001291142434386920UL + 786UL), "minRankDoubleParallel", (unsigned)2, (1001291142434386920UL + 336UL), (1001291142434386920UL + 337UL),
+                           &____alias_loc_id_8, (unsigned)4, (unsigned)0, (unsigned)0, (1001291142434386920UL + 335UL), (1001291142434386920UL + 336UL), (1001291142434386920UL + 338UL), (1001291142434386920UL + 786UL),
+                           &____alias_loc_id_9, (unsigned)2, (unsigned)0, (unsigned)1, (1001291142434386920UL + 332UL), (1001291142434386920UL + 334UL), "addDoubleParallel", (unsigned)2, (1001291142434386920UL + 332UL), (1001291142434386920UL + 333UL),
+                            &____alias_loc_id_10, (unsigned)2, (unsigned)0, (unsigned)0, (1001291142434386920UL + 335UL), (1001291142434386920UL + 786UL),
+                            &____alias_loc_id_11, (unsigned)1, (unsigned)0, (unsigned)0, (1001291142434386920UL + 557UL),
+                            &____alias_loc_id_12, (unsigned)1, (unsigned)0, (unsigned)0, (1001291142434386920UL + 560UL),
+                            &____alias_loc_id_13, (unsigned)2, (unsigned)0, (unsigned)0, (1001291142434386920UL + 558UL), (1001291142434386920UL + 559UL),
+                            &____alias_loc_id_14, (unsigned)2, (unsigned)0, (unsigned)0, (1001291142434386920UL + 1UL), (1001291142434386920UL + 786UL),
+                            &____alias_loc_id_15, (unsigned)3, (unsigned)0, (unsigned)0, (1001291142434386920UL + 14UL), (1001291142434386920UL + 15UL), (1001291142434386920UL + 16UL),
+                            &____alias_loc_id_16, (unsigned)3, (unsigned)0, (unsigned)0, (1001291142434386920UL + 33UL), (1001291142434386920UL + 34UL), (1001291142434386920UL + 786UL),
+                            &____alias_loc_id_17, (unsigned)4, (unsigned)0, (unsigned)0, (1001291142434386920UL + 71UL), (1001291142434386920UL + 72UL), (1001291142434386920UL + 73UL), (1001291142434386920UL + 786UL),
+                            &____alias_loc_id_18, (unsigned)2, (unsigned)0, (unsigned)0, (1001291142434386920UL + 97UL), (1001291142434386920UL + 98UL),
+                            &____alias_loc_id_19, (unsigned)2, (unsigned)0, (unsigned)0, (1001291142434386920UL + 115UL), (1001291142434386920UL + 796UL),
+                            &____alias_loc_id_20, (unsigned)3, (unsigned)0, (unsigned)0, (1001291142434386920UL + 343UL), (1001291142434386920UL + 344UL), (1001291142434386920UL + 786UL),
+                            &____alias_loc_id_21, (unsigned)4, (unsigned)0, (unsigned)0, (1001291142434386920UL + 561UL), (1001291142434386920UL + 562UL), (1001291142434386920UL + 563UL), (1001291142434386920UL + 564UL),
+                            "printPerformanceResults", 0, "_Z23printPerformanceResultsii", "_Z27printPerformanceResults_npmii", 4, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, &____alias_loc_id_3, 2, 0UL, 0UL, 0UL, 23, "timerStats", 0, 0UL, "printRank", 0, 0UL, "getTick", 0, 0UL, "getMyRank", 0, 0UL, "fprintf", 3, (1001291142434386920UL + 200UL), (1001291142434386920UL + 788UL), 0UL, 0UL, "fprintf", 2, (1001291142434386920UL + 200UL), (1001291142434386920UL + 789UL), 0UL, "fprintf", 2, (1001291142434386920UL + 200UL), (1001291142434386920UL + 789UL), 0UL, "fprintf", 7, (1001291142434386920UL + 200UL), (1001291142434386920UL + 791UL), (1001291142434386920UL + 171UL), 0UL, 0UL, 0UL, 0UL, 0UL, "getNRanks", 0, 0UL, "fprintf", 3, (1001291142434386920UL + 200UL), (1001291142434386920UL + 792UL), 0UL, 0UL, "fprintf", 2, (1001291142434386920UL + 200UL), (1001291142434386920UL + 793UL), 0UL, "fprintf", 2, (1001291142434386920UL + 200UL), (1001291142434386920UL + 794UL), 0UL, "fprintf", 9, (1001291142434386920UL + 200UL), (1001291142434386920UL + 795UL), (1001291142434386920UL + 171UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "getNRanks", 0, 0UL, "fprintf", 2, (1001291142434386920UL + 200UL), (1001291142434386920UL + 797UL), 0UL, "fprintf", 3, (1001291142434386920UL + 200UL), (1001291142434386920UL + 798UL), 0UL, 0UL, "fprintf", 2, (1001291142434386920UL + 200UL), (1001291142434386920UL + 797UL), 0UL, "fprintf", 2, (1001291142434386920UL + 200UL), (1001291142434386920UL + 797UL), 0UL, "fprintf", 3, (1001291142434386920UL + 200UL), (1001291142434386920UL + 800UL), 0UL, 0UL, "fprintf", 2, (1001291142434386920UL + 200UL), (1001291142434386920UL + 797UL), 0UL, "fprintf", 2, (1001291142434386920UL + 200UL), (1001291142434386920UL + 797UL), 0UL, "fprintf", 3, (1001291142434386920UL + 200UL), (1001291142434386920UL + 801UL), 0UL, 0UL, "fprintf", 2, (1001291142434386920UL + 200UL), (1001291142434386920UL + 797UL), 0UL,
+                            "printPerformanceResultsYaml", 0, "_Z27printPerformanceResultsYamlP8_IO_FILE", "_Z31printPerformanceResultsYaml_npmP8_IO_FILE", 3, &____alias_loc_id_11, &____alias_loc_id_12, &____alias_loc_id_13, 1, (1001291142434386920UL + 761UL), 0UL, 32, "printRank", 0, 0UL, "getTick", 0, 0UL, "fprintf", 2, (1001291142434386920UL + 761UL), (1001291142434386920UL + 788UL), 0UL, "getNRanks", 0, 0UL, "fprintf", 3, (1001291142434386920UL + 761UL), (1001291142434386920UL + 803UL), 0UL, 0UL, "fprintf", 2, (1001291142434386920UL + 761UL), (1001291142434386920UL + 804UL), 0UL, "getMyRank", 0, 0UL, "fprintf", 3, (1001291142434386920UL + 761UL), (1001291142434386920UL + 805UL), 0UL, 0UL, "fprintf", 3, (1001291142434386920UL + 761UL), (1001291142434386920UL + 780UL), (1001291142434386920UL + 171UL), 0UL, "fprintf", 3, (1001291142434386920UL + 761UL), (1001291142434386920UL + 807UL), 0UL, 0UL, "fprintf", 3, (1001291142434386920UL + 761UL), (1001291142434386920UL + 788UL), 0UL, 0UL, "fprintf", 3, (1001291142434386920UL + 761UL), (1001291142434386920UL + 788UL), 0UL, 0UL, "fprintf", 3, (1001291142434386920UL + 761UL), (1001291142434386920UL + 810UL), 0UL, 0UL, "fprintf", 2, (1001291142434386920UL + 761UL), (1001291142434386920UL + 811UL), 0UL, "fprintf", 3, (1001291142434386920UL + 761UL), (1001291142434386920UL + 780UL), (1001291142434386920UL + 171UL), 0UL, "fprintf", 3, (1001291142434386920UL + 761UL), (1001291142434386920UL + 812UL), 0UL, 0UL, "fprintf", 3, (1001291142434386920UL + 761UL), (1001291142434386920UL + 813UL), 0UL, 0UL, "fprintf", 3, (1001291142434386920UL + 761UL), (1001291142434386920UL + 812UL), 0UL, 0UL, "fprintf", 3, (1001291142434386920UL + 761UL), (1001291142434386920UL + 813UL), 0UL, 0UL, "fprintf", 3, (1001291142434386920UL + 761UL), (1001291142434386920UL + 813UL), 0UL, 0UL, "fprintf", 3, (1001291142434386920UL + 761UL), (1001291142434386920UL + 817UL), 0UL, 0UL, "fprintf", 2, (1001291142434386920UL + 761UL), (1001291142434386920UL + 805UL), 0UL, "fprintf", 2, (1001291142434386920UL + 761UL), (1001291142434386920UL + 819UL), 0UL, "fprintf", 3, (1001291142434386920UL + 761UL), (1001291142434386920UL + 810UL), 0UL, 0UL, "fprintf", 2, (1001291142434386920UL + 761UL), (1001291142434386920UL + 821UL), 0UL, "fprintf", 2, (1001291142434386920UL + 761UL), (1001291142434386920UL + 817UL), 0UL, "fprintf", 3, (1001291142434386920UL + 761UL), (1001291142434386920UL + 810UL), 0UL, 0UL, "fprintf", 2, (1001291142434386920UL + 761UL), (1001291142434386920UL + 813UL), 0UL, "fprintf", 2, (1001291142434386920UL + 761UL), (1001291142434386920UL + 780UL), 0UL, "fprintf", 3, (1001291142434386920UL + 761UL), (1001291142434386920UL + 810UL), 0UL, 0UL, "fprintf", 2, (1001291142434386920UL + 761UL), (1001291142434386920UL + 807UL), 0UL, "fprintf", 2, (1001291142434386920UL + 761UL), (1001291142434386920UL + 826UL), 0UL,
+                            "getTime", 1, (void *)(&getTime_npm), (void *)__null, 0, 0, 0UL, 1, "gettimeofday", 2, (1001291142434386920UL + 14UL), (1001291142434386920UL + 827UL), 0UL,
                             "getTick", 1, (void *)(&getTick_npm), (void *)__null, 0, 0, 0UL, 0,
                             "profileStop", 0, "_Z11profileStop11TimerHandle", "_Z15profileStop_npm11TimerHandle", 0, 1, 0UL, 0UL, 1, "getTime", 0, 0UL,
                             "getElapsedTime", 0, "_Z14getElapsedTime11TimerHandle", "_Z18getElapsedTime_npm11TimerHandle", 0, 1, 0UL, 0UL, 1, "getTick", 0, 0UL,
                             "profileStart", 0, "_Z12profileStart11TimerHandle", "_Z16profileStart_npm11TimerHandle", 0, 1, 0UL, 0UL, 1, "getTime", 0, 0UL,
-                            "timerStats", 1, (void *)(&timerStats_npm), (void *)__null, 7, &____alias_loc_id_10, &____alias_loc_id_4, &____alias_loc_id_5, &____alias_loc_id_6, &____alias_loc_id_7, &____alias_loc_id_8, &____alias_loc_id_9, 0, 0UL, 8, "addDoubleParallel", 3, (11198724033581182872UL + 332UL), (11198724033581182872UL + 333UL), 0UL, 0UL, "getNRanks", 0, 0UL, "getMyRank", 0, 0UL, "minRankDoubleParallel", 3, (11198724033581182872UL + 336UL), (11198724033581182872UL + 337UL), 0UL, 0UL, "maxRankDoubleParallel", 3, (11198724033581182872UL + 336UL), (11198724033581182872UL + 337UL), 0UL, 0UL, "addDoubleParallel", 3, (11198724033581182872UL + 332UL), (11198724033581182872UL + 333UL), 0UL, 0UL, "getNRanks", 0, 0UL, "sqrt", 1, 0UL, 0UL,
+                            "timerStats", 1, (void *)(&timerStats_npm), (void *)__null, 7, &____alias_loc_id_10, &____alias_loc_id_4, &____alias_loc_id_5, &____alias_loc_id_6, &____alias_loc_id_7, &____alias_loc_id_8, &____alias_loc_id_9, 0, 0UL, 8, "addDoubleParallel", 3, (1001291142434386920UL + 332UL), (1001291142434386920UL + 333UL), 0UL, 0UL, "getNRanks", 0, 0UL, "getMyRank", 0, 0UL, "minRankDoubleParallel", 3, (1001291142434386920UL + 336UL), (1001291142434386920UL + 337UL), 0UL, 0UL, "maxRankDoubleParallel", 3, (1001291142434386920UL + 336UL), (1001291142434386920UL + 337UL), 0UL, 0UL, "addDoubleParallel", 3, (1001291142434386920UL + 332UL), (1001291142434386920UL + 333UL), 0UL, 0UL, "getNRanks", 0, 0UL, "sqrt", 1, 0UL, 0UL,
                                "addDoubleParallel", (void **)&(____chimes_extern_func_addDoubleParallel),
                                "getMyRank", (void **)&(____chimes_extern_func_getMyRank),
                                "getNRanks", (void **)&(____chimes_extern_func_getNRanks),
@@ -4338,9 +4338,9 @@ static int module_init() {
                            "maxRankDoubleParallel", &(____chimes_does_checkpoint_maxRankDoubleParallel_npm),
                            "minRankDoubleParallel", &(____chimes_does_checkpoint_minRankDoubleParallel_npm),
                            "printRank", &(____chimes_does_checkpoint_printRank_npm),
-                             (11198724033581182872UL + 785UL), (11198724033581182872UL + 171UL),
-                             (11198724033581182872UL + 557UL), (11198724033581182872UL + 761UL),
-                             (11198724033581182872UL + 787UL), (11198724033581182872UL + 200UL),
+                             (1001291142434386920UL + 785UL), (1001291142434386920UL + 171UL),
+                             (1001291142434386920UL + 557UL), (1001291142434386920UL + 761UL),
+                             (1001291142434386920UL + 787UL), (1001291142434386920UL + 200UL),
                      "RankReduceDataSt", 128UL, 2, "double", (int)__builtin_offsetof (struct RankReduceDataSt, val), "int", (int)__builtin_offsetof (struct RankReduceDataSt, rank),
                      "TimerGlobalSt", 192UL, 3, "double", (int)__builtin_offsetof (struct TimerGlobalSt, atomRate), "double", (int)__builtin_offsetof (struct TimerGlobalSt, atomAllRate), "double", (int)__builtin_offsetof (struct TimerGlobalSt, atomsPerUSec),
                      "TimerHandle", 32UL, 0,
@@ -4378,17 +4378,17 @@ static int module_init() {
     register_global_var("global|timerName", "[11 x i8*]", (void *)(&timerName), 88, 0, 0, 0UL, 0);
     register_global_var("global|perfTimer", "[11 x %struct.TimersSt]", (void *)(&perfTimer), 792, 0, 0, 0UL, 0);
     register_global_var("global|perfGlobal", "%struct.TimerGlobalSt = type { double, double, double }", (void *)(&perfGlobal), 24, 0, 1, 0UL, 0);
-    register_constant(11198724033581182872UL + 0UL, (void *)((timerName)[0]), 6);
-    register_constant(11198724033581182872UL + 1UL, (void *)((timerName)[1]), 5);
-    register_constant(11198724033581182872UL + 2UL, (void *)((timerName)[2]), 9);
-    register_constant(11198724033581182872UL + 3UL, (void *)((timerName)[3]), 11);
-    register_constant(11198724033581182872UL + 4UL, (void *)((timerName)[4]), 11);
-    register_constant(11198724033581182872UL + 5UL, (void *)((timerName)[5]), 15);
-    register_constant(11198724033581182872UL + 6UL, (void *)((timerName)[6]), 13);
-    register_constant(11198724033581182872UL + 7UL, (void *)((timerName)[7]), 8);
-    register_constant(11198724033581182872UL + 8UL, (void *)((timerName)[8]), 12);
-    register_constant(11198724033581182872UL + 9UL, (void *)((timerName)[9]), 9);
-    register_constant(11198724033581182872UL + 10UL, (void *)((timerName)[10]), 11);
+    register_constant(1001291142434386920UL + 0UL, (void *)((timerName)[0]), 6);
+    register_constant(1001291142434386920UL + 1UL, (void *)((timerName)[1]), 5);
+    register_constant(1001291142434386920UL + 2UL, (void *)((timerName)[2]), 9);
+    register_constant(1001291142434386920UL + 3UL, (void *)((timerName)[3]), 11);
+    register_constant(1001291142434386920UL + 4UL, (void *)((timerName)[4]), 11);
+    register_constant(1001291142434386920UL + 5UL, (void *)((timerName)[5]), 15);
+    register_constant(1001291142434386920UL + 6UL, (void *)((timerName)[6]), 13);
+    register_constant(1001291142434386920UL + 7UL, (void *)((timerName)[7]), 8);
+    register_constant(1001291142434386920UL + 8UL, (void *)((timerName)[8]), 12);
+    register_constant(1001291142434386920UL + 9UL, (void *)((timerName)[9]), 9);
+    register_constant(1001291142434386920UL + 10UL, (void *)((timerName)[10]), 11);
     return 0;
 }
 

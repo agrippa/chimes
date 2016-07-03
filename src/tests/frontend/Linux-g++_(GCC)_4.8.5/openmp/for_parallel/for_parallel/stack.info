@@ -1,8 +1,8 @@
-/home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp main|argc|0 " i32 " 32 0 0 0
-/home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp main|argv|0 " i8** " 64 1 0 0
-/home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp main|a|0 " i32 " 32 0 0 0
-/home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp main|b|0 " i32 " 32 0 0 0
-/home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp main|c|0 " i32 " 32 0 0 0
-/home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp main|i|0 " i32 " 32 0 0 0
-/home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp main|inside|0 " i32 " 32 0 0 0
-/home/jmg3/chimes/src/examples/openmp/./for_parallel.cpp main|____chimes_ret_var_0|0 " i32 " 32 0 0 0
+/scratch/jmg3/chimes/src/examples/openmp/./for_parallel.cpp main|argc|0 " i32 " 32 0 0 0
+/scratch/jmg3/chimes/src/examples/openmp/./for_parallel.cpp main|argv|0 " i8** " 64 1 0 0
+/scratch/jmg3/chimes/src/examples/openmp/./for_parallel.cpp main|a|0 " i32 " 32 0 0 0
+/scratch/jmg3/chimes/src/examples/openmp/./for_parallel.cpp main|b|0 " i32 " 32 0 0 0
+/scratch/jmg3/chimes/src/examples/openmp/./for_parallel.cpp main|c|0 " i32 " 32 0 0 0
+/scratch/jmg3/chimes/src/examples/openmp/./for_parallel.cpp main|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/chimes/src/examples/openmp/./for_parallel.cpp main|inside|0 " i32 " 32 0 0 0
+/scratch/jmg3/chimes/src/examples/openmp/./for_parallel.cpp main|____chimes_ret_var_0|0 " i32 " 32 0 0 0

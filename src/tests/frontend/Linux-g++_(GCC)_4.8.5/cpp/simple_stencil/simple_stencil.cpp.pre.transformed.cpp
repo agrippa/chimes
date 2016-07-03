@@ -13,11 +13,11 @@ typedef long unsigned int size_t;
 
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
-# 1 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -26,7 +26,7 @@ static unsigned ____alias_loc_id_1;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -82,14 +82,14 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 28 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1034,7 +1034,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 2 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp" 2
+# 2 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 1 3 4
@@ -2210,160 +2210,160 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 3 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp" 2
-# 3 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 3 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp" 2
+# 3 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
 
-# 1 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 1
-# 11 "/home/jmg3/chimes/src/libchimes/checkpoint.h"
+# 1 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 11 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h"
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*____chimes_fp)(void *));
-# 5 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp" 2
-# 5 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
-# 6 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 5 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp" 2
+# 5 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 6 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
-int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(460194934375909885UL)) ; int *next;
-# 6 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(4581113865505643853UL)) ; int *next;
+# 6 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
 int *curr;
-# 6 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 6 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
 int niters;
-# 6 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 6 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
 int N;
-# 6 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 6 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
 int iter;
-# 6 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 6 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
  register_stack_vars(5, "main|next|0", (int *)0x0, "i32*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "i32*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|niters|0", (int *)0x0, "i32", (void *)(&niters), (size_t)4, 0, 0, 0, "main|N|0", (int *)0x0, "i32", (void *)(&N), (size_t)4, 0, 0, 0, "main|iter|0", (int *)0x0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
-# 7 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 7 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
     int i; ;
-# 8 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 8 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
        N = (1024) ;
-# 9 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 9 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
        niters = (10000) ;
-# 10 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
-# 11 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
-       curr = ((int *) ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 12 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
-       next = ((int *) ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 13 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 10 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 11 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+       curr = ((int *) ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 4581113865505643726UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 12 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+       next = ((int *) ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 4581113865505643726UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 13 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
     for (i = 0; i < N; i++) {
-# 14 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 14 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
         curr[i] = next[i] = rand() % 100;
-# 15 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 15 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
     }
-# 16 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
-# 17 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 16 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 17 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
     for (iter = 0; iter < niters; iter++) {
-# 18 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 18 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
         printf("%d / %d\n", iter + 1, niters);
-# 19 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 19 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
         for (i = 1; i < N - 1; i++) {
-# 20 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 20 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
             next[i] = (curr[i - 1] + curr[i] + curr[i + 1]) / 3;
-# 21 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 21 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
         }
-# 22 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 22 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
          int *tmp; tmp = (curr) ;
-# 23 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 23 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
         curr = next;
-# 24 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 24 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
         next = tmp;
-# 25 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
-# 26 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 25 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 26 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
          call_lbl_0: checkpoint_transformed(0, ____alias_loc_id_0);
-# 27 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 27 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
     }
-# 28 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
-# 29 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 28 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 29 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
      FILE *fp; fp = (fopen("dump.out", "w")) ;
-# 30 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 30 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
     for (i = 0; i < N; i++) {
-# 31 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 31 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
         fprintf(fp, "%d\n", curr[i]);
-# 32 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 32 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
     }
-# 33 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 33 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
     fclose(fp);
-# 34 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
-# 35 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
-     ({ free_helper((((unsigned char *)curr) - sizeof(void *)), 460194934375909758UL);free((((unsigned char *)curr) - sizeof(void *))); }) ;
-# 36 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
-     ({ free_helper((((unsigned char *)next) - sizeof(void *)), 460194934375909758UL);free((((unsigned char *)next) - sizeof(void *))); }) ;
-# 37 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 34 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 35 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+     ({ free_helper((((unsigned char *)curr) - sizeof(void *)), 4581113865505643726UL);free((((unsigned char *)curr) - sizeof(void *))); }) ;
+# 36 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+     ({ free_helper((((unsigned char *)next) - sizeof(void *)), 4581113865505643726UL);free((((unsigned char *)next) - sizeof(void *))); }) ;
+# 37 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 38 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 38 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); }
-# 6 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
-int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(460194934375909885UL)) ; int *next;
-# 6 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 6 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(4581113865505643853UL)) ; int *next;
+# 6 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
 int *curr;
-# 6 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 6 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
 int niters;
-# 6 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 6 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
 int N;
-# 6 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 6 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
 int iter;
-# 6 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 6 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
  register_stack_vars(5, "main|next|0", (int *)0x0, "i32*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "i32*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|niters|0", (int *)0x0, "i32", (void *)(&niters), (size_t)4, 0, 0, 0, "main|N|0", (int *)0x0, "i32", (void *)(&N), (size_t)4, 0, 0, 0, "main|iter|0", (int *)0x0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0); ; ;
-# 7 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 7 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
     int i; ;
-# 8 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 8 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
        N = (1024) ;
-# 9 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 9 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
        niters = (10000) ;
-# 10 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
-# 11 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
-       curr = ((int *) ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 12 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
-       next = ((int *) ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 460194934375909758UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 13 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 10 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 11 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+       curr = ((int *) ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 4581113865505643726UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 12 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+       next = ((int *) ({ void *____chimes_tmp_ptr = malloc((N * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, N * sizeof(int), 4581113865505643726UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 13 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
     for (i = 0; i < N; i++) {
-# 14 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 14 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
         curr[i] = next[i] = rand() % 100;
-# 15 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 15 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
     }
-# 16 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
-# 17 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 16 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 17 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
     for (iter = 0; iter < niters; iter++) {
-# 18 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 18 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
         printf("%d / %d\n", iter + 1, niters);
-# 19 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 19 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
         for (i = 1; i < N - 1; i++) {
-# 20 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 20 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
             next[i] = (curr[i - 1] + curr[i] + curr[i + 1]) / 3;
-# 21 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 21 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
         }
-# 22 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 22 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
          int *tmp; tmp = (curr) ;
-# 23 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 23 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
         curr = next;
-# 24 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 24 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
         next = tmp;
-# 25 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
-# 26 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 25 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 26 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
          call_lbl_0: checkpoint_transformed(0, ____alias_loc_id_0);
-# 27 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 27 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
     }
-# 28 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
-# 29 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 28 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 29 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
      FILE *fp; fp = (fopen("dump.out", "w")) ;
-# 30 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 30 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
     for (i = 0; i < N; i++) {
-# 31 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 31 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
         fprintf(fp, "%d\n", curr[i]);
-# 32 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 32 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
     }
-# 33 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 33 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
     fclose(fp);
-# 34 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
-# 35 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
-     ({ free_helper((((unsigned char *)curr) - sizeof(void *)), 460194934375909758UL);free((((unsigned char *)curr) - sizeof(void *))); }) ;
-# 36 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
-     ({ free_helper((((unsigned char *)next) - sizeof(void *)), 460194934375909758UL);free((((unsigned char *)next) - sizeof(void *))); }) ;
-# 37 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 34 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 35 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+     ({ free_helper((((unsigned char *)curr) - sizeof(void *)), 4581113865505643726UL);free((((unsigned char *)curr) - sizeof(void *))); }) ;
+# 36 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+     ({ free_helper((((unsigned char *)next) - sizeof(void *)), 4581113865505643726UL);free((((unsigned char *)next) - sizeof(void *))); }) ;
+# 37 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 38 "/home/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
+# 38 "/scratch/jmg3/chimes/src/examples/cpp/./simple_stencil.cpp"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
 int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
@@ -2375,14 +2375,14 @@ int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_re
 
 
 static int module_init() {
-    init_module(460194934375909730UL, 5, 1, 0, 2, 0, 0, 0, 0, 0, 2,
-                           &____alias_loc_id_0, (unsigned)11, (unsigned)0, (unsigned)0, (460194934375909730UL + 1UL), (460194934375909730UL + 2UL), (460194934375909730UL + 3UL), (460194934375909730UL + 4UL), (460194934375909730UL + 5UL), (460194934375909730UL + 6UL), (460194934375909730UL + 7UL), (460194934375909730UL + 8UL), (460194934375909730UL + 9UL), (460194934375909730UL + 10UL), (460194934375909730UL + 28UL),
-                           &____alias_loc_id_1, (unsigned)13, (unsigned)0, (unsigned)0, (460194934375909730UL + 1UL), (460194934375909730UL + 2UL), (460194934375909730UL + 3UL), (460194934375909730UL + 4UL), (460194934375909730UL + 5UL), (460194934375909730UL + 6UL), (460194934375909730UL + 7UL), (460194934375909730UL + 8UL), (460194934375909730UL + 9UL), (460194934375909730UL + 11UL), (460194934375909730UL + 12UL), (460194934375909730UL + 28UL), (460194934375909730UL + 130UL),
-                             (460194934375909730UL + 9UL), (460194934375909730UL + 28UL),
-                             (460194934375909730UL + 8UL), (460194934375909730UL + 28UL),
-                             (460194934375909730UL + 3UL), (460194934375909730UL + 155UL),
-                             (460194934375909730UL + 11UL), (460194934375909730UL + 130UL),
-                             (460194934375909730UL + 10UL), (460194934375909730UL + 28UL),
+    init_module(4581113865505643698UL, 5, 1, 0, 2, 0, 0, 0, 0, 0, 2,
+                           &____alias_loc_id_0, (unsigned)11, (unsigned)0, (unsigned)0, (4581113865505643698UL + 1UL), (4581113865505643698UL + 2UL), (4581113865505643698UL + 3UL), (4581113865505643698UL + 4UL), (4581113865505643698UL + 5UL), (4581113865505643698UL + 6UL), (4581113865505643698UL + 7UL), (4581113865505643698UL + 8UL), (4581113865505643698UL + 9UL), (4581113865505643698UL + 10UL), (4581113865505643698UL + 28UL),
+                           &____alias_loc_id_1, (unsigned)13, (unsigned)0, (unsigned)0, (4581113865505643698UL + 1UL), (4581113865505643698UL + 2UL), (4581113865505643698UL + 3UL), (4581113865505643698UL + 4UL), (4581113865505643698UL + 5UL), (4581113865505643698UL + 6UL), (4581113865505643698UL + 7UL), (4581113865505643698UL + 8UL), (4581113865505643698UL + 9UL), (4581113865505643698UL + 11UL), (4581113865505643698UL + 12UL), (4581113865505643698UL + 28UL), (4581113865505643698UL + 130UL),
+                             (4581113865505643698UL + 9UL), (4581113865505643698UL + 28UL),
+                             (4581113865505643698UL + 8UL), (4581113865505643698UL + 28UL),
+                             (4581113865505643698UL + 3UL), (4581113865505643698UL + 155UL),
+                             (4581113865505643698UL + 11UL), (4581113865505643698UL + 130UL),
+                             (4581113865505643698UL + 10UL), (4581113865505643698UL + 28UL),
                      "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
                      "_IO_marker", 0UL, 0,
                              "main", "main", 0, 1, "checkpoint");

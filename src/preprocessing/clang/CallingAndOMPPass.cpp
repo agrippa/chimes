@@ -400,7 +400,14 @@ void CallingAndOMPPass::addInsertsForRegion(OMPRegion *region) {
     clang::SourceLocation start;
     if (region->is_parallel_for() || region->is_omp_for()) {
         const clang::ForStmt *for_stmt = clang::dyn_cast<clang::ForStmt>(body);
-        assert(for_stmt);
+        if (for_stmt == NULL) {
+            clang::PresumedLoc presumedStart = SM->getPresumedLoc(startLoc);
+
+            std::cerr << "Failed finding for statement inside region near " <<
+                std::string(presumedStart.getFilename()) << ":" <<
+                presumedStart.getLine() << std::endl;
+            exit(1);
+        }
         start = for_stmt->getBody()->getLocStart();
     } else {
         start = body->getLocStart();

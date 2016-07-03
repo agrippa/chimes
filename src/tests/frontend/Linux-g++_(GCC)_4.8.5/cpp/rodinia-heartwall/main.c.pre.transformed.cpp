@@ -40,11 +40,11 @@ static unsigned ____alias_loc_id_9;
 static unsigned ____alias_loc_id_10;
 static unsigned ____alias_loc_id_11;
 static unsigned ____alias_loc_id_12;
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -53,7 +53,7 @@ static unsigned ____alias_loc_id_12;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -109,20 +109,20 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 2 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 3 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 4 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 5 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 6 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 2 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 3 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 4 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 5 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 6 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 25 "/usr/include/stdlib.h" 3 4
@@ -1447,7 +1447,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 8 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c" 2
+# 8 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c" 2
 # 1 "/usr/include/math.h" 1 3 4
 # 30 "/usr/include/math.h" 3 4
 extern "C" {
@@ -2452,7 +2452,7 @@ __signbitl (long double __x) throw ()
 # 417 "/usr/include/math.h" 2 3 4
 # 472 "/usr/include/math.h" 3 4
 }
-# 9 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c" 2
+# 9 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 29 "/usr/include/string.h" 3 4
 extern "C" {
@@ -2928,7 +2928,7 @@ extern "C++" __const char *basename (__const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 # 646 "/usr/include/string.h" 3 4
 }
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c" 2
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c" 2
 # 1 "/usr/include/time.h" 1 3 4
 # 30 "/usr/include/time.h" 3 4
 extern "C" {
@@ -3164,7 +3164,7 @@ extern int getdate_r (__const char *__restrict __string,
 
 
 }
-# 11 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c" 2
+# 11 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c" 2
 # 1 "/usr/include/assert.h" 1 3 4
 # 66 "/usr/include/assert.h" 3 4
 extern "C" {
@@ -3188,7 +3188,7 @@ extern void __assert (const char *__assertion, const char *__file, int __line)
 
 
 }
-# 12 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c" 2
+# 12 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c" 2
 # 1 "/usr/include/sys/time.h" 1 3 4
 # 29 "/usr/include/sys/time.h" 3 4
 # 1 "/usr/include/bits/time.h" 1 3 4
@@ -3291,13 +3291,13 @@ extern int futimesat (int __fd, __const char *__file,
         __const struct timeval __tvp[2]) throw ();
 # 191 "/usr/include/sys/time.h" 3 4
 }
-# 13 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c" 2
-# 13 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 13 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c" 2
+# 13 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 1
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 1
 
 extern "C" {
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h"
 # 1 "/usr/include/sys/stat.h" 1 3 4
 # 105 "/usr/include/sys/stat.h" 3 4
 extern "C" {
@@ -3639,7 +3639,7 @@ fstatat64 (int __fd, __const char *__filename, struct stat64 *__statbuf, int __f
 
 
 }
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 2
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 30 "/usr/include/stdio.h" 3 4
 extern "C" {
@@ -4447,7 +4447,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 2
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 2
 # 1 "/usr/include/fcntl.h" 1 3 4
 # 30 "/usr/include/fcntl.h" 3 4
 extern "C" {
@@ -4594,7 +4594,7 @@ extern int posix_fallocate (int __fd, __off_t __offset, __off_t __len);
 extern int posix_fallocate64 (int __fd, __off64_t __offset, __off64_t __len);
 # 267 "/usr/include/fcntl.h" 3 4
 }
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 2
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 2
 # 1 "/usr/include/unistd.h" 1 3 4
 # 28 "/usr/include/unistd.h" 3 4
 extern "C" {
@@ -5922,7 +5922,7 @@ extern void swab (__const void *__restrict __from, void *__restrict __to,
 extern char *ctermid (char *__s) throw ();
 # 1160 "/usr/include/unistd.h" 3 4
 }
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 2
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 2
 
 # 1 "/usr/include/inttypes.h" 1 3 4
 # 28 "/usr/include/inttypes.h" 3 4
@@ -6071,7 +6071,7 @@ wcstoumax (__const wchar_t *__restrict nptr, wchar_t **__restrict endptr, int ba
 }
 # 442 "/usr/include/inttypes.h" 3 4
 }
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 2
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 2
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 1 3 4
 # 34 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/syslimits.h" 1 3 4
@@ -6109,7 +6109,7 @@ wcstoumax (__const wchar_t *__restrict nptr, wchar_t **__restrict endptr, int ba
 # 169 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 2 3 4
 # 8 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/syslimits.h" 2 3 4
 # 35 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 2 3 4
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 2
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 2
 
 
 # 1 "/usr/include/errno.h" 1 3 4
@@ -6145,7 +6145,7 @@ extern char *program_invocation_name, *program_invocation_short_name;
 }
 # 69 "/usr/include/errno.h" 3 4
 typedef int error_t;
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 2
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 2
 
 
 
@@ -6230,7 +6230,7 @@ typedef int error_t;
    int aptr;
 
  } avi_t;
-# 195 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h"
+# 195 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h"
  avi_t* AVI_open_output_file(char * filename);
  void AVI_set_video(avi_t *AVI, int width, int height, double fps, char *compressor);
  void AVI_set_audio(avi_t *AVI, int channels, long rate, int bits, int format, long mp3rate);
@@ -6353,8 +6353,8 @@ typedef int error_t;
 
 
 }
-# 15 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c" 2
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.h" 1
+# 15 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c" 2
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.h" 1
 
 extern "C" {
 
@@ -6364,19 +6364,19 @@ extern "C" {
 
 
 
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 1
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 1
 
 extern "C" {
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h"
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h"
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 1 3 4
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 2
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 2
 
 
 # 1 "/usr/include/errno.h" 1 3 4
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 2
-# 316 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 2
+# 316 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h"
 }
-# 11 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.h" 2
+# 11 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.h" 2
 
 
 
@@ -6397,7 +6397,7 @@ float* get_frame( avi_t* cell_file,
 
 
 }
-# 16 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c" 2
+# 16 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c" 2
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 1 3 4
 # 34 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 3 4
 typedef struct
@@ -6471,31 +6471,31 @@ int omp_in_final (void) throw ();
 
 
 }
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c" 2
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 17 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c" 2
+# 17 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/heartwall_define.h" 1
-
-
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/heartwall_define.h" 1
 
 
 
 
 
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 1
+
+
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 1
 
 extern "C" {
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h"
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h"
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 1 3 4
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 2
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 2
 
 
 # 1 "/usr/include/errno.h" 1 3 4
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 2
-# 316 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 2
+# 316 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h"
 }
-# 9 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/heartwall_define.h" 2
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/heartwall_define.h"
+# 9 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/heartwall_define.h" 2
+# 21 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/heartwall_define.h"
 typedef struct _public_struct{
 
 
@@ -6567,7 +6567,7 @@ typedef struct _public_struct{
  int conv_cols;
  int conv_elem;
  int conv_mem;
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/heartwall_define.h"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/heartwall_define.h"
  int in2_pad_add_rows;
  int in2_pad_add_cols;
 
@@ -6575,7 +6575,7 @@ typedef struct _public_struct{
  int in2_pad_cols;
  int in2_pad_elem;
  int in2_pad_mem;
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/heartwall_define.h"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/heartwall_define.h"
  int in2_pad_cumv_sel_rowlow;
  int in2_pad_cumv_sel_rowhig;
  int in2_pad_cumv_sel_collow;
@@ -6609,7 +6609,7 @@ typedef struct _public_struct{
  int in2_sub2_sqr_cols;
  int in2_sub2_sqr_elem;
  int in2_sub2_sqr_mem;
-# 179 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/heartwall_define.h"
+# 179 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/heartwall_define.h"
  int tMask_rows;
  int tMask_cols;
  int tMask_elem;
@@ -6677,9 +6677,9 @@ typedef struct _private_struct{
 
 
  float* d_conv;
-# 258 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/heartwall_define.h"
+# 258 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/heartwall_define.h"
  float* d_in2_pad;
-# 267 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/heartwall_define.h"
+# 267 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/heartwall_define.h"
  float* d_in2_sub;
 
 
@@ -6687,9 +6687,9 @@ typedef struct _private_struct{
 
 
  float* d_in2_sub2_sqr;
-# 301 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/heartwall_define.h"
+# 301 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/heartwall_define.h"
  float* d_tMask;
-# 311 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/heartwall_define.h"
+# 311 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/heartwall_define.h"
  float* d_mask_conv;
 
 
@@ -6702,2012 +6702,2012 @@ typedef struct _private_struct{
  int* par_max_coo;
 
 } private_struct;
-# 19 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c" 2
-# 19 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 19 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c" 2
+# 19 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 20 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 21 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 
-# 1 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 1
-# 11 "/home/jmg3/chimes/src/libchimes/checkpoint.h"
+# 1 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 11 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h"
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*____chimes_fp)(void *));
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c" 2
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c" 2
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 double seconds_npm();
 double seconds_quick(); double seconds();
 double seconds_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      struct timeval tp; ;
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      struct timezone tzp; ;
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      int i; i = (gettimeofday(&tp, &tzp)) ;
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_10, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_10, ____chimes_did_disable0, false); }
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 extern void kernel(public_struct pub,
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
     private_struct *priv);
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 void write_data_npm( char* filename, int frameNo, int frames_processed, int endoPoints, int* input_a, int* input_b, int epiPoints, int* input_2a, int* input_2b);
 void write_data_quick( char* filename, int frameNo, int frames_processed, int endoPoints, int* input_a, int* input_b, int epiPoints, int* input_2a, int* input_2b); void write_data( char* filename, int frameNo, int frames_processed, int endoPoints, int* input_a, int* input_b, int epiPoints, int* input_2a, int* input_2b);
 void write_data_resumable( char* filename,
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int frameNo,
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int frames_processed,
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int endoPoints,
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int* input_a,
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int* input_b,
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int epiPoints,
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int* input_2a,
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   int* input_2b){const int ____chimes_did_disable1 = new_stack((void *)(&write_data), "write_data", &____must_manage_write_data, 9, 0, (size_t)(762051829673678567UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(762051829673678571UL), (size_t)(762051829673678572UL), (size_t)(0UL), (size_t)(762051829673678574UL), (size_t)(762051829673678575UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   int* input_2b){const int ____chimes_did_disable1 = new_stack((void *)(&write_data), "write_data", &____must_manage_write_data, 9, 0, (size_t)(740351831688906143UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(740351831688906147UL), (size_t)(740351831688906148UL), (size_t)(0UL), (size_t)(740351831688906150UL), (size_t)(740351831688906151UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  FILE *fid; ;
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  int i; int j; ;
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  char c; ;
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  fid = fopen(filename, "w+");
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  if( fid == __null ){
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 65 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   printf( "The file was not opened for writing\n" );
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   rm_stack(false, 0UL, "write_data", &____must_manage_write_data, ____alias_loc_id_11, ____chimes_did_disable1, false); return;
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
       fprintf(fid, "Total AVI Frames: %d\n", frameNo);
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 74 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
       fprintf(fid, "Frames Processed: %d\n", frames_processed);
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
       fprintf(fid, "endoPoints: %d\n", endoPoints);
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
       fprintf(fid, "epiPoints: %d", epiPoints);
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 77 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(j=0; j<frames_processed;j++)
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    {
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      fprintf(fid, "\n---Frame %d---",j);
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      fprintf(fid, "\n--endo--\n",j);
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      for(i=0; i<endoPoints; i++){
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
        fprintf(fid, "%d\t", input_a[j+i*frameNo]);
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      }
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      fprintf(fid, "\n");
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      for(i=0; i<endoPoints; i++){
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
        fprintf(fid, "%d\t", input_b[j+i*frameNo]);
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      }
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      fprintf(fid, "\n--epi--\n",j);
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      for(i=0; i<epiPoints; i++){
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
        fprintf(fid, "%d\t", input_2a[j+i*frameNo]);
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      }
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      fprintf(fid, "\n");
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      for(i=0; i<epiPoints; i++){
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
        fprintf(fid, "%d\t", input_2b[j+i*frameNo]);
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      }
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    }
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  fclose(fid);
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 rm_stack(false, 0UL, "write_data", &____must_manage_write_data, ____alias_loc_id_11, ____chimes_did_disable1, false); }
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 static int (*____chimes_extern_func_AVI_close)(avi_t *) = AVI_close;static avi_t *(*____chimes_extern_func_AVI_open_input_file)(char *, int) = AVI_open_input_file;static void (*____chimes_extern_func_AVI_print_error)(char *) = AVI_print_error;static long (*____chimes_extern_func_AVI_video_frames)(avi_t *) = AVI_video_frames;static int (*____chimes_extern_func_AVI_video_height)(avi_t *) = AVI_video_height;static int (*____chimes_extern_func_AVI_video_width)(avi_t *) = AVI_video_width;static float *(*____chimes_extern_func_get_frame)(avi_t *, int, int, int, int) = get_frame;static void (*____chimes_extern_func_kernel)(struct _public_struct, struct _private_struct *) = kernel;
 int main_quick(int argc, char *argv []); int main(int argc, char *argv []);
-int main_resumable(int argc, char *argv []){const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(762051829673680205UL), "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; avi_t *d_frames;
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+int main_resumable(int argc, char *argv []){const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(740351831688907781UL), "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; avi_t *d_frames;
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 char *video_file_name;
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 double start_time;
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 private_struct priv[51];
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 public_struct pub;
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 int frames_processed;
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  register_stack_vars(6, "main|d_frames|0", &____must_checkpoint_main_d_frames_0, "%struct.avi_t*", (void *)(&d_frames), (size_t)8, 1, 0, 0, "main|video_file_name|0", (int *)0x0, "i8*", (void *)(&video_file_name), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|priv|0", (int *)0x0, "[51 x %struct._private_struct]", (void *)(priv), (size_t)8160, 0, 0, 0, "main|pub|0", (int *)0x0, "%struct._public_struct = type { i32, i32, i32, float, i32, i32, i32*, i32*, i32*, i32*, float*, i32, i32, i32*, i32*, i32*, i32*, float*, i32, i32, i32, float*, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 }", (void *)(&pub), (size_t)384, 0, 1, 11, (int)__builtin_offsetof(struct _public_struct, d_endoRow), (int)__builtin_offsetof(struct _public_struct, d_endoCol), (int)__builtin_offsetof(struct _public_struct, d_tEndoRowLoc), (int)__builtin_offsetof(struct _public_struct, d_tEndoColLoc), (int)__builtin_offsetof(struct _public_struct, d_endoT), (int)__builtin_offsetof(struct _public_struct, d_epiRow), (int)__builtin_offsetof(struct _public_struct, d_epiCol), (int)__builtin_offsetof(struct _public_struct, d_tEpiRowLoc), (int)__builtin_offsetof(struct _public_struct, d_tEpiColLoc), (int)__builtin_offsetof(struct _public_struct, d_epiT), (int)__builtin_offsetof(struct _public_struct, d_frame), "main|frames_processed|0", (int *)0x0, "i32", (void *)(&frames_processed), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } default: { chimes_error(); } } } ; ;
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  int i; ;
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   ;
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    ;
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    ;
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
         call_lbl_0: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 135 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  if(argc!=4){
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   printf("ERROR: usage: heartwall <inputfile> <num of frames> <num of threads>\n");
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   exit(1);
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 139 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 141 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 140 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 141 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   ;
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 142 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  video_file_name = argv[1];
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-     call_lbl_1: d_frames = ((avi_t*)(____chimes_does_checkpoint_AVI_open_input_file_npm ? ( ({ calling((void*)AVI_open_input_file, 1, ____alias_loc_id_4, 762051829673680010UL, 2, (size_t)(762051829673680000UL), (size_t)(0UL)); (AVI_open_input_file)(video_file_name, 1); }) ) : (({ calling_npm("AVI_open_input_file", ____alias_loc_id_4); (*____chimes_extern_func_AVI_open_input_file)(video_file_name, 1); })))) ;
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 143 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+     call_lbl_1: d_frames = ((avi_t*)(____chimes_does_checkpoint_AVI_open_input_file_npm ? ( ({ calling((void*)AVI_open_input_file, 1, ____alias_loc_id_4, 740351831688907586UL, 2, (size_t)(740351831688907576UL), (size_t)(0UL)); (AVI_open_input_file)(video_file_name, 1); }) ) : (({ calling_npm("AVI_open_input_file", ____alias_loc_id_4); (*____chimes_extern_func_AVI_open_input_file)(video_file_name, 1); })))) ;
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  if (d_frames == __null) {
-# 146 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-      call_lbl_2: (____chimes_does_checkpoint_AVI_print_error_npm ? ( ({ char * ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = ((char *)"Error with AVI_open_input_file"); } calling((void*)AVI_print_error, 2, ____alias_loc_id_1, 0UL, 1, (size_t)(762051829673680246UL)); (AVI_print_error)(____chimes_arg2); }) ) : (({ calling_npm("AVI_print_error", ____alias_loc_id_1); (*____chimes_extern_func_AVI_print_error)((char *) "Error with AVI_open_input_file"); })));
-# 147 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 146 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+      call_lbl_2: (____chimes_does_checkpoint_AVI_print_error_npm ? ( ({ char * ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = ((char *)"Error with AVI_open_input_file"); } calling((void*)AVI_print_error, 2, ____alias_loc_id_1, 0UL, 1, (size_t)(740351831688907822UL)); (AVI_print_error)(____chimes_arg2); }) ) : (({ calling_npm("AVI_print_error", ____alias_loc_id_1); (*____chimes_extern_func_AVI_print_error)((char *) "Error with AVI_open_input_file"); })));
+# 147 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
       int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (-1); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable2, false); return ____chimes_ret_var_1; ;
-# 148 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 148 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- alias_group_changed(____alias_loc_id_7); call_lbl_3: pub.frames = (____chimes_does_checkpoint_AVI_video_frames_npm ? ( ({ calling((void*)AVI_video_frames, 3, ____alias_loc_id_7, 0UL, 1, (size_t)(762051829673680010UL)); (AVI_video_frames)(d_frames); }) ) : (({ calling_npm("AVI_video_frames", ____alias_loc_id_7); (*____chimes_extern_func_AVI_video_frames)(d_frames); })));
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  call_lbl_4: pub.frame_rows = (____chimes_does_checkpoint_AVI_video_height_npm ? ( ({ calling((void*)AVI_video_height, 4, ____alias_loc_id_5, 0UL, 1, (size_t)(762051829673680010UL)); (AVI_video_height)(d_frames); }) ) : (({ calling_npm("AVI_video_height", ____alias_loc_id_5); (*____chimes_extern_func_AVI_video_height)(d_frames); })));
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  call_lbl_5: pub.frame_cols = (____chimes_does_checkpoint_AVI_video_width_npm ? ( ({ calling((void*)AVI_video_width, 5, ____alias_loc_id_2, 0UL, 1, (size_t)(762051829673680010UL)); (AVI_video_width)(d_frames); }) ) : (({ calling_npm("AVI_video_width", ____alias_loc_id_2); (*____chimes_extern_func_AVI_video_width)(d_frames); })));
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 149 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 151 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ alias_group_changed(____alias_loc_id_7); call_lbl_3: pub.frames = (____chimes_does_checkpoint_AVI_video_frames_npm ? ( ({ calling((void*)AVI_video_frames, 3, ____alias_loc_id_7, 0UL, 1, (size_t)(740351831688907586UL)); (AVI_video_frames)(d_frames); }) ) : (({ calling_npm("AVI_video_frames", ____alias_loc_id_7); (*____chimes_extern_func_AVI_video_frames)(d_frames); })));
+# 152 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  call_lbl_4: pub.frame_rows = (____chimes_does_checkpoint_AVI_video_height_npm ? ( ({ calling((void*)AVI_video_height, 4, ____alias_loc_id_5, 0UL, 1, (size_t)(740351831688907586UL)); (AVI_video_height)(d_frames); }) ) : (({ calling_npm("AVI_video_height", ____alias_loc_id_5); (*____chimes_extern_func_AVI_video_height)(d_frames); })));
+# 153 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  call_lbl_5: pub.frame_cols = (____chimes_does_checkpoint_AVI_video_width_npm ? ( ({ calling((void*)AVI_video_width, 5, ____alias_loc_id_2, 0UL, 1, (size_t)(740351831688907586UL)); (AVI_video_width)(d_frames); }) ) : (({ calling_npm("AVI_video_width", ____alias_loc_id_2); (*____chimes_extern_func_AVI_video_width)(d_frames); })));
+# 154 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.frame_elem = pub.frame_rows * pub.frame_cols;
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 155 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.frame_mem = sizeof(float) * pub.frame_elem;
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 157 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-     call_lbl_6: (____chimes_does_checkpoint_AVI_close_npm ? ( ({ calling((void*)AVI_close, 6, ____alias_loc_id_0, 0UL, 1, (size_t)(762051829673680010UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_0); (*____chimes_extern_func_AVI_close)(d_frames); })));
-# 158 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 160 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 162 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 163 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 164 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 156 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 157 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+     call_lbl_6: (____chimes_does_checkpoint_AVI_close_npm ? ( ({ calling((void*)AVI_close, 6, ____alias_loc_id_0, 0UL, 1, (size_t)(740351831688907586UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_0); (*____chimes_extern_func_AVI_close)(d_frames); })));
+# 158 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 159 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 160 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 161 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 162 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 163 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 164 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  frames_processed = atoi(argv[2]);
-# 165 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 165 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  if(frames_processed<0 || frames_processed>pub.frames){
-# 166 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 166 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   printf("ERROR: %d is an incorrect number of frames specified, select in the range of 0-%d\n", frames_processed, pub.frames);
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 167 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ;
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 168 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 169 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 170 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 169 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 170 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  int omp_num_threads; ;
-# 171 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 171 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  omp_num_threads = atoi(argv[3]);
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 172 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  if (omp_num_threads <=0){
-# 173 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 173 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
     printf ("num of threads must be a positive integer");
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 174 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable2, false); return ____chimes_ret_var_3; ;
-# 175 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 175 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 176 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 177 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 176 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 177 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  printf("num of threads: %d\n", omp_num_threads);
-# 187 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 187 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 187 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 187 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.endoPoints = 20;
-# 188 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 188 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endo_mem = sizeof(int) * pub.endoPoints;
-# 189 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_endoRow = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 190 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 189 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ pub.d_endoRow = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 190 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 0] = 369;
-# 191 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 191 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 1] = 400;
-# 192 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 192 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 2] = 429;
-# 193 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 193 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 3] = 452;
-# 194 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 194 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 4] = 476;
-# 195 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 195 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 5] = 486;
-# 196 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 196 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 6] = 479;
-# 197 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 197 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 7] = 458;
-# 198 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 198 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 8] = 433;
-# 199 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 199 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 9] = 404;
-# 200 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 200 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[10] = 374;
-# 201 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 201 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[11] = 346;
-# 202 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 202 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[12] = 318;
-# 203 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 203 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[13] = 294;
-# 204 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 204 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[14] = 277;
-# 205 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 205 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[15] = 269;
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 206 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[16] = 275;
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 207 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[17] = 287;
-# 208 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 208 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[18] = 311;
-# 209 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 209 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[19] = 339;
-# 210 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_endoCol = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 211 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 210 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ pub.d_endoCol = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 211 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 0] = 408;
-# 212 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 212 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 1] = 406;
-# 213 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 213 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 2] = 397;
-# 214 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 214 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 3] = 383;
-# 215 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 215 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 4] = 354;
-# 216 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 216 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 5] = 322;
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 217 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 6] = 294;
-# 218 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 218 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 7] = 270;
-# 219 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 219 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 8] = 250;
-# 220 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 220 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 9] = 237;
-# 221 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 221 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[10] = 235;
-# 222 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 222 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[11] = 241;
-# 223 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 223 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[12] = 254;
-# 224 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 224 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[13] = 273;
-# 225 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 225 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[14] = 300;
-# 226 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 226 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[15] = 328;
-# 227 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 227 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[16] = 356;
-# 228 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 228 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[17] = 383;
-# 229 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 229 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[18] = 401;
-# 230 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 230 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[19] = 411;
-# 231 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_tEndoRowLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem * pub.frames, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 232 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_tEndoColLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem * pub.frames, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 233 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 234 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 235 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 236 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 237 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 238 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 231 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ pub.d_tEndoRowLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem * pub.frames, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 232 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ pub.d_tEndoColLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem * pub.frames, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 233 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 234 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 235 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 236 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 237 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 238 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.epiPoints = 31;
-# 239 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 239 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epi_mem = sizeof(int) * pub.epiPoints;
-# 240 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_epiRow = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 241 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 240 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ pub.d_epiRow = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 241 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 0] = 390;
-# 242 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 242 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 1] = 419;
-# 243 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 243 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 2] = 448;
-# 244 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 244 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 3] = 474;
-# 245 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 245 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 4] = 501;
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 246 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 5] = 519;
-# 247 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 247 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 6] = 535;
-# 248 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 248 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 7] = 542;
-# 249 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 249 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 8] = 543;
-# 250 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 250 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 9] = 538;
-# 251 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 251 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[10] = 528;
-# 252 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 252 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[11] = 511;
-# 253 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 253 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[12] = 491;
-# 254 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 254 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[13] = 466;
-# 255 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 255 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[14] = 438;
-# 256 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 256 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[15] = 406;
-# 257 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 257 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[16] = 376;
-# 258 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 258 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[17] = 347;
-# 259 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 259 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[18] = 318;
-# 260 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 260 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[19] = 291;
-# 261 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 261 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[20] = 275;
-# 262 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 262 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[21] = 259;
-# 263 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 263 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[22] = 256;
-# 264 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 264 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[23] = 252;
-# 265 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 265 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[24] = 252;
-# 266 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 266 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[25] = 257;
-# 267 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 267 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[26] = 266;
-# 268 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 268 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[27] = 283;
-# 269 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 269 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[28] = 305;
-# 270 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 270 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[29] = 331;
-# 271 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 271 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[30] = 360;
-# 272 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_epiCol = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 273 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 272 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ pub.d_epiCol = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 273 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 0] = 457;
-# 274 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 274 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 1] = 454;
-# 275 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 275 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 2] = 446;
-# 276 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 276 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 3] = 431;
-# 277 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 277 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 4] = 411;
-# 278 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 278 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 5] = 388;
-# 279 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 279 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 6] = 361;
-# 280 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 280 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 7] = 331;
-# 281 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 281 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 8] = 301;
-# 282 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 282 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 9] = 273;
-# 283 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 283 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[10] = 243;
-# 284 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 284 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[11] = 218;
-# 285 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 285 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[12] = 196;
-# 286 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 286 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[13] = 178;
-# 287 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 287 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[14] = 166;
-# 288 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 288 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[15] = 157;
-# 289 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 289 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[16] = 155;
-# 290 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 290 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[17] = 165;
-# 291 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 291 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[18] = 177;
-# 292 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 292 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[19] = 197;
-# 293 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 293 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[20] = 218;
-# 294 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 294 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[21] = 248;
-# 295 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 295 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[22] = 276;
-# 296 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 296 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[23] = 304;
-# 297 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 297 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[24] = 333;
-# 298 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 298 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[25] = 361;
-# 299 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 299 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[26] = 391;
-# 300 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 300 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[27] = 415;
-# 301 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 301 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[28] = 434;
-# 302 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 302 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[29] = 448;
-# 303 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 303 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[30] = 455;
-# 304 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_tEpiRowLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem * pub.frames, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 305 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_tEpiColLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem * pub.frames, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 306 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 307 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 308 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 309 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 310 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 311 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 304 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ pub.d_tEpiRowLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem * pub.frames, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 305 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ pub.d_tEpiColLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem * pub.frames, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 306 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 307 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 308 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 309 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 310 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 311 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.allPoints = 51;
-# 312 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 313 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 314 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 315 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 316 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 317 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 312 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 313 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 314 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 315 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 316 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 317 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.tSize = 25;
-# 318 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 318 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.sSize = 40;
-# 319 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 319 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.maxMove = 10;
-# 320 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 320 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.alpha = 0.87;
-# 321 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 322 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 323 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 324 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 325 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 326 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 321 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 322 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 323 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 324 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 325 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 326 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 327 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].in_partial_sum = (float *) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 2 * pub.tSize + 1) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * 2*pub.tSize+1, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 328 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].in_sqr_partial_sum = (float *) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 2 * pub.tSize + 1) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * 2*pub.tSize+1, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 329 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].par_max_val = (float *) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * (2 * pub.tSize + 2 * pub.sSize + 1)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * (2*pub.tSize+2*pub.sSize+1), 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 330 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].par_max_coo = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * (2 * pub.tSize + 2 * pub.sSize + 1)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int) * (2*pub.tSize+2*pub.sSize+1), 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 331 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 327 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].in_partial_sum = (float *) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 2 * pub.tSize + 1) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * 2*pub.tSize+1, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 328 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].in_sqr_partial_sum = (float *) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 2 * pub.tSize + 1) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * 2*pub.tSize+1, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 329 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].par_max_val = (float *) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * (2 * pub.tSize + 2 * pub.sSize + 1)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * (2*pub.tSize+2*pub.sSize+1), 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 330 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].par_max_coo = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * (2 * pub.tSize + 2 * pub.sSize + 1)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int) * (2*pub.tSize+2*pub.sSize+1), 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 331 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 332 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 333 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 334 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 335 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 336 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 337 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 332 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 333 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 334 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 335 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 336 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 337 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_rows = 2 * pub.sSize + 1;
-# 338 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 338 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_cols = 2 * pub.sSize + 1;
-# 339 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 339 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_elem = pub.in2_rows * pub.in2_cols;
-# 340 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 340 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_mem = sizeof(float) * pub.in2_elem;
-# 341 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 342 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 341 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 342 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 343 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in2 = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 344 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in2_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 345 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 343 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].d_in2 = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 344 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].d_in2_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 345 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 346 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 347 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 348 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 349 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 350 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 351 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 346 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 347 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 348 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 349 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 350 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 351 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in_mod_rows = pub.tSize+1+pub.tSize;
-# 352 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 352 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in_mod_cols = pub.in_mod_rows;
-# 353 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 353 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in_mod_elem = pub.in_mod_rows * pub.in_mod_cols;
-# 354 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 354 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in_mod_mem = sizeof(float) * pub.in_mod_elem;
-# 355 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 355 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 356 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 357 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in_mod = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 358 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 359 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 357 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].d_in_mod = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 358 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].d_in_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 359 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 360 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 361 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 362 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 363 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 364 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 365 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_endoT = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem * pub.endoPoints) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem * pub.endoPoints, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 366 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_epiT = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem * pub.epiPoints) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem * pub.epiPoints, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 367 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 368 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 369 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 370 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 371 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 372 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 360 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 361 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 362 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 363 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 364 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 365 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ pub.d_endoT = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem * pub.endoPoints) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem * pub.endoPoints, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 366 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ pub.d_epiT = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem * pub.epiPoints) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem * pub.epiPoints, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 367 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 368 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 369 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 370 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 371 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 372 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.endoPoints; i++){
-# 373 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 373 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].point_no = i;
-# 374 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 374 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].in_pointer = priv[i].point_no * pub.in_mod_elem;
-# 375 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 375 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].d_Row = pub.d_endoRow;
-# 376 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 376 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].d_Col = pub.d_endoCol;
-# 377 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 377 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].d_tRowLoc = pub.d_tEndoRowLoc;
-# 378 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 378 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].d_tColLoc = pub.d_tEndoColLoc;
-# 379 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 379 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].d_T = pub.d_endoT;
-# 380 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 380 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 381 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 382 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 381 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 382 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=pub.endoPoints; i<pub.allPoints; i++){
-# 383 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 383 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].point_no = i-pub.endoPoints;
-# 384 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 384 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].in_pointer = priv[i].point_no * pub.in_mod_elem;
-# 385 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 385 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].d_Row = pub.d_epiRow;
-# 386 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 386 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].d_Col = pub.d_epiCol;
-# 387 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 387 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].d_tRowLoc = pub.d_tEpiRowLoc;
-# 388 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 388 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].d_tColLoc = pub.d_tEpiColLoc;
-# 389 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 389 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].d_T = pub.d_epiT;
-# 390 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 390 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 391 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 392 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 393 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 394 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 395 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 396 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 391 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 392 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 393 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 394 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 395 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 396 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.ioffset = 0;
-# 397 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 397 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.joffset = 0;
-# 398 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 398 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.conv_rows = pub.in_mod_rows + pub.in2_rows - 1;
-# 399 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 399 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.conv_cols = pub.in_mod_cols + pub.in2_cols - 1;
-# 400 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 400 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.conv_elem = pub.conv_rows * pub.conv_cols;
-# 401 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 401 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.conv_mem = sizeof(float) * pub.conv_elem;
-# 402 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 403 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 402 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 403 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 404 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_conv = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.conv_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.conv_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 405 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 404 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].d_conv = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.conv_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.conv_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 405 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 418 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 418 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 418 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 418 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_add_rows = pub.in_mod_rows;
-# 419 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 419 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_add_cols = pub.in_mod_cols;
-# 420 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 420 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_rows = pub.in2_rows + 2*pub.in2_pad_add_rows;
-# 421 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 421 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_cols = pub.in2_cols + 2*pub.in2_pad_add_cols;
-# 422 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 422 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_elem = pub.in2_pad_rows * pub.in2_pad_cols;
-# 423 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 423 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_mem = sizeof(float) * pub.in2_pad_elem;
-# 424 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 425 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 424 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 425 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 426 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in2_pad = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_pad_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_pad_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 427 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 426 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].d_in2_pad = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_pad_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_pad_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 427 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 436 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 436 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 436 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 436 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_cumv_sel_rowlow = 1 + pub.in_mod_rows;
-# 437 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 437 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_cumv_sel_rowhig = pub.in2_pad_rows - 1;
-# 438 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 438 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_cumv_sel_collow = 1;
-# 439 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 439 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_cumv_sel_colhig = pub.in2_pad_cols;
-# 440 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 440 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_cumv_sel2_rowlow = 1;
-# 441 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 441 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_cumv_sel2_rowhig = pub.in2_pad_rows - pub.in_mod_rows - 1;
-# 442 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 442 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_cumv_sel2_collow = 1;
-# 443 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 443 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_cumv_sel2_colhig = pub.in2_pad_cols;
-# 444 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 444 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_rows = pub.in2_pad_cumv_sel_rowhig - pub.in2_pad_cumv_sel_rowlow + 1;
-# 445 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 445 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_cols = pub.in2_pad_cumv_sel_colhig - pub.in2_pad_cumv_sel_collow + 1;
-# 446 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 446 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_elem = pub.in2_sub_rows * pub.in2_sub_cols;
-# 447 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 447 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_mem = sizeof(float) * pub.in2_sub_elem;
-# 448 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 449 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 448 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 449 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 450 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in2_sub = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_sub_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_sub_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 451 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 450 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].d_in2_sub = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_sub_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_sub_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 451 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 452 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 453 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 454 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 455 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 456 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 457 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 452 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 453 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 454 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 455 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 456 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 457 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_cumh_sel_rowlow = 1;
-# 458 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 458 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_cumh_sel_rowhig = pub.in2_sub_rows;
-# 459 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 459 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_cumh_sel_collow = 1 + pub.in_mod_cols;
-# 460 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 460 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_cumh_sel_colhig = pub.in2_sub_cols - 1;
-# 461 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 461 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_cumh_sel2_rowlow = 1;
-# 462 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 462 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_cumh_sel2_rowhig = pub.in2_sub_rows;
-# 463 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 463 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_cumh_sel2_collow = 1;
-# 464 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 464 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_cumh_sel2_colhig = pub.in2_sub_cols - pub.in_mod_cols - 1;
-# 465 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 465 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub2_sqr_rows = pub.in2_sub_cumh_sel_rowhig - pub.in2_sub_cumh_sel_rowlow + 1;
-# 466 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 466 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub2_sqr_cols = pub.in2_sub_cumh_sel_colhig - pub.in2_sub_cumh_sel_collow + 1;
-# 467 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 467 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub2_sqr_elem = pub.in2_sub2_sqr_rows * pub.in2_sub2_sqr_cols;
-# 468 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 468 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub2_sqr_mem = sizeof(float) * pub.in2_sub2_sqr_elem;
-# 469 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 470 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 469 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 470 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 471 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in2_sub2_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_sub2_sqr_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_sub2_sqr_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 472 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 471 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].d_in2_sub2_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_sub2_sqr_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_sub2_sqr_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 472 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 500 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 500 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 500 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 500 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.tMask_rows = pub.in_mod_rows + (pub.sSize+1+pub.sSize) - 1;
-# 501 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 501 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.tMask_cols = pub.tMask_rows;
-# 502 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 502 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.tMask_elem = pub.tMask_rows * pub.tMask_cols;
-# 503 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 503 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.tMask_mem = sizeof(float) * pub.tMask_elem;
-# 504 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 505 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 504 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 505 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 506 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_tMask = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.tMask_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.tMask_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 507 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 506 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].d_tMask = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.tMask_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.tMask_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 507 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 508 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 509 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 510 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 511 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 512 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 513 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 508 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 509 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 510 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 511 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 512 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 513 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.mask_rows = pub.maxMove;
-# 514 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 514 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.mask_cols = pub.mask_rows;
-# 515 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 515 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.mask_elem = pub.mask_rows * pub.mask_cols;
-# 516 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 516 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.mask_mem = sizeof(float) * pub.mask_elem;
-# 517 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 518 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 519 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 520 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 521 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 522 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 517 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 518 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 519 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 520 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 521 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 522 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.mask_conv_rows = pub.tMask_rows;
-# 523 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 523 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.mask_conv_cols = pub.tMask_cols;
-# 524 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 524 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.mask_conv_elem = pub.mask_conv_rows * pub.mask_conv_cols;
-# 525 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 525 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.mask_conv_mem = sizeof(float) * pub.mask_conv_elem;
-# 526 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 526 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.mask_conv_ioffset = (pub.mask_rows-1)/2;
-# 527 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 527 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  if((pub.mask_rows-1) % 2 > 0.5){
-# 528 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 528 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   pub.mask_conv_ioffset = pub.mask_conv_ioffset + 1;
-# 529 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 529 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 530 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 530 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.mask_conv_joffset = (pub.mask_cols-1)/2;
-# 531 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 531 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  if((pub.mask_cols-1) % 2 > 0.5){
-# 532 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 532 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   pub.mask_conv_joffset = pub.mask_conv_joffset + 1;
-# 533 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 533 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 534 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 535 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 535 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 536 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_mask_conv = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.mask_conv_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.mask_conv_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 537 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 536 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].d_mask_conv = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.mask_conv_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.mask_conv_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 537 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 538 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 539 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 540 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 541 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 542 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 543 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 538 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 539 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 540 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 541 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 542 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 543 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  printf("frame progress: ");
-# 544 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 544 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  fflush(__null);
-# 545 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 546 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 547 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 548 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 549 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 550 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 545 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 546 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 547 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 548 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 549 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 550 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(pub.frame_no=0; pub.frame_no<frames_processed; pub.frame_no++){
-# 551 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 552 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 553 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 554 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 555 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 556 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 557 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-         call_lbl_7: d_frames = (avi_t*)(____chimes_does_checkpoint_AVI_open_input_file_npm ? ( ({ calling((void*)AVI_open_input_file, 7, ____alias_loc_id_9, 762051829673680010UL, 2, (size_t)(762051829673680000UL), (size_t)(0UL)); (AVI_open_input_file)(video_file_name, 1); }) ) : (({ calling_npm("AVI_open_input_file", ____alias_loc_id_9); (*____chimes_extern_func_AVI_open_input_file)(video_file_name, 1); })));
-# 558 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-        ((d_frames) ? static_cast<void> (0) : __assert_fail ("d_frames", "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c", 558, __PRETTY_FUNCTION__));
-# 559 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   call_lbl_8: pub.d_frame = (____chimes_does_checkpoint_get_frame_npm ? ( ({ int ____chimes_arg10; if (!____chimes_replaying) { ____chimes_arg10 = (pub.frame_no); } calling((void*)get_frame, 8, ____alias_loc_id_8, 762051829673679219UL, 5, (size_t)(762051829673680010UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (get_frame)(d_frames, ____chimes_arg10, 0, 0, 1); }) ) : (({ calling_npm("get_frame", ____alias_loc_id_8); (*____chimes_extern_func_get_frame)(d_frames, pub.frame_no, 0, 0, 1); })));
-# 564 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-         call_lbl_9: (____chimes_does_checkpoint_AVI_close_npm ? ( ({ calling((void*)AVI_close, 9, ____alias_loc_id_6, 0UL, 1, (size_t)(762051829673680010UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_6); (*____chimes_extern_func_AVI_close)(d_frames); })));
-# 575 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 575 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-         call_lbl_10: (____chimes_does_checkpoint_kernel_npm ? ( ({ public_struct ____chimes_arg15; if (!____chimes_replaying) { ____chimes_arg15 = (pub); } calling((void*)kernel, 10, ____alias_loc_id_3, 0UL, 2, (size_t)(762051829673678596UL), (size_t)(762051829673678588UL)); (kernel)(____chimes_arg15, priv); }) ) : (({ calling_npm("kernel", ____alias_loc_id_3); (*____chimes_extern_func_kernel)(pub, priv); })));
-# 587 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 587 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)pub.d_frame) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_frame) - sizeof(void *))); }) ;
-# 588 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 589 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 590 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 591 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 592 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 593 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 551 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 552 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 553 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 554 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 555 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 556 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 557 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+         call_lbl_7: d_frames = (avi_t*)(____chimes_does_checkpoint_AVI_open_input_file_npm ? ( ({ calling((void*)AVI_open_input_file, 7, ____alias_loc_id_9, 740351831688907586UL, 2, (size_t)(740351831688907576UL), (size_t)(0UL)); (AVI_open_input_file)(video_file_name, 1); }) ) : (({ calling_npm("AVI_open_input_file", ____alias_loc_id_9); (*____chimes_extern_func_AVI_open_input_file)(video_file_name, 1); })));
+# 558 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+        ((d_frames) ? static_cast<void> (0) : __assert_fail ("d_frames", "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c", 558, __PRETTY_FUNCTION__));
+# 559 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   call_lbl_8: pub.d_frame = (____chimes_does_checkpoint_get_frame_npm ? ( ({ int ____chimes_arg10; if (!____chimes_replaying) { ____chimes_arg10 = (pub.frame_no); } calling((void*)get_frame, 8, ____alias_loc_id_8, 740351831688906795UL, 5, (size_t)(740351831688907586UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (get_frame)(d_frames, ____chimes_arg10, 0, 0, 1); }) ) : (({ calling_npm("get_frame", ____alias_loc_id_8); (*____chimes_extern_func_get_frame)(d_frames, pub.frame_no, 0, 0, 1); })));
+# 564 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+         call_lbl_9: (____chimes_does_checkpoint_AVI_close_npm ? ( ({ calling((void*)AVI_close, 9, ____alias_loc_id_6, 0UL, 1, (size_t)(740351831688907586UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_6); (*____chimes_extern_func_AVI_close)(d_frames); })));
+# 575 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 575 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+         call_lbl_10: (____chimes_does_checkpoint_kernel_npm ? ( ({ public_struct ____chimes_arg15; if (!____chimes_replaying) { ____chimes_arg15 = (pub); } calling((void*)kernel, 10, ____alias_loc_id_3, 0UL, 2, (size_t)(740351831688906172UL), (size_t)(740351831688906164UL)); (kernel)(____chimes_arg15, priv); }) ) : (({ calling_npm("kernel", ____alias_loc_id_3); (*____chimes_extern_func_kernel)(pub, priv); })));
+# 587 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 587 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)pub.d_frame) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_frame) - sizeof(void *))); }) ;
+# 588 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 589 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 590 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 591 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 592 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 593 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   printf("%d ", pub.frame_no);
-# 594 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 594 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   fflush(__null);
-# 595 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 596 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 597 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 595 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 596 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 597 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      call_lbl_11: checkpoint_transformed(11, 0);
-# 598 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 599 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 600 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 598 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 599 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 600 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 601 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 602 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 603 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 604 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 605 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 606 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 601 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 602 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 603 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 604 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 605 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 606 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  printf("\n");
-# 607 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 607 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  fflush(__null);
-# 608 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 609 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 608 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 609 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      double end_time; call_lbl_12: end_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
-# 610 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 610 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
     printf("execution took %f s\n", end_time - start_time);
-# 638 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 638 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free_helper((((unsigned char *)pub.d_endoRow) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_endoRow) - sizeof(void *))); }) ;
-# 639 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free_helper((((unsigned char *)pub.d_endoCol) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_endoCol) - sizeof(void *))); }) ;
-# 640 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free_helper((((unsigned char *)pub.d_tEndoRowLoc) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_tEndoRowLoc) - sizeof(void *))); }) ;
-# 641 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free_helper((((unsigned char *)pub.d_tEndoColLoc) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_tEndoColLoc) - sizeof(void *))); }) ;
-# 642 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free_helper((((unsigned char *)pub.d_endoT) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_endoT) - sizeof(void *))); }) ;
-# 643 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 644 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free_helper((((unsigned char *)pub.d_epiRow) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_epiRow) - sizeof(void *))); }) ;
-# 645 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free_helper((((unsigned char *)pub.d_epiCol) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_epiCol) - sizeof(void *))); }) ;
-# 646 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free_helper((((unsigned char *)pub.d_tEpiRowLoc) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_tEpiRowLoc) - sizeof(void *))); }) ;
-# 647 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free_helper((((unsigned char *)pub.d_tEpiColLoc) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_tEpiColLoc) - sizeof(void *))); }) ;
-# 648 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free_helper((((unsigned char *)pub.d_epiT) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_epiT) - sizeof(void *))); }) ;
-# 649 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 650 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 651 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 652 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 653 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 654 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 638 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 638 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  ({ free_helper((((unsigned char *)pub.d_endoRow) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_endoRow) - sizeof(void *))); }) ;
+# 639 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  ({ free_helper((((unsigned char *)pub.d_endoCol) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_endoCol) - sizeof(void *))); }) ;
+# 640 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  ({ free_helper((((unsigned char *)pub.d_tEndoRowLoc) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_tEndoRowLoc) - sizeof(void *))); }) ;
+# 641 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  ({ free_helper((((unsigned char *)pub.d_tEndoColLoc) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_tEndoColLoc) - sizeof(void *))); }) ;
+# 642 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  ({ free_helper((((unsigned char *)pub.d_endoT) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_endoT) - sizeof(void *))); }) ;
+# 643 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 644 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  ({ free_helper((((unsigned char *)pub.d_epiRow) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_epiRow) - sizeof(void *))); }) ;
+# 645 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  ({ free_helper((((unsigned char *)pub.d_epiCol) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_epiCol) - sizeof(void *))); }) ;
+# 646 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  ({ free_helper((((unsigned char *)pub.d_tEpiRowLoc) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_tEpiRowLoc) - sizeof(void *))); }) ;
+# 647 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  ({ free_helper((((unsigned char *)pub.d_tEpiColLoc) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_tEpiColLoc) - sizeof(void *))); }) ;
+# 648 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  ({ free_helper((((unsigned char *)pub.d_epiT) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_epiT) - sizeof(void *))); }) ;
+# 649 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 650 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 651 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 652 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 653 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 654 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 655 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].in_partial_sum) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].in_partial_sum) - sizeof(void *))); }) ;
-# 656 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].in_sqr_partial_sum) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].in_sqr_partial_sum) - sizeof(void *))); }) ;
-# 657 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].par_max_val) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].par_max_val) - sizeof(void *))); }) ;
-# 658 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].par_max_coo) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].par_max_coo) - sizeof(void *))); }) ;
-# 659 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 660 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].d_in2) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in2) - sizeof(void *))); }) ;
-# 661 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].d_in2_sqr) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in2_sqr) - sizeof(void *))); }) ;
-# 662 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 663 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].d_in_mod) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in_mod) - sizeof(void *))); }) ;
-# 664 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].d_in_sqr) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in_sqr) - sizeof(void *))); }) ;
-# 665 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 666 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].d_conv) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_conv) - sizeof(void *))); }) ;
-# 667 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 668 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].d_in2_pad) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in2_pad) - sizeof(void *))); }) ;
-# 669 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 670 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].d_in2_sub) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in2_sub) - sizeof(void *))); }) ;
-# 671 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 672 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].d_in2_sub2_sqr) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in2_sub2_sqr) - sizeof(void *))); }) ;
-# 673 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 674 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].d_tMask) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_tMask) - sizeof(void *))); }) ;
-# 675 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].d_mask_conv) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_mask_conv) - sizeof(void *))); }) ;
-# 676 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 655 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].in_partial_sum) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].in_partial_sum) - sizeof(void *))); }) ;
+# 656 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].in_sqr_partial_sum) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].in_sqr_partial_sum) - sizeof(void *))); }) ;
+# 657 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].par_max_val) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].par_max_val) - sizeof(void *))); }) ;
+# 658 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].par_max_coo) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].par_max_coo) - sizeof(void *))); }) ;
+# 659 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 660 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].d_in2) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].d_in2) - sizeof(void *))); }) ;
+# 661 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].d_in2_sqr) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].d_in2_sqr) - sizeof(void *))); }) ;
+# 662 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 663 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].d_in_mod) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].d_in_mod) - sizeof(void *))); }) ;
+# 664 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].d_in_sqr) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].d_in_sqr) - sizeof(void *))); }) ;
+# 665 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 666 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].d_conv) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].d_conv) - sizeof(void *))); }) ;
+# 667 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 668 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].d_in2_pad) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].d_in2_pad) - sizeof(void *))); }) ;
+# 669 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 670 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].d_in2_sub) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].d_in2_sub) - sizeof(void *))); }) ;
+# 671 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 672 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].d_in2_sub2_sqr) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].d_in2_sub2_sqr) - sizeof(void *))); }) ;
+# 673 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 674 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].d_tMask) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].d_tMask) - sizeof(void *))); }) ;
+# 675 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].d_mask_conv) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].d_mask_conv) - sizeof(void *))); }) ;
+# 676 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 677 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 677 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable2, false); return ____chimes_ret_var_4; ;
-# 678 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 678 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable2, false); }
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 double seconds_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0) ; ; ;
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      struct timeval tp; ;
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      struct timezone tzp; ;
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      int i; i = (gettimeofday(&tp, &tzp)) ;
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_10, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_10, ____chimes_did_disable0, false); }
 
 double seconds() { return (____chimes_replaying ? seconds_resumable() : seconds_quick()); }
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 void write_data_quick( char* filename,
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int frameNo,
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int frames_processed,
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int endoPoints,
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int* input_a,
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int* input_b,
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int epiPoints,
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int* input_2a,
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   int* input_2b){const int ____chimes_did_disable1 = new_stack((void *)(&write_data), "write_data", &____must_manage_write_data, 9, 0, (size_t)(762051829673678567UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(762051829673678571UL), (size_t)(762051829673678572UL), (size_t)(0UL), (size_t)(762051829673678574UL), (size_t)(762051829673678575UL)) ; ; ;
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   int* input_2b){const int ____chimes_did_disable1 = new_stack((void *)(&write_data), "write_data", &____must_manage_write_data, 9, 0, (size_t)(740351831688906143UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(740351831688906147UL), (size_t)(740351831688906148UL), (size_t)(0UL), (size_t)(740351831688906150UL), (size_t)(740351831688906151UL)) ; ; ;
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  FILE *fid; ;
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  int i; int j; ;
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  char c; ;
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  fid = fopen(filename, "w+");
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  if( fid == __null ){
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 65 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   printf( "The file was not opened for writing\n" );
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   rm_stack(false, 0UL, "write_data", &____must_manage_write_data, ____alias_loc_id_11, ____chimes_did_disable1, false); return;
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
       fprintf(fid, "Total AVI Frames: %d\n", frameNo);
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 74 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
       fprintf(fid, "Frames Processed: %d\n", frames_processed);
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
       fprintf(fid, "endoPoints: %d\n", endoPoints);
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
       fprintf(fid, "epiPoints: %d", epiPoints);
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 77 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(j=0; j<frames_processed;j++)
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    {
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      fprintf(fid, "\n---Frame %d---",j);
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      fprintf(fid, "\n--endo--\n",j);
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      for(i=0; i<endoPoints; i++){
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
        fprintf(fid, "%d\t", input_a[j+i*frameNo]);
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      }
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      fprintf(fid, "\n");
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      for(i=0; i<endoPoints; i++){
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
        fprintf(fid, "%d\t", input_b[j+i*frameNo]);
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      }
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      fprintf(fid, "\n--epi--\n",j);
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      for(i=0; i<epiPoints; i++){
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
        fprintf(fid, "%d\t", input_2a[j+i*frameNo]);
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      }
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      fprintf(fid, "\n");
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      for(i=0; i<epiPoints; i++){
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
        fprintf(fid, "%d\t", input_2b[j+i*frameNo]);
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      }
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    }
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  fclose(fid);
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 rm_stack(false, 0UL, "write_data", &____must_manage_write_data, ____alias_loc_id_11, ____chimes_did_disable1, false); }
 
 void write_data( char* filename,
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int frameNo,
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int frames_processed,
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int endoPoints,
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int* input_a,
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int* input_b,
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int epiPoints,
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int* input_2a,
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int* input_2b) { (____chimes_replaying ? write_data_resumable(filename, frameNo, frames_processed, endoPoints, input_a, input_b, epiPoints, input_2a, input_2b) : write_data_quick(filename, frameNo, frames_processed, endoPoints, input_a, input_b, epiPoints, input_2a, input_2b)); }
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-int main_quick(int argc, char *argv []){const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(762051829673680205UL), "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; avi_t *d_frames;
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+int main_quick(int argc, char *argv []){const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(740351831688907781UL), "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; avi_t *d_frames;
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 char *video_file_name;
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 double start_time;
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 private_struct priv[51];
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 public_struct pub;
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 int frames_processed;
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  register_stack_vars(6, "main|d_frames|0", &____must_checkpoint_main_d_frames_0, "%struct.avi_t*", (void *)(&d_frames), (size_t)8, 1, 0, 0, "main|video_file_name|0", (int *)0x0, "i8*", (void *)(&video_file_name), (size_t)8, 1, 0, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|priv|0", (int *)0x0, "[51 x %struct._private_struct]", (void *)(priv), (size_t)8160, 0, 0, 0, "main|pub|0", (int *)0x0, "%struct._public_struct = type { i32, i32, i32, float, i32, i32, i32*, i32*, i32*, i32*, float*, i32, i32, i32*, i32*, i32*, i32*, float*, i32, i32, i32, float*, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 }", (void *)(&pub), (size_t)384, 0, 1, 11, (int)__builtin_offsetof(struct _public_struct, d_endoRow), (int)__builtin_offsetof(struct _public_struct, d_endoCol), (int)__builtin_offsetof(struct _public_struct, d_tEndoRowLoc), (int)__builtin_offsetof(struct _public_struct, d_tEndoColLoc), (int)__builtin_offsetof(struct _public_struct, d_endoT), (int)__builtin_offsetof(struct _public_struct, d_epiRow), (int)__builtin_offsetof(struct _public_struct, d_epiCol), (int)__builtin_offsetof(struct _public_struct, d_tEpiRowLoc), (int)__builtin_offsetof(struct _public_struct, d_tEpiColLoc), (int)__builtin_offsetof(struct _public_struct, d_epiT), (int)__builtin_offsetof(struct _public_struct, d_frame), "main|frames_processed|0", (int *)0x0, "i32", (void *)(&frames_processed), (size_t)4, 0, 0, 0); ; ;
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  int i; ;
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   ;
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    ;
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    ;
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
         call_lbl_0: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 135 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  if(argc!=4){
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   printf("ERROR: usage: heartwall <inputfile> <num of frames> <num of threads>\n");
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   exit(1);
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 139 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 141 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 140 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 141 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   ;
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 142 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  video_file_name = argv[1];
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-     call_lbl_1: d_frames = ((avi_t*)(____chimes_does_checkpoint_AVI_open_input_file_npm ? ( ({ calling((void*)AVI_open_input_file, 1, ____alias_loc_id_4, 762051829673680010UL, 2, (size_t)(762051829673680000UL), (size_t)(0UL)); (AVI_open_input_file)(video_file_name, 1); }) ) : (({ calling_npm("AVI_open_input_file", ____alias_loc_id_4); (*____chimes_extern_func_AVI_open_input_file)(video_file_name, 1); })))) ;
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 143 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+     call_lbl_1: d_frames = ((avi_t*)(____chimes_does_checkpoint_AVI_open_input_file_npm ? ( ({ calling((void*)AVI_open_input_file, 1, ____alias_loc_id_4, 740351831688907586UL, 2, (size_t)(740351831688907576UL), (size_t)(0UL)); (AVI_open_input_file)(video_file_name, 1); }) ) : (({ calling_npm("AVI_open_input_file", ____alias_loc_id_4); (*____chimes_extern_func_AVI_open_input_file)(video_file_name, 1); })))) ;
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  if (d_frames == __null) {
-# 146 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-      call_lbl_2: (____chimes_does_checkpoint_AVI_print_error_npm ? ( ({ calling((void*)AVI_print_error, 2, ____alias_loc_id_1, 0UL, 1, (size_t)(762051829673680246UL)); (AVI_print_error)((char *)"Error with AVI_open_input_file"); }) ) : (({ calling_npm("AVI_print_error", ____alias_loc_id_1); (*____chimes_extern_func_AVI_print_error)((char *) "Error with AVI_open_input_file"); })));
-# 147 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 146 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+      call_lbl_2: (____chimes_does_checkpoint_AVI_print_error_npm ? ( ({ calling((void*)AVI_print_error, 2, ____alias_loc_id_1, 0UL, 1, (size_t)(740351831688907822UL)); (AVI_print_error)((char *)"Error with AVI_open_input_file"); }) ) : (({ calling_npm("AVI_print_error", ____alias_loc_id_1); (*____chimes_extern_func_AVI_print_error)((char *) "Error with AVI_open_input_file"); })));
+# 147 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
       int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (-1); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable2, false); return ____chimes_ret_var_1; ;
-# 148 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 148 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- alias_group_changed(____alias_loc_id_7); call_lbl_3: pub.frames = (____chimes_does_checkpoint_AVI_video_frames_npm ? ( ({ calling((void*)AVI_video_frames, 3, ____alias_loc_id_7, 0UL, 1, (size_t)(762051829673680010UL)); (AVI_video_frames)(d_frames); }) ) : (({ calling_npm("AVI_video_frames", ____alias_loc_id_7); (*____chimes_extern_func_AVI_video_frames)(d_frames); })));
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  call_lbl_4: pub.frame_rows = (____chimes_does_checkpoint_AVI_video_height_npm ? ( ({ calling((void*)AVI_video_height, 4, ____alias_loc_id_5, 0UL, 1, (size_t)(762051829673680010UL)); (AVI_video_height)(d_frames); }) ) : (({ calling_npm("AVI_video_height", ____alias_loc_id_5); (*____chimes_extern_func_AVI_video_height)(d_frames); })));
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  call_lbl_5: pub.frame_cols = (____chimes_does_checkpoint_AVI_video_width_npm ? ( ({ calling((void*)AVI_video_width, 5, ____alias_loc_id_2, 0UL, 1, (size_t)(762051829673680010UL)); (AVI_video_width)(d_frames); }) ) : (({ calling_npm("AVI_video_width", ____alias_loc_id_2); (*____chimes_extern_func_AVI_video_width)(d_frames); })));
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 149 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 151 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ alias_group_changed(____alias_loc_id_7); call_lbl_3: pub.frames = (____chimes_does_checkpoint_AVI_video_frames_npm ? ( ({ calling((void*)AVI_video_frames, 3, ____alias_loc_id_7, 0UL, 1, (size_t)(740351831688907586UL)); (AVI_video_frames)(d_frames); }) ) : (({ calling_npm("AVI_video_frames", ____alias_loc_id_7); (*____chimes_extern_func_AVI_video_frames)(d_frames); })));
+# 152 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  call_lbl_4: pub.frame_rows = (____chimes_does_checkpoint_AVI_video_height_npm ? ( ({ calling((void*)AVI_video_height, 4, ____alias_loc_id_5, 0UL, 1, (size_t)(740351831688907586UL)); (AVI_video_height)(d_frames); }) ) : (({ calling_npm("AVI_video_height", ____alias_loc_id_5); (*____chimes_extern_func_AVI_video_height)(d_frames); })));
+# 153 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  call_lbl_5: pub.frame_cols = (____chimes_does_checkpoint_AVI_video_width_npm ? ( ({ calling((void*)AVI_video_width, 5, ____alias_loc_id_2, 0UL, 1, (size_t)(740351831688907586UL)); (AVI_video_width)(d_frames); }) ) : (({ calling_npm("AVI_video_width", ____alias_loc_id_2); (*____chimes_extern_func_AVI_video_width)(d_frames); })));
+# 154 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.frame_elem = pub.frame_rows * pub.frame_cols;
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 155 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.frame_mem = sizeof(float) * pub.frame_elem;
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 157 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-     call_lbl_6: (____chimes_does_checkpoint_AVI_close_npm ? ( ({ calling((void*)AVI_close, 6, ____alias_loc_id_0, 0UL, 1, (size_t)(762051829673680010UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_0); (*____chimes_extern_func_AVI_close)(d_frames); })));
-# 158 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 160 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 162 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 163 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 164 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 156 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 157 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+     call_lbl_6: (____chimes_does_checkpoint_AVI_close_npm ? ( ({ calling((void*)AVI_close, 6, ____alias_loc_id_0, 0UL, 1, (size_t)(740351831688907586UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_0); (*____chimes_extern_func_AVI_close)(d_frames); })));
+# 158 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 159 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 160 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 161 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 162 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 163 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 164 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  frames_processed = atoi(argv[2]);
-# 165 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 165 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  if(frames_processed<0 || frames_processed>pub.frames){
-# 166 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 166 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   printf("ERROR: %d is an incorrect number of frames specified, select in the range of 0-%d\n", frames_processed, pub.frames);
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 167 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ;
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 168 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 169 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 170 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 169 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 170 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  int omp_num_threads; ;
-# 171 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 171 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  omp_num_threads = atoi(argv[3]);
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 172 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  if (omp_num_threads <=0){
-# 173 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 173 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
     printf ("num of threads must be a positive integer");
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 174 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable2, false); return ____chimes_ret_var_3; ;
-# 175 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 175 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 176 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 177 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 176 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 177 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  printf("num of threads: %d\n", omp_num_threads);
-# 187 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 187 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 187 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 187 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.endoPoints = 20;
-# 188 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 188 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endo_mem = sizeof(int) * pub.endoPoints;
-# 189 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_endoRow = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 190 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 189 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ pub.d_endoRow = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 190 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 0] = 369;
-# 191 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 191 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 1] = 400;
-# 192 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 192 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 2] = 429;
-# 193 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 193 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 3] = 452;
-# 194 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 194 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 4] = 476;
-# 195 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 195 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 5] = 486;
-# 196 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 196 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 6] = 479;
-# 197 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 197 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 7] = 458;
-# 198 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 198 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 8] = 433;
-# 199 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 199 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[ 9] = 404;
-# 200 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 200 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[10] = 374;
-# 201 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 201 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[11] = 346;
-# 202 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 202 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[12] = 318;
-# 203 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 203 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[13] = 294;
-# 204 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 204 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[14] = 277;
-# 205 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 205 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[15] = 269;
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 206 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[16] = 275;
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 207 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[17] = 287;
-# 208 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 208 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[18] = 311;
-# 209 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 209 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoRow[19] = 339;
-# 210 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_endoCol = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 211 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 210 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ pub.d_endoCol = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 211 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 0] = 408;
-# 212 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 212 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 1] = 406;
-# 213 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 213 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 2] = 397;
-# 214 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 214 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 3] = 383;
-# 215 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 215 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 4] = 354;
-# 216 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 216 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 5] = 322;
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 217 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 6] = 294;
-# 218 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 218 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 7] = 270;
-# 219 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 219 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 8] = 250;
-# 220 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 220 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[ 9] = 237;
-# 221 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 221 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[10] = 235;
-# 222 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 222 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[11] = 241;
-# 223 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 223 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[12] = 254;
-# 224 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 224 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[13] = 273;
-# 225 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 225 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[14] = 300;
-# 226 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 226 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[15] = 328;
-# 227 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 227 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[16] = 356;
-# 228 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 228 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[17] = 383;
-# 229 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 229 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[18] = 401;
-# 230 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 230 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_endoCol[19] = 411;
-# 231 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_tEndoRowLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem * pub.frames, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 232 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_tEndoColLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem * pub.frames, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 233 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 234 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 235 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 236 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 237 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 238 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 231 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ pub.d_tEndoRowLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem * pub.frames, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 232 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ pub.d_tEndoColLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_endo_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_endo_mem * pub.frames, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 233 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 234 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 235 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 236 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 237 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 238 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.epiPoints = 31;
-# 239 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 239 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epi_mem = sizeof(int) * pub.epiPoints;
-# 240 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_epiRow = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 241 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 240 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ pub.d_epiRow = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 241 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 0] = 390;
-# 242 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 242 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 1] = 419;
-# 243 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 243 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 2] = 448;
-# 244 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 244 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 3] = 474;
-# 245 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 245 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 4] = 501;
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 246 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 5] = 519;
-# 247 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 247 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 6] = 535;
-# 248 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 248 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 7] = 542;
-# 249 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 249 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 8] = 543;
-# 250 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 250 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[ 9] = 538;
-# 251 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 251 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[10] = 528;
-# 252 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 252 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[11] = 511;
-# 253 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 253 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[12] = 491;
-# 254 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 254 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[13] = 466;
-# 255 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 255 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[14] = 438;
-# 256 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 256 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[15] = 406;
-# 257 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 257 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[16] = 376;
-# 258 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 258 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[17] = 347;
-# 259 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 259 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[18] = 318;
-# 260 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 260 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[19] = 291;
-# 261 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 261 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[20] = 275;
-# 262 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 262 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[21] = 259;
-# 263 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 263 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[22] = 256;
-# 264 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 264 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[23] = 252;
-# 265 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 265 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[24] = 252;
-# 266 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 266 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[25] = 257;
-# 267 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 267 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[26] = 266;
-# 268 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 268 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[27] = 283;
-# 269 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 269 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[28] = 305;
-# 270 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 270 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[29] = 331;
-# 271 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 271 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiRow[30] = 360;
-# 272 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_epiCol = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 273 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 272 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ pub.d_epiCol = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 273 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 0] = 457;
-# 274 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 274 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 1] = 454;
-# 275 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 275 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 2] = 446;
-# 276 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 276 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 3] = 431;
-# 277 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 277 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 4] = 411;
-# 278 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 278 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 5] = 388;
-# 279 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 279 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 6] = 361;
-# 280 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 280 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 7] = 331;
-# 281 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 281 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 8] = 301;
-# 282 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 282 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[ 9] = 273;
-# 283 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 283 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[10] = 243;
-# 284 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 284 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[11] = 218;
-# 285 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 285 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[12] = 196;
-# 286 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 286 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[13] = 178;
-# 287 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 287 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[14] = 166;
-# 288 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 288 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[15] = 157;
-# 289 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 289 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[16] = 155;
-# 290 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 290 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[17] = 165;
-# 291 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 291 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[18] = 177;
-# 292 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 292 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[19] = 197;
-# 293 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 293 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[20] = 218;
-# 294 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 294 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[21] = 248;
-# 295 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 295 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[22] = 276;
-# 296 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 296 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[23] = 304;
-# 297 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 297 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[24] = 333;
-# 298 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 298 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[25] = 361;
-# 299 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 299 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[26] = 391;
-# 300 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 300 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[27] = 415;
-# 301 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 301 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[28] = 434;
-# 302 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 302 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[29] = 448;
-# 303 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 303 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.d_epiCol[30] = 455;
-# 304 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_tEpiRowLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem * pub.frames, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 305 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_tEpiColLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem * pub.frames, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 306 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 307 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 308 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 309 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 310 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 311 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 304 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ pub.d_tEpiRowLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem * pub.frames, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 305 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ pub.d_tEpiColLoc = (int *) ({ void *____chimes_tmp_ptr = malloc((pub.d_epi_mem * pub.frames) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.d_epi_mem * pub.frames, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 306 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 307 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 308 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 309 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 310 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 311 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.allPoints = 51;
-# 312 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 313 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 314 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 315 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 316 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 317 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 312 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 313 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 314 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 315 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 316 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 317 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.tSize = 25;
-# 318 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 318 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.sSize = 40;
-# 319 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 319 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.maxMove = 10;
-# 320 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 320 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.alpha = 0.87;
-# 321 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 322 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 323 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 324 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 325 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 326 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 321 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 322 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 323 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 324 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 325 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 326 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 327 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].in_partial_sum = (float *) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 2 * pub.tSize + 1) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * 2*pub.tSize+1, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 328 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].in_sqr_partial_sum = (float *) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 2 * pub.tSize + 1) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * 2*pub.tSize+1, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 329 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].par_max_val = (float *) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * (2 * pub.tSize + 2 * pub.sSize + 1)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * (2*pub.tSize+2*pub.sSize+1), 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 330 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].par_max_coo = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * (2 * pub.tSize + 2 * pub.sSize + 1)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int) * (2*pub.tSize+2*pub.sSize+1), 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 331 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 327 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].in_partial_sum = (float *) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 2 * pub.tSize + 1) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * 2*pub.tSize+1, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 328 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].in_sqr_partial_sum = (float *) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * 2 * pub.tSize + 1) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * 2*pub.tSize+1, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 329 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].par_max_val = (float *) ({ void *____chimes_tmp_ptr = malloc((sizeof(float) * (2 * pub.tSize + 2 * pub.sSize + 1)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(float) * (2*pub.tSize+2*pub.sSize+1), 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 330 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].par_max_coo = (int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * (2 * pub.tSize + 2 * pub.sSize + 1)) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, sizeof(int) * (2*pub.tSize+2*pub.sSize+1), 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 331 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 332 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 333 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 334 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 335 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 336 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 337 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 332 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 333 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 334 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 335 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 336 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 337 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_rows = 2 * pub.sSize + 1;
-# 338 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 338 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_cols = 2 * pub.sSize + 1;
-# 339 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 339 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_elem = pub.in2_rows * pub.in2_cols;
-# 340 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 340 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_mem = sizeof(float) * pub.in2_elem;
-# 341 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 342 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 341 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 342 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 343 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in2 = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 344 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in2_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 345 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 343 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].d_in2 = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 344 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].d_in2_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 345 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 346 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 347 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 348 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 349 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 350 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 351 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 346 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 347 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 348 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 349 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 350 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 351 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in_mod_rows = pub.tSize+1+pub.tSize;
-# 352 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 352 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in_mod_cols = pub.in_mod_rows;
-# 353 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 353 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in_mod_elem = pub.in_mod_rows * pub.in_mod_cols;
-# 354 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 354 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in_mod_mem = sizeof(float) * pub.in_mod_elem;
-# 355 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 355 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 356 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 357 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in_mod = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 358 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 359 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 357 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].d_in_mod = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 358 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].d_in_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 359 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 360 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 361 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 362 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 363 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 364 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 365 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_endoT = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem * pub.endoPoints) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem * pub.endoPoints, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 366 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
- pub.d_epiT = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem * pub.epiPoints) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem * pub.epiPoints, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 367 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 368 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 369 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 370 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 371 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 372 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 360 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 361 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 362 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 363 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 364 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 365 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ pub.d_endoT = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem * pub.endoPoints) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem * pub.endoPoints, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 366 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+ pub.d_epiT = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in_mod_mem * pub.epiPoints) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in_mod_mem * pub.epiPoints, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 367 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 368 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 369 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 370 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 371 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 372 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.endoPoints; i++){
-# 373 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 373 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].point_no = i;
-# 374 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 374 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].in_pointer = priv[i].point_no * pub.in_mod_elem;
-# 375 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 375 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].d_Row = pub.d_endoRow;
-# 376 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 376 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].d_Col = pub.d_endoCol;
-# 377 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 377 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].d_tRowLoc = pub.d_tEndoRowLoc;
-# 378 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 378 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].d_tColLoc = pub.d_tEndoColLoc;
-# 379 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 379 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].d_T = pub.d_endoT;
-# 380 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 380 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 381 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 382 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 381 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 382 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=pub.endoPoints; i<pub.allPoints; i++){
-# 383 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 383 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].point_no = i-pub.endoPoints;
-# 384 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 384 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].in_pointer = priv[i].point_no * pub.in_mod_elem;
-# 385 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 385 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].d_Row = pub.d_epiRow;
-# 386 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 386 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].d_Col = pub.d_epiCol;
-# 387 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 387 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].d_tRowLoc = pub.d_tEpiRowLoc;
-# 388 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 388 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].d_tColLoc = pub.d_tEpiColLoc;
-# 389 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 389 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   priv[i].d_T = pub.d_epiT;
-# 390 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 390 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 391 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 392 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 393 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 394 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 395 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 396 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 391 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 392 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 393 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 394 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 395 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 396 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.ioffset = 0;
-# 397 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 397 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.joffset = 0;
-# 398 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 398 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.conv_rows = pub.in_mod_rows + pub.in2_rows - 1;
-# 399 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 399 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.conv_cols = pub.in_mod_cols + pub.in2_cols - 1;
-# 400 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 400 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.conv_elem = pub.conv_rows * pub.conv_cols;
-# 401 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 401 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.conv_mem = sizeof(float) * pub.conv_elem;
-# 402 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 403 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 402 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 403 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 404 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_conv = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.conv_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.conv_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 405 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 404 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].d_conv = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.conv_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.conv_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 405 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 418 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 418 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 418 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 418 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_add_rows = pub.in_mod_rows;
-# 419 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 419 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_add_cols = pub.in_mod_cols;
-# 420 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 420 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_rows = pub.in2_rows + 2*pub.in2_pad_add_rows;
-# 421 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 421 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_cols = pub.in2_cols + 2*pub.in2_pad_add_cols;
-# 422 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 422 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_elem = pub.in2_pad_rows * pub.in2_pad_cols;
-# 423 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 423 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_mem = sizeof(float) * pub.in2_pad_elem;
-# 424 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 425 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 424 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 425 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 426 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in2_pad = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_pad_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_pad_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 427 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 426 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].d_in2_pad = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_pad_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_pad_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 427 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 436 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 436 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 436 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 436 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_cumv_sel_rowlow = 1 + pub.in_mod_rows;
-# 437 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 437 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_cumv_sel_rowhig = pub.in2_pad_rows - 1;
-# 438 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 438 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_cumv_sel_collow = 1;
-# 439 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 439 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_cumv_sel_colhig = pub.in2_pad_cols;
-# 440 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 440 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_cumv_sel2_rowlow = 1;
-# 441 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 441 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_cumv_sel2_rowhig = pub.in2_pad_rows - pub.in_mod_rows - 1;
-# 442 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 442 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_cumv_sel2_collow = 1;
-# 443 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 443 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_pad_cumv_sel2_colhig = pub.in2_pad_cols;
-# 444 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 444 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_rows = pub.in2_pad_cumv_sel_rowhig - pub.in2_pad_cumv_sel_rowlow + 1;
-# 445 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 445 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_cols = pub.in2_pad_cumv_sel_colhig - pub.in2_pad_cumv_sel_collow + 1;
-# 446 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 446 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_elem = pub.in2_sub_rows * pub.in2_sub_cols;
-# 447 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 447 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_mem = sizeof(float) * pub.in2_sub_elem;
-# 448 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 449 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 448 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 449 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 450 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in2_sub = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_sub_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_sub_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 451 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 450 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].d_in2_sub = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_sub_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_sub_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 451 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 452 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 453 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 454 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 455 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 456 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 457 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 452 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 453 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 454 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 455 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 456 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 457 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_cumh_sel_rowlow = 1;
-# 458 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 458 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_cumh_sel_rowhig = pub.in2_sub_rows;
-# 459 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 459 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_cumh_sel_collow = 1 + pub.in_mod_cols;
-# 460 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 460 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_cumh_sel_colhig = pub.in2_sub_cols - 1;
-# 461 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 461 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_cumh_sel2_rowlow = 1;
-# 462 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 462 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_cumh_sel2_rowhig = pub.in2_sub_rows;
-# 463 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 463 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_cumh_sel2_collow = 1;
-# 464 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 464 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub_cumh_sel2_colhig = pub.in2_sub_cols - pub.in_mod_cols - 1;
-# 465 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 465 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub2_sqr_rows = pub.in2_sub_cumh_sel_rowhig - pub.in2_sub_cumh_sel_rowlow + 1;
-# 466 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 466 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub2_sqr_cols = pub.in2_sub_cumh_sel_colhig - pub.in2_sub_cumh_sel_collow + 1;
-# 467 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 467 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub2_sqr_elem = pub.in2_sub2_sqr_rows * pub.in2_sub2_sqr_cols;
-# 468 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 468 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.in2_sub2_sqr_mem = sizeof(float) * pub.in2_sub2_sqr_elem;
-# 469 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 470 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 469 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 470 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 471 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_in2_sub2_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_sub2_sqr_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_sub2_sqr_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 472 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 471 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].d_in2_sub2_sqr = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.in2_sub2_sqr_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.in2_sub2_sqr_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 472 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 500 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 500 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 500 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 500 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.tMask_rows = pub.in_mod_rows + (pub.sSize+1+pub.sSize) - 1;
-# 501 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 501 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.tMask_cols = pub.tMask_rows;
-# 502 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 502 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.tMask_elem = pub.tMask_rows * pub.tMask_cols;
-# 503 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 503 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.tMask_mem = sizeof(float) * pub.tMask_elem;
-# 504 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 505 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 504 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 505 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 506 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_tMask = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.tMask_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.tMask_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 507 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 506 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].d_tMask = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.tMask_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.tMask_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 507 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 508 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 509 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 510 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 511 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 512 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 513 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 508 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 509 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 510 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 511 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 512 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 513 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.mask_rows = pub.maxMove;
-# 514 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 514 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.mask_cols = pub.mask_rows;
-# 515 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 515 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.mask_elem = pub.mask_rows * pub.mask_cols;
-# 516 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 516 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.mask_mem = sizeof(float) * pub.mask_elem;
-# 517 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 518 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 519 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 520 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 521 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 522 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 517 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 518 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 519 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 520 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 521 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 522 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.mask_conv_rows = pub.tMask_rows;
-# 523 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 523 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.mask_conv_cols = pub.tMask_cols;
-# 524 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 524 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.mask_conv_elem = pub.mask_conv_rows * pub.mask_conv_cols;
-# 525 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 525 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.mask_conv_mem = sizeof(float) * pub.mask_conv_elem;
-# 526 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 526 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.mask_conv_ioffset = (pub.mask_rows-1)/2;
-# 527 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 527 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  if((pub.mask_rows-1) % 2 > 0.5){
-# 528 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 528 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   pub.mask_conv_ioffset = pub.mask_conv_ioffset + 1;
-# 529 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 529 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 530 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 530 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  pub.mask_conv_joffset = (pub.mask_cols-1)/2;
-# 531 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 531 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  if((pub.mask_cols-1) % 2 > 0.5){
-# 532 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 532 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   pub.mask_conv_joffset = pub.mask_conv_joffset + 1;
-# 533 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 533 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 534 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 535 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 535 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 536 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  priv[i].d_mask_conv = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.mask_conv_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.mask_conv_mem, 762051829673679219UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 537 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 536 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  priv[i].d_mask_conv = (float *) ({ void *____chimes_tmp_ptr = malloc((pub.mask_conv_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, pub.mask_conv_mem, 740351831688906795UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 537 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 538 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 539 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 540 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 541 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 542 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 543 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 538 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 539 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 540 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 541 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 542 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 543 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  printf("frame progress: ");
-# 544 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 544 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  fflush(__null);
-# 545 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 546 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 547 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 548 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 549 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 550 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 545 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 546 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 547 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 548 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 549 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 550 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(pub.frame_no=0; pub.frame_no<frames_processed; pub.frame_no++){
-# 551 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 552 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 553 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 554 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 555 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 556 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 557 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-         call_lbl_7: d_frames = (avi_t*)(____chimes_does_checkpoint_AVI_open_input_file_npm ? ( ({ calling((void*)AVI_open_input_file, 7, ____alias_loc_id_9, 762051829673680010UL, 2, (size_t)(762051829673680000UL), (size_t)(0UL)); (AVI_open_input_file)(video_file_name, 1); }) ) : (({ calling_npm("AVI_open_input_file", ____alias_loc_id_9); (*____chimes_extern_func_AVI_open_input_file)(video_file_name, 1); })));
-# 558 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-        ((d_frames) ? static_cast<void> (0) : __assert_fail ("d_frames", "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c", 558, __PRETTY_FUNCTION__));
-# 559 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   call_lbl_8: pub.d_frame = (____chimes_does_checkpoint_get_frame_npm ? ( ({ calling((void*)get_frame, 8, ____alias_loc_id_8, 762051829673679219UL, 5, (size_t)(762051829673680010UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (get_frame)(d_frames, pub.frame_no, 0, 0, 1); }) ) : (({ calling_npm("get_frame", ____alias_loc_id_8); (*____chimes_extern_func_get_frame)(d_frames, pub.frame_no, 0, 0, 1); })));
-# 564 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-         call_lbl_9: (____chimes_does_checkpoint_AVI_close_npm ? ( ({ calling((void*)AVI_close, 9, ____alias_loc_id_6, 0UL, 1, (size_t)(762051829673680010UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_6); (*____chimes_extern_func_AVI_close)(d_frames); })));
-# 575 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 575 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-         call_lbl_10: (____chimes_does_checkpoint_kernel_npm ? ( ({ calling((void*)kernel, 10, ____alias_loc_id_3, 0UL, 2, (size_t)(762051829673678596UL), (size_t)(762051829673678588UL)); (kernel)(pub, priv); }) ) : (({ calling_npm("kernel", ____alias_loc_id_3); (*____chimes_extern_func_kernel)(pub, priv); })));
-# 587 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 587 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)pub.d_frame) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_frame) - sizeof(void *))); }) ;
-# 588 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 589 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 590 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 591 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 592 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 593 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 551 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 552 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 553 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 554 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 555 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 556 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 557 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+         call_lbl_7: d_frames = (avi_t*)(____chimes_does_checkpoint_AVI_open_input_file_npm ? ( ({ calling((void*)AVI_open_input_file, 7, ____alias_loc_id_9, 740351831688907586UL, 2, (size_t)(740351831688907576UL), (size_t)(0UL)); (AVI_open_input_file)(video_file_name, 1); }) ) : (({ calling_npm("AVI_open_input_file", ____alias_loc_id_9); (*____chimes_extern_func_AVI_open_input_file)(video_file_name, 1); })));
+# 558 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+        ((d_frames) ? static_cast<void> (0) : __assert_fail ("d_frames", "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c", 558, __PRETTY_FUNCTION__));
+# 559 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   call_lbl_8: pub.d_frame = (____chimes_does_checkpoint_get_frame_npm ? ( ({ calling((void*)get_frame, 8, ____alias_loc_id_8, 740351831688906795UL, 5, (size_t)(740351831688907586UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (get_frame)(d_frames, pub.frame_no, 0, 0, 1); }) ) : (({ calling_npm("get_frame", ____alias_loc_id_8); (*____chimes_extern_func_get_frame)(d_frames, pub.frame_no, 0, 0, 1); })));
+# 564 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+         call_lbl_9: (____chimes_does_checkpoint_AVI_close_npm ? ( ({ calling((void*)AVI_close, 9, ____alias_loc_id_6, 0UL, 1, (size_t)(740351831688907586UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_6); (*____chimes_extern_func_AVI_close)(d_frames); })));
+# 575 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 575 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+         call_lbl_10: (____chimes_does_checkpoint_kernel_npm ? ( ({ calling((void*)kernel, 10, ____alias_loc_id_3, 0UL, 2, (size_t)(740351831688906172UL), (size_t)(740351831688906164UL)); (kernel)(pub, priv); }) ) : (({ calling_npm("kernel", ____alias_loc_id_3); (*____chimes_extern_func_kernel)(pub, priv); })));
+# 587 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 587 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)pub.d_frame) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_frame) - sizeof(void *))); }) ;
+# 588 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 589 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 590 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 591 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 592 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 593 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   printf("%d ", pub.frame_no);
-# 594 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 594 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   fflush(__null);
-# 595 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 596 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 597 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 595 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 596 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 597 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      call_lbl_11: checkpoint_transformed(11, 0);
-# 598 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 599 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 600 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 598 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 599 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 600 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 601 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 602 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 603 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 604 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 605 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 606 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 601 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 602 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 603 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 604 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 605 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 606 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  printf("\n");
-# 607 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 607 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  fflush(__null);
-# 608 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 609 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 608 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 609 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      double end_time; call_lbl_12: end_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
-# 610 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 610 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
     printf("execution took %f s\n", end_time - start_time);
-# 638 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 638 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free_helper((((unsigned char *)pub.d_endoRow) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_endoRow) - sizeof(void *))); }) ;
-# 639 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free_helper((((unsigned char *)pub.d_endoCol) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_endoCol) - sizeof(void *))); }) ;
-# 640 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free_helper((((unsigned char *)pub.d_tEndoRowLoc) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_tEndoRowLoc) - sizeof(void *))); }) ;
-# 641 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free_helper((((unsigned char *)pub.d_tEndoColLoc) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_tEndoColLoc) - sizeof(void *))); }) ;
-# 642 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free_helper((((unsigned char *)pub.d_endoT) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_endoT) - sizeof(void *))); }) ;
-# 643 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 644 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free_helper((((unsigned char *)pub.d_epiRow) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_epiRow) - sizeof(void *))); }) ;
-# 645 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free_helper((((unsigned char *)pub.d_epiCol) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_epiCol) - sizeof(void *))); }) ;
-# 646 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free_helper((((unsigned char *)pub.d_tEpiRowLoc) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_tEpiRowLoc) - sizeof(void *))); }) ;
-# 647 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free_helper((((unsigned char *)pub.d_tEpiColLoc) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_tEpiColLoc) - sizeof(void *))); }) ;
-# 648 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-  ({ free_helper((((unsigned char *)pub.d_epiT) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)pub.d_epiT) - sizeof(void *))); }) ;
-# 649 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 650 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 651 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 652 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 653 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 654 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 638 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 638 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  ({ free_helper((((unsigned char *)pub.d_endoRow) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_endoRow) - sizeof(void *))); }) ;
+# 639 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  ({ free_helper((((unsigned char *)pub.d_endoCol) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_endoCol) - sizeof(void *))); }) ;
+# 640 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  ({ free_helper((((unsigned char *)pub.d_tEndoRowLoc) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_tEndoRowLoc) - sizeof(void *))); }) ;
+# 641 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  ({ free_helper((((unsigned char *)pub.d_tEndoColLoc) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_tEndoColLoc) - sizeof(void *))); }) ;
+# 642 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  ({ free_helper((((unsigned char *)pub.d_endoT) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_endoT) - sizeof(void *))); }) ;
+# 643 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 644 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  ({ free_helper((((unsigned char *)pub.d_epiRow) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_epiRow) - sizeof(void *))); }) ;
+# 645 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  ({ free_helper((((unsigned char *)pub.d_epiCol) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_epiCol) - sizeof(void *))); }) ;
+# 646 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  ({ free_helper((((unsigned char *)pub.d_tEpiRowLoc) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_tEpiRowLoc) - sizeof(void *))); }) ;
+# 647 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  ({ free_helper((((unsigned char *)pub.d_tEpiColLoc) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_tEpiColLoc) - sizeof(void *))); }) ;
+# 648 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+  ({ free_helper((((unsigned char *)pub.d_epiT) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)pub.d_epiT) - sizeof(void *))); }) ;
+# 649 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 650 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 651 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 652 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 653 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 654 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(i=0; i<pub.allPoints; i++){
-# 655 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].in_partial_sum) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].in_partial_sum) - sizeof(void *))); }) ;
-# 656 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].in_sqr_partial_sum) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].in_sqr_partial_sum) - sizeof(void *))); }) ;
-# 657 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].par_max_val) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].par_max_val) - sizeof(void *))); }) ;
-# 658 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].par_max_coo) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].par_max_coo) - sizeof(void *))); }) ;
-# 659 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 660 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].d_in2) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in2) - sizeof(void *))); }) ;
-# 661 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].d_in2_sqr) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in2_sqr) - sizeof(void *))); }) ;
-# 662 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 663 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].d_in_mod) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in_mod) - sizeof(void *))); }) ;
-# 664 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].d_in_sqr) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in_sqr) - sizeof(void *))); }) ;
-# 665 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 666 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].d_conv) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_conv) - sizeof(void *))); }) ;
-# 667 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 668 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].d_in2_pad) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in2_pad) - sizeof(void *))); }) ;
-# 669 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 670 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].d_in2_sub) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in2_sub) - sizeof(void *))); }) ;
-# 671 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 672 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].d_in2_sub2_sqr) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_in2_sub2_sqr) - sizeof(void *))); }) ;
-# 673 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 674 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].d_tMask) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_tMask) - sizeof(void *))); }) ;
-# 675 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-   ({ free_helper((((unsigned char *)priv[i].d_mask_conv) - sizeof(void *)), 762051829673679219UL);free((((unsigned char *)priv[i].d_mask_conv) - sizeof(void *))); }) ;
-# 676 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 655 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].in_partial_sum) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].in_partial_sum) - sizeof(void *))); }) ;
+# 656 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].in_sqr_partial_sum) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].in_sqr_partial_sum) - sizeof(void *))); }) ;
+# 657 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].par_max_val) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].par_max_val) - sizeof(void *))); }) ;
+# 658 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].par_max_coo) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].par_max_coo) - sizeof(void *))); }) ;
+# 659 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 660 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].d_in2) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].d_in2) - sizeof(void *))); }) ;
+# 661 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].d_in2_sqr) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].d_in2_sqr) - sizeof(void *))); }) ;
+# 662 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 663 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].d_in_mod) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].d_in_mod) - sizeof(void *))); }) ;
+# 664 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].d_in_sqr) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].d_in_sqr) - sizeof(void *))); }) ;
+# 665 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 666 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].d_conv) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].d_conv) - sizeof(void *))); }) ;
+# 667 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 668 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].d_in2_pad) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].d_in2_pad) - sizeof(void *))); }) ;
+# 669 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 670 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].d_in2_sub) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].d_in2_sub) - sizeof(void *))); }) ;
+# 671 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 672 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].d_in2_sub2_sqr) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].d_in2_sub2_sqr) - sizeof(void *))); }) ;
+# 673 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 674 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].d_tMask) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].d_tMask) - sizeof(void *))); }) ;
+# 675 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+   ({ free_helper((((unsigned char *)priv[i].d_mask_conv) - sizeof(void *)), 740351831688906795UL);free((((unsigned char *)priv[i].d_mask_conv) - sizeof(void *))); }) ;
+# 676 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 677 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 677 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable2, false); return ____chimes_ret_var_4; ;
-# 678 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 678 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable2, false); }
 
 int main(int argc, char *argv []) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 double seconds_npm() {
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
     struct timeval tp;
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
     struct timezone tzp;
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
     int i = gettimeofday(&tp, &tzp);
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      double ____chimes_ret_var_0; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); return ____chimes_ret_var_0; ;
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 }
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 void write_data_npm( char* filename,
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int frameNo,
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int frames_processed,
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int endoPoints,
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int* input_a,
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int* input_b,
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int epiPoints,
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int* input_2a,
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    int* input_2b){
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  FILE* fid;
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  int i,j;
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  char c;
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  fid = fopen(filename, "w+");
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  if( fid == __null ){
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 65 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   printf( "The file was not opened for writing\n" );
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
   return;
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  }
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
       fprintf(fid, "Total AVI Frames: %d\n", frameNo);
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 74 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
       fprintf(fid, "Frames Processed: %d\n", frames_processed);
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
       fprintf(fid, "endoPoints: %d\n", endoPoints);
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
       fprintf(fid, "epiPoints: %d", epiPoints);
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 77 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  for(j=0; j<frames_processed;j++)
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    {
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      fprintf(fid, "\n---Frame %d---",j);
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      fprintf(fid, "\n--endo--\n",j);
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      for(i=0; i<endoPoints; i++){
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
        fprintf(fid, "%d\t", input_a[j+i*frameNo]);
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      }
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      fprintf(fid, "\n");
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      for(i=0; i<endoPoints; i++){
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
        fprintf(fid, "%d\t", input_b[j+i*frameNo]);
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      }
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      fprintf(fid, "\n--epi--\n",j);
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      for(i=0; i<epiPoints; i++){
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
        fprintf(fid, "%d\t", input_2a[j+i*frameNo]);
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      }
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      fprintf(fid, "\n");
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      for(i=0; i<epiPoints; i++){
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
        fprintf(fid, "%d\t", input_2b[j+i*frameNo]);
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
      }
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
    }
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
  fclose(fid);
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/main.c"
 }
 
 
@@ -8715,22 +8715,22 @@ void write_data_npm( char* filename,
 
 
 static int module_init() {
-    init_module(762051829673678370UL, 12, 3, 4, 13, 2, 8, 10, 2, 10, 10,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 217UL), "AVI_close", (unsigned)1, (762051829673678370UL + 1640UL),
-                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 221UL), "AVI_print_error", (unsigned)1, (762051829673678370UL + 1876UL),
-                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 217UL), "AVI_video_width", (unsigned)1, (762051829673678370UL + 1640UL),
-                           &____alias_loc_id_3, (unsigned)0, (unsigned)0, (unsigned)1, "kernel", (unsigned)2, (762051829673678370UL + 218UL), (762051829673678370UL + 226UL),
-                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (unsigned)1, (762051829673678370UL + 212UL), (762051829673678370UL + 213UL), (762051829673678370UL + 214UL), (762051829673678370UL + 219UL), (762051829673678370UL + 220UL), "AVI_open_input_file", (unsigned)2, (762051829673678370UL + 1630UL), (762051829673678370UL + 1640UL),
-                           &____alias_loc_id_5, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 217UL), "AVI_video_height", (unsigned)1, (762051829673678370UL + 1640UL),
-                           &____alias_loc_id_6, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 217UL), "AVI_close", (unsigned)1, (762051829673678370UL + 1640UL),
-                           &____alias_loc_id_7, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 221UL), "AVI_video_frames", (unsigned)1, (762051829673678370UL + 1640UL),
-                           &____alias_loc_id_8, (unsigned)1, (unsigned)0, (unsigned)1, (762051829673678370UL + 221UL), "get_frame", (unsigned)2, (762051829673678370UL + 849UL), (762051829673678370UL + 1640UL),
-                           &____alias_loc_id_9, (unsigned)6, (unsigned)0, (unsigned)1, (762051829673678370UL + 215UL), (762051829673678370UL + 216UL), (762051829673678370UL + 217UL), (762051829673678370UL + 218UL), (762051829673678370UL + 224UL), (762051829673678370UL + 849UL), "AVI_open_input_file", (unsigned)2, (762051829673678370UL + 1630UL), (762051829673678370UL + 1640UL),
-                            &____alias_loc_id_10, (unsigned)3, (unsigned)0, (unsigned)0, (762051829673678370UL + 1UL), (762051829673678370UL + 3UL), (762051829673678370UL + 4UL),
-                            &____alias_loc_id_11, (unsigned)13, (unsigned)0, (unsigned)0, (762051829673678370UL + 26UL), (762051829673678370UL + 27UL), (762051829673678370UL + 28UL), (762051829673678370UL + 29UL), (762051829673678370UL + 30UL), (762051829673678370UL + 31UL), (762051829673678370UL + 32UL), (762051829673678370UL + 33UL), (762051829673678370UL + 34UL), (762051829673678370UL + 35UL), (762051829673678370UL + 36UL), (762051829673678370UL + 37UL), (762051829673678370UL + 62UL),
-                            &____alias_loc_id_12, (unsigned)12, (unsigned)0, (unsigned)0, (762051829673678370UL + 212UL), (762051829673678370UL + 215UL), (762051829673678370UL + 216UL), (762051829673678370UL + 217UL), (762051829673678370UL + 218UL), (762051829673678370UL + 222UL), (762051829673678370UL + 223UL), (762051829673678370UL + 224UL), (762051829673678370UL + 225UL), (762051829673678370UL + 227UL), (762051829673678370UL + 228UL), (762051829673678370UL + 849UL),
-                            "seconds", 0, "_Z7secondsv", "_Z11seconds_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (762051829673678370UL + 1UL), (762051829673678370UL + 2UL), 0UL,
-                            "write_data", 0, "_Z10write_dataPciiiPiS0_iS0_S0_", "_Z14write_data_npmPciiiPiS0_iS0_S0_", 0, 9, (762051829673678370UL + 197UL), 0UL, 0UL, 0UL, (762051829673678370UL + 201UL), (762051829673678370UL + 202UL), 0UL, (762051829673678370UL + 204UL), (762051829673678370UL + 205UL), 0UL, 16, "fopen", 2, (762051829673678370UL + 197UL), (762051829673678370UL + 1864UL), (762051829673678370UL + 62UL), "printf", 1, (762051829673678370UL + 1865UL), 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1866UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1866UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1868UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1869UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1868UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1871UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1872UL), 0UL, 0UL, "fprintf", 2, (762051829673678370UL + 62UL), (762051829673678370UL + 1873UL), 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1872UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1874UL), 0UL, 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1872UL), 0UL, 0UL, "fprintf", 2, (762051829673678370UL + 62UL), (762051829673678370UL + 1873UL), 0UL, "fprintf", 3, (762051829673678370UL + 62UL), (762051829673678370UL + 1872UL), 0UL, 0UL, "fclose", 1, (762051829673678370UL + 62UL), 0UL,
+    init_module(740351831688905946UL, 12, 3, 4, 13, 2, 8, 10, 2, 10, 10,
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (740351831688905946UL + 217UL), "AVI_close", (unsigned)1, (740351831688905946UL + 1640UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)1, (740351831688905946UL + 221UL), "AVI_print_error", (unsigned)1, (740351831688905946UL + 1876UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (740351831688905946UL + 217UL), "AVI_video_width", (unsigned)1, (740351831688905946UL + 1640UL),
+                           &____alias_loc_id_3, (unsigned)0, (unsigned)0, (unsigned)1, "kernel", (unsigned)2, (740351831688905946UL + 218UL), (740351831688905946UL + 226UL),
+                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (unsigned)1, (740351831688905946UL + 212UL), (740351831688905946UL + 213UL), (740351831688905946UL + 214UL), (740351831688905946UL + 219UL), (740351831688905946UL + 220UL), "AVI_open_input_file", (unsigned)2, (740351831688905946UL + 1630UL), (740351831688905946UL + 1640UL),
+                           &____alias_loc_id_5, (unsigned)1, (unsigned)0, (unsigned)1, (740351831688905946UL + 217UL), "AVI_video_height", (unsigned)1, (740351831688905946UL + 1640UL),
+                           &____alias_loc_id_6, (unsigned)1, (unsigned)0, (unsigned)1, (740351831688905946UL + 217UL), "AVI_close", (unsigned)1, (740351831688905946UL + 1640UL),
+                           &____alias_loc_id_7, (unsigned)1, (unsigned)0, (unsigned)1, (740351831688905946UL + 221UL), "AVI_video_frames", (unsigned)1, (740351831688905946UL + 1640UL),
+                           &____alias_loc_id_8, (unsigned)1, (unsigned)0, (unsigned)1, (740351831688905946UL + 221UL), "get_frame", (unsigned)2, (740351831688905946UL + 849UL), (740351831688905946UL + 1640UL),
+                           &____alias_loc_id_9, (unsigned)6, (unsigned)0, (unsigned)1, (740351831688905946UL + 215UL), (740351831688905946UL + 216UL), (740351831688905946UL + 217UL), (740351831688905946UL + 218UL), (740351831688905946UL + 224UL), (740351831688905946UL + 849UL), "AVI_open_input_file", (unsigned)2, (740351831688905946UL + 1630UL), (740351831688905946UL + 1640UL),
+                            &____alias_loc_id_10, (unsigned)3, (unsigned)0, (unsigned)0, (740351831688905946UL + 1UL), (740351831688905946UL + 3UL), (740351831688905946UL + 4UL),
+                            &____alias_loc_id_11, (unsigned)13, (unsigned)0, (unsigned)0, (740351831688905946UL + 26UL), (740351831688905946UL + 27UL), (740351831688905946UL + 28UL), (740351831688905946UL + 29UL), (740351831688905946UL + 30UL), (740351831688905946UL + 31UL), (740351831688905946UL + 32UL), (740351831688905946UL + 33UL), (740351831688905946UL + 34UL), (740351831688905946UL + 35UL), (740351831688905946UL + 36UL), (740351831688905946UL + 37UL), (740351831688905946UL + 62UL),
+                            &____alias_loc_id_12, (unsigned)12, (unsigned)0, (unsigned)0, (740351831688905946UL + 212UL), (740351831688905946UL + 215UL), (740351831688905946UL + 216UL), (740351831688905946UL + 217UL), (740351831688905946UL + 218UL), (740351831688905946UL + 222UL), (740351831688905946UL + 223UL), (740351831688905946UL + 224UL), (740351831688905946UL + 225UL), (740351831688905946UL + 227UL), (740351831688905946UL + 228UL), (740351831688905946UL + 849UL),
+                            "seconds", 0, "_Z7secondsv", "_Z11seconds_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (740351831688905946UL + 1UL), (740351831688905946UL + 2UL), 0UL,
+                            "write_data", 0, "_Z10write_dataPciiiPiS0_iS0_S0_", "_Z14write_data_npmPciiiPiS0_iS0_S0_", 0, 9, (740351831688905946UL + 197UL), 0UL, 0UL, 0UL, (740351831688905946UL + 201UL), (740351831688905946UL + 202UL), 0UL, (740351831688905946UL + 204UL), (740351831688905946UL + 205UL), 0UL, 16, "fopen", 2, (740351831688905946UL + 197UL), (740351831688905946UL + 1864UL), (740351831688905946UL + 62UL), "printf", 1, (740351831688905946UL + 1865UL), 0UL, "fprintf", 3, (740351831688905946UL + 62UL), (740351831688905946UL + 1866UL), 0UL, 0UL, "fprintf", 3, (740351831688905946UL + 62UL), (740351831688905946UL + 1866UL), 0UL, 0UL, "fprintf", 3, (740351831688905946UL + 62UL), (740351831688905946UL + 1868UL), 0UL, 0UL, "fprintf", 3, (740351831688905946UL + 62UL), (740351831688905946UL + 1869UL), 0UL, 0UL, "fprintf", 3, (740351831688905946UL + 62UL), (740351831688905946UL + 1868UL), 0UL, 0UL, "fprintf", 3, (740351831688905946UL + 62UL), (740351831688905946UL + 1871UL), 0UL, 0UL, "fprintf", 3, (740351831688905946UL + 62UL), (740351831688905946UL + 1872UL), 0UL, 0UL, "fprintf", 2, (740351831688905946UL + 62UL), (740351831688905946UL + 1873UL), 0UL, "fprintf", 3, (740351831688905946UL + 62UL), (740351831688905946UL + 1872UL), 0UL, 0UL, "fprintf", 3, (740351831688905946UL + 62UL), (740351831688905946UL + 1874UL), 0UL, 0UL, "fprintf", 3, (740351831688905946UL + 62UL), (740351831688905946UL + 1872UL), 0UL, 0UL, "fprintf", 2, (740351831688905946UL + 62UL), (740351831688905946UL + 1873UL), 0UL, "fprintf", 3, (740351831688905946UL + 62UL), (740351831688905946UL + 1872UL), 0UL, 0UL, "fclose", 1, (740351831688905946UL + 62UL), 0UL,
                                "AVI_close", (void **)&(____chimes_extern_func_AVI_close),
                                "AVI_open_input_file", (void **)&(____chimes_extern_func_AVI_open_input_file),
                                "AVI_print_error", (void **)&(____chimes_extern_func_AVI_print_error),
@@ -8749,18 +8749,18 @@ static int module_init() {
                            "AVI_video_width", &(____chimes_does_checkpoint_AVI_video_width_npm),
                            "get_frame", &(____chimes_does_checkpoint_get_frame_npm),
                            "kernel", &(____chimes_does_checkpoint_kernel_npm),
-                             (762051829673678370UL + 217UL), (762051829673678370UL + 849UL),
-                             (762051829673678370UL + 26UL), (762051829673678370UL + 197UL),
-                             (762051829673678370UL + 1835UL), (762051829673678370UL + 1630UL),
-                             (762051829673678370UL + 33UL), (762051829673678370UL + 204UL),
-                             (762051829673678370UL + 31UL), (762051829673678370UL + 202UL),
-                             (762051829673678370UL + 30UL), (762051829673678370UL + 201UL),
-                             (762051829673678370UL + 214UL), (762051829673678370UL + 1835UL),
-                             (762051829673678370UL + 35UL), (762051829673678370UL + 62UL),
-                             (762051829673678370UL + 34UL), (762051829673678370UL + 205UL),
-                             (762051829673678370UL + 218UL), (762051829673678370UL + 849UL),
-                             (762051829673678370UL + 221UL), (762051829673678370UL + 1640UL),
-                             (762051829673678370UL + 220UL), (762051829673678370UL + 1630UL),
+                             (740351831688905946UL + 217UL), (740351831688905946UL + 849UL),
+                             (740351831688905946UL + 26UL), (740351831688905946UL + 197UL),
+                             (740351831688905946UL + 1835UL), (740351831688905946UL + 1630UL),
+                             (740351831688905946UL + 33UL), (740351831688905946UL + 204UL),
+                             (740351831688905946UL + 31UL), (740351831688905946UL + 202UL),
+                             (740351831688905946UL + 30UL), (740351831688905946UL + 201UL),
+                             (740351831688905946UL + 214UL), (740351831688905946UL + 1835UL),
+                             (740351831688905946UL + 35UL), (740351831688905946UL + 62UL),
+                             (740351831688905946UL + 34UL), (740351831688905946UL + 205UL),
+                             (740351831688905946UL + 218UL), (740351831688905946UL + 849UL),
+                             (740351831688905946UL + 221UL), (740351831688905946UL + 1640UL),
+                             (740351831688905946UL + 220UL), (740351831688905946UL + 1630UL),
                      "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
                      "_IO_marker", 0UL, 0,
                      "_private_struct", 1280UL, 21, "int", (int)__builtin_offsetof (struct _private_struct, point_no), "int", (int)__builtin_offsetof (struct _private_struct, in_pointer), "int*", (int)__builtin_offsetof (struct _private_struct, d_Row), "int*", (int)__builtin_offsetof (struct _private_struct, d_Col), "int*", (int)__builtin_offsetof (struct _private_struct, d_tRowLoc), "int*", (int)__builtin_offsetof (struct _private_struct, d_tColLoc), "float*", (int)__builtin_offsetof (struct _private_struct, d_T), "float*", (int)__builtin_offsetof (struct _private_struct, d_in2), "float*", (int)__builtin_offsetof (struct _private_struct, d_in2_sqr), "float*", (int)__builtin_offsetof (struct _private_struct, d_in_mod), "float*", (int)__builtin_offsetof (struct _private_struct, d_in_sqr), "float*", (int)__builtin_offsetof (struct _private_struct, d_conv), "float*", (int)__builtin_offsetof (struct _private_struct, d_in2_pad), "float*", (int)__builtin_offsetof (struct _private_struct, d_in2_sub), "float*", (int)__builtin_offsetof (struct _private_struct, d_in2_sub2_sqr), "float*", (int)__builtin_offsetof (struct _private_struct, d_tMask), "float*", (int)__builtin_offsetof (struct _private_struct, d_mask_conv), "float*", (int)__builtin_offsetof (struct _private_struct, in_partial_sum), "float*", (int)__builtin_offsetof (struct _private_struct, in_sqr_partial_sum), "float*", (int)__builtin_offsetof (struct _private_struct, par_max_val), "int*", (int)__builtin_offsetof (struct _private_struct, par_max_coo),
@@ -8780,16 +8780,16 @@ static int module_init() {
                         "main|d_frames|0", 4, "get_frame", "AVI_video_width", "AVI_video_height", "AVI_video_frames",
         "seconds", 0UL, (int)0,
         "seconds", 0UL, (int)0,
-        "AVI_open_input_file", 762051829673680010UL, (int)2, 762051829673680000UL, 0UL,
-        "AVI_print_error", 0UL, (int)1, 762051829673680246UL,
-        "AVI_video_frames", 0UL, (int)1, 762051829673680010UL,
-        "AVI_video_height", 0UL, (int)1, 762051829673680010UL,
-        "AVI_video_width", 0UL, (int)1, 762051829673680010UL,
-        "AVI_close", 0UL, (int)1, 762051829673680010UL,
-        "AVI_open_input_file", 762051829673680010UL, (int)2, 762051829673680000UL, 0UL,
-        "get_frame", 762051829673679219UL, (int)5, 762051829673680010UL, 0UL, 0UL, 0UL, 0UL,
-        "AVI_close", 0UL, (int)1, 762051829673680010UL,
-        "kernel", 0UL, (int)2, 762051829673678596UL, 762051829673678588UL);
+        "AVI_open_input_file", 740351831688907586UL, (int)2, 740351831688907576UL, 0UL,
+        "AVI_print_error", 0UL, (int)1, 740351831688907822UL,
+        "AVI_video_frames", 0UL, (int)1, 740351831688907586UL,
+        "AVI_video_height", 0UL, (int)1, 740351831688907586UL,
+        "AVI_video_width", 0UL, (int)1, 740351831688907586UL,
+        "AVI_close", 0UL, (int)1, 740351831688907586UL,
+        "AVI_open_input_file", 740351831688907586UL, (int)2, 740351831688907576UL, 0UL,
+        "get_frame", 740351831688906795UL, (int)5, 740351831688907586UL, 0UL, 0UL, 0UL, 0UL,
+        "AVI_close", 0UL, (int)1, 740351831688907586UL,
+        "kernel", 0UL, (int)2, 740351831688906172UL, 740351831688906164UL);
     return 0;
 }
 

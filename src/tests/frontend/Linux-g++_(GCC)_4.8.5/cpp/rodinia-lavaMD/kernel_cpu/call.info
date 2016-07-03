@@ -2,12 +2,12 @@ get_time kernel_cpu 55 10 0
 get_time kernel_cpu 89 10 0
 get_time kernel_cpu 98 10 0
 get_time kernel_cpu 107 10 0
-exp kernel_cpu 176 11 0 0
-get_time kernel_cpu 199 10 0
-printf kernel_cpu 205 2 0 466
-printf kernel_cpu 207 2 0 467 0 0
-printf kernel_cpu 208 2 0 468 0 0
-printf kernel_cpu 209 2 0 468 0 0
-printf kernel_cpu 210 2 0 468 0 0
-printf kernel_cpu 212 2 0 471
-printf kernel_cpu 213 2 0 472 0
+exp kernel_cpu 180 11 0 0
+get_time kernel_cpu 206 10 0
+printf kernel_cpu 212 2 0 466
+printf kernel_cpu 214 2 0 467 0 0
+printf kernel_cpu 215 2 0 468 0 0
+printf kernel_cpu 216 2 0 468 0 0
+printf kernel_cpu 217 2 0 468 0 0
+printf kernel_cpu 219 2 0 471
+printf kernel_cpu 220 2 0 472 0

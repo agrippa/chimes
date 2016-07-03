@@ -35,11 +35,11 @@ static unsigned ____alias_loc_id_2;
 static unsigned ____alias_loc_id_3;
 static unsigned ____alias_loc_id_4;
 static unsigned ____alias_loc_id_5;
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -48,7 +48,7 @@ static unsigned ____alias_loc_id_5;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -104,36 +104,36 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 2 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 3 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 4 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 5 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 6 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 2 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 3 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 4 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 5 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 6 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 7 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
 
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.h" 1
-
-extern "C" {
-
-
-
-
-
-
-
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 1
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.h" 1
 
 extern "C" {
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h"
+
+
+
+
+
+
+
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 1
+
+extern "C" {
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h"
 # 1 "/usr/include/sys/types.h" 1 3 4
 # 26 "/usr/include/sys/types.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -706,7 +706,7 @@ typedef union
 
 
 }
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 2
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 2
 # 1 "/usr/include/sys/stat.h" 1 3 4
 # 39 "/usr/include/sys/stat.h" 3 4
 # 1 "/usr/include/time.h" 1 3 4
@@ -1051,7 +1051,7 @@ fstatat64 (int __fd, __const char *__filename, struct stat64 *__statbuf, int __f
 
 
 }
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 2
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 30 "/usr/include/stdio.h" 3 4
 extern "C" {
@@ -1859,7 +1859,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 2
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 2
 # 1 "/usr/include/fcntl.h" 1 3 4
 # 30 "/usr/include/fcntl.h" 3 4
 extern "C" {
@@ -2007,7 +2007,7 @@ extern int posix_fallocate (int __fd, __off_t __offset, __off_t __len);
 extern int posix_fallocate64 (int __fd, __off64_t __offset, __off64_t __len);
 # 267 "/usr/include/fcntl.h" 3 4
 }
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 2
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 2
 # 1 "/usr/include/unistd.h" 1 3 4
 # 28 "/usr/include/unistd.h" 3 4
 extern "C" {
@@ -3335,7 +3335,7 @@ extern void swab (__const void *__restrict __from, void *__restrict __to,
 extern char *ctermid (char *__s) throw ();
 # 1160 "/usr/include/unistd.h" 3 4
 }
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 2
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 2
 
 # 1 "/usr/include/inttypes.h" 1 3 4
 # 28 "/usr/include/inttypes.h" 3 4
@@ -3484,7 +3484,7 @@ wcstoumax (__const wchar_t *__restrict nptr, wchar_t **__restrict endptr, int ba
 }
 # 442 "/usr/include/inttypes.h" 3 4
 }
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 2
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 2
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 1 3 4
 # 34 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/syslimits.h" 1 3 4
@@ -3522,7 +3522,7 @@ wcstoumax (__const wchar_t *__restrict nptr, wchar_t **__restrict endptr, int ba
 # 169 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 2 3 4
 # 8 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/syslimits.h" 2 3 4
 # 35 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 2 3 4
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 2
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 1 3 4
@@ -4259,7 +4259,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 2
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 29 "/usr/include/string.h" 3 4
 extern "C" {
@@ -4735,7 +4735,7 @@ extern "C++" __const char *basename (__const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 # 646 "/usr/include/string.h" 3 4
 }
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 2
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 2
 # 1 "/usr/include/errno.h" 1 3 4
 # 32 "/usr/include/errno.h" 3 4
 extern "C" {
@@ -4769,7 +4769,7 @@ extern char *program_invocation_name, *program_invocation_short_name;
 }
 # 69 "/usr/include/errno.h" 3 4
 typedef int error_t;
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h" 2
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h" 2
 
 
 
@@ -4854,7 +4854,7 @@ typedef int error_t;
    int aptr;
 
  } avi_t;
-# 195 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.h"
+# 195 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avilib.h"
  avi_t* AVI_open_output_file(char * filename);
  void AVI_set_video(avi_t *AVI, int width, int height, double fps, char *compressor);
  void AVI_set_audio(avi_t *AVI, int channels, long rate, int bits, int format, long mp3rate);
@@ -4977,7 +4977,7 @@ typedef int error_t;
 
 
 }
-# 11 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.h" 2
+# 11 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.h" 2
 
 
 
@@ -4998,669 +4998,669 @@ float* get_frame( avi_t* cell_file,
 
 
 }
-# 9 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c" 2
-# 9 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 11 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 12 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 13 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 14 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 15 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 16 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 9 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c" 2
+# 9 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 11 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 12 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 13 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 14 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 15 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 16 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
 float* chop_flip_image_npm( char *image, int height, int width, int cropped, int scaled, int converted);
 float* chop_flip_image_quick( char *image, int height, int width, int cropped, int scaled, int converted); float* chop_flip_image( char *image, int height, int width, int cropped, int scaled, int converted);
 float* chop_flip_image_resumable( char *image,
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 17 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
         int height,
-# 18 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 18 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
         int width,
-# 19 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 19 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
         int cropped,
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 20 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
         int scaled,
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-        int converted) {const int ____chimes_did_disable0 = new_stack((void *)(&chop_flip_image), "chop_flip_image", &____must_manage_chop_flip_image, 6, 0, (size_t)(17693923976101510202UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 21 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+        int converted) {const int ____chimes_did_disable0 = new_stack((void *)(&chop_flip_image), "chop_flip_image", &____must_manage_chop_flip_image, 6, 0, (size_t)(17826386017445121714UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int top; ;
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int bottom; ;
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int left; ;
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int right; ;
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  if(cropped==1){
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   top = 0;
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   bottom = 0;
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   left = 0;
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   right = 0;
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  }
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  else{
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   top = 0;
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   bottom = height - 1;
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   left = 0;
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   right = width - 1;
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  }
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   int height_new; height_new = (bottom - top + 1) ;
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   int width_new; width_new = (right - left + 1) ;
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int i; int j; ;
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  float *result; result = ((float *) ({ void *____chimes_tmp_ptr = malloc((height_new * width_new * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+  float *result; result = ((float *) ({ void *____chimes_tmp_ptr = malloc((height_new * width_new * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17826386017445121689UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  float temp; ;
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  if (scaled) {
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
    float scale; scale = (1.0 / 255.0) ;
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   for(i = 0; i <height_new; i++){
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
    for(j = 0; j <width_new; j++){
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     temp = (float) image[((height - 1 - (i + top)) * width) + (j + left)] * scale;
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     if(temp<0){
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
      result[i*width_new+j] = temp + 256;
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     }
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     else{
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
      result[i*width_new+j] = temp;
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     }
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
    }
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 65 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   }
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  } else {
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   for(i = 0; i <height_new; i++){
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
    for(j = 0; j <width_new; j++){
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     temp = (float) image[((height - 1 - (i + top)) * width) + (j + left)] ;
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     if(temp<0){
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
      result[i*width_new+j] = temp + 256;
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     }
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     else{
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 74 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
      result[i*width_new+j] = temp;
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     }
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
    }
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 77 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   }
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  }
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  float *result_converted; result_converted = ((float *) ({ void *____chimes_tmp_ptr = malloc((height_new * width_new * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+  float *result_converted; result_converted = ((float *) ({ void *____chimes_tmp_ptr = malloc((height_new * width_new * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17826386017445121689UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  if(converted==1){
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   for(i = 0; i <width_new; i++){
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
    for(j = 0; j <height_new; j++){
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     result_converted[i*height_new+j] = result[j*width_new+i];
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
    }
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   }
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  }
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  else{
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   result_converted = result;
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  }
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  ({ free_helper((((unsigned char *)result) - sizeof(void *)), 17693923976101510177UL);free((((unsigned char *)result) - sizeof(void *))); }) ;
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  float *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (result_converted); rm_stack(true, 17693923976101510177UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_4, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-rm_stack(true, 17693923976101510177UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_4, ____chimes_did_disable0, false); }
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+  ({ free_helper((((unsigned char *)result) - sizeof(void *)), 17826386017445121689UL);free((((unsigned char *)result) - sizeof(void *))); }) ;
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+  float *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (result_converted); rm_stack(true, 17826386017445121689UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_4, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+rm_stack(true, 17826386017445121689UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_4, ____chimes_did_disable0, false); }
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
 float* get_frame_npm( avi_t* cell_file, int frame_num, int cropped, int scaled, int converted);static void (*____chimes_extern_func_AVI_print_error)(char *) = AVI_print_error;static long (*____chimes_extern_func_AVI_read_frame)(avi_t *, char *, int *) = AVI_read_frame;static int (*____chimes_extern_func_AVI_set_video_position)(avi_t *, long) = AVI_set_video_position;static int (*____chimes_extern_func_AVI_video_height)(avi_t *) = AVI_video_height;static int (*____chimes_extern_func_AVI_video_width)(avi_t *) = AVI_video_width;
 float* get_frame_quick( avi_t* cell_file, int frame_num, int cropped, int scaled, int converted); float* get_frame( avi_t* cell_file, int frame_num, int cropped, int scaled, int converted);
 float* get_frame_resumable( avi_t* cell_file,
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
       int frame_num,
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
       int cropped,
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
       int scaled,
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-      int converted) {const int ____chimes_did_disable1 = new_stack((void *)(&get_frame), "get_frame", &____must_manage_get_frame, 5, 5, (size_t)(17693923976101510283UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "get_frame|cell_file|0", &____must_checkpoint_get_frame_cell_file_0, "%struct.avi_t*", (void *)(&cell_file), (size_t)8, 1, 0, 0, "get_frame|frame_num|0", &____must_checkpoint_get_frame_frame_num_0, "i32", (void *)(&frame_num), (size_t)4, 0, 0, 0, "get_frame|cropped|0", &____must_checkpoint_get_frame_cropped_0, "i32", (void *)(&cropped), (size_t)4, 0, 0, 0, "get_frame|scaled|0", &____must_checkpoint_get_frame_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0, "get_frame|converted|0", &____must_checkpoint_get_frame_converted_0, "i32", (void *)(&converted), (size_t)4, 0, 0, 0) ; char *image_buf;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+      int converted) {const int ____chimes_did_disable1 = new_stack((void *)(&get_frame), "get_frame", &____must_manage_get_frame, 5, 5, (size_t)(17826386017445121795UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "get_frame|cell_file|0", &____must_checkpoint_get_frame_cell_file_0, "%struct.avi_t*", (void *)(&cell_file), (size_t)8, 1, 0, 0, "get_frame|frame_num|0", &____must_checkpoint_get_frame_frame_num_0, "i32", (void *)(&frame_num), (size_t)4, 0, 0, 0, "get_frame|cropped|0", &____must_checkpoint_get_frame_cropped_0, "i32", (void *)(&cropped), (size_t)4, 0, 0, 0, "get_frame|scaled|0", &____must_checkpoint_get_frame_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0, "get_frame|converted|0", &____must_checkpoint_get_frame_converted_0, "i32", (void *)(&converted), (size_t)4, 0, 0, 0) ; char *image_buf;
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
 int height;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
 int width;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
 int dummy;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  if (____must_checkpoint_get_frame_image_buf_0 || ____must_checkpoint_get_frame_height_0 || ____must_checkpoint_get_frame_width_0 || ____must_checkpoint_get_frame_dummy_0) { register_stack_vars(4, "get_frame|image_buf|0", &____must_checkpoint_get_frame_image_buf_0, "i8*", (void *)(&image_buf), (size_t)8, 1, 0, 0, "get_frame|height|0", &____must_checkpoint_get_frame_height_0, "i32", (void *)(&height), (size_t)4, 0, 0, 0, "get_frame|width|0", &____must_checkpoint_get_frame_width_0, "i32", (void *)(&width), (size_t)4, 0, 0, 0, "get_frame|dummy|0", &____must_checkpoint_get_frame_dummy_0, "i32", (void *)(&dummy), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   ;
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-     call_lbl_0: width = ( ({ calling((void*)AVI_video_width, 0, ____alias_loc_id_3, 0UL, 1, (size_t)(17693923976101510283UL)); (AVI_video_width)(cell_file); }) ) ;
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-     call_lbl_1: height = ( ({ calling((void*)AVI_video_height, 1, ____alias_loc_id_2, 0UL, 1, (size_t)(17693923976101510283UL)); (AVI_video_height)(cell_file); }) ) ;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+     call_lbl_0: width = ( ({ calling((void*)AVI_video_width, 0, ____alias_loc_id_3, 0UL, 1, (size_t)(17826386017445121795UL)); (AVI_video_width)(cell_file); }) ) ;
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+     call_lbl_1: height = ( ({ calling((void*)AVI_video_height, 1, ____alias_loc_id_2, 0UL, 1, (size_t)(17826386017445121795UL)); (AVI_video_height)(cell_file); }) ) ;
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int status; ;
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  call_lbl_2: ({ calling((void*)AVI_set_video_position, 2, ____alias_loc_id_1, 0UL, 2, (size_t)(17693923976101510283UL), (size_t)(0UL)); (AVI_set_video_position)(cell_file, frame_num); }) ;
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-    image_buf = ((char*) ({ void *____chimes_tmp_ptr = malloc((width * height * sizeof(char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, width * height * sizeof(char), 17693923976101510254UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- alias_group_changed(____alias_loc_id_0); call_lbl_3: status = ({ calling((void*)AVI_read_frame, 3, ____alias_loc_id_0, 0UL, 3, (size_t)(17693923976101510283UL), (size_t)(17693923976101510254UL), (size_t)(17693923976101510217UL)); (AVI_read_frame)(cell_file, image_buf, &dummy); }) ;
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+  call_lbl_2: ({ calling((void*)AVI_set_video_position, 2, ____alias_loc_id_1, 0UL, 2, (size_t)(17826386017445121795UL), (size_t)(0UL)); (AVI_set_video_position)(cell_file, frame_num); }) ;
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+    image_buf = ((char*) ({ void *____chimes_tmp_ptr = malloc((width * height * sizeof(char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, width * height * sizeof(char), 17826386017445121766UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+ alias_group_changed(____alias_loc_id_0); call_lbl_3: status = ({ calling((void*)AVI_read_frame, 3, ____alias_loc_id_0, 0UL, 3, (size_t)(17826386017445121795UL), (size_t)(17826386017445121766UL), (size_t)(17826386017445121729UL)); (AVI_read_frame)(cell_file, image_buf, &dummy); }) ;
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  if(status == -1) {
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-   call_lbl_4: ({ char * ____chimes_arg7; if (!____chimes_replaying) { ____chimes_arg7 = ((char *)"Error with AVI_read_frame"); } calling((void*)AVI_print_error, 4, 0, 0UL, 1, (size_t)(17693923976101510297UL)); (AVI_print_error)(____chimes_arg7); }) ;
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+   call_lbl_4: ({ char * ____chimes_arg7; if (!____chimes_replaying) { ____chimes_arg7 = ((char *)"Error with AVI_read_frame"); } calling((void*)AVI_print_error, 4, 0, 0UL, 1, (size_t)(17826386017445121809UL)); (AVI_print_error)(____chimes_arg7); }) ;
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   exit(-1);
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  }
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  float *image_chopped; ;
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   call_lbl_5: image_chopped = ({ calling_npm("chop_flip_image", 0); chop_flip_image_npm(image_buf, height, width, cropped, scaled, converted); });
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  ({ free_helper((((unsigned char *)image_buf) - sizeof(void *)), 17693923976101510254UL);free((((unsigned char *)image_buf) - sizeof(void *))); }) ;
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  float *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (image_chopped); rm_stack(true, 17693923976101510274UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-rm_stack(true, 17693923976101510274UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_5, ____chimes_did_disable1, false); }
-# 16 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 135 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+  ({ free_helper((((unsigned char *)image_buf) - sizeof(void *)), 17826386017445121766UL);free((((unsigned char *)image_buf) - sizeof(void *))); }) ;
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+  float *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (image_chopped); rm_stack(true, 17826386017445121786UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
+# 139 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 140 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+rm_stack(true, 17826386017445121786UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_5, ____chimes_did_disable1, false); }
+# 16 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
 float* chop_flip_image_quick( char *image,
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 17 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
         int height,
-# 18 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 18 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
         int width,
-# 19 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 19 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
         int cropped,
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 20 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
         int scaled,
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-        int converted) {const int ____chimes_did_disable0 = new_stack((void *)(&chop_flip_image), "chop_flip_image", &____must_manage_chop_flip_image, 6, 0, (size_t)(17693923976101510202UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 21 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+        int converted) {const int ____chimes_did_disable0 = new_stack((void *)(&chop_flip_image), "chop_flip_image", &____must_manage_chop_flip_image, 6, 0, (size_t)(17826386017445121714UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int top; ;
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int bottom; ;
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int left; ;
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int right; ;
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  if(cropped==1){
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   top = 0;
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   bottom = 0;
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   left = 0;
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   right = 0;
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  }
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  else{
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   top = 0;
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   bottom = height - 1;
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   left = 0;
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   right = width - 1;
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  }
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   int height_new; height_new = (bottom - top + 1) ;
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   int width_new; width_new = (right - left + 1) ;
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int i; int j; ;
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  float *result; result = ((float *) ({ void *____chimes_tmp_ptr = malloc((height_new * width_new * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+  float *result; result = ((float *) ({ void *____chimes_tmp_ptr = malloc((height_new * width_new * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17826386017445121689UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  float temp; ;
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  if (scaled) {
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
    float scale; scale = (1.0 / 255.0) ;
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   for(i = 0; i <height_new; i++){
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
    for(j = 0; j <width_new; j++){
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     temp = (float) image[((height - 1 - (i + top)) * width) + (j + left)] * scale;
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     if(temp<0){
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
      result[i*width_new+j] = temp + 256;
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     }
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     else{
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
      result[i*width_new+j] = temp;
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     }
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
    }
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 65 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   }
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  } else {
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   for(i = 0; i <height_new; i++){
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
    for(j = 0; j <width_new; j++){
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     temp = (float) image[((height - 1 - (i + top)) * width) + (j + left)] ;
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     if(temp<0){
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
      result[i*width_new+j] = temp + 256;
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     }
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     else{
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 74 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
      result[i*width_new+j] = temp;
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     }
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
    }
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 77 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   }
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  }
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  float *result_converted; result_converted = ((float *) ({ void *____chimes_tmp_ptr = malloc((height_new * width_new * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+  float *result_converted; result_converted = ((float *) ({ void *____chimes_tmp_ptr = malloc((height_new * width_new * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17826386017445121689UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  if(converted==1){
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   for(i = 0; i <width_new; i++){
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
    for(j = 0; j <height_new; j++){
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     result_converted[i*height_new+j] = result[j*width_new+i];
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
    }
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   }
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  }
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  else{
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   result_converted = result;
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  }
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  ({ free_helper((((unsigned char *)result) - sizeof(void *)), 17693923976101510177UL);free((((unsigned char *)result) - sizeof(void *))); }) ;
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  float *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (result_converted); rm_stack(true, 17693923976101510177UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_4, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-rm_stack(true, 17693923976101510177UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_4, ____chimes_did_disable0, false); }
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+  ({ free_helper((((unsigned char *)result) - sizeof(void *)), 17826386017445121689UL);free((((unsigned char *)result) - sizeof(void *))); }) ;
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+  float *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (result_converted); rm_stack(true, 17826386017445121689UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_4, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+rm_stack(true, 17826386017445121689UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_4, ____chimes_did_disable0, false); }
 
 float* chop_flip_image( char *image,
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 17 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
         int height,
-# 18 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 18 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
         int width,
-# 19 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 19 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
         int cropped,
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 20 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
         int scaled,
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 21 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
         int converted) { return (____chimes_replaying ? chop_flip_image_resumable(image, height, width, cropped, scaled, converted) : chop_flip_image_quick(image, height, width, cropped, scaled, converted)); }
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
 float* get_frame_quick( avi_t* cell_file,
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
       int frame_num,
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
       int cropped,
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
       int scaled,
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-      int converted) {const int ____chimes_did_disable1 = new_stack((void *)(&get_frame), "get_frame", &____must_manage_get_frame, 5, 5, (size_t)(17693923976101510283UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "get_frame|cell_file|0", &____must_checkpoint_get_frame_cell_file_0, "%struct.avi_t*", (void *)(&cell_file), (size_t)8, 1, 0, 0, "get_frame|frame_num|0", &____must_checkpoint_get_frame_frame_num_0, "i32", (void *)(&frame_num), (size_t)4, 0, 0, 0, "get_frame|cropped|0", &____must_checkpoint_get_frame_cropped_0, "i32", (void *)(&cropped), (size_t)4, 0, 0, 0, "get_frame|scaled|0", &____must_checkpoint_get_frame_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0, "get_frame|converted|0", &____must_checkpoint_get_frame_converted_0, "i32", (void *)(&converted), (size_t)4, 0, 0, 0) ; char *image_buf;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+      int converted) {const int ____chimes_did_disable1 = new_stack((void *)(&get_frame), "get_frame", &____must_manage_get_frame, 5, 5, (size_t)(17826386017445121795UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "get_frame|cell_file|0", &____must_checkpoint_get_frame_cell_file_0, "%struct.avi_t*", (void *)(&cell_file), (size_t)8, 1, 0, 0, "get_frame|frame_num|0", &____must_checkpoint_get_frame_frame_num_0, "i32", (void *)(&frame_num), (size_t)4, 0, 0, 0, "get_frame|cropped|0", &____must_checkpoint_get_frame_cropped_0, "i32", (void *)(&cropped), (size_t)4, 0, 0, 0, "get_frame|scaled|0", &____must_checkpoint_get_frame_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0, "get_frame|converted|0", &____must_checkpoint_get_frame_converted_0, "i32", (void *)(&converted), (size_t)4, 0, 0, 0) ; char *image_buf;
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
 int height;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
 int width;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
 int dummy;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  if (____must_checkpoint_get_frame_image_buf_0 || ____must_checkpoint_get_frame_height_0 || ____must_checkpoint_get_frame_width_0 || ____must_checkpoint_get_frame_dummy_0) { register_stack_vars(4, "get_frame|image_buf|0", &____must_checkpoint_get_frame_image_buf_0, "i8*", (void *)(&image_buf), (size_t)8, 1, 0, 0, "get_frame|height|0", &____must_checkpoint_get_frame_height_0, "i32", (void *)(&height), (size_t)4, 0, 0, 0, "get_frame|width|0", &____must_checkpoint_get_frame_width_0, "i32", (void *)(&width), (size_t)4, 0, 0, 0, "get_frame|dummy|0", &____must_checkpoint_get_frame_dummy_0, "i32", (void *)(&dummy), (size_t)4, 0, 0, 0); } ; ;
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   ;
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-     call_lbl_0: width = ( ({ calling((void*)AVI_video_width, 0, ____alias_loc_id_3, 0UL, 1, (size_t)(17693923976101510283UL)); (AVI_video_width)(cell_file); }) ) ;
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-     call_lbl_1: height = ( ({ calling((void*)AVI_video_height, 1, ____alias_loc_id_2, 0UL, 1, (size_t)(17693923976101510283UL)); (AVI_video_height)(cell_file); }) ) ;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+     call_lbl_0: width = ( ({ calling((void*)AVI_video_width, 0, ____alias_loc_id_3, 0UL, 1, (size_t)(17826386017445121795UL)); (AVI_video_width)(cell_file); }) ) ;
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+     call_lbl_1: height = ( ({ calling((void*)AVI_video_height, 1, ____alias_loc_id_2, 0UL, 1, (size_t)(17826386017445121795UL)); (AVI_video_height)(cell_file); }) ) ;
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int status; ;
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  call_lbl_2: ({ calling((void*)AVI_set_video_position, 2, ____alias_loc_id_1, 0UL, 2, (size_t)(17693923976101510283UL), (size_t)(0UL)); (AVI_set_video_position)(cell_file, frame_num); }) ;
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-    image_buf = ((char*) ({ void *____chimes_tmp_ptr = malloc((width * height * sizeof(char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, width * height * sizeof(char), 17693923976101510254UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- alias_group_changed(____alias_loc_id_0); call_lbl_3: status = ({ calling((void*)AVI_read_frame, 3, ____alias_loc_id_0, 0UL, 3, (size_t)(17693923976101510283UL), (size_t)(17693923976101510254UL), (size_t)(17693923976101510217UL)); (AVI_read_frame)(cell_file, image_buf, &dummy); }) ;
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+  call_lbl_2: ({ calling((void*)AVI_set_video_position, 2, ____alias_loc_id_1, 0UL, 2, (size_t)(17826386017445121795UL), (size_t)(0UL)); (AVI_set_video_position)(cell_file, frame_num); }) ;
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+    image_buf = ((char*) ({ void *____chimes_tmp_ptr = malloc((width * height * sizeof(char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, width * height * sizeof(char), 17826386017445121766UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+ alias_group_changed(____alias_loc_id_0); call_lbl_3: status = ({ calling((void*)AVI_read_frame, 3, ____alias_loc_id_0, 0UL, 3, (size_t)(17826386017445121795UL), (size_t)(17826386017445121766UL), (size_t)(17826386017445121729UL)); (AVI_read_frame)(cell_file, image_buf, &dummy); }) ;
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  if(status == -1) {
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-   call_lbl_4: ({ calling((void*)AVI_print_error, 4, 0, 0UL, 1, (size_t)(17693923976101510297UL)); (AVI_print_error)((char *)"Error with AVI_read_frame"); }) ;
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+   call_lbl_4: ({ calling((void*)AVI_print_error, 4, 0, 0UL, 1, (size_t)(17826386017445121809UL)); (AVI_print_error)((char *)"Error with AVI_read_frame"); }) ;
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   exit(-1);
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  }
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  float *image_chopped; ;
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   call_lbl_5: image_chopped = ({ calling_npm("chop_flip_image", 0); chop_flip_image_npm(image_buf, height, width, cropped, scaled, converted); });
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  ({ free_helper((((unsigned char *)image_buf) - sizeof(void *)), 17693923976101510254UL);free((((unsigned char *)image_buf) - sizeof(void *))); }) ;
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  float *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (image_chopped); rm_stack(true, 17693923976101510274UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-rm_stack(true, 17693923976101510274UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_5, ____chimes_did_disable1, false); }
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 135 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+  ({ free_helper((((unsigned char *)image_buf) - sizeof(void *)), 17826386017445121766UL);free((((unsigned char *)image_buf) - sizeof(void *))); }) ;
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+  float *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (image_chopped); rm_stack(true, 17826386017445121786UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
+# 139 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 140 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+rm_stack(true, 17826386017445121786UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_5, ____chimes_did_disable1, false); }
 
 float* get_frame( avi_t* cell_file,
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
       int frame_num,
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
       int cropped,
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
       int scaled,
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
       int converted) { return (____chimes_replaying ? get_frame_resumable(cell_file, frame_num, cropped, scaled, converted) : get_frame_quick(cell_file, frame_num, cropped, scaled, converted)); }
-# 16 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 16 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
 float* chop_flip_image_npm( char *image,
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 17 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
         int height,
-# 18 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 18 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
         int width,
-# 19 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 19 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
         int cropped,
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 20 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
         int scaled,
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 21 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
         int converted) {
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int top;
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int bottom;
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int left;
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int right;
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  if(cropped==1){
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   top = 0;
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   bottom = 0;
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   left = 0;
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   right = 0;
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  }
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  else{
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   top = 0;
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   bottom = height - 1;
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   left = 0;
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   right = width - 1;
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  }
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int height_new = bottom - top + 1;
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int width_new = right - left + 1;
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int i, j;
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- float* result = (float *) ({ void *____chimes_tmp_ptr = malloc((height_new * width_new * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+ float* result = (float *) ({ void *____chimes_tmp_ptr = malloc((height_new * width_new * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17826386017445121689UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  float temp;
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  if (scaled) {
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   float scale = 1.0 / 255.0;
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   for(i = 0; i <height_new; i++){
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
    for(j = 0; j <width_new; j++){
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     temp = (float) image[((height - 1 - (i + top)) * width) + (j + left)] * scale;
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     if(temp<0){
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
      result[i*width_new+j] = temp + 256;
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     }
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     else{
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
      result[i*width_new+j] = temp;
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     }
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
    }
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 65 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   }
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  } else {
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   for(i = 0; i <height_new; i++){
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
    for(j = 0; j <width_new; j++){
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     temp = (float) image[((height - 1 - (i + top)) * width) + (j + left)] ;
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     if(temp<0){
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
      result[i*width_new+j] = temp + 256;
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     }
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     else{
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 74 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
      result[i*width_new+j] = temp;
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     }
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
    }
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 77 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   }
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  }
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- float* result_converted = (float *) ({ void *____chimes_tmp_ptr = malloc((height_new * width_new * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+ float* result_converted = (float *) ({ void *____chimes_tmp_ptr = malloc((height_new * width_new * sizeof(float)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, height_new * width_new * sizeof(float), 17826386017445121689UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  if(converted==1){
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   for(i = 0; i <width_new; i++){
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
    for(j = 0; j <height_new; j++){
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
     result_converted[i*height_new+j] = result[j*width_new+i];
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
    }
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   }
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  }
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  else{
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   result_converted = result;
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  }
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  ({ free_helper((((unsigned char *)result) - sizeof(void *)), 17693923976101510177UL);free((((unsigned char *)result) - sizeof(void *))); }) ;
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+  ({ free_helper((((unsigned char *)result) - sizeof(void *)), 17826386017445121689UL);free((((unsigned char *)result) - sizeof(void *))); }) ;
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   float * ____chimes_ret_var_0; ____chimes_ret_var_0 = (result_converted); return ____chimes_ret_var_0; ;
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
 }
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
 float* get_frame_npm( avi_t* cell_file,
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
       int frame_num,
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
       int cropped,
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
       int scaled,
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
       int converted) {
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int dummy;
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int width = (*____chimes_extern_func_AVI_video_width)(cell_file);
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int height = (*____chimes_extern_func_AVI_video_height)(cell_file);
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  int status;
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  (*____chimes_extern_func_AVI_set_video_position)(cell_file, frame_num);
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- char* image_buf = (char*) ({ void *____chimes_tmp_ptr = malloc((width * height * sizeof(char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, width * height * sizeof(char), 17693923976101510254UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+ char* image_buf = (char*) ({ void *____chimes_tmp_ptr = malloc((width * height * sizeof(char)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, width * height * sizeof(char), 17826386017445121766UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  status = (*____chimes_extern_func_AVI_read_frame)(cell_file, image_buf, &dummy);
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  if(status == -1) {
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   (*____chimes_extern_func_AVI_print_error)((char*) "Error with AVI_read_frame");
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   exit(-1);
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  }
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  float* image_chopped;
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
  image_chopped = chop_flip_image_npm(image_buf, height, width, cropped, scaled, converted);
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  ({ free_helper((((unsigned char *)image_buf) - sizeof(void *)), 17693923976101510254UL);free((((unsigned char *)image_buf) - sizeof(void *))); }) ;
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 135 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+  ({ free_helper((((unsigned char *)image_buf) - sizeof(void *)), 17826386017445121766UL);free((((unsigned char *)image_buf) - sizeof(void *))); }) ;
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
   float * ____chimes_ret_var_1; ____chimes_ret_var_1 = (image_chopped); return ____chimes_ret_var_1; ;
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
+# 139 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
+# 140 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/heartwall/AVI/avimod.c"
 }
 
 
@@ -5668,15 +5668,15 @@ float* get_frame_npm( avi_t* cell_file,
 
 
 static int module_init() {
-    init_module(17693923976101509920UL, 8, 2, 9, 6, 2, 5, 7, 1, 0, 4,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (17693923976101509920UL + 301UL), "AVI_read_frame", (unsigned)3, (17693923976101509920UL + 297UL), (17693923976101509920UL + 334UL), (17693923976101509920UL + 363UL),
-                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)1, (17693923976101509920UL + 299UL), "AVI_set_video_position", (unsigned)1, (17693923976101509920UL + 363UL),
-                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (17693923976101509920UL + 298UL), "AVI_video_height", (unsigned)1, (17693923976101509920UL + 363UL),
-                           &____alias_loc_id_3, (unsigned)5, (unsigned)0, (unsigned)1, (17693923976101509920UL + 292UL), (17693923976101509920UL + 293UL), (17693923976101509920UL + 294UL), (17693923976101509920UL + 295UL), (17693923976101509920UL + 296UL), "AVI_video_width", (unsigned)1, (17693923976101509920UL + 363UL),
-                           &____alias_loc_id_4, (unsigned)20, (unsigned)0, (unsigned)0, (17693923976101509920UL + 1UL), (17693923976101509920UL + 2UL), (17693923976101509920UL + 3UL), (17693923976101509920UL + 4UL), (17693923976101509920UL + 5UL), (17693923976101509920UL + 6UL), (17693923976101509920UL + 7UL), (17693923976101509920UL + 8UL), (17693923976101509920UL + 9UL), (17693923976101509920UL + 10UL), (17693923976101509920UL + 11UL), (17693923976101509920UL + 12UL), (17693923976101509920UL + 13UL), (17693923976101509920UL + 14UL), (17693923976101509920UL + 15UL), (17693923976101509920UL + 16UL), (17693923976101509920UL + 17UL), (17693923976101509920UL + 18UL), (17693923976101509920UL + 19UL), (17693923976101509920UL + 257UL),
-                           &____alias_loc_id_5, (unsigned)3, (unsigned)0, (unsigned)0, (17693923976101509920UL + 300UL), (17693923976101509920UL + 302UL), (17693923976101509920UL + 303UL),
-                            "chop_flip_image", 0, "chop_flip_image", "_Z19chop_flip_image_npmPciiiii", 0, 6, (17693923976101509920UL + 282UL), 0UL, 0UL, 0UL, 0UL, 0UL, (17693923976101509920UL + 257UL), 3, "malloc", 1, 0UL, (17693923976101509920UL + 257UL), "malloc", 1, 0UL, (17693923976101509920UL + 257UL), "free", 1, (17693923976101509920UL + 257UL), 0UL,
-                            "get_frame", 0, "get_frame", "_Z13get_frame_npmP5avi_tiiii", 4, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, &____alias_loc_id_3, 5, (17693923976101509920UL + 363UL), 0UL, 0UL, 0UL, 0UL, (17693923976101509920UL + 354UL), 9, "AVI_video_width", 1, (17693923976101509920UL + 363UL), 0UL, "AVI_video_height", 1, (17693923976101509920UL + 363UL), 0UL, "AVI_set_video_position", 2, (17693923976101509920UL + 363UL), 0UL, 0UL, "malloc", 1, 0UL, (17693923976101509920UL + 334UL), "AVI_read_frame", 3, (17693923976101509920UL + 363UL), (17693923976101509920UL + 334UL), (17693923976101509920UL + 297UL), 0UL, "AVI_print_error", 1, (17693923976101509920UL + 377UL), 0UL, "exit", 1, 0UL, 0UL, "chop_flip_image", 6, (17693923976101509920UL + 334UL), 0UL, 0UL, 0UL, 0UL, 0UL, (17693923976101509920UL + 354UL), "free", 1, (17693923976101509920UL + 334UL), 0UL,
+    init_module(17826386017445121432UL, 8, 2, 9, 6, 2, 5, 7, 1, 0, 4,
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (17826386017445121432UL + 301UL), "AVI_read_frame", (unsigned)3, (17826386017445121432UL + 297UL), (17826386017445121432UL + 334UL), (17826386017445121432UL + 363UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)1, (17826386017445121432UL + 299UL), "AVI_set_video_position", (unsigned)1, (17826386017445121432UL + 363UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (17826386017445121432UL + 298UL), "AVI_video_height", (unsigned)1, (17826386017445121432UL + 363UL),
+                           &____alias_loc_id_3, (unsigned)5, (unsigned)0, (unsigned)1, (17826386017445121432UL + 292UL), (17826386017445121432UL + 293UL), (17826386017445121432UL + 294UL), (17826386017445121432UL + 295UL), (17826386017445121432UL + 296UL), "AVI_video_width", (unsigned)1, (17826386017445121432UL + 363UL),
+                           &____alias_loc_id_4, (unsigned)20, (unsigned)0, (unsigned)0, (17826386017445121432UL + 1UL), (17826386017445121432UL + 2UL), (17826386017445121432UL + 3UL), (17826386017445121432UL + 4UL), (17826386017445121432UL + 5UL), (17826386017445121432UL + 6UL), (17826386017445121432UL + 7UL), (17826386017445121432UL + 8UL), (17826386017445121432UL + 9UL), (17826386017445121432UL + 10UL), (17826386017445121432UL + 11UL), (17826386017445121432UL + 12UL), (17826386017445121432UL + 13UL), (17826386017445121432UL + 14UL), (17826386017445121432UL + 15UL), (17826386017445121432UL + 16UL), (17826386017445121432UL + 17UL), (17826386017445121432UL + 18UL), (17826386017445121432UL + 19UL), (17826386017445121432UL + 257UL),
+                           &____alias_loc_id_5, (unsigned)3, (unsigned)0, (unsigned)0, (17826386017445121432UL + 300UL), (17826386017445121432UL + 302UL), (17826386017445121432UL + 303UL),
+                            "chop_flip_image", 0, "chop_flip_image", "_Z19chop_flip_image_npmPciiiii", 0, 6, (17826386017445121432UL + 282UL), 0UL, 0UL, 0UL, 0UL, 0UL, (17826386017445121432UL + 257UL), 3, "malloc", 1, 0UL, (17826386017445121432UL + 257UL), "malloc", 1, 0UL, (17826386017445121432UL + 257UL), "free", 1, (17826386017445121432UL + 257UL), 0UL,
+                            "get_frame", 0, "get_frame", "_Z13get_frame_npmP5avi_tiiii", 4, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, &____alias_loc_id_3, 5, (17826386017445121432UL + 363UL), 0UL, 0UL, 0UL, 0UL, (17826386017445121432UL + 354UL), 9, "AVI_video_width", 1, (17826386017445121432UL + 363UL), 0UL, "AVI_video_height", 1, (17826386017445121432UL + 363UL), 0UL, "AVI_set_video_position", 2, (17826386017445121432UL + 363UL), 0UL, 0UL, "malloc", 1, 0UL, (17826386017445121432UL + 334UL), "AVI_read_frame", 3, (17826386017445121432UL + 363UL), (17826386017445121432UL + 334UL), (17826386017445121432UL + 297UL), 0UL, "AVI_print_error", 1, (17826386017445121432UL + 377UL), 0UL, "exit", 1, 0UL, 0UL, "chop_flip_image", 6, (17826386017445121432UL + 334UL), 0UL, 0UL, 0UL, 0UL, 0UL, (17826386017445121432UL + 354UL), "free", 1, (17826386017445121432UL + 334UL), 0UL,
                                "AVI_print_error", (void **)&(____chimes_extern_func_AVI_print_error),
                                "AVI_read_frame", (void **)&(____chimes_extern_func_AVI_read_frame),
                                "AVI_set_video_position", (void **)&(____chimes_extern_func_AVI_set_video_position),
@@ -5689,14 +5689,14 @@ static int module_init() {
                            "AVI_set_video_position", &(____chimes_does_checkpoint_AVI_set_video_position_npm),
                            "AVI_video_height", &(____chimes_does_checkpoint_AVI_video_height_npm),
                            "AVI_video_width", &(____chimes_does_checkpoint_AVI_video_width_npm),
-                             (17693923976101509920UL + 15UL), (17693923976101509920UL + 257UL),
-                             (17693923976101509920UL + 19UL), (17693923976101509920UL + 257UL),
-                             (17693923976101509920UL + 18UL), (17693923976101509920UL + 257UL),
-                             (17693923976101509920UL + 302UL), (17693923976101509920UL + 354UL),
-                             (17693923976101509920UL + 303UL), (17693923976101509920UL + 354UL),
-                             (17693923976101509920UL + 1UL), (17693923976101509920UL + 282UL),
-                             (17693923976101509920UL + 301UL), (17693923976101509920UL + 334UL),
-                             (17693923976101509920UL + 292UL), (17693923976101509920UL + 363UL),
+                             (17826386017445121432UL + 15UL), (17826386017445121432UL + 257UL),
+                             (17826386017445121432UL + 19UL), (17826386017445121432UL + 257UL),
+                             (17826386017445121432UL + 18UL), (17826386017445121432UL + 257UL),
+                             (17826386017445121432UL + 302UL), (17826386017445121432UL + 354UL),
+                             (17826386017445121432UL + 303UL), (17826386017445121432UL + 354UL),
+                             (17826386017445121432UL + 1UL), (17826386017445121432UL + 282UL),
+                             (17826386017445121432UL + 301UL), (17826386017445121432UL + 334UL),
+                             (17826386017445121432UL + 292UL), (17826386017445121432UL + 363UL),
                      "audio_index_entry", 0UL, 0,
                      "avi_t", 8704UL, 26, "long int", (int)__builtin_offsetof (avi_t, fdes), "long int", (int)__builtin_offsetof (avi_t, mode), "long int", (int)__builtin_offsetof (avi_t, width), "long int", (int)__builtin_offsetof (avi_t, height), "double", (int)__builtin_offsetof (avi_t, fps), "[ 8 x char ]", (int)__builtin_offsetof (avi_t, compressor), "[ 8 x char ]", (int)__builtin_offsetof (avi_t, compressor2), "long int", (int)__builtin_offsetof (avi_t, video_strn), "long int", (int)__builtin_offsetof (avi_t, video_frames), "[ 4 x char ]", (int)__builtin_offsetof (avi_t, video_tag), "long int", (int)__builtin_offsetof (avi_t, video_pos), "long unsigned int", (int)__builtin_offsetof (avi_t, max_len), "[ 8 x %struct.track_s ]", (int)__builtin_offsetof (avi_t, track), "long unsigned int", (int)__builtin_offsetof (avi_t, pos), "long int", (int)__builtin_offsetof (avi_t, n_idx), "long int", (int)__builtin_offsetof (avi_t, max_idx), "long int", (int)__builtin_offsetof (avi_t, v_codech_off), "long int", (int)__builtin_offsetof (avi_t, v_codecf_off), "[ 16 x unsigned char ]*", (int)__builtin_offsetof (avi_t, idx), "%struct.video_index_entry*", (int)__builtin_offsetof (avi_t, video_index), "long unsigned int", (int)__builtin_offsetof (avi_t, last_pos), "long unsigned int", (int)__builtin_offsetof (avi_t, last_len), "int", (int)__builtin_offsetof (avi_t, must_use_index), "long unsigned int", (int)__builtin_offsetof (avi_t, movi_start), "int", (int)__builtin_offsetof (avi_t, anum), "int", (int)__builtin_offsetof (avi_t, aptr),
                      "track_s", 896UL, 14, "long int", (int)__builtin_offsetof (struct track_s, a_fmt), "long int", (int)__builtin_offsetof (struct track_s, a_chans), "long int", (int)__builtin_offsetof (struct track_s, a_rate), "long int", (int)__builtin_offsetof (struct track_s, a_bits), "long int", (int)__builtin_offsetof (struct track_s, mp3rate), "long int", (int)__builtin_offsetof (struct track_s, audio_strn), "long int", (int)__builtin_offsetof (struct track_s, audio_bytes), "long int", (int)__builtin_offsetof (struct track_s, audio_chunks), "[ 4 x char ]", (int)__builtin_offsetof (struct track_s, audio_tag), "long int", (int)__builtin_offsetof (struct track_s, audio_posc), "long int", (int)__builtin_offsetof (struct track_s, audio_posb), "long int", (int)__builtin_offsetof (struct track_s, a_codech_off), "long int", (int)__builtin_offsetof (struct track_s, a_codecf_off), "%struct.audio_index_entry*", (int)__builtin_offsetof (struct track_s, audio_index),
@@ -5712,7 +5712,7 @@ static int module_init() {
                         "get_frame|width|0", 3, "AVI_video_height", "AVI_set_video_position", "AVI_read_frame",
                         "get_frame|height|0", 2, "AVI_set_video_position", "AVI_read_frame",
                         "get_frame|image_buf|0", 1, "AVI_read_frame",
-        "chop_flip_image", 17693923976101510274UL, (int)6, 17693923976101510254UL, 0UL, 0UL, 0UL, 0UL, 0UL);
+        "chop_flip_image", 17826386017445121786UL, (int)6, 17826386017445121766UL, 0UL, 0UL, 0UL, 0UL, 0UL);
     return 0;
 }
 

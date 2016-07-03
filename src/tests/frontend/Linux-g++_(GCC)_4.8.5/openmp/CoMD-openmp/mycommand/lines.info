@@ -1,20 +1,20 @@
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 247 4 : { 3 } {  } call:freeArgs {  }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 230 4 : {  } {  } call:processArgs { processArgs { 148 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 228 4 : {  } {  } call:addArg { addArg { 3, 256, 259 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 227 4 : {  } {  } call:addArg { addArg { 3, 245, 279 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 226 4 : {  } {  } call:addArg { addArg { 3, 276, 277 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 225 4 : {  } {  } call:addArg { addArg { 3, 258, 275 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 224 4 : {  } {  } call:addArg { addArg { 3, 272, 273 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 223 4 : {  } {  } call:addArg { addArg { 3, 247, 271 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 222 4 : {  } {  } call:addArg { addArg { 3, 256, 259 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 221 4 : {  } {  } call:addArg { addArg { 3, 256, 259 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 220 4 : {  } {  } call:addArg { addArg { 3, 256, 259 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 219 4 : {  } {  } call:addArg { addArg { 3, 258, 259 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 218 4 : {  } {  } call:addArg { addArg { 3, 258, 259 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 217 4 : {  } {  } call:addArg { addArg { 3, 258, 259 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 216 4 : {  } {  } call:addArg { addArg { 3, 256, 257 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 215 4 : {  } {  } call:addArg { addArg { 3, 252, 255 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 214 4 : {  } {  } call:addArg { addArg { 3, 252, 253 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 213 4 : {  } {  } call:addArg { addArg { 3, 247, 251 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 212 4 : { 1, 2, 3, 4 } {  } call:addArg { addArg { 4, 245, 249 } }
-/home/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 254 10 : { 176, 177 } {  } call:printRank {  }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 247 4 : { 3 } {  } call:freeArgs {  }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 230 4 : {  } {  } call:processArgs { processArgs { 148 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 228 4 : {  } {  } call:addArg { addArg { 3, 256, 259 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 227 4 : {  } {  } call:addArg { addArg { 3, 245, 279 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 226 4 : {  } {  } call:addArg { addArg { 3, 276, 277 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 225 4 : {  } {  } call:addArg { addArg { 3, 258, 275 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 224 4 : {  } {  } call:addArg { addArg { 3, 272, 273 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 223 4 : {  } {  } call:addArg { addArg { 3, 247, 271 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 222 4 : {  } {  } call:addArg { addArg { 3, 256, 259 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 221 4 : {  } {  } call:addArg { addArg { 3, 256, 259 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 220 4 : {  } {  } call:addArg { addArg { 3, 256, 259 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 219 4 : {  } {  } call:addArg { addArg { 3, 258, 259 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 218 4 : {  } {  } call:addArg { addArg { 3, 258, 259 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 217 4 : {  } {  } call:addArg { addArg { 3, 258, 259 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 216 4 : {  } {  } call:addArg { addArg { 3, 256, 257 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 215 4 : {  } {  } call:addArg { addArg { 3, 252, 255 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 214 4 : {  } {  } call:addArg { addArg { 3, 252, 253 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 213 4 : {  } {  } call:addArg { addArg { 3, 247, 251 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 212 4 : { 1, 2, 3, 4 } {  } call:addArg { addArg { 4, 245, 249 } }
+/scratch/jmg3/chimes/src/examples/openmp/CoMD/src-openmp/mycommand.c 254 10 : { 176, 177 } {  } call:printRank {  }

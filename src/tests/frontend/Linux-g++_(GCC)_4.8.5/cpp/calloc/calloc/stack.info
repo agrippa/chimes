@@ -1,4 +1,4 @@
-/home/jmg3/chimes/src/examples/cpp/./calloc.cpp main|argc|0 " i32 " 32 0 0 0
-/home/jmg3/chimes/src/examples/cpp/./calloc.cpp main|argv|0 " i8** " 64 1 0 0
-/home/jmg3/chimes/src/examples/cpp/./calloc.cpp main|alloc|0 " i32* " 64 1 0 1 checkpoint
-/home/jmg3/chimes/src/examples/cpp/./calloc.cpp main|____chimes_ret_var_0|0 " i32 " 32 0 0 0
+/scratch/jmg3/chimes/src/examples/cpp/./calloc.cpp main|argc|0 " i32 " 32 0 0 0
+/scratch/jmg3/chimes/src/examples/cpp/./calloc.cpp main|argv|0 " i8** " 64 1 0 0
+/scratch/jmg3/chimes/src/examples/cpp/./calloc.cpp main|alloc|0 " i32* " 64 1 0 1 checkpoint
+/scratch/jmg3/chimes/src/examples/cpp/./calloc.cpp main|____chimes_ret_var_0|0 " i32 " 32 0 0 0

@@ -13,11 +13,11 @@ typedef long unsigned int size_t;
 
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
-# 1 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -26,7 +26,7 @@ static unsigned ____alias_loc_id_1;
 typedef long int ptrdiff_t;
 # 211 "/usr/lib/gcc/x86_64-redhat-linux/4.4.4/include/stddef.h"
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -82,7 +82,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 69 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 69 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -96,7 +96,7 @@ inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 1 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 28 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1041,7 +1041,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 2 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp" 2
+# 2 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp" 2
 # 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.4/include/omp.h" 1
 # 34 "/usr/lib/gcc/x86_64-redhat-linux/4.4.4/include/omp.h"
 typedef struct
@@ -1113,9 +1113,9 @@ int omp_get_active_level (void) throw ();
 
 
 }
-# 3 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp" 2
-# 1 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 1
-# 9 "/home/jmg3/chimes/src/libchimes/checkpoint.h"
+# 3 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp" 2
+# 1 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 9 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h"
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.4/include/stddef.h" 1 3 4
@@ -2291,101 +2291,101 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 10 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 2
+# 10 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h" 2
 
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*____chimes_fp)(void *));
-# 4 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp" 2
-# 4 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
-# 5 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 4 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp" 2
+# 4 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 5 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
-int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(18330918076950841833UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
-# 6 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(8180503492477601849UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+# 6 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
      int a; a = (3) ;
-# 7 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 7 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
      int b; b = (4) ;
-# 8 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 8 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
      int c; c = (5) ;
-# 9 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
-# 9 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
-# 9 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 9 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 9 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 9 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
 { call_lbl_1: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(1, &____chimes_region_id0, 3, &a, &b, &c);
-# 9 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 9 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
 #pragma omp parallel firstprivate(a) private(b, c)
-# 9 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
-# 9 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
-# 10 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 9 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 9 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 10 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
     { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } {
-# 11 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 11 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
          int inside; inside = (6) ;
-# 12 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
-# 12 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
-# 12 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 12 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 12 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 12 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
 { call_lbl_2: void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(2, &____chimes_region_id1, 1, &inside);
-# 12 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 12 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
 #pragma omp parallel private(inside)
-# 12 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
-# 12 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
-# 13 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 12 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 12 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 13 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
         { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 1, &inside); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } {
-# 14 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 14 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
             printf("hello from %d : %d\n", omp_get_thread_num(), inside);
-# 15 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 15 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
              call_lbl_0: checkpoint_transformed(0, ____alias_loc_id_0);
-# 16 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 16 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
          } thread_leaving(); } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 0); }
-# 17 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 17 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
      } thread_leaving(); } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
-# 18 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
-# 19 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 18 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 19 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 20 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 20 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); }
-# 5 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
-int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(18330918076950841833UL)) ; ; ;
-# 6 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 5 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(8180503492477601849UL)) ; ; ;
+# 6 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
      int a; a = (3) ;
-# 7 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 7 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
      int b; b = (4) ;
-# 8 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 8 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
      int c; c = (5) ;
-# 9 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
-# 9 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
-# 9 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 9 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 9 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 9 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
 { call_lbl_1: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(1, &____chimes_region_id0, 3, &a, &b, &c);
-# 9 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 9 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
 #pragma omp parallel firstprivate(a) private(b, c)
-# 9 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
-# 9 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
-# 10 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 9 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 9 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 10 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
     { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } {
-# 11 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 11 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
          int inside; inside = (6) ;
-# 12 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
-# 12 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
-# 12 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 12 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 12 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 12 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
 { call_lbl_2: void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(2, &____chimes_region_id1, 1, &inside);
-# 12 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 12 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
 #pragma omp parallel private(inside)
-# 12 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
-# 12 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
-# 13 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 12 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 12 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 13 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
         { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 1, &inside); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } {
-# 14 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 14 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
             printf("hello from %d : %d\n", omp_get_thread_num(), inside);
-# 15 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 15 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
              call_lbl_0: checkpoint_transformed(0, ____alias_loc_id_0);
-# 16 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 16 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
          } thread_leaving(); } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 0); }
-# 17 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 17 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
      } thread_leaving(); } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
-# 18 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
-# 19 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 18 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 19 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
      int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 20 "/home/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
+# 20 "/scratch/jmg3/chimes/src/examples/openmp/./nested_parallel.cpp"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
 int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
@@ -2397,10 +2397,10 @@ int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_re
 
 
 static int module_init() {
-    init_module(18330918076950841802UL, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)7, (unsigned)0, (unsigned)0, (18330918076950841802UL + 1UL), (18330918076950841802UL + 2UL), (18330918076950841802UL + 3UL), (18330918076950841802UL + 4UL), (18330918076950841802UL + 5UL), (18330918076950841802UL + 6UL), (18330918076950841802UL + 7UL),
-                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (18330918076950841802UL + 8UL),
-                             (18330918076950841802UL + 3UL), (18330918076950841802UL + 31UL),
+    init_module(8180503492477601818UL, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0,
+                           &____alias_loc_id_0, (unsigned)7, (unsigned)0, (unsigned)0, (8180503492477601818UL + 1UL), (8180503492477601818UL + 2UL), (8180503492477601818UL + 3UL), (8180503492477601818UL + 4UL), (8180503492477601818UL + 5UL), (8180503492477601818UL + 6UL), (8180503492477601818UL + 7UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (8180503492477601818UL + 8UL),
+                             (8180503492477601818UL + 3UL), (8180503492477601818UL + 31UL),
                              "main", "main", 0, 1, "checkpoint");
     return 0;
 }

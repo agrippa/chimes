@@ -12,11 +12,11 @@ static int ____chimes_does_checkpoint_getUserParameters_npm = 1;
 
 
 static int ____must_manage_getUserParameters = 2;
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -25,7 +25,7 @@ static int ____must_manage_getUserParameters = 2;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -81,15 +81,15 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
-# 11 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 11 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 28 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1034,7 +1034,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 12 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c" 2
+# 12 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 1 3 4
@@ -2210,11 +2210,11 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 13 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c" 2
-# 13 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 13 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c" 2
+# 13 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
 
-# 1 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h" 1
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
+# 1 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h" 1
+# 91 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
 typedef struct simmat {
   char similarity[((64) + 1)][((64) + 1)];
   char aminoAcid[(((64) + 1) + 1)];
@@ -2275,7 +2275,7 @@ typedef struct cstr {
   int *finalStartsI, *finalStartsJ, *finalEndsI, *finalEndsJ;
   unsigned char **finalSeqsI, **finalSeqsJ;
 } CSTR_T;
-# 207 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
+# 207 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
 void getUserParameters(void);
 
 SEQDATA_T *genScalData(unsigned int, SIMMATRIX_T*, int, int, int);
@@ -2313,90 +2313,90 @@ void verifyMergeAlignment(SIMMATRIX_T*, CSTR_T*, int);
 double getSeconds(void);
 
 void dispElapsedTime(double);
-# 15 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c" 2
-# 15 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
-# 16 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
-# 17 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
-# 18 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
-# 19 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
-# 20 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 15 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c" 2
+# 15 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 16 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 17 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 18 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 19 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 20 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
 void getUserParameters_npm(void);
 void getUserParameters_quick(void); void getUserParameters(void);
 void getUserParameters_resumable(void) {const int ____chimes_did_disable0 = new_stack((void *)(&getUserParameters), "getUserParameters", &____must_manage_getUserParameters, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 21 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
-# 22 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 21 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 22 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
   if ((5) <= 0 || (-3) >= 0 || (8) < 0 || (1) <= 0) {
-# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 23 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
     fprintf(stderr,"Similarity parameters set in userParameters are invalid\n");
-# 24 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 24 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
     exit(1);
-# 25 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 25 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
   }
-# 26 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 26 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
   if ((200) <= 0) {
-# 27 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 27 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
     fprintf(stderr,"Kernel 1 parameters set in userParameters are invalid\n");
-# 28 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 28 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
   }
-# 29 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 29 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
   if (((200)/2) <= 0) {
-# 30 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 30 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
     fprintf(stderr,"Kernel 2 parameters set in userParameters are invalid\n");
-# 31 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 31 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
   }
-# 32 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 32 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
 rm_stack(false, 0UL, "getUserParameters", &____must_manage_getUserParameters, 0, ____chimes_did_disable0, false); }
-# 20 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 20 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
 void getUserParameters_quick(void) {const int ____chimes_did_disable0 = new_stack((void *)(&getUserParameters), "getUserParameters", &____must_manage_getUserParameters, 0, 0) ; ; ;
-# 21 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
-# 22 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 21 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 22 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
   if ((5) <= 0 || (-3) >= 0 || (8) < 0 || (1) <= 0) {
-# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 23 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
     fprintf(stderr,"Similarity parameters set in userParameters are invalid\n");
-# 24 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 24 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
     exit(1);
-# 25 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 25 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
   }
-# 26 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 26 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
   if ((200) <= 0) {
-# 27 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 27 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
     fprintf(stderr,"Kernel 1 parameters set in userParameters are invalid\n");
-# 28 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 28 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
   }
-# 29 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 29 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
   if (((200)/2) <= 0) {
-# 30 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 30 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
     fprintf(stderr,"Kernel 2 parameters set in userParameters are invalid\n");
-# 31 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 31 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
   }
-# 32 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 32 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
 rm_stack(false, 0UL, "getUserParameters", &____must_manage_getUserParameters, 0, ____chimes_did_disable0, false); }
 
 void getUserParameters(void) { (____chimes_replaying ? getUserParameters_resumable() : getUserParameters_quick()); }
-# 20 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 20 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
 void getUserParameters_npm(void) {
-# 21 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
-# 22 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 21 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 22 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
   if ((5) <= 0 || (-3) >= 0 || (8) < 0 || (1) <= 0) {
-# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 23 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
     fprintf(stderr,"Similarity parameters set in userParameters are invalid\n");
-# 24 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 24 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
     exit(1);
-# 25 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 25 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
   }
-# 26 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 26 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
   if ((200) <= 0) {
-# 27 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 27 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
     fprintf(stderr,"Kernel 1 parameters set in userParameters are invalid\n");
-# 28 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 28 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
   }
-# 29 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 29 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
   if (((200)/2) <= 0) {
-# 30 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 30 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
     fprintf(stderr,"Kernel 2 parameters set in userParameters are invalid\n");
-# 31 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 31 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
   }
-# 32 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
+# 32 "/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
 }
 
 
@@ -2404,7 +2404,7 @@ void getUserParameters_npm(void) {
 
 
 static int module_init() {
-    init_module(17440005809483874279UL, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0,
+    init_module(9637198959608006924UL, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0,
                             "getUserParameters", 0, "_Z17getUserParametersv", "_Z21getUserParameters_npmv", 0, 0, 0UL, 0,
                            "getUserParameters", &(____chimes_does_checkpoint_getUserParameters_npm),
                              "getUserParameters", "_Z17getUserParametersv", 0, 0);

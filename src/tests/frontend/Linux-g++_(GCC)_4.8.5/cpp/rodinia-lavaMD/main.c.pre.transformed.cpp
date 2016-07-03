@@ -33,11 +33,11 @@ static unsigned ____alias_loc_id_9;
 static unsigned ____alias_loc_id_10;
 static unsigned ____alias_loc_id_11;
 static unsigned ____alias_loc_id_12;
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -46,7 +46,7 @@ static unsigned ____alias_loc_id_12;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -102,15 +102,15 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 20 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 28 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1055,7 +1055,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c" 2
+# 21 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 1 3 4
@@ -2231,9 +2231,9 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c" 2
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c" 2
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stdbool.h" 1 3 4
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c" 2
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 29 "/usr/include/string.h" 3 4
 extern "C" {
@@ -2709,7 +2709,7 @@ extern "C++" __const char *basename (__const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 # 646 "/usr/include/string.h" 3 4
 }
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c" 2
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c" 2
 # 1 "/usr/include/time.h" 1 3 4
 # 30 "/usr/include/time.h" 3 4
 extern "C" {
@@ -2945,7 +2945,7 @@ extern int getdate_r (__const char *__restrict __string,
 
 
 }
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c" 2
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c" 2
 # 1 "/usr/include/sys/time.h" 1 3 4
 # 29 "/usr/include/sys/time.h" 3 4
 # 1 "/usr/include/bits/time.h" 1 3 4
@@ -3048,28 +3048,28 @@ extern int futimesat (int __fd, __const char *__file,
         __const struct timeval __tvp[2]) throw ();
 # 191 "/usr/include/sys/time.h" 3 4
 }
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c" 2
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c" 2
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 
-# 1 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 1
-# 11 "/home/jmg3/chimes/src/libchimes/checkpoint.h"
+# 1 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 11 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h"
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*____chimes_fp)(void *));
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c" 2
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c" 2
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/./util/timer/timer.h" 1
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/./util/timer/timer.h" 1
 
 extern "C" {
-# 13 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/./util/timer/timer.h"
+# 13 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/./util/timer/timer.h"
 long long get_time();
 
 
@@ -3078,11 +3078,11 @@ long long get_time();
 
 
 }
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c" 2
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/./util/num/num.h" 1
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c" 2
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/./util/num/num.h" 1
 
 extern "C" {
-# 13 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/./util/num/num.h"
+# 13 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/./util/num/num.h"
 int isInteger(char *str);
 
 
@@ -3091,15 +3091,15 @@ int isInteger(char *str);
 
 
 }
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c" 2
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c" 2
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/./main.h" 1
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/./main.h"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/./main.h" 1
+# 17 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/./main.h"
 typedef struct
 {
  double x, y, z;
@@ -3168,14 +3168,14 @@ typedef struct dim_str
 int
 main( int argc,
   char *argv []);
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c" 2
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c" 2
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/./kernel/kernel_cpu.h" 1
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/./kernel/kernel_cpu.h" 1
 
 extern "C" {
 
@@ -3193,879 +3193,879 @@ void kernel_cpu( par_str par,
 
 
 }
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c" 2
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c" 2
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 double seconds_npm();
 double seconds_quick(); double seconds();
 double seconds_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      struct timeval tp; ;
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      struct timezone tzp; ;
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      int i; i = (gettimeofday(&tp, &tzp)) ;
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_11, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_11, ____chimes_did_disable0, false); }
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 static long long (*____chimes_extern_func_get_time)(void) = get_time;static int (*____chimes_extern_func_isInteger)(char *) = isInteger;static void (*____chimes_extern_func_kernel_cpu)(struct par_str, struct dim_str, struct box_str *, FOUR_VECTOR *, double *, FOUR_VECTOR *) = kernel_cpu;
 int main_quick( int argc, char *argv []); int main( int argc, char *argv []);
 int
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 main_resumable( int argc,
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   char *argv [])
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(1242561836700799382UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; FOUR_VECTOR *fv_cpu;
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+{const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(17688920200968794542UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; FOUR_VECTOR *fv_cpu;
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 double *qv_cpu;
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 FOUR_VECTOR *rv_cpu;
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 box_str *box_cpu;
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 dim_str dim_cpu;
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 par_str par_cpu;
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 double start_time;
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  register_stack_vars(7, "main|fv_cpu|0", (int *)0x0, "%struct.FOUR_VECTOR*", (void *)(&fv_cpu), (size_t)8, 1, 0, 0, "main|qv_cpu|0", (int *)0x0, "double*", (void *)(&qv_cpu), (size_t)8, 1, 0, 0, "main|rv_cpu|0", (int *)0x0, "%struct.FOUR_VECTOR*", (void *)(&rv_cpu), (size_t)8, 1, 0, 0, "main|box_cpu|0", (int *)0x0, "%struct.box_str*", (void *)(&box_cpu), (size_t)8, 1, 0, 0, "main|dim_cpu|0", (int *)0x0, "%struct.dim_str = type { i32, i32, i32, i32, i64, i64, i64, i64, i64 }", (void *)(&dim_cpu), (size_t)56, 0, 1, 0, "main|par_cpu|0", (int *)0x0, "%struct.par_str = type { double }", (void *)(&par_cpu), (size_t)8, 0, 1, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } default: { chimes_error(); } } } ; ;
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 65 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  long long time0; ;
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
         call_lbl_0: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 74 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   call_lbl_1: time0 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 1, ____alias_loc_id_4, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_4); (*____chimes_extern_func_get_time)(); })));
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 77 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  long long time1; ;
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  long long time2; ;
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  long long time3; ;
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  long long time4; ;
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  long long time5; ;
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  long long time6; ;
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  long long time7; ;
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  int i; int j; int k; int l; int m; int n; ;
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    ;
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    ;
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   ;
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   ;
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   ;
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   ;
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  int nh; ;
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   call_lbl_2: time1 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 2, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_1); (*____chimes_extern_func_get_time)(); })));
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  dim_cpu.cores_arg = 1;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  dim_cpu.boxes1d_arg = 1;
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  for(dim_cpu.cur_arg=1; dim_cpu.cur_arg<argc; dim_cpu.cur_arg++){
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   if (strcmp(argv[dim_cpu.cur_arg], "-cores")==0) {{
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    if(argc>=dim_cpu.cur_arg+1){
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     call_lbl_3: if(alias_group_changed(____alias_loc_id_0) || (____chimes_does_checkpoint_isInteger_npm ? ( ({ char * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (argv[dim_cpu.cur_arg + 1]); } calling((void*)isInteger, 3, ____alias_loc_id_0, 0UL, 1, (size_t)(1242561836700798671UL)); (isInteger)(____chimes_arg0); }) ) : (({ calling_npm("isInteger", ____alias_loc_id_0); (*____chimes_extern_func_isInteger)(argv[dim_cpu.cur_arg+1]); })))==1){
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+     call_lbl_3: if(alias_group_changed(____alias_loc_id_0) || (____chimes_does_checkpoint_isInteger_npm ? ( ({ char * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (argv[dim_cpu.cur_arg + 1]); } calling((void*)isInteger, 3, ____alias_loc_id_0, 0UL, 1, (size_t)(17688920200968793831UL)); (isInteger)(____chimes_arg0); }) ) : (({ calling_npm("isInteger", ____alias_loc_id_0); (*____chimes_extern_func_isInteger)(argv[dim_cpu.cur_arg+1]); })))==1){
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      dim_cpu.cores_arg = atoi(argv[dim_cpu.cur_arg+1]);
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      if(dim_cpu.cores_arg<0){
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
       printf("ERROR: Wrong value to -cores parameter, cannot be <=0\n");
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
        int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      }
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      dim_cpu.cur_arg = dim_cpu.cur_arg+1;
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     }
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     else{
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      printf("ERROR: Value to -cores parameter in not a number\n");
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
       int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_2; ;
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     }
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    }
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    else{
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     printf("ERROR: Missing value to -cores parameter\n");
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_3; ;
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    }
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   }; } else if(strcmp(argv[dim_cpu.cur_arg], "-boxes1d")==0){
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    if(argc>=dim_cpu.cur_arg+1){
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     call_lbl_4: if(alias_group_changed(____alias_loc_id_2) || (____chimes_does_checkpoint_isInteger_npm ? ( ({ char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (argv[dim_cpu.cur_arg + 1]); } calling((void*)isInteger, 4, ____alias_loc_id_2, 0UL, 1, (size_t)(1242561836700798671UL)); (isInteger)(____chimes_arg1); }) ) : (({ calling_npm("isInteger", ____alias_loc_id_2); (*____chimes_extern_func_isInteger)(argv[dim_cpu.cur_arg+1]); })))==1){
-# 141 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 139 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 140 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+     call_lbl_4: if(alias_group_changed(____alias_loc_id_2) || (____chimes_does_checkpoint_isInteger_npm ? ( ({ char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (argv[dim_cpu.cur_arg + 1]); } calling((void*)isInteger, 4, ____alias_loc_id_2, 0UL, 1, (size_t)(17688920200968793831UL)); (isInteger)(____chimes_arg1); }) ) : (({ calling_npm("isInteger", ____alias_loc_id_2); (*____chimes_extern_func_isInteger)(argv[dim_cpu.cur_arg+1]); })))==1){
+# 141 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      dim_cpu.boxes1d_arg = atoi(argv[dim_cpu.cur_arg+1]);
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 142 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      if(dim_cpu.boxes1d_arg<0){
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 143 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
       printf("ERROR: Wrong value to -boxes1d parameter, cannot be <=0\n");
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
        int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_4; ;
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      }
-# 146 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 146 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      dim_cpu.cur_arg = dim_cpu.cur_arg+1;
-# 147 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 147 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     }
-# 148 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 148 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 149 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     else{
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      printf("ERROR: Value to -boxes1d parameter in not a number\n");
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 151 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
       int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_5; ;
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 152 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     }
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 153 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    }
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 154 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 155 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    else{
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 156 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     printf("ERROR: Missing value to -boxes1d parameter\n");
-# 157 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 157 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_6; ;
-# 158 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 158 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    }
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 159 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   }
-# 160 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 160 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 161 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   else{
-# 162 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 162 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    printf("ERROR: Unknown parameter\n");
-# 163 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 163 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_7; ;
-# 164 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 164 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   }
-# 165 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 165 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  }
-# 166 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 166 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 167 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 168 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  printf("Configuration used: cores = %d, boxes1d = %d\n", dim_cpu.cores_arg, dim_cpu.boxes1d_arg);
-# 169 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 170 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 169 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 170 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   call_lbl_5: time2 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 5, ____alias_loc_id_10, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_10); (*____chimes_extern_func_get_time)(); })));
-# 171 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 173 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 175 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 176 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 171 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 172 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 173 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 174 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 175 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 176 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  par_cpu.alpha = 0.5;
-# 177 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 178 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 177 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 178 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   call_lbl_6: time3 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 6, ____alias_loc_id_9, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_9); (*____chimes_extern_func_get_time)(); })));
-# 179 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 180 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 181 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 182 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 183 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 184 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 185 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 179 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 180 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 181 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 182 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 183 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 184 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 185 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  dim_cpu.number_boxes = dim_cpu.boxes1d_arg * dim_cpu.boxes1d_arg * dim_cpu.boxes1d_arg;
-# 186 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 187 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 188 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 186 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 187 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 188 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  dim_cpu.space_elem = dim_cpu.number_boxes * 100;
-# 189 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 189 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  dim_cpu.space_mem = dim_cpu.space_elem * sizeof(FOUR_VECTOR);
-# 190 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 190 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  dim_cpu.space_mem2 = dim_cpu.space_elem * sizeof(double);
-# 191 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 192 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 193 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 191 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 192 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 193 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  dim_cpu.box_mem = dim_cpu.number_boxes * sizeof(box_str);
-# 194 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 195 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 194 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 195 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   call_lbl_7: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 7, ____alias_loc_id_8, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_8); (*____chimes_extern_func_get_time)(); })));
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- box_cpu = (box_str*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.box_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.box_mem, 1242561836700798883UL, 0, 1, (int)sizeof(struct box_str), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 208 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 209 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 206 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 206 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+ box_cpu = (box_str*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.box_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.box_mem, 17688920200968794043UL, 0, 1, (int)sizeof(struct box_str), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 207 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 208 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 209 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  nh = 0;
-# 210 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 211 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 212 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 210 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 211 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 212 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  for(i=0; i<dim_cpu.boxes1d_arg; i++){
-# 213 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 214 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 213 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 214 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   for(j=0; j<dim_cpu.boxes1d_arg; j++){
-# 215 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 216 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 215 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 216 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    for(k=0; k<dim_cpu.boxes1d_arg; k++){
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 218 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 219 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 217 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 218 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 219 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     box_cpu[nh].x = k;
-# 220 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 220 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     box_cpu[nh].y = j;
-# 221 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 221 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     box_cpu[nh].z = i;
-# 222 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 222 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     box_cpu[nh].number = nh;
-# 223 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 223 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     box_cpu[nh].offset = nh * 100;
-# 224 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 225 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 226 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 224 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 225 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 226 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     box_cpu[nh].nn = 0;
-# 227 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 228 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 229 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 227 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 228 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 229 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     for(l=-1; l<2; l++){
-# 230 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 231 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 230 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 231 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      for(m=-1; m<2; m++){
-# 232 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 233 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 232 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 233 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
       for(n=-1; n<2; n++){
-# 234 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 235 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 236 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 234 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 235 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 236 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
        if( (((i+l)>=0 && (j+m)>=0 && (k+n)>=0)==true && ((i+l)<dim_cpu.boxes1d_arg && (j+m)<dim_cpu.boxes1d_arg && (k+n)<dim_cpu.boxes1d_arg)==true) &&
-# 237 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 237 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
          (l==0 && m==0 && n==0)==false ){
-# 238 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 239 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 240 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 238 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 239 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 240 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
         box_cpu[nh].nei[box_cpu[nh].nn].x = (k+n);
-# 241 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 241 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
         box_cpu[nh].nei[box_cpu[nh].nn].y = (j+m);
-# 242 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 242 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
         box_cpu[nh].nei[box_cpu[nh].nn].z = (i+l);
-# 243 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 243 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
         box_cpu[nh].nei[box_cpu[nh].nn].number = (box_cpu[nh].nei[box_cpu[nh].nn].z * dim_cpu.boxes1d_arg * dim_cpu.boxes1d_arg) +
-# 244 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 244 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
                    (box_cpu[nh].nei[box_cpu[nh].nn].y * dim_cpu.boxes1d_arg) +
-# 245 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 245 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
                     box_cpu[nh].nei[box_cpu[nh].nn].x;
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 246 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
         box_cpu[nh].nei[box_cpu[nh].nn].offset = box_cpu[nh].nei[box_cpu[nh].nn].number * 100;
-# 247 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 248 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 249 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 247 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 248 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 249 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
         box_cpu[nh].nn = box_cpu[nh].nn + 1;
-# 250 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 251 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 250 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 251 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
        }
-# 252 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 253 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 252 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 253 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
       }
-# 254 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 254 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      }
-# 255 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 255 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     }
-# 256 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 257 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 258 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 256 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 257 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 258 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     nh = nh + 1;
-# 259 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 260 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 259 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 260 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    }
-# 261 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 261 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   }
-# 262 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 262 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  }
-# 263 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 264 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 265 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 266 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 267 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 268 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 269 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 263 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 264 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 265 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 266 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 267 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 268 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 269 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  srand(time(__null));
-# 270 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 271 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 272 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- rv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 1242561836700799222UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 273 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 270 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 271 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 272 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+ rv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 17688920200968794382UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 273 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  for(i=0; i<dim_cpu.space_elem; i=i+1){
-# 274 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 274 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   rv_cpu[i].v = (rand()%10 + 1) / 10.0;
-# 275 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 275 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   rv_cpu[i].x = (rand()%10 + 1) / 10.0;
-# 276 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 276 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   rv_cpu[i].y = (rand()%10 + 1) / 10.0;
-# 277 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 277 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   rv_cpu[i].z = (rand()%10 + 1) / 10.0;
-# 278 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 278 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  }
-# 279 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 280 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 281 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- qv_cpu = (double*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem2) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem2, 1242561836700799284UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 282 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 279 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 280 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 281 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+ qv_cpu = (double*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem2) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem2, 17688920200968794444UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 282 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  for(i=0; i<dim_cpu.space_elem; i=i+1){
-# 283 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 283 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   qv_cpu[i] = (rand()%10 + 1) / 10.0;
-# 284 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 284 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  }
-# 285 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 286 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 287 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- fv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 1242561836700799307UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 288 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 285 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 286 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 287 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+ fv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 17688920200968794467UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 288 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  for(i=0; i<dim_cpu.space_elem; i=i+1){
-# 289 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 289 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   fv_cpu[i].v = 0;
-# 290 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 290 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   fv_cpu[i].x = 0;
-# 291 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 291 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   fv_cpu[i].y = 0;
-# 292 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 292 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   fv_cpu[i].z = 0;
-# 293 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 293 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  }
-# 294 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 295 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 296 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 294 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 295 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 296 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      call_lbl_8: checkpoint_transformed(8, ____alias_loc_id_7);
-# 297 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 298 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 299 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 297 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 298 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 299 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   call_lbl_9: time5 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 9, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
-# 309 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 309 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  call_lbl_10: (____chimes_does_checkpoint_kernel_cpu_npm ? ( ({ par_str ____chimes_arg2; dim_str ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg2 = (par_cpu); ____chimes_arg3 = (dim_cpu); } calling((void*)kernel_cpu, 10, ____alias_loc_id_6, 0UL, 6, (size_t)(0UL), (size_t)(1242561836700798618UL), (size_t)(1242561836700798883UL), (size_t)(1242561836700799222UL), (size_t)(1242561836700799284UL), (size_t)(1242561836700799307UL)); (kernel_cpu)(____chimes_arg2, ____chimes_arg3, box_cpu, rv_cpu, qv_cpu, fv_cpu); }) ) : (({ calling_npm("kernel_cpu", ____alias_loc_id_6); (*____chimes_extern_func_kernel_cpu)(par_cpu, dim_cpu, box_cpu, rv_cpu, qv_cpu, fv_cpu); })));
-# 315 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 316 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 309 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 309 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+  call_lbl_10: (____chimes_does_checkpoint_kernel_cpu_npm ? ( ({ par_str ____chimes_arg2; dim_str ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg2 = (par_cpu); ____chimes_arg3 = (dim_cpu); } calling((void*)kernel_cpu, 10, ____alias_loc_id_6, 0UL, 6, (size_t)(0UL), (size_t)(17688920200968793778UL), (size_t)(17688920200968794043UL), (size_t)(17688920200968794382UL), (size_t)(17688920200968794444UL), (size_t)(17688920200968794467UL)); (kernel_cpu)(____chimes_arg2, ____chimes_arg3, box_cpu, rv_cpu, qv_cpu, fv_cpu); }) ) : (({ calling_npm("kernel_cpu", ____alias_loc_id_6); (*____chimes_extern_func_kernel_cpu)(par_cpu, dim_cpu, box_cpu, rv_cpu, qv_cpu, fv_cpu); })));
+# 315 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 316 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   call_lbl_11: time6 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 11, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
-# 317 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 318 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 319 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 317 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 318 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 319 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      call_lbl_12: checkpoint_transformed(12, ____alias_loc_id_5);
-# 320 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 321 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 322 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 320 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 321 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 322 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      double end_time; call_lbl_13: end_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
-# 323 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 323 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     printf("execution took %f s\n", end_time - start_time);
-# 341 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 341 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free_helper((((unsigned char *)rv_cpu) - sizeof(void *)), 1242561836700799222UL);free((((unsigned char *)rv_cpu) - sizeof(void *))); }) ;
-# 342 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free_helper((((unsigned char *)qv_cpu) - sizeof(void *)), 1242561836700799284UL);free((((unsigned char *)qv_cpu) - sizeof(void *))); }) ;
-# 343 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free_helper((((unsigned char *)fv_cpu) - sizeof(void *)), 1242561836700799307UL);free((((unsigned char *)fv_cpu) - sizeof(void *))); }) ;
-# 344 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free_helper((((unsigned char *)box_cpu) - sizeof(void *)), 1242561836700798883UL);free((((unsigned char *)box_cpu) - sizeof(void *))); }) ;
-# 345 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 346 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 341 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 341 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+  ({ free_helper((((unsigned char *)rv_cpu) - sizeof(void *)), 17688920200968794382UL);free((((unsigned char *)rv_cpu) - sizeof(void *))); }) ;
+# 342 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+  ({ free_helper((((unsigned char *)qv_cpu) - sizeof(void *)), 17688920200968794444UL);free((((unsigned char *)qv_cpu) - sizeof(void *))); }) ;
+# 343 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+  ({ free_helper((((unsigned char *)fv_cpu) - sizeof(void *)), 17688920200968794467UL);free((((unsigned char *)fv_cpu) - sizeof(void *))); }) ;
+# 344 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+  ({ free_helper((((unsigned char *)box_cpu) - sizeof(void *)), 17688920200968794043UL);free((((unsigned char *)box_cpu) - sizeof(void *))); }) ;
+# 345 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 346 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   call_lbl_14: time7 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 14, ____alias_loc_id_3, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_3); (*____chimes_extern_func_get_time)(); })));
-# 371 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 371 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 371 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 371 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (0.0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_8; ;
-# 372 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 373 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 372 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 373 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); }
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 double seconds_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0) ; ; ;
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      struct timeval tp; ;
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      struct timezone tzp; ;
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      int i; i = (gettimeofday(&tp, &tzp)) ;
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_11, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_11, ____chimes_did_disable0, false); }
 
 double seconds() { return (____chimes_replaying ? seconds_resumable() : seconds_quick()); }
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 int
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 main_quick( int argc,
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   char *argv [])
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(1242561836700799382UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; FOUR_VECTOR *fv_cpu;
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+{const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(17688920200968794542UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; FOUR_VECTOR *fv_cpu;
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 double *qv_cpu;
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 FOUR_VECTOR *rv_cpu;
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 box_str *box_cpu;
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 dim_str dim_cpu;
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 par_str par_cpu;
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 double start_time;
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  register_stack_vars(7, "main|fv_cpu|0", (int *)0x0, "%struct.FOUR_VECTOR*", (void *)(&fv_cpu), (size_t)8, 1, 0, 0, "main|qv_cpu|0", (int *)0x0, "double*", (void *)(&qv_cpu), (size_t)8, 1, 0, 0, "main|rv_cpu|0", (int *)0x0, "%struct.FOUR_VECTOR*", (void *)(&rv_cpu), (size_t)8, 1, 0, 0, "main|box_cpu|0", (int *)0x0, "%struct.box_str*", (void *)(&box_cpu), (size_t)8, 1, 0, 0, "main|dim_cpu|0", (int *)0x0, "%struct.dim_str = type { i32, i32, i32, i32, i64, i64, i64, i64, i64 }", (void *)(&dim_cpu), (size_t)56, 0, 1, 0, "main|par_cpu|0", (int *)0x0, "%struct.par_str = type { double }", (void *)(&par_cpu), (size_t)8, 0, 1, 0, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0); ; ;
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 65 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  long long time0; ;
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
         call_lbl_0: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 74 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   call_lbl_1: time0 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 1, ____alias_loc_id_4, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_4); (*____chimes_extern_func_get_time)(); })));
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 77 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  long long time1; ;
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  long long time2; ;
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  long long time3; ;
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  long long time4; ;
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  long long time5; ;
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  long long time6; ;
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  long long time7; ;
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  int i; int j; int k; int l; int m; int n; ;
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 89 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    ;
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    ;
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   ;
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   ;
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   ;
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 95 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   ;
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  int nh; ;
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   call_lbl_2: time1 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 2, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_1); (*____chimes_extern_func_get_time)(); })));
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  dim_cpu.cores_arg = 1;
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  dim_cpu.boxes1d_arg = 1;
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  for(dim_cpu.cur_arg=1; dim_cpu.cur_arg<argc; dim_cpu.cur_arg++){
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   if (strcmp(argv[dim_cpu.cur_arg], "-cores")==0) {{
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    if(argc>=dim_cpu.cur_arg+1){
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     call_lbl_3: if(alias_group_changed(____alias_loc_id_0) || (____chimes_does_checkpoint_isInteger_npm ? ( ({ calling((void*)isInteger, 3, ____alias_loc_id_0, 0UL, 1, (size_t)(1242561836700798671UL)); (isInteger)(argv[dim_cpu.cur_arg + 1]); }) ) : (({ calling_npm("isInteger", ____alias_loc_id_0); (*____chimes_extern_func_isInteger)(argv[dim_cpu.cur_arg+1]); })))==1){
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+     call_lbl_3: if(alias_group_changed(____alias_loc_id_0) || (____chimes_does_checkpoint_isInteger_npm ? ( ({ calling((void*)isInteger, 3, ____alias_loc_id_0, 0UL, 1, (size_t)(17688920200968793831UL)); (isInteger)(argv[dim_cpu.cur_arg + 1]); }) ) : (({ calling_npm("isInteger", ____alias_loc_id_0); (*____chimes_extern_func_isInteger)(argv[dim_cpu.cur_arg+1]); })))==1){
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      dim_cpu.cores_arg = atoi(argv[dim_cpu.cur_arg+1]);
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      if(dim_cpu.cores_arg<0){
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
       printf("ERROR: Wrong value to -cores parameter, cannot be <=0\n");
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
        int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      }
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      dim_cpu.cur_arg = dim_cpu.cur_arg+1;
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     }
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     else{
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      printf("ERROR: Value to -cores parameter in not a number\n");
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
       int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_2; ;
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     }
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    }
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    else{
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     printf("ERROR: Missing value to -cores parameter\n");
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_3; ;
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    }
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   }; } else if(strcmp(argv[dim_cpu.cur_arg], "-boxes1d")==0){
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    if(argc>=dim_cpu.cur_arg+1){
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-     call_lbl_4: if(alias_group_changed(____alias_loc_id_2) || (____chimes_does_checkpoint_isInteger_npm ? ( ({ calling((void*)isInteger, 4, ____alias_loc_id_2, 0UL, 1, (size_t)(1242561836700798671UL)); (isInteger)(argv[dim_cpu.cur_arg + 1]); }) ) : (({ calling_npm("isInteger", ____alias_loc_id_2); (*____chimes_extern_func_isInteger)(argv[dim_cpu.cur_arg+1]); })))==1){
-# 141 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 139 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 140 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+     call_lbl_4: if(alias_group_changed(____alias_loc_id_2) || (____chimes_does_checkpoint_isInteger_npm ? ( ({ calling((void*)isInteger, 4, ____alias_loc_id_2, 0UL, 1, (size_t)(17688920200968793831UL)); (isInteger)(argv[dim_cpu.cur_arg + 1]); }) ) : (({ calling_npm("isInteger", ____alias_loc_id_2); (*____chimes_extern_func_isInteger)(argv[dim_cpu.cur_arg+1]); })))==1){
+# 141 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      dim_cpu.boxes1d_arg = atoi(argv[dim_cpu.cur_arg+1]);
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 142 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      if(dim_cpu.boxes1d_arg<0){
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 143 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
       printf("ERROR: Wrong value to -boxes1d parameter, cannot be <=0\n");
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
        int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_4; ;
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      }
-# 146 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 146 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      dim_cpu.cur_arg = dim_cpu.cur_arg+1;
-# 147 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 147 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     }
-# 148 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 148 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 149 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     else{
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      printf("ERROR: Value to -boxes1d parameter in not a number\n");
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 151 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
       int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_5; ;
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 152 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     }
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 153 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    }
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 154 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 155 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    else{
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 156 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     printf("ERROR: Missing value to -boxes1d parameter\n");
-# 157 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 157 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_6; ;
-# 158 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 158 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    }
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 159 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   }
-# 160 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 160 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 161 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   else{
-# 162 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 162 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    printf("ERROR: Unknown parameter\n");
-# 163 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 163 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_7; ;
-# 164 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 164 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   }
-# 165 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 165 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  }
-# 166 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 166 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 167 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 168 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  printf("Configuration used: cores = %d, boxes1d = %d\n", dim_cpu.cores_arg, dim_cpu.boxes1d_arg);
-# 169 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 170 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 169 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 170 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   call_lbl_5: time2 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 5, ____alias_loc_id_10, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_10); (*____chimes_extern_func_get_time)(); })));
-# 171 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 173 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 175 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 176 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 171 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 172 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 173 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 174 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 175 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 176 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  par_cpu.alpha = 0.5;
-# 177 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 178 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 177 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 178 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   call_lbl_6: time3 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 6, ____alias_loc_id_9, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_9); (*____chimes_extern_func_get_time)(); })));
-# 179 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 180 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 181 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 182 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 183 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 184 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 185 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 179 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 180 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 181 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 182 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 183 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 184 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 185 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  dim_cpu.number_boxes = dim_cpu.boxes1d_arg * dim_cpu.boxes1d_arg * dim_cpu.boxes1d_arg;
-# 186 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 187 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 188 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 186 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 187 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 188 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  dim_cpu.space_elem = dim_cpu.number_boxes * 100;
-# 189 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 189 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  dim_cpu.space_mem = dim_cpu.space_elem * sizeof(FOUR_VECTOR);
-# 190 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 190 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  dim_cpu.space_mem2 = dim_cpu.space_elem * sizeof(double);
-# 191 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 192 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 193 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 191 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 192 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 193 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  dim_cpu.box_mem = dim_cpu.number_boxes * sizeof(box_str);
-# 194 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 195 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 194 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 195 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   call_lbl_7: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 7, ____alias_loc_id_8, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_8); (*____chimes_extern_func_get_time)(); })));
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- box_cpu = (box_str*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.box_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.box_mem, 1242561836700798883UL, 0, 1, (int)sizeof(struct box_str), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 208 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 209 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 206 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 206 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+ box_cpu = (box_str*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.box_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.box_mem, 17688920200968794043UL, 0, 1, (int)sizeof(struct box_str), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 207 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 208 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 209 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  nh = 0;
-# 210 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 211 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 212 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 210 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 211 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 212 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  for(i=0; i<dim_cpu.boxes1d_arg; i++){
-# 213 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 214 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 213 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 214 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   for(j=0; j<dim_cpu.boxes1d_arg; j++){
-# 215 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 216 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 215 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 216 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    for(k=0; k<dim_cpu.boxes1d_arg; k++){
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 218 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 219 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 217 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 218 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 219 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     box_cpu[nh].x = k;
-# 220 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 220 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     box_cpu[nh].y = j;
-# 221 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 221 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     box_cpu[nh].z = i;
-# 222 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 222 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     box_cpu[nh].number = nh;
-# 223 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 223 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     box_cpu[nh].offset = nh * 100;
-# 224 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 225 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 226 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 224 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 225 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 226 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     box_cpu[nh].nn = 0;
-# 227 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 228 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 229 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 227 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 228 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 229 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     for(l=-1; l<2; l++){
-# 230 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 231 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 230 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 231 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      for(m=-1; m<2; m++){
-# 232 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 233 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 232 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 233 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
       for(n=-1; n<2; n++){
-# 234 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 235 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 236 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 234 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 235 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 236 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
        if( (((i+l)>=0 && (j+m)>=0 && (k+n)>=0)==true && ((i+l)<dim_cpu.boxes1d_arg && (j+m)<dim_cpu.boxes1d_arg && (k+n)<dim_cpu.boxes1d_arg)==true) &&
-# 237 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 237 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
          (l==0 && m==0 && n==0)==false ){
-# 238 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 239 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 240 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 238 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 239 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 240 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
         box_cpu[nh].nei[box_cpu[nh].nn].x = (k+n);
-# 241 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 241 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
         box_cpu[nh].nei[box_cpu[nh].nn].y = (j+m);
-# 242 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 242 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
         box_cpu[nh].nei[box_cpu[nh].nn].z = (i+l);
-# 243 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 243 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
         box_cpu[nh].nei[box_cpu[nh].nn].number = (box_cpu[nh].nei[box_cpu[nh].nn].z * dim_cpu.boxes1d_arg * dim_cpu.boxes1d_arg) +
-# 244 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 244 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
                    (box_cpu[nh].nei[box_cpu[nh].nn].y * dim_cpu.boxes1d_arg) +
-# 245 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 245 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
                     box_cpu[nh].nei[box_cpu[nh].nn].x;
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 246 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
         box_cpu[nh].nei[box_cpu[nh].nn].offset = box_cpu[nh].nei[box_cpu[nh].nn].number * 100;
-# 247 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 248 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 249 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 247 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 248 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 249 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
         box_cpu[nh].nn = box_cpu[nh].nn + 1;
-# 250 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 251 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 250 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 251 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
        }
-# 252 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 253 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 252 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 253 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
       }
-# 254 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 254 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      }
-# 255 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 255 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     }
-# 256 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 257 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 258 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 256 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 257 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 258 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     nh = nh + 1;
-# 259 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 260 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 259 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 260 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
    }
-# 261 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 261 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   }
-# 262 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 262 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  }
-# 263 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 264 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 265 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 266 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 267 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 268 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 269 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 263 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 264 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 265 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 266 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 267 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 268 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 269 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  srand(time(__null));
-# 270 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 271 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 272 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- rv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 1242561836700799222UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 273 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 270 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 271 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 272 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+ rv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 17688920200968794382UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 273 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  for(i=0; i<dim_cpu.space_elem; i=i+1){
-# 274 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 274 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   rv_cpu[i].v = (rand()%10 + 1) / 10.0;
-# 275 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 275 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   rv_cpu[i].x = (rand()%10 + 1) / 10.0;
-# 276 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 276 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   rv_cpu[i].y = (rand()%10 + 1) / 10.0;
-# 277 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 277 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   rv_cpu[i].z = (rand()%10 + 1) / 10.0;
-# 278 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 278 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  }
-# 279 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 280 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 281 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- qv_cpu = (double*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem2) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem2, 1242561836700799284UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 282 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 279 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 280 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 281 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+ qv_cpu = (double*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem2) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem2, 17688920200968794444UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 282 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  for(i=0; i<dim_cpu.space_elem; i=i+1){
-# 283 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 283 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   qv_cpu[i] = (rand()%10 + 1) / 10.0;
-# 284 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 284 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  }
-# 285 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 286 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 287 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
- fv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 1242561836700799307UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 288 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 285 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 286 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 287 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+ fv_cpu = (FOUR_VECTOR*) ({ void *____chimes_tmp_ptr = malloc((dim_cpu.space_mem) + sizeof(void *)); ; malloc_helper(____chimes_tmp_ptr, dim_cpu.space_mem, 17688920200968794467UL, 0, 1, (int)sizeof(FOUR_VECTOR), 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 288 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  for(i=0; i<dim_cpu.space_elem; i=i+1){
-# 289 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 289 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   fv_cpu[i].v = 0;
-# 290 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 290 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   fv_cpu[i].x = 0;
-# 291 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 291 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   fv_cpu[i].y = 0;
-# 292 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 292 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   fv_cpu[i].z = 0;
-# 293 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 293 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
  }
-# 294 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 295 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 296 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 294 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 295 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 296 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      call_lbl_8: checkpoint_transformed(8, ____alias_loc_id_7);
-# 297 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 298 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 299 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 297 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 298 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 299 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   call_lbl_9: time5 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 9, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
-# 309 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 309 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  call_lbl_10: (____chimes_does_checkpoint_kernel_cpu_npm ? ( ({ calling((void*)kernel_cpu, 10, ____alias_loc_id_6, 0UL, 6, (size_t)(0UL), (size_t)(1242561836700798618UL), (size_t)(1242561836700798883UL), (size_t)(1242561836700799222UL), (size_t)(1242561836700799284UL), (size_t)(1242561836700799307UL)); (kernel_cpu)(par_cpu, dim_cpu, box_cpu, rv_cpu, qv_cpu, fv_cpu); }) ) : (({ calling_npm("kernel_cpu", ____alias_loc_id_6); (*____chimes_extern_func_kernel_cpu)(par_cpu, dim_cpu, box_cpu, rv_cpu, qv_cpu, fv_cpu); })));
-# 315 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 316 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 309 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 309 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+  call_lbl_10: (____chimes_does_checkpoint_kernel_cpu_npm ? ( ({ calling((void*)kernel_cpu, 10, ____alias_loc_id_6, 0UL, 6, (size_t)(0UL), (size_t)(17688920200968793778UL), (size_t)(17688920200968794043UL), (size_t)(17688920200968794382UL), (size_t)(17688920200968794444UL), (size_t)(17688920200968794467UL)); (kernel_cpu)(par_cpu, dim_cpu, box_cpu, rv_cpu, qv_cpu, fv_cpu); }) ) : (({ calling_npm("kernel_cpu", ____alias_loc_id_6); (*____chimes_extern_func_kernel_cpu)(par_cpu, dim_cpu, box_cpu, rv_cpu, qv_cpu, fv_cpu); })));
+# 315 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 316 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   call_lbl_11: time6 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 11, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
-# 317 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 318 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 319 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 317 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 318 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 319 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      call_lbl_12: checkpoint_transformed(12, ____alias_loc_id_5);
-# 320 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 321 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 322 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 320 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 321 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 322 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      double end_time; call_lbl_13: end_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
-# 323 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 323 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     printf("execution took %f s\n", end_time - start_time);
-# 341 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 341 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free_helper((((unsigned char *)rv_cpu) - sizeof(void *)), 1242561836700799222UL);free((((unsigned char *)rv_cpu) - sizeof(void *))); }) ;
-# 342 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free_helper((((unsigned char *)qv_cpu) - sizeof(void *)), 1242561836700799284UL);free((((unsigned char *)qv_cpu) - sizeof(void *))); }) ;
-# 343 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free_helper((((unsigned char *)fv_cpu) - sizeof(void *)), 1242561836700799307UL);free((((unsigned char *)fv_cpu) - sizeof(void *))); }) ;
-# 344 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-  ({ free_helper((((unsigned char *)box_cpu) - sizeof(void *)), 1242561836700798883UL);free((((unsigned char *)box_cpu) - sizeof(void *))); }) ;
-# 345 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 346 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 341 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 341 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+  ({ free_helper((((unsigned char *)rv_cpu) - sizeof(void *)), 17688920200968794382UL);free((((unsigned char *)rv_cpu) - sizeof(void *))); }) ;
+# 342 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+  ({ free_helper((((unsigned char *)qv_cpu) - sizeof(void *)), 17688920200968794444UL);free((((unsigned char *)qv_cpu) - sizeof(void *))); }) ;
+# 343 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+  ({ free_helper((((unsigned char *)fv_cpu) - sizeof(void *)), 17688920200968794467UL);free((((unsigned char *)fv_cpu) - sizeof(void *))); }) ;
+# 344 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+  ({ free_helper((((unsigned char *)box_cpu) - sizeof(void *)), 17688920200968794043UL);free((((unsigned char *)box_cpu) - sizeof(void *))); }) ;
+# 345 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 346 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   call_lbl_14: time7 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 14, ____alias_loc_id_3, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_3); (*____chimes_extern_func_get_time)(); })));
-# 371 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 371 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 371 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 371 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (0.0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); return ____chimes_ret_var_8; ;
-# 372 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
-# 373 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 372 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
+# 373 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable1, false); }
 
 int
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 main( int argc,
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
   char *argv []) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 double seconds_npm() {
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     struct timeval tp;
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     struct timezone tzp;
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
     int i = gettimeofday(&tp, &tzp);
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
      double ____chimes_ret_var_0; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); return ____chimes_ret_var_0; ;
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/main.c"
 }
 
 
@@ -4073,21 +4073,21 @@ double seconds_npm() {
 
 
 static int module_init() {
-    init_module(1242561836700798559UL, 6, 2, 4, 13, 1, 3, 4, 2, 11, 7,
-                           &____alias_loc_id_0, (unsigned)0, (unsigned)0, (unsigned)1, "isInteger", (unsigned)1, (1242561836700798559UL + 112UL),
-                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (1242561836700798559UL + 29UL),
-                           &____alias_loc_id_2, (unsigned)2, (unsigned)0, (unsigned)1, (1242561836700798559UL + 31UL), (1242561836700798559UL + 45UL), "isInteger", (unsigned)1, (1242561836700798559UL + 112UL),
-                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (1242561836700798559UL + 60UL),
-                           &____alias_loc_id_4, (unsigned)4, (unsigned)0, (unsigned)0, (1242561836700798559UL + 26UL), (1242561836700798559UL + 27UL), (1242561836700798559UL + 28UL), (1242561836700798559UL + 30UL),
-                           &____alias_loc_id_5, (unsigned)1, (unsigned)0, (unsigned)0, (1242561836700798559UL + 36UL),
-                           &____alias_loc_id_6, (unsigned)1, (unsigned)0, (unsigned)1, (1242561836700798559UL + 35UL), "kernel_cpu", (unsigned)5, (1242561836700798559UL + 59UL), (1242561836700798559UL + 324UL), (1242561836700798559UL + 663UL), (1242561836700798559UL + 725UL), (1242561836700798559UL + 748UL),
-                           &____alias_loc_id_7, (unsigned)17, (unsigned)0, (unsigned)0, (1242561836700798559UL + 34UL), (1242561836700798559UL + 38UL), (1242561836700798559UL + 39UL), (1242561836700798559UL + 40UL), (1242561836700798559UL + 41UL), (1242561836700798559UL + 42UL), (1242561836700798559UL + 43UL), (1242561836700798559UL + 46UL), (1242561836700798559UL + 47UL), (1242561836700798559UL + 48UL), (1242561836700798559UL + 49UL), (1242561836700798559UL + 50UL), (1242561836700798559UL + 324UL), (1242561836700798559UL + 663UL), (1242561836700798559UL + 725UL), (1242561836700798559UL + 748UL), (1242561836700798559UL + 855UL),
-                           &____alias_loc_id_8, (unsigned)2, (unsigned)0, (unsigned)0, (1242561836700798559UL + 33UL), (1242561836700798559UL + 45UL),
-                           &____alias_loc_id_9, (unsigned)2, (unsigned)0, (unsigned)0, (1242561836700798559UL + 32UL), (1242561836700798559UL + 44UL),
-                            &____alias_loc_id_10, (unsigned)2, (unsigned)0, (unsigned)0, (1242561836700798559UL + 31UL), (1242561836700798559UL + 45UL),
-                            &____alias_loc_id_11, (unsigned)3, (unsigned)0, (unsigned)0, (1242561836700798559UL + 1UL), (1242561836700798559UL + 3UL), (1242561836700798559UL + 4UL),
-                            &____alias_loc_id_12, (unsigned)12, (unsigned)0, (unsigned)0, (1242561836700798559UL + 26UL), (1242561836700798559UL + 31UL), (1242561836700798559UL + 37UL), (1242561836700798559UL + 45UL), (1242561836700798559UL + 51UL), (1242561836700798559UL + 52UL), (1242561836700798559UL + 53UL), (1242561836700798559UL + 54UL), (1242561836700798559UL + 55UL), (1242561836700798559UL + 56UL), (1242561836700798559UL + 57UL), (1242561836700798559UL + 61UL),
-                            "seconds", 0, "_Z7secondsv", "_Z11seconds_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (1242561836700798559UL + 1UL), (1242561836700798559UL + 2UL), 0UL,
+    init_module(17688920200968793719UL, 6, 2, 4, 13, 1, 3, 4, 2, 11, 7,
+                           &____alias_loc_id_0, (unsigned)0, (unsigned)0, (unsigned)1, "isInteger", (unsigned)1, (17688920200968793719UL + 112UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (17688920200968793719UL + 29UL),
+                           &____alias_loc_id_2, (unsigned)2, (unsigned)0, (unsigned)1, (17688920200968793719UL + 31UL), (17688920200968793719UL + 45UL), "isInteger", (unsigned)1, (17688920200968793719UL + 112UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (17688920200968793719UL + 60UL),
+                           &____alias_loc_id_4, (unsigned)4, (unsigned)0, (unsigned)0, (17688920200968793719UL + 26UL), (17688920200968793719UL + 27UL), (17688920200968793719UL + 28UL), (17688920200968793719UL + 30UL),
+                           &____alias_loc_id_5, (unsigned)1, (unsigned)0, (unsigned)0, (17688920200968793719UL + 36UL),
+                           &____alias_loc_id_6, (unsigned)1, (unsigned)0, (unsigned)1, (17688920200968793719UL + 35UL), "kernel_cpu", (unsigned)5, (17688920200968793719UL + 59UL), (17688920200968793719UL + 324UL), (17688920200968793719UL + 663UL), (17688920200968793719UL + 725UL), (17688920200968793719UL + 748UL),
+                           &____alias_loc_id_7, (unsigned)17, (unsigned)0, (unsigned)0, (17688920200968793719UL + 34UL), (17688920200968793719UL + 38UL), (17688920200968793719UL + 39UL), (17688920200968793719UL + 40UL), (17688920200968793719UL + 41UL), (17688920200968793719UL + 42UL), (17688920200968793719UL + 43UL), (17688920200968793719UL + 46UL), (17688920200968793719UL + 47UL), (17688920200968793719UL + 48UL), (17688920200968793719UL + 49UL), (17688920200968793719UL + 50UL), (17688920200968793719UL + 324UL), (17688920200968793719UL + 663UL), (17688920200968793719UL + 725UL), (17688920200968793719UL + 748UL), (17688920200968793719UL + 855UL),
+                           &____alias_loc_id_8, (unsigned)2, (unsigned)0, (unsigned)0, (17688920200968793719UL + 33UL), (17688920200968793719UL + 45UL),
+                           &____alias_loc_id_9, (unsigned)2, (unsigned)0, (unsigned)0, (17688920200968793719UL + 32UL), (17688920200968793719UL + 44UL),
+                            &____alias_loc_id_10, (unsigned)2, (unsigned)0, (unsigned)0, (17688920200968793719UL + 31UL), (17688920200968793719UL + 45UL),
+                            &____alias_loc_id_11, (unsigned)3, (unsigned)0, (unsigned)0, (17688920200968793719UL + 1UL), (17688920200968793719UL + 3UL), (17688920200968793719UL + 4UL),
+                            &____alias_loc_id_12, (unsigned)12, (unsigned)0, (unsigned)0, (17688920200968793719UL + 26UL), (17688920200968793719UL + 31UL), (17688920200968793719UL + 37UL), (17688920200968793719UL + 45UL), (17688920200968793719UL + 51UL), (17688920200968793719UL + 52UL), (17688920200968793719UL + 53UL), (17688920200968793719UL + 54UL), (17688920200968793719UL + 55UL), (17688920200968793719UL + 56UL), (17688920200968793719UL + 57UL), (17688920200968793719UL + 61UL),
+                            "seconds", 0, "_Z7secondsv", "_Z11seconds_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (17688920200968793719UL + 1UL), (17688920200968793719UL + 2UL), 0UL,
                                "get_time", (void **)&(____chimes_extern_func_get_time),
                                "isInteger", (void **)&(____chimes_extern_func_isInteger),
                                "kernel_cpu", (void **)&(____chimes_extern_func_kernel_cpu),
@@ -4095,12 +4095,12 @@ static int module_init() {
                            "get_time", &(____chimes_does_checkpoint_get_time_npm),
                            "isInteger", &(____chimes_does_checkpoint_isInteger_npm),
                            "kernel_cpu", &(____chimes_does_checkpoint_kernel_cpu_npm),
-                             (1242561836700798559UL + 48UL), (1242561836700798559UL + 725UL),
-                             (1242561836700798559UL + 49UL), (1242561836700798559UL + 748UL),
-                             (1242561836700798559UL + 46UL), (1242561836700798559UL + 324UL),
-                             (1242561836700798559UL + 47UL), (1242561836700798559UL + 663UL),
-                             (1242561836700798559UL + 28UL), (1242561836700798559UL + 823UL),
-                             (1242561836700798559UL + 823UL), (1242561836700798559UL + 112UL),
+                             (17688920200968793719UL + 48UL), (17688920200968793719UL + 725UL),
+                             (17688920200968793719UL + 49UL), (17688920200968793719UL + 748UL),
+                             (17688920200968793719UL + 46UL), (17688920200968793719UL + 324UL),
+                             (17688920200968793719UL + 47UL), (17688920200968793719UL + 663UL),
+                             (17688920200968793719UL + 28UL), (17688920200968793719UL + 823UL),
+                             (17688920200968793719UL + 823UL), (17688920200968793719UL + 112UL),
                      "FOUR_VECTOR", 256UL, 4, "double", (int)__builtin_offsetof (FOUR_VECTOR, v), "double", (int)__builtin_offsetof (FOUR_VECTOR, x), "double", (int)__builtin_offsetof (FOUR_VECTOR, y), "double", (int)__builtin_offsetof (FOUR_VECTOR, z),
                      "box_str", 5248UL, 7, "int", (int)__builtin_offsetof (struct box_str, x), "int", (int)__builtin_offsetof (struct box_str, y), "int", (int)__builtin_offsetof (struct box_str, z), "int", (int)__builtin_offsetof (struct box_str, number), "long int", (int)__builtin_offsetof (struct box_str, offset), "int", (int)__builtin_offsetof (struct box_str, nn), "[ 26 x %struct.nei_str ]", (int)__builtin_offsetof (struct box_str, nei),
                      "dim_str", 448UL, 9, "int", (int)__builtin_offsetof (struct dim_str, cur_arg), "int", (int)__builtin_offsetof (struct dim_str, arch_arg), "int", (int)__builtin_offsetof (struct dim_str, cores_arg), "int", (int)__builtin_offsetof (struct dim_str, boxes1d_arg), "long int", (int)__builtin_offsetof (struct dim_str, number_boxes), "long int", (int)__builtin_offsetof (struct dim_str, box_mem), "long int", (int)__builtin_offsetof (struct dim_str, space_elem), "long int", (int)__builtin_offsetof (struct dim_str, space_mem), "long int", (int)__builtin_offsetof (struct dim_str, space_mem2),
@@ -4118,13 +4118,13 @@ static int module_init() {
         "seconds", 0UL, (int)0,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,
-        "isInteger", 0UL, (int)1, 1242561836700798671UL,
-        "isInteger", 0UL, (int)1, 1242561836700798671UL,
+        "isInteger", 0UL, (int)1, 17688920200968793831UL,
+        "isInteger", 0UL, (int)1, 17688920200968793831UL,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,
-        "kernel_cpu", 0UL, (int)6, 0UL, 1242561836700798618UL, 1242561836700798883UL, 1242561836700799222UL, 1242561836700799284UL, 1242561836700799307UL,
+        "kernel_cpu", 0UL, (int)6, 0UL, 17688920200968793778UL, 17688920200968794043UL, 17688920200968794382UL, 17688920200968794444UL, 17688920200968794467UL,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0);
     return 0;

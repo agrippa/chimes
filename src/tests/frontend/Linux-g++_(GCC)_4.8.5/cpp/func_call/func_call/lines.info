@@ -1,2 +1,2 @@
-/home/jmg3/chimes/src/examples/cpp/./func_call.cpp 12 5 : { 14, 15, 16 } {  } call:checkpoint {  }
-/home/jmg3/chimes/src/examples/cpp/./func_call.cpp 21 13 : { 64, 65, 66, 67 } {  } call:foo {  }
+/scratch/jmg3/chimes/src/examples/cpp/./func_call.cpp 12 5 : { 14, 15, 16 } {  } call:checkpoint {  }
+/scratch/jmg3/chimes/src/examples/cpp/./func_call.cpp 21 13 : { 64, 65, 66, 67 } {  } call:foo {  }

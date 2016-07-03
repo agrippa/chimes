@@ -14,11 +14,11 @@ static int ____chimes_does_checkpoint_get_time_npm = 1;
 static int ____must_manage_get_time = 2;
 
 static unsigned ____alias_loc_id_0;
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -27,7 +27,7 @@ static unsigned ____alias_loc_id_0;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -83,18 +83,18 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
-# 2 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
+# 2 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
 extern "C" {
-# 13 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
+# 13 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 25 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1418,7 +1418,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 14 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c" 2
+# 14 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c" 2
 # 1 "/usr/include/sys/time.h" 1 3 4
 # 27 "/usr/include/sys/time.h" 3 4
 # 1 "/usr/include/time.h" 1 3 4
@@ -1524,49 +1524,49 @@ extern int futimesat (int __fd, __const char *__file,
         __const struct timeval __tvp[2]) throw ();
 # 191 "/usr/include/sys/time.h" 3 4
 }
-# 15 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c" 2
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
+# 15 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c" 2
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
 long long get_time_npm();
 long long get_time_quick(); long long get_time();
 long long get_time_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
   struct timeval tv; ;
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
  gettimeofday(&tv, __null);
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
   long long ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((tv.tv_sec * 1000000) + tv.tv_usec); rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
 rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_0, ____chimes_did_disable0, false); }
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
 }
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
 long long get_time_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0) ; ; ;
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
   struct timeval tv; ;
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
  gettimeofday(&tv, __null);
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
   long long ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((tv.tv_sec * 1000000) + tv.tv_usec); rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
 rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 
 long long get_time() { return (____chimes_replaying ? get_time_resumable() : get_time_quick()); }
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
 long long get_time_npm() {
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
  struct timeval tv;
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
  gettimeofday(&tv, __null);
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
   long long ____chimes_ret_var_0; ____chimes_ret_var_0 = ((tv.tv_sec * 1000000) + tv.tv_usec); return ____chimes_ret_var_0; ;
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/util/timer/timer.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/lavaMD/util/timer/timer.c"
 }
 
 
@@ -1574,9 +1574,9 @@ long long get_time_npm() {
 
 
 static int module_init() {
-    init_module(8128970918226351760UL, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1,
-                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)0, (8128970918226351760UL + 1UL), (8128970918226351760UL + 2UL),
-                            "get_time", 0, "get_time", "get_time_npm", 0, 0, 0UL, 1, "gettimeofday", 2, (8128970918226351760UL + 1UL), (8128970918226351760UL + 19UL), 0UL,
+    init_module(14889971979247921704UL, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1,
+                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)0, (14889971979247921704UL + 1UL), (14889971979247921704UL + 2UL),
+                            "get_time", 0, "get_time", "get_time_npm", 0, 0, 0UL, 1, "gettimeofday", 2, (14889971979247921704UL + 1UL), (14889971979247921704UL + 19UL), 0UL,
                            "get_time", &(____chimes_does_checkpoint_get_time_npm),
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
                              "get_time", "get_time", 0, 0);

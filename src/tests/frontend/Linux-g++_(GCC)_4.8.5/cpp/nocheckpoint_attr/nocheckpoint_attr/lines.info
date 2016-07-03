@@ -1,1 +1,1 @@
-/home/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp 18 5 : { 1, 2, 3, 4, 5, 6, 47, 56 } {  } call:checkpoint { foo { 47 } }
+/scratch/jmg3/chimes/src/examples/cpp/./nocheckpoint_attr.cpp 18 5 : { 1, 2, 3, 4, 5, 6, 47, 56 } {  } call:checkpoint { foo { 47 } }

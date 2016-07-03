@@ -38,11 +38,11 @@ static unsigned ____alias_loc_id_2;
 static unsigned ____alias_loc_id_3;
 static unsigned ____alias_loc_id_4;
 static unsigned ____alias_loc_id_5;
-# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -51,7 +51,7 @@ static unsigned ____alias_loc_id_5;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -107,16 +107,16 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 62 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.h" 1
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 62 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.h" 1
 
 
 
@@ -125,8 +125,8 @@ extern int ____chimes_replaying;
 
 struct BasePotentialSt;
 struct BasePotentialSt* initLjPot(void);
-# 63 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
-# 63 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 63 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
+# 63 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 25 "/usr/include/stdlib.h" 3 4
@@ -1451,7 +1451,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 65 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
+# 65 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
 # 1 "/usr/include/assert.h" 1 3 4
 # 66 "/usr/include/assert.h" 3 4
 extern "C" {
@@ -1475,7 +1475,7 @@ extern void __assert (const char *__assertion, const char *__file, int __line)
 
 
 }
-# 66 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
+# 66 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 29 "/usr/include/string.h" 3 4
 extern "C" {
@@ -1951,11 +1951,11 @@ extern "C++" __const char *basename (__const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 # 646 "/usr/include/string.h" 3 4
 }
-# 67 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
-# 67 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 67 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
+# 67 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 
-# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/constants.h" 1
-# 28 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/constants.h"
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/constants.h" 1
+# 28 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/constants.h"
 static const double amuToInternalMass =
          1.660538921e-27 * 1.0e-10 * 1.0e-10
          / (1.0e-15 * 1.0e-15 * 1.602176565e-19);
@@ -1968,9 +1968,9 @@ static const double hartreeToEv = 27.21138505;
 
 
 static const double bohrToAngs = 0.52917721092;
-# 69 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
-# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mytype.h" 1
-# 13 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mytype.h"
+# 69 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mytype.h" 1
+# 13 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/mytype.h"
 typedef double real_t;
 
 
@@ -1984,9 +1984,9 @@ static void zeroReal3(real3 a)
    a[1] = 0.0;
    a[2] = 0.0;
 }
-# 70 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
-# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/parallel.h" 1
-# 10 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/parallel.h"
+# 70 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/parallel.h" 1
+# 10 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/parallel.h"
 typedef struct RankReduceDataSt
 {
    double val;
@@ -2041,9 +2041,9 @@ void bcastParallel(void* buf, int len, int root);
 
 
 int builtWithMpi(void);
-# 71 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
-# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.h" 1
-# 12 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.h"
+# 71 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.h" 1
+# 12 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/linkCells.h"
 struct DomainSt;
 struct AtomsSt;
 
@@ -2080,8 +2080,8 @@ void moveAtom(LinkCell* boxes, struct AtomsSt* atoms, int iId, int iBox, int jBo
 void updateLinkCells(LinkCell* boxes, struct AtomsSt* atoms);
 
 int maxOccupancy(LinkCell* boxes);
-# 72 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
-# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/CoMDTypes.h" 1
+# 72 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/CoMDTypes.h" 1
 
 
 
@@ -2895,9 +2895,9 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 8 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/CoMDTypes.h" 2
+# 8 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/CoMDTypes.h" 2
 
-# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/haloExchange.h" 1
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/haloExchange.h" 1
 
 
 
@@ -2908,7 +2908,7 @@ ferror_unlocked (FILE *__stream) throw ()
 struct AtomsSt;
 struct LinkCellSt;
 struct DomainSt;
-# 26 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/haloExchange.h"
+# 26 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/haloExchange.h"
 typedef struct HaloExchangeSt
 {
 
@@ -2917,9 +2917,9 @@ typedef struct HaloExchangeSt
 
 
    int bufCapacity;
-# 47 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/haloExchange.h"
+# 47 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/haloExchange.h"
    int (*loadBuffer)(void* parms, void* data, int face, char* buf) __attribute__((nocheckpoint));
-# 61 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/haloExchange.h"
+# 61 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/haloExchange.h"
    void (*unloadBuffer)(void* parms, void* data, int face, int bufSize, char* buf) __attribute__((nocheckpoint));
 
 
@@ -2944,10 +2944,10 @@ void haloExchange(HaloExchange* haloExchange, void* data);
 
 
 void sortAtomsInCell(struct AtomsSt* atoms, struct LinkCellSt* boxes, int iBox);
-# 10 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/CoMDTypes.h" 2
+# 10 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/CoMDTypes.h" 2
 
-# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.h" 1
-# 10 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.h"
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.h" 1
+# 10 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/decomposition.h"
 typedef struct DomainSt
 {
 
@@ -2970,9 +2970,9 @@ struct DomainSt* initDecomposition(int xproc, int yproc, int zproc,
 
 
 int processorNum(Domain* domain, int dix, int diy, int dik);
-# 12 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/CoMDTypes.h" 2
-# 1 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/initAtoms.h" 1
-# 9 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/initAtoms.h"
+# 12 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/CoMDTypes.h" 2
+# 1 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/initAtoms.h" 1
+# 9 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/initAtoms.h"
 struct SimFlatSt;
 struct LinkCellSt;
 
@@ -3002,10 +3002,10 @@ void createFccLattice(int nx, int ny, int nz, real_t lat, struct SimFlatSt* s);
 void setVcm(struct SimFlatSt* s, real_t vcm[3]);
 void setTemperature(struct SimFlatSt* s, real_t temperature);
 void randomDisplacements(struct SimFlatSt* s, real_t delta);
-# 13 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/CoMDTypes.h" 2
+# 13 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/CoMDTypes.h" 2
 
 struct SimFlatSt;
-# 28 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/CoMDTypes.h"
+# 28 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/CoMDTypes.h"
 typedef struct BasePotentialSt
 {
    real_t cutoff;
@@ -3062,801 +3062,801 @@ typedef struct SimFlatSt
    HaloExchange* atomExchange;
 
 } SimFlat;
-# 73 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
-# 73 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 74 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 75 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 76 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 77 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 78 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 79 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 73 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
+# 73 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 74 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 75 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 76 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 77 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 78 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 79 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 typedef struct LjPotentialSt
-# 80 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 80 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {
-# 81 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 81 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    real_t cutoff;
-# 82 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 82 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    real_t mass;
-# 83 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 83 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    real_t lat;
-# 84 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 84 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    char latticeType[8];
-# 85 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 85 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    char name[3];
-# 86 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 86 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    int atomicNo;
-# 87 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 87 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    int (*force)(SimFlat* s);
-# 88 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 88 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    void (*print)(FILE* file, BasePotential* pot);
-# 89 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 89 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    void (*destroy)(BasePotential** pot);
-# 90 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 90 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    real_t sigma;
-# 91 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 91 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    real_t epsilon;
-# 92 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 92 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 } LjPotential;
-# 93 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 94 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 93 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 94 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int ljForce(SimFlat* s);
-# 95 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 95 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 void ljPrint(FILE* file, BasePotential* pot);
-# 96 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 97 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 96 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 97 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 void ljDestroy_npm(BasePotential** inppot);
 void ljDestroy_quick(BasePotential** inppot); void ljDestroy(BasePotential** inppot);
 void ljDestroy_resumable(BasePotential** inppot)
-# 98 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&ljDestroy), "ljDestroy", &____must_manage_ljDestroy, 1, 0, (size_t)(15692222973149250888UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 99 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 98 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&ljDestroy), "ljDestroy", &____must_manage_ljDestroy, 1, 0, (size_t)(13056495443497325592UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 99 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    if (! inppot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0, false); return; };
-# 100 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 100 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     LjPotential *pot; pot = ((LjPotential*)(*inppot)) ;
-# 101 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 101 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    if (! pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0, false); return; };
-# 102 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 15692222973149250874UL);free((((unsigned char *)pot) - sizeof(void *))); }) ;
-# 103 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 102 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+    ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 13056495443497325578UL);free((((unsigned char *)pot) - sizeof(void *))); }) ;
+# 103 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    *inppot = __null;
-# 104 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 105 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 104 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 105 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0, false); return;
-# 106 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 106 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 }
-# 107 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 108 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 109 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 107 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 108 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 109 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 BasePotential* initLjPot_npm(void);
 BasePotential* initLjPot_quick(void); BasePotential* initLjPot(void);
 BasePotential* initLjPot_resumable(void)
-# 110 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 110 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&initLjPot), "initLjPot", &____must_manage_initLjPot, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 111 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    LjPotential *pot; pot = ((LjPotential*) ({ void *____chimes_tmp_ptr = malloc((sizeof(LjPotential)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 15692222973149250895UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 112 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 111 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+    LjPotential *pot; pot = ((LjPotential*) ({ void *____chimes_tmp_ptr = malloc((sizeof(LjPotential)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 13056495443497325599UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 112 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->force = ljForce;
-# 113 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 113 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->print = ljPrint;
-# 114 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 114 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->destroy = ljDestroy;
-# 115 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 115 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->sigma = 2.315;
-# 116 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 116 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->epsilon = 0.167;
-# 117 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 117 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->mass = 63.55 * amuToInternalMass;
-# 118 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 119 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 118 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 119 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->lat = 3.615;
-# 120 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 120 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    strcpy(pot->latticeType, "FCC");
-# 121 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 121 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->cutoff = 2.5*pot->sigma;
-# 122 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 123 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 122 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 123 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    strcpy(pot->name, "Cu");
-# 124 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 124 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->atomicNo = 29;
-# 125 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 126 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    BasePotential *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((BasePotential*) pot); rm_stack(true, 15692222973149250895UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_0; ;
-# 127 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-rm_stack(true, 15692222973149250895UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2, ____chimes_did_disable1, false); }
-# 128 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 129 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 125 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 126 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+    BasePotential *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((BasePotential*) pot); rm_stack(true, 13056495443497325599UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_0; ;
+# 127 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+rm_stack(true, 13056495443497325599UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2, ____chimes_did_disable1, false); }
+# 128 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 129 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 void ljPrint_npm(FILE* file, BasePotential* pot);
 void ljPrint_quick(FILE* file, BasePotential* pot); void ljPrint(FILE* file, BasePotential* pot);
 void ljPrint_resumable(FILE* file, BasePotential* pot)
-# 130 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&ljPrint), "ljPrint", &____must_manage_ljPrint, 2, 0, (size_t)(15692222973149251488UL), (size_t)(15692222973149251489UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 131 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 130 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+{const int ____chimes_did_disable2 = new_stack((void *)(&ljPrint), "ljPrint", &____must_manage_ljPrint, 2, 0, (size_t)(13056495443497326192UL), (size_t)(13056495443497326193UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 131 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     LjPotential *ljPot; ljPot = ((LjPotential*) pot) ;
-# 132 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 132 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Potential type   : Lennard-Jones\n");
-# 133 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 133 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Species name     : %s\n", ljPot->name);
-# 134 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 134 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Atomic number    : %d\n", ljPot->atomicNo);
-# 135 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 135 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Mass             : ""%lg"" amu\n", ljPot->mass / amuToInternalMass);
-# 136 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 136 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Lattice Type     : %s\n", ljPot->latticeType);
-# 137 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 137 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Lattice spacing  : ""%lg"" Angstroms\n", ljPot->lat);
-# 138 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 138 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Cutoff           : ""%lg"" Angstroms\n", ljPot->cutoff);
-# 139 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 139 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Epsilon          : ""%lg"" eV\n", ljPot->epsilon);
-# 140 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 140 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Sigma            : ""%lg"" Angstroms\n", ljPot->sigma);
-# 141 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 141 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 rm_stack(false, 0UL, "ljPrint", &____must_manage_ljPrint, ____alias_loc_id_4, ____chimes_did_disable2, false); }
-# 142 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 143 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 142 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 143 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int ljForce_npm(SimFlat* s);static int (*____chimes_extern_func_getNeighborBoxes)(struct LinkCellSt *, int, int *) = getNeighborBoxes;static void (*____chimes_extern_func_zeroReal3)(double *) = zeroReal3;
 int ljForce_quick(SimFlat* s); int ljForce(SimFlat* s);
 int ljForce_resumable(SimFlat* s)
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&ljForce), "ljForce", &____must_manage_ljForce, 1, 1, (size_t)(15692222973149251136UL), "ljForce|s|0", &____must_checkpoint_ljForce_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; real_t dr[3];
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+{const int ____chimes_did_disable3 = new_stack((void *)(&ljForce), "ljForce", &____must_manage_ljForce, 1, 1, (size_t)(13056495443497325840UL), "ljForce|s|0", &____must_checkpoint_ljForce_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; real_t dr[3];
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int nIBox;
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int iBox;
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int nbrBoxes[27];
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t eShift;
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t s6;
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t ePot;
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t rCut2;
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t epsilon;
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
  if (____must_checkpoint_ljForce_dr_0 || ____must_checkpoint_ljForce_nIBox_0 || ____must_checkpoint_ljForce_iBox_0 || ____must_checkpoint_ljForce_nbrBoxes_0 || ____must_checkpoint_ljForce_eShift_0 || ____must_checkpoint_ljForce_s6_0 || ____must_checkpoint_ljForce_ePot_0 || ____must_checkpoint_ljForce_rCut2_0 || ____must_checkpoint_ljForce_epsilon_0) { register_stack_vars(9, "ljForce|dr|0", &____must_checkpoint_ljForce_dr_0, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0, "ljForce|nIBox|0", &____must_checkpoint_ljForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0, "ljForce|iBox|0", &____must_checkpoint_ljForce_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0, "ljForce|nbrBoxes|0", &____must_checkpoint_ljForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0, "ljForce|eShift|0", &____must_checkpoint_ljForce_eShift_0, "double", (void *)(&eShift), (size_t)8, 0, 0, 0, "ljForce|s6|0", &____must_checkpoint_ljForce_s6_0, "double", (void *)(&s6), (size_t)8, 0, 0, 0, "ljForce|ePot|0", &____must_checkpoint_ljForce_ePot_0, "double", (void *)(&ePot), (size_t)8, 0, 0, 0, "ljForce|rCut2|0", &____must_checkpoint_ljForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0, "ljForce|epsilon|0", &____must_checkpoint_ljForce_epsilon_0, "double", (void *)(&epsilon), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
-# 145 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 145 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     LjPotential *pot; pot = ((LjPotential *) s->pot) ;
-# 146 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 146 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     real_t sigma; sigma = (pot->sigma) ;
-# 147 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 147 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       epsilon = (pot->epsilon) ;
-# 148 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 148 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     real_t rCut; rCut = (pot->cutoff) ;
-# 149 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 149 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       rCut2 = (rCut*rCut) ;
-# 150 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 151 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 152 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 150 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 151 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 152 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       ePot = (0.0) ;
-# 153 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 153 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    s->ePotential = 0.0;
-# 154 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 154 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     int fSize; fSize = (s->boxes->nTotalBoxes*64) ;
-# 155 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 155 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    { int iii; for ( iii = (0) ; iii<fSize; ++iii)
-# 156 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 156 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    {
-# 157 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-       call_lbl_0: ({ calling((void*)zeroReal3, 0, 0, 0UL, 1, (size_t)(15692222973149251140UL)); (zeroReal3)(s->atoms->f[iii]); }) ;
-# 158 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 157 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+       call_lbl_0: ({ calling((void*)zeroReal3, 0, 0, 0UL, 1, (size_t)(13056495443497325844UL)); (zeroReal3)(s->atoms->f[iii]); }) ;
+# 158 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       s->atoms->U[iii] = 0.;
-# 159 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 159 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    } }
-# 160 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 161 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 160 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 161 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       s6 = (sigma*sigma*sigma*sigma*sigma*sigma) ;
-# 162 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 163 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 162 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 163 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     real_t rCut6; rCut6 = (s6 / (rCut2*rCut2*rCut2)) ;
-# 164 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 164 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       eShift = (1.0 * rCut6 * (rCut6 - 1.0)) ;
-# 165 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 166 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 165 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 166 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     ;
-# 167 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 168 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 167 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 168 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    { for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; iBox++)
-# 169 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 169 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    {
-# 170 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 170 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          nIBox = (s->boxes->nAtoms[iBox]) ;
-# 171 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 171 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       if (nIBox == 0) {continue; };
-# 172 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-       int nNbrBoxes; call_lbl_1: nNbrBoxes = ( ({ LinkCell * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (s->boxes); } calling((void*)getNeighborBoxes, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(15692222973149251138UL), (size_t)(0UL), (size_t)(15692222973149250956UL)); (getNeighborBoxes)(____chimes_arg1, iBox, nbrBoxes); }) ) ;
-# 173 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 174 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 172 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+       int nNbrBoxes; call_lbl_1: nNbrBoxes = ( ({ LinkCell * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (s->boxes); } calling((void*)getNeighborBoxes, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(13056495443497325842UL), (size_t)(0UL), (size_t)(13056495443497325660UL)); (getNeighborBoxes)(____chimes_arg1, iBox, nbrBoxes); }) ) ;
+# 173 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 174 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       { int jTmp; for ( jTmp = (0) ; jTmp<nNbrBoxes; jTmp++)
-# 175 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 175 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       {
-# 176 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 176 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
           int jBox; jBox = (nbrBoxes[jTmp]) ;
-# 177 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 178 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-         ((jBox>=0) ? static_cast<void> (0) : __assert_fail ("jBox>=0", "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c", 178, __PRETTY_FUNCTION__));
-# 179 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 180 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 177 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 178 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+         ((jBox>=0) ? static_cast<void> (0) : __assert_fail ("jBox>=0", "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c", 178, __PRETTY_FUNCTION__));
+# 179 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 180 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
           int nJBox; nJBox = (s->boxes->nAtoms[jBox]) ;
-# 181 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 181 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          if (nJBox == 0) {continue; };
-# 182 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 183 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 184 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 182 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 183 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 184 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          { int iOff; int ii; for ( iOff = (iBox*64) , ii = (0) ; ii<nIBox; ii++,iOff++)
-# 185 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 185 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          {
-# 186 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 186 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
              int iId; iId = (s->atoms->gid[iOff]) ;
-# 187 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 188 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 187 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 188 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
             { int jOff; int ij; for ( jOff = (64*jBox) , ij = (0) ; ij<nJBox; ij++,jOff++)
-# 189 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 189 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
             {
-# 190 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 190 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                 ;
-# 191 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 191 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                 int jId; jId = (s->atoms->gid[jOff]) ;
-# 192 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 192 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                if (jBox < s->boxes->nLocalBoxes && jId <= iId) {continue; };
-# 194 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 194 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                 real_t r2; r2 = (0.0) ;
-# 195 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 195 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                { int m1; for ( m1 = (0) ; m1<3; m1++)
-# 196 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 196 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                {
-# 197 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 197 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                   dr[m1] = s->atoms->r[iOff][m1]-s->atoms->r[jOff][m1];
-# 198 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 198 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                   r2+=dr[m1]*dr[m1];
-# 199 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 199 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                } }
-# 200 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 201 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 200 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 201 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                if (r2 > rCut2) {continue; };
-# 202 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 203 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 204 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 205 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 202 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 203 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 204 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 205 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                r2 = 1.0/r2;
-# 206 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 206 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                 real_t r6; r6 = (s6 * (r2*r2*r2)) ;
-# 207 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 207 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                 real_t eLocal; eLocal = (r6 * (r6 - 1.0) - eShift) ;
-# 208 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 208 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                s->atoms->U[iOff] += 0.5*eLocal;
-# 209 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 209 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                s->atoms->U[jOff] += 0.5*eLocal;
-# 210 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 211 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 212 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 213 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 210 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 211 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 212 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 213 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                if (jBox < s->boxes->nLocalBoxes) {ePot += eLocal; } else {ePot += 0.5 * eLocal; } ;
-# 217 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 218 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 219 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 217 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 218 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 219 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                 real_t fr; fr = (- 4.0*epsilon*r6*r2*(12.0*r6 - 6.0)) ;
-# 220 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 220 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                { int m2; for ( m2 = (0) ; m2<3; m2++)
-# 221 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 221 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                {
-# 222 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 222 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                   s->atoms->f[iOff][m2] -= dr[m2]*fr;
-# 223 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 223 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                   s->atoms->f[jOff][m2] += dr[m2]*fr;
-# 224 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 224 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                } }
-# 225 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 225 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
             } }
-# 226 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 226 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          } }
-# 227 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 227 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       } }
-# 228 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 228 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    } }
-# 229 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 230 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 229 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 230 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    ePot = ePot*4.0*epsilon;
-# 231 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 231 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    s->ePotential = ePot;
-# 232 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 233 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 232 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 233 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "ljForce", &____must_manage_ljForce, ____alias_loc_id_3, ____chimes_did_disable3, false); return ____chimes_ret_var_1; ;
-# 234 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 234 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 rm_stack(false, 0UL, "ljForce", &____must_manage_ljForce, ____alias_loc_id_3, ____chimes_did_disable3, false); }
-# 97 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 97 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 void ljDestroy_quick(BasePotential** inppot)
-# 98 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&ljDestroy), "ljDestroy", &____must_manage_ljDestroy, 1, 0, (size_t)(15692222973149250888UL)) ; ; ;
-# 99 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 98 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&ljDestroy), "ljDestroy", &____must_manage_ljDestroy, 1, 0, (size_t)(13056495443497325592UL)) ; ; ;
+# 99 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    if (! inppot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0, false); return; };
-# 100 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 100 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     LjPotential *pot; pot = ((LjPotential*)(*inppot)) ;
-# 101 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 101 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    if (! pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0, false); return; };
-# 102 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 15692222973149250874UL);free((((unsigned char *)pot) - sizeof(void *))); }) ;
-# 103 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 102 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+    ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 13056495443497325578UL);free((((unsigned char *)pot) - sizeof(void *))); }) ;
+# 103 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    *inppot = __null;
-# 104 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 105 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 104 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 105 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0, false); return;
-# 106 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 106 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 }
 
 void ljDestroy(BasePotential** inppot) { (____chimes_replaying ? ljDestroy_resumable(inppot) : ljDestroy_quick(inppot)); }
-# 109 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 109 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 BasePotential* initLjPot_quick(void)
-# 110 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 110 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&initLjPot), "initLjPot", &____must_manage_initLjPot, 0, 0) ; ; ;
-# 111 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    LjPotential *pot; pot = ((LjPotential*) ({ void *____chimes_tmp_ptr = malloc((sizeof(LjPotential)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 15692222973149250895UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 112 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 111 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+    LjPotential *pot; pot = ((LjPotential*) ({ void *____chimes_tmp_ptr = malloc((sizeof(LjPotential)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 13056495443497325599UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 112 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->force = ljForce;
-# 113 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 113 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->print = ljPrint;
-# 114 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 114 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->destroy = ljDestroy;
-# 115 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 115 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->sigma = 2.315;
-# 116 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 116 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->epsilon = 0.167;
-# 117 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 117 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->mass = 63.55 * amuToInternalMass;
-# 118 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 119 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 118 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 119 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->lat = 3.615;
-# 120 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 120 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    strcpy(pot->latticeType, "FCC");
-# 121 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 121 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->cutoff = 2.5*pot->sigma;
-# 122 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 123 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 122 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 123 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    strcpy(pot->name, "Cu");
-# 124 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 124 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->atomicNo = 29;
-# 125 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 126 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    BasePotential *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((BasePotential*) pot); rm_stack(true, 15692222973149250895UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_0; ;
-# 127 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-rm_stack(true, 15692222973149250895UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2, ____chimes_did_disable1, false); }
+# 125 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 126 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+    BasePotential *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((BasePotential*) pot); rm_stack(true, 13056495443497325599UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_0; ;
+# 127 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+rm_stack(true, 13056495443497325599UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2, ____chimes_did_disable1, false); }
 
 BasePotential* initLjPot(void) { return (____chimes_replaying ? initLjPot_resumable() : initLjPot_quick()); }
-# 129 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 129 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 void ljPrint_quick(FILE* file, BasePotential* pot)
-# 130 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&ljPrint), "ljPrint", &____must_manage_ljPrint, 2, 0, (size_t)(15692222973149251488UL), (size_t)(15692222973149251489UL)) ; ; ;
-# 131 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 130 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+{const int ____chimes_did_disable2 = new_stack((void *)(&ljPrint), "ljPrint", &____must_manage_ljPrint, 2, 0, (size_t)(13056495443497326192UL), (size_t)(13056495443497326193UL)) ; ; ;
+# 131 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     LjPotential *ljPot; ljPot = ((LjPotential*) pot) ;
-# 132 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 132 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Potential type   : Lennard-Jones\n");
-# 133 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 133 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Species name     : %s\n", ljPot->name);
-# 134 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 134 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Atomic number    : %d\n", ljPot->atomicNo);
-# 135 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 135 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Mass             : ""%lg"" amu\n", ljPot->mass / amuToInternalMass);
-# 136 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 136 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Lattice Type     : %s\n", ljPot->latticeType);
-# 137 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 137 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Lattice spacing  : ""%lg"" Angstroms\n", ljPot->lat);
-# 138 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 138 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Cutoff           : ""%lg"" Angstroms\n", ljPot->cutoff);
-# 139 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 139 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Epsilon          : ""%lg"" eV\n", ljPot->epsilon);
-# 140 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 140 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Sigma            : ""%lg"" Angstroms\n", ljPot->sigma);
-# 141 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 141 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 rm_stack(false, 0UL, "ljPrint", &____must_manage_ljPrint, ____alias_loc_id_4, ____chimes_did_disable2, false); }
 
 void ljPrint(FILE* file, BasePotential* pot) { (____chimes_replaying ? ljPrint_resumable(file, pot) : ljPrint_quick(file, pot)); }
-# 143 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 143 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int ljForce_quick(SimFlat* s)
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&ljForce), "ljForce", &____must_manage_ljForce, 1, 1, (size_t)(15692222973149251136UL), "ljForce|s|0", &____must_checkpoint_ljForce_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; real_t dr[3];
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+{const int ____chimes_did_disable3 = new_stack((void *)(&ljForce), "ljForce", &____must_manage_ljForce, 1, 1, (size_t)(13056495443497325840UL), "ljForce|s|0", &____must_checkpoint_ljForce_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; real_t dr[3];
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int nIBox;
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int iBox;
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int nbrBoxes[27];
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t eShift;
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t s6;
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t ePot;
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t rCut2;
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t epsilon;
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
  if (____must_checkpoint_ljForce_dr_0 || ____must_checkpoint_ljForce_nIBox_0 || ____must_checkpoint_ljForce_iBox_0 || ____must_checkpoint_ljForce_nbrBoxes_0 || ____must_checkpoint_ljForce_eShift_0 || ____must_checkpoint_ljForce_s6_0 || ____must_checkpoint_ljForce_ePot_0 || ____must_checkpoint_ljForce_rCut2_0 || ____must_checkpoint_ljForce_epsilon_0) { register_stack_vars(9, "ljForce|dr|0", &____must_checkpoint_ljForce_dr_0, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0, "ljForce|nIBox|0", &____must_checkpoint_ljForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0, "ljForce|iBox|0", &____must_checkpoint_ljForce_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0, "ljForce|nbrBoxes|0", &____must_checkpoint_ljForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0, "ljForce|eShift|0", &____must_checkpoint_ljForce_eShift_0, "double", (void *)(&eShift), (size_t)8, 0, 0, 0, "ljForce|s6|0", &____must_checkpoint_ljForce_s6_0, "double", (void *)(&s6), (size_t)8, 0, 0, 0, "ljForce|ePot|0", &____must_checkpoint_ljForce_ePot_0, "double", (void *)(&ePot), (size_t)8, 0, 0, 0, "ljForce|rCut2|0", &____must_checkpoint_ljForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0, "ljForce|epsilon|0", &____must_checkpoint_ljForce_epsilon_0, "double", (void *)(&epsilon), (size_t)8, 0, 0, 0); } ; ;
-# 145 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 145 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     LjPotential *pot; pot = ((LjPotential *) s->pot) ;
-# 146 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 146 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     real_t sigma; sigma = (pot->sigma) ;
-# 147 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 147 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       epsilon = (pot->epsilon) ;
-# 148 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 148 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     real_t rCut; rCut = (pot->cutoff) ;
-# 149 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 149 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       rCut2 = (rCut*rCut) ;
-# 150 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 151 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 152 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 150 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 151 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 152 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       ePot = (0.0) ;
-# 153 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 153 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    s->ePotential = 0.0;
-# 154 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 154 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     int fSize; fSize = (s->boxes->nTotalBoxes*64) ;
-# 155 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 155 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    { int iii; for ( iii = (0) ; iii<fSize; ++iii)
-# 156 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 156 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    {
-# 157 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-       call_lbl_0: ({ calling((void*)zeroReal3, 0, 0, 0UL, 1, (size_t)(15692222973149251140UL)); (zeroReal3)(s->atoms->f[iii]); }) ;
-# 158 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 157 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+       call_lbl_0: ({ calling((void*)zeroReal3, 0, 0, 0UL, 1, (size_t)(13056495443497325844UL)); (zeroReal3)(s->atoms->f[iii]); }) ;
+# 158 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       s->atoms->U[iii] = 0.;
-# 159 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 159 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    } }
-# 160 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 161 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 160 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 161 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       s6 = (sigma*sigma*sigma*sigma*sigma*sigma) ;
-# 162 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 163 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 162 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 163 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     real_t rCut6; rCut6 = (s6 / (rCut2*rCut2*rCut2)) ;
-# 164 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 164 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       eShift = (1.0 * rCut6 * (rCut6 - 1.0)) ;
-# 165 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 166 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 165 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 166 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     ;
-# 167 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 168 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 167 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 168 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    { for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; iBox++)
-# 169 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 169 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    {
-# 170 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 170 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          nIBox = (s->boxes->nAtoms[iBox]) ;
-# 171 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 171 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       if (nIBox == 0) {continue; };
-# 172 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-       int nNbrBoxes; call_lbl_1: nNbrBoxes = ( ({ calling((void*)getNeighborBoxes, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(15692222973149251138UL), (size_t)(0UL), (size_t)(15692222973149250956UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) ) ;
-# 173 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 174 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 172 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+       int nNbrBoxes; call_lbl_1: nNbrBoxes = ( ({ calling((void*)getNeighborBoxes, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(13056495443497325842UL), (size_t)(0UL), (size_t)(13056495443497325660UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) ) ;
+# 173 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 174 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       { int jTmp; for ( jTmp = (0) ; jTmp<nNbrBoxes; jTmp++)
-# 175 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 175 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       {
-# 176 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 176 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
           int jBox; jBox = (nbrBoxes[jTmp]) ;
-# 177 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 178 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-         ((jBox>=0) ? static_cast<void> (0) : __assert_fail ("jBox>=0", "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c", 178, __PRETTY_FUNCTION__));
-# 179 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 180 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 177 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 178 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+         ((jBox>=0) ? static_cast<void> (0) : __assert_fail ("jBox>=0", "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c", 178, __PRETTY_FUNCTION__));
+# 179 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 180 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
           int nJBox; nJBox = (s->boxes->nAtoms[jBox]) ;
-# 181 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 181 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          if (nJBox == 0) {continue; };
-# 182 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 183 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 184 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 182 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 183 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 184 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          { int iOff; int ii; for ( iOff = (iBox*64) , ii = (0) ; ii<nIBox; ii++,iOff++)
-# 185 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 185 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          {
-# 186 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 186 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
              int iId; iId = (s->atoms->gid[iOff]) ;
-# 187 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 188 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 187 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 188 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
             { int jOff; int ij; for ( jOff = (64*jBox) , ij = (0) ; ij<nJBox; ij++,jOff++)
-# 189 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 189 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
             {
-# 190 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 190 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                 ;
-# 191 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 191 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                 int jId; jId = (s->atoms->gid[jOff]) ;
-# 192 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 192 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                if (jBox < s->boxes->nLocalBoxes && jId <= iId) {continue; };
-# 194 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 194 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                 real_t r2; r2 = (0.0) ;
-# 195 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 195 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                { int m1; for ( m1 = (0) ; m1<3; m1++)
-# 196 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 196 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                {
-# 197 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 197 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                   dr[m1] = s->atoms->r[iOff][m1]-s->atoms->r[jOff][m1];
-# 198 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 198 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                   r2+=dr[m1]*dr[m1];
-# 199 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 199 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                } }
-# 200 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 201 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 200 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 201 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                if (r2 > rCut2) {continue; };
-# 202 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 203 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 204 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 205 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 202 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 203 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 204 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 205 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                r2 = 1.0/r2;
-# 206 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 206 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                 real_t r6; r6 = (s6 * (r2*r2*r2)) ;
-# 207 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 207 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                 real_t eLocal; eLocal = (r6 * (r6 - 1.0) - eShift) ;
-# 208 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 208 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                s->atoms->U[iOff] += 0.5*eLocal;
-# 209 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 209 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                s->atoms->U[jOff] += 0.5*eLocal;
-# 210 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 211 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 212 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 213 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 210 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 211 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 212 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 213 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                if (jBox < s->boxes->nLocalBoxes) {ePot += eLocal; } else {ePot += 0.5 * eLocal; } ;
-# 217 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 218 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 219 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 217 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 218 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 219 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                 real_t fr; fr = (- 4.0*epsilon*r6*r2*(12.0*r6 - 6.0)) ;
-# 220 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 220 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                { int m2; for ( m2 = (0) ; m2<3; m2++)
-# 221 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 221 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                {
-# 222 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 222 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                   s->atoms->f[iOff][m2] -= dr[m2]*fr;
-# 223 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 223 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                   s->atoms->f[jOff][m2] += dr[m2]*fr;
-# 224 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 224 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                } }
-# 225 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 225 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
             } }
-# 226 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 226 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          } }
-# 227 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 227 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       } }
-# 228 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 228 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    } }
-# 229 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 230 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 229 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 230 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    ePot = ePot*4.0*epsilon;
-# 231 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 231 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    s->ePotential = ePot;
-# 232 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 233 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 232 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 233 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "ljForce", &____must_manage_ljForce, ____alias_loc_id_3, ____chimes_did_disable3, false); return ____chimes_ret_var_1; ;
-# 234 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 234 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 rm_stack(false, 0UL, "ljForce", &____must_manage_ljForce, ____alias_loc_id_3, ____chimes_did_disable3, false); }
 
 int ljForce(SimFlat* s) { return (____chimes_replaying ? ljForce_resumable(s) : ljForce_quick(s)); }
-# 97 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 97 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 void ljDestroy_npm(BasePotential** inppot)
-# 98 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 98 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {
-# 99 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 99 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    if (! inppot) {return; };
-# 100 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 100 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    LjPotential* pot = (LjPotential*)(*inppot);
-# 101 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 101 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    if (! pot) {return; };
-# 102 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 15692222973149250874UL);free((((unsigned char *)pot) - sizeof(void *))); }) ;
-# 103 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 102 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+    ({ free_helper((((unsigned char *)pot) - sizeof(void *)), 13056495443497325578UL);free((((unsigned char *)pot) - sizeof(void *))); }) ;
+# 103 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    *inppot = __null;
-# 104 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 105 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 104 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 105 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    return;
-# 106 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 106 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 }
-# 109 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 109 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 BasePotential* initLjPot_npm(void)
-# 110 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 110 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {
-# 111 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-   LjPotential *pot = (LjPotential*) ({ void *____chimes_tmp_ptr = malloc((sizeof(LjPotential)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 15692222973149250895UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 112 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 111 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+   LjPotential *pot = (LjPotential*) ({ void *____chimes_tmp_ptr = malloc((sizeof(LjPotential)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(LjPotential), 13056495443497325599UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 112 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->force = ljForce;
-# 113 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 113 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->print = ljPrint;
-# 114 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 114 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->destroy = ljDestroy;
-# 115 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 115 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->sigma = 2.315;
-# 116 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 116 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->epsilon = 0.167;
-# 117 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 117 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->mass = 63.55 * amuToInternalMass;
-# 118 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 119 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 118 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 119 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->lat = 3.615;
-# 120 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 120 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    strcpy(pot->latticeType, "FCC");
-# 121 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 121 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->cutoff = 2.5*pot->sigma;
-# 122 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 123 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 122 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 123 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    strcpy(pot->name, "Cu");
-# 124 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 124 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    pot->atomicNo = 29;
-# 125 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 126 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 125 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 126 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     BasePotential * ____chimes_ret_var_0; ____chimes_ret_var_0 = ((BasePotential*) pot); return ____chimes_ret_var_0; ;
-# 127 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 127 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 }
-# 129 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 129 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 void ljPrint_npm(FILE* file, BasePotential* pot)
-# 130 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 130 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {
-# 131 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 131 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    LjPotential* ljPot = (LjPotential*) pot;
-# 132 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 132 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Potential type   : Lennard-Jones\n");
-# 133 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 133 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Species name     : %s\n", ljPot->name);
-# 134 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 134 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Atomic number    : %d\n", ljPot->atomicNo);
-# 135 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 135 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Mass             : ""%lg"" amu\n", ljPot->mass / amuToInternalMass);
-# 136 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 136 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Lattice Type     : %s\n", ljPot->latticeType);
-# 137 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 137 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Lattice spacing  : ""%lg"" Angstroms\n", ljPot->lat);
-# 138 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 138 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Cutoff           : ""%lg"" Angstroms\n", ljPot->cutoff);
-# 139 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 139 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Epsilon          : ""%lg"" eV\n", ljPot->epsilon);
-# 140 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 140 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Sigma            : ""%lg"" Angstroms\n", ljPot->sigma);
-# 141 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 141 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 }
-# 143 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 143 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int ljForce_npm(SimFlat* s)
-# 144 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 144 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {
-# 145 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 145 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    LjPotential* pot = (LjPotential *) s->pot;
-# 146 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 146 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    real_t sigma = pot->sigma;
-# 147 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 147 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    real_t epsilon = pot->epsilon;
-# 148 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 148 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    real_t rCut = pot->cutoff;
-# 149 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 149 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    real_t rCut2 = rCut*rCut;
-# 150 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 151 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 152 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 150 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 151 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 152 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    real_t ePot = 0.0;
-# 153 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 153 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    s->ePotential = 0.0;
-# 154 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 154 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    int fSize = s->boxes->nTotalBoxes*64;
-# 155 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 155 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    for (int iii=0; iii<fSize; ++iii)
-# 156 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 156 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    {
-# 157 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 157 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       (*____chimes_extern_func_zeroReal3)(s->atoms->f[iii]);
-# 158 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 158 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       s->atoms->U[iii] = 0.;
-# 159 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 159 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    }
-# 160 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 161 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 160 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 161 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    real_t s6 = sigma*sigma*sigma*sigma*sigma*sigma;
-# 162 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 163 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 162 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 163 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    real_t rCut6 = s6 / (rCut2*rCut2*rCut2);
-# 164 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 164 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    real_t eShift = 1.0 * rCut6 * (rCut6 - 1.0);
-# 165 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 166 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 165 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 166 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    int nbrBoxes[27];
-# 167 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 168 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 167 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 168 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
-# 169 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 169 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    {
-# 170 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 170 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       int nIBox = s->boxes->nAtoms[iBox];
-# 171 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 171 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       if (nIBox == 0) {continue; };
-# 172 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 172 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       int nNbrBoxes = (*____chimes_extern_func_getNeighborBoxes)(s->boxes, iBox, nbrBoxes);
-# 173 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 174 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 173 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 174 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       for (int jTmp=0; jTmp<nNbrBoxes; jTmp++)
-# 175 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 175 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       {
-# 176 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 176 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          int jBox = nbrBoxes[jTmp];
-# 177 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 178 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-         ((jBox>=0) ? static_cast<void> (0) : __assert_fail ("jBox>=0", "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c", 178, __PRETTY_FUNCTION__));
-# 179 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 180 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 177 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 178 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+         ((jBox>=0) ? static_cast<void> (0) : __assert_fail ("jBox>=0", "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c", 178, __PRETTY_FUNCTION__));
+# 179 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 180 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          int nJBox = s->boxes->nAtoms[jBox];
-# 181 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 181 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          if (nJBox == 0) {continue; };
-# 182 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 183 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 184 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 182 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 183 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 184 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          for (int iOff=iBox*64,ii=0; ii<nIBox; ii++,iOff++)
-# 185 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 185 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          {
-# 186 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 186 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
             int iId = s->atoms->gid[iOff];
-# 187 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 188 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 187 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 188 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
             for (int jOff=64*jBox,ij=0; ij<nJBox; ij++,jOff++)
-# 189 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 189 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
             {
-# 190 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 190 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                real_t dr[3];
-# 191 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 191 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                int jId = s->atoms->gid[jOff];
-# 192 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 192 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                if (jBox < s->boxes->nLocalBoxes && jId <= iId) {continue; };
-# 194 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 194 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                real_t r2 = 0.0;
-# 195 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 195 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                for (int m1=0; m1<3; m1++)
-# 196 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 196 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                {
-# 197 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 197 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                   dr[m1] = s->atoms->r[iOff][m1]-s->atoms->r[jOff][m1];
-# 198 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 198 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                   r2+=dr[m1]*dr[m1];
-# 199 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 199 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                }
-# 200 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 201 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 200 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 201 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                if (r2 > rCut2) {continue; };
-# 202 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 203 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 204 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 205 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 202 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 203 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 204 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 205 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                r2 = 1.0/r2;
-# 206 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 206 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                real_t r6 = s6 * (r2*r2*r2);
-# 207 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 207 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                real_t eLocal = r6 * (r6 - 1.0) - eShift;
-# 208 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 208 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                s->atoms->U[iOff] += 0.5*eLocal;
-# 209 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 209 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                s->atoms->U[jOff] += 0.5*eLocal;
-# 210 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 211 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 212 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 213 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 210 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 211 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 212 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 213 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                if (jBox < s->boxes->nLocalBoxes) {ePot += eLocal; } else {ePot += 0.5 * eLocal; } ;
-# 217 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 218 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 219 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 217 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 218 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 219 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                real_t fr = - 4.0*epsilon*r6*r2*(12.0*r6 - 6.0);
-# 220 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 220 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                for (int m2=0; m2<3; m2++)
-# 221 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 221 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                {
-# 222 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 222 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                   s->atoms->f[iOff][m2] -= dr[m2]*fr;
-# 223 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 223 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                   s->atoms->f[jOff][m2] += dr[m2]*fr;
-# 224 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 224 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                }
-# 225 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 225 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
             }
-# 226 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 226 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          }
-# 227 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 227 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       }
-# 228 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 228 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    }
-# 229 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 230 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 229 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 230 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    ePot = ePot*4.0*epsilon;
-# 231 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 231 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    s->ePotential = ePot;
-# 232 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 233 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 232 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 233 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     int ____chimes_ret_var_1; ____chimes_ret_var_1 = (0); return ____chimes_ret_var_1; ;
-# 234 "/home/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 234 "/scratch/jmg3/chimes/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 }
 
 
@@ -3864,17 +3864,17 @@ int ljForce_npm(SimFlat* s)
 
 
 static int module_init() {
-    init_module(15692222973149250863UL, 14, 5, 10, 6, 4, 2, 6, 0, 0, 10,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (15692222973149250863UL + 95UL), "getNeighborBoxes", (unsigned)2, (15692222973149250863UL + 93UL), (15692222973149250863UL + 275UL),
-                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (15692222973149250863UL + 1UL), (15692222973149250863UL + 2UL), (15692222973149250863UL + 25UL),
-                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (15692222973149250863UL + 29UL), (15692222973149250863UL + 30UL), (15692222973149250863UL + 32UL),
-                           &____alias_loc_id_3, (unsigned)34, (unsigned)0, (unsigned)0, (15692222973149250863UL + 81UL), (15692222973149250863UL + 82UL), (15692222973149250863UL + 83UL), (15692222973149250863UL + 84UL), (15692222973149250863UL + 85UL), (15692222973149250863UL + 86UL), (15692222973149250863UL + 87UL), (15692222973149250863UL + 88UL), (15692222973149250863UL + 89UL), (15692222973149250863UL + 90UL), (15692222973149250863UL + 91UL), (15692222973149250863UL + 92UL), (15692222973149250863UL + 94UL), (15692222973149250863UL + 95UL), (15692222973149250863UL + 96UL), (15692222973149250863UL + 97UL), (15692222973149250863UL + 98UL), (15692222973149250863UL + 99UL), (15692222973149250863UL + 100UL), (15692222973149250863UL + 101UL), (15692222973149250863UL + 102UL), (15692222973149250863UL + 103UL), (15692222973149250863UL + 104UL), (15692222973149250863UL + 105UL), (15692222973149250863UL + 106UL), (15692222973149250863UL + 107UL), (15692222973149250863UL + 108UL), (15692222973149250863UL + 109UL), (15692222973149250863UL + 110UL), (15692222973149250863UL + 111UL), (15692222973149250863UL + 112UL), (15692222973149250863UL + 113UL), (15692222973149250863UL + 273UL), (15692222973149250863UL + 277UL),
-                           &____alias_loc_id_4, (unsigned)3, (unsigned)0, (unsigned)0, (15692222973149250863UL + 570UL), (15692222973149250863UL + 571UL), (15692222973149250863UL + 572UL),
-                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (unsigned)0, (15692222973149250863UL + 631UL), (15692222973149250863UL + 644UL),
-                            "initLjPot", 0, "_Z9initLjPotv", "_Z13initLjPot_npmv", 0, 0, (15692222973149250863UL + 32UL), 3, "malloc", 1, 0UL, (15692222973149250863UL + 32UL), "strcpy", 2, (15692222973149250863UL + 32UL), (15692222973149250863UL + 652UL), (15692222973149250863UL + 59UL), "strcpy", 2, (15692222973149250863UL + 32UL), (15692222973149250863UL + 653UL), (15692222973149250863UL + 70UL),
-                            "ljPrint", 0, "_Z7ljPrintP8_IO_FILEP15BasePotentialSt", "_Z11ljPrint_npmP8_IO_FILEP15BasePotentialSt", 0, 2, (15692222973149250863UL + 625UL), (15692222973149250863UL + 626UL), 0UL, 9, "fprintf", 2, (15692222973149250863UL + 625UL), (15692222973149250863UL + 654UL), 0UL, "fprintf", 3, (15692222973149250863UL + 625UL), (15692222973149250863UL + 655UL), (15692222973149250863UL + 626UL), 0UL, "fprintf", 3, (15692222973149250863UL + 625UL), (15692222973149250863UL + 655UL), 0UL, 0UL, "fprintf", 3, (15692222973149250863UL + 625UL), (15692222973149250863UL + 657UL), 0UL, 0UL, "fprintf", 3, (15692222973149250863UL + 625UL), (15692222973149250863UL + 655UL), (15692222973149250863UL + 626UL), 0UL, "fprintf", 3, (15692222973149250863UL + 625UL), (15692222973149250863UL + 654UL), 0UL, 0UL, "fprintf", 3, (15692222973149250863UL + 625UL), (15692222973149250863UL + 654UL), 0UL, 0UL, "fprintf", 3, (15692222973149250863UL + 625UL), (15692222973149250863UL + 661UL), 0UL, 0UL, "fprintf", 3, (15692222973149250863UL + 625UL), (15692222973149250863UL + 654UL), 0UL, 0UL,
-                            "ljForce", 0, "_Z7ljForceP9SimFlatSt", "_Z11ljForce_npmP9SimFlatSt", 1, &____alias_loc_id_0, 1, (15692222973149250863UL + 273UL), 0UL, 3, "zeroReal3", 1, (15692222973149250863UL + 277UL), 0UL, "getNeighborBoxes", 3, (15692222973149250863UL + 275UL), 0UL, (15692222973149250863UL + 93UL), 0UL, "__assert_fail", 4, (15692222973149250863UL + 663UL), (15692222973149250863UL + 664UL), 0UL, (15692222973149250863UL + 665UL), 0UL,
-                            "ljDestroy", 0, "_Z9ljDestroyPP15BasePotentialSt", "_Z13ljDestroy_npmPP15BasePotentialSt", 0, 1, (15692222973149250863UL + 25UL), 0UL, 1, "free", 1, (15692222973149250863UL + 11UL), 0UL,
+    init_module(13056495443497325567UL, 14, 5, 10, 6, 4, 2, 6, 0, 0, 10,
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (13056495443497325567UL + 95UL), "getNeighborBoxes", (unsigned)2, (13056495443497325567UL + 93UL), (13056495443497325567UL + 275UL),
+                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (13056495443497325567UL + 1UL), (13056495443497325567UL + 2UL), (13056495443497325567UL + 25UL),
+                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (13056495443497325567UL + 29UL), (13056495443497325567UL + 30UL), (13056495443497325567UL + 32UL),
+                           &____alias_loc_id_3, (unsigned)34, (unsigned)0, (unsigned)0, (13056495443497325567UL + 81UL), (13056495443497325567UL + 82UL), (13056495443497325567UL + 83UL), (13056495443497325567UL + 84UL), (13056495443497325567UL + 85UL), (13056495443497325567UL + 86UL), (13056495443497325567UL + 87UL), (13056495443497325567UL + 88UL), (13056495443497325567UL + 89UL), (13056495443497325567UL + 90UL), (13056495443497325567UL + 91UL), (13056495443497325567UL + 92UL), (13056495443497325567UL + 94UL), (13056495443497325567UL + 95UL), (13056495443497325567UL + 96UL), (13056495443497325567UL + 97UL), (13056495443497325567UL + 98UL), (13056495443497325567UL + 99UL), (13056495443497325567UL + 100UL), (13056495443497325567UL + 101UL), (13056495443497325567UL + 102UL), (13056495443497325567UL + 103UL), (13056495443497325567UL + 104UL), (13056495443497325567UL + 105UL), (13056495443497325567UL + 106UL), (13056495443497325567UL + 107UL), (13056495443497325567UL + 108UL), (13056495443497325567UL + 109UL), (13056495443497325567UL + 110UL), (13056495443497325567UL + 111UL), (13056495443497325567UL + 112UL), (13056495443497325567UL + 113UL), (13056495443497325567UL + 273UL), (13056495443497325567UL + 277UL),
+                           &____alias_loc_id_4, (unsigned)3, (unsigned)0, (unsigned)0, (13056495443497325567UL + 570UL), (13056495443497325567UL + 571UL), (13056495443497325567UL + 572UL),
+                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (unsigned)0, (13056495443497325567UL + 631UL), (13056495443497325567UL + 644UL),
+                            "initLjPot", 0, "_Z9initLjPotv", "_Z13initLjPot_npmv", 0, 0, (13056495443497325567UL + 32UL), 3, "malloc", 1, 0UL, (13056495443497325567UL + 32UL), "strcpy", 2, (13056495443497325567UL + 32UL), (13056495443497325567UL + 652UL), (13056495443497325567UL + 59UL), "strcpy", 2, (13056495443497325567UL + 32UL), (13056495443497325567UL + 653UL), (13056495443497325567UL + 70UL),
+                            "ljPrint", 0, "_Z7ljPrintP8_IO_FILEP15BasePotentialSt", "_Z11ljPrint_npmP8_IO_FILEP15BasePotentialSt", 0, 2, (13056495443497325567UL + 625UL), (13056495443497325567UL + 626UL), 0UL, 9, "fprintf", 2, (13056495443497325567UL + 625UL), (13056495443497325567UL + 654UL), 0UL, "fprintf", 3, (13056495443497325567UL + 625UL), (13056495443497325567UL + 655UL), (13056495443497325567UL + 626UL), 0UL, "fprintf", 3, (13056495443497325567UL + 625UL), (13056495443497325567UL + 655UL), 0UL, 0UL, "fprintf", 3, (13056495443497325567UL + 625UL), (13056495443497325567UL + 657UL), 0UL, 0UL, "fprintf", 3, (13056495443497325567UL + 625UL), (13056495443497325567UL + 655UL), (13056495443497325567UL + 626UL), 0UL, "fprintf", 3, (13056495443497325567UL + 625UL), (13056495443497325567UL + 654UL), 0UL, 0UL, "fprintf", 3, (13056495443497325567UL + 625UL), (13056495443497325567UL + 654UL), 0UL, 0UL, "fprintf", 3, (13056495443497325567UL + 625UL), (13056495443497325567UL + 661UL), 0UL, 0UL, "fprintf", 3, (13056495443497325567UL + 625UL), (13056495443497325567UL + 654UL), 0UL, 0UL,
+                            "ljForce", 0, "_Z7ljForceP9SimFlatSt", "_Z11ljForce_npmP9SimFlatSt", 1, &____alias_loc_id_0, 1, (13056495443497325567UL + 273UL), 0UL, 3, "zeroReal3", 1, (13056495443497325567UL + 277UL), 0UL, "getNeighborBoxes", 3, (13056495443497325567UL + 275UL), 0UL, (13056495443497325567UL + 93UL), 0UL, "__assert_fail", 4, (13056495443497325567UL + 663UL), (13056495443497325567UL + 664UL), 0UL, (13056495443497325567UL + 665UL), 0UL,
+                            "ljDestroy", 0, "_Z9ljDestroyPP15BasePotentialSt", "_Z13ljDestroy_npmPP15BasePotentialSt", 0, 1, (13056495443497325567UL + 25UL), 0UL, 1, "free", 1, (13056495443497325567UL + 11UL), 0UL,
                                "getNeighborBoxes", (void **)&(____chimes_extern_func_getNeighborBoxes),
                                "zeroReal3", (void **)&(____chimes_extern_func_zeroReal3),
                            "initLjPot", &(____chimes_does_checkpoint_initLjPot_npm),
@@ -3883,20 +3883,20 @@ static int module_init() {
                            "ljDestroy", &(____chimes_does_checkpoint_ljDestroy_npm),
                            "getNeighborBoxes", &(____chimes_does_checkpoint_getNeighborBoxes_npm),
                            "zeroReal3", &(____chimes_does_checkpoint_zeroReal3_npm),
-                             (15692222973149250863UL + 25UL), (15692222973149250863UL + 11UL),
-                             (15692222973149250863UL + 570UL), (15692222973149250863UL + 625UL),
-                             (15692222973149250863UL + 273UL), (15692222973149250863UL + 275UL),
-                             (15692222973149250863UL + 631UL), (15692222973149250863UL + 644UL),
-                             (15692222973149250863UL + 32UL), (15692222973149250863UL + 666UL),
-                             (15692222973149250863UL + 571UL), (15692222973149250863UL + 626UL),
-                             (15692222973149250863UL + 30UL), (15692222973149250863UL + 32UL),
-                             (15692222973149250863UL + 29UL), (15692222973149250863UL + 32UL),
-                             (15692222973149250863UL + 1UL), (15692222973149250863UL + 25UL),
-                             (15692222973149250863UL + 2UL), (15692222973149250863UL + 11UL),
-                             (15692222973149250863UL + 275UL), (15692222973149250863UL + 277UL),
-                             (15692222973149250863UL + 572UL), (15692222973149250863UL + 626UL),
-                             (15692222973149250863UL + 82UL), (15692222973149250863UL + 275UL),
-                             (15692222973149250863UL + 81UL), (15692222973149250863UL + 273UL),
+                             (13056495443497325567UL + 25UL), (13056495443497325567UL + 11UL),
+                             (13056495443497325567UL + 570UL), (13056495443497325567UL + 625UL),
+                             (13056495443497325567UL + 273UL), (13056495443497325567UL + 275UL),
+                             (13056495443497325567UL + 631UL), (13056495443497325567UL + 644UL),
+                             (13056495443497325567UL + 32UL), (13056495443497325567UL + 666UL),
+                             (13056495443497325567UL + 571UL), (13056495443497325567UL + 626UL),
+                             (13056495443497325567UL + 30UL), (13056495443497325567UL + 32UL),
+                             (13056495443497325567UL + 29UL), (13056495443497325567UL + 32UL),
+                             (13056495443497325567UL + 1UL), (13056495443497325567UL + 25UL),
+                             (13056495443497325567UL + 2UL), (13056495443497325567UL + 11UL),
+                             (13056495443497325567UL + 275UL), (13056495443497325567UL + 277UL),
+                             (13056495443497325567UL + 572UL), (13056495443497325567UL + 626UL),
+                             (13056495443497325567UL + 82UL), (13056495443497325567UL + 275UL),
+                             (13056495443497325567UL + 81UL), (13056495443497325567UL + 273UL),
                      "AtomsSt", 448UL, 8, "int", (int)__builtin_offsetof (struct AtomsSt, nLocal), "int", (int)__builtin_offsetof (struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof (struct AtomsSt, gid), "int*", (int)__builtin_offsetof (struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, f), "double*", (int)__builtin_offsetof (struct AtomsSt, U),
                      "BasePotentialSt", 512UL, 9, "double", (int)__builtin_offsetof (struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof (struct BasePotentialSt, mass), "double", (int)__builtin_offsetof (struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, name), "int", (int)__builtin_offsetof (struct BasePotentialSt, atomicNo), "func*", (int)__builtin_offsetof (struct BasePotentialSt, force), "func*", (int)__builtin_offsetof (struct BasePotentialSt, print), "func*", (int)__builtin_offsetof (struct BasePotentialSt, destroy),
                      "DomainSt", 0UL, 0,

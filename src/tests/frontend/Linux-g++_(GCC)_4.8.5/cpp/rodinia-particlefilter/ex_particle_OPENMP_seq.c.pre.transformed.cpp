@@ -72,11 +72,11 @@ static unsigned ____alias_loc_id_18;
 static unsigned ____alias_loc_id_19;
 static unsigned ____alias_loc_id_20;
 static unsigned ____alias_loc_id_21;
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -85,7 +85,7 @@ static unsigned ____alias_loc_id_21;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -141,19 +141,19 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 2 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 3 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 4 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 5 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 2 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 3 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 4 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 5 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 25 "/usr/include/stdlib.h" 3 4
@@ -1478,7 +1478,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c" 2
+# 7 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 30 "/usr/include/stdio.h" 3 4
 extern "C" {
@@ -2286,7 +2286,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 8 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c" 2
+# 8 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c" 2
 # 1 "/usr/include/math.h" 1 3 4
 # 30 "/usr/include/math.h" 3 4
 extern "C" {
@@ -3291,7 +3291,7 @@ __signbitl (long double __x) throw ()
 # 417 "/usr/include/math.h" 2 3 4
 # 472 "/usr/include/math.h" 3 4
 }
-# 9 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c" 2
+# 9 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c" 2
 # 1 "/usr/include/sys/time.h" 1 3 4
 # 27 "/usr/include/sys/time.h" 3 4
 # 1 "/usr/include/time.h" 1 3 4
@@ -3397,7 +3397,7 @@ extern int futimesat (int __fd, __const char *__file,
         __const struct timeval __tvp[2]) throw ();
 # 191 "/usr/include/sys/time.h" 3 4
 }
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c" 2
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c" 2
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 1 3 4
 # 34 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 3 4
 typedef struct
@@ -3471,7 +3471,7 @@ int omp_in_final (void) throw ();
 
 
 }
-# 11 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c" 2
+# 11 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c" 2
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 1 3 4
 # 34 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/syslimits.h" 1 3 4
@@ -3509,7 +3509,7 @@ int omp_in_final (void) throw ();
 # 169 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 2 3 4
 # 8 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/syslimits.h" 2 3 4
 # 35 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include-fixed/limits.h" 2 3 4
-# 12 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c" 2
+# 12 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 29 "/usr/include/string.h" 3 4
 extern "C" {
@@ -3985,7 +3985,7 @@ extern "C++" __const char *basename (__const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 # 646 "/usr/include/string.h" 3 4
 }
-# 13 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c" 2
+# 13 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c" 2
 # 1 "/usr/include/time.h" 1 3 4
 # 30 "/usr/include/time.h" 3 4
 extern "C" {
@@ -4221,2434 +4221,2633 @@ extern int getdate_r (__const char *__restrict __string,
 
 
 }
-# 14 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c" 2
-# 14 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 14 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c" 2
+# 14 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 
-# 1 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 1
-# 11 "/home/jmg3/chimes/src/libchimes/checkpoint.h"
+# 1 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 11 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h"
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*____chimes_fp)(void *));
-# 16 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c" 2
-# 16 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 18 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 19 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 16 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c" 2
+# 16 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 17 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 18 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 19 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 20 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 21 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 long M = 2147483647;
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int A = 1103515245;
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int C = 12345;
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 long long get_time_npm();
 long long get_time_quick(); long long get_time();
 long long get_time_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   struct timeval tv; ;
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  gettimeofday(&tv, __null);
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   long long ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((tv.tv_sec * 1000000) + tv.tv_usec); rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_5, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_5, ____chimes_did_disable0, false); }
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 float elapsed_time_npm(long long start_time, long long end_time);
 float elapsed_time_quick(long long start_time, long long end_time); float elapsed_time(long long start_time, long long end_time);
 float elapsed_time_resumable(long long start_time, long long end_time) {const int ____chimes_did_disable1 = new_stack((void *)(&elapsed_time), "elapsed_time", &____must_manage_elapsed_time, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
          float ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((float) (end_time - start_time) / (1000 * 1000)); rm_stack(false, 0UL, "elapsed_time", &____must_manage_elapsed_time, ____alias_loc_id_6, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "elapsed_time", &____must_manage_elapsed_time, ____alias_loc_id_6, ____chimes_did_disable1, false); }
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double roundDouble_npm(double value);
 double roundDouble_quick(double value); double roundDouble(double value);
 double roundDouble_resumable(double value){const int ____chimes_did_disable2 = new_stack((void *)(&roundDouble), "roundDouble", &____must_manage_roundDouble, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int newValue; newValue = ((int)(value)) ;
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if (value - newValue < .5) { double ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (newValue); rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_7, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ; } else { double ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (newValue++); rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_7, ____chimes_did_disable2, false); return ____chimes_ret_var_3; ; } ;
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_7, ____chimes_did_disable2, false); }
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void setIf_npm(int testValue, int newValue, int * array3D, int * dimX, int * dimY, int * dimZ);
 void setIf_quick(int testValue, int newValue, int * array3D, int * dimX, int * dimY, int * dimZ); void setIf(int testValue, int newValue, int * array3D, int * dimX, int * dimY, int * dimZ);
-void setIf_resumable(int testValue, int newValue, int * array3D, int * dimX, int * dimY, int * dimZ){const int ____chimes_did_disable3 = new_stack((void *)(&setIf), "setIf", &____must_manage_setIf, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910309662UL), (size_t)(7756533236910309663UL), (size_t)(7756533236910309664UL), (size_t)(7756533236910309665UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+void setIf_resumable(int testValue, int newValue, int * array3D, int * dimX, int * dimY, int * dimZ){const int ____chimes_did_disable3 = new_stack((void *)(&setIf), "setIf", &____must_manage_setIf, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(1037355509377746038UL), (size_t)(1037355509377746039UL), (size_t)(1037355509377746040UL), (size_t)(1037355509377746041UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; int z; ;
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 65 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < *dimX; x++){
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(y = 0; y < *dimY; y++){
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    for(z = 0; z < *dimZ; z++){
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     if (array3D[x * *dimY * *dimZ+y * *dimZ + z] == testValue) {array3D[x * *dimY * *dimZ + y * *dimZ + z] = newValue; };
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    }
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "setIf", &____must_manage_setIf, ____alias_loc_id_8, ____chimes_did_disable3, false); }
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double randu_npm(int * seed, int index);
 double randu_quick(int * seed, int index); double randu(int * seed, int index);
 double randu_resumable(int * seed, int index)
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&randu), "randu", &____must_manage_randu, 2, 0, (size_t)(7756533236910309709UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{const int ____chimes_did_disable4 = new_stack((void *)(&randu), "randu", &____must_manage_randu, 2, 0, (size_t)(1037355509377746085UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int num; num = (A*seed[index] + C) ;
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  seed[index] = num % M;
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (fabs(seed[index]/((double) M))); rm_stack(false, 0UL, "randu", &____must_manage_randu, ____alias_loc_id_9, ____chimes_did_disable4, false); return ____chimes_ret_var_4; ;
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "randu", &____must_manage_randu, ____alias_loc_id_9, ____chimes_did_disable4, false); }
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double randn_npm(int * seed, int index);
 double randn_quick(int * seed, int index); double randn(int * seed, int index);
-double randn_resumable(int * seed, int index){const int ____chimes_did_disable5 = new_stack((void *)(&randn), "randn", &____must_manage_randn, 2, 0, (size_t)(7756533236910309751UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double randn_resumable(int * seed, int index){const int ____chimes_did_disable5 = new_stack((void *)(&randn), "randn", &____must_manage_randn, 2, 0, (size_t)(1037355509377746127UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double u; call_lbl_0: u = (({ calling_npm("randu", 0); randu_npm(seed, index); })) ;
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double v; call_lbl_1: v = (({ calling_npm("randu", 0); randu_npm(seed, index); })) ;
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double cosine; cosine = (cos(2*3.1415926535897932*v)) ;
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double rt; rt = (-2*log(u)) ;
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (sqrt(rt)*cosine); rm_stack(false, 0UL, "randn", &____must_manage_randn, ____alias_loc_id_10, ____chimes_did_disable5, false); return ____chimes_ret_var_5; ;
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "randn", &____must_manage_randn, ____alias_loc_id_10, ____chimes_did_disable5, false); }
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void addNoise_npm(int * array3D, int * dimX, int * dimY, int * dimZ, int * seed);
 void addNoise_quick(int * array3D, int * dimX, int * dimY, int * dimZ, int * seed); void addNoise(int * array3D, int * dimX, int * dimY, int * dimZ, int * seed);
-void addNoise_resumable(int * array3D, int * dimX, int * dimY, int * dimZ, int * seed){const int ____chimes_did_disable6 = new_stack((void *)(&addNoise), "addNoise", &____must_manage_addNoise, 5, 0, (size_t)(7756533236910309855UL), (size_t)(7756533236910309856UL), (size_t)(7756533236910309857UL), (size_t)(7756533236910309858UL), (size_t)(7756533236910309859UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+void addNoise_resumable(int * array3D, int * dimX, int * dimY, int * dimZ, int * seed){const int ____chimes_did_disable6 = new_stack((void *)(&addNoise), "addNoise", &____must_manage_addNoise, 5, 0, (size_t)(1037355509377746231UL), (size_t)(1037355509377746232UL), (size_t)(1037355509377746233UL), (size_t)(1037355509377746234UL), (size_t)(1037355509377746235UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; int z; ;
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < *dimX; x++){
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(y = 0; y < *dimY; y++){
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    for(z = 0; z < *dimZ; z++){
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      call_lbl_0: array3D[x * *dimY * *dimZ + y * *dimZ + z] = array3D[x * *dimY * *dimZ + y * *dimZ + z] + (int)(5*({ calling_npm("randn", 0); randn_npm(seed, 0); }));
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    }
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "addNoise", &____must_manage_addNoise, ____alias_loc_id_11, ____chimes_did_disable6, false); }
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void strelDisk_npm(int * disk, int radius);
 void strelDisk_quick(int * disk, int radius); void strelDisk(int * disk, int radius);
 void strelDisk_resumable(int * disk, int radius)
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&strelDisk), "strelDisk", &____must_manage_strelDisk, 2, 0, (size_t)(7756533236910309931UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{const int ____chimes_did_disable7 = new_stack((void *)(&strelDisk), "strelDisk", &____must_manage_strelDisk, 2, 0, (size_t)(1037355509377746307UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int diameter; diameter = (radius*2 - 1) ;
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; ;
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < diameter; x++){
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(y = 0; y < diameter; y++){
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     double distance; distance = (sqrt(pow((double)(x-radius+1),2) + pow((double)(y-radius+1),2))) ;
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    if (distance < radius) {disk[x*diameter + y] = 1; };
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "strelDisk", &____must_manage_strelDisk, ____alias_loc_id_12, ____chimes_did_disable7, false); }
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void dilate_matrix_npm(int * matrix, int posX, int posY, int posZ, int dimX, int dimY, int dimZ, int error);
 void dilate_matrix_quick(int * matrix, int posX, int posY, int posZ, int dimX, int dimY, int dimZ, int error); void dilate_matrix(int * matrix, int posX, int posY, int posZ, int dimX, int dimY, int dimZ, int error);
 void dilate_matrix_resumable(int * matrix, int posX, int posY, int posZ, int dimX, int dimY, int dimZ, int error)
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&dilate_matrix), "dilate_matrix", &____must_manage_dilate_matrix, 8, 0, (size_t)(7756533236910310082UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 151 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{const int ____chimes_did_disable8 = new_stack((void *)(&dilate_matrix), "dilate_matrix", &____must_manage_dilate_matrix, 8, 0, (size_t)(1037355509377746458UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 152 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int startX; startX = (posX - error) ;
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 153 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  while(startX < 0)
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 154 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  startX++;
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 155 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int startY; startY = (posY - error) ;
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 156 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  while(startY < 0)
-# 157 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 157 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  startY++;
-# 158 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 158 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int endX; endX = (posX + error) ;
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 159 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  while(endX > dimX)
-# 160 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 160 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  endX--;
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 161 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int endY; endY = (posY + error) ;
-# 162 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 162 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  while(endY > dimY)
-# 163 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 163 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  endY--;
-# 164 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 164 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; ;
-# 165 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 165 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = startX; x < endX; x++){
-# 166 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 166 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(y = startY; y < endY; y++){
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 167 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     double distance; distance = (sqrt( pow((double)(x-posX),2) + pow((double)(y-posY),2) )) ;
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 168 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    if (distance < error) {matrix[x*dimY*dimZ + y*dimZ + posZ] = 1; };
-# 170 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 170 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 171 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 171 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 172 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "dilate_matrix", &____must_manage_dilate_matrix, ____alias_loc_id_13, ____chimes_did_disable8, false); }
-# 183 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 183 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 183 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 183 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void imdilate_disk_npm(int * matrix, int dimX, int dimY, int dimZ, int error, int * newMatrix);
 void imdilate_disk_quick(int * matrix, int dimX, int dimY, int dimZ, int error, int * newMatrix); void imdilate_disk(int * matrix, int dimX, int dimY, int dimZ, int error, int * newMatrix);
 void imdilate_disk_resumable(int * matrix, int dimX, int dimY, int dimZ, int error, int * newMatrix)
-# 184 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&imdilate_disk), "imdilate_disk", &____must_manage_imdilate_disk, 6, 0, (size_t)(7756533236910310175UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910310180UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 185 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 184 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{const int ____chimes_did_disable9 = new_stack((void *)(&imdilate_disk), "imdilate_disk", &____must_manage_imdilate_disk, 6, 0, (size_t)(1037355509377746551UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1037355509377746556UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 185 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; int z; ;
-# 186 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 186 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(z = 0; z < dimZ; z++){
-# 187 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 187 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(x = 0; x < dimX; x++){
-# 188 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 188 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    for(y = 0; y < dimY; y++){
-# 189 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 189 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     if(matrix[x*dimY*dimZ + y*dimZ + z] == 1){
-# 190 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 190 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       call_lbl_0: ({ calling_npm("dilate_matrix", 0); dilate_matrix_npm(newMatrix, x, y, z, dimX, dimY, dimZ, error); });
-# 191 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 191 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 192 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 192 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    }
-# 193 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 193 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 194 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 194 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 195 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 195 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "imdilate_disk", &____must_manage_imdilate_disk, ____alias_loc_id_14, ____chimes_did_disable9, false); }
-# 196 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 197 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 198 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 199 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 200 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 201 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 202 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 203 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 196 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 197 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 198 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 199 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 200 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 201 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 202 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 203 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void getneighbors_npm(int * se, double * neighbors, int radius);
 void getneighbors_quick(int * se, double * neighbors, int radius); void getneighbors(int * se, double * neighbors, int radius);
-void getneighbors_resumable(int * se, double * neighbors, int radius){const int ____chimes_did_disable10 = new_stack((void *)(&getneighbors), "getneighbors", &____must_manage_getneighbors, 3, 0, (size_t)(7756533236910310267UL), (size_t)(7756533236910310268UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 204 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+void getneighbors_resumable(int * se, double * neighbors, int radius){const int ____chimes_did_disable10 = new_stack((void *)(&getneighbors), "getneighbors", &____must_manage_getneighbors, 3, 0, (size_t)(1037355509377746643UL), (size_t)(1037355509377746644UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 204 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; ;
-# 205 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 205 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int neighY; neighY = (0) ;
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 206 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int center; center = (radius - 1) ;
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 207 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int diameter; diameter = (radius*2 -1) ;
-# 208 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 208 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < diameter; x++){
-# 209 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 209 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(y = 0; y < diameter; y++){
-# 210 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 210 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    if(se[x*diameter + y]){
-# 211 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 211 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     neighbors[neighY*2] = (int)(y - center);
-# 212 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 212 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     neighbors[neighY*2 + 1] = (int)(x - center);
-# 213 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 213 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     neighY++;
-# 214 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 214 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    }
-# 215 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 215 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 216 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 216 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 217 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "getneighbors", &____must_manage_getneighbors, ____alias_loc_id_15, ____chimes_did_disable10, false); }
-# 230 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 230 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 230 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 230 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void videoSequence_quick(int * I, int IszX, int IszY, int Nfr, int * seed); void videoSequence(int * I, int IszX, int IszY, int Nfr, int * seed);
-void videoSequence_resumable(int * I, int IszX, int IszY, int Nfr, int * seed){const int ____chimes_did_disable11 = new_stack((void *)(&videoSequence), "videoSequence", (int *)0, 5, 5, (size_t)(7756533236910310478UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910310482UL), "videoSequence|I|0", (int *)0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "videoSequence|IszX|0", (int *)0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0, "videoSequence|IszY|0", (int *)0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "videoSequence|Nfr|0", (int *)0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "videoSequence|seed|0", (int *)0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
-# 231 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+void videoSequence_resumable(int * I, int IszX, int IszY, int Nfr, int * seed){const int ____chimes_did_disable11 = new_stack((void *)(&videoSequence), "videoSequence", (int *)0, 5, 5, (size_t)(1037355509377746854UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1037355509377746858UL), "videoSequence|I|0", (int *)0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "videoSequence|IszX|0", (int *)0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0, "videoSequence|IszY|0", (int *)0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "videoSequence|Nfr|0", (int *)0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "videoSequence|seed|0", (int *)0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
+# 231 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int k; ;
-# 232 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 232 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int max_size; max_size = (IszX*IszY*Nfr) ;
-# 233 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 234 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 233 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 234 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int x0; call_lbl_0: x0 = ((int)({ calling_npm("roundDouble", 0); roundDouble_npm(IszY/2.0); })) ;
-# 235 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 235 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int y0; call_lbl_1: y0 = ((int)({ calling_npm("roundDouble", 0); roundDouble_npm(IszX/2.0); })) ;
-# 236 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 236 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  I[x0 *IszY *Nfr + y0 * Nfr + 0] = 1;
-# 237 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 238 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 239 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 237 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 238 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 239 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int xk; int yk; int pos; ;
-# 240 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 240 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(k = 1; k < Nfr; k++){
-# 241 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 241 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   xk = abs(x0 + (k-1));
-# 242 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 242 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   yk = abs(y0 - 2*(k-1));
-# 243 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 243 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   pos = yk * IszY * Nfr + xk *Nfr + k;
-# 244 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 244 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   if (pos >= max_size) {pos = 0; };
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 246 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   I[pos] = 1;
-# 247 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 247 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 248 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 249 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 250 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 248 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 249 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 250 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
          call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_1);
-# 251 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 252 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 253 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 254 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  int *newMatrix; newMatrix = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * IszX * IszY * Nfr) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 7756533236910310433UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 255 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 251 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 252 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 253 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 254 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  int *newMatrix; newMatrix = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * IszX * IszY * Nfr) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 1037355509377746809UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 255 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   call_lbl_3: ({ calling_npm("imdilate_disk", 0); imdilate_disk_npm(I, IszX, IszY, Nfr, 5, newMatrix); });
-# 256 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 256 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; ;
-# 257 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 257 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < IszX; x++){
-# 258 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 258 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(y = 0; y < IszY; y++){
-# 259 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 259 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    for(k = 0; k < Nfr; k++){
-# 260 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 260 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     I[x*IszY*Nfr + y*Nfr + k] = newMatrix[x*IszY*Nfr + y*Nfr + k];
-# 261 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 261 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    }
-# 262 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 262 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 263 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 263 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 264 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)newMatrix) - sizeof(void *)), 7756533236910310433UL);free((((unsigned char *)newMatrix) - sizeof(void *))); }) ;
-# 265 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 266 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 267 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 264 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)newMatrix) - sizeof(void *)), 1037355509377746809UL);free((((unsigned char *)newMatrix) - sizeof(void *))); }) ;
+# 265 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 266 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 267 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
          call_lbl_4: checkpoint_transformed(4, ____alias_loc_id_0);
-# 268 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 269 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 270 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 271 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 268 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 269 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 270 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 271 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   call_lbl_5: ({ calling_npm("setIf", 0); setIf_npm(0, 100, I, &IszX, &IszY, &Nfr); });
-# 272 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 272 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   call_lbl_6: ({ calling_npm("setIf", 0); setIf_npm(1, 228, I, &IszX, &IszY, &Nfr); });
-# 273 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 274 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 273 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 274 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   call_lbl_7: ({ calling_npm("addNoise", 0); addNoise_npm(I, &IszX, &IszY, &Nfr, seed); });
-# 275 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 275 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "videoSequence", (int *)0x0, 0, ____chimes_did_disable11, false); }
-# 276 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 277 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 278 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 279 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 280 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 281 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 282 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 283 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 276 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 277 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 278 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 279 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 280 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 281 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 282 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 283 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double calcLikelihoodSum_npm(int * I, int * ind, int numOnes);
 double calcLikelihoodSum_quick(int * I, int * ind, int numOnes); double calcLikelihoodSum(int * I, int * ind, int numOnes);
-double calcLikelihoodSum_resumable(int * I, int * ind, int numOnes){const int ____chimes_did_disable12 = new_stack((void *)(&calcLikelihoodSum), "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, 3, 0, (size_t)(7756533236910310546UL), (size_t)(7756533236910310547UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 284 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double calcLikelihoodSum_resumable(int * I, int * ind, int numOnes){const int ____chimes_did_disable12 = new_stack((void *)(&calcLikelihoodSum), "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, 3, 0, (size_t)(1037355509377746922UL), (size_t)(1037355509377746923UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 284 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double likelihoodSum; likelihoodSum = (0.0) ;
-# 285 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 285 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int y; ;
-# 286 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 286 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for (y = 0; y < numOnes; y++) { likelihoodSum += (pow((I[ind[y]] - 100),2) - pow((I[ind[y]]-228),2))/50.0; };
-# 288 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 288 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (likelihoodSum); rm_stack(false, 0UL, "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, ____alias_loc_id_16, ____chimes_did_disable12, false); return ____chimes_ret_var_6; ;
-# 289 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 289 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, ____alias_loc_id_16, ____chimes_did_disable12, false); }
-# 298 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 298 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 298 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 298 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int findIndex_npm(double * CDF, int lengthCDF, double value);
 int findIndex_quick(double * CDF, int lengthCDF, double value); int findIndex(double * CDF, int lengthCDF, double value);
-int findIndex_resumable(double * CDF, int lengthCDF, double value){const int ____chimes_did_disable13 = new_stack((void *)(&findIndex), "findIndex", &____must_manage_findIndex, 3, 0, (size_t)(7756533236910310606UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 299 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int findIndex_resumable(double * CDF, int lengthCDF, double value){const int ____chimes_did_disable13 = new_stack((void *)(&findIndex), "findIndex", &____must_manage_findIndex, 3, 0, (size_t)(1037355509377746982UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 299 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int index; index = (-1) ;
-# 300 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 300 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; ;
-# 301 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 301 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < lengthCDF; x++){
-# 302 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 302 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   if(CDF[x] >= value){
-# 303 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 303 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    index = x;
-# 304 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 304 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    break;
-# 305 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 305 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 306 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 306 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 307 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 307 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if(index == -1){
-# 308 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 308 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (lengthCDF-1); rm_stack(false, 0UL, "findIndex", &____must_manage_findIndex, ____alias_loc_id_17, ____chimes_did_disable13, false); return ____chimes_ret_var_7; ;
-# 309 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 309 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 310 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 310 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (index); rm_stack(false, 0UL, "findIndex", &____must_manage_findIndex, ____alias_loc_id_17, ____chimes_did_disable13, false); return ____chimes_ret_var_8; ;
-# 311 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 311 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "findIndex", &____must_manage_findIndex, ____alias_loc_id_17, ____chimes_did_disable13, false); }
-# 322 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 322 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 322 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 322 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int findIndexBin_npm(double * CDF, int beginIndex, int endIndex, double value);
 int findIndexBin_quick(double * CDF, int beginIndex, int endIndex, double value); int findIndexBin(double * CDF, int beginIndex, int endIndex, double value);
-int findIndexBin_resumable(double * CDF, int beginIndex, int endIndex, double value){const int ____chimes_did_disable14 = new_stack((void *)(&findIndexBin), "findIndexBin", &____must_manage_findIndexBin, 4, 0, (size_t)(7756533236910310747UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 323 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int findIndexBin_resumable(double * CDF, int beginIndex, int endIndex, double value){const int ____chimes_did_disable14 = new_stack((void *)(&findIndexBin), "findIndexBin", &____must_manage_findIndexBin, 4, 0, (size_t)(1037355509377747123UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 323 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if (endIndex < beginIndex) { int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = (-1); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); return ____chimes_ret_var_9; ; };
-# 325 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 325 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int middleIndex; middleIndex = (beginIndex + ((endIndex - beginIndex)/2)) ;
-# 326 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 327 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 326 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 327 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if(CDF[middleIndex] >= value)
-# 328 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 328 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  {
-# 329 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 330 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 329 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 330 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   if (middleIndex == 0) { int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = (middleIndex); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); return ____chimes_ret_var_10; ; } else if (CDF[middleIndex-1] < value) { int ____chimes_ret_var_11; ; ____chimes_ret_var_11 = (middleIndex); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); return ____chimes_ret_var_11; ; } else if(CDF[middleIndex-1] == value)
-# 335 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 335 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   {
-# 336 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 336 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    while(middleIndex > 0 && CDF[middleIndex-1] == value)
-# 337 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 337 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    middleIndex--;
-# 338 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 338 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     int ____chimes_ret_var_12; ; ____chimes_ret_var_12 = (middleIndex); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); return ____chimes_ret_var_12; ;
-# 339 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 339 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 340 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 340 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 341 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 341 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if (CDF[middleIndex] > value) { int ____chimes_ret_var_13; ; call_lbl_0: ____chimes_ret_var_13 = (({ calling_npm("findIndexBin", 0); findIndexBin_npm(CDF, beginIndex, middleIndex+1, value); })); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); return ____chimes_ret_var_13; ; };
-# 343 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 343 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int ____chimes_ret_var_14; ; call_lbl_1: ____chimes_ret_var_14 = (({ calling_npm("findIndexBin", 0); findIndexBin_npm(CDF, middleIndex-1, endIndex, value); })); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); return ____chimes_ret_var_14; ;
-# 344 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 344 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); }
-# 345 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 346 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 345 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 346 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void particleFilter_kernel_npm(int *I, int IszX, int IszY, int Nfr, int * seed, int Nparticles, double *likelihood, double *arrayX, double *arrayY, double *xj, double *yj, double *CDF, double *u, double *objxy, int countOnes, int *ind, int k, int max_size, double *weights, double xe, double ye);
 void particleFilter_kernel_quick(int *I, int IszX, int IszY, int Nfr, int * seed, int Nparticles, double *likelihood, double *arrayX, double *arrayY, double *xj, double *yj, double *CDF, double *u, double *objxy, int countOnes, int *ind, int k, int max_size, double *weights, double xe, double ye); void particleFilter_kernel(int *I, int IszX, int IszY, int Nfr, int * seed, int Nparticles, double *likelihood, double *arrayX, double *arrayY, double *xj, double *yj, double *CDF, double *u, double *objxy, int countOnes, int *ind, int k, int max_size, double *weights, double xe, double ye);
 void particleFilter_kernel_resumable(int *I, int IszX, int IszY, int Nfr, int * seed,
-# 347 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 347 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         int Nparticles, double *likelihood, double *arrayX, double *arrayY,
-# 348 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 348 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         double *xj, double *yj, double *CDF, double *u, double *objxy,
-# 349 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 349 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         int countOnes, int *ind, int k, int max_size, double *weights,
-# 350 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-        double xe, double ye) {const int ____chimes_did_disable15 = new_stack((void *)(&particleFilter_kernel), "particleFilter_kernel", &____must_manage_particleFilter_kernel, 21, 0, (size_t)(7756533236910311467UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311471UL), (size_t)(0UL), (size_t)(7756533236910311473UL), (size_t)(7756533236910311474UL), (size_t)(7756533236910311475UL), (size_t)(7756533236910311476UL), (size_t)(7756533236910311477UL), (size_t)(7756533236910311478UL), (size_t)(7756533236910311479UL), (size_t)(7756533236910311480UL), (size_t)(0UL), (size_t)(7756533236910311482UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311485UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 351 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 350 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        double xe, double ye) {const int ____chimes_did_disable15 = new_stack((void *)(&particleFilter_kernel), "particleFilter_kernel", &____must_manage_particleFilter_kernel, 21, 0, (size_t)(1037355509377747843UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1037355509377747847UL), (size_t)(0UL), (size_t)(1037355509377747849UL), (size_t)(1037355509377747850UL), (size_t)(1037355509377747851UL), (size_t)(1037355509377747852UL), (size_t)(1037355509377747853UL), (size_t)(1037355509377747854UL), (size_t)(1037355509377747855UL), (size_t)(1037355509377747856UL), (size_t)(0UL), (size_t)(1037355509377747858UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1037355509377747861UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 351 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     int x; int y; ;
-# 352 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 352 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     int indX; int indY; ;
-# 353 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 353 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long set_arrays; call_lbl_0: set_arrays = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 354 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 355 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 354 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 355 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 356 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 357 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 358 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 359 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 360 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(arrayX, arrayY, Nparticles, seed) private(x)
-# 358 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 361 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 362 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 359 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 363 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
          call_lbl_1: arrayX[x] += 1 + 5*({ calling_npm("randn", 0); randn_npm(seed, x); });
-# 360 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 364 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
          call_lbl_2: arrayY[x] += -2 + 2*({ calling_npm("randn", 0); randn_npm(seed, x); });
-# 361 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 365 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 362 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 366 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 367 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 368 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 369 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long error; call_lbl_3: error = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 363 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 370 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       float ____chimes_unroll_var_0; call_lbl_4: ____chimes_unroll_var_0 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(set_arrays, error); })) ; printf("TIME TO SET ERROR TOOK: %f\n", ____chimes_unroll_var_0);
-# 364 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 371 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 372 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 373 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 374 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 375 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(likelihood, I, arrayX, arrayY, objxy, ind) private(x, y, indX, indY)
-# 366 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 376 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 377 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 367 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 368 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 369 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 370 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 371 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 372 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 378 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 379 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 380 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 381 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 382 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 383 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         for(y = 0; y < countOnes; y++){
-# 373 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 384 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
              call_lbl_5: indX = ({ calling_npm("roundDouble", 0); roundDouble_npm(arrayX[x]); }) + objxy[y*2 + 1];
-# 374 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 385 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
              call_lbl_6: indY = ({ calling_npm("roundDouble", 0); roundDouble_npm(arrayY[x]); }) + objxy[y*2];
-# 375 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 386 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
             ind[x*countOnes + y] = fabs(indX*IszY*Nfr + indY*Nfr + k);
-# 376 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 387 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
             if (ind[x*countOnes + y] >= max_size) {ind[x*countOnes + y] = 0; };
-# 378 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 389 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         }
-# 379 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 390 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         likelihood[x] = 0;
-# 380 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 391 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         for (y = 0; y < countOnes; y++) { likelihood[x] += (pow((I[ind[x*countOnes + y]] - 100),2) - pow((I[ind[x*countOnes + y]]-228),2))/50.0; };
-# 382 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 393 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         likelihood[x] = likelihood[x]/((double) countOnes);
-# 383 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 394 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 384 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 395 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 396 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 397 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 398 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long likelihood_time; call_lbl_7: likelihood_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 385 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 399 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       float ____chimes_unroll_var_1; call_lbl_8: ____chimes_unroll_var_1 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(error, likelihood_time); })) ; printf("TIME TO GET LIKELIHOODS TOOK: %f\n", ____chimes_unroll_var_1);
-# 386 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 387 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 400 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 401 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 402 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 403 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 404 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 405 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(Nparticles, weights, likelihood) private(x)
-# 389 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 406 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 407 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 390 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 408 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         weights[x] = weights[x] * exp(likelihood[x]);
-# 391 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 409 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 392 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 410 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 411 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 412 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 413 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 414 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long exponential; call_lbl_9: exponential = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 393 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 415 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       float ____chimes_unroll_var_2; call_lbl_10: ____chimes_unroll_var_2 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(likelihood_time, exponential); })) ; printf("TIME TO GET EXP TOOK: %f\n", ____chimes_unroll_var_2);
-# 394 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 416 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      double sumWeights; sumWeights = (0) ;
-# 395 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 417 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 418 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 419 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 420 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for private(x) reduction(+:sumWeights)
-# 396 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 421 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 422 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 397 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 423 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         sumWeights += weights[x];
-# 398 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 424 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 399 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 425 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 426 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 427 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 428 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long sum_time; call_lbl_11: sum_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 400 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 429 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       float ____chimes_unroll_var_3; call_lbl_12: ____chimes_unroll_var_3 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(exponential, sum_time); })) ; printf("TIME TO SUM WEIGHTS TOOK: %f\n", ____chimes_unroll_var_3);
-# 401 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 430 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 431 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 432 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 433 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(sumWeights, weights) private(x)
-# 402 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 434 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 435 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 403 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 436 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         weights[x] = weights[x]/sumWeights;
-# 404 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 437 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 405 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 438 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 439 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 440 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 441 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long normalize; call_lbl_13: normalize = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 406 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 442 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       float ____chimes_unroll_var_4; call_lbl_14: ____chimes_unroll_var_4 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(sum_time, normalize); })) ; printf("TIME TO NORMALIZE WEIGHTS TOOK: %f\n", ____chimes_unroll_var_4);
-# 407 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 443 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     xe = 0;
-# 408 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 444 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     ye = 0;
-# 409 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 410 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 445 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 446 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 447 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 448 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 449 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for private(x) reduction(+:xe, ye)
-# 411 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 450 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 451 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 412 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 452 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         xe += arrayX[x] * weights[x];
-# 413 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 453 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         ye += arrayY[x] * weights[x];
-# 414 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 454 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 415 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 455 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 456 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 457 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 458 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long move_time; call_lbl_15: move_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 416 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 459 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       float ____chimes_unroll_var_5; call_lbl_16: ____chimes_unroll_var_5 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(normalize, move_time); })) ; printf("TIME TO MOVE OBJECT TOOK: %f\n", ____chimes_unroll_var_5);
-# 417 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 460 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("XE: %lf\n", xe);
-# 418 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 461 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("YE: %lf\n", ye);
-# 419 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 462 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       double ____chimes_unroll_var_6; call_lbl_17: ____chimes_unroll_var_6 = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszY/2.0); })) ; double ____chimes_unroll_var_7; call_lbl_18: ____chimes_unroll_var_7 = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszX/2.0); })) ; double distance; distance = (sqrt( pow((double)(xe-(int)____chimes_unroll_var_6),2) + pow((double)(ye-(int)____chimes_unroll_var_7),2) )) ;
-# 420 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 463 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("%lf\n", distance);
-# 421 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 422 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 423 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 424 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 425 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 426 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 427 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 428 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 464 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 465 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 466 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 467 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 468 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 469 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 470 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 471 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     CDF[0] = weights[0];
-# 429 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 472 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 1; x < Nparticles; x++){
-# 430 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 473 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         CDF[x] = weights[x] + CDF[x-1];
-# 431 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 474 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 432 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 475 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long cum_sum; call_lbl_19: cum_sum = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 433 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 476 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       float ____chimes_unroll_var_8; call_lbl_20: ____chimes_unroll_var_8 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(move_time, cum_sum); })) ; printf("TIME TO CALC CUM SUM TOOK: %f\n", ____chimes_unroll_var_8);
-# 434 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 477 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      double u1; call_lbl_21: u1 = ((1/((double)(Nparticles)))*({ calling_npm("randu", 0); randu_npm(seed, 0); })) ;
-# 435 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 478 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 479 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 480 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 481 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(u, u1, Nparticles) private(x)
-# 436 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 482 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 483 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 437 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 484 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         u[x] = u1 + x/((double)(Nparticles));
-# 438 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 485 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 439 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 486 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 487 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 488 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 489 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long u_time; call_lbl_22: u_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 440 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 490 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       float ____chimes_unroll_var_9; call_lbl_23: ____chimes_unroll_var_9 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(cum_sum, u_time); })) ; printf("TIME TO CALC U TOOK: %f\n", ____chimes_unroll_var_9);
-# 441 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 491 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     int j; int i; ;
-# 442 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 443 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 492 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 493 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 494 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 495 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 496 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(CDF, Nparticles, xj, yj, u, arrayX, arrayY) private(i, j)
-# 444 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 497 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 498 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(j = 0; j < Nparticles; j++){
-# 445 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 499 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
          call_lbl_24: i = ({ calling_npm("findIndex", 0); findIndex_npm(CDF, Nparticles, u[j]); });
-# 446 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 500 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         if (i == -1) {i = Nparticles-1; };
-# 448 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 502 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         xj[j] = arrayX[i];
-# 449 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 503 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         yj[j] = arrayY[i];
-# 450 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 451 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 504 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 505 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 452 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 506 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 507 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 508 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 509 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long xyj_time; call_lbl_25: xyj_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 453 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 510 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       float ____chimes_unroll_var_10; call_lbl_26: ____chimes_unroll_var_10 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(u_time, xyj_time); })) ; printf("TIME TO CALC NEW ARRAY X AND Y TOOK: %f\n", ____chimes_unroll_var_10);
-# 454 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 455 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 456 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 511 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 512 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 513 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 457 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 458 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 514 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 515 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         arrayX[x] = xj[x];
-# 459 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 516 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         arrayY[x] = yj[x];
-# 460 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 517 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         weights[x] = 1/((double)(Nparticles));
-# 461 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 518 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 462 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 519 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long reset; call_lbl_27: reset = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 463 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 520 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       float ____chimes_unroll_var_11; call_lbl_28: ____chimes_unroll_var_11 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(xyj_time, reset); })) ; printf("TIME TO RESET WEIGHTS TOOK: %f\n", ____chimes_unroll_var_11);
-# 464 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 521 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "particleFilter_kernel", &____must_manage_particleFilter_kernel, ____alias_loc_id_19, ____chimes_did_disable15, false); }
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void particleFilter_quick(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles); void particleFilter(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles);
-void particleFilter_resumable(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles){const int ____chimes_did_disable16 = new_stack((void *)(&particleFilter), "particleFilter", (int *)0, 6, 6, (size_t)(7756533236910311839UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311843UL), (size_t)(0UL), "particleFilter|I|0", (int *)0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "particleFilter|IszX|0", (int *)0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0, "particleFilter|IszY|0", (int *)0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "particleFilter|Nfr|0", (int *)0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "particleFilter|seed|0", (int *)0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "particleFilter|Nparticles|0", (int *)0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0) ; int k;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+void particleFilter_resumable(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles){const int ____chimes_did_disable16 = new_stack((void *)(&particleFilter), "particleFilter", (int *)0, 6, 6, (size_t)(1037355509377748215UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1037355509377748219UL), (size_t)(0UL), "particleFilter|I|0", (int *)0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "particleFilter|IszX|0", (int *)0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0, "particleFilter|IszY|0", (int *)0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "particleFilter|Nfr|0", (int *)0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "particleFilter|seed|0", (int *)0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "particleFilter|Nparticles|0", (int *)0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0) ; int k;
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int *ind;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double *u;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double *CDF;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double *yj;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double *xj;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double *arrayY;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double *arrayX;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double *likelihood;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double *weights;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double *objxy;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int countOnes;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int *disk;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double ye;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double xe;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int max_size;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  register_stack_vars(16, "particleFilter|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "particleFilter|ind|0", (int *)0x0, "i32*", (void *)(&ind), (size_t)8, 1, 0, 0, "particleFilter|u|0", (int *)0x0, "double*", (void *)(&u), (size_t)8, 1, 0, 0, "particleFilter|CDF|0", (int *)0x0, "double*", (void *)(&CDF), (size_t)8, 1, 0, 0, "particleFilter|yj|0", (int *)0x0, "double*", (void *)(&yj), (size_t)8, 1, 0, 0, "particleFilter|xj|0", (int *)0x0, "double*", (void *)(&xj), (size_t)8, 1, 0, 0, "particleFilter|arrayY|0", (int *)0x0, "double*", (void *)(&arrayY), (size_t)8, 1, 0, 0, "particleFilter|arrayX|0", (int *)0x0, "double*", (void *)(&arrayX), (size_t)8, 1, 0, 0, "particleFilter|likelihood|0", (int *)0x0, "double*", (void *)(&likelihood), (size_t)8, 1, 0, 0, "particleFilter|weights|0", (int *)0x0, "double*", (void *)(&weights), (size_t)8, 1, 0, 0, "particleFilter|objxy|0", (int *)0x0, "double*", (void *)(&objxy), (size_t)8, 1, 0, 0, "particleFilter|countOnes|0", (int *)0x0, "i32", (void *)(&countOnes), (size_t)4, 0, 0, 0, "particleFilter|disk|0", (int *)0x0, "i32*", (void *)(&disk), (size_t)8, 1, 0, 0, "particleFilter|ye|0", (int *)0x0, "double", (void *)(&ye), (size_t)8, 0, 0, 0, "particleFilter|xe|0", (int *)0x0, "double", (void *)(&xe), (size_t)8, 0, 0, 0, "particleFilter|max_size|0", (int *)0x0, "i32", (void *)(&max_size), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(12): { goto call_lbl_12; } default: { chimes_error(); } } } ; ;
-# 478 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 479 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 535 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 536 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     max_size = (IszX*IszY*Nfr) ;
-# 480 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 537 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   long long start; call_lbl_0: start = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 481 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 482 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 538 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 539 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      call_lbl_1: xe = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszY/2.0); })) ;
-# 483 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 540 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      call_lbl_2: ye = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszX/2.0); })) ;
-# 484 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 485 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 486 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 541 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 542 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 543 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int radius; radius = (5) ;
-# 487 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 544 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int diameter; diameter = (radius*2 - 1) ;
-# 488 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    disk = ((int *) ({ void *____chimes_tmp_ptr = malloc((diameter * diameter * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, diameter*diameter*sizeof(int), 7756533236910311570UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 489 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 545 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    disk = ((int *) ({ void *____chimes_tmp_ptr = malloc((diameter * diameter * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, diameter*diameter*sizeof(int), 1037355509377747946UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 546 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   call_lbl_3: ({ calling_npm("strelDisk", 0); strelDisk_npm(disk, radius); });
-# 490 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 547 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     countOnes = (0) ;
-# 491 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 548 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; ;
-# 492 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 549 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < diameter; x++){
-# 493 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 550 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(y = 0; y < diameter; y++){
-# 494 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 551 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    if(disk[x*diameter + y]) {
-# 495 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 552 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     countOnes++;
-# 496 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 553 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
             }
-# 497 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 554 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 498 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 555 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 499 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    objxy = ((double *) ({ void *____chimes_tmp_ptr = malloc((countOnes * 2 * sizeof(double)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, countOnes*2*sizeof(double), 7756533236910311790UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 500 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 556 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    objxy = ((double *) ({ void *____chimes_tmp_ptr = malloc((countOnes * 2 * sizeof(double)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, countOnes*2*sizeof(double), 1037355509377748166UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 557 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   call_lbl_4: ({ calling_npm("getneighbors", 0); getneighbors_npm(disk, objxy, radius); });
-# 501 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 502 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 558 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 559 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   long long get_neighbors; call_lbl_5: get_neighbors = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 503 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 560 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    float ____chimes_unroll_var_12; call_lbl_6: ____chimes_unroll_var_12 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, get_neighbors); })) ; printf("TIME TO GET NEIGHBORS TOOK: %f\n", ____chimes_unroll_var_12);
-# 504 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 505 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    weights = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311658UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 506 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 561 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 562 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    weights = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 1037355509377748034UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 563 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 564 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 565 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 566 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(weights, Nparticles) private(x)
-# 507 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 567 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 568 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < Nparticles; x++){
-# 508 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 569 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   weights[x] = 1/((double)(Nparticles));
-# 509 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 570 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 510 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 571 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 572 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 573 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 574 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   long long get_weights; call_lbl_7: get_weights = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 511 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 575 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    float ____chimes_unroll_var_13; call_lbl_8: ____chimes_unroll_var_13 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_neighbors, get_weights); })) ; printf("TIME TO GET WEIGHTSTOOK: %f\n", ____chimes_unroll_var_13);
-# 512 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 513 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    likelihood = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311783UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 514 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    arrayX = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311745UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 515 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    arrayY = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311751UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 516 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    xj = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311786UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 517 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    yj = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311787UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 518 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    CDF = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311788UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 519 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    u = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311789UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 520 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    ind = ((int*) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * countOnes * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*countOnes*Nparticles, 7756533236910311792UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 521 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 576 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 577 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    likelihood = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 1037355509377748159UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 578 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    arrayX = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 1037355509377748121UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 579 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    arrayY = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 1037355509377748127UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 580 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    xj = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 1037355509377748162UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 581 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    yj = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 1037355509377748163UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 582 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    CDF = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 1037355509377748164UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 583 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    u = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 1037355509377748165UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 584 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    ind = ((int*) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * countOnes * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*countOnes*Nparticles, 1037355509377748168UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 585 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 586 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 587 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 588 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(arrayX, arrayY, xe, ye) private(x)
-# 522 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 589 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 590 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < Nparticles; x++){
-# 523 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 591 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   arrayX[x] = xe;
-# 524 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 592 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   arrayY[x] = ye;
-# 525 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 593 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 526 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 594 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 595 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 596 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 597 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   ;
-# 527 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 528 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 598 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 599 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    long long ____chimes_unroll_var_14; call_lbl_9: ____chimes_unroll_var_14 = (({ calling_npm("get_time", 0); get_time_npm(); })) ; float ____chimes_unroll_var_15; call_lbl_10: ____chimes_unroll_var_15 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_weights, ____chimes_unroll_var_14); })) ; printf("TIME TO SET ARRAYS TOOK: %f\n", ____chimes_unroll_var_15);
-# 529 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 530 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 600 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 601 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(k = 1; k < Nfr; k++){
-# 531 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 532 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 602 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 603 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
          call_lbl_11: ({ calling_npm("particleFilter_kernel", 0); particleFilter_kernel_npm(I, IszX, IszY, Nfr, seed, Nparticles, likelihood, arrayX, arrayY, xj, yj, CDF, u, objxy, countOnes, ind, k, max_size, weights, xe, ye); });
-# 535 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 536 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 537 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 606 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 607 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 608 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
          call_lbl_12: checkpoint_transformed(12, ____alias_loc_id_2);
-# 538 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 539 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 609 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 610 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 540 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)disk) - sizeof(void *)), 7756533236910311570UL);free((((unsigned char *)disk) - sizeof(void *))); }) ;
-# 541 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)objxy) - sizeof(void *)), 7756533236910311790UL);free((((unsigned char *)objxy) - sizeof(void *))); }) ;
-# 542 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)weights) - sizeof(void *)), 7756533236910311658UL);free((((unsigned char *)weights) - sizeof(void *))); }) ;
-# 543 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)likelihood) - sizeof(void *)), 7756533236910311783UL);free((((unsigned char *)likelihood) - sizeof(void *))); }) ;
-# 544 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)xj) - sizeof(void *)), 7756533236910311786UL);free((((unsigned char *)xj) - sizeof(void *))); }) ;
-# 545 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)yj) - sizeof(void *)), 7756533236910311787UL);free((((unsigned char *)yj) - sizeof(void *))); }) ;
-# 546 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)arrayX) - sizeof(void *)), 7756533236910311745UL);free((((unsigned char *)arrayX) - sizeof(void *))); }) ;
-# 547 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)arrayY) - sizeof(void *)), 7756533236910311751UL);free((((unsigned char *)arrayY) - sizeof(void *))); }) ;
-# 548 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)CDF) - sizeof(void *)), 7756533236910311788UL);free((((unsigned char *)CDF) - sizeof(void *))); }) ;
-# 549 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)u) - sizeof(void *)), 7756533236910311789UL);free((((unsigned char *)u) - sizeof(void *))); }) ;
-# 550 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)ind) - sizeof(void *)), 7756533236910311792UL);free((((unsigned char *)ind) - sizeof(void *))); }) ;
-# 551 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 611 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)disk) - sizeof(void *)), 1037355509377747946UL);free((((unsigned char *)disk) - sizeof(void *))); }) ;
+# 612 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)objxy) - sizeof(void *)), 1037355509377748166UL);free((((unsigned char *)objxy) - sizeof(void *))); }) ;
+# 613 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)weights) - sizeof(void *)), 1037355509377748034UL);free((((unsigned char *)weights) - sizeof(void *))); }) ;
+# 614 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)likelihood) - sizeof(void *)), 1037355509377748159UL);free((((unsigned char *)likelihood) - sizeof(void *))); }) ;
+# 615 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)xj) - sizeof(void *)), 1037355509377748162UL);free((((unsigned char *)xj) - sizeof(void *))); }) ;
+# 616 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)yj) - sizeof(void *)), 1037355509377748163UL);free((((unsigned char *)yj) - sizeof(void *))); }) ;
+# 617 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)arrayX) - sizeof(void *)), 1037355509377748121UL);free((((unsigned char *)arrayX) - sizeof(void *))); }) ;
+# 618 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)arrayY) - sizeof(void *)), 1037355509377748127UL);free((((unsigned char *)arrayY) - sizeof(void *))); }) ;
+# 619 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)CDF) - sizeof(void *)), 1037355509377748164UL);free((((unsigned char *)CDF) - sizeof(void *))); }) ;
+# 620 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)u) - sizeof(void *)), 1037355509377748165UL);free((((unsigned char *)u) - sizeof(void *))); }) ;
+# 621 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)ind) - sizeof(void *)), 1037355509377748168UL);free((((unsigned char *)ind) - sizeof(void *))); }) ;
+# 622 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "particleFilter", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); }
-# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 623 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int main_quick(int argc, char * argv[]); int main(int argc, char * argv[]);
-int main_resumable(int argc, char * argv[]){const int ____chimes_did_disable17 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7756533236910312111UL)) ; long long endVideoSequence;
-# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int main_resumable(int argc, char * argv[]){const int ____chimes_did_disable17 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1037355509377748487UL)) ; long long endVideoSequence;
+# 623 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 long long start;
-# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 623 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int *I;
-# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 623 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int *seed;
-# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 623 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int Nparticles;
-# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 623 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int Nfr;
-# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 623 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int IszY;
-# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 623 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int IszX;
-# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 623 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  register_stack_vars(8, "main|endVideoSequence|0", (int *)0x0, "i64", (void *)(&endVideoSequence), (size_t)8, 0, 0, 0, "main|start|0", (int *)0x0, "i64", (void *)(&start), (size_t)8, 0, 0, 0, "main|I|0", (int *)0x0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "main|seed|0", (int *)0x0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "main|Nparticles|0", (int *)0x0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0, "main|Nfr|0", (int *)0x0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "main|IszY|0", (int *)0x0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "main|IszX|0", (int *)0x0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
-# 553 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 554 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 624 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 625 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   char *usage; usage = ("openmp.out -x <dimX> -y <dimY> -z <Nfr> -np <Nparticles>") ;
-# 555 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 556 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 626 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 627 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if(argc != 9)
-# 557 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 628 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  {
-# 558 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 629 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf("%s\n", usage);
-# 559 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 630 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    int ____chimes_ret_var_15; ; ____chimes_ret_var_15 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_15; ;
-# 560 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 631 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 561 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 562 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 632 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 633 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if( strcmp( argv[1], "-x" ) || strcmp( argv[3], "-y" ) || strcmp( argv[5], "-z" ) || strcmp( argv[7], "-np" ) ) {
-# 563 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 634 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf( "%s\n",usage );
-# 564 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 635 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    int ____chimes_ret_var_16; ; ____chimes_ret_var_16 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_16; ;
-# 565 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 636 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 566 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 567 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 637 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 638 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      ;
-# 568 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 569 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 570 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 639 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 640 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 641 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if( sscanf( argv[2], "%d", &IszX ) == (-1) ) {
-# 571 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 642 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("ERROR: dimX input is incorrect");
-# 572 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 643 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      int ____chimes_ret_var_17; ; ____chimes_ret_var_17 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_17; ;
-# 573 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 644 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 574 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 575 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 645 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 646 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if( IszX <= 0 ) {
-# 576 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 647 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf("dimX must be > 0\n");
-# 577 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 648 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    int ____chimes_ret_var_18; ; ____chimes_ret_var_18 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_18; ;
-# 578 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 649 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 579 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 580 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 581 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 650 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 651 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 652 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if( sscanf( argv[4], "%d", &IszY ) == (-1) ) {
-# 582 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 653 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("ERROR: dimY input is incorrect");
-# 583 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 654 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      int ____chimes_ret_var_19; ; ____chimes_ret_var_19 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_19; ;
-# 584 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 655 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 585 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 586 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 656 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 657 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if( IszY <= 0 ) {
-# 587 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 658 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf("dimY must be > 0\n");
-# 588 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 659 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    int ____chimes_ret_var_20; ; ____chimes_ret_var_20 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_20; ;
-# 589 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 660 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 590 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 591 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 592 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 661 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 662 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 663 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if( sscanf( argv[6], "%d", &Nfr ) == (-1) ) {
-# 593 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 664 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("ERROR: Number of frames input is incorrect");
-# 594 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 665 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      int ____chimes_ret_var_21; ; ____chimes_ret_var_21 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_21; ;
-# 595 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 666 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 596 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 597 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 667 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 668 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if( Nfr <= 0 ) {
-# 598 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 669 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf("number of frames must be > 0\n");
-# 599 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 670 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    int ____chimes_ret_var_22; ; ____chimes_ret_var_22 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_22; ;
-# 600 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 671 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 601 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 602 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 603 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 672 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 673 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 674 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if( sscanf( argv[8], "%d", &Nparticles ) == (-1) ) {
-# 604 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 675 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("ERROR: Number of particles input is incorrect");
-# 605 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 676 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      int ____chimes_ret_var_23; ; ____chimes_ret_var_23 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_23; ;
-# 606 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 677 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 607 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 608 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 678 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 679 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if( Nparticles <= 0 ) {
-# 609 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 680 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf("Number of particles must be > 0\n");
-# 610 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 681 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    int ____chimes_ret_var_24; ; ____chimes_ret_var_24 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_24; ;
-# 611 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 682 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 612 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 613 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    seed = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*Nparticles, 7756533236910312030UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 614 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 683 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 684 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    seed = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*Nparticles, 1037355509377748406UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 685 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int i; ;
-# 615 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 686 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for (i = 0; i < Nparticles; i++) { seed[i] = time(0)*i; };
-# 617 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 618 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    I = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * IszX * IszY * Nfr) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 7756533236910312048UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 619 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 688 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 689 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    I = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * IszX * IszY * Nfr) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 1037355509377748424UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 690 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      call_lbl_0: start = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 620 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 621 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  call_lbl_1: ({ calling((void*)videoSequence, 1, ____alias_loc_id_4, 0UL, 5, (size_t)(7756533236910312048UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910312030UL)); (videoSequence)(I, IszX, IszY, Nfr, seed); }) ;
-# 622 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 691 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 692 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  call_lbl_1: ({ calling((void*)videoSequence, 1, ____alias_loc_id_4, 0UL, 5, (size_t)(1037355509377748424UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1037355509377748406UL)); (videoSequence)(I, IszX, IszY, Nfr, seed); }) ;
+# 693 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      call_lbl_2: endVideoSequence = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 623 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 624 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 625 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 626 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 627 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 628 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 694 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 695 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 696 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 697 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 698 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 699 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    float ____chimes_unroll_var_16; call_lbl_3: ____chimes_unroll_var_16 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endVideoSequence); })) ; printf("VIDEO SEQUENCE TOOK %f\n", ____chimes_unroll_var_16);
-# 629 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 630 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  call_lbl_4: ({ calling((void*)particleFilter, 4, ____alias_loc_id_3, 0UL, 6, (size_t)(7756533236910312048UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910312030UL), (size_t)(0UL)); (particleFilter)(I, IszX, IszY, Nfr, seed, Nparticles); }) ;
-# 631 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 700 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 701 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  call_lbl_4: ({ calling((void*)particleFilter, 4, ____alias_loc_id_3, 0UL, 6, (size_t)(1037355509377748424UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1037355509377748406UL), (size_t)(0UL)); (particleFilter)(I, IszX, IszY, Nfr, seed, Nparticles); }) ;
+# 702 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   long long endParticleFilter; call_lbl_5: endParticleFilter = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 632 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 703 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    float ____chimes_unroll_var_17; call_lbl_6: ____chimes_unroll_var_17 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(endVideoSequence, endParticleFilter); })) ; printf("PARTICLE FILTER TOOK %f\n", ____chimes_unroll_var_17);
-# 633 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 704 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    float ____chimes_unroll_var_18; call_lbl_7: ____chimes_unroll_var_18 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endParticleFilter); })) ; printf("ENTIRE PROGRAM TOOK %f\n", ____chimes_unroll_var_18);
-# 634 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 635 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)seed) - sizeof(void *)), 7756533236910312030UL);free((((unsigned char *)seed) - sizeof(void *))); }) ;
-# 636 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)I) - sizeof(void *)), 7756533236910312048UL);free((((unsigned char *)I) - sizeof(void *))); }) ;
-# 637 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 705 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 706 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)seed) - sizeof(void *)), 1037355509377748406UL);free((((unsigned char *)seed) - sizeof(void *))); }) ;
+# 707 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)I) - sizeof(void *)), 1037355509377748424UL);free((((unsigned char *)I) - sizeof(void *))); }) ;
+# 708 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_25; ;
-# 638 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 709 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); }
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 long long get_time_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0) ; ; ;
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   struct timeval tv; ;
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  gettimeofday(&tv, __null);
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   long long ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((tv.tv_sec * 1000000) + tv.tv_usec); rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_5, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_5, ____chimes_did_disable0, false); }
 
 long long get_time() { return (____chimes_replaying ? get_time_resumable() : get_time_quick()); }
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 float elapsed_time_quick(long long start_time, long long end_time) {const int ____chimes_did_disable1 = new_stack((void *)(&elapsed_time), "elapsed_time", &____must_manage_elapsed_time, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
          float ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((float) (end_time - start_time) / (1000 * 1000)); rm_stack(false, 0UL, "elapsed_time", &____must_manage_elapsed_time, ____alias_loc_id_6, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "elapsed_time", &____must_manage_elapsed_time, ____alias_loc_id_6, ____chimes_did_disable1, false); }
 
 float elapsed_time(long long start_time, long long end_time) { return (____chimes_replaying ? elapsed_time_resumable(start_time, end_time) : elapsed_time_quick(start_time, end_time)); }
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double roundDouble_quick(double value){const int ____chimes_did_disable2 = new_stack((void *)(&roundDouble), "roundDouble", &____must_manage_roundDouble, 1, 0, (size_t)(0UL)) ; ; ;
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int newValue; newValue = ((int)(value)) ;
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if (value - newValue < .5) { double ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (newValue); rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_7, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ; } else { double ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (newValue++); rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_7, ____chimes_did_disable2, false); return ____chimes_ret_var_3; ; } ;
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_7, ____chimes_did_disable2, false); }
 
 double roundDouble(double value) { return (____chimes_replaying ? roundDouble_resumable(value) : roundDouble_quick(value)); }
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-void setIf_quick(int testValue, int newValue, int * array3D, int * dimX, int * dimY, int * dimZ){const int ____chimes_did_disable3 = new_stack((void *)(&setIf), "setIf", &____must_manage_setIf, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910309662UL), (size_t)(7756533236910309663UL), (size_t)(7756533236910309664UL), (size_t)(7756533236910309665UL)) ; ; ;
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+void setIf_quick(int testValue, int newValue, int * array3D, int * dimX, int * dimY, int * dimZ){const int ____chimes_did_disable3 = new_stack((void *)(&setIf), "setIf", &____must_manage_setIf, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(1037355509377746038UL), (size_t)(1037355509377746039UL), (size_t)(1037355509377746040UL), (size_t)(1037355509377746041UL)) ; ; ;
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; int z; ;
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 65 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < *dimX; x++){
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(y = 0; y < *dimY; y++){
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    for(z = 0; z < *dimZ; z++){
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     if (array3D[x * *dimY * *dimZ+y * *dimZ + z] == testValue) {array3D[x * *dimY * *dimZ + y * *dimZ + z] = newValue; };
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    }
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "setIf", &____must_manage_setIf, ____alias_loc_id_8, ____chimes_did_disable3, false); }
 
 void setIf(int testValue, int newValue, int * array3D, int * dimX, int * dimY, int * dimZ) { (____chimes_replaying ? setIf_resumable(testValue, newValue, array3D, dimX, dimY, dimZ) : setIf_quick(testValue, newValue, array3D, dimX, dimY, dimZ)); }
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double randu_quick(int * seed, int index)
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&randu), "randu", &____must_manage_randu, 2, 0, (size_t)(7756533236910309709UL), (size_t)(0UL)) ; ; ;
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{const int ____chimes_did_disable4 = new_stack((void *)(&randu), "randu", &____must_manage_randu, 2, 0, (size_t)(1037355509377746085UL), (size_t)(0UL)) ; ; ;
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int num; num = (A*seed[index] + C) ;
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  seed[index] = num % M;
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (fabs(seed[index]/((double) M))); rm_stack(false, 0UL, "randu", &____must_manage_randu, ____alias_loc_id_9, ____chimes_did_disable4, false); return ____chimes_ret_var_4; ;
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "randu", &____must_manage_randu, ____alias_loc_id_9, ____chimes_did_disable4, false); }
 
 double randu(int * seed, int index) { return (____chimes_replaying ? randu_resumable(seed, index) : randu_quick(seed, index)); }
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-double randn_quick(int * seed, int index){const int ____chimes_did_disable5 = new_stack((void *)(&randn), "randn", &____must_manage_randn, 2, 0, (size_t)(7756533236910309751UL), (size_t)(0UL)) ; ; ;
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double randn_quick(int * seed, int index){const int ____chimes_did_disable5 = new_stack((void *)(&randn), "randn", &____must_manage_randn, 2, 0, (size_t)(1037355509377746127UL), (size_t)(0UL)) ; ; ;
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double u; call_lbl_0: u = (({ calling_npm("randu", 0); randu_npm(seed, index); })) ;
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double v; call_lbl_1: v = (({ calling_npm("randu", 0); randu_npm(seed, index); })) ;
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double cosine; cosine = (cos(2*3.1415926535897932*v)) ;
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double rt; rt = (-2*log(u)) ;
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (sqrt(rt)*cosine); rm_stack(false, 0UL, "randn", &____must_manage_randn, ____alias_loc_id_10, ____chimes_did_disable5, false); return ____chimes_ret_var_5; ;
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "randn", &____must_manage_randn, ____alias_loc_id_10, ____chimes_did_disable5, false); }
 
 double randn(int * seed, int index) { return (____chimes_replaying ? randn_resumable(seed, index) : randn_quick(seed, index)); }
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-void addNoise_quick(int * array3D, int * dimX, int * dimY, int * dimZ, int * seed){const int ____chimes_did_disable6 = new_stack((void *)(&addNoise), "addNoise", &____must_manage_addNoise, 5, 0, (size_t)(7756533236910309855UL), (size_t)(7756533236910309856UL), (size_t)(7756533236910309857UL), (size_t)(7756533236910309858UL), (size_t)(7756533236910309859UL)) ; ; ;
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+void addNoise_quick(int * array3D, int * dimX, int * dimY, int * dimZ, int * seed){const int ____chimes_did_disable6 = new_stack((void *)(&addNoise), "addNoise", &____must_manage_addNoise, 5, 0, (size_t)(1037355509377746231UL), (size_t)(1037355509377746232UL), (size_t)(1037355509377746233UL), (size_t)(1037355509377746234UL), (size_t)(1037355509377746235UL)) ; ; ;
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; int z; ;
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < *dimX; x++){
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(y = 0; y < *dimY; y++){
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    for(z = 0; z < *dimZ; z++){
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      call_lbl_0: array3D[x * *dimY * *dimZ + y * *dimZ + z] = array3D[x * *dimY * *dimZ + y * *dimZ + z] + (int)(5*({ calling_npm("randn", 0); randn_npm(seed, 0); }));
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    }
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "addNoise", &____must_manage_addNoise, ____alias_loc_id_11, ____chimes_did_disable6, false); }
 
 void addNoise(int * array3D, int * dimX, int * dimY, int * dimZ, int * seed) { (____chimes_replaying ? addNoise_resumable(array3D, dimX, dimY, dimZ, seed) : addNoise_quick(array3D, dimX, dimY, dimZ, seed)); }
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void strelDisk_quick(int * disk, int radius)
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&strelDisk), "strelDisk", &____must_manage_strelDisk, 2, 0, (size_t)(7756533236910309931UL), (size_t)(0UL)) ; ; ;
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{const int ____chimes_did_disable7 = new_stack((void *)(&strelDisk), "strelDisk", &____must_manage_strelDisk, 2, 0, (size_t)(1037355509377746307UL), (size_t)(0UL)) ; ; ;
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int diameter; diameter = (radius*2 - 1) ;
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; ;
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < diameter; x++){
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(y = 0; y < diameter; y++){
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     double distance; distance = (sqrt(pow((double)(x-radius+1),2) + pow((double)(y-radius+1),2))) ;
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    if (distance < radius) {disk[x*diameter + y] = 1; };
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "strelDisk", &____must_manage_strelDisk, ____alias_loc_id_12, ____chimes_did_disable7, false); }
 
 void strelDisk(int * disk, int radius) { (____chimes_replaying ? strelDisk_resumable(disk, radius) : strelDisk_quick(disk, radius)); }
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void dilate_matrix_quick(int * matrix, int posX, int posY, int posZ, int dimX, int dimY, int dimZ, int error)
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&dilate_matrix), "dilate_matrix", &____must_manage_dilate_matrix, 8, 0, (size_t)(7756533236910310082UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 151 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{const int ____chimes_did_disable8 = new_stack((void *)(&dilate_matrix), "dilate_matrix", &____must_manage_dilate_matrix, 8, 0, (size_t)(1037355509377746458UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+# 152 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int startX; startX = (posX - error) ;
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 153 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  while(startX < 0)
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 154 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  startX++;
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 155 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int startY; startY = (posY - error) ;
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 156 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  while(startY < 0)
-# 157 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 157 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  startY++;
-# 158 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 158 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int endX; endX = (posX + error) ;
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 159 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  while(endX > dimX)
-# 160 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 160 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  endX--;
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 161 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int endY; endY = (posY + error) ;
-# 162 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 162 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  while(endY > dimY)
-# 163 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 163 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  endY--;
-# 164 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 164 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; ;
-# 165 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 165 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = startX; x < endX; x++){
-# 166 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 166 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(y = startY; y < endY; y++){
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 167 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     double distance; distance = (sqrt( pow((double)(x-posX),2) + pow((double)(y-posY),2) )) ;
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 168 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    if (distance < error) {matrix[x*dimY*dimZ + y*dimZ + posZ] = 1; };
-# 170 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 170 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 171 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 171 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 172 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "dilate_matrix", &____must_manage_dilate_matrix, ____alias_loc_id_13, ____chimes_did_disable8, false); }
 
 void dilate_matrix(int * matrix, int posX, int posY, int posZ, int dimX, int dimY, int dimZ, int error) { (____chimes_replaying ? dilate_matrix_resumable(matrix, posX, posY, posZ, dimX, dimY, dimZ, error) : dilate_matrix_quick(matrix, posX, posY, posZ, dimX, dimY, dimZ, error)); }
-# 183 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 183 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void imdilate_disk_quick(int * matrix, int dimX, int dimY, int dimZ, int error, int * newMatrix)
-# 184 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&imdilate_disk), "imdilate_disk", &____must_manage_imdilate_disk, 6, 0, (size_t)(7756533236910310175UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910310180UL)) ; ; ;
-# 185 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 184 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+{const int ____chimes_did_disable9 = new_stack((void *)(&imdilate_disk), "imdilate_disk", &____must_manage_imdilate_disk, 6, 0, (size_t)(1037355509377746551UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1037355509377746556UL)) ; ; ;
+# 185 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; int z; ;
-# 186 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 186 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(z = 0; z < dimZ; z++){
-# 187 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 187 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(x = 0; x < dimX; x++){
-# 188 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 188 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    for(y = 0; y < dimY; y++){
-# 189 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 189 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     if(matrix[x*dimY*dimZ + y*dimZ + z] == 1){
-# 190 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 190 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       call_lbl_0: ({ calling_npm("dilate_matrix", 0); dilate_matrix_npm(newMatrix, x, y, z, dimX, dimY, dimZ, error); });
-# 191 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 191 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 192 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 192 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    }
-# 193 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 193 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 194 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 194 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 195 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 195 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "imdilate_disk", &____must_manage_imdilate_disk, ____alias_loc_id_14, ____chimes_did_disable9, false); }
 
 void imdilate_disk(int * matrix, int dimX, int dimY, int dimZ, int error, int * newMatrix) { (____chimes_replaying ? imdilate_disk_resumable(matrix, dimX, dimY, dimZ, error, newMatrix) : imdilate_disk_quick(matrix, dimX, dimY, dimZ, error, newMatrix)); }
-# 203 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-void getneighbors_quick(int * se, double * neighbors, int radius){const int ____chimes_did_disable10 = new_stack((void *)(&getneighbors), "getneighbors", &____must_manage_getneighbors, 3, 0, (size_t)(7756533236910310267UL), (size_t)(7756533236910310268UL), (size_t)(0UL)) ; ; ;
-# 204 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 203 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+void getneighbors_quick(int * se, double * neighbors, int radius){const int ____chimes_did_disable10 = new_stack((void *)(&getneighbors), "getneighbors", &____must_manage_getneighbors, 3, 0, (size_t)(1037355509377746643UL), (size_t)(1037355509377746644UL), (size_t)(0UL)) ; ; ;
+# 204 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; ;
-# 205 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 205 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int neighY; neighY = (0) ;
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 206 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int center; center = (radius - 1) ;
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 207 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int diameter; diameter = (radius*2 -1) ;
-# 208 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 208 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < diameter; x++){
-# 209 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 209 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(y = 0; y < diameter; y++){
-# 210 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 210 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    if(se[x*diameter + y]){
-# 211 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 211 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     neighbors[neighY*2] = (int)(y - center);
-# 212 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 212 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     neighbors[neighY*2 + 1] = (int)(x - center);
-# 213 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 213 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     neighY++;
-# 214 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 214 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    }
-# 215 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 215 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 216 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 216 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 217 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "getneighbors", &____must_manage_getneighbors, ____alias_loc_id_15, ____chimes_did_disable10, false); }
 
 void getneighbors(int * se, double * neighbors, int radius) { (____chimes_replaying ? getneighbors_resumable(se, neighbors, radius) : getneighbors_quick(se, neighbors, radius)); }
-# 230 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-void videoSequence_quick(int * I, int IszX, int IszY, int Nfr, int * seed){const int ____chimes_did_disable11 = new_stack((void *)(&videoSequence), "videoSequence", (int *)0, 5, 5, (size_t)(7756533236910310478UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910310482UL), "videoSequence|I|0", (int *)0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "videoSequence|IszX|0", (int *)0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0, "videoSequence|IszY|0", (int *)0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "videoSequence|Nfr|0", (int *)0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "videoSequence|seed|0", (int *)0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0) ; ; ;
-# 231 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 230 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+void videoSequence_quick(int * I, int IszX, int IszY, int Nfr, int * seed){const int ____chimes_did_disable11 = new_stack((void *)(&videoSequence), "videoSequence", (int *)0, 5, 5, (size_t)(1037355509377746854UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1037355509377746858UL), "videoSequence|I|0", (int *)0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "videoSequence|IszX|0", (int *)0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0, "videoSequence|IszY|0", (int *)0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "videoSequence|Nfr|0", (int *)0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "videoSequence|seed|0", (int *)0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0) ; ; ;
+# 231 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int k; ;
-# 232 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 232 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int max_size; max_size = (IszX*IszY*Nfr) ;
-# 233 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 234 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 233 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 234 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int x0; call_lbl_0: x0 = ((int)({ calling_npm("roundDouble", 0); roundDouble_npm(IszY/2.0); })) ;
-# 235 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 235 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int y0; call_lbl_1: y0 = ((int)({ calling_npm("roundDouble", 0); roundDouble_npm(IszX/2.0); })) ;
-# 236 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 236 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  I[x0 *IszY *Nfr + y0 * Nfr + 0] = 1;
-# 237 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 238 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 239 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 237 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 238 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 239 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int xk; int yk; int pos; ;
-# 240 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 240 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(k = 1; k < Nfr; k++){
-# 241 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 241 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   xk = abs(x0 + (k-1));
-# 242 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 242 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   yk = abs(y0 - 2*(k-1));
-# 243 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 243 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   pos = yk * IszY * Nfr + xk *Nfr + k;
-# 244 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 244 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   if (pos >= max_size) {pos = 0; };
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 246 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   I[pos] = 1;
-# 247 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 247 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 248 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 249 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 250 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 248 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 249 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 250 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
          call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_1);
-# 251 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 252 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 253 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 254 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  int *newMatrix; newMatrix = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * IszX * IszY * Nfr) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 7756533236910310433UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 255 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 251 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 252 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 253 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 254 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  int *newMatrix; newMatrix = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * IszX * IszY * Nfr) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 1037355509377746809UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 255 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   call_lbl_3: ({ calling_npm("imdilate_disk", 0); imdilate_disk_npm(I, IszX, IszY, Nfr, 5, newMatrix); });
-# 256 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 256 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; ;
-# 257 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 257 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < IszX; x++){
-# 258 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 258 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(y = 0; y < IszY; y++){
-# 259 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 259 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    for(k = 0; k < Nfr; k++){
-# 260 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 260 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     I[x*IszY*Nfr + y*Nfr + k] = newMatrix[x*IszY*Nfr + y*Nfr + k];
-# 261 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 261 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    }
-# 262 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 262 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 263 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 263 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 264 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)newMatrix) - sizeof(void *)), 7756533236910310433UL);free((((unsigned char *)newMatrix) - sizeof(void *))); }) ;
-# 265 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 266 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 267 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 264 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)newMatrix) - sizeof(void *)), 1037355509377746809UL);free((((unsigned char *)newMatrix) - sizeof(void *))); }) ;
+# 265 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 266 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 267 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
          call_lbl_4: checkpoint_transformed(4, ____alias_loc_id_0);
-# 268 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 269 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 270 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 271 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 268 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 269 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 270 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 271 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   call_lbl_5: ({ calling_npm("setIf", 0); setIf_npm(0, 100, I, &IszX, &IszY, &Nfr); });
-# 272 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 272 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   call_lbl_6: ({ calling_npm("setIf", 0); setIf_npm(1, 228, I, &IszX, &IszY, &Nfr); });
-# 273 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 274 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 273 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 274 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   call_lbl_7: ({ calling_npm("addNoise", 0); addNoise_npm(I, &IszX, &IszY, &Nfr, seed); });
-# 275 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 275 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "videoSequence", (int *)0x0, 0, ____chimes_did_disable11, false); }
 
 void videoSequence(int * I, int IszX, int IszY, int Nfr, int * seed) { (____chimes_replaying ? videoSequence_resumable(I, IszX, IszY, Nfr, seed) : videoSequence_quick(I, IszX, IszY, Nfr, seed)); }
-# 283 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-double calcLikelihoodSum_quick(int * I, int * ind, int numOnes){const int ____chimes_did_disable12 = new_stack((void *)(&calcLikelihoodSum), "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, 3, 0, (size_t)(7756533236910310546UL), (size_t)(7756533236910310547UL), (size_t)(0UL)) ; ; ;
-# 284 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 283 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+double calcLikelihoodSum_quick(int * I, int * ind, int numOnes){const int ____chimes_did_disable12 = new_stack((void *)(&calcLikelihoodSum), "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, 3, 0, (size_t)(1037355509377746922UL), (size_t)(1037355509377746923UL), (size_t)(0UL)) ; ; ;
+# 284 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double likelihoodSum; likelihoodSum = (0.0) ;
-# 285 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 285 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int y; ;
-# 286 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 286 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for (y = 0; y < numOnes; y++) { likelihoodSum += (pow((I[ind[y]] - 100),2) - pow((I[ind[y]]-228),2))/50.0; };
-# 288 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 288 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (likelihoodSum); rm_stack(false, 0UL, "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, ____alias_loc_id_16, ____chimes_did_disable12, false); return ____chimes_ret_var_6; ;
-# 289 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 289 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, ____alias_loc_id_16, ____chimes_did_disable12, false); }
 
 double calcLikelihoodSum(int * I, int * ind, int numOnes) { return (____chimes_replaying ? calcLikelihoodSum_resumable(I, ind, numOnes) : calcLikelihoodSum_quick(I, ind, numOnes)); }
-# 298 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int findIndex_quick(double * CDF, int lengthCDF, double value){const int ____chimes_did_disable13 = new_stack((void *)(&findIndex), "findIndex", &____must_manage_findIndex, 3, 0, (size_t)(7756533236910310606UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 299 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 298 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int findIndex_quick(double * CDF, int lengthCDF, double value){const int ____chimes_did_disable13 = new_stack((void *)(&findIndex), "findIndex", &____must_manage_findIndex, 3, 0, (size_t)(1037355509377746982UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+# 299 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int index; index = (-1) ;
-# 300 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 300 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; ;
-# 301 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 301 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < lengthCDF; x++){
-# 302 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 302 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   if(CDF[x] >= value){
-# 303 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 303 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    index = x;
-# 304 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 304 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    break;
-# 305 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 305 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 306 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 306 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 307 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 307 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if(index == -1){
-# 308 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 308 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (lengthCDF-1); rm_stack(false, 0UL, "findIndex", &____must_manage_findIndex, ____alias_loc_id_17, ____chimes_did_disable13, false); return ____chimes_ret_var_7; ;
-# 309 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 309 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 310 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 310 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (index); rm_stack(false, 0UL, "findIndex", &____must_manage_findIndex, ____alias_loc_id_17, ____chimes_did_disable13, false); return ____chimes_ret_var_8; ;
-# 311 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 311 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "findIndex", &____must_manage_findIndex, ____alias_loc_id_17, ____chimes_did_disable13, false); }
 
 int findIndex(double * CDF, int lengthCDF, double value) { return (____chimes_replaying ? findIndex_resumable(CDF, lengthCDF, value) : findIndex_quick(CDF, lengthCDF, value)); }
-# 322 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int findIndexBin_quick(double * CDF, int beginIndex, int endIndex, double value){const int ____chimes_did_disable14 = new_stack((void *)(&findIndexBin), "findIndexBin", &____must_manage_findIndexBin, 4, 0, (size_t)(7756533236910310747UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 323 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 322 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int findIndexBin_quick(double * CDF, int beginIndex, int endIndex, double value){const int ____chimes_did_disable14 = new_stack((void *)(&findIndexBin), "findIndexBin", &____must_manage_findIndexBin, 4, 0, (size_t)(1037355509377747123UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+# 323 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if (endIndex < beginIndex) { int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = (-1); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); return ____chimes_ret_var_9; ; };
-# 325 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 325 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int middleIndex; middleIndex = (beginIndex + ((endIndex - beginIndex)/2)) ;
-# 326 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 327 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 326 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 327 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if(CDF[middleIndex] >= value)
-# 328 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 328 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  {
-# 329 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 330 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 329 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 330 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   if (middleIndex == 0) { int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = (middleIndex); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); return ____chimes_ret_var_10; ; } else if (CDF[middleIndex-1] < value) { int ____chimes_ret_var_11; ; ____chimes_ret_var_11 = (middleIndex); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); return ____chimes_ret_var_11; ; } else if(CDF[middleIndex-1] == value)
-# 335 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 335 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   {
-# 336 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 336 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    while(middleIndex > 0 && CDF[middleIndex-1] == value)
-# 337 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 337 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    middleIndex--;
-# 338 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 338 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     int ____chimes_ret_var_12; ; ____chimes_ret_var_12 = (middleIndex); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); return ____chimes_ret_var_12; ;
-# 339 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 339 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 340 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 340 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 341 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 341 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if (CDF[middleIndex] > value) { int ____chimes_ret_var_13; ; call_lbl_0: ____chimes_ret_var_13 = (({ calling_npm("findIndexBin", 0); findIndexBin_npm(CDF, beginIndex, middleIndex+1, value); })); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); return ____chimes_ret_var_13; ; };
-# 343 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 343 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int ____chimes_ret_var_14; ; call_lbl_1: ____chimes_ret_var_14 = (({ calling_npm("findIndexBin", 0); findIndexBin_npm(CDF, middleIndex-1, endIndex, value); })); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); return ____chimes_ret_var_14; ;
-# 344 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 344 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_18, ____chimes_did_disable14, false); }
 
 int findIndexBin(double * CDF, int beginIndex, int endIndex, double value) { return (____chimes_replaying ? findIndexBin_resumable(CDF, beginIndex, endIndex, value) : findIndexBin_quick(CDF, beginIndex, endIndex, value)); }
-# 346 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 346 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void particleFilter_kernel_quick(int *I, int IszX, int IszY, int Nfr, int * seed,
-# 347 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 347 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         int Nparticles, double *likelihood, double *arrayX, double *arrayY,
-# 348 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 348 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         double *xj, double *yj, double *CDF, double *u, double *objxy,
-# 349 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 349 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         int countOnes, int *ind, int k, int max_size, double *weights,
-# 350 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-        double xe, double ye) {const int ____chimes_did_disable15 = new_stack((void *)(&particleFilter_kernel), "particleFilter_kernel", &____must_manage_particleFilter_kernel, 21, 0, (size_t)(7756533236910311467UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311471UL), (size_t)(0UL), (size_t)(7756533236910311473UL), (size_t)(7756533236910311474UL), (size_t)(7756533236910311475UL), (size_t)(7756533236910311476UL), (size_t)(7756533236910311477UL), (size_t)(7756533236910311478UL), (size_t)(7756533236910311479UL), (size_t)(7756533236910311480UL), (size_t)(0UL), (size_t)(7756533236910311482UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311485UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 351 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 350 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+        double xe, double ye) {const int ____chimes_did_disable15 = new_stack((void *)(&particleFilter_kernel), "particleFilter_kernel", &____must_manage_particleFilter_kernel, 21, 0, (size_t)(1037355509377747843UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1037355509377747847UL), (size_t)(0UL), (size_t)(1037355509377747849UL), (size_t)(1037355509377747850UL), (size_t)(1037355509377747851UL), (size_t)(1037355509377747852UL), (size_t)(1037355509377747853UL), (size_t)(1037355509377747854UL), (size_t)(1037355509377747855UL), (size_t)(1037355509377747856UL), (size_t)(0UL), (size_t)(1037355509377747858UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1037355509377747861UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+# 351 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     int x; int y; ;
-# 352 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 352 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     int indX; int indY; ;
-# 353 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 353 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long set_arrays; call_lbl_0: set_arrays = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 354 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 355 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 354 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 355 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 356 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 357 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 358 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 359 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 360 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(arrayX, arrayY, Nparticles, seed) private(x)
-# 358 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 361 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 362 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 359 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 363 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
          call_lbl_1: arrayX[x] += 1 + 5*({ calling_npm("randn", 0); randn_npm(seed, x); });
-# 360 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 364 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
          call_lbl_2: arrayY[x] += -2 + 2*({ calling_npm("randn", 0); randn_npm(seed, x); });
-# 361 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 365 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 362 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 366 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 367 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 368 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 369 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long error; call_lbl_3: error = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 363 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 370 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       float ____chimes_unroll_var_0; call_lbl_4: ____chimes_unroll_var_0 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(set_arrays, error); })) ; printf("TIME TO SET ERROR TOOK: %f\n", ____chimes_unroll_var_0);
-# 364 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 371 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 372 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 373 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 374 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 375 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(likelihood, I, arrayX, arrayY, objxy, ind) private(x, y, indX, indY)
-# 366 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 376 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 377 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 367 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 368 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 369 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 370 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 371 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 372 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 378 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 379 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 380 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 381 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 382 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 383 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         for(y = 0; y < countOnes; y++){
-# 373 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 384 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
              call_lbl_5: indX = ({ calling_npm("roundDouble", 0); roundDouble_npm(arrayX[x]); }) + objxy[y*2 + 1];
-# 374 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 385 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
              call_lbl_6: indY = ({ calling_npm("roundDouble", 0); roundDouble_npm(arrayY[x]); }) + objxy[y*2];
-# 375 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 386 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
             ind[x*countOnes + y] = fabs(indX*IszY*Nfr + indY*Nfr + k);
-# 376 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 387 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
             if (ind[x*countOnes + y] >= max_size) {ind[x*countOnes + y] = 0; };
-# 378 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 389 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         }
-# 379 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 390 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         likelihood[x] = 0;
-# 380 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 391 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         for (y = 0; y < countOnes; y++) { likelihood[x] += (pow((I[ind[x*countOnes + y]] - 100),2) - pow((I[ind[x*countOnes + y]]-228),2))/50.0; };
-# 382 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 393 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         likelihood[x] = likelihood[x]/((double) countOnes);
-# 383 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 394 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 384 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 395 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 396 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 397 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 398 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long likelihood_time; call_lbl_7: likelihood_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 385 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 399 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       float ____chimes_unroll_var_1; call_lbl_8: ____chimes_unroll_var_1 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(error, likelihood_time); })) ; printf("TIME TO GET LIKELIHOODS TOOK: %f\n", ____chimes_unroll_var_1);
-# 386 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 387 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 400 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 401 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 402 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 403 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 404 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 405 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(Nparticles, weights, likelihood) private(x)
-# 389 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 406 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 407 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 390 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 408 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         weights[x] = weights[x] * exp(likelihood[x]);
-# 391 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 409 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 392 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 410 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 411 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 412 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 413 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 414 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long exponential; call_lbl_9: exponential = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 393 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 415 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       float ____chimes_unroll_var_2; call_lbl_10: ____chimes_unroll_var_2 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(likelihood_time, exponential); })) ; printf("TIME TO GET EXP TOOK: %f\n", ____chimes_unroll_var_2);
-# 394 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 416 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      double sumWeights; sumWeights = (0) ;
-# 395 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 417 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 418 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 419 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 420 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for private(x) reduction(+:sumWeights)
-# 396 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 421 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 422 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 397 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 423 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         sumWeights += weights[x];
-# 398 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 424 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 399 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 425 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 426 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 427 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 428 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long sum_time; call_lbl_11: sum_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 400 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 429 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       float ____chimes_unroll_var_3; call_lbl_12: ____chimes_unroll_var_3 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(exponential, sum_time); })) ; printf("TIME TO SUM WEIGHTS TOOK: %f\n", ____chimes_unroll_var_3);
-# 401 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 430 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 431 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 432 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 433 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(sumWeights, weights) private(x)
-# 402 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 434 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 435 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 403 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 436 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         weights[x] = weights[x]/sumWeights;
-# 404 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 437 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 405 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 438 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 439 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 440 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 441 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long normalize; call_lbl_13: normalize = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 406 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 442 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       float ____chimes_unroll_var_4; call_lbl_14: ____chimes_unroll_var_4 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(sum_time, normalize); })) ; printf("TIME TO NORMALIZE WEIGHTS TOOK: %f\n", ____chimes_unroll_var_4);
-# 407 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 443 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     xe = 0;
-# 408 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 444 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     ye = 0;
-# 409 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 410 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 445 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 446 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 447 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 448 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 449 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for private(x) reduction(+:xe, ye)
-# 411 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 450 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 451 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 412 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 452 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         xe += arrayX[x] * weights[x];
-# 413 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 453 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         ye += arrayY[x] * weights[x];
-# 414 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 454 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 415 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 455 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 456 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 457 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 458 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long move_time; call_lbl_15: move_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 416 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 459 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       float ____chimes_unroll_var_5; call_lbl_16: ____chimes_unroll_var_5 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(normalize, move_time); })) ; printf("TIME TO MOVE OBJECT TOOK: %f\n", ____chimes_unroll_var_5);
-# 417 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 460 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("XE: %lf\n", xe);
-# 418 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 461 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("YE: %lf\n", ye);
-# 419 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 462 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       double ____chimes_unroll_var_6; call_lbl_17: ____chimes_unroll_var_6 = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszY/2.0); })) ; double ____chimes_unroll_var_7; call_lbl_18: ____chimes_unroll_var_7 = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszX/2.0); })) ; double distance; distance = (sqrt( pow((double)(xe-(int)____chimes_unroll_var_6),2) + pow((double)(ye-(int)____chimes_unroll_var_7),2) )) ;
-# 420 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 463 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("%lf\n", distance);
-# 421 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 422 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 423 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 424 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 425 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 426 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 427 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 428 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 464 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 465 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 466 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 467 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 468 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 469 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 470 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 471 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     CDF[0] = weights[0];
-# 429 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 472 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 1; x < Nparticles; x++){
-# 430 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 473 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         CDF[x] = weights[x] + CDF[x-1];
-# 431 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 474 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 432 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 475 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long cum_sum; call_lbl_19: cum_sum = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 433 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 476 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       float ____chimes_unroll_var_8; call_lbl_20: ____chimes_unroll_var_8 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(move_time, cum_sum); })) ; printf("TIME TO CALC CUM SUM TOOK: %f\n", ____chimes_unroll_var_8);
-# 434 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 477 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      double u1; call_lbl_21: u1 = ((1/((double)(Nparticles)))*({ calling_npm("randu", 0); randu_npm(seed, 0); })) ;
-# 435 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 478 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 479 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 480 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 481 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(u, u1, Nparticles) private(x)
-# 436 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 482 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 483 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 437 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 484 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         u[x] = u1 + x/((double)(Nparticles));
-# 438 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 485 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 439 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 486 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 487 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 488 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 489 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long u_time; call_lbl_22: u_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 440 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 490 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       float ____chimes_unroll_var_9; call_lbl_23: ____chimes_unroll_var_9 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(cum_sum, u_time); })) ; printf("TIME TO CALC U TOOK: %f\n", ____chimes_unroll_var_9);
-# 441 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 491 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     int j; int i; ;
-# 442 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 443 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 492 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 493 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 494 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 495 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 496 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(CDF, Nparticles, xj, yj, u, arrayX, arrayY) private(i, j)
-# 444 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 497 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 498 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(j = 0; j < Nparticles; j++){
-# 445 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 499 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
          call_lbl_24: i = ({ calling_npm("findIndex", 0); findIndex_npm(CDF, Nparticles, u[j]); });
-# 446 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 500 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         if (i == -1) {i = Nparticles-1; };
-# 448 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 502 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         xj[j] = arrayX[i];
-# 449 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 503 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         yj[j] = arrayY[i];
-# 450 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 451 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 504 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 505 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 452 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 506 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 507 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 508 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 509 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long xyj_time; call_lbl_25: xyj_time = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 453 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 510 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       float ____chimes_unroll_var_10; call_lbl_26: ____chimes_unroll_var_10 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(u_time, xyj_time); })) ; printf("TIME TO CALC NEW ARRAY X AND Y TOOK: %f\n", ____chimes_unroll_var_10);
-# 454 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 455 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 456 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 511 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 512 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 513 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 457 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 458 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 514 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 515 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         arrayX[x] = xj[x];
-# 459 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 516 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         arrayY[x] = yj[x];
-# 460 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 517 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         weights[x] = 1/((double)(Nparticles));
-# 461 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 518 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 462 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 519 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      long long reset; call_lbl_27: reset = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 463 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 520 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
       float ____chimes_unroll_var_11; call_lbl_28: ____chimes_unroll_var_11 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(xyj_time, reset); })) ; printf("TIME TO RESET WEIGHTS TOOK: %f\n", ____chimes_unroll_var_11);
-# 464 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 521 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "particleFilter_kernel", &____must_manage_particleFilter_kernel, ____alias_loc_id_19, ____chimes_did_disable15, false); }
 
 void particleFilter_kernel(int *I, int IszX, int IszY, int Nfr, int * seed,
-# 347 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 347 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         int Nparticles, double *likelihood, double *arrayX, double *arrayY,
-# 348 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 348 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         double *xj, double *yj, double *CDF, double *u, double *objxy,
-# 349 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 349 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         int countOnes, int *ind, int k, int max_size, double *weights,
-# 350 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 350 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         double xe, double ye) { (____chimes_replaying ? particleFilter_kernel_resumable(I, IszX, IszY, Nfr, seed, Nparticles, likelihood, arrayX, arrayY, xj, yj, CDF, u, objxy, countOnes, ind, k, max_size, weights, xe, ye) : particleFilter_kernel_quick(I, IszX, IszY, Nfr, seed, Nparticles, likelihood, arrayX, arrayY, xj, yj, CDF, u, objxy, countOnes, ind, k, max_size, weights, xe, ye)); }
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-void particleFilter_quick(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles){const int ____chimes_did_disable16 = new_stack((void *)(&particleFilter), "particleFilter", (int *)0, 6, 6, (size_t)(7756533236910311839UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311843UL), (size_t)(0UL), "particleFilter|I|0", (int *)0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "particleFilter|IszX|0", (int *)0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0, "particleFilter|IszY|0", (int *)0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "particleFilter|Nfr|0", (int *)0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "particleFilter|seed|0", (int *)0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "particleFilter|Nparticles|0", (int *)0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0) ; int k;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+void particleFilter_quick(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles){const int ____chimes_did_disable16 = new_stack((void *)(&particleFilter), "particleFilter", (int *)0, 6, 6, (size_t)(1037355509377748215UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1037355509377748219UL), (size_t)(0UL), "particleFilter|I|0", (int *)0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "particleFilter|IszX|0", (int *)0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0, "particleFilter|IszY|0", (int *)0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "particleFilter|Nfr|0", (int *)0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "particleFilter|seed|0", (int *)0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "particleFilter|Nparticles|0", (int *)0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0) ; int k;
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int *ind;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double *u;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double *CDF;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double *yj;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double *xj;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double *arrayY;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double *arrayX;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double *likelihood;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double *weights;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double *objxy;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int countOnes;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int *disk;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double ye;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double xe;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int max_size;
-# 477 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 534 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  register_stack_vars(16, "particleFilter|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "particleFilter|ind|0", (int *)0x0, "i32*", (void *)(&ind), (size_t)8, 1, 0, 0, "particleFilter|u|0", (int *)0x0, "double*", (void *)(&u), (size_t)8, 1, 0, 0, "particleFilter|CDF|0", (int *)0x0, "double*", (void *)(&CDF), (size_t)8, 1, 0, 0, "particleFilter|yj|0", (int *)0x0, "double*", (void *)(&yj), (size_t)8, 1, 0, 0, "particleFilter|xj|0", (int *)0x0, "double*", (void *)(&xj), (size_t)8, 1, 0, 0, "particleFilter|arrayY|0", (int *)0x0, "double*", (void *)(&arrayY), (size_t)8, 1, 0, 0, "particleFilter|arrayX|0", (int *)0x0, "double*", (void *)(&arrayX), (size_t)8, 1, 0, 0, "particleFilter|likelihood|0", (int *)0x0, "double*", (void *)(&likelihood), (size_t)8, 1, 0, 0, "particleFilter|weights|0", (int *)0x0, "double*", (void *)(&weights), (size_t)8, 1, 0, 0, "particleFilter|objxy|0", (int *)0x0, "double*", (void *)(&objxy), (size_t)8, 1, 0, 0, "particleFilter|countOnes|0", (int *)0x0, "i32", (void *)(&countOnes), (size_t)4, 0, 0, 0, "particleFilter|disk|0", (int *)0x0, "i32*", (void *)(&disk), (size_t)8, 1, 0, 0, "particleFilter|ye|0", (int *)0x0, "double", (void *)(&ye), (size_t)8, 0, 0, 0, "particleFilter|xe|0", (int *)0x0, "double", (void *)(&xe), (size_t)8, 0, 0, 0, "particleFilter|max_size|0", (int *)0x0, "i32", (void *)(&max_size), (size_t)4, 0, 0, 0); ; ;
-# 478 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 479 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 535 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 536 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     max_size = (IszX*IszY*Nfr) ;
-# 480 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 537 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   long long start; call_lbl_0: start = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 481 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 482 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 538 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 539 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      call_lbl_1: xe = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszY/2.0); })) ;
-# 483 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 540 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      call_lbl_2: ye = (({ calling_npm("roundDouble", 0); roundDouble_npm(IszX/2.0); })) ;
-# 484 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 485 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 486 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 541 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 542 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 543 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int radius; radius = (5) ;
-# 487 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 544 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int diameter; diameter = (radius*2 - 1) ;
-# 488 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    disk = ((int *) ({ void *____chimes_tmp_ptr = malloc((diameter * diameter * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, diameter*diameter*sizeof(int), 7756533236910311570UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 489 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 545 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    disk = ((int *) ({ void *____chimes_tmp_ptr = malloc((diameter * diameter * sizeof(int)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, diameter*diameter*sizeof(int), 1037355509377747946UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 546 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   call_lbl_3: ({ calling_npm("strelDisk", 0); strelDisk_npm(disk, radius); });
-# 490 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 547 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     countOnes = (0) ;
-# 491 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 548 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; ;
-# 492 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 549 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < diameter; x++){
-# 493 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 550 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(y = 0; y < diameter; y++){
-# 494 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 551 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    if(disk[x*diameter + y]) {
-# 495 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 552 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     countOnes++;
-# 496 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 553 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
             }
-# 497 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 554 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 498 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 555 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 499 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    objxy = ((double *) ({ void *____chimes_tmp_ptr = malloc((countOnes * 2 * sizeof(double)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, countOnes*2*sizeof(double), 7756533236910311790UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 500 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 556 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    objxy = ((double *) ({ void *____chimes_tmp_ptr = malloc((countOnes * 2 * sizeof(double)) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, countOnes*2*sizeof(double), 1037355509377748166UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 557 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   call_lbl_4: ({ calling_npm("getneighbors", 0); getneighbors_npm(disk, objxy, radius); });
-# 501 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 502 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 558 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 559 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   long long get_neighbors; call_lbl_5: get_neighbors = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 503 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 560 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    float ____chimes_unroll_var_12; call_lbl_6: ____chimes_unroll_var_12 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, get_neighbors); })) ; printf("TIME TO GET NEIGHBORS TOOK: %f\n", ____chimes_unroll_var_12);
-# 504 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 505 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    weights = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311658UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 506 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 561 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 562 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    weights = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 1037355509377748034UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 563 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 564 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 565 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 566 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(weights, Nparticles) private(x)
-# 507 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 567 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 568 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < Nparticles; x++){
-# 508 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 569 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   weights[x] = 1/((double)(Nparticles));
-# 509 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 570 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 510 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 571 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 572 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 573 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 574 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   long long get_weights; call_lbl_7: get_weights = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 511 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 575 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    float ____chimes_unroll_var_13; call_lbl_8: ____chimes_unroll_var_13 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_neighbors, get_weights); })) ; printf("TIME TO GET WEIGHTSTOOK: %f\n", ____chimes_unroll_var_13);
-# 512 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 513 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    likelihood = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311783UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 514 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    arrayX = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311745UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 515 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    arrayY = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311751UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 516 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    xj = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311786UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 517 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    yj = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311787UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 518 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    CDF = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311788UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 519 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    u = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 7756533236910311789UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 520 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    ind = ((int*) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * countOnes * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*countOnes*Nparticles, 7756533236910311792UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 521 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 576 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 577 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    likelihood = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 1037355509377748159UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 578 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    arrayX = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 1037355509377748121UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 579 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    arrayY = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 1037355509377748127UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 580 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    xj = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 1037355509377748162UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 581 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    yj = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 1037355509377748163UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 582 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    CDF = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 1037355509377748164UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 583 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    u = ((double *) ({ void *____chimes_tmp_ptr = malloc((sizeof(double) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(double)*Nparticles, 1037355509377748165UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 584 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    ind = ((int*) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * countOnes * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*countOnes*Nparticles, 1037355509377748168UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 585 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 586 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 587 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 588 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(arrayX, arrayY, xe, ye) private(x)
-# 522 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 589 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 590 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < Nparticles; x++){
-# 523 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 591 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   arrayX[x] = xe;
-# 524 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 592 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   arrayY[x] = ye;
-# 525 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 593 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 526 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 594 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 595 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 596 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 597 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   ;
-# 527 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 528 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 598 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 599 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    long long ____chimes_unroll_var_14; call_lbl_9: ____chimes_unroll_var_14 = (({ calling_npm("get_time", 0); get_time_npm(); })) ; float ____chimes_unroll_var_15; call_lbl_10: ____chimes_unroll_var_15 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_weights, ____chimes_unroll_var_14); })) ; printf("TIME TO SET ARRAYS TOOK: %f\n", ____chimes_unroll_var_15);
-# 529 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 530 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 600 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 601 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(k = 1; k < Nfr; k++){
-# 531 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 532 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 602 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 603 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
          call_lbl_11: ({ calling_npm("particleFilter_kernel", 0); particleFilter_kernel_npm(I, IszX, IszY, Nfr, seed, Nparticles, likelihood, arrayX, arrayY, xj, yj, CDF, u, objxy, countOnes, ind, k, max_size, weights, xe, ye); });
-# 535 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 536 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 537 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 606 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 607 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 608 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
          call_lbl_12: checkpoint_transformed(12, ____alias_loc_id_2);
-# 538 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 539 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 609 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 610 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 540 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)disk) - sizeof(void *)), 7756533236910311570UL);free((((unsigned char *)disk) - sizeof(void *))); }) ;
-# 541 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)objxy) - sizeof(void *)), 7756533236910311790UL);free((((unsigned char *)objxy) - sizeof(void *))); }) ;
-# 542 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)weights) - sizeof(void *)), 7756533236910311658UL);free((((unsigned char *)weights) - sizeof(void *))); }) ;
-# 543 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)likelihood) - sizeof(void *)), 7756533236910311783UL);free((((unsigned char *)likelihood) - sizeof(void *))); }) ;
-# 544 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)xj) - sizeof(void *)), 7756533236910311786UL);free((((unsigned char *)xj) - sizeof(void *))); }) ;
-# 545 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)yj) - sizeof(void *)), 7756533236910311787UL);free((((unsigned char *)yj) - sizeof(void *))); }) ;
-# 546 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)arrayX) - sizeof(void *)), 7756533236910311745UL);free((((unsigned char *)arrayX) - sizeof(void *))); }) ;
-# 547 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)arrayY) - sizeof(void *)), 7756533236910311751UL);free((((unsigned char *)arrayY) - sizeof(void *))); }) ;
-# 548 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)CDF) - sizeof(void *)), 7756533236910311788UL);free((((unsigned char *)CDF) - sizeof(void *))); }) ;
-# 549 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)u) - sizeof(void *)), 7756533236910311789UL);free((((unsigned char *)u) - sizeof(void *))); }) ;
-# 550 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)ind) - sizeof(void *)), 7756533236910311792UL);free((((unsigned char *)ind) - sizeof(void *))); }) ;
-# 551 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 611 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)disk) - sizeof(void *)), 1037355509377747946UL);free((((unsigned char *)disk) - sizeof(void *))); }) ;
+# 612 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)objxy) - sizeof(void *)), 1037355509377748166UL);free((((unsigned char *)objxy) - sizeof(void *))); }) ;
+# 613 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)weights) - sizeof(void *)), 1037355509377748034UL);free((((unsigned char *)weights) - sizeof(void *))); }) ;
+# 614 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)likelihood) - sizeof(void *)), 1037355509377748159UL);free((((unsigned char *)likelihood) - sizeof(void *))); }) ;
+# 615 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)xj) - sizeof(void *)), 1037355509377748162UL);free((((unsigned char *)xj) - sizeof(void *))); }) ;
+# 616 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)yj) - sizeof(void *)), 1037355509377748163UL);free((((unsigned char *)yj) - sizeof(void *))); }) ;
+# 617 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)arrayX) - sizeof(void *)), 1037355509377748121UL);free((((unsigned char *)arrayX) - sizeof(void *))); }) ;
+# 618 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)arrayY) - sizeof(void *)), 1037355509377748127UL);free((((unsigned char *)arrayY) - sizeof(void *))); }) ;
+# 619 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)CDF) - sizeof(void *)), 1037355509377748164UL);free((((unsigned char *)CDF) - sizeof(void *))); }) ;
+# 620 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)u) - sizeof(void *)), 1037355509377748165UL);free((((unsigned char *)u) - sizeof(void *))); }) ;
+# 621 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)ind) - sizeof(void *)), 1037355509377748168UL);free((((unsigned char *)ind) - sizeof(void *))); }) ;
+# 622 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "particleFilter", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable16, false); }
 
 void particleFilter(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles) { (____chimes_replaying ? particleFilter_resumable(I, IszX, IszY, Nfr, seed, Nparticles) : particleFilter_quick(I, IszX, IszY, Nfr, seed, Nparticles)); }
-# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-int main_quick(int argc, char * argv[]){const int ____chimes_did_disable17 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7756533236910312111UL)) ; long long endVideoSequence;
-# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 623 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+int main_quick(int argc, char * argv[]){const int ____chimes_did_disable17 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1037355509377748487UL)) ; long long endVideoSequence;
+# 623 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 long long start;
-# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 623 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int *I;
-# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 623 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int *seed;
-# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 623 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int Nparticles;
-# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 623 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int Nfr;
-# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 623 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int IszY;
-# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 623 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int IszX;
-# 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 623 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  register_stack_vars(8, "main|endVideoSequence|0", (int *)0x0, "i64", (void *)(&endVideoSequence), (size_t)8, 0, 0, 0, "main|start|0", (int *)0x0, "i64", (void *)(&start), (size_t)8, 0, 0, 0, "main|I|0", (int *)0x0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "main|seed|0", (int *)0x0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "main|Nparticles|0", (int *)0x0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0, "main|Nfr|0", (int *)0x0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "main|IszY|0", (int *)0x0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "main|IszX|0", (int *)0x0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0); ; ;
-# 553 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 554 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 624 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 625 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   char *usage; usage = ("openmp.out -x <dimX> -y <dimY> -z <Nfr> -np <Nparticles>") ;
-# 555 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 556 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 626 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 627 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if(argc != 9)
-# 557 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 628 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  {
-# 558 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 629 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf("%s\n", usage);
-# 559 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 630 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    int ____chimes_ret_var_15; ; ____chimes_ret_var_15 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_15; ;
-# 560 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 631 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 561 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 562 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 632 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 633 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if( strcmp( argv[1], "-x" ) || strcmp( argv[3], "-y" ) || strcmp( argv[5], "-z" ) || strcmp( argv[7], "-np" ) ) {
-# 563 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 634 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf( "%s\n",usage );
-# 564 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 635 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    int ____chimes_ret_var_16; ; ____chimes_ret_var_16 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_16; ;
-# 565 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 636 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 566 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 567 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 637 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 638 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      ;
-# 568 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 569 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 570 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 639 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 640 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 641 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if( sscanf( argv[2], "%d", &IszX ) == (-1) ) {
-# 571 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 642 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("ERROR: dimX input is incorrect");
-# 572 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 643 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      int ____chimes_ret_var_17; ; ____chimes_ret_var_17 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_17; ;
-# 573 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 644 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 574 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 575 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 645 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 646 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if( IszX <= 0 ) {
-# 576 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 647 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf("dimX must be > 0\n");
-# 577 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 648 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    int ____chimes_ret_var_18; ; ____chimes_ret_var_18 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_18; ;
-# 578 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 649 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 579 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 580 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 581 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 650 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 651 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 652 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if( sscanf( argv[4], "%d", &IszY ) == (-1) ) {
-# 582 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 653 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("ERROR: dimY input is incorrect");
-# 583 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 654 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      int ____chimes_ret_var_19; ; ____chimes_ret_var_19 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_19; ;
-# 584 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 655 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 585 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 586 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 656 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 657 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if( IszY <= 0 ) {
-# 587 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 658 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf("dimY must be > 0\n");
-# 588 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 659 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    int ____chimes_ret_var_20; ; ____chimes_ret_var_20 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_20; ;
-# 589 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 660 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 590 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 591 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 592 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 661 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 662 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 663 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if( sscanf( argv[6], "%d", &Nfr ) == (-1) ) {
-# 593 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 664 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("ERROR: Number of frames input is incorrect");
-# 594 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 665 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      int ____chimes_ret_var_21; ; ____chimes_ret_var_21 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_21; ;
-# 595 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 666 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 596 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 597 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 667 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 668 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if( Nfr <= 0 ) {
-# 598 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 669 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf("number of frames must be > 0\n");
-# 599 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 670 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    int ____chimes_ret_var_22; ; ____chimes_ret_var_22 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_22; ;
-# 600 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 671 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 601 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 602 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 603 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 672 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 673 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 674 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if( sscanf( argv[8], "%d", &Nparticles ) == (-1) ) {
-# 604 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 675 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("ERROR: Number of particles input is incorrect");
-# 605 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 676 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      int ____chimes_ret_var_23; ; ____chimes_ret_var_23 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_23; ;
-# 606 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 677 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 607 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 608 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 678 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 679 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if( Nparticles <= 0 ) {
-# 609 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 680 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf("Number of particles must be > 0\n");
-# 610 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 681 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    int ____chimes_ret_var_24; ; ____chimes_ret_var_24 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_24; ;
-# 611 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 682 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 612 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 613 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    seed = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*Nparticles, 7756533236910312030UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 614 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 683 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 684 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    seed = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * Nparticles) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*Nparticles, 1037355509377748406UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 685 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int i; ;
-# 615 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 686 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for (i = 0; i < Nparticles; i++) { seed[i] = time(0)*i; };
-# 617 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 618 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    I = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * IszX * IszY * Nfr) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 7756533236910312048UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
-# 619 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 688 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 689 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+    I = ((int *) ({ void *____chimes_tmp_ptr = malloc((sizeof(int) * IszX * IszY * Nfr) + sizeof(void *)); malloc_helper(____chimes_tmp_ptr, sizeof(int)*IszX*IszY*Nfr, 1037355509377748424UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); })) ;
+# 690 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      call_lbl_0: start = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 620 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 621 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  call_lbl_1: ({ calling((void*)videoSequence, 1, ____alias_loc_id_4, 0UL, 5, (size_t)(7756533236910312048UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910312030UL)); videoSequence_quick(I, IszX, IszY, Nfr, seed); }) ;
-# 622 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 691 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 692 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  call_lbl_1: ({ calling((void*)videoSequence, 1, ____alias_loc_id_4, 0UL, 5, (size_t)(1037355509377748424UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1037355509377748406UL)); videoSequence_quick(I, IszX, IszY, Nfr, seed); }) ;
+# 693 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      call_lbl_2: endVideoSequence = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 623 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 624 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 625 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 626 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 627 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 628 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 694 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 695 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 696 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 697 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 698 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 699 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    float ____chimes_unroll_var_16; call_lbl_3: ____chimes_unroll_var_16 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endVideoSequence); })) ; printf("VIDEO SEQUENCE TOOK %f\n", ____chimes_unroll_var_16);
-# 629 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 630 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  call_lbl_4: ({ calling((void*)particleFilter, 4, ____alias_loc_id_3, 0UL, 6, (size_t)(7756533236910312048UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910312030UL), (size_t)(0UL)); particleFilter_quick(I, IszX, IszY, Nfr, seed, Nparticles); }) ;
-# 631 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 700 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 701 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  call_lbl_4: ({ calling((void*)particleFilter, 4, ____alias_loc_id_3, 0UL, 6, (size_t)(1037355509377748424UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1037355509377748406UL), (size_t)(0UL)); particleFilter_quick(I, IszX, IszY, Nfr, seed, Nparticles); }) ;
+# 702 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   long long endParticleFilter; call_lbl_5: endParticleFilter = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
-# 632 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 703 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    float ____chimes_unroll_var_17; call_lbl_6: ____chimes_unroll_var_17 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(endVideoSequence, endParticleFilter); })) ; printf("PARTICLE FILTER TOOK %f\n", ____chimes_unroll_var_17);
-# 633 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 704 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    float ____chimes_unroll_var_18; call_lbl_7: ____chimes_unroll_var_18 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endParticleFilter); })) ; printf("ENTIRE PROGRAM TOOK %f\n", ____chimes_unroll_var_18);
-# 634 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 635 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)seed) - sizeof(void *)), 7756533236910312030UL);free((((unsigned char *)seed) - sizeof(void *))); }) ;
-# 636 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ({ free_helper((((unsigned char *)I) - sizeof(void *)), 7756533236910312048UL);free((((unsigned char *)I) - sizeof(void *))); }) ;
-# 637 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 705 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 706 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)seed) - sizeof(void *)), 1037355509377748406UL);free((((unsigned char *)seed) - sizeof(void *))); }) ;
+# 707 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+  ({ free_helper((((unsigned char *)I) - sizeof(void *)), 1037355509377748424UL);free((((unsigned char *)I) - sizeof(void *))); }) ;
+# 708 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); return ____chimes_ret_var_25; ;
-# 638 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 709 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_21, ____chimes_did_disable17, false); }
 
 int main(int argc, char * argv[]) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 long long get_time_npm() {
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  struct timeval tv;
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  gettimeofday(&tv, __null);
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   long long ____chimes_ret_var_0; ____chimes_ret_var_0 = ((tv.tv_sec * 1000000) + tv.tv_usec); return ____chimes_ret_var_0; ;
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 float elapsed_time_npm(long long start_time, long long end_time) {
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
          float ____chimes_ret_var_1; ____chimes_ret_var_1 = ((float) (end_time - start_time) / (1000 * 1000)); return ____chimes_ret_var_1; ;
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double roundDouble_npm(double value){
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int newValue = (int)(value);
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if (value - newValue < .5) { double ____chimes_ret_var_2; ____chimes_ret_var_2 = (newValue); return ____chimes_ret_var_2; ; } else { double ____chimes_ret_var_3; ____chimes_ret_var_3 = (newValue++); return ____chimes_ret_var_3; ; } ;
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void setIf_npm(int testValue, int newValue, int * array3D, int * dimX, int * dimY, int * dimZ){
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x, y, z;
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 65 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < *dimX; x++){
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(y = 0; y < *dimY; y++){
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    for(z = 0; z < *dimZ; z++){
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     if (array3D[x * *dimY * *dimZ+y * *dimZ + z] == testValue) {array3D[x * *dimY * *dimZ + y * *dimZ + z] = newValue; };
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    }
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 71 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double randu_npm(int * seed, int index)
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 83 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 {
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int num = A*seed[index] + C;
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  seed[index] = num % M;
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double ____chimes_ret_var_4; ____chimes_ret_var_4 = (fabs(seed[index]/((double) M))); return ____chimes_ret_var_4; ;
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double randn_npm(int * seed, int index){
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  double u = randu_npm(seed, index);
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  double v = randu_npm(seed, index);
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  double cosine = cos(2*3.1415926535897932*v);
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 101 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  double rt = -2*log(u);
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double ____chimes_ret_var_5; ____chimes_ret_var_5 = (sqrt(rt)*cosine); return ____chimes_ret_var_5; ;
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void addNoise_npm(int * array3D, int * dimX, int * dimY, int * dimZ, int * seed){
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x, y, z;
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < *dimX; x++){
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(y = 0; y < *dimY; y++){
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    for(z = 0; z < *dimZ; z++){
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     array3D[x * *dimY * *dimZ + y * *dimZ + z] = array3D[x * *dimY * *dimZ + y * *dimZ + z] + (int)(5*randn_npm(seed, 0));
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    }
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void strelDisk_npm(int * disk, int radius)
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 {
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int diameter = radius*2 - 1;
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x, y;
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < diameter; x++){
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(y = 0; y < diameter; y++){
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    double distance = sqrt(pow((double)(x-radius+1),2) + pow((double)(y-radius+1),2));
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    if (distance < radius) {disk[x*diameter + y] = 1; };
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void dilate_matrix_npm(int * matrix, int posX, int posY, int posZ, int dimX, int dimY, int dimZ, int error)
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 151 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 {
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 152 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int startX = posX - error;
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 153 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  while(startX < 0)
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 154 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  startX++;
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 155 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int startY = posY - error;
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 156 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  while(startY < 0)
-# 157 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 157 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  startY++;
-# 158 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 158 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int endX = posX + error;
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 159 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  while(endX > dimX)
-# 160 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 160 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  endX--;
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 161 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int endY = posY + error;
-# 162 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 162 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  while(endY > dimY)
-# 163 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 163 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  endY--;
-# 164 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 164 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x,y;
-# 165 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 165 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = startX; x < endX; x++){
-# 166 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 166 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(y = startY; y < endY; y++){
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 167 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    double distance = sqrt( pow((double)(x-posX),2) + pow((double)(y-posY),2) );
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 168 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    if (distance < error) {matrix[x*dimY*dimZ + y*dimZ + posZ] = 1; };
-# 170 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 170 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 171 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 171 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 172 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
-# 183 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 183 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void imdilate_disk_npm(int * matrix, int dimX, int dimY, int dimZ, int error, int * newMatrix)
-# 184 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 184 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 {
-# 185 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 185 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x, y, z;
-# 186 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 186 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(z = 0; z < dimZ; z++){
-# 187 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 187 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(x = 0; x < dimX; x++){
-# 188 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 188 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    for(y = 0; y < dimY; y++){
-# 189 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 189 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     if(matrix[x*dimY*dimZ + y*dimZ + z] == 1){
-# 190 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 190 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      dilate_matrix_npm(newMatrix, x, y, z, dimX, dimY, dimZ, error);
-# 191 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 191 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 192 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 192 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    }
-# 193 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 193 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 194 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 194 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 195 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 195 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
-# 203 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 203 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void getneighbors_npm(int * se, double * neighbors, int radius){
-# 204 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 204 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x, y;
-# 205 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 205 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int neighY = 0;
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 206 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int center = radius - 1;
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 207 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int diameter = radius*2 -1;
-# 208 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 208 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < diameter; x++){
-# 209 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 209 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   for(y = 0; y < diameter; y++){
-# 210 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 210 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    if(se[x*diameter + y]){
-# 211 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 211 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     neighbors[neighY*2] = (int)(y - center);
-# 212 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 212 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     neighbors[neighY*2 + 1] = (int)(x - center);
-# 213 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 213 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     neighY++;
-# 214 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 214 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    }
-# 215 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 215 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 216 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 216 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 217 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
-# 283 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 283 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double calcLikelihoodSum_npm(int * I, int * ind, int numOnes){
-# 284 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 284 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  double likelihoodSum = 0.0;
-# 285 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 285 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int y;
-# 286 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 286 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for (y = 0; y < numOnes; y++) { likelihoodSum += (pow((I[ind[y]] - 100),2) - pow((I[ind[y]]-228),2))/50.0; };
-# 288 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 288 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double ____chimes_ret_var_6; ____chimes_ret_var_6 = (likelihoodSum); return ____chimes_ret_var_6; ;
-# 289 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 289 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
-# 298 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 298 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int findIndex_npm(double * CDF, int lengthCDF, double value){
-# 299 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 299 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int index = -1;
-# 300 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 300 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x;
-# 301 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 301 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(x = 0; x < lengthCDF; x++){
-# 302 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 302 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   if(CDF[x] >= value){
-# 303 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 303 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    index = x;
-# 304 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 304 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    break;
-# 305 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 305 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 306 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 306 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 307 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 307 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if(index == -1){
-# 308 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 308 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    int ____chimes_ret_var_7; ____chimes_ret_var_7 = (lengthCDF-1); return ____chimes_ret_var_7; ;
-# 309 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 309 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 310 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 310 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int ____chimes_ret_var_8; ____chimes_ret_var_8 = (index); return ____chimes_ret_var_8; ;
-# 311 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 311 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
-# 322 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 322 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int findIndexBin_npm(double * CDF, int beginIndex, int endIndex, double value){
-# 323 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 323 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if (endIndex < beginIndex) { int ____chimes_ret_var_9; ____chimes_ret_var_9 = (-1); return ____chimes_ret_var_9; ; };
-# 325 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 325 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int middleIndex = beginIndex + ((endIndex - beginIndex)/2);
-# 326 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 327 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 326 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 327 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if(CDF[middleIndex] >= value)
-# 328 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 328 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  {
-# 329 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 330 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 329 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 330 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   if (middleIndex == 0) { int ____chimes_ret_var_10; ____chimes_ret_var_10 = (middleIndex); return ____chimes_ret_var_10; ; } else if (CDF[middleIndex-1] < value) { int ____chimes_ret_var_11; ____chimes_ret_var_11 = (middleIndex); return ____chimes_ret_var_11; ; } else if(CDF[middleIndex-1] == value)
-# 335 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 335 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   {
-# 336 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 336 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    while(middleIndex > 0 && CDF[middleIndex-1] == value)
-# 337 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 337 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    middleIndex--;
-# 338 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 338 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     int ____chimes_ret_var_12; ____chimes_ret_var_12 = (middleIndex); return ____chimes_ret_var_12; ;
-# 339 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 339 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
-# 340 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 340 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
-# 341 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 341 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if (CDF[middleIndex] > value) { int ____chimes_ret_var_13; ____chimes_ret_var_13 = (findIndexBin_npm(CDF, beginIndex, middleIndex+1, value)); return ____chimes_ret_var_13; ; };
-# 343 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 343 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int ____chimes_ret_var_14; ____chimes_ret_var_14 = (findIndexBin_npm(CDF, middleIndex-1, endIndex, value)); return ____chimes_ret_var_14; ;
-# 344 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 344 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
-# 346 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 346 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void particleFilter_kernel_npm(int *I, int IszX, int IszY, int Nfr, int * seed,
-# 347 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 347 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         int Nparticles, double *likelihood, double *arrayX, double *arrayY,
-# 348 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 348 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         double *xj, double *yj, double *CDF, double *u, double *objxy,
-# 349 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 349 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         int countOnes, int *ind, int k, int max_size, double *weights,
-# 350 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 350 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         double xe, double ye) {
-# 351 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 351 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     int x, y;
-# 352 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 352 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     int indX, indY;
-# 353 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 353 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     long long set_arrays = get_time_npm();
-# 354 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 355 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 354 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 355 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 356 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 357 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 358 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 359 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 360 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(arrayX, arrayY, Nparticles, seed) private(x)
-# 358 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 361 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 362 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 359 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 363 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         arrayX[x] += 1 + 5*randn_npm(seed, x);
-# 360 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 364 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         arrayY[x] += -2 + 2*randn_npm(seed, x);
-# 361 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 365 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 362 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 366 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 367 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 368 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 369 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     long long error = get_time_npm();
-# 363 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 370 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      float ____chimes_unroll_var_0 = elapsed_time_npm(set_arrays, error); printf("TIME TO SET ERROR TOOK: %f\n", ____chimes_unroll_var_0);
-# 364 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 371 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 372 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 373 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 374 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 375 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(likelihood, I, arrayX, arrayY, objxy, ind) private(x, y, indX, indY)
-# 366 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 376 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 377 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 367 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 368 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 369 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 370 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 371 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 372 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 378 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 379 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 380 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 381 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 382 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 383 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         for(y = 0; y < countOnes; y++){
-# 373 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 384 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
             indX = roundDouble_npm(arrayX[x]) + objxy[y*2 + 1];
-# 374 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 385 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
             indY = roundDouble_npm(arrayY[x]) + objxy[y*2];
-# 375 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 386 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
             ind[x*countOnes + y] = fabs(indX*IszY*Nfr + indY*Nfr + k);
-# 376 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 387 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
             if (ind[x*countOnes + y] >= max_size) {ind[x*countOnes + y] = 0; };
-# 378 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 389 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         }
-# 379 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 390 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         likelihood[x] = 0;
-# 380 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 391 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         for (y = 0; y < countOnes; y++) { likelihood[x] += (pow((I[ind[x*countOnes + y]] - 100),2) - pow((I[ind[x*countOnes + y]]-228),2))/50.0; };
-# 382 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 393 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         likelihood[x] = likelihood[x]/((double) countOnes);
-# 383 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 394 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 384 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 395 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 396 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 397 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 398 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     long long likelihood_time = get_time_npm();
-# 385 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 399 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      float ____chimes_unroll_var_1 = elapsed_time_npm(error, likelihood_time); printf("TIME TO GET LIKELIHOODS TOOK: %f\n", ____chimes_unroll_var_1);
-# 386 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 387 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 400 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 401 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 402 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 403 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 404 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 405 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(Nparticles, weights, likelihood) private(x)
-# 389 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 406 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 407 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 390 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 408 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         weights[x] = weights[x] * exp(likelihood[x]);
-# 391 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 409 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 392 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 410 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 411 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 412 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 413 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 414 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     long long exponential = get_time_npm();
-# 393 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 415 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      float ____chimes_unroll_var_2 = elapsed_time_npm(likelihood_time, exponential); printf("TIME TO GET EXP TOOK: %f\n", ____chimes_unroll_var_2);
-# 394 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 416 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     double sumWeights = 0;
-# 395 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 417 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 418 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 419 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 420 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for private(x) reduction(+:sumWeights)
-# 396 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 421 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 422 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 397 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 423 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         sumWeights += weights[x];
-# 398 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 424 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 399 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 425 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 426 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 427 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 428 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     long long sum_time = get_time_npm();
-# 400 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 429 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      float ____chimes_unroll_var_3 = elapsed_time_npm(exponential, sum_time); printf("TIME TO SUM WEIGHTS TOOK: %f\n", ____chimes_unroll_var_3);
-# 401 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 430 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 431 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 432 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 433 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(sumWeights, weights) private(x)
-# 402 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 434 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 435 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 403 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 436 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         weights[x] = weights[x]/sumWeights;
-# 404 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 437 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 405 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 438 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 439 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 440 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 441 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     long long normalize = get_time_npm();
-# 406 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 442 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      float ____chimes_unroll_var_4 = elapsed_time_npm(sum_time, normalize); printf("TIME TO NORMALIZE WEIGHTS TOOK: %f\n", ____chimes_unroll_var_4);
-# 407 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 443 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     xe = 0;
-# 408 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 444 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     ye = 0;
-# 409 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 410 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 445 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 446 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 447 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 448 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 449 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for private(x) reduction(+:xe, ye)
-# 411 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 450 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 451 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 412 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 452 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         xe += arrayX[x] * weights[x];
-# 413 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 453 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         ye += arrayY[x] * weights[x];
-# 414 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 454 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 415 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 455 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 456 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 457 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 458 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     long long move_time = get_time_npm();
-# 416 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 459 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      float ____chimes_unroll_var_5 = elapsed_time_npm(normalize, move_time); printf("TIME TO MOVE OBJECT TOOK: %f\n", ____chimes_unroll_var_5);
-# 417 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 460 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("XE: %lf\n", xe);
-# 418 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 461 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("YE: %lf\n", ye);
-# 419 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 462 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      double ____chimes_unroll_var_6 = roundDouble_npm(IszY/2.0); double ____chimes_unroll_var_7 = roundDouble_npm(IszX/2.0); double distance = sqrt( pow((double)(xe-(int)____chimes_unroll_var_6),2) + pow((double)(ye-(int)____chimes_unroll_var_7),2) );
-# 420 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 463 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("%lf\n", distance);
-# 421 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 422 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 423 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 424 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 425 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 426 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 427 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 428 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 464 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 465 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 466 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 467 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 468 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 469 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 470 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 471 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     CDF[0] = weights[0];
-# 429 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 472 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 1; x < Nparticles; x++){
-# 430 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 473 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         CDF[x] = weights[x] + CDF[x-1];
-# 431 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 474 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 432 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 475 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     long long cum_sum = get_time_npm();
-# 433 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 476 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      float ____chimes_unroll_var_8 = elapsed_time_npm(move_time, cum_sum); printf("TIME TO CALC CUM SUM TOOK: %f\n", ____chimes_unroll_var_8);
-# 434 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 477 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     double u1 = (1/((double)(Nparticles)))*randu_npm(seed, 0);
-# 435 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 478 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 479 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 480 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 481 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(u, u1, Nparticles) private(x)
-# 436 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 482 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 483 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 437 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 484 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         u[x] = u1 + x/((double)(Nparticles));
-# 438 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 485 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 439 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 486 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 487 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 488 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 489 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     long long u_time = get_time_npm();
-# 440 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 490 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      float ____chimes_unroll_var_9 = elapsed_time_npm(cum_sum, u_time); printf("TIME TO CALC U TOOK: %f\n", ____chimes_unroll_var_9);
-# 441 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 491 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     int j, i;
-# 442 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 443 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 492 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 493 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 494 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 495 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 496 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(CDF, Nparticles, xj, yj, u, arrayX, arrayY) private(i, j)
-# 444 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 497 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 498 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(j = 0; j < Nparticles; j++){
-# 445 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 499 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         i = findIndex_npm(CDF, Nparticles, u[j]);
-# 446 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 500 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         if (i == -1) {i = Nparticles-1; };
-# 448 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 502 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         xj[j] = arrayX[i];
-# 449 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 503 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         yj[j] = arrayY[i];
-# 450 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 451 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 504 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 505 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 452 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 506 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 507 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 508 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 509 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     long long xyj_time = get_time_npm();
-# 453 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 510 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      float ____chimes_unroll_var_10 = elapsed_time_npm(u_time, xyj_time); printf("TIME TO CALC NEW ARRAY X AND Y TOOK: %f\n", ____chimes_unroll_var_10);
-# 454 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 455 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 456 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 511 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 512 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 513 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     for(x = 0; x < Nparticles; x++){
-# 457 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-# 458 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 514 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 515 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         arrayX[x] = xj[x];
-# 459 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 516 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         arrayY[x] = yj[x];
-# 460 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 517 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
         weights[x] = 1/((double)(Nparticles));
-# 461 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 518 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     }
-# 462 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 519 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     long long reset = get_time_npm();
-# 463 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 520 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
      float ____chimes_unroll_var_11 = elapsed_time_npm(xyj_time, reset); printf("TIME TO RESET WEIGHTS TOOK: %f\n", ____chimes_unroll_var_11);
-# 464 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
+# 521 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
 
 
@@ -6656,44 +6855,44 @@ void particleFilter_kernel_npm(int *I, int IszX, int IszY, int Nfr, int * seed,
 
 
 static int module_init() {
-    init_module(7756533236910309485UL, 54, 18, 9, 22, 15, 0, 15, 59, 0, 1,
-                           &____alias_loc_id_0, (unsigned)5, (unsigned)0, (unsigned)0, (7756533236910309485UL + 790UL), (7756533236910309485UL + 797UL), (7756533236910309485UL + 798UL), (7756533236910309485UL + 799UL), (7756533236910309485UL + 993UL),
-                           &____alias_loc_id_1, (unsigned)13, (unsigned)0, (unsigned)0, (7756533236910309485UL + 785UL), (7756533236910309485UL + 786UL), (7756533236910309485UL + 787UL), (7756533236910309485UL + 788UL), (7756533236910309485UL + 789UL), (7756533236910309485UL + 790UL), (7756533236910309485UL + 791UL), (7756533236910309485UL + 792UL), (7756533236910309485UL + 793UL), (7756533236910309485UL + 794UL), (7756533236910309485UL + 795UL), (7756533236910309485UL + 796UL), (7756533236910309485UL + 993UL),
-                           &____alias_loc_id_2, (unsigned)36, (unsigned)0, (unsigned)0, (7756533236910309485UL + 2005UL), (7756533236910309485UL + 2006UL), (7756533236910309485UL + 2007UL), (7756533236910309485UL + 2008UL), (7756533236910309485UL + 2009UL), (7756533236910309485UL + 2010UL), (7756533236910309485UL + 2011UL), (7756533236910309485UL + 2012UL), (7756533236910309485UL + 2013UL), (7756533236910309485UL + 2014UL), (7756533236910309485UL + 2015UL), (7756533236910309485UL + 2016UL), (7756533236910309485UL + 2017UL), (7756533236910309485UL + 2018UL), (7756533236910309485UL + 2019UL), (7756533236910309485UL + 2020UL), (7756533236910309485UL + 2021UL), (7756533236910309485UL + 2022UL), (7756533236910309485UL + 2023UL), (7756533236910309485UL + 2024UL), (7756533236910309485UL + 2025UL), (7756533236910309485UL + 2026UL), (7756533236910309485UL + 2027UL), (7756533236910309485UL + 2028UL), (7756533236910309485UL + 2029UL), (7756533236910309485UL + 2030UL), (7756533236910309485UL + 2031UL), (7756533236910309485UL + 2032UL), (7756533236910309485UL + 2033UL), (7756533236910309485UL + 2034UL), (7756533236910309485UL + 2035UL), (7756533236910309485UL + 2036UL), (7756533236910309485UL + 2037UL), (7756533236910309485UL + 2173UL), (7756533236910309485UL + 2260UL), (7756533236910309485UL + 2266UL),
-                           &____alias_loc_id_3, (unsigned)2, (unsigned)0, (unsigned)0, (7756533236910309485UL + 2382UL), (7756533236910309485UL + 2383UL),
-                           &____alias_loc_id_4, (unsigned)6, (unsigned)0, (unsigned)0, (7756533236910309485UL + 2378UL), (7756533236910309485UL + 2379UL), (7756533236910309485UL + 2380UL), (7756533236910309485UL + 2381UL), (7756533236910309485UL + 2545UL), (7756533236910309485UL + 2670UL),
-                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (unsigned)0, (7756533236910309485UL + 1UL), (7756533236910309485UL + 2UL),
-                           &____alias_loc_id_6, (unsigned)3, (unsigned)0, (unsigned)0, (7756533236910309485UL + 19UL), (7756533236910309485UL + 20UL), (7756533236910309485UL + 21UL),
-                           &____alias_loc_id_7, (unsigned)5, (unsigned)0, (unsigned)0, (7756533236910309485UL + 37UL), (7756533236910309485UL + 38UL), (7756533236910309485UL + 39UL), (7756533236910309485UL + 40UL), (7756533236910309485UL + 41UL),
-                           &____alias_loc_id_8, (unsigned)10, (unsigned)0, (unsigned)0, (7756533236910309485UL + 73UL), (7756533236910309485UL + 74UL), (7756533236910309485UL + 75UL), (7756533236910309485UL + 76UL), (7756533236910309485UL + 77UL), (7756533236910309485UL + 78UL), (7756533236910309485UL + 79UL), (7756533236910309485UL + 80UL), (7756533236910309485UL + 81UL), (7756533236910309485UL + 177UL),
-                           &____alias_loc_id_9, (unsigned)5, (unsigned)0, (unsigned)0, (7756533236910309485UL + 181UL), (7756533236910309485UL + 182UL), (7756533236910309485UL + 183UL), (7756533236910309485UL + 184UL), (7756533236910309485UL + 224UL),
-                            &____alias_loc_id_10, (unsigned)7, (unsigned)0, (unsigned)0, (7756533236910309485UL + 227UL), (7756533236910309485UL + 228UL), (7756533236910309485UL + 229UL), (7756533236910309485UL + 230UL), (7756533236910309485UL + 231UL), (7756533236910309485UL + 232UL), (7756533236910309485UL + 233UL),
-                            &____alias_loc_id_11, (unsigned)9, (unsigned)0, (unsigned)0, (7756533236910309485UL + 271UL), (7756533236910309485UL + 272UL), (7756533236910309485UL + 273UL), (7756533236910309485UL + 274UL), (7756533236910309485UL + 275UL), (7756533236910309485UL + 276UL), (7756533236910309485UL + 277UL), (7756533236910309485UL + 278UL), (7756533236910309485UL + 370UL),
-                            &____alias_loc_id_12, (unsigned)7, (unsigned)0, (unsigned)0, (7756533236910309485UL + 375UL), (7756533236910309485UL + 376UL), (7756533236910309485UL + 377UL), (7756533236910309485UL + 378UL), (7756533236910309485UL + 379UL), (7756533236910309485UL + 380UL), (7756533236910309485UL + 446UL),
-                            &____alias_loc_id_13, (unsigned)16, (unsigned)0, (unsigned)0, (7756533236910309485UL + 450UL), (7756533236910309485UL + 451UL), (7756533236910309485UL + 452UL), (7756533236910309485UL + 453UL), (7756533236910309485UL + 454UL), (7756533236910309485UL + 455UL), (7756533236910309485UL + 456UL), (7756533236910309485UL + 457UL), (7756533236910309485UL + 458UL), (7756533236910309485UL + 459UL), (7756533236910309485UL + 460UL), (7756533236910309485UL + 461UL), (7756533236910309485UL + 462UL), (7756533236910309485UL + 463UL), (7756533236910309485UL + 464UL), (7756533236910309485UL + 597UL),
-                            &____alias_loc_id_14, (unsigned)9, (unsigned)0, (unsigned)0, (7756533236910309485UL + 605UL), (7756533236910309485UL + 606UL), (7756533236910309485UL + 607UL), (7756533236910309485UL + 608UL), (7756533236910309485UL + 609UL), (7756533236910309485UL + 610UL), (7756533236910309485UL + 611UL), (7756533236910309485UL + 612UL), (7756533236910309485UL + 613UL),
-                            &____alias_loc_id_15, (unsigned)9, (unsigned)0, (unsigned)0, (7756533236910309485UL + 696UL), (7756533236910309485UL + 697UL), (7756533236910309485UL + 698UL), (7756533236910309485UL + 699UL), (7756533236910309485UL + 700UL), (7756533236910309485UL + 701UL), (7756533236910309485UL + 702UL), (7756533236910309485UL + 703UL), (7756533236910309485UL + 783UL),
-                            &____alias_loc_id_16, (unsigned)6, (unsigned)0, (unsigned)0, (7756533236910309485UL + 1001UL), (7756533236910309485UL + 1002UL), (7756533236910309485UL + 1003UL), (7756533236910309485UL + 1004UL), (7756533236910309485UL + 1005UL), (7756533236910309485UL + 1006UL),
-                            &____alias_loc_id_17, (unsigned)8, (unsigned)0, (unsigned)0, (7756533236910309485UL + 1064UL), (7756533236910309485UL + 1065UL), (7756533236910309485UL + 1066UL), (7756533236910309485UL + 1067UL), (7756533236910309485UL + 1068UL), (7756533236910309485UL + 1069UL), (7756533236910309485UL + 1070UL), (7756533236910309485UL + 1071UL),
-                            &____alias_loc_id_18, (unsigned)12, (unsigned)0, (unsigned)0, (7756533236910309485UL + 1124UL), (7756533236910309485UL + 1125UL), (7756533236910309485UL + 1126UL), (7756533236910309485UL + 1127UL), (7756533236910309485UL + 1128UL), (7756533236910309485UL + 1129UL), (7756533236910309485UL + 1130UL), (7756533236910309485UL + 1131UL), (7756533236910309485UL + 1132UL), (7756533236910309485UL + 1133UL), (7756533236910309485UL + 1134UL), (7756533236910309485UL + 1135UL),
-                            &____alias_loc_id_19, (unsigned)62, (unsigned)0, (unsigned)0, (7756533236910309485UL + 1266UL), (7756533236910309485UL + 1267UL), (7756533236910309485UL + 1268UL), (7756533236910309485UL + 1269UL), (7756533236910309485UL + 1270UL), (7756533236910309485UL + 1271UL), (7756533236910309485UL + 1272UL), (7756533236910309485UL + 1273UL), (7756533236910309485UL + 1274UL), (7756533236910309485UL + 1275UL), (7756533236910309485UL + 1276UL), (7756533236910309485UL + 1277UL), (7756533236910309485UL + 1278UL), (7756533236910309485UL + 1279UL), (7756533236910309485UL + 1280UL), (7756533236910309485UL + 1281UL), (7756533236910309485UL + 1282UL), (7756533236910309485UL + 1283UL), (7756533236910309485UL + 1284UL), (7756533236910309485UL + 1285UL), (7756533236910309485UL + 1286UL), (7756533236910309485UL + 1287UL), (7756533236910309485UL + 1288UL), (7756533236910309485UL + 1289UL), (7756533236910309485UL + 1290UL), (7756533236910309485UL + 1291UL), (7756533236910309485UL + 1292UL), (7756533236910309485UL + 1293UL), (7756533236910309485UL + 1294UL), (7756533236910309485UL + 1295UL), (7756533236910309485UL + 1296UL), (7756533236910309485UL + 1297UL), (7756533236910309485UL + 1298UL), (7756533236910309485UL + 1299UL), (7756533236910309485UL + 1300UL), (7756533236910309485UL + 1301UL), (7756533236910309485UL + 1302UL), (7756533236910309485UL + 1303UL), (7756533236910309485UL + 1304UL), (7756533236910309485UL + 1305UL), (7756533236910309485UL + 1306UL), (7756533236910309485UL + 1307UL), (7756533236910309485UL + 1308UL), (7756533236910309485UL + 1309UL), (7756533236910309485UL + 1310UL), (7756533236910309485UL + 1311UL), (7756533236910309485UL + 1312UL), (7756533236910309485UL + 1313UL), (7756533236910309485UL + 1314UL), (7756533236910309485UL + 1315UL), (7756533236910309485UL + 1316UL), (7756533236910309485UL + 1317UL), (7756533236910309485UL + 1318UL), (7756533236910309485UL + 1988UL), (7756533236910309485UL + 1989UL), (7756533236910309485UL + 1990UL), (7756533236910309485UL + 1991UL), (7756533236910309485UL + 1992UL), (7756533236910309485UL + 1993UL), (7756533236910309485UL + 1994UL), (7756533236910309485UL + 1997UL), (7756533236910309485UL + 2000UL),
-                            &____alias_loc_id_20, (unsigned)36, (unsigned)0, (unsigned)0, (7756533236910309485UL + 2005UL), (7756533236910309485UL + 2006UL), (7756533236910309485UL + 2007UL), (7756533236910309485UL + 2008UL), (7756533236910309485UL + 2009UL), (7756533236910309485UL + 2010UL), (7756533236910309485UL + 2011UL), (7756533236910309485UL + 2012UL), (7756533236910309485UL + 2013UL), (7756533236910309485UL + 2014UL), (7756533236910309485UL + 2015UL), (7756533236910309485UL + 2016UL), (7756533236910309485UL + 2017UL), (7756533236910309485UL + 2018UL), (7756533236910309485UL + 2019UL), (7756533236910309485UL + 2020UL), (7756533236910309485UL + 2021UL), (7756533236910309485UL + 2022UL), (7756533236910309485UL + 2023UL), (7756533236910309485UL + 2024UL), (7756533236910309485UL + 2025UL), (7756533236910309485UL + 2026UL), (7756533236910309485UL + 2027UL), (7756533236910309485UL + 2028UL), (7756533236910309485UL + 2029UL), (7756533236910309485UL + 2030UL), (7756533236910309485UL + 2031UL), (7756533236910309485UL + 2032UL), (7756533236910309485UL + 2033UL), (7756533236910309485UL + 2034UL), (7756533236910309485UL + 2035UL), (7756533236910309485UL + 2036UL), (7756533236910309485UL + 2037UL), (7756533236910309485UL + 2173UL), (7756533236910309485UL + 2260UL), (7756533236910309485UL + 2266UL),
-                            &____alias_loc_id_21, (unsigned)18, (unsigned)0, (unsigned)0, (7756533236910309485UL + 2360UL), (7756533236910309485UL + 2361UL), (7756533236910309485UL + 2362UL), (7756533236910309485UL + 2363UL), (7756533236910309485UL + 2364UL), (7756533236910309485UL + 2365UL), (7756533236910309485UL + 2370UL), (7756533236910309485UL + 2371UL), (7756533236910309485UL + 2372UL), (7756533236910309485UL + 2373UL), (7756533236910309485UL + 2374UL), (7756533236910309485UL + 2375UL), (7756533236910309485UL + 2376UL), (7756533236910309485UL + 2377UL), (7756533236910309485UL + 2384UL), (7756533236910309485UL + 2385UL), (7756533236910309485UL + 2386UL), (7756533236910309485UL + 2387UL),
-                            "findIndex", 0, "_Z9findIndexPdid", "_Z13findIndex_npmPdid", 0, 3, (7756533236910309485UL + 1121UL), 0UL, 0UL, 0UL, 0,
-                            "randn", 0, "_Z5randnPii", "_Z9randn_npmPii", 0, 2, (7756533236910309485UL + 266UL), 0UL, 0UL, 5, "randu", 2, (7756533236910309485UL + 266UL), 0UL, 0UL, "randu", 2, (7756533236910309485UL + 266UL), 0UL, 0UL, "cos", 1, 0UL, 0UL, "log", 1, 0UL, 0UL, "sqrt", 1, 0UL, 0UL,
-                            "particleFilter_kernel", 0, "_Z21particleFilter_kernelPiiiiS_iPdS0_S0_S0_S0_S0_S0_S0_iS_iiS0_dd", "_Z25particleFilter_kernel_npmPiiiiS_iPdS0_S0_S0_S0_S0_S0_S0_iS_iiS0_dd", 0, 21, (7756533236910309485UL + 1982UL), 0UL, 0UL, 0UL, (7756533236910309485UL + 1986UL), 0UL, (7756533236910309485UL + 1988UL), (7756533236910309485UL + 1989UL), (7756533236910309485UL + 1990UL), (7756533236910309485UL + 1991UL), (7756533236910309485UL + 1992UL), (7756533236910309485UL + 1993UL), (7756533236910309485UL + 1994UL), (7756533236910309485UL + 1995UL), 0UL, (7756533236910309485UL + 1997UL), 0UL, 0UL, (7756533236910309485UL + 2000UL), 0UL, 0UL, 0UL, 49, "get_time", 0, 0UL, "randn", 2, (7756533236910309485UL + 1986UL), 0UL, 0UL, "randn", 2, (7756533236910309485UL + 1986UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2635UL), 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "fabs", 1, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2636UL), 0UL, 0UL, "exp", 1, 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2637UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2638UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2639UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2638UL), 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2641UL), 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2641UL), 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "sqrt", 1, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2643UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2644UL), 0UL, 0UL, "randu", 2, (7756533236910309485UL + 1986UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2645UL), 0UL, 0UL, "findIndex", 3, (7756533236910309485UL + 1993UL), 0UL, 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2646UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2647UL), 0UL, 0UL,
-                            "calcLikelihoodSum", 0, "_Z17calcLikelihoodSumPiS_i", "_Z21calcLikelihoodSum_npmPiS_i", 0, 3, (7756533236910309485UL + 1061UL), (7756533236910309485UL + 1062UL), 0UL, 0UL, 2, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL,
+    init_module(1037355509377745861UL, 54, 18, 9, 22, 15, 0, 15, 59, 0, 1,
+                           &____alias_loc_id_0, (unsigned)5, (unsigned)0, (unsigned)0, (1037355509377745861UL + 790UL), (1037355509377745861UL + 797UL), (1037355509377745861UL + 798UL), (1037355509377745861UL + 799UL), (1037355509377745861UL + 993UL),
+                           &____alias_loc_id_1, (unsigned)13, (unsigned)0, (unsigned)0, (1037355509377745861UL + 785UL), (1037355509377745861UL + 786UL), (1037355509377745861UL + 787UL), (1037355509377745861UL + 788UL), (1037355509377745861UL + 789UL), (1037355509377745861UL + 790UL), (1037355509377745861UL + 791UL), (1037355509377745861UL + 792UL), (1037355509377745861UL + 793UL), (1037355509377745861UL + 794UL), (1037355509377745861UL + 795UL), (1037355509377745861UL + 796UL), (1037355509377745861UL + 993UL),
+                           &____alias_loc_id_2, (unsigned)36, (unsigned)0, (unsigned)0, (1037355509377745861UL + 2005UL), (1037355509377745861UL + 2006UL), (1037355509377745861UL + 2007UL), (1037355509377745861UL + 2008UL), (1037355509377745861UL + 2009UL), (1037355509377745861UL + 2010UL), (1037355509377745861UL + 2011UL), (1037355509377745861UL + 2012UL), (1037355509377745861UL + 2013UL), (1037355509377745861UL + 2014UL), (1037355509377745861UL + 2015UL), (1037355509377745861UL + 2016UL), (1037355509377745861UL + 2017UL), (1037355509377745861UL + 2018UL), (1037355509377745861UL + 2019UL), (1037355509377745861UL + 2020UL), (1037355509377745861UL + 2021UL), (1037355509377745861UL + 2022UL), (1037355509377745861UL + 2023UL), (1037355509377745861UL + 2024UL), (1037355509377745861UL + 2025UL), (1037355509377745861UL + 2026UL), (1037355509377745861UL + 2027UL), (1037355509377745861UL + 2028UL), (1037355509377745861UL + 2029UL), (1037355509377745861UL + 2030UL), (1037355509377745861UL + 2031UL), (1037355509377745861UL + 2032UL), (1037355509377745861UL + 2033UL), (1037355509377745861UL + 2034UL), (1037355509377745861UL + 2035UL), (1037355509377745861UL + 2036UL), (1037355509377745861UL + 2037UL), (1037355509377745861UL + 2173UL), (1037355509377745861UL + 2260UL), (1037355509377745861UL + 2266UL),
+                           &____alias_loc_id_3, (unsigned)2, (unsigned)0, (unsigned)0, (1037355509377745861UL + 2382UL), (1037355509377745861UL + 2383UL),
+                           &____alias_loc_id_4, (unsigned)6, (unsigned)0, (unsigned)0, (1037355509377745861UL + 2378UL), (1037355509377745861UL + 2379UL), (1037355509377745861UL + 2380UL), (1037355509377745861UL + 2381UL), (1037355509377745861UL + 2545UL), (1037355509377745861UL + 2670UL),
+                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (unsigned)0, (1037355509377745861UL + 1UL), (1037355509377745861UL + 2UL),
+                           &____alias_loc_id_6, (unsigned)3, (unsigned)0, (unsigned)0, (1037355509377745861UL + 19UL), (1037355509377745861UL + 20UL), (1037355509377745861UL + 21UL),
+                           &____alias_loc_id_7, (unsigned)5, (unsigned)0, (unsigned)0, (1037355509377745861UL + 37UL), (1037355509377745861UL + 38UL), (1037355509377745861UL + 39UL), (1037355509377745861UL + 40UL), (1037355509377745861UL + 41UL),
+                           &____alias_loc_id_8, (unsigned)10, (unsigned)0, (unsigned)0, (1037355509377745861UL + 73UL), (1037355509377745861UL + 74UL), (1037355509377745861UL + 75UL), (1037355509377745861UL + 76UL), (1037355509377745861UL + 77UL), (1037355509377745861UL + 78UL), (1037355509377745861UL + 79UL), (1037355509377745861UL + 80UL), (1037355509377745861UL + 81UL), (1037355509377745861UL + 177UL),
+                           &____alias_loc_id_9, (unsigned)5, (unsigned)0, (unsigned)0, (1037355509377745861UL + 181UL), (1037355509377745861UL + 182UL), (1037355509377745861UL + 183UL), (1037355509377745861UL + 184UL), (1037355509377745861UL + 224UL),
+                            &____alias_loc_id_10, (unsigned)7, (unsigned)0, (unsigned)0, (1037355509377745861UL + 227UL), (1037355509377745861UL + 228UL), (1037355509377745861UL + 229UL), (1037355509377745861UL + 230UL), (1037355509377745861UL + 231UL), (1037355509377745861UL + 232UL), (1037355509377745861UL + 233UL),
+                            &____alias_loc_id_11, (unsigned)9, (unsigned)0, (unsigned)0, (1037355509377745861UL + 271UL), (1037355509377745861UL + 272UL), (1037355509377745861UL + 273UL), (1037355509377745861UL + 274UL), (1037355509377745861UL + 275UL), (1037355509377745861UL + 276UL), (1037355509377745861UL + 277UL), (1037355509377745861UL + 278UL), (1037355509377745861UL + 370UL),
+                            &____alias_loc_id_12, (unsigned)7, (unsigned)0, (unsigned)0, (1037355509377745861UL + 375UL), (1037355509377745861UL + 376UL), (1037355509377745861UL + 377UL), (1037355509377745861UL + 378UL), (1037355509377745861UL + 379UL), (1037355509377745861UL + 380UL), (1037355509377745861UL + 446UL),
+                            &____alias_loc_id_13, (unsigned)16, (unsigned)0, (unsigned)0, (1037355509377745861UL + 450UL), (1037355509377745861UL + 451UL), (1037355509377745861UL + 452UL), (1037355509377745861UL + 453UL), (1037355509377745861UL + 454UL), (1037355509377745861UL + 455UL), (1037355509377745861UL + 456UL), (1037355509377745861UL + 457UL), (1037355509377745861UL + 458UL), (1037355509377745861UL + 459UL), (1037355509377745861UL + 460UL), (1037355509377745861UL + 461UL), (1037355509377745861UL + 462UL), (1037355509377745861UL + 463UL), (1037355509377745861UL + 464UL), (1037355509377745861UL + 597UL),
+                            &____alias_loc_id_14, (unsigned)9, (unsigned)0, (unsigned)0, (1037355509377745861UL + 605UL), (1037355509377745861UL + 606UL), (1037355509377745861UL + 607UL), (1037355509377745861UL + 608UL), (1037355509377745861UL + 609UL), (1037355509377745861UL + 610UL), (1037355509377745861UL + 611UL), (1037355509377745861UL + 612UL), (1037355509377745861UL + 613UL),
+                            &____alias_loc_id_15, (unsigned)9, (unsigned)0, (unsigned)0, (1037355509377745861UL + 696UL), (1037355509377745861UL + 697UL), (1037355509377745861UL + 698UL), (1037355509377745861UL + 699UL), (1037355509377745861UL + 700UL), (1037355509377745861UL + 701UL), (1037355509377745861UL + 702UL), (1037355509377745861UL + 703UL), (1037355509377745861UL + 783UL),
+                            &____alias_loc_id_16, (unsigned)6, (unsigned)0, (unsigned)0, (1037355509377745861UL + 1001UL), (1037355509377745861UL + 1002UL), (1037355509377745861UL + 1003UL), (1037355509377745861UL + 1004UL), (1037355509377745861UL + 1005UL), (1037355509377745861UL + 1006UL),
+                            &____alias_loc_id_17, (unsigned)8, (unsigned)0, (unsigned)0, (1037355509377745861UL + 1064UL), (1037355509377745861UL + 1065UL), (1037355509377745861UL + 1066UL), (1037355509377745861UL + 1067UL), (1037355509377745861UL + 1068UL), (1037355509377745861UL + 1069UL), (1037355509377745861UL + 1070UL), (1037355509377745861UL + 1071UL),
+                            &____alias_loc_id_18, (unsigned)12, (unsigned)0, (unsigned)0, (1037355509377745861UL + 1124UL), (1037355509377745861UL + 1125UL), (1037355509377745861UL + 1126UL), (1037355509377745861UL + 1127UL), (1037355509377745861UL + 1128UL), (1037355509377745861UL + 1129UL), (1037355509377745861UL + 1130UL), (1037355509377745861UL + 1131UL), (1037355509377745861UL + 1132UL), (1037355509377745861UL + 1133UL), (1037355509377745861UL + 1134UL), (1037355509377745861UL + 1135UL),
+                            &____alias_loc_id_19, (unsigned)62, (unsigned)0, (unsigned)0, (1037355509377745861UL + 1266UL), (1037355509377745861UL + 1267UL), (1037355509377745861UL + 1268UL), (1037355509377745861UL + 1269UL), (1037355509377745861UL + 1270UL), (1037355509377745861UL + 1271UL), (1037355509377745861UL + 1272UL), (1037355509377745861UL + 1273UL), (1037355509377745861UL + 1274UL), (1037355509377745861UL + 1275UL), (1037355509377745861UL + 1276UL), (1037355509377745861UL + 1277UL), (1037355509377745861UL + 1278UL), (1037355509377745861UL + 1279UL), (1037355509377745861UL + 1280UL), (1037355509377745861UL + 1281UL), (1037355509377745861UL + 1282UL), (1037355509377745861UL + 1283UL), (1037355509377745861UL + 1284UL), (1037355509377745861UL + 1285UL), (1037355509377745861UL + 1286UL), (1037355509377745861UL + 1287UL), (1037355509377745861UL + 1288UL), (1037355509377745861UL + 1289UL), (1037355509377745861UL + 1290UL), (1037355509377745861UL + 1291UL), (1037355509377745861UL + 1292UL), (1037355509377745861UL + 1293UL), (1037355509377745861UL + 1294UL), (1037355509377745861UL + 1295UL), (1037355509377745861UL + 1296UL), (1037355509377745861UL + 1297UL), (1037355509377745861UL + 1298UL), (1037355509377745861UL + 1299UL), (1037355509377745861UL + 1300UL), (1037355509377745861UL + 1301UL), (1037355509377745861UL + 1302UL), (1037355509377745861UL + 1303UL), (1037355509377745861UL + 1304UL), (1037355509377745861UL + 1305UL), (1037355509377745861UL + 1306UL), (1037355509377745861UL + 1307UL), (1037355509377745861UL + 1308UL), (1037355509377745861UL + 1309UL), (1037355509377745861UL + 1310UL), (1037355509377745861UL + 1311UL), (1037355509377745861UL + 1312UL), (1037355509377745861UL + 1313UL), (1037355509377745861UL + 1314UL), (1037355509377745861UL + 1315UL), (1037355509377745861UL + 1316UL), (1037355509377745861UL + 1317UL), (1037355509377745861UL + 1318UL), (1037355509377745861UL + 1988UL), (1037355509377745861UL + 1989UL), (1037355509377745861UL + 1990UL), (1037355509377745861UL + 1991UL), (1037355509377745861UL + 1992UL), (1037355509377745861UL + 1993UL), (1037355509377745861UL + 1994UL), (1037355509377745861UL + 1997UL), (1037355509377745861UL + 2000UL),
+                            &____alias_loc_id_20, (unsigned)36, (unsigned)0, (unsigned)0, (1037355509377745861UL + 2005UL), (1037355509377745861UL + 2006UL), (1037355509377745861UL + 2007UL), (1037355509377745861UL + 2008UL), (1037355509377745861UL + 2009UL), (1037355509377745861UL + 2010UL), (1037355509377745861UL + 2011UL), (1037355509377745861UL + 2012UL), (1037355509377745861UL + 2013UL), (1037355509377745861UL + 2014UL), (1037355509377745861UL + 2015UL), (1037355509377745861UL + 2016UL), (1037355509377745861UL + 2017UL), (1037355509377745861UL + 2018UL), (1037355509377745861UL + 2019UL), (1037355509377745861UL + 2020UL), (1037355509377745861UL + 2021UL), (1037355509377745861UL + 2022UL), (1037355509377745861UL + 2023UL), (1037355509377745861UL + 2024UL), (1037355509377745861UL + 2025UL), (1037355509377745861UL + 2026UL), (1037355509377745861UL + 2027UL), (1037355509377745861UL + 2028UL), (1037355509377745861UL + 2029UL), (1037355509377745861UL + 2030UL), (1037355509377745861UL + 2031UL), (1037355509377745861UL + 2032UL), (1037355509377745861UL + 2033UL), (1037355509377745861UL + 2034UL), (1037355509377745861UL + 2035UL), (1037355509377745861UL + 2036UL), (1037355509377745861UL + 2037UL), (1037355509377745861UL + 2173UL), (1037355509377745861UL + 2260UL), (1037355509377745861UL + 2266UL),
+                            &____alias_loc_id_21, (unsigned)18, (unsigned)0, (unsigned)0, (1037355509377745861UL + 2360UL), (1037355509377745861UL + 2361UL), (1037355509377745861UL + 2362UL), (1037355509377745861UL + 2363UL), (1037355509377745861UL + 2364UL), (1037355509377745861UL + 2365UL), (1037355509377745861UL + 2370UL), (1037355509377745861UL + 2371UL), (1037355509377745861UL + 2372UL), (1037355509377745861UL + 2373UL), (1037355509377745861UL + 2374UL), (1037355509377745861UL + 2375UL), (1037355509377745861UL + 2376UL), (1037355509377745861UL + 2377UL), (1037355509377745861UL + 2384UL), (1037355509377745861UL + 2385UL), (1037355509377745861UL + 2386UL), (1037355509377745861UL + 2387UL),
+                            "findIndex", 0, "_Z9findIndexPdid", "_Z13findIndex_npmPdid", 0, 3, (1037355509377745861UL + 1121UL), 0UL, 0UL, 0UL, 0,
+                            "randn", 0, "_Z5randnPii", "_Z9randn_npmPii", 0, 2, (1037355509377745861UL + 266UL), 0UL, 0UL, 5, "randu", 2, (1037355509377745861UL + 266UL), 0UL, 0UL, "randu", 2, (1037355509377745861UL + 266UL), 0UL, 0UL, "cos", 1, 0UL, 0UL, "log", 1, 0UL, 0UL, "sqrt", 1, 0UL, 0UL,
+                            "particleFilter_kernel", 0, "_Z21particleFilter_kernelPiiiiS_iPdS0_S0_S0_S0_S0_S0_S0_iS_iiS0_dd", "_Z25particleFilter_kernel_npmPiiiiS_iPdS0_S0_S0_S0_S0_S0_S0_iS_iiS0_dd", 0, 21, (1037355509377745861UL + 1982UL), 0UL, 0UL, 0UL, (1037355509377745861UL + 1986UL), 0UL, (1037355509377745861UL + 1988UL), (1037355509377745861UL + 1989UL), (1037355509377745861UL + 1990UL), (1037355509377745861UL + 1991UL), (1037355509377745861UL + 1992UL), (1037355509377745861UL + 1993UL), (1037355509377745861UL + 1994UL), (1037355509377745861UL + 1995UL), 0UL, (1037355509377745861UL + 1997UL), 0UL, 0UL, (1037355509377745861UL + 2000UL), 0UL, 0UL, 0UL, 49, "get_time", 0, 0UL, "randn", 2, (1037355509377745861UL + 1986UL), 0UL, 0UL, "randn", 2, (1037355509377745861UL + 1986UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (1037355509377745861UL + 2635UL), 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "fabs", 1, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (1037355509377745861UL + 2636UL), 0UL, 0UL, "exp", 1, 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (1037355509377745861UL + 2637UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (1037355509377745861UL + 2638UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (1037355509377745861UL + 2639UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (1037355509377745861UL + 2638UL), 0UL, 0UL, "printf", 2, (1037355509377745861UL + 2641UL), 0UL, 0UL, "printf", 2, (1037355509377745861UL + 2641UL), 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "sqrt", 1, 0UL, 0UL, "printf", 2, (1037355509377745861UL + 2643UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (1037355509377745861UL + 2644UL), 0UL, 0UL, "randu", 2, (1037355509377745861UL + 1986UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (1037355509377745861UL + 2645UL), 0UL, 0UL, "findIndex", 3, (1037355509377745861UL + 1993UL), 0UL, 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (1037355509377745861UL + 2646UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (1037355509377745861UL + 2647UL), 0UL, 0UL,
+                            "calcLikelihoodSum", 0, "_Z17calcLikelihoodSumPiS_i", "_Z21calcLikelihoodSum_npmPiS_i", 0, 3, (1037355509377745861UL + 1061UL), (1037355509377745861UL + 1062UL), 0UL, 0UL, 2, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL,
                             "roundDouble", 0, "_Z11roundDoubled", "_Z15roundDouble_npmd", 0, 1, 0UL, 0UL, 0,
-                            "findIndexBin", 0, "_Z12findIndexBinPdiid", "_Z16findIndexBin_npmPdiid", 0, 4, (7756533236910309485UL + 1262UL), 0UL, 0UL, 0UL, 0UL, 2, "findIndexBin", 4, (7756533236910309485UL + 1262UL), 0UL, 0UL, 0UL, 0UL, "findIndexBin", 4, (7756533236910309485UL + 1262UL), 0UL, 0UL, 0UL, 0UL,
+                            "findIndexBin", 0, "_Z12findIndexBinPdiid", "_Z16findIndexBin_npmPdiid", 0, 4, (1037355509377745861UL + 1262UL), 0UL, 0UL, 0UL, 0UL, 2, "findIndexBin", 4, (1037355509377745861UL + 1262UL), 0UL, 0UL, 0UL, 0UL, "findIndexBin", 4, (1037355509377745861UL + 1262UL), 0UL, 0UL, 0UL, 0UL,
                             "elapsed_time", 0, "_Z12elapsed_timexx", "_Z16elapsed_time_npmxx", 0, 2, 0UL, 0UL, 0UL, 0,
-                            "setIf", 0, "_Z5setIfiiPiS_S_S_", "_Z9setIf_npmiiPiS_S_S_", 0, 6, 0UL, 0UL, (7756533236910309485UL + 177UL), (7756533236910309485UL + 178UL), (7756533236910309485UL + 179UL), (7756533236910309485UL + 180UL), 0UL, 0,
-                            "dilate_matrix", 0, "_Z13dilate_matrixPiiiiiiii", "_Z17dilate_matrix_npmPiiiiiiii", 0, 8, (7756533236910309485UL + 597UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 3, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "sqrt", 1, 0UL, 0UL,
-                            "imdilate_disk", 0, "_Z13imdilate_diskPiiiiiS_", "_Z17imdilate_disk_npmPiiiiiS_", 0, 6, (7756533236910309485UL + 690UL), 0UL, 0UL, 0UL, 0UL, (7756533236910309485UL + 695UL), 0UL, 1, "dilate_matrix", 8, (7756533236910309485UL + 695UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-                            "get_time", 0, "_Z8get_timev", "_Z12get_time_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (7756533236910309485UL + 1UL), (7756533236910309485UL + 2669UL), 0UL,
-                            "getneighbors", 0, "_Z12getneighborsPiPdi", "_Z16getneighbors_npmPiPdi", 0, 3, (7756533236910309485UL + 782UL), (7756533236910309485UL + 783UL), 0UL, 0UL, 0,
-                            "strelDisk", 0, "_Z9strelDiskPii", "_Z13strelDisk_npmPii", 0, 2, (7756533236910309485UL + 446UL), 0UL, 0UL, 3, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "sqrt", 1, 0UL, 0UL,
-                            "addNoise", 0, "_Z8addNoisePiS_S_S_S_", "_Z12addNoise_npmPiS_S_S_S_", 0, 5, (7756533236910309485UL + 370UL), (7756533236910309485UL + 371UL), (7756533236910309485UL + 372UL), (7756533236910309485UL + 373UL), (7756533236910309485UL + 374UL), 0UL, 1, "randn", 2, (7756533236910309485UL + 374UL), 0UL, 0UL,
-                            "randu", 0, "_Z5randuPii", "_Z9randu_npmPii", 0, 2, (7756533236910309485UL + 224UL), 0UL, 0UL, 1, "fabs", 1, 0UL, 0UL,
+                            "setIf", 0, "_Z5setIfiiPiS_S_S_", "_Z9setIf_npmiiPiS_S_S_", 0, 6, 0UL, 0UL, (1037355509377745861UL + 177UL), (1037355509377745861UL + 178UL), (1037355509377745861UL + 179UL), (1037355509377745861UL + 180UL), 0UL, 0,
+                            "dilate_matrix", 0, "_Z13dilate_matrixPiiiiiiii", "_Z17dilate_matrix_npmPiiiiiiii", 0, 8, (1037355509377745861UL + 597UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 3, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "sqrt", 1, 0UL, 0UL,
+                            "imdilate_disk", 0, "_Z13imdilate_diskPiiiiiS_", "_Z17imdilate_disk_npmPiiiiiS_", 0, 6, (1037355509377745861UL + 690UL), 0UL, 0UL, 0UL, 0UL, (1037355509377745861UL + 695UL), 0UL, 1, "dilate_matrix", 8, (1037355509377745861UL + 695UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+                            "get_time", 0, "_Z8get_timev", "_Z12get_time_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (1037355509377745861UL + 1UL), (1037355509377745861UL + 2669UL), 0UL,
+                            "getneighbors", 0, "_Z12getneighborsPiPdi", "_Z16getneighbors_npmPiPdi", 0, 3, (1037355509377745861UL + 782UL), (1037355509377745861UL + 783UL), 0UL, 0UL, 0,
+                            "strelDisk", 0, "_Z9strelDiskPii", "_Z13strelDisk_npmPii", 0, 2, (1037355509377745861UL + 446UL), 0UL, 0UL, 3, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "sqrt", 1, 0UL, 0UL,
+                            "addNoise", 0, "_Z8addNoisePiS_S_S_S_", "_Z12addNoise_npmPiS_S_S_S_", 0, 5, (1037355509377745861UL + 370UL), (1037355509377745861UL + 371UL), (1037355509377745861UL + 372UL), (1037355509377745861UL + 373UL), (1037355509377745861UL + 374UL), 0UL, 1, "randn", 2, (1037355509377745861UL + 374UL), 0UL, 0UL,
+                            "randu", 0, "_Z5randuPii", "_Z9randu_npmPii", 0, 2, (1037355509377745861UL + 224UL), 0UL, 0UL, 1, "fabs", 1, 0UL, 0UL,
                            "findIndex", &(____chimes_does_checkpoint_findIndex_npm),
                            "randn", &(____chimes_does_checkpoint_randn_npm),
                            "particleFilter_kernel", &(____chimes_does_checkpoint_particleFilter_kernel_npm),
@@ -6709,60 +6908,60 @@ static int module_init() {
                            "strelDisk", &(____chimes_does_checkpoint_strelDisk_npm),
                            "addNoise", &(____chimes_does_checkpoint_addNoise_npm),
                            "randu", &(____chimes_does_checkpoint_randu_npm),
-                             (7756533236910309485UL + 605UL), (7756533236910309485UL + 690UL),
-                             (7756533236910309485UL + 450UL), (7756533236910309485UL + 597UL),
-                             (7756533236910309485UL + 1125UL), (7756533236910309485UL + 1262UL),
-                             (7756533236910309485UL + 271UL), (7756533236910309485UL + 370UL),
-                             (7756533236910309485UL + 272UL), (7756533236910309485UL + 371UL),
-                             (7756533236910309485UL + 273UL), (7756533236910309485UL + 372UL),
-                             (7756533236910309485UL + 274UL), (7756533236910309485UL + 373UL),
-                             (7756533236910309485UL + 275UL), (7756533236910309485UL + 374UL),
-                             (7756533236910309485UL + 797UL), (7756533236910309485UL + 948UL),
-                             (7756533236910309485UL + 696UL), (7756533236910309485UL + 782UL),
-                             (7756533236910309485UL + 697UL), (7756533236910309485UL + 783UL),
-                             (7756533236910309485UL + 2034UL), (7756533236910309485UL + 2307UL),
-                             (7756533236910309485UL + 2380UL), (7756533236910309485UL + 2563UL),
-                             (7756533236910309485UL + 181UL), (7756533236910309485UL + 224UL),
-                             (7756533236910309485UL + 2033UL), (7756533236910309485UL + 2304UL),
-                             (7756533236910309485UL + 2032UL), (7756533236910309485UL + 2303UL),
-                             (7756533236910309485UL + 2031UL), (7756533236910309485UL + 2302UL),
-                             (7756533236910309485UL + 2030UL), (7756533236910309485UL + 2301UL),
-                             (7756533236910309485UL + 2017UL), (7756533236910309485UL + 2085UL),
-                             (7756533236910309485UL + 2363UL), (7756533236910309485UL + 2651UL),
-                             (7756533236910309485UL + 1272UL), (7756533236910309485UL + 1988UL),
-                             (7756533236910309485UL + 1278UL), (7756533236910309485UL + 1994UL),
-                             (7756533236910309485UL + 1279UL), (7756533236910309485UL + 1995UL),
-                             (7756533236910309485UL + 2626UL), (7756533236910309485UL + 2407UL),
-                             (7756533236910309485UL + 1284UL), (7756533236910309485UL + 2000UL),
-                             (7756533236910309485UL + 1270UL), (7756533236910309485UL + 1986UL),
-                             (7756533236910309485UL + 610UL), (7756533236910309485UL + 695UL),
-                             (7756533236910309485UL + 1273UL), (7756533236910309485UL + 1989UL),
-                             (7756533236910309485UL + 1274UL), (7756533236910309485UL + 1990UL),
-                             (7756533236910309485UL + 1275UL), (7756533236910309485UL + 1991UL),
-                             (7756533236910309485UL + 1276UL), (7756533236910309485UL + 1992UL),
-                             (7756533236910309485UL + 1266UL), (7756533236910309485UL + 1982UL),
-                             (7756533236910309485UL + 77UL), (7756533236910309485UL + 179UL),
-                             (7756533236910309485UL + 76UL), (7756533236910309485UL + 178UL),
-                             (7756533236910309485UL + 75UL), (7756533236910309485UL + 177UL),
-                             (7756533236910309485UL + 2362UL), (7756533236910309485UL + 2626UL),
-                             (7756533236910309485UL + 227UL), (7756533236910309485UL + 266UL),
-                             (7756533236910309485UL + 1277UL), (7756533236910309485UL + 1993UL),
-                             (7756533236910309485UL + 78UL), (7756533236910309485UL + 180UL),
-                             (7756533236910309485UL + 785UL), (7756533236910309485UL + 993UL),
-                             (7756533236910309485UL + 1281UL), (7756533236910309485UL + 1997UL),
-                             (7756533236910309485UL + 2028UL), (7756533236910309485UL + 2260UL),
-                             (7756533236910309485UL + 1065UL), (7756533236910309485UL + 1121UL),
-                             (7756533236910309485UL + 789UL), (7756533236910309485UL + 997UL),
-                             (7756533236910309485UL + 2029UL), (7756533236910309485UL + 2266UL),
-                             (7756533236910309485UL + 2024UL), (7756533236910309485UL + 2173UL),
-                             (7756533236910309485UL + 2027UL), (7756533236910309485UL + 2298UL),
-                             (7756533236910309485UL + 2378UL), (7756533236910309485UL + 2545UL),
-                             (7756533236910309485UL + 2021UL), (7756533236910309485UL + 2305UL),
-                             (7756533236910309485UL + 2005UL), (7756533236910309485UL + 2354UL),
-                             (7756533236910309485UL + 2009UL), (7756533236910309485UL + 2358UL),
-                             (7756533236910309485UL + 375UL), (7756533236910309485UL + 446UL),
-                             (7756533236910309485UL + 1002UL), (7756533236910309485UL + 1062UL),
-                             (7756533236910309485UL + 1001UL), (7756533236910309485UL + 1061UL),
+                             (1037355509377745861UL + 605UL), (1037355509377745861UL + 690UL),
+                             (1037355509377745861UL + 450UL), (1037355509377745861UL + 597UL),
+                             (1037355509377745861UL + 1125UL), (1037355509377745861UL + 1262UL),
+                             (1037355509377745861UL + 271UL), (1037355509377745861UL + 370UL),
+                             (1037355509377745861UL + 272UL), (1037355509377745861UL + 371UL),
+                             (1037355509377745861UL + 273UL), (1037355509377745861UL + 372UL),
+                             (1037355509377745861UL + 274UL), (1037355509377745861UL + 373UL),
+                             (1037355509377745861UL + 275UL), (1037355509377745861UL + 374UL),
+                             (1037355509377745861UL + 797UL), (1037355509377745861UL + 948UL),
+                             (1037355509377745861UL + 696UL), (1037355509377745861UL + 782UL),
+                             (1037355509377745861UL + 697UL), (1037355509377745861UL + 783UL),
+                             (1037355509377745861UL + 2034UL), (1037355509377745861UL + 2307UL),
+                             (1037355509377745861UL + 2380UL), (1037355509377745861UL + 2563UL),
+                             (1037355509377745861UL + 181UL), (1037355509377745861UL + 224UL),
+                             (1037355509377745861UL + 2033UL), (1037355509377745861UL + 2304UL),
+                             (1037355509377745861UL + 2032UL), (1037355509377745861UL + 2303UL),
+                             (1037355509377745861UL + 2031UL), (1037355509377745861UL + 2302UL),
+                             (1037355509377745861UL + 2030UL), (1037355509377745861UL + 2301UL),
+                             (1037355509377745861UL + 2017UL), (1037355509377745861UL + 2085UL),
+                             (1037355509377745861UL + 2363UL), (1037355509377745861UL + 2651UL),
+                             (1037355509377745861UL + 1272UL), (1037355509377745861UL + 1988UL),
+                             (1037355509377745861UL + 1278UL), (1037355509377745861UL + 1994UL),
+                             (1037355509377745861UL + 1279UL), (1037355509377745861UL + 1995UL),
+                             (1037355509377745861UL + 2626UL), (1037355509377745861UL + 2407UL),
+                             (1037355509377745861UL + 1284UL), (1037355509377745861UL + 2000UL),
+                             (1037355509377745861UL + 1270UL), (1037355509377745861UL + 1986UL),
+                             (1037355509377745861UL + 610UL), (1037355509377745861UL + 695UL),
+                             (1037355509377745861UL + 1273UL), (1037355509377745861UL + 1989UL),
+                             (1037355509377745861UL + 1274UL), (1037355509377745861UL + 1990UL),
+                             (1037355509377745861UL + 1275UL), (1037355509377745861UL + 1991UL),
+                             (1037355509377745861UL + 1276UL), (1037355509377745861UL + 1992UL),
+                             (1037355509377745861UL + 1266UL), (1037355509377745861UL + 1982UL),
+                             (1037355509377745861UL + 77UL), (1037355509377745861UL + 179UL),
+                             (1037355509377745861UL + 76UL), (1037355509377745861UL + 178UL),
+                             (1037355509377745861UL + 75UL), (1037355509377745861UL + 177UL),
+                             (1037355509377745861UL + 2362UL), (1037355509377745861UL + 2626UL),
+                             (1037355509377745861UL + 227UL), (1037355509377745861UL + 266UL),
+                             (1037355509377745861UL + 1277UL), (1037355509377745861UL + 1993UL),
+                             (1037355509377745861UL + 78UL), (1037355509377745861UL + 180UL),
+                             (1037355509377745861UL + 785UL), (1037355509377745861UL + 993UL),
+                             (1037355509377745861UL + 1281UL), (1037355509377745861UL + 1997UL),
+                             (1037355509377745861UL + 2028UL), (1037355509377745861UL + 2260UL),
+                             (1037355509377745861UL + 1065UL), (1037355509377745861UL + 1121UL),
+                             (1037355509377745861UL + 789UL), (1037355509377745861UL + 997UL),
+                             (1037355509377745861UL + 2029UL), (1037355509377745861UL + 2266UL),
+                             (1037355509377745861UL + 2024UL), (1037355509377745861UL + 2173UL),
+                             (1037355509377745861UL + 2027UL), (1037355509377745861UL + 2298UL),
+                             (1037355509377745861UL + 2378UL), (1037355509377745861UL + 2545UL),
+                             (1037355509377745861UL + 2021UL), (1037355509377745861UL + 2305UL),
+                             (1037355509377745861UL + 2005UL), (1037355509377745861UL + 2354UL),
+                             (1037355509377745861UL + 2009UL), (1037355509377745861UL + 2358UL),
+                             (1037355509377745861UL + 375UL), (1037355509377745861UL + 446UL),
+                             (1037355509377745861UL + 1002UL), (1037355509377745861UL + 1062UL),
+                             (1037355509377745861UL + 1001UL), (1037355509377745861UL + 1061UL),
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
                              "findIndex", "_Z9findIndexPdid", 0, 0,
                              "calcLikelihoodSum", "_Z17calcLikelihoodSumPiS_i", 0, 0,
@@ -6791,43 +6990,43 @@ static int module_init() {
                         "main|I|0", 2, "videoSequence", "particleFilter",
                         "main|start|0", 2, "videoSequence", "particleFilter",
                         "main|endVideoSequence|0", 1, "particleFilter",
-        "randu", 0UL, (int)2, 7756533236910309751UL, 0UL,
-        "randu", 0UL, (int)2, 7756533236910309751UL, 0UL,
-        "randn", 0UL, (int)2, 7756533236910309859UL, 0UL,
-        "dilate_matrix", 0UL, (int)8, 7756533236910310180UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "randu", 0UL, (int)2, 1037355509377746127UL, 0UL,
+        "randu", 0UL, (int)2, 1037355509377746127UL, 0UL,
+        "randn", 0UL, (int)2, 1037355509377746235UL, 0UL,
+        "dilate_matrix", 0UL, (int)8, 1037355509377746556UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
         "roundDouble", 0UL, (int)1, 0UL,
         "roundDouble", 0UL, (int)1, 0UL,
-        "imdilate_disk", 0UL, (int)6, 7756533236910310478UL, 0UL, 0UL, 0UL, 0UL, 7756533236910310433UL,
-        "setIf", 0UL, (int)6, 0UL, 0UL, 7756533236910310478UL, 7756533236910310271UL, 7756533236910310272UL, 7756533236910310273UL,
-        "setIf", 0UL, (int)6, 0UL, 0UL, 7756533236910310478UL, 7756533236910310271UL, 7756533236910310272UL, 7756533236910310273UL,
-        "addNoise", 0UL, (int)5, 7756533236910310478UL, 7756533236910310271UL, 7756533236910310272UL, 7756533236910310273UL, 7756533236910310482UL,
-        "findIndexBin", 0UL, (int)4, 7756533236910310747UL, 0UL, 0UL, 0UL,
-        "findIndexBin", 0UL, (int)4, 7756533236910310747UL, 0UL, 0UL, 0UL,
+        "imdilate_disk", 0UL, (int)6, 1037355509377746854UL, 0UL, 0UL, 0UL, 0UL, 1037355509377746809UL,
+        "setIf", 0UL, (int)6, 0UL, 0UL, 1037355509377746854UL, 1037355509377746647UL, 1037355509377746648UL, 1037355509377746649UL,
+        "setIf", 0UL, (int)6, 0UL, 0UL, 1037355509377746854UL, 1037355509377746647UL, 1037355509377746648UL, 1037355509377746649UL,
+        "addNoise", 0UL, (int)5, 1037355509377746854UL, 1037355509377746647UL, 1037355509377746648UL, 1037355509377746649UL, 1037355509377746858UL,
+        "findIndexBin", 0UL, (int)4, 1037355509377747123UL, 0UL, 0UL, 0UL,
+        "findIndexBin", 0UL, (int)4, 1037355509377747123UL, 0UL, 0UL, 0UL,
         "get_time", 0UL, (int)0,
-        "randn", 0UL, (int)2, 7756533236910311471UL, 0UL,
-        "randn", 0UL, (int)2, 7756533236910311471UL, 0UL,
-        "get_time", 0UL, (int)0,
-        "elapsed_time", 0UL, (int)2, 0UL, 0UL,
-        "roundDouble", 0UL, (int)1, 0UL,
-        "roundDouble", 0UL, (int)1, 0UL,
-        "get_time", 0UL, (int)0,
-        "elapsed_time", 0UL, (int)2, 0UL, 0UL,
-        "get_time", 0UL, (int)0,
-        "elapsed_time", 0UL, (int)2, 0UL, 0UL,
-        "get_time", 0UL, (int)0,
-        "elapsed_time", 0UL, (int)2, 0UL, 0UL,
-        "get_time", 0UL, (int)0,
-        "elapsed_time", 0UL, (int)2, 0UL, 0UL,
+        "randn", 0UL, (int)2, 1037355509377747847UL, 0UL,
+        "randn", 0UL, (int)2, 1037355509377747847UL, 0UL,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,
         "roundDouble", 0UL, (int)1, 0UL,
         "roundDouble", 0UL, (int)1, 0UL,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,
-        "randu", 0UL, (int)2, 7756533236910311471UL, 0UL,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,
-        "findIndex", 0UL, (int)3, 7756533236910311478UL, 0UL, 0UL,
+        "get_time", 0UL, (int)0,
+        "elapsed_time", 0UL, (int)2, 0UL, 0UL,
+        "get_time", 0UL, (int)0,
+        "elapsed_time", 0UL, (int)2, 0UL, 0UL,
+        "get_time", 0UL, (int)0,
+        "elapsed_time", 0UL, (int)2, 0UL, 0UL,
+        "roundDouble", 0UL, (int)1, 0UL,
+        "roundDouble", 0UL, (int)1, 0UL,
+        "get_time", 0UL, (int)0,
+        "elapsed_time", 0UL, (int)2, 0UL, 0UL,
+        "randu", 0UL, (int)2, 1037355509377747847UL, 0UL,
+        "get_time", 0UL, (int)0,
+        "elapsed_time", 0UL, (int)2, 0UL, 0UL,
+        "findIndex", 0UL, (int)3, 1037355509377747854UL, 0UL, 0UL,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,
         "get_time", 0UL, (int)0,
@@ -6835,15 +7034,15 @@ static int module_init() {
         "get_time", 0UL, (int)0,
         "roundDouble", 0UL, (int)1, 0UL,
         "roundDouble", 0UL, (int)1, 0UL,
-        "strelDisk", 0UL, (int)2, 7756533236910311570UL, 0UL,
-        "getneighbors", 0UL, (int)3, 7756533236910311570UL, 7756533236910311790UL, 0UL,
+        "strelDisk", 0UL, (int)2, 1037355509377747946UL, 0UL,
+        "getneighbors", 0UL, (int)3, 1037355509377747946UL, 1037355509377748166UL, 0UL,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,
-        "particleFilter_kernel", 0UL, (int)21, 7756533236910311839UL, 0UL, 0UL, 0UL, 7756533236910311843UL, 0UL, 7756533236910311783UL, 7756533236910311745UL, 7756533236910311751UL, 7756533236910311786UL, 7756533236910311787UL, 7756533236910311788UL, 7756533236910311789UL, 7756533236910311790UL, 0UL, 7756533236910311792UL, 0UL, 0UL, 7756533236910311658UL, 0UL, 0UL,
+        "particleFilter_kernel", 0UL, (int)21, 1037355509377748215UL, 0UL, 0UL, 0UL, 1037355509377748219UL, 0UL, 1037355509377748159UL, 1037355509377748121UL, 1037355509377748127UL, 1037355509377748162UL, 1037355509377748163UL, 1037355509377748164UL, 1037355509377748165UL, 1037355509377748166UL, 0UL, 1037355509377748168UL, 0UL, 0UL, 1037355509377748034UL, 0UL, 0UL,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,

@@ -31,11 +31,11 @@ static unsigned ____alias_loc_id_3;
 static unsigned ____alias_loc_id_4;
 static unsigned ____alias_loc_id_5;
 static unsigned ____alias_loc_id_6;
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -44,7 +44,7 @@ static unsigned ____alias_loc_id_6;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -100,14 +100,14 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 76 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 76 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 28 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1052,7 +1052,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 2 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp" 2
+# 2 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 1 3 4
@@ -2228,7 +2228,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 3 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp" 2
+# 3 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp" 2
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 1 3 4
 # 34 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/omp.h" 3 4
 typedef struct
@@ -2302,7 +2302,7 @@ int omp_in_final (void) throw ();
 
 
 }
-# 4 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp" 2
+# 4 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp" 2
 # 1 "/usr/include/sys/time.h" 1 3 4
 # 27 "/usr/include/sys/time.h" 3 4
 # 1 "/usr/include/time.h" 1 3 4
@@ -2408,1034 +2408,1073 @@ extern int futimesat (int __fd, __const char *__file,
         __const struct timeval __tvp[2]) throw ();
 # 191 "/usr/include/sys/time.h" 3 4
 }
-# 5 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp" 2
-# 5 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 5 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp" 2
+# 5 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 
-# 1 "/home/jmg3/chimes/src/libchimes/checkpoint.h" 1
-# 11 "/home/jmg3/chimes/src/libchimes/checkpoint.h"
+# 1 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h" 1
+# 11 "/scratch/jmg3/chimes/src/libchimes/checkpoint.h"
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
         void (*____chimes_fp)(void *));
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp" 2
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 8 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 7 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp" 2
+# 7 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 8 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 using namespace std;
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double seconds_npm();
 double seconds_quick(); double seconds();
 double seconds_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
      struct timeval tp; ;
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
      struct timezone tzp; ;
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
      int i; i = (gettimeofday(&tp, &tzp)) ;
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
      double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_2, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_2, ____chimes_did_disable0, false); }
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 28 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 29 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 30 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 31 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double t_chip = 0.0005;
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 32 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double chip_height = 0.016;
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 33 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double chip_width = 0.016;
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 34 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 35 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double amb_temp = 80.0;
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 36 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 37 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 int num_omp_threads;
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 39 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 40 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 38 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 39 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 40 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 41 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 42 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 void single_iteration_npm(double *result, double *temp, double *power, int row, int col, double Cap, double Rx, double Ry, double Rz, double step);
 void single_iteration_quick(double *result, double *temp, double *power, int row, int col, double Cap, double Rx, double Ry, double Rz, double step); void single_iteration(double *result, double *temp, double *power, int row, int col, double Cap, double Rx, double Ry, double Rz, double step);
 void single_iteration_resumable(double *result, double *temp, double *power, int row, int col,
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
        double Cap, double Rx, double Ry, double Rz,
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
        double step)
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable1 = new_stack((void *)(&single_iteration), "single_iteration", &____must_manage_single_iteration, 10, 0, (size_t)(10021604361511766920UL), (size_t)(10021604361511766921UL), (size_t)(10021604361511766922UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{const int ____chimes_did_disable1 = new_stack((void *)(&single_iteration), "single_iteration", &____must_manage_single_iteration, 10, 0, (size_t)(10353180797436921476UL), (size_t)(10353180797436921477UL), (size_t)(10353180797436921478UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  double delta; ;
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  int r; int c; ;
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ omp_set_num_threads(num_omp_threads);
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+#pragma omp parallel for shared(power, temp,result) private(r, c, delta) firstprivate(row, col) schedule(static)
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  for (r = 0; r < row; r++) {
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   for (c = 0; c < col; c++) {
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    if ((r == 0) && (c == 0)) {{
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[0] +
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[1] - temp[0]) / Rx +
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[col] - temp[0]) / Ry +
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[0]) / Rz);
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }; } else if ((r == 0) && (c == col-1)) {{
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[c] +
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[c-1] - temp[c]) / Rx +
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[c+col] - temp[c]) / Ry +
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[c]) / Rz);
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }; } else if ((r == row-1) && (c == col-1)) {{
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col+c] +
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+c-1] - temp[r*col+c]) / Rx +
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 74 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r-1)*col+c] - temp[r*col+c]) / Ry +
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col+c]) / Rz);
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }; } else if ((r == row-1) && (c == 0)) {{
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col] +
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+1] - temp[r*col]) / Rx +
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r-1)*col] - temp[r*col]) / Ry +
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col]) / Rz);
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }; } else if (r == 0) {{
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[c] +
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[c+1] + temp[c-1] - 2.0*temp[c]) / Rx +
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[col+c] - temp[c]) / Ry +
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[c]) / Rz);
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }; } else if (c == col-1) {{
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col+c] +
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r+1)*col+c] + temp[(r-1)*col+c] - 2.0*temp[r*col+c]) / Ry +
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+c-1] - temp[r*col+c]) / Rx +
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col+c]) / Rz);
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }; } else if (r == row-1) {{
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col+c] +
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+c+1] + temp[r*col+c-1] - 2.0*temp[r*col+c]) / Rx +
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r-1)*col+c] - temp[r*col+c]) / Ry +
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col+c]) / Rz);
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }; } else if (c == 0) {
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col] +
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r+1)*col] + temp[(r-1)*col] - 2.0*temp[r*col]) / Ry +
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+1] - temp[r*col]) / Rx +
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col]) / Rz);
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    else {
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col+c] +
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r+1)*col+c] + temp[(r-1)*col+c] - 2.0*temp[r*col+c]) / Ry +
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+c+1] + temp[r*col+c-1] - 2.0*temp[r*col+c]) / Rx +
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col+c]) / Rz);
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    result[r*col+c] =temp[r*col+c]+ delta;
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   }
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  }
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ omp_set_num_threads(num_omp_threads);
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+#pragma omp parallel for shared(result, temp) private(r, c) schedule(static)
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  for (r = 0; r < row; r++) {
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   for (c = 0; c < col; c++) {
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    temp[r*col+c]=result[r*col+c];
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   }
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  }
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 135 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 rm_stack(false, 0UL, "single_iteration", &____must_manage_single_iteration, ____alias_loc_id_3, ____chimes_did_disable1, false); }
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 139 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 140 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 141 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 142 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 143 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 void compute_tran_temp_quick(double *result, int num_iterations, double *temp, double *power, int row, int col); void compute_tran_temp(double *result, int num_iterations, double *temp, double *power, int row, int col);
 void compute_tran_temp_resumable(double *result, int num_iterations, double *temp, double *power, int row, int col)
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable2 = new_stack((void *)(&compute_tran_temp), "compute_tran_temp", (int *)0, 6, 6, (size_t)(10021604361511767038UL), (size_t)(0UL), (size_t)(10021604361511767040UL), (size_t)(10021604361511767041UL), (size_t)(0UL), (size_t)(0UL), "compute_tran_temp|result|0", (int *)0, "double*", (void *)(&result), (size_t)8, 1, 0, 0, "compute_tran_temp|num_iterations|0", (int *)0, "i32", (void *)(&num_iterations), (size_t)4, 0, 0, 0, "compute_tran_temp|temp|0", (int *)0, "double*", (void *)(&temp), (size_t)8, 1, 0, 0, "compute_tran_temp|power|0", (int *)0, "double*", (void *)(&power), (size_t)8, 1, 0, 0, "compute_tran_temp|row|0", (int *)0, "i32", (void *)(&row), (size_t)4, 0, 0, 0, "compute_tran_temp|col|0", (int *)0, "i32", (void *)(&col), (size_t)4, 0, 0, 0) ; int i;
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{const int ____chimes_did_disable2 = new_stack((void *)(&compute_tran_temp), "compute_tran_temp", (int *)0, 6, 6, (size_t)(10353180797436921595UL), (size_t)(0UL), (size_t)(10353180797436921597UL), (size_t)(10353180797436921598UL), (size_t)(0UL), (size_t)(0UL), "compute_tran_temp|result|0", (int *)0, "double*", (void *)(&result), (size_t)8, 1, 0, 0, "compute_tran_temp|num_iterations|0", (int *)0, "i32", (void *)(&num_iterations), (size_t)4, 0, 0, 0, "compute_tran_temp|temp|0", (int *)0, "double*", (void *)(&temp), (size_t)8, 1, 0, 0, "compute_tran_temp|power|0", (int *)0, "double*", (void *)(&power), (size_t)8, 1, 0, 0, "compute_tran_temp|row|0", (int *)0, "i32", (void *)(&row), (size_t)4, 0, 0, 0, "compute_tran_temp|col|0", (int *)0, "i32", (void *)(&col), (size_t)4, 0, 0, 0) ; int i;
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double step;
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double Rz;
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double Ry;
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double Rx;
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double Cap;
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  register_stack_vars(6, "compute_tran_temp|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "compute_tran_temp|step|0", (int *)0x0, "double", (void *)(&step), (size_t)8, 0, 0, 0, "compute_tran_temp|Rz|0", (int *)0x0, "double", (void *)(&Rz), (size_t)8, 0, 0, 0, "compute_tran_temp|Ry|0", (int *)0x0, "double", (void *)(&Ry), (size_t)8, 0, 0, 0, "compute_tran_temp|Rx|0", (int *)0x0, "double", (void *)(&Rx), (size_t)8, 0, 0, 0, "compute_tran_temp|Cap|0", (int *)0x0, "double", (void *)(&Cap), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 141 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 146 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 147 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 148 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 149 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   double grid_height; grid_height = (chip_height / row) ;
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 151 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   double grid_width; grid_width = (chip_width / col) ;
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 152 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 153 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     Cap = (0.5 * 1.75e6 * t_chip * grid_width * grid_height) ;
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 154 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     Rx = (grid_width / (2.0 * 100 * t_chip * grid_height)) ;
-# 146 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 155 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     Ry = (grid_height / (2.0 * 100 * t_chip * grid_width)) ;
-# 147 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 156 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     Rz = (t_chip / (100 * grid_height * grid_width)) ;
-# 148 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 157 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 158 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   double max_slope; max_slope = ((3.0e6) / (0.5 * t_chip * 1.75e6)) ;
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 159 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     step = (0.001 / max_slope) ;
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 160 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  double t; ;
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 157 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 158 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 161 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 162 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 163 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 164 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 165 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 166 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 167 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
      { for ( i = (0) ; i < num_iterations ; i++)
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 168 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  {
-# 160 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 162 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 163 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 169 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 170 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 171 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 172 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    call_lbl_0: ({ calling_npm("single_iteration", 0); single_iteration_npm(result, temp, power, row, col, Cap, Rx, Ry, Rz, step); });
-# 164 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 165 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 166 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 173 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 174 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 175 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
          call_lbl_1: checkpoint_transformed(1, ____alias_loc_id_0);
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 176 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 177 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  } }
-# 169 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 170 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 171 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 173 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 178 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 179 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 180 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 181 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 182 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 rm_stack(false, 0UL, "compute_tran_temp", (int *)0x0, ____alias_loc_id_4, ____chimes_did_disable2, false); }
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 175 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 183 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 184 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 void fatal_npm(char *s);
 void fatal_quick(char *s); void fatal(char *s);
 void fatal_resumable(char *s)
-# 176 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable3 = new_stack((void *)(&fatal), "fatal", &____must_manage_fatal, 1, 0, (size_t)(10021604361511767053UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 177 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 185 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{const int ____chimes_did_disable3 = new_stack((void *)(&fatal), "fatal", &____must_manage_fatal, 1, 0, (size_t)(10353180797436921610UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 186 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "error: %s\n", s);
-# 178 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 187 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  exit(1);
-# 179 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 188 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 rm_stack(false, 0UL, "fatal", &____must_manage_fatal, 0, ____chimes_did_disable3, false); }
-# 180 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 181 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 189 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 190 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 void read_input_npm(double *vect, int grid_rows, int grid_cols, char *file);
 void read_input_quick(double *vect, int grid_rows, int grid_cols, char *file); void read_input(double *vect, int grid_rows, int grid_cols, char *file);
 void read_input_resumable(double *vect, int grid_rows, int grid_cols, char *file)
-# 182 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable4 = new_stack((void *)(&read_input), "read_input", &____must_manage_read_input, 4, 0, (size_t)(10021604361511767124UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10021604361511767127UL)) ; char str[256];
-# 182 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 191 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{const int ____chimes_did_disable4 = new_stack((void *)(&read_input), "read_input", &____must_manage_read_input, 4, 0, (size_t)(10353180797436921681UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10353180797436921684UL)) ; char str[256];
+# 191 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 183 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 192 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    int i; int index; ;
-# 184 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 193 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  FILE *fp; ;
-# 185 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 194 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   ;
-# 186 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 195 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  double val; ;
-# 187 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 188 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 196 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 197 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fp = fopen (file, "r");
-# 189 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 198 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  if (!fp) { call_lbl_0: ({ calling_npm("fatal", 0); fatal_npm("file could not be opened for reading"); }); };
-# 191 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 192 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 200 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 201 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  for (i=0; i < grid_rows * grid_cols; i++) {
-# 193 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 202 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   fgets(str, 256, fp);
-# 194 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 203 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   if (feof(fp)) { call_lbl_1: ({ calling_npm("fatal", 0); fatal_npm("not enough lines in file"); }); };
-# 196 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 205 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   if ((sscanf(str, "%lf", &val) != 1)) { call_lbl_2: ({ calling_npm("fatal", 0); fatal_npm("invalid file format"); }); };
-# 198 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 207 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   vect[i] = val;
-# 199 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 208 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  }
-# 200 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 201 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 209 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 210 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fclose(fp);
-# 202 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 211 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 rm_stack(false, 0UL, "read_input", &____must_manage_read_input, ____alias_loc_id_5, ____chimes_did_disable4, false); }
-# 203 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 204 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 212 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 213 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 void usage_npm(int argc, char **argv);
 void usage_quick(int argc, char **argv); void usage(int argc, char **argv);
 void usage_resumable(int argc, char **argv)
-# 205 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable5 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 2, 0, (size_t)(0UL), (size_t)(10021604361511767164UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 214 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{const int ____chimes_did_disable5 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 2, 0, (size_t)(0UL), (size_t)(10353180797436921721UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 215 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "Usage: %s <grid_rows> <grid_cols> <sim_time> <no. of threads><temp_file> <power_file>\n", argv[0]);
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 216 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "\t<grid_rows>  - number of rows in the grid (positive integer)\n");
-# 208 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 217 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "\t<grid_cols>  - number of columns in the grid (positive integer)\n");
-# 209 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 218 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "\t<sim_time>   - number of iterations\n");
-# 210 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 219 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "\t<no. of threads>   - number of threads\n");
-# 211 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 220 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "\t<temp_file>  - name of the file containing the initial temperature values of each cell\n");
-# 212 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 221 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "\t<power_file> - name of the file containing the dissipated power values of each cell\n");
-# 213 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 222 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  exit(1);
-# 214 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 223 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable5, false); }
-# 215 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 216 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 224 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 225 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv)
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable6 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10021604361511767310UL)) ; double start_time;
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 226 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{const int ____chimes_did_disable6 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10353180797436921867UL)) ; double start_time;
+# 226 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double *power;
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 226 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double *temp;
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 226 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  register_stack_vars(3, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|power|0", (int *)0x0, "double*", (void *)(&power), (size_t)8, 1, 0, 0, "main|temp|0", (int *)0x0, "double*", (void *)(&temp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ; ;
-# 218 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 227 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  int grid_rows; int grid_cols; int sim_time; int i; ;
-# 219 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 228 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    double *result; ;
-# 220 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 229 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  char *tfile; char *pfile; ;
-# 221 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 222 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 230 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 231 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
         call_lbl_0: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
-# 223 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 224 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 225 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 232 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 233 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 234 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  if (argc != 7) { call_lbl_1: ({ calling_npm("usage", 0); usage_npm(argc, argv); }); };
-# 227 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 236 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  if ((grid_rows = atoi(argv[1])) <= 0 ||
-# 228 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 237 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   (grid_cols = atoi(argv[2])) <= 0 ||
-# 229 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 238 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   (sim_time = atoi(argv[3])) <= 0 ||
-# 230 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 239 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   (num_omp_threads = atoi(argv[4])) <= 0) { call_lbl_2: ({ calling_npm("usage", 0); usage_npm(argc, argv); }); };
-# 233 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 234 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 235 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- temp = (double *) ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767240UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 236 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- power = (double *) ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767247UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 237 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- result = (double *) ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767254UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 238 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 242 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 243 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 244 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ temp = (double *) ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10353180797436921797UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 245 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ power = (double *) ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10353180797436921804UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 246 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ result = (double *) ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10353180797436921811UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 247 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  if (!temp || !power) { call_lbl_3: ({ calling_npm("fatal", 0); fatal_npm("unable to allocate memory"); }); };
-# 240 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 241 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 242 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 249 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 250 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 251 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  tfile = argv[5];
-# 243 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 252 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  pfile = argv[6];
-# 244 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 253 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   call_lbl_4: ({ calling_npm("read_input", 0); read_input_npm(temp, grid_rows, grid_cols, tfile); });
-# 245 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 254 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   call_lbl_5: ({ calling_npm("read_input", 0); read_input_npm(power, grid_rows, grid_cols, pfile); });
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 247 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 255 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 256 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  printf("Start computing the transient temperature\n");
-# 248 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_6: ({ calling((void*)compute_tran_temp, 6, ____alias_loc_id_1, 0UL, 6, (size_t)(10021604361511767254UL), (size_t)(0UL), (size_t)(10021604361511767240UL), (size_t)(10021604361511767247UL), (size_t)(0UL), (size_t)(0UL)); (compute_tran_temp)(result, sim_time, temp, power, grid_rows, grid_cols); }) ;
-# 249 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 257 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  call_lbl_6: ({ calling((void*)compute_tran_temp, 6, ____alias_loc_id_1, 0UL, 6, (size_t)(10353180797436921811UL), (size_t)(0UL), (size_t)(10353180797436921797UL), (size_t)(10353180797436921804UL), (size_t)(0UL), (size_t)(0UL)); (compute_tran_temp)(result, sim_time, temp, power, grid_rows, grid_cols); }) ;
+# 258 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  printf("Ending simulation\n");
-# 250 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 251 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 259 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 260 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
      double end_time; call_lbl_7: end_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
-# 252 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 261 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     printf("execution took %f s\n", end_time - start_time);
-# 264 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 264 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  ({ free_helper((((unsigned char *)temp) - sizeof(void *)), 10021604361511767240UL);free((((unsigned char *)temp) - sizeof(void *))); }) ;
-# 265 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  ({ free_helper((((unsigned char *)power) - sizeof(void *)), 10021604361511767247UL);free((((unsigned char *)power) - sizeof(void *))); }) ;
-# 266 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 267 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 273 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 273 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  ({ free_helper((((unsigned char *)temp) - sizeof(void *)), 10353180797436921797UL);free((((unsigned char *)temp) - sizeof(void *))); }) ;
+# 274 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  ({ free_helper((((unsigned char *)power) - sizeof(void *)), 10353180797436921804UL);free((((unsigned char *)power) - sizeof(void *))); }) ;
+# 275 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 276 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable6, false); return ____chimes_ret_var_1; ;
-# 268 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 277 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable6, false); }
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double seconds_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0) ; ; ;
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
      struct timeval tp; ;
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
      struct timezone tzp; ;
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
      int i; i = (gettimeofday(&tp, &tzp)) ;
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
      double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_2, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_2, ____chimes_did_disable0, false); }
 
 double seconds() { return (____chimes_replaying ? seconds_resumable() : seconds_quick()); }
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 void single_iteration_quick(double *result, double *temp, double *power, int row, int col,
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
        double Cap, double Rx, double Ry, double Rz,
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
        double step)
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable1 = new_stack((void *)(&single_iteration), "single_iteration", &____must_manage_single_iteration, 10, 0, (size_t)(10021604361511766920UL), (size_t)(10021604361511766921UL), (size_t)(10021604361511766922UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{const int ____chimes_did_disable1 = new_stack((void *)(&single_iteration), "single_iteration", &____must_manage_single_iteration, 10, 0, (size_t)(10353180797436921476UL), (size_t)(10353180797436921477UL), (size_t)(10353180797436921478UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  double delta; ;
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  int r; int c; ;
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ omp_set_num_threads(num_omp_threads);
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+#pragma omp parallel for shared(power, temp,result) private(r, c, delta) firstprivate(row, col) schedule(static)
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  for (r = 0; r < row; r++) {
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   for (c = 0; c < col; c++) {
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    if ((r == 0) && (c == 0)) {{
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[0] +
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[1] - temp[0]) / Rx +
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[col] - temp[0]) / Ry +
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[0]) / Rz);
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }; } else if ((r == 0) && (c == col-1)) {{
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[c] +
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[c-1] - temp[c]) / Rx +
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[c+col] - temp[c]) / Ry +
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[c]) / Rz);
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }; } else if ((r == row-1) && (c == col-1)) {{
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col+c] +
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+c-1] - temp[r*col+c]) / Rx +
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 74 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r-1)*col+c] - temp[r*col+c]) / Ry +
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col+c]) / Rz);
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }; } else if ((r == row-1) && (c == 0)) {{
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col] +
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+1] - temp[r*col]) / Rx +
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r-1)*col] - temp[r*col]) / Ry +
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col]) / Rz);
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }; } else if (r == 0) {{
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[c] +
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[c+1] + temp[c-1] - 2.0*temp[c]) / Rx +
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[col+c] - temp[c]) / Ry +
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[c]) / Rz);
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }; } else if (c == col-1) {{
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col+c] +
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r+1)*col+c] + temp[(r-1)*col+c] - 2.0*temp[r*col+c]) / Ry +
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+c-1] - temp[r*col+c]) / Rx +
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col+c]) / Rz);
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }; } else if (r == row-1) {{
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col+c] +
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+c+1] + temp[r*col+c-1] - 2.0*temp[r*col+c]) / Rx +
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r-1)*col+c] - temp[r*col+c]) / Ry +
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col+c]) / Rz);
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }; } else if (c == 0) {
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col] +
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r+1)*col] + temp[(r-1)*col] - 2.0*temp[r*col]) / Ry +
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+1] - temp[r*col]) / Rx +
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col]) / Rz);
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    else {
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col+c] +
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r+1)*col+c] + temp[(r-1)*col+c] - 2.0*temp[r*col+c]) / Ry +
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+c+1] + temp[r*col+c-1] - 2.0*temp[r*col+c]) / Rx +
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col+c]) / Rz);
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    result[r*col+c] =temp[r*col+c]+ delta;
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   }
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  }
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ omp_set_num_threads(num_omp_threads);
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+#pragma omp parallel for shared(result, temp) private(r, c) schedule(static)
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  for (r = 0; r < row; r++) {
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   for (c = 0; c < col; c++) {
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    temp[r*col+c]=result[r*col+c];
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   }
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  }
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 135 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 rm_stack(false, 0UL, "single_iteration", &____must_manage_single_iteration, ____alias_loc_id_3, ____chimes_did_disable1, false); }
 
 void single_iteration(double *result, double *temp, double *power, int row, int col,
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
        double Cap, double Rx, double Ry, double Rz,
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
        double step) { (____chimes_replaying ? single_iteration_resumable(result, temp, power, row, col, Cap, Rx, Ry, Rz, step) : single_iteration_quick(result, temp, power, row, col, Cap, Rx, Ry, Rz, step)); }
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 144 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 void compute_tran_temp_quick(double *result, int num_iterations, double *temp, double *power, int row, int col)
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable2 = new_stack((void *)(&compute_tran_temp), "compute_tran_temp", (int *)0, 6, 6, (size_t)(10021604361511767038UL), (size_t)(0UL), (size_t)(10021604361511767040UL), (size_t)(10021604361511767041UL), (size_t)(0UL), (size_t)(0UL), "compute_tran_temp|result|0", (int *)0, "double*", (void *)(&result), (size_t)8, 1, 0, 0, "compute_tran_temp|num_iterations|0", (int *)0, "i32", (void *)(&num_iterations), (size_t)4, 0, 0, 0, "compute_tran_temp|temp|0", (int *)0, "double*", (void *)(&temp), (size_t)8, 1, 0, 0, "compute_tran_temp|power|0", (int *)0, "double*", (void *)(&power), (size_t)8, 1, 0, 0, "compute_tran_temp|row|0", (int *)0, "i32", (void *)(&row), (size_t)4, 0, 0, 0, "compute_tran_temp|col|0", (int *)0, "i32", (void *)(&col), (size_t)4, 0, 0, 0) ; int i;
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{const int ____chimes_did_disable2 = new_stack((void *)(&compute_tran_temp), "compute_tran_temp", (int *)0, 6, 6, (size_t)(10353180797436921595UL), (size_t)(0UL), (size_t)(10353180797436921597UL), (size_t)(10353180797436921598UL), (size_t)(0UL), (size_t)(0UL), "compute_tran_temp|result|0", (int *)0, "double*", (void *)(&result), (size_t)8, 1, 0, 0, "compute_tran_temp|num_iterations|0", (int *)0, "i32", (void *)(&num_iterations), (size_t)4, 0, 0, 0, "compute_tran_temp|temp|0", (int *)0, "double*", (void *)(&temp), (size_t)8, 1, 0, 0, "compute_tran_temp|power|0", (int *)0, "double*", (void *)(&power), (size_t)8, 1, 0, 0, "compute_tran_temp|row|0", (int *)0, "i32", (void *)(&row), (size_t)4, 0, 0, 0, "compute_tran_temp|col|0", (int *)0, "i32", (void *)(&col), (size_t)4, 0, 0, 0) ; int i;
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double step;
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double Rz;
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double Ry;
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double Rx;
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double Cap;
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 145 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  register_stack_vars(6, "compute_tran_temp|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "compute_tran_temp|step|0", (int *)0x0, "double", (void *)(&step), (size_t)8, 0, 0, 0, "compute_tran_temp|Rz|0", (int *)0x0, "double", (void *)(&Rz), (size_t)8, 0, 0, 0, "compute_tran_temp|Ry|0", (int *)0x0, "double", (void *)(&Ry), (size_t)8, 0, 0, 0, "compute_tran_temp|Rx|0", (int *)0x0, "double", (void *)(&Rx), (size_t)8, 0, 0, 0, "compute_tran_temp|Cap|0", (int *)0x0, "double", (void *)(&Cap), (size_t)8, 0, 0, 0); ; ;
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 141 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 146 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 147 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 148 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 149 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 150 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   double grid_height; grid_height = (chip_height / row) ;
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 151 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   double grid_width; grid_width = (chip_width / col) ;
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 152 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 153 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     Cap = (0.5 * 1.75e6 * t_chip * grid_width * grid_height) ;
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 154 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     Rx = (grid_width / (2.0 * 100 * t_chip * grid_height)) ;
-# 146 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 155 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     Ry = (grid_height / (2.0 * 100 * t_chip * grid_width)) ;
-# 147 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 156 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     Rz = (t_chip / (100 * grid_height * grid_width)) ;
-# 148 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 157 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 158 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   double max_slope; max_slope = ((3.0e6) / (0.5 * t_chip * 1.75e6)) ;
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 159 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     step = (0.001 / max_slope) ;
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 160 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  double t; ;
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 157 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 158 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 161 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 162 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 163 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 164 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 165 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 166 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 167 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
      { for ( i = (0) ; i < num_iterations ; i++)
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 168 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  {
-# 160 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 162 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 163 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 169 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 170 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 171 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 172 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    call_lbl_0: ({ calling_npm("single_iteration", 0); single_iteration_npm(result, temp, power, row, col, Cap, Rx, Ry, Rz, step); });
-# 164 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 165 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 166 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 173 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 174 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 175 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
          call_lbl_1: checkpoint_transformed(1, ____alias_loc_id_0);
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 176 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 177 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  } }
-# 169 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 170 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 171 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 173 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 178 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 179 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 180 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 181 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 182 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 rm_stack(false, 0UL, "compute_tran_temp", (int *)0x0, ____alias_loc_id_4, ____chimes_did_disable2, false); }
 
 void compute_tran_temp(double *result, int num_iterations, double *temp, double *power, int row, int col) { (____chimes_replaying ? compute_tran_temp_resumable(result, num_iterations, temp, power, row, col) : compute_tran_temp_quick(result, num_iterations, temp, power, row, col)); }
-# 175 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 184 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 void fatal_quick(char *s)
-# 176 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable3 = new_stack((void *)(&fatal), "fatal", &____must_manage_fatal, 1, 0, (size_t)(10021604361511767053UL)) ; ; ;
-# 177 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 185 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{const int ____chimes_did_disable3 = new_stack((void *)(&fatal), "fatal", &____must_manage_fatal, 1, 0, (size_t)(10353180797436921610UL)) ; ; ;
+# 186 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "error: %s\n", s);
-# 178 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 187 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  exit(1);
-# 179 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 188 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 rm_stack(false, 0UL, "fatal", &____must_manage_fatal, 0, ____chimes_did_disable3, false); }
 
 void fatal(char *s) { (____chimes_replaying ? fatal_resumable(s) : fatal_quick(s)); }
-# 181 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 190 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 void read_input_quick(double *vect, int grid_rows, int grid_cols, char *file)
-# 182 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable4 = new_stack((void *)(&read_input), "read_input", &____must_manage_read_input, 4, 0, (size_t)(10021604361511767124UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10021604361511767127UL)) ; char str[256];
-# 182 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 191 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{const int ____chimes_did_disable4 = new_stack((void *)(&read_input), "read_input", &____must_manage_read_input, 4, 0, (size_t)(10353180797436921681UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10353180797436921684UL)) ; char str[256];
+# 191 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  ; ;
-# 183 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 192 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    int i; int index; ;
-# 184 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 193 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  FILE *fp; ;
-# 185 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 194 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   ;
-# 186 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 195 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  double val; ;
-# 187 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 188 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 196 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 197 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fp = fopen (file, "r");
-# 189 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 198 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  if (!fp) { call_lbl_0: ({ calling_npm("fatal", 0); fatal_npm("file could not be opened for reading"); }); };
-# 191 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 192 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 200 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 201 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  for (i=0; i < grid_rows * grid_cols; i++) {
-# 193 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 202 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   fgets(str, 256, fp);
-# 194 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 203 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   if (feof(fp)) { call_lbl_1: ({ calling_npm("fatal", 0); fatal_npm("not enough lines in file"); }); };
-# 196 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 205 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   if ((sscanf(str, "%lf", &val) != 1)) { call_lbl_2: ({ calling_npm("fatal", 0); fatal_npm("invalid file format"); }); };
-# 198 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 207 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   vect[i] = val;
-# 199 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 208 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  }
-# 200 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 201 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 209 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 210 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fclose(fp);
-# 202 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 211 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 rm_stack(false, 0UL, "read_input", &____must_manage_read_input, ____alias_loc_id_5, ____chimes_did_disable4, false); }
 
 void read_input(double *vect, int grid_rows, int grid_cols, char *file) { (____chimes_replaying ? read_input_resumable(vect, grid_rows, grid_cols, file) : read_input_quick(vect, grid_rows, grid_cols, file)); }
-# 204 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 213 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 void usage_quick(int argc, char **argv)
-# 205 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable5 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 2, 0, (size_t)(0UL), (size_t)(10021604361511767164UL)) ; ; ;
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 214 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{const int ____chimes_did_disable5 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 2, 0, (size_t)(0UL), (size_t)(10353180797436921721UL)) ; ; ;
+# 215 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "Usage: %s <grid_rows> <grid_cols> <sim_time> <no. of threads><temp_file> <power_file>\n", argv[0]);
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 216 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "\t<grid_rows>  - number of rows in the grid (positive integer)\n");
-# 208 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 217 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "\t<grid_cols>  - number of columns in the grid (positive integer)\n");
-# 209 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 218 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "\t<sim_time>   - number of iterations\n");
-# 210 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 219 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "\t<no. of threads>   - number of threads\n");
-# 211 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 220 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "\t<temp_file>  - name of the file containing the initial temperature values of each cell\n");
-# 212 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 221 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "\t<power_file> - name of the file containing the dissipated power values of each cell\n");
-# 213 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 222 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  exit(1);
-# 214 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 223 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable5, false); }
 
 void usage(int argc, char **argv) { (____chimes_replaying ? usage_resumable(argc, argv) : usage_quick(argc, argv)); }
-# 216 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 225 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 int main_quick(int argc, char **argv)
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable6 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10021604361511767310UL)) ; double start_time;
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 226 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{const int ____chimes_did_disable6 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10353180797436921867UL)) ; double start_time;
+# 226 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double *power;
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 226 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double *temp;
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 226 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  register_stack_vars(3, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|power|0", (int *)0x0, "double*", (void *)(&power), (size_t)8, 1, 0, 0, "main|temp|0", (int *)0x0, "double*", (void *)(&temp), (size_t)8, 1, 0, 0); ; ;
-# 218 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 227 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  int grid_rows; int grid_cols; int sim_time; int i; ;
-# 219 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 228 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    double *result; ;
-# 220 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 229 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  char *tfile; char *pfile; ;
-# 221 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 222 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 230 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 231 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
         call_lbl_0: start_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
-# 223 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 224 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 225 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 232 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 233 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 234 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  if (argc != 7) { call_lbl_1: ({ calling_npm("usage", 0); usage_npm(argc, argv); }); };
-# 227 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 236 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  if ((grid_rows = atoi(argv[1])) <= 0 ||
-# 228 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 237 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   (grid_cols = atoi(argv[2])) <= 0 ||
-# 229 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 238 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   (sim_time = atoi(argv[3])) <= 0 ||
-# 230 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 239 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   (num_omp_threads = atoi(argv[4])) <= 0) { call_lbl_2: ({ calling_npm("usage", 0); usage_npm(argc, argv); }); };
-# 233 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 234 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 235 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- temp = (double *) ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767240UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 236 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- power = (double *) ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767247UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 237 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- result = (double *) ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10021604361511767254UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
-# 238 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 242 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 243 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 244 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ temp = (double *) ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10353180797436921797UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 245 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ power = (double *) ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10353180797436921804UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 246 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ result = (double *) ({ void *____chimes_tmp_ptr = calloc((grid_rows * grid_cols) + ((sizeof(void *) + sizeof(double) - 1) / sizeof(double)), sizeof(double)); ; calloc_helper(____chimes_tmp_ptr, grid_rows * grid_cols, sizeof(double), 10353180797436921811UL, 0, 0); (____chimes_tmp_ptr ? (void *)(((unsigned char *)____chimes_tmp_ptr) + sizeof(void *)) : ____chimes_tmp_ptr); }) ;
+# 247 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  if (!temp || !power) { call_lbl_3: ({ calling_npm("fatal", 0); fatal_npm("unable to allocate memory"); }); };
-# 240 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 241 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 242 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 249 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 250 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 251 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  tfile = argv[5];
-# 243 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 252 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  pfile = argv[6];
-# 244 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 253 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   call_lbl_4: ({ calling_npm("read_input", 0); read_input_npm(temp, grid_rows, grid_cols, tfile); });
-# 245 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 254 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   call_lbl_5: ({ calling_npm("read_input", 0); read_input_npm(power, grid_rows, grid_cols, pfile); });
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 247 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 255 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 256 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  printf("Start computing the transient temperature\n");
-# 248 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_6: ({ calling((void*)compute_tran_temp, 6, ____alias_loc_id_1, 0UL, 6, (size_t)(10021604361511767254UL), (size_t)(0UL), (size_t)(10021604361511767240UL), (size_t)(10021604361511767247UL), (size_t)(0UL), (size_t)(0UL)); compute_tran_temp_quick(result, sim_time, temp, power, grid_rows, grid_cols); }) ;
-# 249 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 257 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  call_lbl_6: ({ calling((void*)compute_tran_temp, 6, ____alias_loc_id_1, 0UL, 6, (size_t)(10353180797436921811UL), (size_t)(0UL), (size_t)(10353180797436921797UL), (size_t)(10353180797436921804UL), (size_t)(0UL), (size_t)(0UL)); compute_tran_temp_quick(result, sim_time, temp, power, grid_rows, grid_cols); }) ;
+# 258 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  printf("Ending simulation\n");
-# 250 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 251 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 259 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 260 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
      double end_time; call_lbl_7: end_time = (({ calling_npm("seconds", 0); seconds_npm(); })) ;
-# 252 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 261 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     printf("execution took %f s\n", end_time - start_time);
-# 264 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 264 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  ({ free_helper((((unsigned char *)temp) - sizeof(void *)), 10021604361511767240UL);free((((unsigned char *)temp) - sizeof(void *))); }) ;
-# 265 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  ({ free_helper((((unsigned char *)power) - sizeof(void *)), 10021604361511767247UL);free((((unsigned char *)power) - sizeof(void *))); }) ;
-# 266 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 267 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 273 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 273 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  ({ free_helper((((unsigned char *)temp) - sizeof(void *)), 10353180797436921797UL);free((((unsigned char *)temp) - sizeof(void *))); }) ;
+# 274 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  ({ free_helper((((unsigned char *)power) - sizeof(void *)), 10353180797436921804UL);free((((unsigned char *)power) - sizeof(void *))); }) ;
+# 275 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 276 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable6, false); return ____chimes_ret_var_1; ;
-# 268 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 277 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable6, false); }
 
 int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double seconds_npm() {
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     struct timeval tp;
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 24 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     struct timezone tzp;
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 25 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     int i = gettimeofday(&tp, &tzp);
-# 26 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 26 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
      double ____chimes_ret_var_0; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); return ____chimes_ret_var_0; ;
-# 27 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 27 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 }
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 43 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 void single_iteration_npm(double *result, double *temp, double *power, int row, int col,
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 44 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
        double Cap, double Rx, double Ry, double Rz,
-# 45 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 45 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
        double step)
-# 46 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 46 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 {
-# 47 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 47 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  double delta;
-# 48 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 48 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  int r, c;
-# 49 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 50 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 51 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 52 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 53 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 54 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 55 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 49 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 50 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 51 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 52 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 53 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ omp_set_num_threads(num_omp_threads);
+# 54 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+#pragma omp parallel for shared(power, temp,result) private(r, c, delta) firstprivate(row, col) schedule(static)
+# 55 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 56 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  for (r = 0; r < row; r++) {
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 57 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   for (c = 0; c < col; c++) {
-# 57 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 58 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 59 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    if ((r == 0) && (c == 0)) {{
-# 59 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 60 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[0] +
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 61 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[1] - temp[0]) / Rx +
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 62 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[col] - temp[0]) / Ry +
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 63 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[0]) / Rz);
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 64 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }; } else if ((r == 0) && (c == col-1)) {{
-# 65 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 66 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[c] +
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 67 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[c-1] - temp[c]) / Rx +
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 68 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[c+col] - temp[c]) / Ry +
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 69 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[c]) / Rz);
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 70 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }; } else if ((r == row-1) && (c == col-1)) {{
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 72 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col+c] +
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 73 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+c-1] - temp[r*col+c]) / Rx +
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 74 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r-1)*col+c] - temp[r*col+c]) / Ry +
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 75 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col+c]) / Rz);
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 76 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }; } else if ((r == row-1) && (c == 0)) {{
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 78 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col] +
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 79 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+1] - temp[r*col]) / Rx +
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 80 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r-1)*col] - temp[r*col]) / Ry +
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 81 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col]) / Rz);
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 82 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }; } else if (r == 0) {{
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 84 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[c] +
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 85 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[c+1] + temp[c-1] - 2.0*temp[c]) / Rx +
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 86 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[col+c] - temp[c]) / Ry +
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 87 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[c]) / Rz);
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 88 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }; } else if (c == col-1) {{
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 90 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col+c] +
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 91 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r+1)*col+c] + temp[(r-1)*col+c] - 2.0*temp[r*col+c]) / Ry +
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 92 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+c-1] - temp[r*col+c]) / Rx +
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 93 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col+c]) / Rz);
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 94 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }; } else if (r == row-1) {{
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 96 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col+c] +
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 97 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+c+1] + temp[r*col+c-1] - 2.0*temp[r*col+c]) / Rx +
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 98 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r-1)*col+c] - temp[r*col+c]) / Ry +
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 99 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col+c]) / Rz);
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 100 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }; } else if (c == 0) {
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 102 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col] +
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 103 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r+1)*col] + temp[(r-1)*col] - 2.0*temp[r*col]) / Ry +
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 104 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+1] - temp[r*col]) / Rx +
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 105 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col]) / Rz);
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 106 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 107 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    else {
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 108 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col+c] +
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 109 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r+1)*col+c] + temp[(r-1)*col+c] - 2.0*temp[r*col+c]) / Ry +
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 110 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+c+1] + temp[r*col+c-1] - 2.0*temp[r*col+c]) / Rx +
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 111 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col+c]) / Rz);
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 112 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 113 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 114 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 115 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    result[r*col+c] =temp[r*col+c]+ delta;
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 116 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 117 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 118 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   }
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 119 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  }
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 120 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 121 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 122 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 123 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 124 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 125 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 126 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 127 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ omp_set_num_threads(num_omp_threads);
+# 128 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+#pragma omp parallel for shared(result, temp) private(r, c) schedule(static)
+# 129 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 130 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  for (r = 0; r < row; r++) {
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 131 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   for (c = 0; c < col; c++) {
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 132 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    temp[r*col+c]=result[r*col+c];
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 133 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   }
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 134 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  }
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 135 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 136 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 137 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 138 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 }
-# 175 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 184 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 void fatal_npm(char *s)
-# 176 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 185 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 {
-# 177 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 186 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "error: %s\n", s);
-# 178 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 187 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  exit(1);
-# 179 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 188 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 }
-# 181 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 190 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 void read_input_npm(double *vect, int grid_rows, int grid_cols, char *file)
-# 182 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 191 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 {
-# 183 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 192 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
    int i, index;
-# 184 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 193 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  FILE *fp;
-# 185 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 194 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  char str[256];
-# 186 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 195 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  double val;
-# 187 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 188 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 196 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 197 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fp = fopen (file, "r");
-# 189 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 198 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  if (!fp) {fatal_npm("file could not be opened for reading"); };
-# 191 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 192 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 200 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 201 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  for (i=0; i < grid_rows * grid_cols; i++) {
-# 193 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 202 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   fgets(str, 256, fp);
-# 194 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 203 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   if (feof(fp)) {fatal_npm("not enough lines in file"); };
-# 196 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 205 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   if ((sscanf(str, "%lf", &val) != 1)) {fatal_npm("invalid file format"); };
-# 198 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 207 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
   vect[i] = val;
-# 199 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 208 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  }
-# 200 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 201 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 209 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 210 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fclose(fp);
-# 202 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 211 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 }
-# 204 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 213 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 void usage_npm(int argc, char **argv)
-# 205 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 214 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 {
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 215 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "Usage: %s <grid_rows> <grid_cols> <sim_time> <no. of threads><temp_file> <power_file>\n", argv[0]);
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 216 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "\t<grid_rows>  - number of rows in the grid (positive integer)\n");
-# 208 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 217 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "\t<grid_cols>  - number of columns in the grid (positive integer)\n");
-# 209 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 218 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "\t<sim_time>   - number of iterations\n");
-# 210 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 219 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "\t<no. of threads>   - number of threads\n");
-# 211 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 220 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "\t<temp_file>  - name of the file containing the initial temperature values of each cell\n");
-# 212 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 221 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "\t<power_file> - name of the file containing the dissipated power values of each cell\n");
-# 213 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 222 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
  exit(1);
-# 214 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 223 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/hotspot/hotspot_openmp.cpp"
 }
 
 
@@ -3443,44 +3482,44 @@ void usage_npm(int argc, char **argv)
 
 
 static int module_init() {
-    init_module(10021604361511766085UL, 20, 7, 3, 7, 5, 0, 5, 11, 0, 4,
-                           &____alias_loc_id_0, (unsigned)15, (unsigned)0, (unsigned)0, (10021604361511766085UL + 845UL), (10021604361511766085UL + 846UL), (10021604361511766085UL + 847UL), (10021604361511766085UL + 848UL), (10021604361511766085UL + 849UL), (10021604361511766085UL + 850UL), (10021604361511766085UL + 851UL), (10021604361511766085UL + 852UL), (10021604361511766085UL + 853UL), (10021604361511766085UL + 854UL), (10021604361511766085UL + 855UL), (10021604361511766085UL + 856UL), (10021604361511766085UL + 857UL), (10021604361511766085UL + 858UL), (10021604361511766085UL + 860UL),
-                           &____alias_loc_id_1, (unsigned)16, (unsigned)0, (unsigned)0, (10021604361511766085UL + 1080UL), (10021604361511766085UL + 1081UL), (10021604361511766085UL + 1082UL), (10021604361511766085UL + 1083UL), (10021604361511766085UL + 1084UL), (10021604361511766085UL + 1085UL), (10021604361511766085UL + 1087UL), (10021604361511766085UL + 1088UL), (10021604361511766085UL + 1089UL), (10021604361511766085UL + 1090UL), (10021604361511766085UL + 1091UL), (10021604361511766085UL + 1092UL), (10021604361511766085UL + 1155UL), (10021604361511766085UL + 1162UL), (10021604361511766085UL + 1169UL), (10021604361511766085UL + 1235UL),
-                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (10021604361511766085UL + 1UL), (10021604361511766085UL + 3UL), (10021604361511766085UL + 4UL),
-                           &____alias_loc_id_3, (unsigned)15, (unsigned)0, (unsigned)0, (10021604361511766085UL + 26UL), (10021604361511766085UL + 27UL), (10021604361511766085UL + 28UL), (10021604361511766085UL + 29UL), (10021604361511766085UL + 30UL), (10021604361511766085UL + 31UL), (10021604361511766085UL + 32UL), (10021604361511766085UL + 33UL), (10021604361511766085UL + 34UL), (10021604361511766085UL + 35UL), (10021604361511766085UL + 36UL), (10021604361511766085UL + 37UL), (10021604361511766085UL + 38UL), (10021604361511766085UL + 835UL), (10021604361511766085UL + 836UL),
-                           &____alias_loc_id_4, (unsigned)15, (unsigned)0, (unsigned)0, (10021604361511766085UL + 845UL), (10021604361511766085UL + 846UL), (10021604361511766085UL + 847UL), (10021604361511766085UL + 848UL), (10021604361511766085UL + 849UL), (10021604361511766085UL + 850UL), (10021604361511766085UL + 851UL), (10021604361511766085UL + 852UL), (10021604361511766085UL + 853UL), (10021604361511766085UL + 854UL), (10021604361511766085UL + 855UL), (10021604361511766085UL + 856UL), (10021604361511766085UL + 857UL), (10021604361511766085UL + 858UL), (10021604361511766085UL + 860UL),
-                           &____alias_loc_id_5, (unsigned)9, (unsigned)0, (unsigned)0, (10021604361511766085UL + 972UL), (10021604361511766085UL + 973UL), (10021604361511766085UL + 974UL), (10021604361511766085UL + 975UL), (10021604361511766085UL + 976UL), (10021604361511766085UL + 978UL), (10021604361511766085UL + 979UL), (10021604361511766085UL + 995UL), (10021604361511766085UL + 1039UL),
-                           &____alias_loc_id_6, (unsigned)2, (unsigned)0, (unsigned)0, (10021604361511766085UL + 1093UL), (10021604361511766085UL + 1094UL),
-                            "seconds", 0, "_Z7secondsv", "_Z11seconds_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (10021604361511766085UL + 1UL), (10021604361511766085UL + 2UL), 0UL,
-                            "single_iteration", 0, "_Z16single_iterationPdS_S_iiddddd", "_Z20single_iteration_npmPdS_S_iiddddd", 0, 10, (10021604361511766085UL + 835UL), (10021604361511766085UL + 836UL), (10021604361511766085UL + 837UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0,
-                            "fatal", 0, "_Z5fatalPc", "_Z9fatal_npmPc", 0, 1, (10021604361511766085UL + 968UL), 0UL, 2, "fprintf", 3, (10021604361511766085UL + 962UL), (10021604361511766085UL + 1237UL), (10021604361511766085UL + 968UL), 0UL, "exit", 1, 0UL, 0UL,
-                            "usage", 0, "_Z5usageiPPc", "_Z9usage_npmiPPc", 0, 2, 0UL, (10021604361511766085UL + 1079UL), 0UL, 8, "fprintf", 3, (10021604361511766085UL + 962UL), (10021604361511766085UL + 1243UL), (10021604361511766085UL + 1061UL), 0UL, "fprintf", 2, (10021604361511766085UL + 962UL), (10021604361511766085UL + 1244UL), 0UL, "fprintf", 2, (10021604361511766085UL + 962UL), (10021604361511766085UL + 1245UL), 0UL, "fprintf", 2, (10021604361511766085UL + 962UL), (10021604361511766085UL + 1246UL), 0UL, "fprintf", 2, (10021604361511766085UL + 962UL), (10021604361511766085UL + 1247UL), 0UL, "fprintf", 2, (10021604361511766085UL + 962UL), (10021604361511766085UL + 1248UL), 0UL, "fprintf", 2, (10021604361511766085UL + 962UL), (10021604361511766085UL + 1249UL), 0UL, "exit", 1, 0UL, 0UL,
-                            "read_input", 0, "_Z10read_inputPdiiPc", "_Z14read_input_npmPdiiPc", 0, 4, (10021604361511766085UL + 1039UL), 0UL, 0UL, (10021604361511766085UL + 1042UL), 0UL, 8, "fopen", 2, (10021604361511766085UL + 1042UL), (10021604361511766085UL + 1238UL), (10021604361511766085UL + 995UL), "fatal", 1, (10021604361511766085UL + 1239UL), 0UL, "fgets", 3, (10021604361511766085UL + 979UL), 0UL, (10021604361511766085UL + 995UL), (10021604361511766085UL + 1012UL), "feof", 1, (10021604361511766085UL + 995UL), 0UL, "fatal", 1, (10021604361511766085UL + 1240UL), 0UL, "sscanf", 3, (10021604361511766085UL + 979UL), (10021604361511766085UL + 1241UL), (10021604361511766085UL + 980UL), 0UL, "fatal", 1, (10021604361511766085UL + 1242UL), 0UL, "fclose", 1, (10021604361511766085UL + 995UL), 0UL,
+    init_module(10353180797436920637UL, 20, 7, 3, 7, 5, 0, 5, 11, 0, 4,
+                           &____alias_loc_id_0, (unsigned)15, (unsigned)0, (unsigned)0, (10353180797436920637UL + 850UL), (10353180797436920637UL + 851UL), (10353180797436920637UL + 852UL), (10353180797436920637UL + 853UL), (10353180797436920637UL + 854UL), (10353180797436920637UL + 855UL), (10353180797436920637UL + 856UL), (10353180797436920637UL + 857UL), (10353180797436920637UL + 858UL), (10353180797436920637UL + 859UL), (10353180797436920637UL + 860UL), (10353180797436920637UL + 861UL), (10353180797436920637UL + 862UL), (10353180797436920637UL + 863UL), (10353180797436920637UL + 865UL),
+                           &____alias_loc_id_1, (unsigned)16, (unsigned)0, (unsigned)0, (10353180797436920637UL + 1085UL), (10353180797436920637UL + 1086UL), (10353180797436920637UL + 1087UL), (10353180797436920637UL + 1088UL), (10353180797436920637UL + 1089UL), (10353180797436920637UL + 1090UL), (10353180797436920637UL + 1092UL), (10353180797436920637UL + 1093UL), (10353180797436920637UL + 1094UL), (10353180797436920637UL + 1095UL), (10353180797436920637UL + 1096UL), (10353180797436920637UL + 1097UL), (10353180797436920637UL + 1160UL), (10353180797436920637UL + 1167UL), (10353180797436920637UL + 1174UL), (10353180797436920637UL + 1240UL),
+                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (10353180797436920637UL + 1UL), (10353180797436920637UL + 3UL), (10353180797436920637UL + 4UL),
+                           &____alias_loc_id_3, (unsigned)15, (unsigned)0, (unsigned)0, (10353180797436920637UL + 26UL), (10353180797436920637UL + 27UL), (10353180797436920637UL + 28UL), (10353180797436920637UL + 29UL), (10353180797436920637UL + 30UL), (10353180797436920637UL + 31UL), (10353180797436920637UL + 32UL), (10353180797436920637UL + 33UL), (10353180797436920637UL + 34UL), (10353180797436920637UL + 35UL), (10353180797436920637UL + 36UL), (10353180797436920637UL + 37UL), (10353180797436920637UL + 38UL), (10353180797436920637UL + 839UL), (10353180797436920637UL + 840UL),
+                           &____alias_loc_id_4, (unsigned)15, (unsigned)0, (unsigned)0, (10353180797436920637UL + 850UL), (10353180797436920637UL + 851UL), (10353180797436920637UL + 852UL), (10353180797436920637UL + 853UL), (10353180797436920637UL + 854UL), (10353180797436920637UL + 855UL), (10353180797436920637UL + 856UL), (10353180797436920637UL + 857UL), (10353180797436920637UL + 858UL), (10353180797436920637UL + 859UL), (10353180797436920637UL + 860UL), (10353180797436920637UL + 861UL), (10353180797436920637UL + 862UL), (10353180797436920637UL + 863UL), (10353180797436920637UL + 865UL),
+                           &____alias_loc_id_5, (unsigned)9, (unsigned)0, (unsigned)0, (10353180797436920637UL + 977UL), (10353180797436920637UL + 978UL), (10353180797436920637UL + 979UL), (10353180797436920637UL + 980UL), (10353180797436920637UL + 981UL), (10353180797436920637UL + 983UL), (10353180797436920637UL + 984UL), (10353180797436920637UL + 1000UL), (10353180797436920637UL + 1044UL),
+                           &____alias_loc_id_6, (unsigned)2, (unsigned)0, (unsigned)0, (10353180797436920637UL + 1098UL), (10353180797436920637UL + 1099UL),
+                            "seconds", 0, "_Z7secondsv", "_Z11seconds_npmv", 0, 0, 0UL, 1, "gettimeofday", 2, (10353180797436920637UL + 1UL), (10353180797436920637UL + 2UL), 0UL,
+                            "single_iteration", 0, "_Z16single_iterationPdS_S_iiddddd", "_Z20single_iteration_npmPdS_S_iiddddd", 0, 10, (10353180797436920637UL + 839UL), (10353180797436920637UL + 840UL), (10353180797436920637UL + 841UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2, "omp_set_num_threads", 1, 0UL, 0UL, "omp_set_num_threads", 1, 0UL, 0UL,
+                            "fatal", 0, "_Z5fatalPc", "_Z9fatal_npmPc", 0, 1, (10353180797436920637UL + 973UL), 0UL, 2, "fprintf", 3, (10353180797436920637UL + 967UL), (10353180797436920637UL + 1242UL), (10353180797436920637UL + 973UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "usage", 0, "_Z5usageiPPc", "_Z9usage_npmiPPc", 0, 2, 0UL, (10353180797436920637UL + 1084UL), 0UL, 8, "fprintf", 3, (10353180797436920637UL + 967UL), (10353180797436920637UL + 1248UL), (10353180797436920637UL + 1066UL), 0UL, "fprintf", 2, (10353180797436920637UL + 967UL), (10353180797436920637UL + 1249UL), 0UL, "fprintf", 2, (10353180797436920637UL + 967UL), (10353180797436920637UL + 1250UL), 0UL, "fprintf", 2, (10353180797436920637UL + 967UL), (10353180797436920637UL + 1251UL), 0UL, "fprintf", 2, (10353180797436920637UL + 967UL), (10353180797436920637UL + 1252UL), 0UL, "fprintf", 2, (10353180797436920637UL + 967UL), (10353180797436920637UL + 1253UL), 0UL, "fprintf", 2, (10353180797436920637UL + 967UL), (10353180797436920637UL + 1254UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "read_input", 0, "_Z10read_inputPdiiPc", "_Z14read_input_npmPdiiPc", 0, 4, (10353180797436920637UL + 1044UL), 0UL, 0UL, (10353180797436920637UL + 1047UL), 0UL, 8, "fopen", 2, (10353180797436920637UL + 1047UL), (10353180797436920637UL + 1243UL), (10353180797436920637UL + 1000UL), "fatal", 1, (10353180797436920637UL + 1244UL), 0UL, "fgets", 3, (10353180797436920637UL + 984UL), 0UL, (10353180797436920637UL + 1000UL), (10353180797436920637UL + 1017UL), "feof", 1, (10353180797436920637UL + 1000UL), 0UL, "fatal", 1, (10353180797436920637UL + 1245UL), 0UL, "sscanf", 3, (10353180797436920637UL + 984UL), (10353180797436920637UL + 1246UL), (10353180797436920637UL + 985UL), 0UL, "fatal", 1, (10353180797436920637UL + 1247UL), 0UL, "fclose", 1, (10353180797436920637UL + 1000UL), 0UL,
                            "seconds", &(____chimes_does_checkpoint_seconds_npm),
                            "single_iteration", &(____chimes_does_checkpoint_single_iteration_npm),
                            "fatal", &(____chimes_does_checkpoint_fatal_npm),
                            "usage", &(____chimes_does_checkpoint_usage_npm),
                            "read_input", &(____chimes_does_checkpoint_read_input_npm),
-                             (10021604361511766085UL + 847UL), (10021604361511766085UL + 955UL),
-                             (10021604361511766085UL + 959UL), (10021604361511766085UL + 968UL),
-                             (10021604361511766085UL + 26UL), (10021604361511766085UL + 835UL),
-                             (10021604361511766085UL + 27UL), (10021604361511766085UL + 836UL),
-                             (10021604361511766085UL + 1090UL), (10021604361511766085UL + 1121UL),
-                             (10021604361511766085UL + 972UL), (10021604361511766085UL + 1039UL),
-                             (10021604361511766085UL + 1079UL), (10021604361511766085UL + 1061UL),
-                             (10021604361511766085UL + 1236UL), (10021604361511766085UL + 962UL),
-                             (10021604361511766085UL + 1087UL), (10021604361511766085UL + 1155UL),
-                             (10021604361511766085UL + 978UL), (10021604361511766085UL + 995UL),
-                             (10021604361511766085UL + 28UL), (10021604361511766085UL + 837UL),
-                             (10021604361511766085UL + 845UL), (10021604361511766085UL + 953UL),
-                             (10021604361511766085UL + 1089UL), (10021604361511766085UL + 1169UL),
-                             (10021604361511766085UL + 848UL), (10021604361511766085UL + 956UL),
-                             (10021604361511766085UL + 1053UL), (10021604361511766085UL + 1079UL),
-                             (10021604361511766085UL + 1091UL), (10021604361511766085UL + 1121UL),
-                             (10021604361511766085UL + 1088UL), (10021604361511766085UL + 1162UL),
-                             (10021604361511766085UL + 1225UL), (10021604361511766085UL + 1121UL),
-                             (10021604361511766085UL + 975UL), (10021604361511766085UL + 1042UL),
-                             (10021604361511766085UL + 1082UL), (10021604361511766085UL + 1225UL),
+                             (10353180797436920637UL + 964UL), (10353180797436920637UL + 973UL),
+                             (10353180797436920637UL + 977UL), (10353180797436920637UL + 1044UL),
+                             (10353180797436920637UL + 26UL), (10353180797436920637UL + 839UL),
+                             (10353180797436920637UL + 27UL), (10353180797436920637UL + 840UL),
+                             (10353180797436920637UL + 850UL), (10353180797436920637UL + 958UL),
+                             (10353180797436920637UL + 1092UL), (10353180797436920637UL + 1160UL),
+                             (10353180797436920637UL + 852UL), (10353180797436920637UL + 960UL),
+                             (10353180797436920637UL + 853UL), (10353180797436920637UL + 961UL),
+                             (10353180797436920637UL + 1058UL), (10353180797436920637UL + 1084UL),
+                             (10353180797436920637UL + 983UL), (10353180797436920637UL + 1000UL),
+                             (10353180797436920637UL + 980UL), (10353180797436920637UL + 1047UL),
+                             (10353180797436920637UL + 1093UL), (10353180797436920637UL + 1167UL),
+                             (10353180797436920637UL + 28UL), (10353180797436920637UL + 841UL),
+                             (10353180797436920637UL + 1096UL), (10353180797436920637UL + 1126UL),
+                             (10353180797436920637UL + 1241UL), (10353180797436920637UL + 967UL),
+                             (10353180797436920637UL + 1084UL), (10353180797436920637UL + 1066UL),
+                             (10353180797436920637UL + 1095UL), (10353180797436920637UL + 1126UL),
+                             (10353180797436920637UL + 1094UL), (10353180797436920637UL + 1174UL),
+                             (10353180797436920637UL + 1230UL), (10353180797436920637UL + 1126UL),
+                             (10353180797436920637UL + 1087UL), (10353180797436920637UL + 1230UL),
                      "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
                      "_IO_marker", 0UL, 0,
                      "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
@@ -3495,16 +3534,16 @@ static int module_init() {
                         "main|temp|0", 1, "compute_tran_temp",
                         "main|power|0", 1, "compute_tran_temp",
                         "main|start_time|0", 1, "compute_tran_temp",
-        "single_iteration", 0UL, (int)10, 10021604361511767038UL, 10021604361511767040UL, 10021604361511767041UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-        "fatal", 0UL, (int)1, 10021604361511767324UL,
-        "fatal", 0UL, (int)1, 10021604361511767325UL,
-        "fatal", 0UL, (int)1, 10021604361511767327UL,
+        "single_iteration", 0UL, (int)10, 10353180797436921595UL, 10353180797436921597UL, 10353180797436921598UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "fatal", 0UL, (int)1, 10353180797436921881UL,
+        "fatal", 0UL, (int)1, 10353180797436921882UL,
+        "fatal", 0UL, (int)1, 10353180797436921884UL,
         "seconds", 0UL, (int)0,
-        "usage", 0UL, (int)2, 0UL, 10021604361511767310UL,
-        "usage", 0UL, (int)2, 0UL, 10021604361511767310UL,
-        "fatal", 0UL, (int)1, 10021604361511767335UL,
-        "read_input", 0UL, (int)4, 10021604361511767240UL, 0UL, 0UL, 10021604361511767206UL,
-        "read_input", 0UL, (int)4, 10021604361511767247UL, 0UL, 0UL, 10021604361511767206UL,
+        "usage", 0UL, (int)2, 0UL, 10353180797436921867UL,
+        "usage", 0UL, (int)2, 0UL, 10353180797436921867UL,
+        "fatal", 0UL, (int)1, 10353180797436921892UL,
+        "read_input", 0UL, (int)4, 10353180797436921797UL, 0UL, 0UL, 10353180797436921763UL,
+        "read_input", 0UL, (int)4, 10353180797436921804UL, 0UL, 0UL, 10353180797436921763UL,
         "seconds", 0UL, (int)0);
     register_global_var("global|t_chip", "double", (void *)(&t_chip), 8, 0, 0, 0UL, 0);
     register_global_var("global|chip_height", "double", (void *)(&chip_height), 8, 0, 0, 0UL, 0);

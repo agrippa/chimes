@@ -1,2 +1,2 @@
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 958 17 : { 418, 419, 420, 421, 425, 432, 452, 453, 454, 455, 456, 458, 1139, 1142, 1368, 1414, 1436, 1532 } {  } call:getSeconds {  }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 672 19 : { 418, 419, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 433, 434, 435, 436, 445, 446, 447, 448, 449, 450, 451, 862, 934, 956, 959, 1139, 1142, 1368, 1414, 1436 } {  } call:getSeconds {  }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 958 17 : { 418, 419, 420, 421, 425, 432, 452, 453, 454, 455, 456, 458, 1139, 1142, 1368, 1414, 1436, 1532 } {  } call:getSeconds {  }
+/scratch/jmg3/Benchmarks/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 672 19 : { 418, 419, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 433, 434, 435, 436, 445, 446, 447, 448, 449, 450, 451, 862, 934, 956, 959, 1139, 1142, 1368, 1414, 1436 } {  } call:getSeconds {  }

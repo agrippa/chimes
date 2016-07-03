@@ -14,11 +14,11 @@ static int ____chimes_does_checkpoint_load_npm = 1;
 static int ____must_manage_load = 2;
 
 static unsigned ____alias_loc_id_0;
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/jmg3/chimes/src/libchimes/libchimes.h" 1
+# 1 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 1
 
 
 
@@ -27,7 +27,7 @@ static unsigned ____alias_loc_id_0;
 typedef long int ptrdiff_t;
 # 212 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/home/jmg3/chimes/src/libchimes/libchimes.h" 2
+# 5 "/scratch/jmg3/chimes/src/libchimes/libchimes.h" 2
 
 
 extern void init_chimes(int argc, char **argv);
@@ -83,7 +83,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 69 "/home/jmg3/chimes/src/libchimes/libchimes.h"
+# 69 "/scratch/jmg3/chimes/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -97,8 +97,8 @@ inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
 
 # 1 "/usr/include/stdio.h" 1 3 4
 # 28 "/usr/include/stdio.h" 3 4
@@ -1044,7 +1044,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 930 "/usr/include/stdio.h" 2 3 4
 # 938 "/usr/include/stdio.h" 3 4
 }
-# 3 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c" 2
+# 3 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
 # 1 "/opt/apps/software/Core/GCC/4.8.5/lib/gcc/x86_64-unknown-linux-gnu/4.8.5/include/stddef.h" 1 3 4
@@ -2220,9 +2220,9 @@ extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
 # 964 "/usr/include/stdlib.h" 3 4
 }
-# 4 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c" 2
-# 1 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.h" 1
-# 12 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.h"
+# 4 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c" 2
+# 1 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/backprop.h" 1
+# 12 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/backprop.h"
 typedef struct {
   int input_n;
   int hidden_n;
@@ -2258,101 +2258,101 @@ void bpnn_feedforward(BPNN *);
 
 void bpnn_save(BPNN *, char *);
 BPNN *bpnn_read(char *);
-# 5 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c" 2
-# 5 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
-# 6 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 5 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c" 2
+# 5 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
+# 6 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
 extern int layer_size;
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
-# 8 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 7 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
+# 8 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
 void load_npm(BPNN *net);
 void load_quick(BPNN *net); void load(BPNN *net);
 void load_resumable(BPNN *net)
-# 9 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&load), "load", &____must_manage_load, 1, 0, (size_t)(2167082750985355829UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 9 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&load), "load", &____must_manage_load, 1, 0, (size_t)(2091276377948694797UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
   float *units; ;
-# 11 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 11 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
   int nr; int nc; int imgsize; int i; int j; int k; ;
-# 12 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
-# 13 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 12 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
+# 13 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
   nr = layer_size;
-# 14 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
-# 15 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 14 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
+# 15 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
   imgsize = nr * nc;
-# 16 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 16 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
   units = net->input_units;
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
-# 18 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 17 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
+# 18 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
   k = 1;
-# 19 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 19 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
   for (i = 0; i < nr; i++) {
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 20 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
    units[k] = (float) rand()/2147483647 ;
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 21 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
    k++;
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
     }
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
 rm_stack(false, 0UL, "load", &____must_manage_load, ____alias_loc_id_0, ____chimes_did_disable0, false); }
-# 8 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 8 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
 void load_quick(BPNN *net)
-# 9 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&load), "load", &____must_manage_load, 1, 0, (size_t)(2167082750985355829UL)) ; ; ;
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 9 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&load), "load", &____must_manage_load, 1, 0, (size_t)(2091276377948694797UL)) ; ; ;
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
   float *units; ;
-# 11 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 11 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
   int nr; int nc; int imgsize; int i; int j; int k; ;
-# 12 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
-# 13 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 12 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
+# 13 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
   nr = layer_size;
-# 14 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
-# 15 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 14 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
+# 15 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
   imgsize = nr * nc;
-# 16 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 16 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
   units = net->input_units;
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
-# 18 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 17 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
+# 18 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
   k = 1;
-# 19 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 19 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
   for (i = 0; i < nr; i++) {
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 20 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
    units[k] = (float) rand()/2147483647 ;
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 21 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
    k++;
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
     }
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
 rm_stack(false, 0UL, "load", &____must_manage_load, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 
 void load(BPNN *net) { (____chimes_replaying ? load_resumable(net) : load_quick(net)); }
-# 8 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 8 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
 void load_npm(BPNN *net)
-# 9 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 9 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
 {
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 10 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
   float *units;
-# 11 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 11 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
   int nr, nc, imgsize, i, j, k;
-# 12 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
-# 13 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 12 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
+# 13 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
   nr = layer_size;
-# 14 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
-# 15 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 14 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
+# 15 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
   imgsize = nr * nc;
-# 16 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 16 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
   units = net->input_units;
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
-# 18 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 17 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
+# 18 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
   k = 1;
-# 19 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 19 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
   for (i = 0; i < nr; i++) {
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 20 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
    units[k] = (float) rand()/2147483647 ;
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 21 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
    k++;
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 22 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
     }
-# 23 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
+# 23 "/scratch/jmg3/Benchmarks/rodinia_poly_3.0/openmp/backprop/imagenet.c"
 }
 
 
@@ -2360,13 +2360,13 @@ void load_npm(BPNN *net)
 
 
 static int module_init() {
-    init_module(2167082750985355777UL, 3, 1, 0, 1, 1, 0, 1, 0, 0, 1,
-                           &____alias_loc_id_0, (unsigned)7, (unsigned)0, (unsigned)0, (2167082750985355777UL + 1UL), (2167082750985355777UL + 2UL), (2167082750985355777UL + 3UL), (2167082750985355777UL + 5UL), (2167082750985355777UL + 6UL), (2167082750985355777UL + 8UL), (2167082750985355777UL + 26UL),
-                            "load", 0, "_Z4loadP4BPNN", "_Z8load_npmP4BPNN", 0, 1, (2167082750985355777UL + 52UL), 0UL, 1, "rand", 0, 0UL,
+    init_module(2091276377948694745UL, 3, 1, 0, 1, 1, 0, 1, 0, 0, 1,
+                           &____alias_loc_id_0, (unsigned)7, (unsigned)0, (unsigned)0, (2091276377948694745UL + 1UL), (2091276377948694745UL + 2UL), (2091276377948694745UL + 3UL), (2091276377948694745UL + 5UL), (2091276377948694745UL + 6UL), (2091276377948694745UL + 8UL), (2091276377948694745UL + 26UL),
+                            "load", 0, "_Z4loadP4BPNN", "_Z8load_npmP4BPNN", 0, 1, (2091276377948694745UL + 52UL), 0UL, 1, "rand", 0, 0UL,
                            "load", &(____chimes_does_checkpoint_load_npm),
-                             (2167082750985355777UL + 1UL), (2167082750985355777UL + 52UL),
-                             (2167082750985355777UL + 2UL), (2167082750985355777UL + 26UL),
-                             (2167082750985355777UL + 52UL), (2167082750985355777UL + 26UL),
+                             (2091276377948694745UL + 1UL), (2091276377948694745UL + 52UL),
+                             (2091276377948694745UL + 2UL), (2091276377948694745UL + 26UL),
+                             (2091276377948694745UL + 52UL), (2091276377948694745UL + 26UL),
                      "BPNN", 768UL, 13, "int", (int)__builtin_offsetof (BPNN, input_n), "int", (int)__builtin_offsetof (BPNN, hidden_n), "int", (int)__builtin_offsetof (BPNN, output_n), "float*", (int)__builtin_offsetof (BPNN, input_units), "float*", (int)__builtin_offsetof (BPNN, hidden_units), "float*", (int)__builtin_offsetof (BPNN, output_units), "float*", (int)__builtin_offsetof (BPNN, hidden_delta), "float*", (int)__builtin_offsetof (BPNN, output_delta), "float*", (int)__builtin_offsetof (BPNN, target), "float**", (int)__builtin_offsetof (BPNN, input_weights), "float**", (int)__builtin_offsetof (BPNN, hidden_weights), "float**", (int)__builtin_offsetof (BPNN, input_prev_weights), "float**", (int)__builtin_offsetof (BPNN, hidden_prev_weights),
                              "load", "_Z4loadP4BPNN", 0, 0);
     return 0;
