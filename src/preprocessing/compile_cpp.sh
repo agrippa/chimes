@@ -6,6 +6,27 @@ script_dir="$(dirname $0)"
 source ${script_dir}/common.sh
 source ${CHIMES_HOME}/src/common.conf
 
+OPT=$(find_opt)
+CLANG=$(find_clang)
+TRANSFORM=${CHIMES_HOME}/src/preprocessing/clang/transform
+BRACE_INSERT=${CHIMES_HOME}/src/preprocessing/brace_insert/brace_insert
+FUNCTION_UNROLL=${CHIMES_HOME}/src/preprocessing/function_unroll/function_unroll
+RETURN_UNROLL=${CHIMES_HOME}/src/preprocessing/return_unroll/return_unroll
+CALL_TRANSLATE=${CHIMES_HOME}/src/preprocessing/call_translate/call_translate
+FIND_ALLOCATORS=${CHIMES_HOME}/src/preprocessing/find_allocators/find_allocators
+FIND_NONCHKPTING=${CHIMES_HOME}/src/preprocessing/find_nonchkpting_fptrs/find_nonchkpting_fptrs
+OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
+OMP_INSERTER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_inserter.py
+OMP_APPENDER=${CHIMES_HOME}/src/preprocessing/openmp_appender/openmp_appender
+REGISTER_STACK_VAR_COND=${CHIMES_HOME}/src/preprocessing/module_init/register_stack_var_cond.py
+MODULE_INIT=${CHIMES_HOME}/src/preprocessing/module_init/module_init.py
+ADD_QUICK_VERSIONS=${CHIMES_HOME}/src/preprocessing/module_init/add_quick_versions.py
+ADD_NPM_CONDS=${CHIMES_HOME}/src/preprocessing/module_init/add_cond_npm_vars.py
+INSERT_LINES=${CHIMES_HOME}/src/preprocessing/insert_line_numbers.py
+FIRSTPRIVATE_APPENDER=${CHIMES_HOME}/src/preprocessing/openmp/firstprivate_appender.py
+CHIMES_DEF=-D__CHIMES_SUPPORT
+LLVM_LIB=$(get_llvm_lib)
+
 INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info \
     exit.info reachable.info globals.info constants.info tree.info"
 ENABLE_OMP=1
@@ -14,11 +35,12 @@ PROFILE=0
 DUMMY=0
 BLOCK_CHECKPOINTS="false"
 COMPILE=0
-INPUTS=()
+SOURCE_FILES=()
+OBJ_FILES=()
 INCLUDES=
 LIB_PATHS=
 LIBS=
-OUTPUT_FILE=a.out
+OUTPUT_FILE=
 WORK_DIR=
 VERBOSE=0
 LINKER_FLAGS=
@@ -37,7 +59,7 @@ fi
 
 while [ $# -gt 0 ]; do
     case $1 in
-        -g)
+        -cp)
             CHIMES_PROFILE=1
             ;;
         -d)
@@ -46,8 +68,11 @@ while [ $# -gt 0 ]; do
         -b)
             BLOCK_CHECKPOINTS="true"
             ;;
+        *.o)
+            OBJ_FILES+=($(get_absolute_path $1))
+            ;;
         *.cpp|*.cc|*.c|*.cxx)
-            INPUTS+=($(get_absolute_path $1))
+            SOURCE_FILES+=($(get_absolute_path $1))
             ;;
         -I*)
             INCLUDES="$INCLUDES -I$(get_absolute_path ${1:2})"
@@ -104,16 +129,73 @@ while [ $# -gt 0 ]; do
     shift
 done
 
-if [[ "${#INPUTS[@]}" -eq "0" ]]; then
+if [[ ${#SOURCE_FILES[@]} -eq 0 && ${#OBJ_FILES[@]} -eq 0 ]]; then
     echo usage: compile_cpp.sh [-c] [-k] [-p] [-v] [-s] [-I include-path] \
         [-l libname] [-L lib-path] -i input.cpp
     exit 1
 fi
 
-echo ${INPUTS[@]}
 
-ABS_INPUTS=()
-for f in ${INPUTS[@]}; do
+# Create a working directory for this compilation's temporary files
+if [[ -z ${WORK_DIR} ]]; then
+    WORK_DIR=$(mktemp -d /tmp/chimes.XXXXXX)
+else
+    # In case it doesn't exist
+    mkdir -p $WORK_DIR
+fi
+echo WORK_DIR = $WORK_DIR
+
+# Print miscellaneous diagnostics on the settings for this compilation
+echo Using GXX ${GXX}
+[[ $VERBOSE -eq 0 ]] || echo "Verbose output ($VERBOSE)"
+
+# Perform validation on the configuration of this compilation, particularly in
+# terms of how compiling vs. linking meshes with the specification of input
+# source and object files.
+if [[ $COMPILE == 1 ]]; then
+    [[ $VERBOSE -eq 0 ]] || echo Compiling only, not linking
+
+    if [[ ${#SOURCE_FILES[@]} -ne 1 ]]; then
+        echo 'You cannot specify -c with multiple input files'
+        exit 1
+    fi
+
+    if [[ ${#OBJ_FILES[@]} -ne 0 ]]; then
+        echo 'You cannot specify -c with input object files'
+        exit 1
+    fi
+else
+    [[ $VERBOSE -eq 0 ]] || echo Linking into final executable
+    # For linking, we allow the specification of multiple source and/or object
+    # files. The source files will be transformed using the CHIMES
+    # source-to-source transformations, and then the transformed sources will be
+    # passed to the final linker along with the provided object files. If no
+    # source files are specified, we simply pass all provided object files along
+    # to the linker.
+fi
+
+# If an output file was not specified by the user, set it to some sane default.
+if [[ -z "$OUTPUT_FILE" ]]; then
+    if [[ $COMPILE -eq 1 ]]; then
+        BASE=$(basename ${SOURCE_FILES[0]})
+        BASE_NAME="${BASE%.*}"
+        OUTPUT_FILE=${BASE_NAME}.o
+    else
+        OUTPUT_FILE=a.out
+    fi
+fi
+
+# If $OUTPUT_FILE is set to an absolute path, use that as the final output.
+# Otherwise, prepend the current working directory to it.
+if [[ $OUTPUT_FILE = /* ]]; then
+    OUTPUT=$OUTPUT_FILE
+else
+    OUTPUT=$(pwd)/${OUTPUT_FILE}
+fi
+
+# Collect the absolute paths to all input source files.
+ABS_SOURCE_FILES=()
+for f in ${SOURCE_FILES[@]}; do
 
     if [[ "${f:0:1}" != "/" ]]; then
         abs_f=($(pwd)/${f})
@@ -126,61 +208,12 @@ for f in ${INPUTS[@]}; do
         exit 1
     fi
 
-    ABS_INPUTS+=($abs_f)
+    ABS_SOURCE_FILES+=($abs_f)
 done
 
-echo ${ABS_INPUTS[@]}
-
-LAST_FILES=()
-OBJ_FILES=()
-if [[ $OUTPUT_FILE = /* ]]; then
-    OUTPUT=$OUTPUT_FILE
-else
-    OUTPUT=$(pwd)/${OUTPUT_FILE}
-fi
-
-if [[ -z ${WORK_DIR} ]]; then
-    WORK_DIR=$(mktemp -d /tmp/chimes.XXXXXX)
-else
-    # In case it doesn't exist
-    mkdir -p $WORK_DIR
-fi
-
-echo WORK_DIR = $WORK_DIR
-
-OPT=$(find_opt)
-CLANG=$(find_clang)
-TRANSFORM=${CHIMES_HOME}/src/preprocessing/clang/transform
-BRACE_INSERT=${CHIMES_HOME}/src/preprocessing/brace_insert/brace_insert
-FUNCTION_UNROLL=${CHIMES_HOME}/src/preprocessing/function_unroll/function_unroll
-RETURN_UNROLL=${CHIMES_HOME}/src/preprocessing/return_unroll/return_unroll
-CALL_TRANSLATE=${CHIMES_HOME}/src/preprocessing/call_translate/call_translate
-FIND_ALLOCATORS=${CHIMES_HOME}/src/preprocessing/find_allocators/find_allocators
-FIND_NONCHKPTING=${CHIMES_HOME}/src/preprocessing/find_nonchkpting_fptrs/find_nonchkpting_fptrs
-OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
-OMP_INSERTER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_inserter.py
-OMP_APPENDER=${CHIMES_HOME}/src/preprocessing/openmp_appender/openmp_appender
-REGISTER_STACK_VAR_COND=${CHIMES_HOME}/src/preprocessing/module_init/register_stack_var_cond.py
-MODULE_INIT=${CHIMES_HOME}/src/preprocessing/module_init/module_init.py
-ADD_QUICK_VERSIONS=${CHIMES_HOME}/src/preprocessing/module_init/add_quick_versions.py
-ADD_NPM_CONDS=${CHIMES_HOME}/src/preprocessing/module_init/add_cond_npm_vars.py
-INSERT_LINES=${CHIMES_HOME}/src/preprocessing/insert_line_numbers.py
-FIRSTPRIVATE_APPENDER=${CHIMES_HOME}/src/preprocessing/openmp/firstprivate_appender.py
-CHIMES_DEF=-D__CHIMES_SUPPORT
-LLVM_LIB=$(get_llvm_lib)
-
-echo Using GXX ${GXX}
-[[ $VERBOSE -eq 0 ]] || echo "Verbose output ($VERBOSE)"
-
-if [[ $COMPILE == 1 ]]; then
-    [[ $VERBOSE -eq 0 ]] || echo Compiling only, not linking
-
-    if [[ ${#INPUTS[@]} != 1 ]]; then
-        echo 'You cannot specify -c with multiple input files'
-        exit 1
-    fi
-fi
-
+# Select an implementation of the CHIMES library to use depending on the
+# selected execution configuration. The default is the full implementation,
+# -lchimes or -lchimes_cpp.
 LCHIMES=
 if [[ $DUMMY == 1 && $CHIMES_PROFILE == 1 ]]; then
     LCHIMES=-lchimes_profile_dummy
@@ -215,7 +248,11 @@ if [[ $ENABLE_OMP == 1 ]]; then
     GXX_FLAGS="${GXX_FLAGS} -fopenmp"
 fi
 
-for INPUT in ${ABS_INPUTS[@]}; do
+# LAST_FILES will collect the final transformed source file for each input
+# source file.
+LAST_FILES=()
+
+for INPUT in ${ABS_SOURCE_FILES[@]}; do
     INFO_FILE_PREFIX=${WORK_DIR}/$(basename ${INPUT})
     PREPROCESS_FILE=${WORK_DIR}/$(basename ${INPUT}).pre.cpp
     PREPROCESSED_WITH_CONDS_FILE=${WORK_DIR}/$(basename ${INPUT}).pre.conds.cpp
@@ -428,28 +465,27 @@ done
 if [[ $COMPILE == 1 ]]; then
     # Last files must only have one entry, checked by a conditional above
     FINAL_FILE=${LAST_FILES[0]}
-    OBJ_FILE=${FINAL_FILE}.o
-    if [[ "$OUTPUT_FILE" != "a.out" ]]; then
-        # If user specified output file, use that one
-        OBJ_FILE=$OUTPUT_FILE
-    fi
 
     ${GXX} -Xlinker ${EXPORT_DYNAMIC_FLAG} -c -I${CHIMES_HOME}/src/libchimes ${FINAL_FILE} \
-        -o ${OBJ_FILE} ${GXX_FLAGS} ${INCLUDES} ${CHIMES_DEF} ${DEFINES}
+        -o ${OUTPUT} ${GXX_FLAGS} ${INCLUDES} ${CHIMES_DEF} ${DEFINES}
 
-    if [[ ! -f ${OBJ_FILE} ]]; then
-        echo "Missing object file $OBJ_FILE for input $INPUT"
+    if [[ ! -f ${OUTPUT} ]]; then
+        echo "Missing object file $OUTPUT for input $INPUT"
         exit 1
     fi
 
-    echo $OBJ_FILE
+    echo $OUTPUT
 else
     FILES_STR=""
     for f in ${LAST_FILES[@]}; do
         FILES_STR="${FILES_STR} $f"
     done
+    for f in ${OBJ_FILES[@]}; do
+        FILES_STR="${FILES_STR} $f"
+    done
 
-    COMPILE_CMD="${GXX} -Xlinker ${EXPORT_DYNAMIC_FLAG} -Wl,--no-as-needed -ldl -lpthread -I${CHIMES_HOME}/src/libchimes ${FILES_STR} \
+    COMPILE_CMD="${GXX} -Xlinker ${EXPORT_DYNAMIC_FLAG} -Wl,--no-as-needed -ldl \
+        -lpthread -I${CHIMES_HOME}/src/libchimes ${FILES_STR} \
         -o ${OUTPUT} ${LIB_PATHS} ${LIBS} ${GXX_FLAGS} ${INCLUDES} \
         ${LINKER_FLAGS}"
     [[ $VERBOSE -eq 0 ]] || echo $COMPILE_CMD

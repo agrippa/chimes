@@ -718,7 +718,7 @@ def build_compile_cmd(compile_script_path, test, output_file, inputs_dir,
         compile_cmd += ' -s'
 
     if chimes_profile:
-        compile_cmd += ' -g'
+        compile_cmd += ' -cp'
 
     if dummy:
         compile_cmd += ' -d'

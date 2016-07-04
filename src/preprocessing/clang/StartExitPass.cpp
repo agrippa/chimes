@@ -96,9 +96,9 @@ void StartExitPass::VisitTopLevel(clang::FunctionDecl *func) {
             } else {
                 address_of_cond_varname = "(int *)0x0";
             }
-            ss << "const int " << *current_disable_varname << " = new_stack((void *)(&" <<
-                curr_func << "), \"" << curr_func << "\", " <<
-                address_of_cond_varname << ", " <<
+            ss << "const int " << *current_disable_varname <<
+                " = new_stack((void *)(&" << curr_func << "), \"" <<
+                curr_func << "\", " << address_of_cond_varname << ", " <<
                 funcAliases->nargs() << ", " << nCheckpointedArgs;
             for (unsigned i = 0; i < funcAliases->nargs(); i++) {
                 ss << ", (size_t)(" << funcAliases->alias_no_for(i) << "UL)";
